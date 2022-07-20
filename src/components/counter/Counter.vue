@@ -3,11 +3,9 @@ const state = reactive({
   count: 0,
 })
 
-onMounted(() => {
-  setInterval(() => {
-    state.count++
-  }, 100)
-})
+setInterval(() => {
+  state.count++
+}, 100)
 </script>
 
 <template>

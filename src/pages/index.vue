@@ -1,7 +1,12 @@
+<script setup>
+const { x, y } = useMouse()
+</script>
+
 <template>
-  <h1 class="text-3xl text-orange-500 font-bold">
-    <div class="p-2">Hello world!</div>
+  <div class="text-3xl text-orange-500 font-bold p-4">
+    <div>Hello world!</div>
 
     <Counter></Counter>
-  </h1>
+    <div>x: {{ x }}, y: {{ y }}</div>
+  </div>
 </template>
