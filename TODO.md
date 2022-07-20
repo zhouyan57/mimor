@@ -1,6 +1,5 @@
 # learn nuxt
 
-- Nuxt Features and Folder Structure
 - Data Fetching
 - Nitro Server
 
