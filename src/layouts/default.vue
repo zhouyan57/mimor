@@ -1,6 +1,13 @@
 <template>
   <div>
-    <nav>navbar</nav>
+    <nav>
+      <ul>
+        <li><NuxtLink></NuxtLink></li>
+        <li><NuxtLink></NuxtLink></li>
+        <li><NuxtLink></NuxtLink></li>
+      </ul>
+    </nav>
+
     <slot></slot>
   </div>
 </template>
