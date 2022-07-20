@@ -4,6 +4,8 @@
 - Data Fetching
 - Nitro Server
 
+- how to include css? -- I need to include my fonts
+
 - Setting up the Frontend
 - Setting up the Backend
 - Communication with Backend
@@ -20,3 +22,7 @@
 
 - migrate sisuo's core model
 - migrate sisuo's syntax to XML
+
+# initial demo
+
+- edit and preview mimor
