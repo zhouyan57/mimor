@@ -1,10 +1,11 @@
 <template>
   <div>
+    <Title>Mimor</Title>
+
     <nav>
       <ul>
-        <li><NuxtLink></NuxtLink></li>
-        <li><NuxtLink></NuxtLink></li>
-        <li><NuxtLink></NuxtLink></li>
+        <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="/posts">Posts</NuxtLink></li>
       </ul>
     </nav>
 
