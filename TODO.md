@@ -1,7 +1,10 @@
-- setup vite vue ts project
-- setup vue router
-- setup runtime tailwind
+# learn nuxt
+
 - setup prettier
+- setup watch command
+- [nuxt] where to put js module? -- like the config of mobx
+
+# syntax & model
 
 - parse XML
 
