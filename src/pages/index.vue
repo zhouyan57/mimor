@@ -1,5 +1,5 @@
 <script setup>
-import { Lang } from "./states/Lang"
+import { Lang } from "../states/Lang"
 
 const lang = new Lang()
 
