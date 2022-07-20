@@ -4,8 +4,6 @@
 - Data Fetching
 - Nitro Server
 
-- how to include css? -- I need to include my fonts
-
 - Setting up the Frontend
 - Setting up the Backend
 - Communication with Backend
@@ -14,7 +12,12 @@
 - Authorization
 - The Deployment Process
 
-- [nuxt] where to put js module? -- like the config of mobx
+# questions about nuxt
+
+- how to include css? -- I need to include my fonts
+- fix "/service-worker.js"
+- fix "/favicon.ico"
+- where to put js module? -- like the config of mobx
 
 # syntax & model
 
