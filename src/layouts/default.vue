@@ -1,5 +1,5 @@
 <template>
-  <div class="text-3xl text-orange-500 p-4">
+  <div class="text-3xl h-screen text-orange-500 bg-orange-50 p-4">
     <Title>Mimor</Title>
 
     <nav>
