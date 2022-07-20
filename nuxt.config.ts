@@ -4,4 +4,5 @@ import { defineNuxtConfig } from "nuxt"
 export default defineNuxtConfig({
   srcDir: "src/",
   modules: ["@nuxtjs/tailwindcss", "mobx-vue-lite/nuxt"],
+  typescript: { strict: true },
 })
