@@ -1,6 +1,7 @@
 # syntax & model
 
-- parse XML
+- `x-node` -- `h`
+- parse XML by jsdom
 
 - migrate sisuo's core model
 - migrate sisuo's syntax to XML
