@@ -52,19 +52,11 @@ note
 
   "test error on disallowed character in tag name"() {
     this.assertError(() => {
-      const nodes = parseNodes(
-        `
-<q&a>
-  <question>
-    Q
-  </question>
+      const nodes = parseNodes(`<q&a></q&a>`)
+    })
 
-  <answer>
-    A
-  </answer>
-</q&a>
-`
-      )
+    this.assertError(() => {
+      const nodes = parseNodes(`<q+a></q+a>`)
     })
   }
 
