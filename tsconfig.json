@@ -1,9 +1,4 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "noEmit": false,
-    "outDir": "lib"
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }

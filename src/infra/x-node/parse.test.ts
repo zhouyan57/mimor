@@ -1,0 +1,72 @@
+import { expect, test } from "vitest"
+import { parseNodes } from "./parse"
+
+test("basic", () => {
+  const nodes = parseNodes(
+    `
+<question class="text-2xl" color="red"> Hello world </question>
+
+note
+
+<answer> hi </answer>
+`
+  )
+
+  expect(nodes).toEqual([
+    "\n",
+    {
+      tag: "question",
+      attributes: { class: "text-2xl", color: "red" },
+      children: [" Hello world "],
+    },
+    "\n\nnote\n\n",
+    { tag: "answer", attributes: {}, children: [" hi "] },
+    "\n",
+  ])
+})
+
+test("Chinese tag name", () => {
+  const nodes = parseNodes(
+    `
+<问 class="text-2xl" color="red"> Hello world </问>
+
+note
+
+<答> hi </答>
+`
+  )
+
+  expect(nodes).toEqual([
+    "\n",
+    {
+      tag: "问",
+      attributes: { class: "text-2xl", color: "red" },
+      children: [" Hello world "],
+    },
+    "\n\nnote\n\n",
+    { tag: "答", attributes: {}, children: [" hi "] },
+    "\n",
+  ])
+})
+
+test("error on disallowed character in tag name", () => {
+  expect(() => {
+    const nodes = parseNodes(`<q&a></q&a>`)
+  }).toThrow()
+
+  expect(() => {
+    const nodes = parseNodes(`<q+a></q+a>`)
+  }).toThrow()
+})
+
+test("error on unbound namespace prefix", () => {
+  expect(() => {
+    const nodes = parseNodes(
+      `
+  <question theme:color="red">
+    Q
+  </question>
+`
+    )
+  }).toThrow()
+})
