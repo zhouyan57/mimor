@@ -1,6 +1,11 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": { "noEmit": false, "outDir": "lib" },
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "noEmit": false,
+    "outDir": "lib"
+  },
   "exclude": ["lib"]
 }

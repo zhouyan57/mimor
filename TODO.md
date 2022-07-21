@@ -1,6 +1,5 @@
 # syntax & model
 
-- `x-node` -- `h`
 - parse XML by jsdom
 
 - migrate sisuo's core model
