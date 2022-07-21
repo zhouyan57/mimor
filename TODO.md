@@ -18,6 +18,10 @@
 - fix "/favicon.ico"
 - where to put js module? -- like the config of mobx
 
+# state management
+
+- should we use mobx?
+
 # syntax & model
 
 - parse XML
