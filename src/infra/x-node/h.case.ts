@@ -1,5 +1,5 @@
 import { TestCase } from "@xieyuheng/test-case"
-import { h } from "./index"
+import { h } from "./h"
 
 export default class extends TestCase {
   "test h"() {
