@@ -1,7 +1,6 @@
 # syntax & model
 
-- migrate sisuo's core model
-- migrate sisuo's syntax to XML
+- QA migrate sisuo's components
 
 # initial demo
 

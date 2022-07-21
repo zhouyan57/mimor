@@ -12,8 +12,6 @@ note
 <answer> hi </answer>
 `
 )
-
-console.log(nodes)
 </script>
 
 <template>

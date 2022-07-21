@@ -9,6 +9,13 @@ export function parseNodes(input: string): Array<XNode> {
     `<root>${input}</root>`,
     "application/xml"
   )
+
+  const errorNode = dom.querySelector("parsererror")
+
+  if (errorNode) {
+    throw new Error(errorNode.innerHTML)
+  }
+
   const root = dom.childNodes[0]
   return fromNodes(root.childNodes)
 }
