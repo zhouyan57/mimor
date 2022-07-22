@@ -1,7 +1,7 @@
 <script setup>
-const { x, y } = useMouse()
-
 import { parseNodes } from "../infra/x-node"
+
+const { x, y } = useMouse()
 
 const nodes = parseNodes(
   `
@@ -21,6 +21,9 @@ note
     <Counter />
     <div>Mouse: ({{ x }}, {{ y }})</div>
 
-    <div>Nodes: <pre class="text-2xl">{{ JSON.stringify(nodes, null, 2) }}</pre></div>
+    <div>
+      Nodes:
+      <pre class="text-2xl">{{ JSON.stringify(nodes, null, 2) }}</pre>
+    </div>
   </div>
 </template>
