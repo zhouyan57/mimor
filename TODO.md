@@ -1,3 +1,5 @@
+- remove nuxt
+
 # components
 
 - `Mimor`
