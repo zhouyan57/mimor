@@ -7,6 +7,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
 
 <template>
   <div>
-    <div>Unknown tag: {{ element.tag }}</div>
+    <div>Unknown element:</div>
+    <pre>{{ element }}</pre>
   </div>
 </template>
