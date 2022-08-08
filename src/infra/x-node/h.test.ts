@@ -22,7 +22,7 @@ test("h", () => {
 
   expect(h("question", { color: "red" }, "Why?")).toEqual({
     tag: "question",
-    attributes: { color: "red"},
+    attributes: { color: "red" },
     children: ["Why?"],
   })
 })

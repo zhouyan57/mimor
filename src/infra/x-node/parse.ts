@@ -1,5 +1,5 @@
-import { XNode, XElement, h } from "."
 import { JSDOM } from "jsdom"
+import { h, XElement, XNode } from "."
 const { window } = new JSDOM("")
 const domParser = new window.DOMParser()
 
