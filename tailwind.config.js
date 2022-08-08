@@ -2,11 +2,11 @@ const colors = require("tailwindcss/colors")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{vue,ts,js}"],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   safelist: [
     {
       pattern:
-        /(text|border|bg)-(red|sky|violet)-(50|100|200|300|400|500|600|700|800|900)/,
+        /(text|border|bg|placeholder)-(red|sky|violet)-(50|100|200|300|400|500|600|700|800|900)/,
       variants: ["hover", "focus"],
     },
   ],
@@ -22,7 +22,8 @@ function fontFamily() {
     sans: ["Linux Biolinum O", "sans-serif"],
     serif: ["Linux Libertine O", "serif"],
     mono: ["Fira Code", "monospace"],
-    logo: ["Bodoni Moda", "serif"],
+    logo: ["Linux Biolinum O", "sans-serif"],
+    // logo: ["Bodoni Moda", "serif"],
   }
 }
 
@@ -41,6 +42,12 @@ function fontFamilyWithChinese() {
       "LXGW WenKai Larger",
       "monospace",
     ],
-    logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
+    logo: [
+      "Linux Biolinum O",
+      "LXGW New Clear Gothic",
+      "LXGW Clear Gothic",
+      "sans-serif",
+    ],
+    // logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
   }
 }
