@@ -1,6 +1,6 @@
 # mimor
 
-BinaryLayout.vue
+inline MimorProgram.vue to Mimor.vue
 
 <cloze> -- Cloze.vue
 

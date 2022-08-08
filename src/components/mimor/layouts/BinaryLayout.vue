@@ -2,19 +2,31 @@
 import { reactive } from "vue"
 import { MimorState } from "../MimorState"
 
-defineProps<{ mimor: MimorState }>()
+const { mimor } = defineProps<{ mimor: MimorState }>()
 
 const state = reactive({
   revealed: false,
 })
+
+function next() {
+  mimor.program.next()
+  state.revealed = false
+}
 </script>
 
 <template>
   <div>
-    <button @click="state.revealed = true">Reveal</button>
-    <div v-if="state.revealed">
-      <button @click="mimor.program.next()">Forgotten</button>
-      <button @click="mimor.program.next()">Remembered</button>
+    Mimor
+
+    <slot :revealed="state.revealed" />
+
+    <button v-if="!state.revealed" @click="state.revealed = true">
+      Reveal
+    </button>
+
+    <div v-else>
+      <button @click="next()">Forgotten</button>
+      <button @click="next()">Remembered</button>
     </div>
   </div>
 </template>
