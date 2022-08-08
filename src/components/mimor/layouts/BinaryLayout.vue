@@ -14,7 +14,7 @@ const state = reactive(new State(mimor))
   <div class="flex flex-col justify-between w-full h-full">
     <BinaryLayoutHeader :state="state" />
 
-    <div>
+    <div class="p-3">
       <slot :revealed="state.revealed" />
     </div>
 

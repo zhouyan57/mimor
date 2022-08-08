@@ -6,7 +6,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex w-full justify-between">
+  <div class="flex w-full justify-between p-3">
     <div>
       <Lang>
         <template #zh>进展：{{ state.progress }}</template>

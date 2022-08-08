@@ -50,6 +50,8 @@ const state = reactive({
         },
       }"
     />
-    <div v-else>The End</div>
+    <div v-else>
+      <div class="font-bold text-2xl font-logo">The End</div>
+    </div>
   </div>
 </template>
