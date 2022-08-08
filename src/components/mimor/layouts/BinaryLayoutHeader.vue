@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import Lang from "../../../components/Lang.vue"
 import { MimorState } from "../MimorState"
+import { BinaryLayoutState as State } from "./BinaryLayoutState"
 
-const { mimor } = defineProps<{ mimor: MimorState }>()
-
-const state = reactive({
-  revealed: false,
-})
-
-function next() {
-  state.revealed = false
-  mimor.next()
-}
+defineProps<{ mimor: MimorState; state: State }>()
 </script>
 
 <template>

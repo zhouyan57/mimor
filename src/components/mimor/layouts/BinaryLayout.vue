@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import Lang from "../../../components/Lang.vue"
-import BinaryLayoutHeader from "./BinaryLayoutHeader.vue"
 import { MimorState } from "../MimorState"
+import BinaryLayoutHeader from "./BinaryLayoutHeader.vue"
+import { BinaryLayoutState as State } from "./BinaryLayoutState"
 
 const { mimor } = defineProps<{ mimor: MimorState }>()
 
-const state = reactive({
-  revealed: false,
-})
+const state = reactive(new State())
 
 function next() {
   state.revealed = false
@@ -18,7 +17,7 @@ function next() {
 
 <template>
   <div class="flex flex-col items-start">
-    <BinaryLayoutHeader :mimor="mimor" />
+    <BinaryLayoutHeader :mimor="mimor" :state="state" />
 
     <div class="py-6">
       <slot :revealed="state.revealed" />

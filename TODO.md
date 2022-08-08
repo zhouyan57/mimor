@@ -1,6 +1,5 @@
 # mimor
 
-extract BinaryLayoutState
 BinaryLayout -- extract BinaryLayoutControl
 BinaryLayoutHeader -- Progress
 BinaryLayout -- style
