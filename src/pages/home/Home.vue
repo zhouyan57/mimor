@@ -3,6 +3,13 @@ import { reactive } from "vue"
 import Mimor from "../../components/mimor/Mimor.vue"
 
 const text = `
+<填空>
+君子知夫不全不粹之不足以为美也
+故诵数以贯之 <空>思索</空>以通之
+为其人以处之 除其害者以持养之
+-- 荀子 劝学
+</填空>
+
 <question>
   What is Bayesian interpretation of probability?
 

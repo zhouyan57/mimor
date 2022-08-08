@@ -7,7 +7,9 @@ defineProps<{ mimor: MimorState; nodes: Array<XNode> }>()
 </script>
 
 <template>
-  <div v-for="(node, index) of nodes">
-    <MimorNode :mimor="mimor" :node="node" />
+  <div>
+    <div v-for="(node, index) of nodes">
+      <MimorNode :mimor="mimor" :node="node" />
+    </div>
   </div>
 </template>

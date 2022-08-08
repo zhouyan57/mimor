@@ -12,13 +12,13 @@ defineProps<{ mimor: MimorState; element: XElement }>()
   <BinaryLayout :mimor="mimor" v-slot="binary">
     <div v-for="(child, index) of element.children" :key="index">
       <div v-if="matchElement(child, { tags: ['answer', '答'] })">
-        <div v-show="binary.revealed">
-          <MimorNodes :mimor="mimor" :nodes="child.children" />
-        </div>
+        <MimorNodes
+          v-show="binary.revealed"
+          :mimor="mimor"
+          :nodes="child.children"
+        />
       </div>
-      <div v-else>
-        <MimorNode :mimor="mimor" :node="child" />
-      </div>
+      <MimorNode v-else :mimor="mimor" :node="child" />
     </div>
   </BinaryLayout>
 </template>
