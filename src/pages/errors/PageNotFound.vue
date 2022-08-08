@@ -9,7 +9,7 @@ const path = typeof slugs === "string" ? slugs : slugs.join("/")
 
 <template>
   <div class="flex flex-col space-y-2">
-    <div class="text-3xl font-semibold">404</div>
+    <div class="text-3xl font-bold">404</div>
     <div class="text-xl">
       <Lang>
         <template #zh>没有这个页面</template>

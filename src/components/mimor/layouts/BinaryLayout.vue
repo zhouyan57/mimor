@@ -16,10 +16,20 @@ function next() {
 </script>
 
 <template>
-  <div>
-    Mimor
+  <div class="flex flex-col items-start">
+    <div class="flex w-full justify-between">
+      <div></div>
+      <div class="font-logo font-bold">
+        <Lang>
+          <template #zh>迷墨</template>
+          <template #en>Mimor</template>
+        </Lang>
+      </div>
+    </div>
 
-    <slot :revealed="state.revealed" />
+    <div class="py-6">
+      <slot :revealed="state.revealed" />
+    </div>
 
     <button v-if="!state.revealed" @click="state.revealed = true">
       <Lang>
@@ -28,7 +38,7 @@ function next() {
       </Lang>
     </button>
 
-    <div v-else>
+    <div v-else class="flex w-full justify-between">
       <button @click="next()">
         <Lang>
           <template #zh>忘了</template>

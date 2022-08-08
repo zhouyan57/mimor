@@ -14,7 +14,7 @@ defineProps<{ state: State }>()
 
 <template>
   <Listbox as="div" class="relative flex text-xl" v-model="state.lang.tag">
-    <ListboxButton class="flex items-center font-semibold">
+    <ListboxButton class="flex items-center font-bold">
       <Lang>
         <template #zh>语言</template>
         <template #en>Lang</template>

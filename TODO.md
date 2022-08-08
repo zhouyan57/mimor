@@ -1,5 +1,6 @@
 # mimor
 
+no theme for the site, just black and white
 PageLayout.vue -- style
 
 BinaryLayout.vue -- style
