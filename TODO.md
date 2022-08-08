@@ -1,8 +1,11 @@
 # mimor
 
-mimor/Stmt.ts
+MimorProgram.vue -- route `current` element view by element tag
 
-<question> -- mimor/stmts/question/Question.vue
+- Router.ts
+- routes.ts
+
+<question> -- mimor/views/question/Question.vue
 
 - Question.vue
 - Answer.vue
@@ -10,7 +13,7 @@ mimor/Stmt.ts
 - <question> <answer>
 - <问> <答>
 
-<cloze> -- mimor/stmts/cloze/Cloze.vue
+<cloze> -- mimor/views/cloze/Cloze.vue
 
 `Cloze` & `Blank`
 

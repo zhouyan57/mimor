@@ -1,39 +1,34 @@
-import { Stmt } from "./Stmt"
-import { XNode } from "../../libs/x-node"
+import { isXElement, XElement, XNode } from "../../libs/x-node"
+
+export interface ProgramOptions {
+  nodes: Array<XNode>
+  pointer?: number
+}
 
 export class Program {
-  stmts: Array<Stmt> = []
-  pointer: number = 0
+  elements: Array<XElement>
+  pointer: number
 
-  nodes: Array<XNode> = []
-
-  constructor() {
-    //
+  constructor(public options: ProgramOptions) {
+    this.elements = options.nodes.filter(isXElement)
+    this.pointer = options.pointer || 0
   }
 
-  static fromNodes(nodes: Array<XNode>): Program {
-    const program = new Program()
-    program.nodes = nodes
-    return program
-  }
-
-  get current(): Stmt {
-    const stmt = this.stmts[this.pointer]
-    if (!stmt) {
+  get current(): XElement {
+    const element = this.elements[this.pointer]
+    if (!element) {
       throw new Error(`Program pointer out of bound.`)
     }
 
-    return stmt
+    return element
   }
 
   get finished(): boolean {
-    return this.pointer === this.stmts.length
+    return this.pointer === this.elements.length
   }
 
   next(): void {
     if (this.finished) return
-
-    this.current.execute(this)
     this.pointer++
   }
 }

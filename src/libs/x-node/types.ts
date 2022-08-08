@@ -5,3 +5,7 @@ export type XElement = {
   attributes: Record<string, string>
   children: Array<XNode>
 }
+
+export function isXElement(node: XNode): node is XElement {
+  return typeof node === "object"
+}

@@ -6,6 +6,6 @@ defineProps<{ state: State }>()
 
 <template>
   <div>
-    <pre>{{ state.program.nodes }}</pre>
+    <pre>{{ state.program.elements }}</pre>
   </div>
 </template>
