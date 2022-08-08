@@ -11,7 +11,7 @@ const state = reactive(new State())
     <div class="flex w-full justify-center p-3">
       <PageLayoutSidebar class="hidden md:block w-1/4" :state="state" />
 
-      <div class="md:border-l-2 h-full w-full md:w-3/4 px-3">
+      <div class="h-full w-full md:w-3/4 px-6">
         <slot />
       </div>
     </div>

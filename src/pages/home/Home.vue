@@ -41,6 +41,7 @@ const state = reactive({
     <div class="text-3xl">Demo</div>
 
     <Mimor
+      class="h-80"
       v-if="!state.finished"
       :options="{
         text,

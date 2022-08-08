@@ -9,7 +9,7 @@ const state = reactive(new State(options))
 </script>
 
 <template>
-  <div>
+  <div class="border border-gray-400">
     <MimorNode :mimor="state" :node="state.current" />
   </div>
 </template>
