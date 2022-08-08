@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import MimorProgram from "./MimorProgram.vue"
 import { MimorState as State } from "./MimorState"
+import MimorNode from "./MimorNode.vue"
 
 const props = defineProps<{
   text: string
@@ -16,6 +16,6 @@ const state = reactive(
 
 <template>
   <div>
-    <MimorProgram :state="state" />
+    <MimorNode :mimor="state" :node="state.program.current" />
   </div>
 </template>
