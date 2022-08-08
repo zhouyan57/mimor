@@ -10,36 +10,21 @@ module.exports = {
     },
   ],
   theme: {
-    fontFamily: fontFamilyWithChinese(),
-    transitionDelay: { 0: "0ms", 2000: "2000ms" },
-    textDecorationThickness: { 6: "6px" },
+    fontFamily: {
+      sans: [
+        "Linux Biolinum O",
+        "LXGW New Clear Gothic",
+        "LXGW Clear Gothic",
+        "sans-serif",
+      ],
+      serif: ["Linux Libertine O", "LXGW WenKai", "serif"],
+      mono: [
+        "Fira Code",
+        // NOTE One Chinese character should equal to two English characters.
+        "LXGW WenKai Larger",
+        "monospace",
+      ],
+      logo: ["Linux Libertine O", "Source Han Serif SC", "serif"],
+    },
   },
-}
-
-function fontFamily() {
-  return {
-    sans: ["Linux Biolinum O", "sans-serif"],
-    serif: ["Linux Libertine O", "serif"],
-    mono: ["Fira Code", "monospace"],
-    sans: ["Linux Biolinum O", "serif"],
-  }
-}
-
-function fontFamilyWithChinese() {
-  return {
-    sans: [
-      "Linux Biolinum O",
-      "LXGW New Clear Gothic",
-      "LXGW Clear Gothic",
-      "sans-serif",
-    ],
-    serif: ["Linux Libertine O", "LXGW WenKai", "serif"],
-    mono: [
-      "Fira Code",
-      // NOTE One Chinese character should equal to two English characters.
-      "LXGW WenKai Larger",
-      "monospace",
-    ],
-    logo: ["Linux Biolinum O", "Source Han Serif SC", "serif"],
-  }
 }

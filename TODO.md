@@ -1,7 +1,5 @@
 # mimor
 
-BinaryLayoutHeader -- style
-
 MimorState has `theme`
 
 Question -- Transition

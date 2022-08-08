@@ -10,7 +10,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
 
 <template>
   <BinaryLayout :mimor="mimor" v-slot="{ revealed }">
-    <div>
+    <div class="text-2xl">
       <span v-for="(child, index) of element.children" :key="index">
         <span v-if="matchElement(child, { tags: ['blank', '空'] })">
           <MimorNodes

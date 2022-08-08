@@ -7,13 +7,13 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="w-full pb-1.5">
+  <div class="w-full pb-1.5 text-xl font-bold">
     <button
       v-if="!state.revealed"
       @click="state.revealed = true"
       class="p-3 border w-full flex flex-col items-start"
     >
-      <EyeIcon class="w-5 h-5 text-yellow-500" />
+      <EyeIcon class="w-6 h-6 text-yellow-500" />
       <Lang>
         <template #zh>揭示</template>
         <template #en>Reveal</template>
@@ -25,7 +25,7 @@ defineProps<{ state: State }>()
         @click="state.next()"
         class="p-3 border w-full flex flex-col items-start"
       >
-        <XIcon class="w-5 h-5 text-yellow-500" />
+        <XIcon class="w-6 h-6 text-yellow-500" />
         <Lang>
           <template #zh>忘了</template>
           <template #en>Forgotten</template>
@@ -36,7 +36,7 @@ defineProps<{ state: State }>()
         @click="state.next()"
         class="p-3 border w-full flex flex-col items-start"
       >
-        <CheckIcon class="w-5 h-5 text-yellow-500" />
+        <CheckIcon class="w-6 h-6 text-yellow-500" />
         <Lang>
           <template #zh>记得</template>
           <template #en>Remembered</template>

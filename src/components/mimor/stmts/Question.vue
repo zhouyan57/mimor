@@ -16,7 +16,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           v-show="revealed"
           :mimor="mimor"
           :nodes="child.children"
-          class="py-3 text-4xl"
+          class="py-3 text-3xl"
         />
       </div>
       <MimorNode
@@ -24,7 +24,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
         :mimor="mimor"
         :node="child"
         :class="[
-          revealed ? 'text-2xl' : 'text-xl',
+          revealed ? 'text-xl' : 'text-2xl',
           revealed && 'text-stone-500',
         ]"
       />
