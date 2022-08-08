@@ -1,10 +1,5 @@
 # mimor
 
-MimorProgram.vue -- route `current` element view by element tag
-
-- Router.ts
-- routes.ts
-
 generic -- mimor/views/unknown/Unknown.vue
 
 <question> -- mimor/views/question/Question.vue
@@ -26,6 +21,6 @@ generic -- mimor/views/unknown/Unknown.vue
 
 <ending> -- cheer up
 
-# initial demo
+# editor
 
-edit and preview mimor
+generic web xml editor
