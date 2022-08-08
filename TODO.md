@@ -1,11 +1,14 @@
 # mimor
 
-BinaryLayout -- style
 BinaryLayoutHeader -- style
-PageLayout -- style
+
+MimorState has `theme`
+
+Question -- Transition
+
 extract MobileLayout from PageLayout
-Question -- style
-Cloze -- style
+
+PageLayout -- style
 
 <cover> -- welcome and info
 <ending> -- cheer up

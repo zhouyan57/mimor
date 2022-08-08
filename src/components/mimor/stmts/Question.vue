@@ -12,9 +12,22 @@ defineProps<{ mimor: MimorState; element: XElement }>()
   <BinaryLayout :mimor="mimor" v-slot="{ revealed }">
     <div v-for="(child, index) of element.children" :key="index">
       <div v-if="matchElement(child, { tags: ['answer', '答'] })">
-        <MimorNodes v-show="revealed" :mimor="mimor" :nodes="child.children" />
+        <MimorNodes
+          v-show="revealed"
+          :mimor="mimor"
+          :nodes="child.children"
+          class="py-3 text-4xl"
+        />
       </div>
-      <MimorNode v-else :mimor="mimor" :node="child" />
+      <MimorNode
+        v-else
+        :mimor="mimor"
+        :node="child"
+        :class="[
+          revealed ? 'text-2xl' : 'text-xl',
+          revealed && 'text-stone-500',
+        ]"
+      />
     </div>
   </BinaryLayout>
 </template>
