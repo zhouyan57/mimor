@@ -1,7 +1,5 @@
 # mimor
 
-Mimor.vue -- take onFinished
-
 <cloze> -- Cloze.vue
 
 - <cloze> <blank>

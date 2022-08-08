@@ -1,9 +1,10 @@
-import { parseNodes, isElement, XElement, XNode } from "../../libs/x-node"
-import { mountRoutes } from "./mountRoutes"
+import { isElement, parseNodes, XElement, XNode } from "../../libs/x-node"
 import { Router } from "./models/Router"
+import { mountRoutes } from "./mountRoutes"
 
 export interface MimorOptions {
   text: string
+  onFinished: () => void
 }
 
 export class MimorState {
@@ -22,8 +23,8 @@ export class MimorState {
 
   get current(): XElement {
     const element = this.elements[this.pointer]
-    if (!element) {
-      throw new Error(`The element pointer is out of bound.`)
+    if (element === undefined) {
+      throw new Error("The element pointer is out of bound.")
     }
 
     return element
@@ -34,7 +35,9 @@ export class MimorState {
   }
 
   next(): void {
-    if (this.finished) return
     this.pointer++
+    if (this.finished) {
+      this.options.onFinished()
+    }
   }
 }

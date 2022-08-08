@@ -9,8 +9,8 @@ const state = reactive({
 })
 
 function next() {
-  mimor.next()
   state.revealed = false
+  mimor.next()
 }
 </script>
 

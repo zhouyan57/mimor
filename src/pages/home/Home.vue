@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive } from "vue"
 import Mimor from "../../components/mimor/Mimor.vue"
 
 const text = `
@@ -22,11 +23,25 @@ const text = `
   </answer>
 </question>
 `
+
+const state = reactive({
+  finished: false,
+})
 </script>
 
 <template>
   <div>
     <div class="text-3xl">Mimor demo:</div>
-    <Mimor :text="text" />
+
+    <Mimor
+      v-if="!state.finished"
+      :options="{
+        text,
+        onFinished: () => {
+          state.finished = true
+        },
+      }"
+    />
+    <div v-else>The End</div>
   </div>
 </template>

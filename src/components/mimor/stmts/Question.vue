@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { reactive } from "vue"
 import { matchElement, XElement } from "../../../libs/x-node"
+import BinaryLayout from "../layouts/BinaryLayout.vue"
 import MimorNode from "../MimorNode.vue"
 import MimorNodes from "../MimorNodes.vue"
-import BinaryLayout from "../layouts/BinaryLayout.vue"
 import { MimorState } from "../MimorState"
 
 defineProps<{ mimor: MimorState; element: XElement }>()
