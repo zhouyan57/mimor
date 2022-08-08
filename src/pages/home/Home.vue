@@ -38,7 +38,7 @@ const state = reactive({
 
 <template>
   <div>
-    <div class="text-3xl">Mimor demo:</div>
+    <div class="text-3xl">Demo</div>
 
     <Mimor
       v-if="!state.finished"

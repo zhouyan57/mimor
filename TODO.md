@@ -1,6 +1,6 @@
 # mimor
 
-PageLayout.vue -- use flomo like layout
+PageLayout.vue -- style
 
 BinaryLayout.vue -- style
 Question.vue -- style

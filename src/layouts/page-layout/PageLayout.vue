@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
 import { reactive } from "vue"
-import PageLayoutHeader from "./PageLayoutHeader.vue"
+import PageLayoutSidebar from "./PageLayoutSidebar.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 const state = reactive(new State())
@@ -20,10 +20,12 @@ const state = reactive(new State())
       <meta name="theme-color" :content="state.theme.backgroundColor" />
     </Head>
 
-    <PageLayoutHeader :state="state" />
+    <div class="flex w-full justify-center md:px-10 mt-6">
+      <PageLayoutSidebar class="hidden md:block w-1/4" :state="state" />
 
-    <div class="mt-6 h-full w-full space-y-2 px-4 md:max-w-2xl">
-      <slot />
+      <div class="md:border-l-2 h-full w-full md:w-3/4 space-y-2 px-4">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
