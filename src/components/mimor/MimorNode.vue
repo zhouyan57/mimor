@@ -2,7 +2,7 @@
 import { isElement, XNode } from "../../libs/x-node"
 import { MimorState } from "./MimorState"
 import { routes } from "./routes"
-import Unknown from "./views/Unknown.vue"
+import Unknown from "./stmts/Unknown.vue"
 
 defineProps<{ mimor: MimorState; node: XNode }>()
 </script>

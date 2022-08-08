@@ -1,7 +1,5 @@
 # mimor
 
-rename views/ to stmts/
-
 Router.ts
 
 - router.route(["question", ], component)

@@ -1,6 +1,6 @@
 import { Component } from "vue"
-import Cloze from "./views/Cloze.vue"
-import Question from "./views/Question.vue"
+import Cloze from "./stmts/Cloze.vue"
+import Question from "./stmts/Question.vue"
 
 export const routes: Record<string, Component> = {
   question: Question,
