@@ -1,6 +1,7 @@
 # mimor
 
-PageLayout.vue -- be able to select lang
+PageLayout.vue -- use flomo like layout
+404 page use `Lang`
 BinaryLayout.vue -- style
 Question.vue -- style
 Cloze.vue -- style
