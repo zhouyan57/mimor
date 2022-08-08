@@ -22,7 +22,7 @@ export function parseNodes(input: string): Array<XNode> {
 
 function fromNodes(childNodes: NodeListOf<ChildNode>): Array<XNode> {
   const nodes = []
-  for (const node of childNodes) {
+  for (const node of Array.from(childNodes)) {
     if (node.nodeType === 1) nodes.push(fromElement(node as Element))
     if (node.nodeType === 3) nodes.push(fromText(node as Text))
   }
@@ -36,7 +36,7 @@ function fromText(node: Text): string {
 
 function fromElement(node: Element): XElement {
   const attributes: Record<string, string> = {}
-  for (const attribute of node.attributes) {
+  for (const attribute of Array.from(node.attributes)) {
     attributes[attribute.name] = attribute.value
   }
 

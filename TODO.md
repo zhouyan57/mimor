@@ -1,3 +1,5 @@
+- use white as site theme color
+
 # components
 
 - `Mimor`
@@ -12,8 +14,8 @@
   - <cloze> <blank>
   - <填空> <空>
 
-- <prolog> -- welcome and info
-- <epilog> -- cheer up
+- <cover> -- welcome and info
+- <ending> -- cheer up
 
 # initial demo
 
