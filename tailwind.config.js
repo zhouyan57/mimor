@@ -10,7 +10,7 @@ module.exports = {
     },
   ],
   theme: {
-    fontFamily: fontFamily(),
+    fontFamily: fontFamilyWithChinese(),
     transitionDelay: { 0: "0ms", 2000: "2000ms" },
     textDecorationThickness: { 6: "6px" },
   },
@@ -21,8 +21,7 @@ function fontFamily() {
     sans: ["Linux Biolinum O", "sans-serif"],
     serif: ["Linux Libertine O", "serif"],
     mono: ["Fira Code", "monospace"],
-    logo: ["Linux Biolinum O", "sans-serif"],
-    // logo: ["Bodoni Moda", "serif"],
+    sans: ["Linux Biolinum O", "serif"],
   }
 }
 
@@ -41,12 +40,6 @@ function fontFamilyWithChinese() {
       "LXGW WenKai Larger",
       "monospace",
     ],
-    logo: [
-      "Linux Biolinum O",
-      "LXGW New Clear Gothic",
-      "LXGW Clear Gothic",
-      "sans-serif",
-    ],
-    // logo: ["Bodoni Moda", "Source Han Serif SC", "serif"],
+    logo: ["Linux Biolinum O", "Source Han Serif SC", "serif"],
   }
 }

@@ -20,10 +20,10 @@ const state = reactive(new State())
       <meta name="theme-color" :content="state.theme.backgroundColor" />
     </Head>
 
-    <div class="flex w-full justify-center md:px-10 mt-6">
+    <div class="flex w-full justify-center p-3">
       <PageLayoutSidebar class="hidden md:block w-1/4" :state="state" />
 
-      <div class="md:border-l-2 h-full w-full md:w-3/4 space-y-2 px-4">
+      <div class="md:border-l-2 h-full w-full md:w-3/4 px-3">
         <slot />
       </div>
     </div>

@@ -32,7 +32,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform scale-95 opacity-0"
     >
       <ListboxOptions
-        class="absolute top-8 right-0 min-w-max border-2"
+        class="absolute left-0 top-8 min-w-max border-2"
         :class="[`bg-${state.theme.name}-100 border-${state.theme.name}-300`]"
       >
         <ListboxOption
