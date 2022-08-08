@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import { MimorState } from "../MimorState"
 import Lang from "../../../components/Lang.vue"
+import { MimorState } from "../MimorState"
 
 const { mimor } = defineProps<{ mimor: MimorState }>()
 
