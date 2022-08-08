@@ -1,5 +1,3 @@
-`components/Lang` & `components/Link`
-
 # components
 
 `Mimor`
