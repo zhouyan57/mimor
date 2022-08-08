@@ -1,7 +1,5 @@
 # mimor
 
-MimorState -- load data from node source file
-
 mimor/Stmt.ts
 
 <question> -- mimor/stmts/question/Question.vue

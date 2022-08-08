@@ -1,11 +1,20 @@
 import { Stmt } from "./Stmt"
+import { XNode } from "../../libs/x-node"
 
 export class Program {
   stmts: Array<Stmt> = []
   pointer: number = 0
 
+  nodes: Array<XNode> = []
+
   constructor() {
     //
+  }
+
+  static fromNodes(nodes: Array<XNode>): Program {
+    const program = new Program()
+    program.nodes = nodes
+    return program
   }
 
   get current(): Stmt {

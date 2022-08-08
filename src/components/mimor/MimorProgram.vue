@@ -5,5 +5,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div>{{ state.program.pointer }}</div>
+  <div>
+    <pre>{{ state.program.nodes }}</pre>
+  </div>
 </template>
