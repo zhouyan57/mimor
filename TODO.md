@@ -1,20 +1,23 @@
+`components/Lang` & `components/Link`
+
 # components
 
-- `Mimor`
+`Mimor`
 
-- `Question` & `Answer`
+`Question` & `Answer`
 
-  - <question> <answer>
-  - <问> <答>
+- <question> <answer>
+- <问> <答>
 
-- `Cloze` & `Blank`
+`Cloze` & `Blank`
 
-  - <cloze> <blank>
-  - <填空> <空>
+- <cloze> <blank>
+- <填空> <空>
 
-- <cover> -- welcome and info
-- <ending> -- cheer up
+<cover> -- welcome and info
+
+<ending> -- cheer up
 
 # initial demo
 
-- edit and preview mimor
+edit and preview mimor
