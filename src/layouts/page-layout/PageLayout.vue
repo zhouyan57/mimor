@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
 import { reactive } from "vue"
 import PageLayoutSidebar from "./PageLayoutSidebar.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
@@ -8,14 +7,7 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <div
-    class="flex min-h-screen flex-col items-center"
-    :class="[state.classes.transition, `bg-stone-50 text-stone-900`]"
-  >
-    <Head>
-      <title v-if="state.formatTitle()">{{ state.formatTitle() }}</title>
-    </Head>
-
+  <div class="flex min-h-screen flex-col items-center">
     <div class="flex w-full justify-center p-3">
       <PageLayoutSidebar class="hidden md:block w-1/4" :state="state" />
 

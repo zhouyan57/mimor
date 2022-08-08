@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import Lang from "../../../components/Lang.vue"
+import BinaryLayoutHeader from "./BinaryLayoutHeader.vue"
 import { MimorState } from "../MimorState"
 
 const { mimor } = defineProps<{ mimor: MimorState }>()
@@ -17,15 +18,7 @@ function next() {
 
 <template>
   <div class="flex flex-col items-start">
-    <div class="flex w-full justify-between">
-      <div></div>
-      <div class="font-logo font-bold">
-        <Lang>
-          <template #zh>迷墨</template>
-          <template #en>Mimor</template>
-        </Lang>
-      </div>
-    </div>
+    <BinaryLayoutHeader :mimor="mimor" />
 
     <div class="py-6">
       <slot :revealed="state.revealed" />

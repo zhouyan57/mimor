@@ -1,9 +1,13 @@
 # mimor
 
-PageLayout.vue -- style
-BinaryLayout.vue -- style
-Question.vue -- style
-Cloze.vue -- style
+extract BinaryLayoutState
+BinaryLayout -- extract BinaryLayoutControl
+BinaryLayoutHeader -- Progress
+BinaryLayout -- style
+PageLayout -- style
+extract MobileLayout from PageLayout
+Question -- style
+Cloze -- style
 
 <cover> -- welcome and info
 <ending> -- cheer up

@@ -31,10 +31,7 @@ defineProps<{ state: State }>()
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <ListboxOptions
-        class="absolute left-0 top-8 min-w-max border-2"
-        :class="[`bg-stone-100 border-stone-300`]"
-      >
+      <ListboxOptions class="absolute left-0 top-8 min-w-max border-2">
         <ListboxOption
           v-slot="{ active, selected }"
           v-for="tag of state.lang.tags"
@@ -43,7 +40,7 @@ defineProps<{ state: State }>()
         >
           <div
             class="flex min-w-max items-center p-2"
-            :class="[active && `bg-stone-200`]"
+            :class="[active && `bg-stone-100`]"
           >
             {{ state.lang.findTagName(tag) }}
             <CheckIcon v-if="selected" class="ml-2 h-5 w-5" />

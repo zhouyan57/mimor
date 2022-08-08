@@ -7,7 +7,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex flex-col space-y-2" :class="[state.classes.transition]">
+  <div class="flex flex-col space-y-2">
     <PageLayoutLogo :state="state" />
     <PageLayoutLang :state="state" />
   </div>
