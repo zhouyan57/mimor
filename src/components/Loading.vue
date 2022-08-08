@@ -7,8 +7,8 @@ const theme = useTheme()
 <template>
   <div
     class="flex flex-col h-screen w-screen justify-center items-center text-3xl text-white"
-    :class="`bg-${theme.name}-400`"
+    :class="`bg-${theme.name}-50`"
   >
-    <slot>Loading...</slot>
+    <slot />
   </div>
 </template>
