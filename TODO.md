@@ -1,5 +1,3 @@
-- use white as site theme color
-
 # components
 
 - `Mimor`
