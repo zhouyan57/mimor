@@ -1,6 +1,6 @@
 # mimor
 
-inline MimorProgram.vue to Mimor.vue
+Mimor.vue -- take onFinished
 
 <cloze> -- Cloze.vue
 

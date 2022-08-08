@@ -9,7 +9,7 @@ const state = reactive({
 })
 
 function next() {
-  mimor.program.next()
+  mimor.next()
   state.revealed = false
 }
 </script>

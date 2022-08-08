@@ -16,6 +16,6 @@ const state = reactive(
 
 <template>
   <div>
-    <MimorNode :mimor="state" :node="state.program.current" />
+    <MimorNode :mimor="state" :node="state.current" />
   </div>
 </template>
