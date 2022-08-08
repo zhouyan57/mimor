@@ -1,17 +1,12 @@
 <script setup lang="ts">
+import MimorNode from "./MimorNode.vue"
 import { MimorState as State } from "./MimorState"
-import { routes } from "./routes"
-import Unknown from "./views/Unknown.vue"
 
 defineProps<{ state: State }>()
 </script>
 
 <template>
   <div>
-    <component
-      v-if="routes[state.program.current.tag]"
-      :is="routes[state.program.current.tag]"
-    />
-    <Unknown v-else :state="state" />
+    <MimorNode :mimor="state" :node="state.program.current" />
   </div>
 </template>

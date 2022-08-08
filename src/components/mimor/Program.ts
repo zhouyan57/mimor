@@ -1,4 +1,4 @@
-import { isXElement, XElement, XNode } from "../../libs/x-node"
+import { isElement, XElement, XNode } from "../../libs/x-node"
 
 export interface ProgramOptions {
   nodes: Array<XNode>
@@ -10,7 +10,7 @@ export class Program {
   pointer: number
 
   constructor(public options: ProgramOptions) {
-    this.elements = options.nodes.filter(isXElement)
+    this.elements = options.nodes.filter(isElement)
     this.pointer = options.pointer || 0
   }
 

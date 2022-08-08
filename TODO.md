@@ -1,16 +1,14 @@
 # mimor
 
-<question> -- mimor/views/question/Question.vue
+rename views/ to stmts/
 
-- Question.vue
-- Answer.vue
+Router.ts
 
-- <question> <answer>
-- <问> <答>
+- router.route(["question", ], component)
 
-<cloze> -- mimor/views/cloze/Cloze.vue
+MimorReveal.vue
 
-`Cloze` & `Blank`
+<cloze> -- Cloze.vue
 
 - <cloze> <blank>
 - <填空> <空>

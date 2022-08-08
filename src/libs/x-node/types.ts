@@ -6,6 +6,15 @@ export type XElement = {
   children: Array<XNode>
 }
 
-export function isXElement(node: XNode): node is XElement {
+export function isElement(node: XNode): node is XElement {
   return typeof node === "object"
+}
+
+export function matchElement(
+  node: XNode,
+  options: { tags: Array<string> }
+): node is XElement {
+  if (!isElement(node)) return false
+
+  return options.tags.includes(node.tag)
 }

@@ -2,11 +2,13 @@
 import Mimor from "../../components/mimor/Mimor.vue"
 
 const text = `
-<question class="text-2xl" color="red"> Hello world </question>
+<question class="text-2xl" color="red">
 
-note
+Hello, World!
 
-<answer> hi </answer>
+<answer> Bye, World. </answer>
+
+</question>
 `
 </script>
 

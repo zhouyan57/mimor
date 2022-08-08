@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { MimorState as State } from "../../MimorState"
+import { XElement } from "../../../libs/x-node"
+import { MimorState } from "../MimorState"
 
-defineProps<{ state: State }>()
+defineProps<{ mimor: MimorState; element: XElement }>()
 </script>
 
 <template>
   <div>
-    <div>Unknown tag: {{ state.program.current.tag }}</div>
+    <div>Unknown tag: {{ element.tag }}</div>
   </div>
 </template>
