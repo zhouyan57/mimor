@@ -1,11 +1,11 @@
 # mimor
 
+PageLayout.vue -- be able to select lang
 BinaryLayout.vue -- style
-Question.vue style
+Question.vue -- style
 Cloze.vue -- style
 
 <cover> -- welcome and info
-
 <ending> -- cheer up
 
 # editor

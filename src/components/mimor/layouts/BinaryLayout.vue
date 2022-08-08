@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive } from "vue"
 import { MimorState } from "../MimorState"
+import Lang from "../../../components/Lang.vue"
 
 const { mimor } = defineProps<{ mimor: MimorState }>()
 
@@ -21,12 +22,25 @@ function next() {
     <slot :revealed="state.revealed" />
 
     <button v-if="!state.revealed" @click="state.revealed = true">
-      Reveal
+      <Lang>
+        <template #zh>揭示</template>
+        <template #en>Reveal</template>
+      </Lang>
     </button>
 
     <div v-else>
-      <button @click="next()">Forgotten</button>
-      <button @click="next()">Remembered</button>
+      <button @click="next()">
+        <Lang>
+          <template #zh>忘了</template>
+          <template #en>Forgotten</template>
+        </Lang>
+      </button>
+      <button @click="next()">
+        <Lang>
+          <template #zh>记得</template>
+          <template #en>Remembered</template>
+        </Lang>
+      </button>
     </div>
   </div>
 </template>
