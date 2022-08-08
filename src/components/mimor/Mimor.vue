@@ -7,7 +7,11 @@ const props = defineProps<{
   text: string
 }>()
 
-const state = reactive(new State({ ...props }))
+const state = reactive(
+  new State({
+    text: props.text,
+  })
+)
 </script>
 
 <template>

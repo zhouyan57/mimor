@@ -1,7 +1,5 @@
 # mimor
 
-MimorState take router
-
 MimorReveal.vue
 
 <cloze> -- Cloze.vue

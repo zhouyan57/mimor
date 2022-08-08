@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { isElement, XNode } from "../../libs/x-node"
 import { MimorState } from "./MimorState"
-import { routes } from "./routes"
 import Unknown from "./stmts/Unknown.vue"
 
 defineProps<{ mimor: MimorState; node: XNode }>()
@@ -11,8 +10,8 @@ defineProps<{ mimor: MimorState; node: XNode }>()
   <div>
     <span v-if="!isElement(node)">{{ node }}</span>
     <component
-      v-else-if="routes[node.tag]"
-      :is="routes[node.tag]"
+      v-else-if="mimor.router.route(node.tag)"
+      :is="mimor.router.route(node.tag)"
       :mimor="mimor"
       :element="node"
     />

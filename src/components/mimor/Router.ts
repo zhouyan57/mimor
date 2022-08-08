@@ -7,9 +7,13 @@ export class Router {
     this.routes[tag] = component
   }
 
-  tags(tags: string, component: Component): void {
+  tags(tags: Array<string>, component: Component): void {
     for (const tag of tags) {
       this.tag(tag, component)
     }
+  }
+
+  route(tag: string): Component | undefined {
+    return this.routes[tag]
   }
 }
