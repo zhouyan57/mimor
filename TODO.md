@@ -1,12 +1,5 @@
 # components
 
-mimor/Program.ts
-
-- `program` has `stmts`
-- `program.pointer`
-- `program.current: Stmt`
-- `program.execute`
-
 mimor/MimorProgram.vue -- view of program
 
 mimor/Stmt.ts
