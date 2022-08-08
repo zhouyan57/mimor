@@ -1,6 +1,6 @@
-# components
+# mimor
 
-mimor/MimorProgram.vue -- view of program
+MimorState -- load data from node source file
 
 mimor/Stmt.ts
 
