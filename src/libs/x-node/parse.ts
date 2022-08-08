@@ -1,9 +1,7 @@
-import { JSDOM } from "jsdom"
-import { h, XElement, XNode } from "."
-const { window } = new JSDOM("")
-const domParser = new window.DOMParser()
+import { h, XElement, XNode } from "./index"
 
 export function parseNodes(input: string): Array<XNode> {
+  const domParser = new window.DOMParser()
   const nodes = []
   const dom = domParser.parseFromString(
     `<root>${input}</root>`,
