@@ -1,8 +1,6 @@
 # mimor
 
-Router.ts
-
-- router.route(["question", ], component)
+MimorState take router
 
 MimorReveal.vue
 
