@@ -2,13 +2,12 @@
 
 MimorState has `theme`
 
-Question -- Transition
-
-extract MobileLayout from PageLayout
-
 PageLayout -- style
 
+Question -- Transition
+
 <cover> -- welcome and info
+
 <ending> -- cheer up
 
 # editor

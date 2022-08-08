@@ -5,6 +5,7 @@ import { useAuth } from "./hooks/useAuth"
 
 import Lang from "./components/Lang.vue"
 import Loading from "./components/Loading.vue"
+import MobileLayout from "./layouts/mobile-layout/MobileLayout.vue"
 import PageLayout from "./layouts/page-layout/PageLayout.vue"
 
 const state = reactive({
@@ -25,7 +26,12 @@ onMounted(async () => {
       <template #en>Loading...</template>
     </Lang>
   </Loading>
-  <PageLayout v-else>
-    <RouterView />
-  </PageLayout>
+  <div v-else>
+    <PageLayout class="hidden md:block">
+      <RouterView />
+    </PageLayout>
+    <MobileLayout class="md:hidden block">
+      <RouterView />
+    </MobileLayout>
+  </div>
 </template>
