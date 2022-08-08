@@ -1,6 +1,5 @@
 # mimor
 
-BinaryLayoutHeader -- Progress
 BinaryLayout -- style
 PageLayout -- style
 extract MobileLayout from PageLayout

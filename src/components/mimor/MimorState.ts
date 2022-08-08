@@ -30,8 +30,12 @@ export class MimorState {
     return element
   }
 
+  get length(): number {
+    return this.elements.length
+  }
+
   get finished(): boolean {
-    return this.pointer === this.elements.length
+    return this.pointer === this.length
   }
 
   next(): void {
