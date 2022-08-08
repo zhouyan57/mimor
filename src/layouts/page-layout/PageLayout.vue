@@ -10,14 +10,10 @@ const state = reactive(new State())
 <template>
   <div
     class="flex min-h-screen flex-col items-center"
-    :class="[
-      state.classes.transition,
-      `bg-${state.theme.name}-50 text-${state.theme.name}-900`,
-    ]"
+    :class="[state.classes.transition, `bg-stone-50 text-stone-900`]"
   >
     <Head>
       <title v-if="state.formatTitle()">{{ state.formatTitle() }}</title>
-      <meta name="theme-color" :content="state.theme.backgroundColor" />
     </Head>
 
     <div class="flex w-full justify-center p-3">

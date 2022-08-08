@@ -33,7 +33,7 @@ defineProps<{ state: State }>()
     >
       <ListboxOptions
         class="absolute left-0 top-8 min-w-max border-2"
-        :class="[`bg-${state.theme.name}-100 border-${state.theme.name}-300`]"
+        :class="[`bg-stone-100 border-stone-300`]"
       >
         <ListboxOption
           v-slot="{ active, selected }"
@@ -43,7 +43,7 @@ defineProps<{ state: State }>()
         >
           <div
             class="flex min-w-max items-center p-2"
-            :class="[active && `bg-${state.theme.name}-200`]"
+            :class="[active && `bg-stone-200`]"
           >
             {{ state.lang.findTagName(tag) }}
             <CheckIcon v-if="selected" class="ml-2 h-5 w-5" />

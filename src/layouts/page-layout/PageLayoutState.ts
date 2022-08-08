@@ -1,10 +1,8 @@
 import { useAuth } from "../../hooks/useAuth"
 import { useLang } from "../../hooks/useLang"
-import { useTheme } from "../../hooks/useTheme"
 
 export class PageLayoutState {
   lang = useLang()
-  theme = useTheme()
   auth = useAuth()
 
   classes = {
