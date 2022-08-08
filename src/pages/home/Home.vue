@@ -37,12 +37,12 @@ const state = reactive({
 </script>
 
 <template>
-  <div>
+  <div class="h-full flex flex-col">
     <div class="text-3xl">Demo</div>
 
     <Mimor
-      class="h-80"
       v-if="!state.finished"
+      class="h-full"
       :options="{
         text,
         onFinished: () => {

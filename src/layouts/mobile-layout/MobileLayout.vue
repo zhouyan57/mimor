@@ -6,8 +6,8 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col items-center">
-    <div class="h-full w-full p-2">
+  <div class="flex h-screen flex-col items-center p-2">
+    <div class="h-full w-full">
       <slot />
     </div>
   </div>

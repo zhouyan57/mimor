@@ -7,8 +7,8 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col items-center">
-    <div class="flex w-full justify-center p-3">
+  <div class="flex h-screen flex-col items-center">
+    <div class="flex h-full w-full justify-center p-3">
       <PageLayoutSidebar class="w-1/4" :state="state" />
 
       <div class="h-full w-full w-3/4 px-6">
