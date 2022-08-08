@@ -1,5 +1,9 @@
 # mimor
 
+BinaryLayout.vue -- style
+Question.vue style
+Cloze.vue -- style
+
 <cover> -- welcome and info
 
 <ending> -- cheer up
