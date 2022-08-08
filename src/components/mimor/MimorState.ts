@@ -1,7 +1,7 @@
 import { parseNodes } from "../../libs/x-node"
 import { mountRoutes } from "./mountRoutes"
-import { Program } from "./Program"
-import { Router } from "./Router"
+import { Program } from "./models/Program"
+import { Router } from "./models/Router"
 
 export interface MimorOptions {
   text: string

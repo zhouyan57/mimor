@@ -2,12 +2,24 @@
 import Mimor from "../../components/mimor/Mimor.vue"
 
 const text = `
-<question class="text-2xl" color="red">
+<question>
+  What is Bayesian interpretation of probability?
 
-Hello, World!
+  <answer>
+    Probabilities encode degrees of belief about events in the world.
 
-<answer> Bye, World. </answer>
+    And data are used to strengthen, update, or weaken those degrees of belief.
+  </answer>
+</question>
 
+<question>
+  What are some good examples of "association is not causation"?
+
+  <answer>
+    Sleeping with shoes on, and waking up with headache.
+
+    Confounder: drinking the night before.
+  </answer>
 </question>
 `
 </script>

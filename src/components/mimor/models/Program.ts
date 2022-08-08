@@ -1,4 +1,4 @@
-import { isElement, XElement, XNode } from "../../libs/x-node"
+import { isElement, XElement, XNode } from "../../../libs/x-node"
 
 export interface ProgramOptions {
   nodes: Array<XNode>

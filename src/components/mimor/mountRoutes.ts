@@ -1,4 +1,4 @@
-import { Router } from "./Router"
+import { Router } from "./models/Router"
 import Cloze from "./stmts/Cloze.vue"
 import Question from "./stmts/Question.vue"
 

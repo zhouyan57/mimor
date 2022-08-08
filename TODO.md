@@ -1,6 +1,6 @@
 # mimor
 
-MimorReveal.vue
+BinaryLayout.vue
 
 <cloze> -- Cloze.vue
 
