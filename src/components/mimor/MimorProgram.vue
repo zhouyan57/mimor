@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MimorState as State } from "./MimorState"
 import { routes } from "./routes"
+import Unknown from "./views/Unknown.vue"
 
 defineProps<{ state: State }>()
 </script>
@@ -11,6 +12,6 @@ defineProps<{ state: State }>()
       v-if="routes[state.program.current.tag]"
       :is="routes[state.program.current.tag]"
     />
-    <div v-else>Unknown tag: {{ state.program.current.tag }}</div>
+    <Unknown v-else :state="state" />
   </div>
 </template>

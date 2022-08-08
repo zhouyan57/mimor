@@ -1,7 +1,5 @@
 # mimor
 
-generic -- mimor/views/unknown/Unknown.vue
-
 <question> -- mimor/views/question/Question.vue
 
 - Question.vue
