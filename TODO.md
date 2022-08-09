@@ -1,5 +1,7 @@
 # mimor
 
+set meta theme-color in Mimor -- unmount should undo the color
+
 Extract `RouterMap`
 
 - router.stmt([...]).component()
