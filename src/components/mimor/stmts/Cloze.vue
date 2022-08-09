@@ -18,8 +18,8 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           class="font-bold"
           :class="[
             mimor.theme.name === 'yellow'
-              ? 'text-purple-400'
-              : 'text-yellow-400',
+              ? 'text-purple-500'
+              : 'text-yellow-300',
           ]"
         />
         <span
@@ -27,8 +27,8 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           class="font-bold"
           :class="[
             mimor.theme.name === 'yellow'
-              ? 'text-purple-400'
-              : 'text-yellow-400',
+              ? 'text-purple-500'
+              : 'text-yellow-300',
           ]"
           >____</span
         >
