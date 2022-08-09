@@ -1,6 +1,5 @@
 # mimor
 
-
 MimorStmt v.s. MimorNode
 
 - `router.node`
