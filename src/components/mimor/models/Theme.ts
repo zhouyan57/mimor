@@ -26,6 +26,18 @@ export class Theme {
   get notWhite(): boolean {
     return !this.isWhite
   }
+
+  bg(level: number): string {
+    return `bg-${this.name}-${level}`
+  }
+
+  border(level: number): string {
+    return `border-${this.name}-${level}`
+  }
+
+  text(level: number): string {
+    return `text-${this.name}-${level}`
+  }
 }
 
 function translateColorName(name: string): string {

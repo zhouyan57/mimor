@@ -12,7 +12,7 @@ defineProps<{ mimor: MimorState }>()
       v-if="!mimor.revealed"
       @click="mimor.revealed = true"
       class="p-3 border w-full flex flex-col items-start"
-      :class="[`bg-${mimor.theme.name}-400`, `border-${mimor.theme.name}-400`]"
+      :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
     >
       <EyeIcon
         class="w-6 h-6"
@@ -30,10 +30,7 @@ defineProps<{ mimor: MimorState }>()
       <button
         @click="mimor.forgotten()"
         class="p-3 border w-full flex flex-col items-start"
-        :class="[
-          `bg-${mimor.theme.name}-400`,
-          `border-${mimor.theme.name}-400`,
-        ]"
+        :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
         <XIcon
           class="w-6 h-6"
@@ -52,10 +49,7 @@ defineProps<{ mimor: MimorState }>()
       <button
         @click="mimor.remembered()"
         class="p-3 border w-full flex flex-col items-start"
-        :class="[
-          `bg-${mimor.theme.name}-400`,
-          `border-${mimor.theme.name}-400`,
-        ]"
+        :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
         <CheckIcon
           class="w-6 h-6"

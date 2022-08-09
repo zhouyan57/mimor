@@ -1,9 +1,5 @@
 # mimor
 
-Use theme.bg theme.border theme.text
-
-- quit using "${mimor.theme.name}" and "${state.theme.name}"
-
 How to support paragraph?
 
 PageLayout -- style

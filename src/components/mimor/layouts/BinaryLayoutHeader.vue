@@ -14,7 +14,7 @@ defineProps<{ mimor: MimorState }>()
       </Lang>
     </div>
     <div class="font-logo font-light">
-      <Lang :class="[mimor.theme.notWhite && `text-${mimor.theme.name}-800`]">
+      <Lang :class="[mimor.theme.notWhite && mimor.theme.text(800)]">
         <template #zh>谜墨</template>
         <template #en>Mimor</template>
       </Lang>
