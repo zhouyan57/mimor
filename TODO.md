@@ -1,12 +1,18 @@
 # mimor
 
+
 MimorStmt v.s. MimorNode
+
+- `router.node`
+- `router.view`
 
 MimorState has `theme`
 
-PageLayout -- style
+BinaryLayoutControl -- handle forgot
+BinaryLayoutHeader -- be able to undo
+BinaryLayoutHeader -- use dots to record progress
 
-Question -- Transition
+PageLayout -- style
 
 <cover> -- welcome and info
 
@@ -14,7 +20,9 @@ Question -- Transition
 
 # editor
 
-generic web xml editor
+MimorEditor -- simple plaintext editor
+
+MimorEditor -- generic web xml editor
 
 # learn
 
