@@ -1,15 +1,10 @@
 # mimor
 
-MimorStmt v.s. MimorNode
-
-- `router.node`
-- `router.view`
+- inline `Unknown`
 
 MimorState has `theme`
 
 BinaryLayoutControl -- handle forgot
-BinaryLayoutHeader -- be able to undo
-BinaryLayoutHeader -- use dots to record progress
 
 PageLayout -- style
 

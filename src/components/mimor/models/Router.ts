@@ -1,19 +1,42 @@
 import { Component, markRaw } from "vue"
 
 export class Router {
-  routes: Record<string, Component> = {}
+  nodeRoutes: Record<string, Component> = {}
+  stmtRoutes: Record<string, Component> = {}
 
-  tag(tag: string, component: Component): void {
-    this.routes[tag] = markRaw(component)
-  }
-
-  tags(tags: Array<string>, component: Component): void {
-    for (const tag of tags) {
-      this.tag(tag, component)
+  node(input: string | Array<string>, component: Component): void {
+    if (typeof input === "string") {
+      this.oneNode(input, component)
+    } else {
+      for (const tag of input) {
+        this.oneNode(tag, component)
+      }
     }
   }
 
-  route(tag: string): Component | undefined {
-    return this.routes[tag]
+  oneNode(tag: string, component: Component): void {
+    this.nodeRoutes[tag] = markRaw(component)
+  }
+
+  routeNode(tag: string): Component | undefined {
+    return this.nodeRoutes[tag]
+  }
+
+  stmt(input: string | Array<string>, component: Component): void {
+    if (typeof input === "string") {
+      this.oneStmt(input, component)
+    } else {
+      for (const tag of input) {
+        this.oneStmt(tag, component)
+      }
+    }
+  }
+
+  oneStmt(tag: string, component: Component): void {
+    this.stmtRoutes[tag] = markRaw(component)
+  }
+
+  routeStmt(tag: string): Component | undefined {
+    return this.stmtRoutes[tag]
   }
 }
