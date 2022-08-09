@@ -1,11 +1,9 @@
 {
   "name": "Mimor",
-  "short_name": "Mm",
+  "short_name": "Mimor",
   "description": "Making memory a choice.",
   "display": "standalone",
   "start_url": "/",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
