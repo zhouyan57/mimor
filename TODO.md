@@ -1,9 +1,6 @@
 # mimor
 
-NodeStmt different kind of route target -- component and effect
-
-- router.stmts.effect([...], effect)
-- fix `mimor.progress`
+fix `mimor.progress`
 
 wrap Mimor in overflow-hidden
 
