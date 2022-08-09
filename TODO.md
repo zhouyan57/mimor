@@ -1,8 +1,10 @@
 # mimor
 
+BinaryLayoutControl -- handle forgot
+
 Mimor support `theme`
 
-BinaryLayoutControl -- handle forgot
+how to support paragraph?
 
 PageLayout -- style
 
