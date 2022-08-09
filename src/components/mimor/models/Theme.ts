@@ -1,20 +1,22 @@
-import colors from "tailwindcss/colors"
-
-export type Color =
-  | "white"
-  | "red"
-  | "orange"
-  | "yellow"
-  | "green"
-  | "blue"
-  | "indigo"
-  | "purple"
+import tailwindColors from "tailwindcss/colors"
 
 export class Theme {
-  constructor(public name: Color) {}
+  _name: string
+
+  constructor(name: string) {
+    this._name = name
+  }
+
+  get name(): string {
+    return translateColorName(this._name)
+  }
+
+  set name(name: string) {
+    this._name = name
+  }
 
   get color(): string {
-    return colors[this.name][400]
+    return (tailwindColors as any)[this.name][400] || "#ffffff"
   }
 
   get isWhite(): boolean {
@@ -24,4 +26,32 @@ export class Theme {
   get notWhite(): boolean {
     return !this.isWhite
   }
+}
+
+function translateColorName(name: string): string {
+  return name
+}
+
+export const colors = [
+  "white",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "indigo",
+  "purple",
+]
+
+const chineseColorNames = {
+  白: "white",
+  红: "red",
+  赤: "red",
+  橙: "orange",
+  黄: "yellow",
+  绿: "green",
+  蓝: "blue",
+  青: "blue",
+  靛: "indigo",
+  紫: "purple",
 }

@@ -52,10 +52,6 @@ export class MimorState {
   }
 
   get current(): XElement {
-    if (this.remaining.length === 0) {
-      throw new Error("No remaining statements.")
-    }
-
     return this.elements[this.pointer]
   }
 

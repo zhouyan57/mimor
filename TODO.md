@@ -1,9 +1,19 @@
 # mimor
 
-Be able to specify theme mimor code
+Extract `RouterRecord`
 
-- <theme color="blue" />
-- <主题 颜色="青" />
+- router.stmt([...]).component()
+- router.node([...]).component()
+
+NodeStmt different kind of route target -- component and effect
+
+- router.stmt([...]).effect()
+
+wrap Mimor in overflow-hidden
+
+Use theme.bg theme.border theme.text
+
+- quit using "${mimor.theme.name}" and "${state.theme.name}"
 
 How to support paragraph?
 
