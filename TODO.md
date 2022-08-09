@@ -1,6 +1,6 @@
 # mimor
 
-fix `mimor.progress`
+extract effects/Theme
 
 fix double layout -- should only use one <RouterView />
 
