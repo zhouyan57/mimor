@@ -22,8 +22,8 @@ module.exports = {
         // "Helvetica",
         // "EB Garamond",
         "Linux Libertine O",
-        "Source Han Serif SC",
-        // "LXGW WenKai",
+        // "Source Han Serif SC",
+        "LXGW WenKai",
         "serif",
       ],
       mono: [
