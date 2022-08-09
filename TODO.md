@@ -8,6 +8,7 @@ Extract `RouterRecord`
 NodeStmt different kind of route target -- component and effect
 
 - router.stmt([...]).effect()
+- fix `mimor.progress`
 
 wrap Mimor in overflow-hidden
 
