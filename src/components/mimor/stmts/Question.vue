@@ -12,9 +12,9 @@ defineProps<{ mimor: MimorState; element: XElement }>()
     <div v-for="(child, index) of element.children" :key="index">
       <div v-if="matchElement(child, { tags: ['answer', '答'] })">
         <Transition
-          enter-active-class="transition duration-500"
-          enter-from-class="transform opacity-0"
-          enter-to-class="transform opacity-100"
+          enter-active-class="transition duration-700 ease-in-out"
+          enter-from-class="transform transform-gpu opacity-0"
+          enter-to-class="transform transform-gpu opacity-100"
         >
           <MimorNodes
             v-show="mimor.revealed"
