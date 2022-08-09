@@ -1,5 +1,7 @@
 # mimor
 
+MimorStmt v.s. MimorNode
+
 MimorState has `theme`
 
 PageLayout -- style

@@ -33,7 +33,13 @@ const text = `
 
 const state = reactive({
   finished: false,
+  flag: true,
 })
+
+function again() {
+  state.finished = false
+  state.flag = !state.flag
+}
 </script>
 
 <template>
@@ -43,6 +49,7 @@ const state = reactive({
     <Mimor
       v-if="!state.finished"
       class="h-full"
+      :key="state.flag.toString()"
       :options="{
         text,
         onFinished: () => {
@@ -50,8 +57,16 @@ const state = reactive({
         },
       }"
     />
-    <div v-else>
-      <div class="font-bold text-2xl font-logo">The End</div>
+    <div v-else class="h-full flex flex-col items-start justify-between">
+      <div></div>
+
+      <div class="flex w-full justify-center">
+        <div class="text-4xl">The End</div>
+      </div>
+
+      <button class="text-2xl border p-2 border-stone-400" @click="again()">
+        Again
+      </button>
     </div>
   </div>
 </template>

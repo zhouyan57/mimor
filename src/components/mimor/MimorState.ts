@@ -11,6 +11,7 @@ export class MimorState {
   router = new Router()
   nodes: Array<XNode>
   pointer: number = 0
+  revealed = false
 
   constructor(public options: MimorOptions) {
     this.nodes = parseNodes(options.text)
@@ -30,6 +31,10 @@ export class MimorState {
     return element
   }
 
+  get key(): string {
+    return JSON.stringify(this.current)
+  }
+
   get length(): number {
     return this.elements.length
   }
@@ -38,8 +43,13 @@ export class MimorState {
     return this.pointer === this.length
   }
 
+  get progress(): string {
+    return `${this.pointer} / ${this.length}`
+  }
+
   next(): void {
     this.pointer++
+    this.revealed = false
     if (this.finished) {
       this.options.onFinished()
     }

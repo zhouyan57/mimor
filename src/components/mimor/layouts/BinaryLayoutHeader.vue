@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import Lang from "../../../components/Lang.vue"
-import { BinaryLayoutState as State } from "./BinaryLayoutState"
+import { MimorState } from "../MimorState"
 
-defineProps<{ state: State }>()
+defineProps<{ mimor: MimorState }>()
 </script>
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div class="font-bold text-stone-500">
       <Lang>
-        <template #zh>进展：{{ state.progress }}</template>
-        <template #en>Progress: {{ state.progress }}</template>
+        <template #zh>进展：{{ mimor.progress }}</template>
+        <template #en>Progress: {{ mimor.progress }}</template>
       </Lang>
     </div>
     <div class="font-logo font-light">
