@@ -19,6 +19,8 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           :class="[
             mimor.theme.name === 'yellow'
               ? 'text-purple-500'
+              : mimor.theme.isWhite
+              ? 'text-yellow-500'
               : 'text-yellow-300',
           ]"
         />
@@ -28,6 +30,8 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           :class="[
             mimor.theme.name === 'yellow'
               ? 'text-purple-500'
+              : mimor.theme.isWhite
+              ? 'text-yellow-500'
               : 'text-yellow-300',
           ]"
           >____</span

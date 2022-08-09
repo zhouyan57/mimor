@@ -1,7 +1,5 @@
 # mimor
 
-set meta theme-color in Mimor -- unmount should undo the color
-
 Extract `RouterMap`
 
 - router.stmt([...]).component()
@@ -25,6 +23,8 @@ PageLayout -- style
 <cover> -- welcome and info
 
 <ending> -- cheer up
+
+set meta theme-color in Mimor fullscreen -- unmount should undo the color
 
 # editor
 
