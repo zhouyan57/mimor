@@ -8,8 +8,8 @@ defineProps<{ mimor: MimorState; node: XNode }>()
 <template>
   <span v-if="!isElement(node)">{{ node }}</span>
   <component
-    v-else-if="mimor.router.nodes.hasComponent(node.tag)"
-    :is="mimor.router.nodes.getComponent(node.tag)"
+    v-else-if="mimor.router.nodes.findNode(node.tag)"
+    :is="mimor.router.nodes.findNode(node.tag)"
     :mimor="mimor"
     :element="node"
   />

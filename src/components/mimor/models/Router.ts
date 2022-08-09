@@ -18,28 +18,24 @@ type StmtRoute =
 export class StmtRouteMap {
   routes: Record<string, StmtRoute> = {}
 
-  component(input: string | Array<string>, component: Component): void {
+  defineCard(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
-      this.setComponent(input, component)
+      this.setCard(input, component)
     } else {
       for (const tag of input) {
-        this.setComponent(tag, component)
+        this.setCard(tag, component)
       }
     }
   }
 
-  setComponent(tag: string, component: Component): void {
+  setCard(tag: string, component: Component): void {
     this.routes[tag] = {
       kind: "Component",
       component: markRaw(component),
     }
   }
 
-  hasComponent(tag: string): boolean {
-    return this.routes[tag]?.kind === "Component"
-  }
-
-  getComponent(tag: string): Component | undefined {
+  findCard(tag: string): Component | undefined {
     const route = this.routes[tag]
     if (route === undefined) return undefined
     if (route.kind === "Component") {
@@ -49,7 +45,7 @@ export class StmtRouteMap {
     }
   }
 
-  effect(input: string | Array<string>, effect: Effect): void {
+  defineEffect(input: string | Array<string>, effect: Effect): void {
     if (typeof input === "string") {
       this.setEffect(input, effect)
     } else {
@@ -63,11 +59,7 @@ export class StmtRouteMap {
     this.routes[tag] = { kind: "Effect", effect }
   }
 
-  hasEffect(tag: string): boolean {
-    return this.routes[tag]?.kind === "Effect"
-  }
-
-  getEffect(tag: string): Effect | undefined {
+  findEffect(tag: string): Effect | undefined {
     const route = this.routes[tag]
     if (route === undefined) return undefined
     if (route.kind === "Effect") {
@@ -81,25 +73,21 @@ export class StmtRouteMap {
 export class NodeRouteMap {
   routes: Record<string, Component> = {}
 
-  component(input: string | Array<string>, component: Component): void {
+  defineNode(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
-      this.setComponent(input, component)
+      this.setNode(input, component)
     } else {
       for (const tag of input) {
-        this.setComponent(tag, component)
+        this.setNode(tag, component)
       }
     }
   }
 
-  setComponent(tag: string, component: Component): void {
+  setNode(tag: string, component: Component): void {
     this.routes[tag] = markRaw(component)
   }
 
-  hasComponent(tag: string): boolean {
-    return Boolean(this.routes[tag])
-  }
-
-  getComponent(tag: string): Component | undefined {
+  findNode(tag: string): Component | undefined {
     return this.routes[tag]
   }
 }
