@@ -1,7 +1,5 @@
 # mimor
 
-findEffect findCard findNode take node instead of tag
-
 fix double layout -- should only use one <RouterView />
 
 Use theme.bg theme.border theme.text
