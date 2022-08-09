@@ -2,21 +2,17 @@ import { Component, markRaw } from "vue"
 import { XElement } from "../../../libs/x-node"
 import { MimorState } from "../MimorState"
 
-export class Router {
-  nodes = new NodeRouteMap()
-  stmts = new StmtRouteMap()
-}
-
 export type EffectOptions = { mimor: MimorState; element: XElement }
 
 export type Effect = (options: EffectOptions) => void
 
-type StmtRoute =
+type Route =
   | { kind: "Component"; component: Component }
   | { kind: "Effect"; effect: Effect }
+  | { kind: "Node"; component: Component }
 
-export class StmtRouteMap {
-  routes: Record<string, StmtRoute> = {}
+export class Router {
+  routes: Record<string, Route> = {}
 
   defineCard(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
@@ -68,10 +64,6 @@ export class StmtRouteMap {
       return undefined
     }
   }
-}
-
-export class NodeRouteMap {
-  routes: Record<string, Component> = {}
 
   defineNode(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
@@ -84,10 +76,19 @@ export class NodeRouteMap {
   }
 
   setNode(tag: string, component: Component): void {
-    this.routes[tag] = markRaw(component)
+    this.routes[tag] = {
+      kind: "Node",
+      component: markRaw(component),
+    }
   }
 
   findNode(tag: string): Component | undefined {
-    return this.routes[tag]
+    const route = this.routes[tag]
+    if (route === undefined) return undefined
+    if (route.kind === "Node") {
+      return route.component
+    } else {
+      return undefined
+    }
   }
 }

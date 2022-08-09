@@ -1,7 +1,5 @@
 # mimor
 
-inline nodes and stmts to router
-
 findEffect findCard findNode take node instead of tag
 
 fix double layout -- should only use one <RouterView />

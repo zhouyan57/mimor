@@ -4,7 +4,7 @@ import { Theme } from "./effects/Theme"
 import { Router } from "./models/Router"
 
 export function mountRoutes(router: Router): void {
-  router.stmts.defineCard(["question", "问"], Question)
-  router.stmts.defineCard(["cloze", "填空"], Cloze)
-  router.stmts.defineEffect(["theme", "主题"], Theme)
+  router.defineCard(["question", "问"], Question)
+  router.defineCard(["cloze", "填空"], Cloze)
+  router.defineEffect(["theme", "主题"], Theme)
 }

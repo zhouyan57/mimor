@@ -69,16 +69,12 @@ export class MimorState {
 
   get progress(): string {
     const total = this.elements
-      .map((element) =>
-        Number(Boolean(this.router.stmts.findCard(element.tag)))
-      )
+      .map((element) => Number(Boolean(this.router.findCard(element.tag))))
       .reduce((sum, flag) => sum + flag, 0)
 
     const remaining = this.remaining
       .map((index) => this.elements[index])
-      .map((element) =>
-        Number(Boolean(this.router.stmts.findCard(element.tag)))
-      )
+      .map((element) => Number(Boolean(this.router.findCard(element.tag))))
       .reduce((sum, flag) => sum + flag, 0)
 
     const remembered = total - remaining
