@@ -44,7 +44,7 @@ export class MimorState {
   }
 
   get progress(): string {
-    return `${this.pointer} / ${this.length}`
+    return `${this.pointer + 1} / ${this.length}`
   }
 
   next(): void {
