@@ -49,6 +49,24 @@ note
   ])
 })
 
+test("Self closing tag", () => {
+  const nodes = parseNodes(
+    `
+<主题 颜色="青" />
+`
+  )
+
+  expect(nodes).toEqual([
+    "\n",
+    {
+      tag: "主题",
+      attributes: { 颜色: "青" },
+      children: [],
+    },
+    "\n",
+  ])
+})
+
 test("error on disallowed character in tag name", () => {
   expect(() => {
     const nodes = parseNodes(`<q&a></q&a>`)
