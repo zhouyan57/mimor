@@ -44,7 +44,7 @@ function again() {
 
 <template>
   <div class="h-full flex flex-col">
-    <div class="text-3xl">Demo</div>
+    <div class="text-3xl">Demo 1</div>
 
     <Mimor
       v-if="!state.finished"
