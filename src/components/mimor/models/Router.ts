@@ -93,7 +93,11 @@ export class NodeRouteMap {
     this.routes[tag] = markRaw(component)
   }
 
-  route(tag: string): Component | undefined {
+  hasComponent(tag: string): boolean {
+    return Boolean(this.routes[tag])
+  }
+
+  getComponent(tag: string): Component | undefined {
     return this.routes[tag]
   }
 }
