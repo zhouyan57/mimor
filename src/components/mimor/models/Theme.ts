@@ -29,7 +29,7 @@ export class Theme {
 }
 
 function translateColorName(name: string): string {
-  return name
+  return chineseColorNames[name] || name
 }
 
 export const colors = [
@@ -43,7 +43,7 @@ export const colors = [
   "purple",
 ]
 
-const chineseColorNames = {
+const chineseColorNames: Record<string, string> = {
   白: "white",
   红: "red",
   赤: "red",
@@ -54,4 +54,4 @@ const chineseColorNames = {
   青: "blue",
   靛: "indigo",
   紫: "purple",
-}
+} 

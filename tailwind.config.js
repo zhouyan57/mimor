@@ -13,7 +13,6 @@ module.exports = {
     extend: {
       colors: {
         blue: colors.sky,
-        green: colors.lime,
       },
       rotate: {
         15: "15deg",

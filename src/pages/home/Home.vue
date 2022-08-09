@@ -20,7 +20,7 @@ async function load() {
 }
 
 async function loadText() {
-  const response = await fetch("/examples/sisuo.mimor")
+  const response = await fetch("/contents/sisuo.mimor")
   const text = await response.text()
   state.text = text
 }
