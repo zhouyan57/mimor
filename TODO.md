@@ -1,8 +1,8 @@
 # mimor
 
-Mimor support `theme`
+How to specify theme mimor code?
 
-how to support paragraph?
+How to support paragraph?
 
 PageLayout -- style
 

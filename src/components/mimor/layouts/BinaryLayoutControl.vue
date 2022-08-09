@@ -12,9 +12,15 @@ defineProps<{ mimor: MimorState }>()
       v-if="!mimor.revealed"
       @click="mimor.revealed = true"
       class="p-3 border w-full flex flex-col items-start"
+      :class="[`bg-${mimor.theme.name}-400`, `border-${mimor.theme.name}-400`]"
     >
-      <EyeIcon class="w-6 h-6 text-yellow-500" />
-      <Lang>
+      <EyeIcon
+        class="w-6 h-6"
+        :class="[
+          mimor.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
+        ]"
+      />
+      <Lang :class="[mimor.theme.notWhite && 'text-white']">
         <template #zh>揭示</template>
         <template #en>Reveal</template>
       </Lang>
@@ -24,9 +30,20 @@ defineProps<{ mimor: MimorState }>()
       <button
         @click="mimor.forgotten()"
         class="p-3 border w-full flex flex-col items-start"
+        :class="[
+          `bg-${mimor.theme.name}-400`,
+          `border-${mimor.theme.name}-400`,
+        ]"
       >
-        <XIcon class="w-6 h-6 text-yellow-500" />
-        <Lang>
+        <XIcon
+          class="w-6 h-6"
+          :class="[
+            mimor.theme.name === 'yellow'
+              ? 'text-purple-400'
+              : 'text-yellow-400',
+          ]"
+        />
+        <Lang :class="[mimor.theme.notWhite && 'text-white']">
           <template #zh>忘了</template>
           <template #en>Forgotten</template>
         </Lang>
@@ -35,9 +52,20 @@ defineProps<{ mimor: MimorState }>()
       <button
         @click="mimor.remembered()"
         class="p-3 border w-full flex flex-col items-start"
+        :class="[
+          `bg-${mimor.theme.name}-400`,
+          `border-${mimor.theme.name}-400`,
+        ]"
       >
-        <CheckIcon class="w-6 h-6 text-yellow-500" />
-        <Lang>
+        <CheckIcon
+          class="w-6 h-6"
+          :class="[
+            mimor.theme.name === 'yellow'
+              ? 'text-purple-400'
+              : 'text-yellow-400',
+          ]"
+        />
+        <Lang :class="[mimor.theme.notWhite && 'text-white']">
           <template #zh>记得</template>
           <template #en>Remembered</template>
         </Lang>

@@ -30,7 +30,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
         :node="child"
         :class="[
           mimor.revealed ? 'text-xl' : 'text-2xl',
-          mimor.revealed && 'text-stone-500',
+          mimor.revealed && 'text-stone-700',
         ]"
       />
     </div>

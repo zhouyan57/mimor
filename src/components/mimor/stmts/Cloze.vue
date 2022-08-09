@@ -15,9 +15,23 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           v-if="mimor.revealed"
           :mimor="mimor"
           :nodes="child.children"
-          class="font-bold text-yellow-500"
+          class="font-bold"
+          :class="[
+            mimor.theme.name === 'yellow'
+              ? 'text-purple-400'
+              : 'text-yellow-400',
+          ]"
         />
-        <span v-else class="font-bold text-yellow-500">____</span>
+        <span
+          v-else
+          class="font-bold"
+          :class="[
+            mimor.theme.name === 'yellow'
+              ? 'text-purple-400'
+              : 'text-yellow-400',
+          ]"
+          >____</span
+        >
       </span>
       <MimorNode v-else :mimor="mimor" :node="child" />
     </span>

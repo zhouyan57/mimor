@@ -7,14 +7,14 @@ defineProps<{ mimor: MimorState }>()
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
-    <div class="font-bold text-stone-500">
-      <Lang>
+    <div class="text-stone-700 font-bold">
+      <Lang :class="[mimor.theme.notWhite && 'text-white']">
         <template #zh>进展：{{ mimor.progress }}</template>
         <template #en>Progress: {{ mimor.progress }}</template>
       </Lang>
     </div>
     <div class="font-logo font-light">
-      <Lang>
+      <Lang :class="[mimor.theme.notWhite && `text-${mimor.theme.name}-800`]">
         <template #zh>谜墨</template>
         <template #en>Mimor</template>
       </Lang>

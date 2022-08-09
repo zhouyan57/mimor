@@ -10,7 +10,7 @@ const state = reactive(new State(options))
 </script>
 
 <template>
-  <div class="border border-stone-400">
+  <div class="border" :class="[`bg-${state.theme.name}-300`]">
     <BinaryLayout :mimor="state">
       <MimorNode :mimor="state" :node="state.current" />
     </BinaryLayout>

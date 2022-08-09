@@ -5,12 +5,16 @@ module.exports = {
   safelist: [
     {
       pattern:
-        /(text|border|bg)-(red|orange|yellow|green|teal|blue|purple)-(50|100|200|300|400|500|600|700|800|900)/,
+        /(text|border|bg)-(red|orange|yellow|green|blue|indigo|purple)-(50|100|200|300|400|500|600|700|800|900)/,
       variants: ["hover", "focus"],
     },
   ],
   theme: {
     extend: {
+      colors: {
+        blue: colors.sky,
+        green: colors.lime,
+      },
       rotate: {
         15: "15deg",
         20: "20deg",
