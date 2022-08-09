@@ -1,4 +1,3 @@
-import invariant from "tiny-invariant"
 import { isElement, parseNodes, XElement, XNode } from "../../libs/x-node"
 import { Router } from "./models/Router"
 import { Theme } from "./models/Theme"
@@ -20,8 +19,11 @@ export class MimorState {
   constructor(public options: MimorOptions) {
     this.nodes = parseNodes(options.text)
     this.remaining = [...Array(this.length).keys()]
-    const index = this.remaining.pop()
-    invariant(index, "initial nodes can not be empty.")
+    const index = this.remaining.shift()
+    if (index === undefined) {
+      throw new Error("initial nodes can not be empty.")
+    }
+
     this.pointer = index
     mountRoutes(this.router)
   }

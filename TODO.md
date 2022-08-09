@@ -1,6 +1,9 @@
 # mimor
 
-How to specify theme mimor code?
+Be able to specify theme mimor code
+
+- <theme color="blue" />
+- <主题 颜色="青" />
 
 How to support paragraph?
 
