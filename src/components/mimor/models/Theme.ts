@@ -54,4 +54,4 @@ const chineseColorNames: Record<string, string> = {
   青: "blue",
   靛: "indigo",
   紫: "purple",
-} 
+}

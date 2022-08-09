@@ -1,13 +1,8 @@
 # mimor
 
-Extract `RouterMap`
-
-- router.stmt([...]).component()
-- router.node([...]).component()
-
 NodeStmt different kind of route target -- component and effect
 
-- router.stmt([...]).effect()
+- router.stmts.effect([...], effect)
 - fix `mimor.progress`
 
 wrap Mimor in overflow-hidden

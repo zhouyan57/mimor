@@ -1,42 +1,50 @@
 import { Component, markRaw } from "vue"
 
 export class Router {
-  nodeRoutes: Record<string, Component> = {}
-  stmtRoutes: Record<string, Component> = {}
+  nodes = new NodeRouteMap()
+  stmts = new StmtRouteMap()
+}
 
-  node(input: string | Array<string>, component: Component): void {
+export class StmtRouteMap {
+  routes: Record<string, Component> = {}
+
+  component(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
-      this.oneNode(input, component)
+      this.oneComponent(input, component)
     } else {
       for (const tag of input) {
-        this.oneNode(tag, component)
+        this.oneComponent(tag, component)
       }
     }
   }
 
-  oneNode(tag: string, component: Component): void {
-    this.nodeRoutes[tag] = markRaw(component)
+  oneComponent(tag: string, component: Component): void {
+    this.routes[tag] = markRaw(component)
   }
 
-  routeNode(tag: string): Component | undefined {
-    return this.nodeRoutes[tag]
+  route(tag: string): Component | undefined {
+    return this.routes[tag]
   }
+}
 
-  stmt(input: string | Array<string>, component: Component): void {
+export class NodeRouteMap {
+  routes: Record<string, Component> = {}
+
+  component(input: string | Array<string>, component: Component): void {
     if (typeof input === "string") {
-      this.oneStmt(input, component)
+      this.oneComponent(input, component)
     } else {
       for (const tag of input) {
-        this.oneStmt(tag, component)
+        this.oneComponent(tag, component)
       }
     }
   }
 
-  oneStmt(tag: string, component: Component): void {
-    this.stmtRoutes[tag] = markRaw(component)
+  oneComponent(tag: string, component: Component): void {
+    this.routes[tag] = markRaw(component)
   }
 
-  routeStmt(tag: string): Component | undefined {
-    return this.stmtRoutes[tag]
+  route(tag: string): Component | undefined {
+    return this.routes[tag]
   }
 }
