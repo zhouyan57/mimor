@@ -1,6 +1,6 @@
 # mimor
 
-Extract `RouterRecord`
+Extract `RouterMap`
 
 - router.stmt([...]).component()
 - router.node([...]).component()
