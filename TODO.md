@@ -1,7 +1,5 @@
 # mimor
 
-fix double layout -- should only use one <RouterView />
-
 Use theme.bg theme.border theme.text
 
 - quit using "${mimor.theme.name}" and "${state.theme.name}"
