@@ -1,5 +1,6 @@
 import { isElement, parseNodes, XElement, XNode } from "../../libs/x-node"
 import { Router } from "./models/Router"
+import { Theme } from "./models/Theme"
 import { mountRoutes } from "./mountRoutes"
 
 export interface MimorOptions {
@@ -9,6 +10,7 @@ export interface MimorOptions {
 
 export class MimorState {
   router = new Router()
+  theme = new Theme()
   nodes: Array<XNode>
   pointer: number = 0
   revealed = false

@@ -1,6 +1,5 @@
 # mimor
 
-MimorState has `theme`
 Mimor support `theme`
 
 BinaryLayoutControl -- handle forgot
