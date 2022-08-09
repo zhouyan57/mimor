@@ -1,7 +1,5 @@
 # mimor
 
-extract effects/Theme
-
 fix double layout -- should only use one <RouterView />
 
 Use theme.bg theme.border theme.text

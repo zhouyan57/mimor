@@ -7,7 +7,9 @@ export class Router {
   stmts = new StmtRouteMap()
 }
 
-type Effect = (options: { mimor: MimorState; element: XElement }) => void
+export type EffectOptions = { mimor: MimorState; element: XElement }
+
+export type Effect = (options: EffectOptions) => void
 
 type StmtRoute =
   | { kind: "Component"; component: Component }
