@@ -2,7 +2,7 @@
 
 fix `mimor.progress`
 
-wrap Mimor in overflow-hidden
+fix double layout -- should only use one <RouterView />
 
 Use theme.bg theme.border theme.text
 
