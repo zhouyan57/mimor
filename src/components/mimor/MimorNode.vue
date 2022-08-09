@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { isElement, XNode } from "../../libs/x-node"
 import { MimorState } from "./MimorState"
-import Unknown from "./stmts/Unknown.vue"
 
 defineProps<{ mimor: MimorState; node: XNode }>()
 </script>
@@ -14,5 +13,8 @@ defineProps<{ mimor: MimorState; node: XNode }>()
     :mimor="mimor"
     :element="node"
   />
-  <Unknown v-else :mimor="mimor" :element="node" />
+  <div v-else>
+    <div>Unknown node:</div>
+    <pre>{{ node }}</pre>
+  </div>
 </template>

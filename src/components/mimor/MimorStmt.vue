@@ -14,5 +14,8 @@ defineProps<{ mimor: MimorState; node: XNode }>()
     :mimor="mimor"
     :element="node"
   />
-  <Unknown v-else :mimor="mimor" :element="node" />
+  <div v-else>
+    <div>Unknown statement:</div>
+    <pre>{{ node }}</pre>
+  </div>
 </template>

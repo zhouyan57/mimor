@@ -1,7 +1,5 @@
 # mimor
 
-- inline `Unknown`
-
 MimorState has `theme`
 
 BinaryLayoutControl -- handle forgot
