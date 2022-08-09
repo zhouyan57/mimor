@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onMounted } from "vue"
+import { onMounted, reactive } from "vue"
 import Mimor from "../../components/mimor/Mimor.vue"
 
 const state = reactive({
@@ -14,17 +14,18 @@ function again() {
   state.flag = !state.flag
 }
 
-async function loadText() {
-  const response = await fetch("/examples/sisuo.mimor")
-  const text = await response.text()
-  console.log({ text })
-  state.text = text
+async function load() {
+  await loadText()
   state.loading = false
 }
 
-onMounted(() => {
-  loadText()
-})
+async function loadText() {
+  const response = await fetch("/examples/sisuo.mimor")
+  const text = await response.text()
+  state.text = text
+}
+
+onMounted(() => load())
 </script>
 
 <template>
