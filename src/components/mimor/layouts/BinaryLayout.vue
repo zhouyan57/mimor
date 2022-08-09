@@ -19,7 +19,7 @@ defineProps<{ mimor: MimorState }>()
       leave-to-class="transform transform-gpu origin-left opacity-0 scale-50 -rotate-20"
     >
       <div
-        :key="mimor.key"
+        :key="mimor.currentKey"
         class="body p-3 font-serif overscroll-contain overflow-y-auto"
       >
         <slot />

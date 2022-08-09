@@ -22,7 +22,7 @@ defineProps<{ mimor: MimorState }>()
 
     <div v-else class="flex w-full justify-between space-x-1">
       <button
-        @click="mimor.next()"
+        @click="mimor.forgotten()"
         class="p-3 border w-full flex flex-col items-start"
       >
         <XIcon class="w-6 h-6 text-yellow-500" />
@@ -33,7 +33,7 @@ defineProps<{ mimor: MimorState }>()
       </button>
 
       <button
-        @click="mimor.next()"
+        @click="mimor.remembered()"
         class="p-3 border w-full flex flex-col items-start"
       >
         <CheckIcon class="w-6 h-6 text-yellow-500" />

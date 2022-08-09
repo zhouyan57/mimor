@@ -13,11 +13,32 @@ export class MimorState {
   theme = new Theme()
   nodes: Array<XNode>
   pointer: number = 0
+  remaining: Array<number>
   revealed = false
 
   constructor(public options: MimorOptions) {
     this.nodes = parseNodes(options.text)
+    this.remaining = [...Array(this.length).keys()]
     mountRoutes(this.router)
+  }
+
+  forgotten(): void {
+    this.remaining.push(this.pointer)
+    this.next()
+  }
+
+  remembered(): void {
+    this.next()
+  }
+
+  next(): void {
+    const index = this.remaining.shift()
+    if (index === undefined) {
+      this.options.onFinished()
+    } else {
+      this.pointer = index
+      this.revealed = false
+    }
   }
 
   get elements() {
@@ -25,15 +46,14 @@ export class MimorState {
   }
 
   get current(): XElement {
-    const element = this.elements[this.pointer]
-    if (element === undefined) {
-      throw new Error("The element pointer is out of bound.")
+    if (this.remaining.length === 0) {
+      throw new Error("No remaining statements.")
     }
 
-    return element
+    return this.elements[this.pointer]
   }
 
-  get key(): string {
+  get currentKey(): string {
     return JSON.stringify(this.current)
   }
 
@@ -42,18 +62,11 @@ export class MimorState {
   }
 
   get finished(): boolean {
-    return this.pointer === this.length
+    return this.remaining.length === 0
   }
 
   get progress(): string {
-    return `${this.pointer + 1} / ${this.length}`
-  }
-
-  next(): void {
-    this.pointer++
-    this.revealed = false
-    if (this.finished) {
-      this.options.onFinished()
-    }
+    const remembered = this.length - this.remaining.length
+    return `${remembered} / ${this.length}`
   }
 }

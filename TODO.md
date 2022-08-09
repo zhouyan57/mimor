@@ -1,7 +1,5 @@
 # mimor
 
-BinaryLayoutControl -- handle forgot
-
 Mimor support `theme`
 
 how to support paragraph?
