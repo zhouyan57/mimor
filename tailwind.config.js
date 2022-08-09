@@ -10,6 +10,13 @@ module.exports = {
     },
   ],
   theme: {
+    extend: {
+      rotate: {
+        15: "15deg",
+        20: "20deg",
+        30: "30deg",
+      },
+    },
     fontFamily: {
       sans: [
         // "Helvetica",

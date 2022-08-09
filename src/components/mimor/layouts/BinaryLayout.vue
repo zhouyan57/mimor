@@ -11,12 +11,12 @@ defineProps<{ mimor: MimorState }>()
     <BinaryLayoutHeader :mimor="mimor" />
 
     <Transition
-      enter-active-class="transition duration-200 delay-100 ease-in-out"
-      enter-from-class="transform transform-gpu origin-top-left opacity-0 scale-0 rotate-45"
-      enter-to-class="transform transform-gpu origin-top-left opacity-100 scale-100 rotate-0"
-      leave-active-class="transition duration-200 ease-in-out"
-      leave-from-class="transform transform-gpu origin-top-left opacity-100 scale-100 rotate-0"
-      leave-to-class="transform transform-gpu origin-top-left opacity-0 scale-0 -rotate-45"
+      enter-active-class="transition duration-100 delay-75 ease-linear"
+      enter-from-class="transform transform-gpu origin-left opacity-0 rotate-20"
+      enter-to-class="transform transform-gpu origin-left opacity-100 rotate-0"
+      leave-active-class="transition duration-75 ease-linear"
+      leave-from-class="transform transform-gpu origin-left scale-100 rotate-0"
+      leave-to-class="transform transform-gpu origin-left scale-50 -rotate-20"
     >
       <div
         :key="mimor.key"

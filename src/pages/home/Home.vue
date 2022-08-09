@@ -48,7 +48,7 @@ function again() {
 
     <Mimor
       v-if="!state.finished"
-      class="h-full"
+      class="h-full overflow-hidden"
       :key="state.flag.toString()"
       :options="{
         text,
