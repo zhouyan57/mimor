@@ -1,14 +1,16 @@
 # mimor
 
-How to support paragraph?
+support paragraph
+
+- add a break after text ending with two "\n\n"
+
+<code> node
 
 PageLayout -- style
 
-<cover> -- welcome and info
-
-<ending> -- cheer up
-
 set meta theme-color in Mimor fullscreen -- unmount should undo the color
+
+# user and user‘s projects
 
 # editor
 
@@ -18,4 +20,4 @@ MimorEditor -- generic web xml editor
 
 # learn
 
-- learn about html <span> v.s. <div>
+learn about html <span> v.s. <div>
