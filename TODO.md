@@ -8,9 +8,18 @@ support paragraph
 
 PageLayout -- style
 
+# user and user‘s projects
+
+backend data model
+
+- User
+- Project
+
+Mimor fullscreen
+
 set meta theme-color in Mimor fullscreen -- unmount should undo the color
 
-# user and user‘s projects
+Mimor embedded
 
 # editor
 
