@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { MimorState } from "../MimorState"
-import BinaryLayoutControl from "./BinaryLayoutControl.vue"
-import BinaryLayoutHeader from "./BinaryLayoutHeader.vue"
+import IsRememberedControl from "./IsRememberedControl.vue"
+import IsRememberedHeader from "./IsRememberedHeader.vue"
 
 defineProps<{ mimor: MimorState }>()
 </script>
 
 <template>
   <div class="flex flex-col justify-between w-full h-full">
-    <BinaryLayoutHeader :mimor="mimor" />
+    <IsRememberedHeader :mimor="mimor" />
 
     <Transition
       enter-active-class="transition duration-100 delay-75 ease-linear"
@@ -26,6 +26,6 @@ defineProps<{ mimor: MimorState }>()
       </div>
     </Transition>
 
-    <BinaryLayoutControl :mimor="mimor" />
+    <IsRememberedControl :mimor="mimor" />
   </div>
 </template>

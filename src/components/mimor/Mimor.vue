@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
-import BinaryLayout from "./layouts/BinaryLayout.vue"
+import IsRemembered from "./layouts/IsRemembered.vue"
 import type { MimorOptions } from "./MimorState"
 import { MimorState as State } from "./MimorState"
 import MimorStmt from "./MimorStmt.vue"
@@ -11,8 +11,8 @@ const state = reactive(new State(options))
 
 <template>
   <div class="border overflow-hidden" :class="[state.theme.bg(300)]">
-    <BinaryLayout :mimor="state">
+    <IsRemembered :mimor="state">
       <MimorStmt :mimor="state" :node="state.current" />
-    </BinaryLayout>
+    </IsRemembered>
   </div>
 </template>
