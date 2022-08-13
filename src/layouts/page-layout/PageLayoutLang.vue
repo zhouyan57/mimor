@@ -31,7 +31,7 @@ defineProps<{ state: State }>()
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <ListboxOptions class="absolute bg-white left-0 top-8 min-w-max border-2">
+      <ListboxOptions class="absolute bg-white left-0 top-8 min-w-max border">
         <ListboxOption
           v-slot="{ active, selected }"
           v-for="tag of state.lang.tags"
