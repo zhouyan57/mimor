@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { reactive, onMounted } from "vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import RegisterStart from "./RegisterStart.vue"
 import { RegisterState as State } from "./RegisterState"
@@ -7,7 +7,10 @@ import RegisterVerifying from "./RegisterVerifying.vue"
 
 const state = reactive(new State())
 
-state.auth.redirectUser()
+// The `async` is required to run after parent's `onMounted`.
+onMounted(async () => {
+  state.auth.redirectUser()
+})
 </script>
 
 <template>

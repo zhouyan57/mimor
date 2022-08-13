@@ -6,17 +6,29 @@ export class Auth {
   initialized = false
 
   async initialize() {
-    if (this.initialized) return
+    if (this.initialized) {
+      console.log({
+        who: "Auth.initialized",
+        user: this.user,
+      })
+
+      return
+    }
+
     await this.loadUser()
     this.initialized = true
+
+    console.log({
+      who: "Auth.initialize",
+      user: this.user,
+    })
   }
 
   async login(token: string) {
     localStorage.setItem("token", token)
-    console
     const user = await this.loadUser()
     console.log({
-      message: "login",
+      who: "Auth.login",
       user,
     })
   }
@@ -44,6 +56,11 @@ export class Auth {
   redirectUser() {
     const router = useRouter()
 
+    console.log({
+      who: "Auth.redirectUser",
+      user: this.user,
+    })
+
     if (this.user) {
       router.replace({ path: "/" })
     }
@@ -59,7 +76,7 @@ export class Auth {
 
   logout(): void {
     console.log({
-      message: "logout",
+      who: "Auth.logout",
       user: this.user,
     })
 
