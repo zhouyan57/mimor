@@ -11,8 +11,6 @@ const { state, verifying } = defineProps<{
   verifying: VerifyingJson
 }>()
 
-const router = useRouter()
-
 const { stop } = poll<{ name: string; token: string }>({
   target: async () => {
     console.log({ who: "LoginVerifying", message: "polling" })
@@ -23,7 +21,7 @@ const { stop } = poll<{ name: string; token: string }>({
   then: async ({ token }) => {
     const auth = useAuth()
     await auth.login(token)
-    router.replace({ path: "/" })
+    auth.redirectUser()
   },
   interval: 3000,
 })

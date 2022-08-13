@@ -13,6 +13,7 @@ export class Auth {
 
   async login(token: string) {
     localStorage.setItem("token", token)
+    console
     const user = await this.loadUser()
     console.log({
       message: "login",

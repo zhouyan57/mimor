@@ -1,3 +1,5 @@
+fix login bug
+
 login and register on mobile
 
 remember lang in localStorage
