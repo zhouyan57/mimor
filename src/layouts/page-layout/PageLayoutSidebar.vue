@@ -18,7 +18,7 @@ defineProps<{ state: State }>()
         {{ state.auth.user.name }}
       </div>
 
-      <button @clikc="state.auth.logout()" class="hover:underline">
+      <button @click="state.auth.logout()" class="hover:underline">
         <Lang>
           <template #zh>退出</template>
           <template #en>Logout</template>

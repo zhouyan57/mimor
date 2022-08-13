@@ -2,7 +2,6 @@
 import { onMounted, reactive } from "vue"
 import Lang from "../../components/Lang.vue"
 import Loading from "../../components/Loading.vue"
-import { useAuth } from "../../hooks/useAuth"
 import PageLayoutSidebar from "./PageLayoutSidebar.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 

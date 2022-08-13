@@ -49,6 +49,11 @@ export class Auth {
   }
 
   logout(): void {
+    console.log({
+      message: "logout",
+      user: this.user,
+    })
+
     this.user = undefined
     localStorage.removeItem("token")
   }

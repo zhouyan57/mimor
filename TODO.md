@@ -1,4 +1,4 @@
-PageLayoutSidebar be able to logout
+fix Register & Login layout
 
 RegisterVerifying -- fix double register error
 
