@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { reactive, onMounted } from "vue"
+import { reactive, watch } from "vue"
+import { useRouter } from "vue-router"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import RegisterStart from "./RegisterStart.vue"
 import { RegisterState as State } from "./RegisterState"
@@ -7,10 +8,17 @@ import RegisterVerifying from "./RegisterVerifying.vue"
 
 const state = reactive(new State())
 
-// The `async` is required to run after parent's `onMounted`.
-onMounted(async () => {
-  state.auth.redirectUser()
-})
+const router = useRouter()
+
+watch(
+  () => state.auth.user,
+  () => {
+    if (state.auth.user) {
+      router.replace({ path: "/" })
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <template>

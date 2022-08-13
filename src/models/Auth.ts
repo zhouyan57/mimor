@@ -1,4 +1,3 @@
-import { useRouter } from "vue-router"
 import { UserJson, UserSchema } from "../jsons/UserJson"
 
 export class Auth {
@@ -51,27 +50,6 @@ export class Auth {
     if (!data) return
 
     this.user = UserSchema.validate(data)
-  }
-
-  redirectUser() {
-    const router = useRouter()
-
-    console.log({
-      who: "Auth.redirectUser",
-      user: this.user,
-    })
-
-    if (this.user) {
-      router.replace({ path: "/" })
-    }
-  }
-
-  redirectGuest() {
-    const router = useRouter()
-
-    if (!this.user) {
-      router.replace({ path: "/" })
-    }
   }
 
   logout(): void {
