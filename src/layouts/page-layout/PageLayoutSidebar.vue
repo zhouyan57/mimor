@@ -13,7 +13,20 @@ defineProps<{ state: State }>()
     <PageLayoutLogo :state="state" />
     <PageLayoutLang :state="state" />
 
-    <div class="flex-col flex text-xl font-bold py-1 space-y-2">
+    <div v-if="state.auth.user">
+      <div>
+        {{ state.auth.user.name }}
+      </div>
+
+      <button @clikc="state.auth.logout()" class="hover:underline">
+        <Lang>
+          <template #zh>退出</template>
+          <template #en>Logout</template>
+        </Lang>
+      </button>
+    </div>
+
+    <div v-else class="flex-col flex text-xl font-bold py-1 space-y-2">
       <Link href="/register" class="hover:underline">
         <Lang>
           <template #zh>注册</template>
@@ -26,10 +39,6 @@ defineProps<{ state: State }>()
           <template #en>Login</template>
         </Lang>
       </Link>
-    </div>
-
-    <div v-if="state.auth.user">
-      {{ state.auth.user.name }}
     </div>
   </div>
 </template>

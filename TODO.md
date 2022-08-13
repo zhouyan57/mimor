@@ -1,7 +1,5 @@
 PageLayoutSidebar be able to logout
 
-PageLayoutSidebar do not should guest links
-
 RegisterVerifying -- fix double register error
 
 # mimor
