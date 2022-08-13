@@ -13,13 +13,13 @@ const form = useForm({ username: "", name: "", email: "" })
 
 <template>
   <form
+    class="flex w-full flex-col space-y-2 text-xl sm:w-auto"
     @submit.prevent="
       (event) =>
         form.postByEvent(event, state.links.register, {
           then: (result) => state.verify(result),
         })
     "
-    class="flex w-full flex-col space-y-2 text-xl sm:w-auto"
   >
     <Lang class="font-logo text-3xl font-semibold">
       <template #zh>注册</template>

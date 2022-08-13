@@ -15,12 +15,12 @@ const form = useForm({ email: "" })
 
 <template>
   <form
+    class="flex w-full flex-col pt-20 space-y-2 text-xl sm:w-auto"
     @submit.prevent="
       form.post(state.links.login, {
         then: (result) => state.verify(result),
       })
     "
-    class="flex w-full flex-col pt-20 space-y-2 text-xl sm:w-auto"
   >
     <div class="flex flex-col pb-2">
       <div class="flex items-baseline justify-between">
