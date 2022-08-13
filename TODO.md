@@ -1,9 +1,7 @@
-link to `/register` page from sidebar
-
+link to `/register` & `/login` page from sidebar
+`/register` fix style
+`/login` fix style
 use localStorage instead of cookie
-
-copy `login` page from pomodoro
-link to `/login` page from sidebar
 
 # mimor
 
