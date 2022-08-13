@@ -37,11 +37,10 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div v-if="form.invalid?.username">
-      <Lang class="font-bold text-yellow-300 text-base py-1">
-        <template #zh>{{ form.invalid.username.zh }}</template>
-        <template #en>{{ form.invalid.username.en }}</template>
-      </Lang>
+    <div v-if="form.unprocessable?.errors.username">
+      <div class="font-bold text-yellow-300 text-base py-1">
+        {{ form.unprocessable.errors.username }}
+      </div>
     </div>
 
     <FormInput name="name" required>
@@ -62,11 +61,10 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div v-if="form.invalid?.email">
-      <Lang class="font-bold text-yellow-300 text-base py-1">
-        <template #zh>{{ form.invalid.email.zh }}</template>
-        <template #en>{{ form.invalid.email.en }}</template>
-      </Lang>
+    <div v-if="form.unprocessable?.errors.email">
+      <div class="font-bold text-yellow-300 text-base py-1">
+        {{ form.unprocessable.errors.email }}
+      </div>
     </div>
 
     <div class="flex flex-col justify-center py-4">

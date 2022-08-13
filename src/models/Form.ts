@@ -5,13 +5,13 @@ interface PostOptions {
   catch?: (error: unknown) => void | Promise<void>
 }
 
-type Invalid<T> = { [P in keyof T]?: { zh: T[P]; en: T[P] } }
+type Unprocessable<T> = { message: string; errors: Record<string, string> }
 
 export class Form<T extends Values> {
   processing = false
   response: Response | undefined = undefined
   error?: Error
-  invalid?: Invalid<T> = {}
+  unprocessable?: Unprocessable<T>
 
   constructor(public values: T) {}
 
@@ -33,7 +33,7 @@ export class Form<T extends Values> {
 
     this.response = undefined
     this.error = undefined
-    this.invalid = {}
+    this.unprocessable = undefined
 
     try {
       this.response = await fetch(url, {
@@ -42,9 +42,8 @@ export class Form<T extends Values> {
         body: JSON.stringify(this.values),
       })
 
-      if (this.response.status === 400) {
-        const data = await this.response.json()
-        this.invalid = data.invalid
+      if (this.response.status === 422) {
+        this.unprocessable = await this.response.json()
       }
 
       if (this.response.ok && options?.then) {

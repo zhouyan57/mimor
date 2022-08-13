@@ -1,4 +1,6 @@
-fix models/Form -- should use laravel error format
+LoginVerifying -- save token in localStorage
+
+RegisterVerifying -- save token in localStorage
 
 # mimor
 
