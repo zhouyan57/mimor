@@ -1,4 +1,3 @@
-link to `/register` & `/login` page from sidebar
 `/register` fix style
 `/login` fix style
 use localStorage instead of cookie
