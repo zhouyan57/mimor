@@ -1,3 +1,7 @@
+add AppState
+
+PageLayout take AppState
+
 RegisterVerifying -- fix double register error
 
 # mimor
