@@ -43,7 +43,8 @@ module.exports = {
         "monospace",
       ],
       logo: [
-        "EB Garamond",
+        "Bodoni Moda",
+        // "EB Garamond",
         // "Linux Libertine O",
         "Source Han Serif SC",
         "serif",
