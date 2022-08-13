@@ -25,12 +25,12 @@ watch(
   <PageLayout>
     <div
       v-if="!state.verifying"
-      class="mt-4 flex h-full flex-col items-center md:mt-10"
+      class="pt-4 flex h-full flex-col items-center md:pt-10"
     >
       <LoginStart :state="state" />
     </div>
 
-    <div v-else class="mt-12 flex h-full flex-col items-center md:mt-10">
+    <div v-else class="pt-12 flex h-full flex-col items-center md:pt-10">
       <LoginVerifying :state="state" :verifying="state.verifying" />
     </div>
   </PageLayout>

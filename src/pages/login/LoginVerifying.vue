@@ -66,7 +66,7 @@ async function revoke() {
       </div>
 
       <button
-        class="my-2 font-sans font-bold hover:text-stone-500"
+        class="py-2 font-sans font-bold hover:text-stone-500"
         @click="revoke()"
       >
         <Lang class="py-1 text-lg">

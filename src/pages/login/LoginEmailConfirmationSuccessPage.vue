@@ -8,7 +8,7 @@ const lang = useLang()
 
 <template>
   <div
-    class="my-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
+    class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
   >
     <Head>
       <title v-if="lang.zh">邮件登录确认 · 成功 | 只读</title>
