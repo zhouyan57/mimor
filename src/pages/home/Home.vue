@@ -32,7 +32,7 @@ onMounted(() => load())
 <template>
   <PageLayout>
     <div class="h-full flex flex-col">
-      <div class="text-3xl">Demo 1</div>
+      <div class="text-3xl">Demo</div>
 
       <div v-if="state.loading">Loading...</div>
 
