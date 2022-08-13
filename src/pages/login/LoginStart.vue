@@ -52,12 +52,7 @@ const form = useForm({ email: "" })
           id="email"
           name="email"
           autocomplete="email"
-          class="w-full rounded-sm border px-3 py-4 font-bold placeholder-opacity-60"
-          :class="[
-            `text-stone-700`,
-            `border-stone-600`,
-            `placeholder-stone-800`,
-          ]"
+          class="w-full rounded-sm border border-stone-800 px-3 py-4 font-bold placeholder-opacity-60"
           type="email"
           maxlength="100"
           :placeholder="state.lang.zh ? '电子邮箱' : 'Email'"
@@ -67,7 +62,7 @@ const form = useForm({ email: "" })
 
         <button
           class="pl-2"
-          :class="[form.processing ? `text-stone-300` : `text-stone-100`]"
+          :class="[form.processing && 'text-stone-300']"
           type="submit"
           :disabled="form.processing"
         >

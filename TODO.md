@@ -1,5 +1,4 @@
 `/register` fix style
-`/login` fix style
 use localStorage instead of cookie
 
 # mimor
