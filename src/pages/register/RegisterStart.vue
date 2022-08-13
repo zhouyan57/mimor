@@ -38,7 +38,7 @@ const form = useForm({ username: "", name: "", email: "" })
     </FormInput>
 
     <div v-if="form.unprocessable?.errors.username">
-      <div class="font-bold text-yellow-300 text-base py-1">
+      <div class="font-bold text-orange-400 text-base py-1">
         {{ form.unprocessable.errors.username }}
       </div>
     </div>
@@ -62,7 +62,7 @@ const form = useForm({ username: "", name: "", email: "" })
     </FormInput>
 
     <div v-if="form.unprocessable?.errors.email">
-      <div class="font-bold text-yellow-300 text-base py-1">
+      <div class="font-bold text-orange-400 text-base py-1">
         {{ form.unprocessable.errors.email }}
       </div>
     </div>

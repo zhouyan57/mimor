@@ -1,5 +1,3 @@
-RegisterVerifying -- fix double register error
-
 # mimor
 
 support paragraph
