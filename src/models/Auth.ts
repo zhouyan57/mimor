@@ -13,7 +13,11 @@ export class Auth {
 
   async login(token: string) {
     localStorage.setItem("token", token)
-    await this.loadUser()
+    const user = await this.loadUser()
+    console.log({
+      message: "login",
+      user,
+    })
   }
 
   get token(): string {
@@ -58,7 +62,7 @@ export class Auth {
       user: this.user,
     })
 
-    this.user = undefined
     localStorage.removeItem("token")
+    this.user = undefined
   }
 }

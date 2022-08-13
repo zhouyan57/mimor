@@ -1,5 +1,7 @@
 login and register on mobile
 
+remember lang in localStorage
+
 # mimor
 
 support paragraph
