@@ -1,4 +1,6 @@
-login and register on mobile
+PageLayoutHeader
+PageLayoutMenu
+PageLayoutMenuMobile
 
 # mimor
 
