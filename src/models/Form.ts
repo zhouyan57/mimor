@@ -47,13 +47,12 @@ export class Form<T extends Values> {
         this.invalid = data.invalid
       }
 
-      if (options?.then) {
+      if (this.response.ok && options?.then) {
         const data = await this.response.json()
         options.then(data)
       }
     } catch (error) {
       if (!(error instanceof Error)) throw error
-      console.error(error)
       this.error = error
       if (options?.catch) {
         options.catch(error)
