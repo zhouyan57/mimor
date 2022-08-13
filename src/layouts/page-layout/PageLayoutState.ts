@@ -2,6 +2,8 @@ import { useAuth } from "../../hooks/useAuth"
 import { useLang } from "../../hooks/useLang"
 
 export class PageLayoutState {
+  loading = true
+
   lang = useLang()
   auth = useAuth()
 

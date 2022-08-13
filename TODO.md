@@ -1,6 +1,8 @@
-RegisterVerifying -- fix double register error
+PageLayoutSidebar be able to logout
 
-fix notifications style
+PageLayoutSidebar do not should guest links
+
+RegisterVerifying -- fix double register error
 
 # mimor
 
