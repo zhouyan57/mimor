@@ -38,7 +38,7 @@ export class Form<T extends Values> {
     try {
       this.response = await fetch(url, {
         method: "POST",
-        credentials: "include",
+
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.values),
       })

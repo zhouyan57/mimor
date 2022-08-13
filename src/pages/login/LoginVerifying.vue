@@ -15,9 +15,7 @@ const router = useRouter()
 const { stop } = poll<boolean>({
   target: async () => {
     console.log({ who: "LoginVerifying", message: "polling" })
-    const response = await fetch(verifying.links.verify, {
-      credentials: "include",
-    })
+    const response = await fetch(verifying.links.verify, {})
     return await response.json()
   },
   check: (confirmed) => confirmed,

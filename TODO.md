@@ -1,4 +1,6 @@
-use localStorage instead of cookie
+RegisterStart
+
+LoginStart
 
 # mimor
 

@@ -8,11 +8,17 @@ export class Auth {
     await this.loadUser()
   }
 
+  get token(): string {
+    return localStorage.getItem("token") || ""
+  }
+
   async loadUser() {
     if (this.user) return
     const api = import.meta.env.VITE_API_URL
     const response = await fetch(`${api}/user`, {
-      credentials: "include",
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
     })
 
     if (!response.ok) return
@@ -40,11 +46,6 @@ export class Auth {
 
   logout(): void {
     this.user = undefined
-
-    deleteCookie("token")
+    localStorage.removeItem("token")
   }
-}
-
-function deleteCookie(name: string) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
 }
