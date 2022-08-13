@@ -21,9 +21,9 @@ onMounted(async () => {
     </Lang>
   </Loading>
   <div v-else class="flex h-screen p-3">
-    <PageLayoutSidebar class="w-1/4 md:block hidden" :state="state" />
+    <PageLayoutSidebar class="h-full w-1/4 md:block hidden" :state="state" />
 
-    <div class="h-full w-full md:w-3/4 md:px-6">
+    <div class="h-full w-full md:w-3/4">
       <slot />
     </div>
   </div>
