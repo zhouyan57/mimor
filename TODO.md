@@ -1,5 +1,7 @@
 RegisterVerifying -- fix double register error
 
+fix notifications style
+
 # mimor
 
 support paragraph
