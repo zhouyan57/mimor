@@ -68,7 +68,7 @@ const form = useForm({ username: "", name: "", email: "" })
     </div>
 
     <div class="flex flex-col justify-center py-4">
-      <hr class="border-t border-white" />
+      <hr class="border-t border-stone-600" />
     </div>
 
     <FormButton :disabled="form.processing">

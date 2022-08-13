@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import Lang from "../../components/Lang.vue"
+import Link from "../../components/Link.vue"
 import PageLayoutLang from "./PageLayoutLang.vue"
 import PageLayoutLogo from "./PageLayoutLogo.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
-import Link from "../../components/Link.vue"
 
 defineProps<{ state: State }>()
 </script>
@@ -11,9 +12,19 @@ defineProps<{ state: State }>()
   <div class="flex flex-col space-y-2">
     <PageLayoutLogo :state="state" />
     <PageLayoutLang :state="state" />
-    <div class="flex-col flex text-xl font-bold">
-      <Link href="/register" class="hover:underline">Register</Link>
-      <Link href="/login" class="hover:underline">Login</Link>
+    <div class="flex-col flex text-xl font-bold py-1 space-y-2">
+      <Link href="/register" class="hover:underline">
+        <Lang>
+          <template #zh>注册</template>
+          <template #en>Register</template>
+        </Lang>
+      </Link>
+      <Link href="/login" class="hover:underline">
+        <Lang>
+          <template #zh>登录</template>
+          <template #en>Login</template>
+        </Lang>
+      </Link>
     </div>
   </div>
 </template>

@@ -15,8 +15,7 @@ defineProps<{
     <input
       :id="name"
       :name="name"
-      class="w-full rounded-sm border-2 p-3 font-bold"
-      :class="[`border-stone-200 text-stone-900`]"
+      class="w-full rounded-sm border-2 p-3 font-bold border-stone-200"
       :type="type || 'text'"
       :maxlength="32"
       :spellcheck="false"
