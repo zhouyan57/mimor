@@ -1,3 +1,10 @@
+link to `/register` page from sidebar
+
+use localStorage instead of cookie
+
+copy `login` page from pomodoro
+link to `/login` page from sidebar
+
 # mimor
 
 support paragraph
