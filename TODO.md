@@ -1,5 +1,3 @@
-RegisterVerifying
-
 fix models/Form -- should use laravel error format
 
 LoginStart
