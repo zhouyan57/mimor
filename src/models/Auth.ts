@@ -5,15 +5,15 @@ export class Auth {
   user?: UserJson
   initialized = false
 
-  async initialize(token?: string) {
+  async initialize() {
     if (this.initialized) return
-
-    if (token) {
-      localStorage.setItem("token", token)
-    }
-
     await this.loadUser()
     this.initialized = true
+  }
+
+  async login(token: string) {
+    localStorage.setItem("token", token)
+    await this.loadUser()
   }
 
   get token(): string {
