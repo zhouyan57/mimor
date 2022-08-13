@@ -2,12 +2,13 @@
 import { useRouter } from "vue-router"
 import Lang from "../../components/Lang.vue"
 import { useAuth } from "../../hooks/useAuth"
+import { VerifyingJson } from "../../jsons/VerifyingJson"
 import { poll } from "../../utils/poll"
-import { LoginState as State, Verifying } from "./LoginState"
+import { LoginState as State } from "./LoginState"
 
 const { state, verifying } = defineProps<{
   state: State
-  verifying: Verifying
+  verifying: VerifyingJson
 }>()
 
 const router = useRouter()

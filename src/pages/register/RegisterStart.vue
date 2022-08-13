@@ -17,7 +17,9 @@ const form = useForm({ username: "", name: "", email: "" })
     @submit.prevent="
       (event) =>
         form.postByEvent(event, state.links.register, {
-          then: (result) => state.verify(result),
+          then: (result) => {
+            state.verifying = result
+          },
         })
     "
   >

@@ -38,7 +38,6 @@ export class Form<T extends Values> {
     try {
       this.response = await fetch(url, {
         method: "POST",
-
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.values),
       })
@@ -54,6 +53,7 @@ export class Form<T extends Values> {
       }
     } catch (error) {
       if (!(error instanceof Error)) throw error
+      console.error(error)
       this.error = error
       if (options?.catch) {
         options.catch(error)
