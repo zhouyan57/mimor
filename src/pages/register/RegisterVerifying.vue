@@ -22,7 +22,7 @@ const { stop } = poll<{ name: string; token: string }>({
   check: (confirmed) => Boolean(confirmed),
   then: async ({ token }) => {
     const auth = useAuth()
-    await auth.init(token)
+    await auth.initialize(token)
     router.replace({ path: "/" })
   },
   interval: 3000,

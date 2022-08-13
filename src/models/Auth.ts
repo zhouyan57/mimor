@@ -3,13 +3,17 @@ import { UserJson, UserSchema } from "../jsons/UserJson"
 
 export class Auth {
   user?: UserJson
+  initialized = false
 
-  async init(token?: string) {
+  async initialize(token?: string) {
+    if (this.initialized) return
+
     if (token) {
       localStorage.setItem("token", token)
     }
 
     await this.loadUser()
+    this.initialized = true
   }
 
   get token(): string {

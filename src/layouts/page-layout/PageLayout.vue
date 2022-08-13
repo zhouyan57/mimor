@@ -8,7 +8,7 @@ import { PageLayoutState as State } from "./PageLayoutState"
 const state = reactive(new State())
 
 onMounted(async () => {
-  await state.auth.init().catch((error) => {})
+  await state.auth.initialize().catch((error) => {})
   state.loading = false
 })
 </script>
