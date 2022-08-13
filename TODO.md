@@ -1,9 +1,5 @@
 fix models/Form -- should use laravel error format
 
-LoginStart
-
-LoginVerifying
-
 # mimor
 
 support paragraph
