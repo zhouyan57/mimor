@@ -1,7 +1,26 @@
+function initialTag(): string {
+  const local = localStorage.getItem("lang")
+  if (local) return local
+  if (navigator.language.startsWith("zh")) return "zh"
+  return "en"
+}
+
 export class Lang {
+  _tag: string
   tags = ["zh", "en"]
 
-  constructor(public tag: string) {}
+  constructor() {
+    this._tag = initialTag()
+  }
+
+  get tag(): string {
+    return this._tag
+  }
+
+  set tag(tag: string) {
+    this._tag = tag
+    localStorage.setItem("lang", tag)
+  }
 
   get zh(): boolean {
     return this.tag.startsWith("zh")
