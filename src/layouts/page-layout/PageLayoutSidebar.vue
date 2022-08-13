@@ -12,6 +12,7 @@ defineProps<{ state: State }>()
   <div class="flex flex-col space-y-2">
     <PageLayoutLogo :state="state" />
     <PageLayoutLang :state="state" />
+
     <div class="flex-col flex text-xl font-bold py-1 space-y-2">
       <Link href="/register" class="hover:underline">
         <Lang>
@@ -25,6 +26,10 @@ defineProps<{ state: State }>()
           <template #en>Login</template>
         </Lang>
       </Link>
+    </div>
+
+    <div v-if="state.auth.user">
+      {{ state.auth.user.name }}
     </div>
   </div>
 </template>

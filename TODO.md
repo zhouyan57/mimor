@@ -1,6 +1,4 @@
-LoginVerifying -- save token in localStorage
-
-RegisterVerifying -- save token in localStorage
+RegisterVerifying -- fix double register error
 
 # mimor
 

@@ -4,7 +4,11 @@ import { UserJson, UserSchema } from "../jsons/UserJson"
 export class Auth {
   user?: UserJson
 
-  async init() {
+  async init(token?: string) {
+    if (token) {
+      localStorage.setItem("token", token)
+    }
+
     await this.loadUser()
   }
 

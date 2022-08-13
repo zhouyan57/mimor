@@ -13,16 +13,16 @@ const { state, verifying } = defineProps<{
 
 const router = useRouter()
 
-const { stop } = poll<boolean>({
+const { stop } = poll<{ name: string; token: string }>({
   target: async () => {
     console.log({ who: "RegisterVerifying", message: "polling" })
     const response = await fetch(verifying.links.verify, {})
     return await response.json()
   },
-  check: (confirmed) => confirmed,
-  then: async () => {
+  check: (confirmed) => Boolean(confirmed),
+  then: async ({ token }) => {
     const auth = useAuth()
-    await auth.init()
+    await auth.init(token)
     router.replace({ path: "/" })
   },
   interval: 3000,
