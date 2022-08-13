@@ -1,5 +1,3 @@
-fix Register & Login layout
-
 RegisterVerifying -- fix double register error
 
 # mimor
