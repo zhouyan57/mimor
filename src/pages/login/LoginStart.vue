@@ -15,7 +15,7 @@ const form = useForm({ email: "" })
 
 <template>
   <form
-    class="flex w-full flex-col pt-20 space-y-2 text-xl sm:w-auto"
+    class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
     @submit.prevent="
       form.post(state.links.login, {
         then: (result) => {

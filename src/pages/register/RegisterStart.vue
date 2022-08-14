@@ -13,7 +13,7 @@ const form = useForm({ username: "", name: "", email: "" })
 
 <template>
   <form
-    class="flex w-full flex-col space-y-2 text-xl sm:w-auto"
+    class="flex max-w-md flex-col space-y-2 text-xl"
     @submit.prevent="
       (event) =>
         form.postByEvent(event, state.links.register, {
@@ -37,10 +37,11 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div v-if="form.unprocessable?.errors.username">
-      <div class="font-bold text-orange-400 text-base py-1">
-        {{ form.unprocessable.errors.username }}
-      </div>
+    <div
+      v-if="form.unprocessable?.errors.username"
+      class="font-bold text-orange-400 text-base py-1"
+    >
+      {{ form.unprocessable.errors.username }}
     </div>
 
     <FormInput name="name" required>
@@ -61,10 +62,11 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div v-if="form.unprocessable?.errors.email">
-      <div class="font-bold text-orange-400 text-base py-1">
-        {{ form.unprocessable.errors.email }}
-      </div>
+    <div
+      v-if="form.unprocessable?.errors.email"
+      class="font-bold text-orange-400 text-base py-1"
+    >
+      {{ form.unprocessable.errors.email }}
     </div>
 
     <div class="flex flex-col justify-center py-4">
