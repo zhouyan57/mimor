@@ -25,12 +25,12 @@ watch(
   <PageLayout>
     <div
       v-if="!state.verifying"
-      class="pt-4 flex h-full flex-col items-center md:pt-10"
+      class="py-2 flex h-full flex-col items-center md:pt-10"
     >
       <RegisterStart :state="state" />
     </div>
 
-    <div v-else class="pt-12 flex h-full flex-col items-center md:pt-10">
+    <div v-else class="py-12 flex h-full flex-col items-center md:pt-10">
       <RegisterVerifying :state="state" :verifying="state.verifying" />
     </div>
   </PageLayout>
