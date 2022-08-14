@@ -37,12 +37,17 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div
+    <ol
       v-if="form.unprocessable?.errors.username"
-      class="font-bold text-orange-400 text-base py-1"
+      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
     >
-      {{ form.unprocessable.errors.username }}
-    </div>
+      <li
+        v-for="(message, index) of form.unprocessable.errors.username"
+        :key="index"
+      >
+        {{ message }}
+      </li>
+    </ol>
 
     <FormInput name="name" required>
       <template #label>
@@ -62,12 +67,17 @@ const form = useForm({ username: "", name: "", email: "" })
       </template>
     </FormInput>
 
-    <div
-      v-if="form.unprocessable?.errors.email"
-      class="font-bold text-orange-400 text-base py-1"
+    <ol
+      v-if="form.unprocessable?.errors.username"
+      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
     >
-      {{ form.unprocessable.errors.email }}
-    </div>
+      <li
+        v-for="(message, index) of form.unprocessable.errors.email"
+        :key="index"
+      >
+        {{ message }}
+      </li>
+    </ol>
 
     <div class="flex flex-col justify-center py-4">
       <hr class="border-t border-stone-600" />
