@@ -1,7 +1,3 @@
-[maybe] change logo to <m>
-
-- should not use fira code
-
 migrate old contents to new xml syntax
 
 # register & login
