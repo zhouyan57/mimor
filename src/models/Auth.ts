@@ -32,24 +32,9 @@ export class Auth {
     })
   }
 
-  get token(): string {
-    return localStorage.getItem("token") || ""
-  }
-
   async loadUser() {
     if (this.user) return
-    const api = import.meta.env.VITE_API_URL
-    const response = await fetch(`${api}/user`, {
-      headers: {
-        Authorization: `Bearer ${this.token}`,
-      },
-    })
-
-    if (!response.ok) return
-    const data = await response.json()
-    if (!data) return
-
-    this.user = UserSchema.validate(data)
+    this.user = await app.api.user.get()
   }
 
   logout(): void {

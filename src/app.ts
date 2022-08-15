@@ -1,10 +1,12 @@
 import { reactive } from "vue"
 import { Auth } from "./models/Auth"
 import { Lang } from "./models/Lang"
+import { Api } from "./Api"
 
 export class App {
   lang = new Lang()
   auth = new Auth()
+  api = new Api()
 
   get name(): string {
     return this.lang.zh ? "谜墨" : "Mimor"
