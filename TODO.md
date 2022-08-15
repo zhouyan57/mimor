@@ -1,5 +1,3 @@
-migrate old contents to new xml syntax
-
 # register & login
 
 PageLayoutHeader

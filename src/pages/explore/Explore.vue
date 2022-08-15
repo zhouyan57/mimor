@@ -2,37 +2,17 @@
 import { onMounted, reactive } from "vue"
 import Mimor from "../../components/mimor/Mimor.vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
+import { ExploreState as State } from "./ExploreState"
 
-const state = reactive({
-  finished: false,
-  flag: true,
-  text: "",
-  loading: true,
-})
+const state = reactive(new State())
 
-function again() {
-  state.finished = false
-  state.flag = !state.flag
-}
-
-async function load() {
-  await loadText()
-  state.loading = false
-}
-
-async function loadText() {
-  const response = await fetch("/contents/sisuo.mimor")
-  const text = await response.text()
-  state.text = text
-}
-
-onMounted(() => load())
+onMounted(() => state.load())
 </script>
 
 <template>
   <PageLayout>
     <div class="h-full flex flex-col">
-      <div class="text-3xl">Demo</div>
+      <div class="text-2xl">Explore</div>
 
       <div v-if="state.loading">Loading...</div>
 
@@ -55,7 +35,7 @@ onMounted(() => load())
           <div class="text-4xl">The End</div>
         </div>
 
-        <button class="text-2xl border p-2" @click="again()">Again</button>
+        <button class="text-2xl border p-2" @click="state.again()">Again</button>
       </div>
     </div>
   </PageLayout>
