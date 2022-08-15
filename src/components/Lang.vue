@@ -6,12 +6,7 @@ const lang = useLang()
 
 <template>
   <div>
-    <div v-if="lang.zh">
-      <slot name="zh"></slot>
-    </div>
-
-    <div v-if="lang.en">
-      <slot name="en"></slot>
-    </div>
+    <slot v-if="lang.zh" name="zh"></slot>
+    <slot v-if="lang.en" name="en"></slot>
   </div>
 </template>
