@@ -5,6 +5,10 @@ import { Lang } from "./models/Lang"
 export class App {
   lang = new Lang()
   auth = new Auth()
+
+  get name(): string {
+    return this.lang.zh ? "谜墨" : "Mimor"
+  }
 }
 
 declare global {

@@ -7,6 +7,6 @@ defineProps<{ state: State }>()
 
 <template>
   <Link href="/" class="font-logo text-3xl hover:underline">
-    <div>{{ state.appName }}</div>
+    <div>{{ $app.name }}</div>
   </Link>
 </template>

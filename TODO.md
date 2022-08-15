@@ -1,4 +1,3 @@
-move `appName` to `app`
 # register & login
 
 PageLayoutHeader
