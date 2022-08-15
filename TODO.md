@@ -1,9 +1,4 @@
-[refactor] use `router.replace(path)` instead of `router.replace({ path })`
 [refactor] use `router.push(path)` instead of `router.push({ path })`
-
-
-
-logout should redirect to `/explore`
 
 DashboardState
 
