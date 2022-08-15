@@ -1,4 +1,4 @@
-change logo to <M>
+[maybe] change logo to <m>
 
 migrate old contents to new xml syntax
 
