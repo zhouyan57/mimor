@@ -30,7 +30,15 @@ onMounted(() => load())
 </script>
 
 <template>
-  <PageLayout>
+  <PageLayout
+    :options="{
+      onInitialized: ({ auth }) => {
+        if (!auth.user) {
+          $router.replace('/explore')
+        }
+      },
+    }"
+  >
     <div class="h-full flex flex-col">
       <div class="text-3xl">Demo</div>
 

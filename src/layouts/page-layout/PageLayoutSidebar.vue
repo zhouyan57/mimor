@@ -37,7 +37,12 @@ defineProps<{ state: State }>()
 
       <button
         v-if="state.auth.user"
-        @click="state.auth.logout()"
+        @click="
+          () => {
+            state.auth.logout()
+            $router.push({ path: '/' })
+          }
+        "
         class="hover:underline"
       >
         <Lang>
