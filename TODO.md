@@ -16,6 +16,8 @@ PageLayoutMenuMobile
 
 # project
 
+Dashboard -- create new project
+
 Dashboard -- list projects
 
 DashboardProject
