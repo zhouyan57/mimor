@@ -1,11 +1,6 @@
-import { useAuth } from "../../hooks/useAuth"
-import { useLang } from "../../hooks/useLang"
 import { VerifyingJson } from "../../jsons/VerifyingJson"
 
 export class RegisterState {
-  lang = useLang()
-  auth = useAuth()
-
   verifying: VerifyingJson | null = null
 
   get links() {

@@ -9,8 +9,8 @@ const state = reactive(new State())
 <template>
   <PageLayout
     :options="{
-      onInitialized: ({ auth }) => {
-        if (!auth.user) {
+      onInitialized: () => {
+        if (!$app.auth.user) {
           $router.replace('/explore')
         }
       },

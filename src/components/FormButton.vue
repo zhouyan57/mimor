@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { useLang } from "../hooks/useLang"
-
-const lang = useLang()
-
 defineProps<{
   disabled?: boolean
 }>()

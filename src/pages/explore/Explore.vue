@@ -35,7 +35,9 @@ onMounted(() => state.load())
           <div class="text-4xl">The End</div>
         </div>
 
-        <button class="text-2xl border p-2" @click="state.again()">Again</button>
+        <button class="text-2xl border p-2" @click="state.again()">
+          Again
+        </button>
       </div>
     </div>
   </PageLayout>

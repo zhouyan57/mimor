@@ -1,9 +1,9 @@
 import { createHead } from "@vueuse/head"
 import { createApp } from "vue"
+import { app } from "./app"
 import App from "./App.vue"
 import "./assets/styles/index.css"
 import router from "./router"
-import { app } from "./app"
 
 const root = createApp(App)
 const head = createHead()

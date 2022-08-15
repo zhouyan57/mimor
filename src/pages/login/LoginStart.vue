@@ -57,7 +57,7 @@ const form = useForm({ email: "" })
           class="w-full rounded-sm border border-stone-800 px-3 py-4 font-bold placeholder-opacity-60"
           type="email"
           maxlength="100"
-          :placeholder="state.lang.zh ? '电子邮箱' : 'Email'"
+          :placeholder="$app.lang.zh ? '电子邮箱' : 'Email'"
           spellcheck="false"
           required
         />

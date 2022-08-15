@@ -15,14 +15,14 @@ defineProps<{ state: State }>()
 
       <PageLayoutLang :state="state" />
 
-      <Link v-if="!state.auth.user" href="/register" class="hover:underline">
+      <Link v-if="!$app.auth.user" href="/register" class="hover:underline">
         <Lang>
           <template #zh>注册</template>
           <template #en>Register</template>
         </Lang>
       </Link>
 
-      <Link v-if="!state.auth.user" href="/login" class="hover:underline">
+      <Link v-if="!$app.auth.user" href="/login" class="hover:underline">
         <Lang>
           <template #zh>登录</template>
           <template #en>Login</template>
@@ -31,15 +31,15 @@ defineProps<{ state: State }>()
     </div>
 
     <div class="absolute bottom-0 flex-col flex items-start text-xl space-y-">
-      <div v-if="state.auth.user" class="text-lg font-bold">
-        {{ state.auth.user.name }}
+      <div v-if="$app.auth.user" class="text-lg font-bold">
+        {{ $app.auth.user.name }}
       </div>
 
       <button
-        v-if="state.auth.user"
+        v-if="$app.auth.user"
         @click="
           () => {
-            state.auth.logout()
+            $app.auth.logout()
             $router.replace('/explore')
           }
         "

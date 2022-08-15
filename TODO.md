@@ -1,9 +1,4 @@
-use App instead of Auth and Lang
-
-- one root singleton for all singletons
-
-hooks/useApp.ts
-
+move `appName` to `app`
 # register & login
 
 PageLayoutHeader

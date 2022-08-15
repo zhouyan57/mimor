@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router"
 import Lang from "../../components/Lang.vue"
-import { useAuth } from "../../hooks/useAuth"
 import { VerifyingJson } from "../../jsons/VerifyingJson"
 import { poll } from "../../utils/poll"
 import { RegisterState as State } from "./RegisterState"
@@ -21,8 +20,7 @@ const { stop } = poll<{ name: string; token: string }>({
   },
   check: (confirmed) => Boolean(confirmed),
   then: async ({ token }) => {
-    const auth = useAuth()
-    await auth.login(token)
+    await app.auth.login(token)
     router.replace("/")
   },
   interval: 3000,

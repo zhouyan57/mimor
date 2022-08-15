@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <Listbox as="div" class="relative flex text-xl" v-model="state.lang.tag">
+  <Listbox as="div" class="relative flex text-xl" v-model="$app.lang.tag">
     <ListboxButton class="flex items-center">
       <Lang>
         <template #zh>语言</template>
@@ -34,7 +34,7 @@ defineProps<{ state: State }>()
       <ListboxOptions class="absolute bg-white left-0 top-8 min-w-max border">
         <ListboxOption
           v-slot="{ active, selected }"
-          v-for="tag of state.lang.tags"
+          v-for="tag of $app.lang.tags"
           :key="tag"
           :value="tag"
         >
@@ -42,7 +42,7 @@ defineProps<{ state: State }>()
             class="flex min-w-max items-center p-2"
             :class="[active && `bg-stone-100`]"
           >
-            {{ state.lang.findTagName(tag) }}
+            {{ $app.lang.findTagName(tag) }}
             <CheckIcon v-if="selected" class="ml-2 h-5 w-5" />
           </div>
         </ListboxOption>

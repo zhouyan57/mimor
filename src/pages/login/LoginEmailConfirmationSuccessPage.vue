@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
 import Lang from "../../components/Lang.vue"
-import { useLang } from "../../hooks/useLang"
-
-const lang = useLang()
 </script>
 
 <template>
@@ -11,7 +8,7 @@ const lang = useLang()
     class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
   >
     <Head>
-      <title v-if="lang.zh">邮件登录确认 · 成功 | 谜墨</title>
+      <title v-if="$app.lang.zh">邮件登录确认 · 成功 | 谜墨</title>
       <title v-else>Login Email Confirmation Success | Mimor</title>
     </Head>
 

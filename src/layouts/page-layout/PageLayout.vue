@@ -14,7 +14,7 @@ const { options } = defineProps<{
 const state = reactive(new State())
 
 onMounted(async () => {
-  await state.auth.initialize()
+  await app.auth.initialize()
   if (options?.onInitialized) {
     await options?.onInitialized(state)
   }
