@@ -2,7 +2,6 @@ export type Values = Record<string, string>
 
 interface PostOptions {
   then?: (result: any) => void | Promise<void>
-  catch?: (error: unknown) => void | Promise<void>
 }
 
 type Unprocessable<T> = { message: string; errors: Record<string, string> }
@@ -56,9 +55,6 @@ export class Form<T extends Values> {
     } catch (error) {
       if (!(error instanceof Error)) throw error
       this.error = error
-      if (options?.catch) {
-        options.catch(error)
-      }
     }
 
     this.processing = false
