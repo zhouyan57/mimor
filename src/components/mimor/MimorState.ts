@@ -10,7 +10,7 @@ export interface MimorOptions {
 
 export class MimorState {
   router = new Router()
-  theme = new Theme("yellow")
+  theme = new Theme("orange")
   nodes: Array<XNode>
   pointer: number
   remaining: Array<number>

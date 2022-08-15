@@ -1,3 +1,9 @@
+rename Home to Explore
+Dashboard -- redirect unauthed user to `/explore`
+fix style of 404 page
+
+migrate old contents to new xml syntax
+
 # register & login
 
 PageLayoutHeader
@@ -8,11 +14,9 @@ PageLayoutMenuMobile
 
 # project
 
-dashboard as home
+Dashboard -- list projects
 
-list projects in dashboard
-
-- can recall a project.
+Dashboard -- can recall a project.
 
 click goto project page
 
