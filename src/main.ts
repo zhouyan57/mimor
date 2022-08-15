@@ -3,11 +3,12 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import "./assets/styles/index.css"
 import router from "./router"
+import "./App"
 
-const app = createApp(App)
+const root = createApp(App)
 const head = createHead()
 
-app.use(router)
-app.use(head)
+root.use(router)
+root.use(head)
 
-app.mount("#app")
+root.mount("#app")

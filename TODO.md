@@ -1,3 +1,9 @@
+use App instead of Auth and Lang
+
+- one root singleton for all singletons
+
+hooks/useApp.ts
+
 # register & login
 
 PageLayoutHeader
@@ -10,18 +16,20 @@ PageLayoutMenuMobile
 
 Dashboard -- list projects
 
-Dashboard -- can recall a project.
+DashboardProject
 
-click goto project page
+DashboardProject -- can recall a project.
 
-in a project we have button to recall a project.
+DashboardProject -- click goto project page -- `Project`
 
-a project page is a files manager with preview.
+project -- a project we have button to recall a project.
+
+Project -- a project page is a files manager with preview.
 
 - one can edit file.
 - one can create new file.
 
-project page file tree
+Project -- support file tree
 
 [maybe] a `Mimor` button to popup 'create new mimor'
 
