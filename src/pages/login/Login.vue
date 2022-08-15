@@ -1,28 +1,23 @@
 <script setup lang="ts">
-import { reactive, watch } from "vue"
-import { useRouter } from "vue-router"
+import { reactive } from "vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import LoginStart from "./LoginStart.vue"
 import { LoginState as State } from "./LoginState"
 import LoginVerifying from "./LoginVerifying.vue"
 
 const state = reactive(new State())
-
-const router = useRouter()
-
-watch(
-  () => state.auth.user,
-  () => {
-    if (state.auth.user) {
-      router.replace({ path: "/" })
-    }
-  },
-  { immediate: true }
-)
 </script>
 
 <template>
-  <PageLayout>
+  <PageLayout
+    :options="{
+      onInitialized: ({ auth }) => {
+        if (auth.user) {
+          $router.replace({ path: '/' })
+        }
+      },
+    }"
+  >
     <div
       v-if="!state.verifying"
       class="py-2 flex h-full flex-col items-center md:pt-10"

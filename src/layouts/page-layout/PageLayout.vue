@@ -5,10 +5,20 @@ import Loading from "../../components/Loading.vue"
 import PageLayoutSidebar from "./PageLayoutSidebar.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
+const { options } = defineProps<{
+  options?: {
+    onInitialized?: (state: State) => void | Promise<void>
+  }
+}>()
+
 const state = reactive(new State())
 
 onMounted(async () => {
-  await state.auth.initialize().catch((error) => {})
+  await state.auth.initialize()
+  if (options?.onInitialized) {
+    await options?.onInitialized(state)
+  }
+
   state.loading = false
 })
 </script>

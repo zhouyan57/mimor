@@ -1,4 +1,7 @@
 Dashboard -- redirect unauthed user to `/explore`
+
+DashboardState
+
 fix style of 404 page
 
 migrate old contents to new xml syntax
