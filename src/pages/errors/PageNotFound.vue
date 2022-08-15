@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { Head } from "@vueuse/head"
 import { useRoute } from "vue-router"
-import Lang from "../../components/Lang.vue"
-import { useLang } from "../../hooks/useLang"
-
-const lang = useLang()
 
 const route = useRoute()
 const { slugs } = route.params
@@ -16,7 +12,7 @@ const path = typeof slugs === "string" ? slugs : slugs.join("/")
     class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
   >
     <Head>
-      <title v-if="lang.zh">404 | 谜墨</title>
+      <title v-if="$app.lang.zh">404 | 谜墨</title>
       <title v-else>404 | Mimor</title>
     </Head>
 
