@@ -1,8 +1,3 @@
-app.api.register
-app.api.login
-
-refactor app.api
-
 # register & login
 
 PageLayoutHeader

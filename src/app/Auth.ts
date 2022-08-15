@@ -6,32 +6,31 @@ export class Auth {
 
   async initialize() {
     if (this.initialized) {
-      console.log({ who: "App.initialized", user: this.user })
-
-      return
+      return console.log({
+        who: "app.auth.initialize",
+        message: "already initialized",
+        user: this.user,
+      })
     }
 
-    await this.loadUser()
+    this.user = await app.api.user.get()
     this.initialized = true
 
-    console.log({ who: "App.initialize", user: this.user })
+    console.log({
+      who: "app.auth.initialize",
+      user: this.user,
+    })
   }
 
   async login(token: string) {
     localStorage.setItem("token", token)
-    const user = await this.loadUser()
-    console.log({ who: "App.login", user })
-  }
-
-  async loadUser() {
-    if (this.user) return
     this.user = await app.api.user.get()
+    console.log({ who: "app.auth.login", user: this.user })
   }
 
   logout(): void {
-    console.log({ who: "App.logout", user: this.user })
-
     localStorage.removeItem("token")
     this.user = undefined
+    console.log({ who: "app.auth.logout", user: this.user })
   }
 }

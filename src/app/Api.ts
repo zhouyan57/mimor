@@ -1,3 +1,4 @@
+import { Schema } from "@xieyuheng/ty"
 import { UserSchema } from "../jsons/UserJson"
 
 export class Api {
@@ -10,19 +11,27 @@ export class Api {
   get user() {
     return {
       get: get(`${this.url}/user`, {
-        headers: { Authorization: `Bearer ${this.token}` },
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          Accept: "application/json",
+        },
         output: UserSchema,
       }),
     }
   }
 }
 
-function get(url: string, options: any) {
+function get<O>(url: string, options: RequestInit & { output: Schema<O> }) {
   const { headers, output } = options
 
-  return async () => {
+  return async (): Promise<O | undefined> => {
     const response = await fetch(url, { headers })
-    if (!response.ok) return console.log("response not ok", response)
+
+    if (!response.ok) {
+      console.log({ who: "api.get", message: "response not ok", response })
+      return
+    }
+
     return output.validate(await response.json())
   }
 }
