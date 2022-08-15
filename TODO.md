@@ -1,4 +1,3 @@
-rename Home to Explore
 Dashboard -- redirect unauthed user to `/explore`
 fix style of 404 page
 
