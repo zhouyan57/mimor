@@ -1,4 +1,4 @@
-fix style of 404 page
+try to use Lang in Head
 
 change logo to <M>
 

@@ -11,8 +11,8 @@ const lang = useLang()
     class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
   >
     <Head>
-      <title v-if="lang.zh">邮件注册确认 · 成功 | 只读</title>
-      <title v-else>Register Email Confirmation Success | Readonly</title>
+      <title v-if="lang.zh">邮件注册确认 · 成功 | 谜墨</title>
+      <title v-else>Register Email Confirmation Success | Mimor</title>
     </Head>
 
     <Lang>
