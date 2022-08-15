@@ -1,5 +1,3 @@
-try to use Lang in Head
-
 change logo to <M>
 
 migrate old contents to new xml syntax
