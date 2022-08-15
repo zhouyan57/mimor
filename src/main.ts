@@ -10,6 +10,12 @@ const head = createHead()
 
 root.config.globalProperties.$app = app
 
+declare module "vue" {
+  interface ComponentCustomProperties {
+    $app: typeof app
+  }
+}
+
 root.use(router)
 root.use(head)
 

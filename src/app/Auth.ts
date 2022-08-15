@@ -1,4 +1,4 @@
-import { UserJson, UserSchema } from "../jsons/UserJson"
+import { UserJson } from "../jsons/UserJson"
 
 export class Auth {
   user?: UserJson
@@ -6,10 +6,7 @@ export class Auth {
 
   async initialize() {
     if (this.initialized) {
-      console.log({
-        who: "Auth.initialized",
-        user: this.user,
-      })
+      console.log({ who: "App.initialized", user: this.user })
 
       return
     }
@@ -17,19 +14,13 @@ export class Auth {
     await this.loadUser()
     this.initialized = true
 
-    console.log({
-      who: "Auth.initialize",
-      user: this.user,
-    })
+    console.log({ who: "App.initialize", user: this.user })
   }
 
   async login(token: string) {
     localStorage.setItem("token", token)
     const user = await this.loadUser()
-    console.log({
-      who: "Auth.login",
-      user,
-    })
+    console.log({ who: "App.login", user })
   }
 
   async loadUser() {
@@ -38,10 +29,7 @@ export class Auth {
   }
 
   logout(): void {
-    console.log({
-      who: "Auth.logout",
-      user: this.user,
-    })
+    console.log({ who: "App.logout", user: this.user })
 
     localStorage.removeItem("token")
     this.user = undefined

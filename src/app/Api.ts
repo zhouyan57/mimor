@@ -1,4 +1,4 @@
-import { UserSchema } from "./jsons/UserJson"
+import { UserSchema } from "../jsons/UserJson"
 
 export class Api {
   url = import.meta.env.VITE_API_URL
