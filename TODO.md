@@ -1,8 +1,6 @@
-[refactor] use `router.push(path)` instead of `router.push({ path })`
-
-DashboardState
-
 fix style of 404 page
+
+change logo to <M>
 
 migrate old contents to new xml syntax
 

@@ -4,10 +4,7 @@
 </script>
 
 <template>
-  <span
-    @click="
-      typeof $attrs?.href === 'string' && $router.push({ path: $attrs.href })
-    "
+  <span @click="typeof $attrs?.href === 'string' && $router.push($attrs.href)"
     ><a><slot /></a
   ></span>
 </template>
