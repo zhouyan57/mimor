@@ -40,7 +40,7 @@ defineProps<{ state: State }>()
         @click="
           () => {
             state.auth.logout()
-            $router.push({ path: '/' })
+            $router.replace('/explore')
           }
         "
         class="hover:underline"
