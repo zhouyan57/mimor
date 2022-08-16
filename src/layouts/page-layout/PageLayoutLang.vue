@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <Listbox as="div" class="relative flex text-xl" v-model="$app.lang.tag">
+  <Listbox as="div" class="relative flex" v-model="$app.lang.tag">
     <ListboxButton class="flex items-center">
       <Lang>
         <template #zh>语言</template>
@@ -31,7 +31,7 @@ defineProps<{ state: State }>()
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <ListboxOptions class="absolute bg-white left-0 top-8 min-w-max border">
+      <ListboxOptions class="absolute bg-white left-0 top-9 min-w-max border">
         <ListboxOption
           v-slot="{ active, selected }"
           v-for="tag of $app.lang.tags"

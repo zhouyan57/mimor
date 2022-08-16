@@ -9,8 +9,12 @@ defineProps<{ state: State }>()
 
 <template>
   <div class="flex flex-col relative">
-    <div class="flex flex-col items-start space-y-1 text-xl">
+    <div class="flex flex-col items-start space-y-1 text-2xl pr-2">
       <PageLayoutLang :state="state" />
+
+      <div class="py-2 w-full flex flex-col justify-center">
+        <div class="border-b border-stone-800"></div>
+      </div>
 
       <Link v-if="!$app.auth.user" href="/register" class="hover:underline">
         <Lang>
