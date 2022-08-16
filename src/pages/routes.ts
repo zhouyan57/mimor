@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from "vue-router"
-import Home from "./home/Home.vue"
-import Projects from "./projects/Projects.vue"
 import PageNotFound from "./errors/PageNotFound.vue"
 import Explore from "./explore/Explore.vue"
+import Home from "./home/Home.vue"
 import Login from "./login/Login.vue"
 import LoginEmailConfirmationSuccessPage from "./login/LoginEmailConfirmationSuccessPage.vue"
+import Projects from "./projects/Projects.vue"
 import Register from "./register/Register.vue"
 import RegisterEmailConfirmationSuccessPage from "./register/RegisterEmailConfirmationSuccessPage.vue"
 export const routes: Array<RouteRecordRaw> = [
