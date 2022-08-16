@@ -36,10 +36,10 @@ export class Form<T extends Values> {
 
     try {
       this.response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(this.values),
       })

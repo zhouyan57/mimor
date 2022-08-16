@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router"
-import Lang from "../../components/Lang.vue"
-import { VerifyingJson } from "../../jsons/VerifyingJson"
-import { poll } from "../../utils/poll"
-import { RegisterState as State } from "./RegisterState"
+import { useRouter } from 'vue-router'
+import Lang from '../../components/Lang.vue'
+import { VerifyingJson } from '../../jsons/VerifyingJson'
+import { poll } from '../../utils/poll'
+import { RegisterState as State } from './RegisterState'
 
 const { state, verifying } = defineProps<{
   state: State
@@ -14,14 +14,14 @@ const router = useRouter()
 
 const { stop } = poll<{ name: string; token: string }>({
   target: async () => {
-    console.log({ who: "RegisterVerifying", message: "polling" })
+    console.log({ who: 'RegisterVerifying', message: 'polling' })
     const response = await fetch(verifying.links.verify, {})
     return await response.json()
   },
   check: (confirmed) => Boolean(confirmed),
   then: async ({ token }) => {
     await app.auth.login(token)
-    router.replace("/projects")
+    router.replace('/projects')
   },
   interval: 3000,
 })

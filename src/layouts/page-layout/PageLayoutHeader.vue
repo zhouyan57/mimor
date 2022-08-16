@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PageLayoutMenu from "./PageLayoutMenu.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import PageLayoutMenu from './PageLayoutMenu.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
 </script>

@@ -1,14 +1,14 @@
-import { h, XElement, XNode } from "./index"
+import { h, XElement, XNode } from './index'
 
 export function parseNodes(input: string): Array<XNode> {
   const domParser = new window.DOMParser()
   const nodes = []
   const dom = domParser.parseFromString(
     `<root>${input}</root>`,
-    "application/xml"
+    'application/xml'
   )
 
-  const errorNode = dom.querySelector("parsererror")
+  const errorNode = dom.querySelector('parsererror')
 
   if (errorNode) {
     throw new Error(errorNode.innerHTML)

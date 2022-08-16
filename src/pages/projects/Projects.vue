@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { reactive } from "vue"
-import Lang from "../../components/Lang.vue"
-import PageLayout from "../../layouts/page-layout/PageLayout.vue"
-import { ProjectsState as State } from "./ProjectsState"
+import { reactive } from 'vue'
+import Lang from '../../components/Lang.vue'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { ProjectsState as State } from './ProjectsState'
 
 const state = reactive(new State())
 </script>

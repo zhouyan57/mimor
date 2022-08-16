@@ -1,4 +1,4 @@
-import { UserJson } from "../jsons/UserJson"
+import { UserJson } from '../jsons/UserJson'
 
 export class Auth {
   user?: UserJson
@@ -7,8 +7,8 @@ export class Auth {
   async initialize() {
     if (this.initialized) {
       return console.log({
-        who: "app.auth.initialize",
-        message: "already initialized",
+        who: 'app.auth.initialize',
+        message: 'already initialized',
         user: this.user,
       })
     }
@@ -17,20 +17,20 @@ export class Auth {
     this.initialized = true
 
     console.log({
-      who: "app.auth.initialize",
+      who: 'app.auth.initialize',
       user: this.user,
     })
   }
 
   async login(token: string) {
-    localStorage.setItem("token", token)
+    localStorage.setItem('token', token)
     this.user = await app.api.user()
-    console.log({ who: "app.auth.login", user: this.user })
+    console.log({ who: 'app.auth.login', user: this.user })
   }
 
   logout(): void {
-    localStorage.removeItem("token")
+    localStorage.removeItem('token')
     this.user = undefined
-    console.log({ who: "app.auth.logout", user: this.user })
+    console.log({ who: 'app.auth.logout', user: this.user })
   }
 }

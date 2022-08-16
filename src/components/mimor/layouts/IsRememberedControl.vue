@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { CheckIcon, EyeIcon, XIcon } from "@heroicons/vue/outline"
-import Lang from "../../../components/Lang.vue"
-import { MimorState } from "../MimorState"
+import { CheckIcon, EyeIcon, XIcon } from '@heroicons/vue/outline'
+import Lang from '../../../components/Lang.vue'
+import { MimorState } from '../MimorState'
 
 defineProps<{ mimor: MimorState }>()
 </script>

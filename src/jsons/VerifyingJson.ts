@@ -1,4 +1,4 @@
-import { Obtain, ty } from "@xieyuheng/ty"
+import { Obtain, ty } from '@xieyuheng/ty'
 
 export const VerifyingSchema = ty.object({
   email: ty.string(),

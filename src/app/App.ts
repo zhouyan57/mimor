@@ -1,6 +1,6 @@
-import { Api } from "./Api"
-import { Auth } from "./Auth"
-import { Lang } from "./Lang"
+import { Api } from './Api'
+import { Auth } from './Auth'
+import { Lang } from './Lang'
 
 export class App {
   lang = new Lang()
@@ -8,6 +8,6 @@ export class App {
   api = new Api()
 
   get name(): string {
-    return this.lang.zh ? "谜墨" : "Mimor"
+    return this.lang.zh ? '谜墨' : 'Mimor'
   }
 }

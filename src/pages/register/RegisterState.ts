@@ -1,4 +1,4 @@
-import { VerifyingJson } from "../../jsons/VerifyingJson"
+import { VerifyingJson } from '../../jsons/VerifyingJson'
 
 export class RegisterState {
   verifying: VerifyingJson | null = null

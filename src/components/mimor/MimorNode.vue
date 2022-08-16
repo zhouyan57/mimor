@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { isElement, XNode } from "../../libs/x-node"
-import { MimorState } from "./MimorState"
+import { isElement, XNode } from '../../libs/x-node'
+import { MimorState } from './MimorState'
 
 defineProps<{ mimor: MimorState; node: XNode }>()
 </script>

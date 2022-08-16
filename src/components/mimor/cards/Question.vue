@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { matchElement, XElement } from "../../../libs/x-node"
-import MimorNode from "../MimorNode.vue"
-import MimorNodes from "../MimorNodes.vue"
-import { MimorState } from "../MimorState"
+import { matchElement, XElement } from '../../../libs/x-node'
+import MimorNode from '../MimorNode.vue'
+import MimorNodes from '../MimorNodes.vue'
+import { MimorState } from '../MimorState'
 
 defineProps<{ mimor: MimorState; element: XElement }>()
 </script>

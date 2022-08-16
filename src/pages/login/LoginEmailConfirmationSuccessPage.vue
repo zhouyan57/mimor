@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
-import Lang from "../../components/Lang.vue"
+import { Head } from '@vueuse/head'
+import Lang from '../../components/Lang.vue'
 </script>
 
 <template>

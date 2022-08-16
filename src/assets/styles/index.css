@@ -1,5 +1,5 @@
-@import "./tailwind.css";
-@import "./fonts.css";
+@import './tailwind.css';
+@import './fonts.css';
 
 input {
   font-family: inherit;

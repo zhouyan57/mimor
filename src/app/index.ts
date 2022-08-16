@@ -1,5 +1,5 @@
-import { reactive } from "vue"
-import { App } from "./App"
+import { reactive } from 'vue'
+import { App } from './App'
 
 declare global {
   var app: App

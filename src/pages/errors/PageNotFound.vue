@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Head } from "@vueuse/head"
-import { useRoute } from "vue-router"
-import Lang from "../../components/Lang.vue"
+import { Head } from '@vueuse/head'
+import { useRoute } from 'vue-router'
+import Lang from '../../components/Lang.vue'
 
 const route = useRoute()
 const { slugs } = route.params
-const path = typeof slugs === "string" ? slugs : slugs.join("/")
+const path = typeof slugs === 'string' ? slugs : slugs.join('/')
 </script>
 
 <template>

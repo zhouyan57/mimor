@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { onMounted, reactive } from "vue"
-import Lang from "../../components/Lang.vue"
-import Loading from "../../components/Loading.vue"
-import PageLayoutHeader from "./PageLayoutHeader.vue"
-import PageLayoutLogo from "./PageLayoutLogo.vue"
-import PageLayoutSidebar from "./PageLayoutSidebar.vue"
-import { PageLayoutState as State } from "./PageLayoutState"
+import { onMounted, reactive } from 'vue'
+import Lang from '../../components/Lang.vue'
+import Loading from '../../components/Loading.vue'
+import PageLayoutHeader from './PageLayoutHeader.vue'
+import PageLayoutLogo from './PageLayoutLogo.vue'
+import PageLayoutSidebar from './PageLayoutSidebar.vue'
+import { PageLayoutState as State } from './PageLayoutState'
 
 const { options } = defineProps<{
   options?: {

@@ -1,13 +1,13 @@
 function initialTag(): string {
-  const local = localStorage.getItem("lang")
+  const local = localStorage.getItem('lang')
   if (local) return local
-  if (navigator.language.startsWith("zh")) return "zh"
-  return "en"
+  if (navigator.language.startsWith('zh')) return 'zh'
+  return 'en'
 }
 
 export class Lang {
   _tag: string
-  tags = ["zh", "en"]
+  tags = ['zh', 'en']
 
   constructor() {
     this._tag = initialTag()
@@ -19,11 +19,11 @@ export class Lang {
 
   set tag(tag: string) {
     this._tag = tag
-    localStorage.setItem("lang", tag)
+    localStorage.setItem('lang', tag)
   }
 
   get zh(): boolean {
-    return this.tag.startsWith("zh")
+    return this.tag.startsWith('zh')
   }
 
   get en(): boolean {
@@ -32,12 +32,12 @@ export class Lang {
 
   findTagName(tag: string): string {
     switch (tag) {
-      case "zh":
-        return "中文"
-      case "en":
-        return "English"
+      case 'zh':
+        return '中文'
+      case 'en':
+        return 'English'
       default:
-        return "English"
+        return 'English'
     }
   }
 

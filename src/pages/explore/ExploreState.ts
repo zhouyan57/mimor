@@ -1,7 +1,7 @@
 export class ExploreState {
   finished = false
   flag = true
-  text = ""
+  text = ''
   loading = true
 
   again() {
@@ -15,7 +15,7 @@ export class ExploreState {
   }
 
   async loadText() {
-    const response = await fetch("/contents/sisuo.mimor")
+    const response = await fetch('/contents/sisuo.mimor')
     const text = await response.text()
     this.text = text
   }

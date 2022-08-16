@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, reactive } from "vue"
-import Lang from "../../components/Lang.vue"
-import Mimor from "../../components/mimor/Mimor.vue"
-import PageLayout from "../../layouts/page-layout/PageLayout.vue"
-import { ExploreState as State } from "./ExploreState"
+import { onMounted, reactive } from 'vue'
+import Lang from '../../components/Lang.vue'
+import Mimor from '../../components/mimor/Mimor.vue'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { ExploreState as State } from './ExploreState'
 
 const state = reactive(new State())
 

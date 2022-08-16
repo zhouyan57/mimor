@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue"
-import { isElement, XNode } from "../../libs/x-node"
-import { MimorState } from "./MimorState"
+import { onMounted } from 'vue'
+import { isElement, XNode } from '../../libs/x-node'
+import { MimorState } from './MimorState'
 
 const { mimor, node } = defineProps<{ mimor: MimorState; node: XNode }>()
 

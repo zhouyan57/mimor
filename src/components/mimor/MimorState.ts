@@ -1,7 +1,7 @@
-import { isElement, parseNodes, XElement, XNode } from "../../libs/x-node"
-import { Router } from "./models/Router"
-import { Theme } from "./models/Theme"
-import { mountRoutes } from "./mountRoutes"
+import { isElement, parseNodes, XElement, XNode } from '../../libs/x-node'
+import { Router } from './models/Router'
+import { Theme } from './models/Theme'
+import { mountRoutes } from './mountRoutes'
 
 export interface MimorOptions {
   text: string
@@ -10,7 +10,7 @@ export interface MimorOptions {
 
 export class MimorState {
   router = new Router()
-  theme = new Theme("orange")
+  theme = new Theme('orange')
   nodes: Array<XNode>
   pointer: number
   remaining: Array<number>
@@ -21,7 +21,7 @@ export class MimorState {
     this.remaining = [...Array(this.length).keys()]
     const index = this.remaining.shift()
     if (index === undefined) {
-      throw new Error("initial nodes can not be empty.")
+      throw new Error('initial nodes can not be empty.')
     }
 
     this.pointer = index

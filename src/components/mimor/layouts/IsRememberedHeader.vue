@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Lang from "../../../components/Lang.vue"
-import { MimorState } from "../MimorState"
+import Lang from '../../../components/Lang.vue'
+import { MimorState } from '../MimorState'
 
 defineProps<{ mimor: MimorState }>()
 </script>
