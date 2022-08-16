@@ -30,8 +30,8 @@ defineProps<{ state: State }>()
             <XIcon
               class="h-8 w-8"
               :class="[
-                active && `border-4 border-stone-600`,
-                active && `text-stone-600`,
+                active && 'border-4 border-stone-600',
+                active && 'text-stone-600',
               ]"
             />
           </MenuItem>
@@ -59,7 +59,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-stone-600`,
+                active && 'text-stone-600',
               ]"
             >
               <Lang>
@@ -77,7 +77,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-stone-600`,
+                active && 'text-stone-600',
               ]"
             >
               <Lang>
@@ -93,7 +93,7 @@ defineProps<{ state: State }>()
               class="font-semibold"
               :class="[
                 active && 'underline decoration-6',
-                active && `text-stone-600`,
+                active && 'text-stone-600',
               ]"
             >
               <Lang>
