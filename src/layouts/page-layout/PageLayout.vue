@@ -33,8 +33,8 @@ onMounted(async () => {
     </Lang>
   </Loading>
   <div v-else class="flex h-screen p-3">
-    <div class="w-1/4 md:block hidden">
-      <div class="pb-2">
+    <div class="md:flex flex-col h-full w-1/4 hidden">
+      <div class="pb-3">
         <PageLayoutLogo :state="state" />
       </div>
 

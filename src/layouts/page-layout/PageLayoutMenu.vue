@@ -90,7 +90,7 @@ defineProps<{ state: State }>()
         </MenuItem>
 
         <div v-if="$app.auth.user" class="py-2">
-          <div class="border-t py-3 border-stone-800">
+          <div class="border-t py-3 border-stone-900">
             <div class="font-bold">{{ $app.auth.user.name }}</div>
             <div class="text-xl text-stone-600">
               {{ $app.auth.user.username }}
