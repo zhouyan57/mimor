@@ -20,35 +20,35 @@ module.exports = {
         30: "30deg",
       },
     },
-  //   fontFamily: {
-  //     sans: [
-  //       // "Helvetica",
-  //       "Linux Biolinum O",
-  //       "LXGW New Clear Gothic",
-  //       "LXGW Clear Gothic",
-  //       "sans-serif",
-  //     ],
-  //     serif: [
-  //       // "Helvetica",
-  //       // "EB Garamond",
-  //       "Linux Libertine O",
-  //       // "Source Han Serif SC",
-  //       "LXGW WenKai",
-  //       "serif",
-  //     ],
-  //     mono: [
-  //       "Fira Code",
-  //       // NOTE One Chinese character should equal to two English characters.
-  //       "LXGW WenKai Larger",
-  //       "monospace",
-  //     ],
-  //     logo: [
-  //       "Bodoni Moda",
-  //       // "EB Garamond",
-  //       // "Linux Libertine O",
-  //       "Source Han Serif SC",
-  //       "serif",
-  //     ],
-  //   },
+    fontFamily: {
+      sans: [
+        // "Helvetica",
+        "Linux Biolinum O",
+        "LXGW New Clear Gothic",
+        "LXGW Clear Gothic",
+        "sans-serif",
+      ],
+      serif: [
+        // "Helvetica",
+        // "EB Garamond",
+        "Linux Libertine O",
+        // "Source Han Serif SC",
+        "LXGW WenKai",
+        "serif",
+      ],
+      mono: [
+        "Fira Code",
+        // NOTE One Chinese character should equal to two English characters.
+        "LXGW WenKai Larger",
+        "monospace",
+      ],
+      logo: [
+        "Bodoni Moda",
+        // "EB Garamond",
+        // "Linux Libertine O",
+        "Source Han Serif SC",
+        "serif",
+      ],
+    },
   },
 }
