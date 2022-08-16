@@ -2,8 +2,6 @@
 
 PageLayoutMenu
 
-PageLayoutHeader
-
 PageLayoutMenuMobile
 
 # project

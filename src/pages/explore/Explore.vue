@@ -11,9 +11,9 @@ onMounted(() => state.load())
 
 <template>
   <PageLayout>
-    <div class="h-full flex flex-col">
-      <div class="text-2xl">Explore</div>
+    <template #title>Explore</template>
 
+    <div class="h-full flex flex-col">
       <div v-if="state.loading">Loading...</div>
 
       <Mimor

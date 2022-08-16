@@ -23,7 +23,7 @@ const form = useForm({ username: "", name: "", email: "" })
         })
     "
   >
-    <Lang class="font-logo text-3xl font-semibold">
+    <Lang class="font-logo text-3xl font-bold">
       <template #zh>注册</template>
       <template #en>Register</template>
     </Lang>

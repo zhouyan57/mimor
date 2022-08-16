@@ -26,7 +26,7 @@ const form = useForm({ email: "" })
   >
     <div class="flex flex-col pb-2">
       <div class="flex items-baseline justify-between">
-        <div class="font-logo text-3xl font-semibold">
+        <div class="font-logo text-3xl font-bold">
           <Lang>
             <template #zh> 登录 </template>
             <template #en> Login </template>

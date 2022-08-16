@@ -6,7 +6,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <Link href="/" class="font-logo text-3xl hover:underline">
+  <Link href="/" class="font-logo text-3xl font-bold hover:underline">
     <div>{{ $app.name }}</div>
   </Link>
 </template>
