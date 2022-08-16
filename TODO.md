@@ -1,7 +1,5 @@
 # register & login
 
-`Form` -- use `http/Http` module
-
 PageLayoutHeader
 
 PageLayoutMenu
