@@ -2,7 +2,6 @@
 import Lang from "../../components/Lang.vue"
 import Link from "../../components/Link.vue"
 import PageLayoutLang from "./PageLayoutLang.vue"
-import PageLayoutLogo from "./PageLayoutLogo.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()
@@ -11,8 +10,6 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex flex-col relative">
     <div class="flex flex-col items-start space-y-1 text-xl">
-      <PageLayoutLogo :state="state" />
-
       <PageLayoutLang :state="state" />
 
       <Link v-if="!$app.auth.user" href="/register" class="hover:underline">

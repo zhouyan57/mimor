@@ -1,8 +1,4 @@
-# register & login
-
-PageLayoutMenu
-
-PageLayoutMenuMobile
+PageLayoutMenu -- add Lang
 
 # project
 

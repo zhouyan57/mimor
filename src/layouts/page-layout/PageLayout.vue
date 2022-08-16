@@ -3,6 +3,7 @@ import { onMounted, reactive } from "vue"
 import Lang from "../../components/Lang.vue"
 import Loading from "../../components/Loading.vue"
 import PageLayoutHeader from "./PageLayoutHeader.vue"
+import PageLayoutLogo from "./PageLayoutLogo.vue"
 import PageLayoutSidebar from "./PageLayoutSidebar.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
@@ -32,7 +33,13 @@ onMounted(async () => {
     </Lang>
   </Loading>
   <div v-else class="flex h-screen p-3">
-    <PageLayoutSidebar class="h-full w-1/4 md:block hidden" :state="state" />
+    <div class="w-1/4 md:block hidden">
+      <div class="pb-2">
+        <PageLayoutLogo :state="state" />
+      </div>
+
+      <PageLayoutSidebar :state="state" />
+    </div>
 
     <div class="h-full flex flex-col w-full md:w-3/4">
       <PageLayoutHeader :state="state">
