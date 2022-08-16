@@ -1,3 +1,10 @@
+Home as landing page
+
+Move
+
+home
+
+Projects
 links
 
 - Explore
@@ -5,15 +12,15 @@ links
 
 # project
 
-Dashboard -- create new project
+Projects -- create new project
 
-Dashboard -- list projects
+Projects -- list projects
 
-DashboardProject
+Projects
 
-DashboardProject -- can recall a project.
+Projects -- can recall a project.
 
-DashboardProject -- click goto project page -- `Project`
+Projects -- click goto project page -- `Project`
 
 project -- a project we have button to recall a project.
 

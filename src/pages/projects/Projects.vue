@@ -2,7 +2,7 @@
 import { reactive } from "vue"
 import Lang from "../../components/Lang.vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
-import { DashboardState as State } from "./DashboardState"
+import { ProjectsState as State } from "./ProjectsState"
 
 const state = reactive(new State())
 </script>

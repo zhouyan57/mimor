@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from "vue-router"
-import Dashboard from "./dashboard/Dashboard.vue"
+import Home from "./home/Home.vue"
+import Projects from "./projects/Projects.vue"
 import PageNotFound from "./errors/PageNotFound.vue"
 import Explore from "./explore/Explore.vue"
 import Login from "./login/Login.vue"
@@ -7,7 +8,8 @@ import LoginEmailConfirmationSuccessPage from "./login/LoginEmailConfirmationSuc
 import Register from "./register/Register.vue"
 import RegisterEmailConfirmationSuccessPage from "./register/RegisterEmailConfirmationSuccessPage.vue"
 export const routes: Array<RouteRecordRaw> = [
-  { path: "/", component: Dashboard },
+  { path: "/", component: Home },
+  { path: "/projects", component: Projects },
   { path: "/explore", component: Explore },
   { path: "/register", component: Register },
   { path: "/login", component: Login },
