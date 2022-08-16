@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, reactive } from "vue"
+import Lang from "../../components/Lang.vue"
 import Mimor from "../../components/mimor/Mimor.vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import { ExploreState as State } from "./ExploreState"
@@ -11,7 +12,12 @@ onMounted(() => state.load())
 
 <template>
   <PageLayout>
-    <template #title>Explore</template>
+    <template #title>
+      <Lang>
+        <template #zh>探索</template>
+        <template #en>Explore</template>
+      </Lang>
+    </template>
 
     <div class="h-full flex flex-col">
       <div v-if="state.loading">Loading...</div>

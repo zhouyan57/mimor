@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue"
+import Lang from "../../components/Lang.vue"
 import PageLayout from "../../layouts/page-layout/PageLayout.vue"
 import { DashboardState as State } from "./DashboardState"
 
@@ -16,8 +17,15 @@ const state = reactive(new State())
       },
     }"
   >
+    <template #title>
+      <Lang>
+        <template #zh>项目</template>
+        <template #en>Projects</template>
+      </Lang>
+    </template>
+
     <div class="h-full flex flex-col">
-      <div>TODO project list</div>
+      <div>TODO</div>
     </div>
   </PageLayout>
 </template>

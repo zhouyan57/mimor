@@ -24,7 +24,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <MenuItems
-        class="flex flex-col pb-20 justify-center fixed bg-white top-0 right-0 h-screen w-screen border-4 px-2"
+        class="flex flex-col pb-20 justify-center fixed bg-white top-0 right-0 h-screen w-screen border-4 px-2 space-y-2"
       >
         <div class="fixed top-2 left-2">
           <MenuItem v-slot="{ active }">
@@ -42,26 +42,7 @@ defineProps<{ state: State }>()
           <PageLayoutLang :state="state" />
         </div>
 
-        <div class="py-2 flex flex-col justify-center">
-          <div class="border-b border-stone-800"></div>
-        </div>
-
-        <div v-if="$app.auth.user" class="space-y-2">
-          <div class="space-y-1">
-            <Lang>
-              <template #zh>记忆者</template>
-              <template #en>Logged in as</template>
-            </Lang>
-            <div class="font-semibold">{{ $app.auth.user.name }}</div>
-            <div class="text-xl font-semibold">
-              @{{ $app.auth.user.username }}
-            </div>
-          </div>
-
-          <div class="py-2 flex flex-col justify-center">
-            <div class="border-b border-stone-800"></div>
-          </div>
-
+        <div v-if="$app.auth.user">
           <MenuItem v-slot="{ active }">
             <button
               @click="$app.auth.logout()"
@@ -78,36 +59,43 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div v-else class="space-y-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              href="/register"
-              :class="[
-                active && 'underline decoration-6',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>注册</template>
-                <template #en>Register</template>
-              </Lang>
-            </Link>
-          </MenuItem>
+        <MenuItem v-if="!$app.auth.user" as="div" v-slot="{ active }">
+          <Link
+            href="/login"
+            :class="[
+              active && 'underline decoration-6',
+              active && 'text-stone-600',
+            ]"
+          >
+            <Lang>
+              <template #zh>登录</template>
+              <template #en>Login</template>
+            </Lang>
+          </Link>
+        </MenuItem>
 
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              href="/login"
-              :class="[
-                active && 'underline decoration-6',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>登录</template>
-                <template #en>Login</template>
-              </Lang>
-            </Link>
-          </MenuItem>
+        <MenuItem v-if="!$app.auth.user" as="div" v-slot="{ active }">
+          <Link
+            href="/register"
+            :class="[
+              active && 'underline decoration-6',
+              active && 'text-stone-600',
+            ]"
+          >
+            <Lang>
+              <template #zh>注册</template>
+              <template #en>Register</template>
+            </Lang>
+          </Link>
+        </MenuItem>
+
+        <div v-if="$app.auth.user" class="py-2">
+          <div class="border-t py-3 border-stone-800">
+            <div class="font-bold">{{ $app.auth.user.name }}</div>
+            <div class="text-xl text-stone-600">
+              {{ $app.auth.user.username }}
+            </div>
+          </div>
         </div>
       </MenuItems>
     </Transition>

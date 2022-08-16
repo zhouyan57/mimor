@@ -8,49 +8,46 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex flex-col relative">
-    <div class="flex flex-col items-start space-y-1 text-2xl pr-2">
-      <PageLayoutLang :state="state" />
+  <div class="flex flex-col items-start text-2xl pr-2 space-y-2">
+    <PageLayoutLang :state="state" />
 
-      <div class="py-2 w-full flex flex-col justify-center">
-        <div class="border-b border-stone-800"></div>
+    <Link v-if="!$app.auth.user" href="/login" class="hover:underline">
+      <Lang>
+        <template #zh>登录</template>
+        <template #en>Login</template>
+      </Lang>
+    </Link>
+
+    <Link v-if="!$app.auth.user" href="/register" class="hover:underline">
+      <Lang>
+        <template #zh>注册</template>
+        <template #en>Register</template>
+      </Lang>
+    </Link>
+
+    <button
+      v-if="$app.auth.user"
+      class="hover:underline"
+      @click="
+        () => {
+          $app.auth.logout()
+          $router.replace('/explore')
+        }
+      "
+    >
+      <Lang>
+        <template #zh>退出</template>
+        <template #en>Logout</template>
+      </Lang>
+    </button>
+
+    <div v-if="$app.auth.user" class="py-2 w-full">
+      <div class="border-t py-3 border-stone-800">
+        <div class="font-bold">{{ $app.auth.user.name }}</div>
+        <div class="text-xl text-stone-600">
+          {{ $app.auth.user.username }}
+        </div>
       </div>
-
-      <Link v-if="!$app.auth.user" href="/register" class="hover:underline">
-        <Lang>
-          <template #zh>注册</template>
-          <template #en>Register</template>
-        </Lang>
-      </Link>
-
-      <Link v-if="!$app.auth.user" href="/login" class="hover:underline">
-        <Lang>
-          <template #zh>登录</template>
-          <template #en>Login</template>
-        </Lang>
-      </Link>
-    </div>
-
-    <div class="absolute bottom-0 flex-col flex items-start text-xl space-y-">
-      <div v-if="$app.auth.user" class="text-lg font-bold">
-        {{ $app.auth.user.name }}
-      </div>
-
-      <button
-        v-if="$app.auth.user"
-        @click="
-          () => {
-            $app.auth.logout()
-            $router.replace('/explore')
-          }
-        "
-        class="hover:underline"
-      >
-        <Lang>
-          <template #zh>退出</template>
-          <template #en>Logout</template>
-        </Lang>
-      </button>
     </div>
   </div>
 </template>

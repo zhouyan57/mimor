@@ -9,7 +9,7 @@ defineProps<{ state: State }>()
   <div class="flex pb-3">
     <PageLayoutMenu class="block md:hidden pr-1" :state="state" />
 
-    <div class="text-xl font-bold">
+    <div class="text-2xl font-bold">
       <slot name="title" />
     </div>
   </div>
