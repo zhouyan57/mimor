@@ -1,17 +1,11 @@
 # project
 
 Projects -- create new project
-
 Projects -- list projects
-
-Projects
-
 Projects -- can recall a project.
-
 Projects -- click goto project page -- `Project`
 
 project -- a project we have button to recall a project.
-
 Project -- a project page is a files manager with preview.
 
 - one can edit file.
