@@ -6,7 +6,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex pb-3">
+  <div class="flex items-center pb-2">
     <PageLayoutMenu class="block md:hidden pr-1" :state="state" />
 
     <div class="text-2xl font-bold">
