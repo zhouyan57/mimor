@@ -30,7 +30,7 @@ const state = reactive(new State())
             </p>
             <h1 class="font-logo text-xl font-bold">间隔重复</h1>
             <p class="text-lg">
-              在回顾是，卡片将被分散于时间，并且间隔逐渐稀疏，以此来形成长期记忆。
+              在回顾时，卡片将被分散于时间，并且间隔逐渐稀疏，以此来形成长期记忆。
             </p>
             <h1 class="font-logo text-xl font-bold">自我推荐</h1>
             <p class="text-lg">
