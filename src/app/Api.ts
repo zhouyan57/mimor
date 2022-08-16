@@ -7,20 +7,16 @@ export class Api {
     return localStorage.getItem("token") || ""
   }
 
-  get headers() {
-    return {
-      Authorization: `Bearer ${this.token}`,
-      Accept: "application/json",
-    }
-  }
-
-  async fetchCurrentUser() {
+  async user() {
     const response = await fetch(`${this.url}/user`, {
-      headers: this.headers,
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+        Accept: "application/json",
+      },
     })
 
     if (!response.ok) {
-      console.log({ who: "Ap.fetchUser", message: "response not ok", response })
+      console.log({ who: "app.api.user", message: "response not ok", response })
       return
     }
 

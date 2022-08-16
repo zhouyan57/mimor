@@ -13,7 +13,7 @@ export class Auth {
       })
     }
 
-    this.user = await app.api.fetchCurrentUser()
+    this.user = await app.api.user()
     this.initialized = true
 
     console.log({
@@ -24,7 +24,7 @@ export class Auth {
 
   async login(token: string) {
     localStorage.setItem("token", token)
-    this.user = await app.api.fetchCurrentUser()
+    this.user = await app.api.user()
     console.log({ who: "app.auth.login", user: this.user })
   }
 
