@@ -11,7 +11,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <Menu as="div" class="relative flex text-2xl">
+  <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
       <MenuIcon class="h-7 w-7 text-stone-500" />
     </MenuButton>
@@ -49,25 +49,45 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div>
-          <Link v-if="$app.auth.user" href="/projects" class="hover:underline">
-            <Lang>
-              <template #zh>项目</template>
-              <template #en>Projects</template>
-            </Lang>
-          </Link>
+        <div class="py-2">
+          <MenuItem v-slot="{ active }">
+            <Link
+              v-if="$app.auth.user"
+              href="/projects"
+              class="hover:underline"
+            >
+              <Lang
+                :class="[
+                  active && 'underline decoration-6',
+                  active && 'text-stone-600',
+                ]"
+              >
+                <template #zh>项目</template>
+                <template #en>Projects</template>
+              </Lang>
+            </Link>
+          </MenuItem>
 
-          <Link href="/explore" class="hover:underline">
-            <Lang>
-              <template #zh>探索</template>
-              <template #en>Explore</template>
-            </Lang>
-          </Link>
+          <MenuItem v-slot="{ active }">
+            <Link
+              href="/explore"
+              class="hover:underline"
+              :class="[
+                active && 'underline decoration-6',
+                active && 'text-stone-600',
+              ]"
+            >
+              <Lang>
+                <template #zh>探索</template>
+                <template #en>Explore</template>
+              </Lang>
+            </Link>
+          </MenuItem>
 
           <PageLayoutLang :state="state" />
         </div>
 
-        <div class="border-t border-stone-900 py-2">
+        <div class="border-t border-stone-900 py-3">
           <div v-if="$app.auth.user" class="flex items-end justify-between">
             <div>
               <div class="font-bold">{{ $app.auth.user.name }}</div>
