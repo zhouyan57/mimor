@@ -50,62 +50,81 @@ defineProps<{ state: State }>()
         </div>
 
         <div>
+          <Link v-if="$app.auth.user" href="/projects" class="hover:underline">
+            <Lang>
+              <template #zh>项目</template>
+              <template #en>Projects</template>
+            </Lang>
+          </Link>
+
+          <Link href="/explore" class="hover:underline">
+            <Lang>
+              <template #zh>探索</template>
+              <template #en>Explore</template>
+            </Lang>
+          </Link>
+
           <PageLayoutLang :state="state" />
         </div>
 
-        <div v-if="$app.auth.user">
-          <MenuItem v-slot="{ active }">
-            <button
-              @click="$app.auth.logout()"
-              :class="[
-                active && 'underline decoration-6',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>退出</template>
-                <template #en>Logout</template>
-              </Lang>
-            </button>
-          </MenuItem>
-        </div>
-
-        <MenuItem v-if="!$app.auth.user" as="div" v-slot="{ active }">
-          <Link
-            href="/login"
-            :class="[
-              active && 'underline decoration-6',
-              active && 'text-stone-600',
-            ]"
-          >
-            <Lang>
-              <template #zh>登录</template>
-              <template #en>Login</template>
-            </Lang>
-          </Link>
-        </MenuItem>
-
-        <MenuItem v-if="!$app.auth.user" as="div" v-slot="{ active }">
-          <Link
-            href="/register"
-            :class="[
-              active && 'underline decoration-6',
-              active && 'text-stone-600',
-            ]"
-          >
-            <Lang>
-              <template #zh>注册</template>
-              <template #en>Register</template>
-            </Lang>
-          </Link>
-        </MenuItem>
-
-        <div v-if="$app.auth.user" class="py-2">
-          <div class="border-t py-3 border-stone-900">
-            <div class="font-bold">{{ $app.auth.user.name }}</div>
-            <div class="text-xl text-stone-600">
-              {{ $app.auth.user.username }}
+        <div class="border-t border-stone-900 py-2">
+          <div v-if="$app.auth.user" class="flex items-end justify-between">
+            <div>
+              <div class="font-bold">{{ $app.auth.user.name }}</div>
+              <div class="text-xl text-stone-600">
+                {{ $app.auth.user.username }}
+              </div>
             </div>
+
+            <MenuItem v-slot="{ active }">
+              <button
+                @click="$app.auth.logout()"
+                class="text-stone-600 text-xl"
+                :class="[
+                  active && 'underline decoration-6',
+                  active && 'text-stone-600',
+                ]"
+              >
+                <Lang>
+                  <template #zh>退出</template>
+                  <template #en>Logout</template>
+                </Lang>
+              </button>
+            </MenuItem>
+          </div>
+
+          <div v-if="!$app.auth.user" class="flex">
+            <MenuItem v-slot="{ active }">
+              <Link
+                href="/login"
+                :class="[
+                  active && 'underline decoration-6',
+                  active && 'text-stone-600',
+                ]"
+              >
+                <Lang>
+                  <template #zh>登录</template>
+                  <template #en>Login</template>
+                </Lang>
+              </Link>
+            </MenuItem>
+
+            <div class="font-bold px-2">/</div>
+
+            <MenuItem v-slot="{ active }">
+              <Link
+                href="/register"
+                :class="[
+                  active && 'underline decoration-6',
+                  active && 'text-stone-600',
+                ]"
+              >
+                <Lang>
+                  <template #zh>注册</template>
+                  <template #en>Register</template>
+                </Lang>
+              </Link>
+            </MenuItem>
           </div>
         </div>
       </MenuItems>

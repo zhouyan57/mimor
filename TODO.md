@@ -1,5 +1,3 @@
-fix menu style
-
 Home as landing page
 
 Move
