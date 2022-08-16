@@ -1,6 +1,3 @@
-Home as landing page
-
-
 # project
 
 Projects -- create new project

@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
 <template>
   <Menu as="div" class="relative flex text-2xl">
     <MenuButton>
-      <MenuIcon class="h-7 w-7" />
+      <MenuIcon class="h-7 w-7 text-stone-500" />
     </MenuButton>
 
     <Transition
