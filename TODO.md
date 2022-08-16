@@ -1,9 +1,7 @@
 # register & login
 
 PageLayoutHeader
-
 PageLayoutMenu
-
 PageLayoutMenuMobile
 
 # project
