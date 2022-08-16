@@ -1,31 +1,45 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
+import Lang from '../../components/Lang.vue'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectsState as State } from './ProjectsState'
 
-defineProps<{ state: State }>()
+const state = reactive(new State())
 </script>
 
 <template>
-  <div
-    class="h-full w-full p-2 flex flex-col border border-stone-400 rounded-sm"
+  <PageLayout
+    :options="{
+      onInitialized: () => {
+        if (!$app.auth.user) {
+          $router.replace('/explore')
+        }
+      },
+    }"
   >
-    <form class="flex justify-between space-x-3">
-      <div class="flex w-full flex-col space-y-2">
-        <input
-          class="py-1 px-2 w-full"
-          name="slug"
-          type="text"
-          value=""
-          placeholder="project-slug"
-        />
+    <template #title>
+      <Lang>
+        <template #zh>创建新项目</template>
+        <template #en>Create a new project</template>
+      </Lang>
+    </template>
 
-        <input
-          class="py-1 px-2 w-full"
-          name="name"
-          type="text"
-          value=""
-          placeholder="Project name"
-        />
-      </div>
+    <form class="flex w-full flex-col space-y-2">
+      <input
+        class="py-1 px-2 w-full"
+        name="slug"
+        type="text"
+        value=""
+        placeholder="project-slug"
+      />
+
+      <input
+        class="py-1 px-2 w-full"
+        name="name"
+        type="text"
+        value=""
+        placeholder="Project name"
+      />
     </form>
-  </div>
+  </PageLayout>
 </template>

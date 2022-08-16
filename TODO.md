@@ -1,7 +1,5 @@
 # project
 
-`/projects/new` route
-
 ProjectsNew.vue -- create new project
 
 Projects -- list projects
