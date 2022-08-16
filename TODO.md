@@ -1,6 +1,7 @@
 # project
 
-ProjectsNew.vue -- create new project
+ProjectsNew -- improve style
+ProjectsNew -- post to api
 
 Projects -- list projects
 Projects -- can recall a project.

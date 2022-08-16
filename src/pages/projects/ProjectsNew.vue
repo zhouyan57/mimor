@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
+import FormButton from '../../components/FormButton.vue'
+import FormInput from '../../components/FormInput.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useForm } from '../../hooks/useForm'
 import { ProjectsState as State } from './ProjectsState'
 
 const state = reactive(new State())
+
+const form = useForm({ name: '', description: '' })
 </script>
 
 <template>
@@ -24,22 +29,35 @@ const state = reactive(new State())
       </Lang>
     </template>
 
-    <form class="flex w-full flex-col space-y-2">
-      <input
-        class="py-1 px-2 w-full"
-        name="slug"
-        type="text"
-        value=""
-        placeholder="project-slug"
-      />
+    <form class="flex max-w-lg flex-col space-y-2">
+      <FormInput name="name" required>
+        <template #label>
+          <Lang>
+            <template #zh>项目名</template>
+            <template #en>Name</template>
+          </Lang>
+        </template>
+      </FormInput>
 
-      <input
-        class="py-1 px-2 w-full"
-        name="name"
-        type="text"
-        value=""
-        placeholder="Project name"
-      />
+      <FormInput name="description">
+        <template #label>
+          <Lang>
+            <template #zh>项目描述</template>
+            <template #en>Description</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <div class="flex flex-col justify-center py-4">
+        <hr class="border-t border-stone-600" />
+      </div>
+
+      <FormButton :disabled="form.processing">
+        <Lang>
+          <template #zh>创建</template>
+          <template #en>Create</template>
+        </Lang>
+      </FormButton>
     </form>
   </PageLayout>
 </template>
