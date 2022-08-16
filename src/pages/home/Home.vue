@@ -8,17 +8,7 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <PageLayout
-    :options="{
-      onInitialized: () => {
-        if ($app.auth.user) {
-          $router.replace('/projects')
-        } else {
-          $router.replace('/explore')
-        }
-      },
-    }"
-  >
+  <PageLayout>
     <template #title>
       <Lang>
         <template #zh>主页</template>

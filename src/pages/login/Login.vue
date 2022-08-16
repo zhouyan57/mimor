@@ -13,7 +13,7 @@ const state = reactive(new State())
     :options="{
       onInitialized: () => {
         if ($app.auth.user) {
-          $router.replace('/')
+          $router.replace('/projects')
         }
       },
     }"
