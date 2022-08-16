@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import Lang from '../../components/Lang.vue'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import Lang from '../../components/Lang.vue'
 import { useForm } from '../../hooks/useForm'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectsState as State } from './ProjectsState'
 
 const state = reactive(new State())
