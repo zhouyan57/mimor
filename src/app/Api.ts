@@ -1,37 +1,28 @@
 import { Schema } from "@xieyuheng/ty"
 import { UserSchema } from "../jsons/UserJson"
+import { Http } from "../framework/http"
 
 export class Api {
   url = import.meta.env.VITE_API_URL
 
-  get token(): string {
+  get token() {
     return localStorage.getItem("token") || ""
+  }
+
+  get headers() {
+    return {
+      Authorization: `Bearer ${this.token}`,
+      Accept: "application/json",
+    }
   }
 
   get user() {
     return {
-      get: get(`${this.url}/user`, {
-        headers: {
-          Authorization: `Bearer ${this.token}`,
-          Accept: "application/json",
-        },
-        output: UserSchema,
-      }),
+      get: () =>
+        Http.get(`${this.url}/user`, {
+          headers: this.headers,
+          output: UserSchema,
+        }).body(),
     }
-  }
-}
-
-function get<O>(url: string, options: RequestInit & { output: Schema<O> }) {
-  const { headers, output } = options
-
-  return async (): Promise<O | undefined> => {
-    const response = await fetch(url, { headers })
-
-    if (!response.ok) {
-      console.log({ who: "api.get", message: "response not ok", response })
-      return
-    }
-
-    return output.validate(await response.json())
   }
 }

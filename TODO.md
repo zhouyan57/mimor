@@ -1,12 +1,6 @@
 # register & login
 
-LoginStart -- fix the use of `form.response.ok`
-
-extract `Http` module for `Api` and `Form`
-
-- `framework/http/Client.ts`
-
-`Form` -- use `Http` module
+`Form` -- use `http/Http` module
 
 PageLayoutHeader
 
