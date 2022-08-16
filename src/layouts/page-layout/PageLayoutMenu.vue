@@ -4,6 +4,7 @@ import { MenuIcon, XIcon } from "@heroicons/vue/outline"
 import Lang from "../../components/Lang.vue"
 import Link from "../../components/Link.vue"
 import PageLayoutLang from "./PageLayoutLang.vue"
+import PageLayoutLogo from "./PageLayoutLogo.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 defineProps<{ state: State }>()
@@ -34,6 +35,16 @@ defineProps<{ state: State }>()
                 active && 'border-4 border-stone-600',
                 active && 'text-stone-600',
               ]"
+            />
+          </MenuItem>
+        </div>
+
+        <div class="fixed top-0 right-3">
+          <MenuItem v-slot="{ active }">
+            <PageLayoutLogo
+              class="font-light"
+              :class="[active && 'text-stone-600']"
+              :state="state"
             />
           </MenuItem>
         </div>

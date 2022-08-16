@@ -1,3 +1,8 @@
+links
+
+- Explore
+- Projects
+
 # project
 
 Dashboard -- create new project

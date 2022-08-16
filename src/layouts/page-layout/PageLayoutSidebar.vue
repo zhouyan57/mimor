@@ -9,9 +9,7 @@ defineProps<{ state: State }>()
 
 <template>
   <div class="flex flex-col h-full justify-between text-2xl pr-4">
-    <div
-      class="flex flex-col items-start space-y-2 py-2 border-t border-black"
-    >
+    <div class="flex flex-col items-start space-y-2 py-2 border-t border-black">
       <PageLayoutLang :state="state" />
 
       <Link v-if="!$app.auth.user" href="/login" class="hover:underline">
