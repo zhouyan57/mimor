@@ -28,7 +28,7 @@ defineProps<{ state: State }>()
         class="flex flex-col pb-20 justify-center fixed bg-white top-0 right-0 h-screen w-screen border-4 px-2 space-y-2"
       >
         <div class="fixed top-2 left-2">
-          <MenuItem v-slot="{ active }">
+          <MenuItem as="div" v-slot="{ active }">
             <XIcon
               class="h-8 w-8"
               :class="[
@@ -40,7 +40,7 @@ defineProps<{ state: State }>()
         </div>
 
         <div class="fixed top-0 right-3">
-          <MenuItem v-slot="{ active }">
+          <MenuItem as="div" v-slot="{ active }">
             <PageLayoutLogo
               class="font-light"
               :class="[active && 'text-stone-600']"
@@ -49,8 +49,8 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div class="py-2">
-          <MenuItem v-slot="{ active }">
+        <div class="py-2 space-y-2">
+          <MenuItem as="div" v-slot="{ active }">
             <Link
               v-if="$app.auth.user"
               href="/projects"
@@ -68,7 +68,7 @@ defineProps<{ state: State }>()
             </Link>
           </MenuItem>
 
-          <MenuItem v-slot="{ active }">
+          <MenuItem as="div" v-slot="{ active }">
             <Link
               href="/explore"
               class="hover:underline"
@@ -96,7 +96,7 @@ defineProps<{ state: State }>()
               </div>
             </div>
 
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <button
                 @click="$app.auth.logout()"
                 class="text-stone-600 text-xl"
@@ -114,7 +114,7 @@ defineProps<{ state: State }>()
           </div>
 
           <div v-if="!$app.auth.user" class="flex">
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <Link
                 href="/login"
                 :class="[
@@ -131,7 +131,7 @@ defineProps<{ state: State }>()
 
             <div class="font-bold px-2">/</div>
 
-            <MenuItem v-slot="{ active }">
+            <MenuItem as="div" v-slot="{ active }">
               <Link
                 href="/register"
                 :class="[
