@@ -3,6 +3,7 @@ import { onMounted, reactive } from "vue"
 import Lang from "../../components/Lang.vue"
 import Loading from "../../components/Loading.vue"
 import PageLayoutSidebar from "./PageLayoutSidebar.vue"
+import PageLayoutHeader from "./PageLayoutHeader.vue"
 import { PageLayoutState as State } from "./PageLayoutState"
 
 const { options } = defineProps<{
@@ -33,7 +34,8 @@ onMounted(async () => {
   <div v-else class="flex h-screen p-3">
     <PageLayoutSidebar class="h-full w-1/4 md:block hidden" :state="state" />
 
-    <div class="h-full w-full md:w-3/4">
+    <div class="h-full flex flex-col w-full md:w-3/4">
+      <PageLayoutHeader :state="state" />
       <slot />
     </div>
   </div>
