@@ -1,15 +1,5 @@
 Home as landing page
 
-Move
-
-home
-
-Projects
-links
-
-- Explore
-- Projects
-
 # project
 
 Projects -- create new project
