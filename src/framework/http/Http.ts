@@ -23,7 +23,11 @@ export class HttpResponse<O> {
     const response = await fetch(url, { headers })
 
     if (!response.ok) {
-      console.log({ who: "api.get", message: "response not ok", response })
+      console.log({
+        who: "HttpResponse.body",
+        message: "response not ok",
+        response,
+      })
       return
     }
 
