@@ -29,7 +29,7 @@ defineProps<{ state: State }>()
       <PageLayoutLang :state="state" />
     </div>
 
-    <div class="border-t py-3 border-stone-800">
+    <div class="border-t pt-2 border-stone-800">
       <div v-if="$app.auth.user" class="flex items-end justify-between">
         <div>
           <div class="font-bold">{{ $app.auth.user.name }}</div>

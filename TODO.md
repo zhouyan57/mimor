@@ -1,6 +1,9 @@
 # project
 
-Projects -- create new project
+`/projects/new` route
+
+ProjectsNew.vue -- create new project
+
 Projects -- list projects
 Projects -- can recall a project.
 Projects -- click goto project page -- `Project`
@@ -17,6 +20,8 @@ Project -- support file tree
 
 - select project
 - select template
+
+suppurt `name_zh` & `name_en`
 
 # rendering
 
