@@ -2,14 +2,17 @@
 
 Project -- a project page is a files manager with preview.
 
-- one can edit file.
-- one can create new file.
+Project -- create new file
+
+Project -- list files
+
+Project -- edit file
 
 Project -- support file tree
 
 Project -- be able to recall a project.
 
-ProjectList -- button can recall a project.
+ProjectList -- can recall a project directly.
 
 support `name_zh` & `name_en`
 
