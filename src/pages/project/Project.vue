@@ -39,6 +39,6 @@ const state = reactive(
       {{ state.project.description }}
     </div>
 
-    <ProjectFileList :state="state" />
+    <ProjectFileList v-if="state.files" :state="state" :files="state.files" />
   </PageLayout>
 </template>

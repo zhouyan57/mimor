@@ -1,28 +1,22 @@
 # project
 
-Project -- link to project-file-new
-
-ProjectFileList
-
-ProjectFileListItem
+Project -- link to `projects/{name}/new-file`
 
 Project -- recall a file
-
 Project -- recall a project (all files)
 
-[maybe] Project -- support file tree
+ProjectFileList -- fix style
+ProjectFileListItem -- fix style
 
-#  project-list
+# project-list
 
 ProjectList -- recall a project (all files)
 
 ProjectList -- be able to sort projects.
 
-# project-file-new
-
-ProjectFileNew -- create new file
-
 # project-file
+
+route to `/projects/{name}/files`
 
 ProjectFile -- recall
 

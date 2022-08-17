@@ -35,7 +35,7 @@ const state = reactive(new State())
           <template #en>Projects</template>
         </Lang>
         <div>
-          <Link href="/projects/new">
+          <Link href="/new-project">
             <PlusIcon
               class="w-6 h-6 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-1"
             />
@@ -58,7 +58,7 @@ const state = reactive(new State())
       </div>
 
       <div class="absolute z-10 bottom-2 right-2">
-        <Link href="/projects/new">
+        <Link href="/new-project">
           <PlusIcon
             class="w-8 h-8 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
           />

@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { FileJson } from '../../jsons/FileJson'
 import { ProjectState as State } from './ProjectState'
 
-defineProps<{ state: State }>()
+defineProps<{ state: State; file: FileJson }>()
 </script>
 
 <template>
-  <div>ProjectFileListItem</div>
+  <div class="border border-stone-300 rounded-sm p-2">
+    <div>{{ file.path }}</div>
+  </div>
 </template>
