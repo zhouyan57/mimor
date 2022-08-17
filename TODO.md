@@ -1,6 +1,7 @@
 # project
 
-NewProjectFile -- route to `projects/{name}/new-file`
+NewProjectFile -- use PageLayout
+NewProjectFile -- post to api
 
 Project -- recall a file
 Project -- recall a project (all files)
