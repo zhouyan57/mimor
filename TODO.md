@@ -1,5 +1,3 @@
-login use `FormInput`
-
 ProjectFileListItem -- fix style
 
 ProjectFile -- route to `/projects/{name}/files/{path}`

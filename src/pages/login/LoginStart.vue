@@ -3,6 +3,7 @@ import {
   ArrowCircleRightIcon,
   DotsCircleHorizontalIcon,
 } from '@heroicons/vue/outline/index.js'
+import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import { useForm } from '../../hooks/useForm'
@@ -17,11 +18,13 @@ const form = useForm({ email: '' })
   <form
     class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
     @submit.prevent="
-      form.post(`${$app.api.url}/login`, {
-        then: async (response) => {
-          state.verifying = await response.json()
-        },
-      })
+      (event) => {
+        form.postByEvent(event, `${$app.api.url}/login`, {
+          then: async (response) => {
+            state.verifying = await response.json()
+          },
+        })
+      }
     "
   >
     <div class="flex flex-col pb-2">
@@ -47,23 +50,16 @@ const form = useForm({ email: '' })
       </div>
     </div>
 
-    <div class="flex flex-col">
-      <div class="flex">
-        <input
-          v-model.trim="form.values.email"
-          id="email"
-          name="email"
-          autocomplete="email"
-          class="w-full rounded-sm border border-stone-900 px-3 py-4 font-bold placeholder-opacity-60"
-          type="email"
-          maxlength="100"
-          :placeholder="$app.lang.zh ? '电子邮箱' : 'Email'"
-          spellcheck="false"
-          required
-        />
-
+    <FormInput
+      :form="form"
+      name="email"
+      type="email"
+      autocomplete="email"
+      :placeholder="$app.lang.zh ? '电子邮箱' : 'Email'"
+    >
+      <template #input-end>
         <button
-          class="pl-2"
+          class="px-2"
           :class="[form.processing && 'text-stone-300']"
           type="submit"
           :disabled="form.processing"
@@ -71,14 +67,14 @@ const form = useForm({ email: '' })
           <ArrowCircleRightIcon v-if="!form.processing" class="h-8 w-8" />
           <DotsCircleHorizontalIcon v-if="form.processing" class="h-8 w-8" />
         </button>
-      </div>
+      </template>
+    </FormInput>
 
-      <div v-if="form.response && !form.response.ok" class="mt-1">
-        <Lang class="font-bold text-orange-400 text-base py-1">
-          <template #zh>这个邮箱不对</template>
-          <template #en>Invalid email.</template>
-        </Lang>
-      </div>
+    <div v-if="form.response && !form.response.ok" class="mt-1">
+      <Lang class="font-bold text-orange-400 text-base py-1">
+        <template #zh>这个邮箱不对</template>
+        <template #en>Invalid email.</template>
+      </Lang>
     </div>
   </form>
 </template>

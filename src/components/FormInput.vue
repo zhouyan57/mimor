@@ -5,6 +5,9 @@ defineProps<{
   form: Form<any>
   name: string
   type?: string
+  autocomplete?: string
+  placeholder?: string
+  spellcheck?: boolean
   required?: boolean
 }>()
 </script>
@@ -21,8 +24,10 @@ defineProps<{
         :name="name"
         class="w-full p-3 font-bold"
         :type="type || 'text'"
+        :autocomplete="autocomplete"
+        :placeholder="placeholder"
         :maxlength="32"
-        :spellcheck="false"
+        :spellcheck="spellcheck"
         :required="required"
       />
 
