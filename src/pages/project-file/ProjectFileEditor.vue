@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div
     v-if="state.file"
-    class="flex h-full w-full flex-col rounded-sm p-2 shadow-md focus-within:ring-1 focus-within:ring-stone-500"
+    class="flex h-full w-full flex-col rounded-sm p-2 md:shadow-md focus-within:ring-1 focus-within:ring-stone-500"
   >
     <textarea
       class="h-full w-full resize-none pb-2 font-mono focus:outline-none"
