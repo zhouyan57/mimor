@@ -17,7 +17,7 @@ const form = useForm({ email: '' })
   <form
     class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
     @submit.prevent="
-      form.post(state.links.login, {
+      form.post(`${$app.api.url}/login`, {
         then: async (response) => {
           state.verifying = await response.json()
         },
