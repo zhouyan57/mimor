@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileEditor from './ProjectFileEditor.vue'
+import ProjectFileRecall from './ProjectFileRecall.vue'
 import { ProjectFileState as State } from './ProjectFileState'
 
 const route = useRoute()
@@ -45,6 +46,10 @@ function formatParam(param: string | Array<string>): string {
       </div>
     </template>
 
-    <ProjectFileEditor v-if="state.file" :state="state" />
+    <ProjectFileRecall
+      v-if="$route.query.recall !== undefined"
+      :state="state"
+    />
+    <ProjectFileEditor v-else :state="state" />
   </PageLayout>
 </template>

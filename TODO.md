@@ -1,5 +1,3 @@
-ProjectFileEditor -- recall
-
 Project -- recall a file
 Project -- recall a project (all files)
 [maybe] Project -- use tabs
