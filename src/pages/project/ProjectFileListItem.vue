@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { FileJson } from '../../jsons/FileJson'
 import Link from '../../components/Link.vue'
+import type { FileJson } from '../../jsons/FileJson'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State; file: FileJson }>()
