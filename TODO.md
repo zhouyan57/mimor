@@ -1,26 +1,17 @@
-# project
+fix border color
+
+ProjectFileListItem -- fix style
+
+ProjectFile -- route to `/projects/{name}/files/{path}`
+ProjectFile -- recall
+ProjectFile -- edite
 
 Project -- recall a file
 Project -- recall a project (all files)
-
-ProjectFileList -- fix style
-ProjectFileListItem -- fix style
-
 [maybe] Project -- use tabs
 
-# project-list
-
 ProjectList -- recall a project (all files)
-
 ProjectList -- be able to sort projects.
-
-# project-file
-
-ProjectFile -- route to `/projects/{name}/files/{path}`
-
-ProjectFile -- recall
-
-ProjectFile -- edit
 
 # rendering
 

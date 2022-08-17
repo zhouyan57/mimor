@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex flex-col h-full justify-between text-2xl pr-4">
     <div
-      class="flex flex-col items-start space-y-2 py-2 border-t border-stone-800"
+      class="flex flex-col items-start space-y-2 py-2 border-t border-stone-900"
     >
       <Link v-if="$app.auth.user" href="/projects" class="hover:underline">
         <Lang>
@@ -29,7 +29,7 @@ defineProps<{ state: State }>()
       <PageLayoutLang :state="state" />
     </div>
 
-    <div class="border-t pt-2 border-stone-800">
+    <div class="border-t pt-2 border-stone-900">
       <div v-if="$app.auth.user" class="flex items-end justify-between">
         <div>
           <div class="font-bold">{{ $app.auth.user.name }}</div>

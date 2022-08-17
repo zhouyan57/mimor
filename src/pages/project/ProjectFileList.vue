@@ -11,7 +11,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 
 <template>
   <div class="py-2 h-full relative">
-    <div class="border-b py-1 border-stone-800">
+    <div class="border-b py-1 border-stone-900">
       <div class="flex items-center space-x-2">
         <Lang class="font-bold font-logo text-xl">
           <template #zh>文件</template>
@@ -31,8 +31,10 @@ defineProps<{ state: State; files: Array<FileJson> }>()
       </div>
     </div>
 
-    <div v-for="file in files" :key="file.path">
-      <ProjectFileListItem :state="state" :file="file" />
+    <div class="py-2 space-y-2">
+      <div v-for="file in files" :key="file.path">
+        <ProjectFileListItem :state="state" :file="file" />
+      </div>
     </div>
 
     <div class="absolute z-10 bottom-2 right-2">

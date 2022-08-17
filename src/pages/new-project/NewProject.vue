@@ -70,7 +70,7 @@ const form = useForm({ name: '', description: '' })
       </FormTextarea>
 
       <div class="flex flex-col justify-center py-4">
-        <hr class="border-t border-stone-600" />
+        <hr class="border-t border-stone-900" />
       </div>
 
       <FormButton :disabled="form.processing">
