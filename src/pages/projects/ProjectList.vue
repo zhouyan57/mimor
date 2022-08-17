@@ -5,6 +5,7 @@ import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectListState as State } from './ProjectListState'
+import ProjectListItem from './ProjectListItem.vue'
 
 const state = reactive(new State())
 </script>
@@ -40,8 +41,7 @@ const state = reactive(new State())
     <div class="h-full flex flex-col relative">
       <div>
         <div v-for="project of state.projects" :key="project.name">
-          <div>{{ project.name }}</div>
-          <div>{{ project.description }}</div>
+          <ProjectListItem :state="state" :project="project" />
         </div>
       </div>
 

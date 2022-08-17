@@ -1,7 +1,5 @@
 # project
 
-extract ProjectListItem
-
 ProjectListItem -- click goto project page -- `Project`
 
 - `/projects/{name}`
