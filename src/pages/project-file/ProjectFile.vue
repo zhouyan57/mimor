@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
+import { PlayIcon, XIcon, PencilIcon } from '@heroicons/vue/outline'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileEditor from './ProjectFileEditor.vue'
@@ -22,6 +23,10 @@ const state = reactive(
 function formatParam(param: string | Array<string>): string {
   return typeof param === 'string' ? param : param.join('/')
 }
+
+function isRecall() {
+  return route.query.recall !== undefined
+}
 </script>
 
 <template>
@@ -32,24 +37,36 @@ function formatParam(param: string | Array<string>): string {
     </Head>
 
     <template #title>
-      <div
-        class="flex w-full overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
-      >
-        <Link
-          :href="`/projects/${state.project.name}`"
-          class="font-bold hover:underline"
+      <div class="flex w-full items-center space-x-2">
+        <div
+          class="flex w-full overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
         >
-          {{ state.project.name }}
-        </Link>
+          <Link
+            :href="`/projects/${state.project.name}`"
+            class="font-bold hover:underline"
+          >
+            {{ state.project.name }}
+          </Link>
 
-        <div class="text-stone-600">/{{ state.path }}</div>
+          <div class="text-stone-600">/{{ state.path }}</div>
+        </div>
+
+        <Link
+          v-if="isRecall()"
+          :href="`/projects/${state.project.name}/files/${state.path}`"
+        >
+          <PencilIcon class="h-5 w-5" />
+        </Link>
+        <Link
+          v-else
+          :href="`/projects/${state.project.name}/files/${state.path}?recall`"
+        >
+          <PlayIcon class="h-5 w-5" />
+        </Link>
       </div>
     </template>
 
-    <ProjectFileRecall
-      v-if="$route.query.recall !== undefined"
-      :state="state"
-    />
+    <ProjectFileRecall v-if="isRecall()" :state="state" />
     <ProjectFileEditor v-else :state="state" />
   </PageLayout>
 </template>
