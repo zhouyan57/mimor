@@ -1,5 +1,3 @@
-ProjectFile -- fix style
-
 ProjectFile -- recall
 
 ProjectFileEditor
