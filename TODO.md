@@ -1,6 +1,5 @@
 # project
 
-ProjectsNew -- improve style
 ProjectsNew -- post to api
 
 Projects -- list projects
