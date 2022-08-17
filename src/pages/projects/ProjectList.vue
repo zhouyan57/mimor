@@ -4,7 +4,7 @@ import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { ProjectsState as State } from './ProjectsState'
+import { ProjectListState as State } from './ProjectListState'
 
 const state = reactive(new State())
 </script>

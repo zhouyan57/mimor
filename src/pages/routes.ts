@@ -4,14 +4,14 @@ import Explore from './explore/Explore.vue'
 import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import LoginEmailConfirmationSuccessPage from './login/LoginEmailConfirmationSuccessPage.vue'
-import Projects from './projects/Projects.vue'
-import ProjectsNew from './projects/ProjectsNew.vue'
+import ProjectList from './projects/ProjectList.vue'
+import ProjectNew from './projects/ProjectNew.vue'
 import Register from './register/Register.vue'
 import RegisterEmailConfirmationSuccessPage from './register/RegisterEmailConfirmationSuccessPage.vue'
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
-  { path: '/projects', component: Projects },
-  { path: '/projects/new', component: ProjectsNew },
+  { path: '/projects', component: ProjectList },
+  { path: '/projects/new', component: ProjectNew },
   { path: '/explore', component: Explore },
   { path: '/register', component: Register },
   { path: '/login', component: Login },

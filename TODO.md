@@ -1,8 +1,9 @@
 # project
 
-Projects -- list projects
-Projects -- can recall a project.
-Projects -- click goto project page -- `Project`
+ProjectList -- list projects
+ProjectList -- click goto project page -- `Project`
+
+ProjectList -- button can recall a project.
 
 project -- a project we have button to recall a project.
 Project -- a project page is a files manager with preview.
