@@ -31,10 +31,7 @@ defineProps<{ state: State }>()
           <MenuItem as="div" v-slot="{ active }">
             <XIcon
               class="h-8 w-8"
-              :class="[
-                active && 'border-4 border-stone-600',
-                active && 'text-stone-600',
-              ]"
+              :class="[active && 'border-4 border-stone-600']"
             />
           </MenuItem>
         </div>

@@ -58,7 +58,7 @@ async function revoke() {
       </Lang>
 
       <div class="py-2 text-lg">
-        <p class="border-4 py-1 px-2 font-black border-stone-300 bg-stone-100">
+        <p class="border-4 py-1 px-2 font-black border-stone-400 bg-stone-100">
           {{ verifying.confirmation_code }}
         </p>
       </div>
@@ -67,7 +67,7 @@ async function revoke() {
         class="py-2 font-sans font-bold hover:text-stone-500"
         @click="revoke()"
       >
-        <Lang class="py-1 text-lg">
+        <Lang class="p-2 text-lg border rounded-sm border-stone-900">
           <template #zh> 撤销 </template>
           <template #en> Revoke </template>
         </Lang>
