@@ -1,9 +1,5 @@
 # project
 
-move ProjectNew to `/project-new`
-
-move Project to `/project`
-
 ProjectNew -- jump to newly created project
 
 Project -- create new file
