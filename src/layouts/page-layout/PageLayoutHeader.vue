@@ -7,10 +7,10 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex items-center pb-2">
+  <div class="w-full overflow-x-auto flex items-center pb-2">
     <PageLayoutMenu class="block md:hidden pr-1" :state="state" />
 
-    <div class="text-2xl font-bold font-logo">
+    <div class="w-full overflow-x-auto text-2xl font-bold font-logo">
       <slot name="title">
         <div class="md:hidden block">
           <PageLayoutLogo :state="state" />

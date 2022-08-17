@@ -130,7 +130,7 @@ export class Api {
         message: 'no user',
       })
       return
-    } 
+    }
 
     const response = await fetch(
       `${this.url}/users/${app.auth.user.username}/projects/${name}/files/${path}`,

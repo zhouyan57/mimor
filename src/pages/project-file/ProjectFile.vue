@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
+import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectFileState as State } from './ProjectFileState'
 
@@ -29,12 +30,20 @@ function formatParam(param: string | Array<string>): string {
     </Head>
 
     <template #title>
-      <div class="font-sans">{{ state.path }}</div>
+      <div class="font-sans whitespace-pre flex flex-col overflow-x-auto">
+        <div class="text-lg text-stone-600">{{ state.path }}</div>
+      </div>
     </template>
 
-    <div>
-      <div>{{ state.project.name }}</div>
-      <div>{{ state.path }}</div>
+    <div class="fonttext-lg whitespace-pre flex overflow-x-auto">
+      <Link
+        :href="`/projects/${state.project.name}`"
+        class="hover:underline font-bold"
+      >
+        {{ state.project.name }}
+      </Link>
+
+      <div class="text-stone-600">/{{ state.path }}</div>
     </div>
 
     <div v-if="state.file">
