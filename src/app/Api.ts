@@ -2,6 +2,7 @@ import { ty } from '@xieyuheng/ty'
 import { FileSchema } from '../jsons/FileJson'
 import { ProjectSchema } from '../jsons/ProjectJson'
 import { UserSchema } from '../jsons/UserJson'
+import { FileJson } from '../jsons/FileJson'
 
 export class Api {
   url = import.meta.env.VITE_API_URL
@@ -152,5 +153,37 @@ export class Api {
     }
 
     return FileSchema.validate(await response.json())
+  }
+
+  async saveProjectFile(name: string, file: FileJson) {
+    if (!app.auth.user) {
+      console.log({
+        who: 'app.api.saveProjectFile',
+        message: 'no user',
+      })
+      return
+    }
+
+    const response = await fetch(
+      `${this.url}/users/${app.auth.user.username}/projects/${name}/files/${file.path}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          'content-type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(file),
+      }
+    )
+
+    if (!response.ok) {
+      console.log({
+        who: 'app.api.saveProjectFile',
+        message: 'response not ok',
+        response,
+      })
+      return
+    }
   }
 }

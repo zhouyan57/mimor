@@ -45,6 +45,6 @@ function formatParam(param: string | Array<string>): string {
       </div>
     </template>
 
-    <ProjectFileEditor v-if="state.file" :state="state" :file="state.file" />
+    <ProjectFileEditor v-if="state.file" :state="state" />
   </PageLayout>
 </template>

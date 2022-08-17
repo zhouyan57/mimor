@@ -1,4 +1,3 @@
-ProjectFileEditor -- save
 ProjectFileEditor -- recall
 
 Project -- recall a file

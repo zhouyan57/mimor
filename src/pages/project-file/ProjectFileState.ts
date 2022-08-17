@@ -2,6 +2,7 @@ import { FileJson } from '../../jsons/FileJson'
 
 export class ProjectFileState {
   file?: FileJson
+  saving = false
 
   constructor(
     public options: {
@@ -22,5 +23,13 @@ export class ProjectFileState {
 
   async load() {
     this.file = await app.api.projectFile(this.project.name, this.path)
+  }
+
+  async save() {
+    if (this.file) {
+      this.saving = true
+      await app.api.saveProjectFile(this.project.name, this.file)
+      this.saving = false
+    }
   }
 }
