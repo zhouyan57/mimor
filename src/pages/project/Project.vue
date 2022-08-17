@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
+import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectState as State } from './ProjectState'
 
-const state = reactive(new State())
+const route = useRoute()
+
+const state = reactive(
+  new State({
+    name: route.params.name as string,
+  })
+)
 </script>
 
 <template>
@@ -22,6 +29,10 @@ const state = reactive(new State())
       <div>{{ $route.params.name }}</div>
     </template>
 
-    <div>Project</div>
+    <div v-if="state.project">
+      <div v-if="state.project.description">
+        {{ state.project.description }}
+      </div>
+    </div>
   </PageLayout>
 </template>

@@ -31,7 +31,7 @@ export class Api {
         who: 'app.api.projects',
         message: 'no user',
       })
-      return []
+      return
     }
 
     const response = await fetch(
@@ -50,11 +50,42 @@ export class Api {
         message: 'response not ok',
         response,
       })
-      return []
+      return
     }
 
     const { data } = await response.json()
 
     return ty.array(ProjectSchema).validate(data)
+  }
+
+  async project(name: string) {
+    if (!app.auth.user) {
+      console.log({
+        who: 'app.api.project',
+        message: 'no user',
+      })
+      return
+    }
+
+    const response = await fetch(
+      `${this.url}/users/${app.auth.user.username}/projects/${name}`,
+      {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          Accept: 'application/json',
+        },
+      }
+    )
+
+    if (!response.ok) {
+      console.log({
+        who: 'app.api.project',
+        message: 'response not ok',
+        response,
+      })
+      return
+    }
+
+    return ProjectSchema.validate(await response.json())
   }
 }
