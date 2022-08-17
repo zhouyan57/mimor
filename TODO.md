@@ -1,7 +1,5 @@
 # project
 
-ProjectNew -- jump to newly created project
-
 Project -- create new file
 
 Project -- flat list files
