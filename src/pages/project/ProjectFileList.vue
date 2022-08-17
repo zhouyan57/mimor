@@ -10,7 +10,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 </script>
 
 <template>
-  <div class="relative h-full py-2">
+  <div class="relative h-full">
     <div class="border-b border-stone-500 py-1">
       <div class="flex items-center space-x-2">
         <Lang class="font-logo text-xl font-bold">

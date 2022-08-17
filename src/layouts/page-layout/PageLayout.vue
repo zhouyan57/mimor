@@ -20,6 +20,8 @@ const router = useRouter()
 const state = reactive(new State())
 
 onMounted(async () => {
+  state.loading = true
+
   await app.auth.initialize()
 
   maybeRedirect()
