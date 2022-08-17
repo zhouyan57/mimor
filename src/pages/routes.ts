@@ -8,14 +8,17 @@ import NewProjectFile from './new-project-file/NewProjectFile.vue'
 import NewProject from './new-project/NewProject.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
+import ProjectFile from './project-file/ProjectFile.vue'
 import Register from './register/Register.vue'
 import RegisterEmailConfirmationSuccessPage from './register/RegisterEmailConfirmationSuccessPage.vue'
+
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
   { path: '/projects', component: ProjectList },
   { path: '/new-project', component: NewProject },
   { path: '/projects/:name', component: Project },
   { path: '/projects/:name/new-file', component: NewProjectFile },
+  { path: '/projects/:name/files/:pathParts(.*)*', component: ProjectFile },
   { path: '/explore', component: Explore },
   { path: '/register', component: Register },
   { path: '/login', component: Login },

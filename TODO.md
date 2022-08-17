@@ -1,4 +1,5 @@
-ProjectFile -- route to `/projects/{name}/files/{path}`
+ProjectFile -- use PageLayout
+
 ProjectFile -- recall
 ProjectFile -- edit
 
