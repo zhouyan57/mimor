@@ -28,7 +28,8 @@ const state = reactive(
     }"
   >
     <Head>
-      <title>{{ $route.params.name }} | 谜墨</title>
+      <title v-if="$app.lang.zh">{{ $route.params.name }} | 谜墨</title>
+      <title v-else>{{ $route.params.name }} | Mimor</title>
     </Head>
 
     <template #title>
