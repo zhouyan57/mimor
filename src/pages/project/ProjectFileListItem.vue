@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { FileJson } from '../../jsons/FileJson'
+import type { FileJson } from '../../jsons/FileJson'
+import Link from '../../components/Link.vue'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State; file: FileJson }>()
@@ -7,6 +8,11 @@ defineProps<{ state: State; file: FileJson }>()
 
 <template>
   <div class="border border-stone-500 rounded-sm px-3 py-2">
-    <div class="font-bold">{{ file.path }}</div>
+    <Link
+      :href="`/projects/${state.name}/files/${file.path}`"
+      class="font-bold hover:underline"
+    >
+      {{ file.path }}
+    </Link>
   </div>
 </template>

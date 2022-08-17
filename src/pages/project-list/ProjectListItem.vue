@@ -8,11 +8,9 @@ defineProps<{ state: State; project: ProjectJson }>()
 
 <template>
   <div class="px-3 py-2 border rounded-sm border-stone-500 space-y-2 text-xl">
-    <Link
-      :href="`/projects/${project.name}`"
-      class="font-bold hover:underline"
-      >{{ project.name }}</Link
-    >
+    <Link :href="`/projects/${project.name}`" class="font-bold hover:underline">
+      {{ project.name }}
+    </Link>
     <div v-if="project.description" class="font-serif">
       {{ project.description }}
     </div>

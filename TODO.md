@@ -1,8 +1,6 @@
-ProjectFileListItem -- link to `/projects/{name}/files/{path}`
-
 ProjectFile -- route to `/projects/{name}/files/{path}`
 ProjectFile -- recall
-ProjectFile -- edite
+ProjectFile -- edit
 
 Project -- recall a file
 Project -- recall a project (all files)
@@ -19,15 +17,15 @@ support paragraph
 
 <code> node
 
-PageLayout -- style
+recall in fullscreen
+
+- set meta theme-color in Mimor fullscreen
+
+  - do not forget to undo meta theme-color
 
 # user
 
 support `name_zh` & `name_en`
-
-Mimor fullscreen
-
-set meta theme-color in Mimor fullscreen -- unmount should undo the color
 
 # embedded
 
