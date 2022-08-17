@@ -7,7 +7,7 @@ import Lang from '../../components/Lang.vue'
 import { useForm } from '../../hooks/useForm'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 
-const form = useForm({ path: '', description: '' })
+const form = useForm({ name: '', description: '' })
 </script>
 
 <template>
@@ -40,33 +40,31 @@ const form = useForm({ path: '', description: '' })
 
           form.postByEvent(
             event,
-            `${$app.api.url}/users/${$app.auth.user.username}/projects/${$route.params.name}/files`,
+            `${$app.api.url}/users/${$app.auth.user.username}/projects`,
             {
               headers: { Authorization: `Bearer ${$app.api.token}` },
               then: async () => {
-                $router.replace(
-                  `/projects/${$route.params.name}/files/${form.values.path}`
-                )
+                $router.replace(`/projects/${form.values.name}`)
               },
             }
           )
         }
       "
     >
-      <FormInput :form="form" name="path" required>
+      <FormInput :form="form" name="name" required>
         <template #label>
           <Lang>
-            <template #zh>路径</template>
-            <template #en>Path</template>
+            <template #zh>名字</template>
+            <template #en>Name</template>
           </Lang>
         </template>
       </FormInput>
 
-      <FormTextarea :form="form" name="content">
+      <FormTextarea :form="form" name="description">
         <template #label>
           <Lang>
-            <template #zh>内容</template>
-            <template #en>Content</template>
+            <template #zh>描述</template>
+            <template #en>Description</template>
           </Lang>
         </template>
       </FormTextarea>
