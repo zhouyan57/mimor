@@ -1,7 +1,10 @@
 # project
 
 ProjectList -- list projects
+
 ProjectList -- click goto project page -- `Project`
+
+- `/projects/{name}`
 
 ProjectList -- button can recall a project.
 
