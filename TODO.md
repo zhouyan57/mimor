@@ -1,8 +1,5 @@
 # project
 
-ProjectList -- button can recall a project.
-
-project -- a project we have button to recall a project.
 Project -- a project page is a files manager with preview.
 
 - one can edit file.
@@ -10,12 +7,11 @@ Project -- a project page is a files manager with preview.
 
 Project -- support file tree
 
-[maybe] a `Mimor` button to popup 'create new mimor'
+Project -- be able to recall a project.
 
-- select project
-- select template
+ProjectList -- button can recall a project.
 
-suppurt `name_zh` & `name_en`
+support `name_zh` & `name_en`
 
 # rendering
 

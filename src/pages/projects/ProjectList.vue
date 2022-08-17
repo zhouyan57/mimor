@@ -39,7 +39,7 @@ const state = reactive(new State())
     </template>
 
     <div class="h-full flex flex-col relative overflow-y-auto">
-      <div v-if="state.projects" class="h-full space-y-3 overflow-y-auto">
+      <div v-if="state.projects" class="h-full space-y-3 overflow-y-auto pr-3">
         <div v-for="project of state.projects" :key="project.name">
           <ProjectListItem :state="state" :project="project" />
         </div>
@@ -54,7 +54,7 @@ const state = reactive(new State())
       <div class="absolute z-10 bottom-2 right-2">
         <Link href="/projects/new">
           <PlusIcon
-            class="w-8 h-8 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-2"
+            class="w-8 h-8 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
           />
         </Link>
       </div>
