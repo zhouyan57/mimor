@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { useRoute } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 
-const route = useRoute()
-const { slugs } = route.params
-const path = typeof slugs === 'string' ? slugs : slugs.join('/')
+function formatSlugs(slugs: string | Array<string>): string {
+  return typeof slugs === 'string' ? slugs : slugs.join('/')
+}
 </script>
 
 <template>
-  <div
-    class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
-  >
+  <div class="py-20 mx-auto flex h-full max-w-md flex-col">
     <Head>
       <title v-if="$app.lang.zh">404 | 谜墨</title>
       <title v-else>404 | Mimor</title>
@@ -27,8 +24,8 @@ const path = typeof slugs === 'string' ? slugs : slugs.join('/')
       </div>
       <div class="text-lg">
         <Lang>
-          <template #zh>路径：/{{ path }}</template>
-          <template #en>Path: /{{ path }}</template>
+          <template #zh>路径：/{{ formatSlugs($route.params.slugs) }}</template>
+          <template #en>Path: /{{ formatSlugs($route.params.slugs) }}</template>
         </Lang>
       </div>
     </div>
