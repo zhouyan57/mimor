@@ -13,7 +13,7 @@ const form = useForm({ username: '', name: '', email: '' })
 
 <template>
   <form
-    class="flex max-w-md flex-col space-y-2 text-xl"
+    class="flex max-w-lg flex-col space-y-2 text-xl"
     @submit.prevent="
       (event) =>
         form.postByEvent(event, state.links.register, {

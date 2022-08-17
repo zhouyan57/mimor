@@ -30,7 +30,25 @@ const form = useForm({ name: '', description: '' })
       </Lang>
     </template>
 
-    <form class="flex max-w-lg flex-col space-y-2">
+    <form
+      class="flex max-w-lg flex-col space-y-2 text-xl"
+      @submit.prevent="
+        (event) => {
+          if (!$app.auth.user) return
+
+          form.postByEvent(
+            event,
+            `${$app.api.url}/users/${$app.auth.user.username}/projects`,
+            {
+              headers: { Authorization: `Bearer ${$app.api.token}` },
+              then: () => {
+                $router.push('/projects') 
+              },
+            }
+          )
+        }
+      "
+    >
       <FormInput :form="form" name="name" required>
         <template #label>
           <Lang>

@@ -1,6 +1,7 @@
 export type Values = Record<string, string>
 
 interface PostOptions {
+  headers?: Record<string, string>
   then?: (result: any) => void | Promise<void>
 }
 
@@ -40,6 +41,7 @@ export class Form<T extends Values> {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          ...options?.headers,
         },
         body: JSON.stringify(this.values),
       })

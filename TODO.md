@@ -1,6 +1,8 @@
 # project
 
-ProjectsNew -- post to api
+inline RegisterState.links
+
+inline LoginState.links
 
 Projects -- list projects
 Projects -- can recall a project.
