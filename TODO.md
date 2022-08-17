@@ -1,7 +1,5 @@
 # project
 
-inline RegisterState.links
-
 Projects -- list projects
 Projects -- can recall a project.
 Projects -- click goto project page -- `Project`
