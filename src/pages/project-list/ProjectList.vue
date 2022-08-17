@@ -19,7 +19,7 @@ const state = reactive(new State())
     </Head>
 
     <template #title>
-      <div class="flex space-x-2 items-center">
+      <div class="flex items-center space-x-2">
         <Lang>
           <template #zh>项目</template>
           <template #en>Projects</template>
@@ -30,14 +30,14 @@ const state = reactive(new State())
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
           >
             <PlusIcon
-              class="w-6 h-6 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-1"
+              class="h-6 w-6 rounded-full border border-stone-500 p-1 text-stone-500 hover:bg-stone-100"
             />
           </Link>
         </div>
       </div>
     </template>
 
-    <div class="h-full flex flex-col relative overflow-y-auto">
+    <div class="relative flex h-full flex-col overflow-y-auto">
       <div
         v-if="state.projects"
         class="h-full space-y-3 overflow-y-auto md:pr-4"
@@ -53,13 +53,13 @@ const state = reactive(new State())
         </Lang>
       </div>
 
-      <div class="absolute z-10 bottom-2 right-2">
+      <div class="absolute bottom-2 right-2 z-10">
         <Link
           href="/new-project"
           :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
         >
           <PlusIcon
-            class="w-8 h-8 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
+            class="h-8 w-8 rounded-full border border-stone-500 bg-white p-2 text-stone-500 shadow hover:bg-stone-100"
           />
         </Link>
       </div>

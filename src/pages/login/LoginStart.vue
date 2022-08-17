@@ -16,7 +16,7 @@ const form = useForm({ email: '' })
 
 <template>
   <form
-    class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
+    class="flex max-w-md flex-col space-y-2 pt-20 text-xl"
     @submit.prevent="
       (event) => {
         form.post(event, `${$app.api.url}/login`, {
@@ -71,7 +71,7 @@ const form = useForm({ email: '' })
     </FormInput>
 
     <div v-if="form.response && !form.response.ok" class="mt-1">
-      <Lang class="font-bold text-orange-400 text-base py-1">
+      <Lang class="py-1 text-base font-bold text-orange-400">
         <template #zh>这个邮箱不对</template>
         <template #en>Invalid email.</template>
       </Lang>

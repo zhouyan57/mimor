@@ -18,14 +18,14 @@ const state = reactive(new State())
 
     <div
       v-if="!state.verifying"
-      class="py-2 flex h-full flex-col items-center md:pt-10 md:pr-20"
+      class="flex h-full flex-col items-center py-2 md:pt-10 md:pr-20"
     >
       <LoginStart :state="state" />
     </div>
 
     <div
       v-else
-      class="py-12 flex h-full flex-col items-center md:pt-10 md:pr-20"
+      class="flex h-full flex-col items-center py-12 md:pt-10 md:pr-20"
     >
       <LoginVerifying :state="state" :verifying="state.verifying" />
     </div>

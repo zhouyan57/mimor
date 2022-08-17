@@ -32,11 +32,11 @@ function formatParam(param: string | Array<string>): string {
 
     <template #title>
       <div
-        class="font-sans w-full text-xl whitespace-pre flex overflow-x-auto overflow-y-hidden"
+        class="flex w-full overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
       >
         <Link
           :href="`/projects/${state.project.name}`"
-          class="hover:underline font-bold"
+          class="font-bold hover:underline"
         >
           {{ state.project.name }}
         </Link>

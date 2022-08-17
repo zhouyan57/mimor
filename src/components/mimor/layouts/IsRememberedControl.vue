@@ -11,11 +11,11 @@ defineProps<{ mimor: MimorState }>()
     <button
       v-if="!mimor.revealed"
       @click="mimor.revealed = true"
-      class="p-3 border w-full flex flex-col items-start"
+      class="flex w-full flex-col items-start border p-3"
       :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
     >
       <EyeIcon
-        class="w-6 h-6"
+        class="h-6 w-6"
         :class="[
           mimor.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
         ]"
@@ -29,11 +29,11 @@ defineProps<{ mimor: MimorState }>()
     <div v-else class="flex w-full justify-between space-x-1">
       <button
         @click="mimor.forgotten()"
-        class="p-3 border w-full flex flex-col items-start"
+        class="flex w-full flex-col items-start border p-3"
         :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
         <XIcon
-          class="w-6 h-6"
+          class="h-6 w-6"
           :class="[
             mimor.theme.name === 'yellow'
               ? 'text-purple-400'
@@ -48,11 +48,11 @@ defineProps<{ mimor: MimorState }>()
 
       <button
         @click="mimor.remembered()"
-        class="p-3 border w-full flex flex-col items-start"
+        class="flex w-full flex-col items-start border p-3"
         :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
         <CheckIcon
-          class="w-6 h-6"
+          class="h-6 w-6"
           :class="[
             mimor.theme.name === 'yellow'
               ? 'text-purple-400'

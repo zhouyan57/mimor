@@ -10,10 +10,10 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 </script>
 
 <template>
-  <div class="py-2 h-full relative">
-    <div class="border-b py-1 border-stone-500">
+  <div class="relative h-full py-2">
+    <div class="border-b border-stone-500 py-1">
       <div class="flex items-center space-x-2">
-        <Lang class="font-bold font-logo text-xl">
+        <Lang class="font-logo text-xl font-bold">
           <template #zh>文件</template>
           <template #en>Files</template>
         </Lang>
@@ -24,26 +24,26 @@ defineProps<{ state: State; files: Array<FileJson> }>()
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
           >
             <PlusIcon
-              class="w-5 h-5 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-1"
+              class="h-5 w-5 rounded-full border border-stone-500 p-1 text-stone-500 hover:bg-stone-100"
             />
           </Link>
         </div>
       </div>
     </div>
 
-    <div class="py-2 space-y-2">
+    <div class="space-y-2 py-2">
       <div v-for="file in files" :key="file.path">
         <ProjectFileListItem :state="state" :file="file" />
       </div>
     </div>
 
-    <div class="absolute z-10 bottom-2 right-2">
+    <div class="absolute bottom-2 right-2 z-10">
       <Link
         :href="`/projects/${state.name}/new-file`"
         :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
       >
         <PlusIcon
-          class="w-8 h-8 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
+          class="h-8 w-8 rounded-full border border-stone-500 bg-white p-2 text-stone-500 shadow hover:bg-stone-100"
         />
       </Link>
     </div>

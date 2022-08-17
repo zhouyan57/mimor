@@ -7,15 +7,15 @@ defineProps<{ state: State; file: FileJson }>()
 
 <template>
   <div
-    class="w-full h-full flex flex-col shadow-md focus-within:ring-1 rounded-sm focus-within:ring-stone-500 p-2"
+    class="flex h-full w-full flex-col rounded-sm p-2 shadow-md focus-within:ring-1 focus-within:ring-stone-500"
   >
     <textarea
-      class="font-mono w-full pb-2 h-full resize-none focus:outline-none"
+      class="h-full w-full resize-none pb-2 font-mono focus:outline-none"
       v-model="file.content"
     ></textarea>
 
-    <div class="w-full pt-2 flex justify-end border-t border-stone-500">
-      <div class="self-end space-x-3 text-stone-500">
+    <div class="flex w-full justify-end border-t border-stone-500 pt-2">
+      <div class="space-x-3 self-end text-stone-500">
         <button class="font-bold">Recall</button>
         <button class="font-bold">Save</button>
       </div>

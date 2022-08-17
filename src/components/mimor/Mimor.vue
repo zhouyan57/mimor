@@ -10,7 +10,7 @@ const state = reactive(new State(options))
 </script>
 
 <template>
-  <div class="border overflow-hidden" :class="[state.theme.bg(300)]">
+  <div class="overflow-hidden border" :class="[state.theme.bg(300)]">
     <IsRemembered :mimor="state">
       <MimorStmt :mimor="state" :node="state.current" />
     </IsRemembered>

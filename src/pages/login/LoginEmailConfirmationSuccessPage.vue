@@ -5,7 +5,7 @@ import Lang from '../../components/Lang.vue'
 
 <template>
   <div
-    class="py-20 mx-auto flex h-full max-w-md flex-col justify-center text-center"
+    class="mx-auto flex h-full max-w-md flex-col justify-center py-20 text-center"
   >
     <Head>
       <title v-if="$app.lang.zh">邮件登录确认 · 成功 | 谜墨</title>

@@ -25,7 +25,7 @@ onMounted(() => state.load())
       </Lang>
     </template>
 
-    <div class="h-full flex flex-col">
+    <div class="flex h-full flex-col">
       <div v-if="state.loading">Loading...</div>
 
       <Mimor
@@ -40,14 +40,14 @@ onMounted(() => state.load())
         }"
       />
 
-      <div v-else class="h-full flex flex-col items-start justify-between">
+      <div v-else class="flex h-full flex-col items-start justify-between">
         <div></div>
 
         <div class="flex w-full justify-center">
           <div class="text-4xl">The End</div>
         </div>
 
-        <button class="text-2xl border p-2" @click="state.again()">
+        <button class="border p-2 text-2xl" @click="state.again()">
           Again
         </button>
       </div>

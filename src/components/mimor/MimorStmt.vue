@@ -24,7 +24,7 @@ onMounted(() => {
   />
   <div v-else-if="mimor.router.findEffect(node)"></div>
   <div v-else>
-    <div class="font-bold text-xl text-red-500">Unknown statement:</div>
-    <pre class="text-red-500 overscroll-contain overflow-auto">{{ node }}</pre>
+    <div class="text-xl font-bold text-red-500">Unknown statement:</div>
+    <pre class="overflow-auto overscroll-contain text-red-500">{{ node }}</pre>
   </div>
 </template>

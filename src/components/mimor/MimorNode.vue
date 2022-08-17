@@ -14,7 +14,7 @@ defineProps<{ mimor: MimorState; node: XNode }>()
     :element="node"
   />
   <div v-else>
-    <div class="font-bold text-xl text-red-500">Unknown node:</div>
-    <pre class="text-red-500 overscroll-contain overflow-auto">{{ node }}</pre>
+    <div class="text-xl font-bold text-red-500">Unknown node:</div>
+    <pre class="overflow-auto overscroll-contain text-red-500">{{ node }}</pre>
   </div>
 </template>

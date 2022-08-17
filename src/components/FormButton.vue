@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <button
     :disabled="disabled"
-    class="rounded-sm border py-3 font-sans font-bold disabled:opacity-50 border-stone-500"
+    class="rounded-sm border border-stone-500 py-3 font-sans font-bold disabled:opacity-50"
     :class="[!disabled && `hover:bg-stone-100`]"
     type="submit"
   >

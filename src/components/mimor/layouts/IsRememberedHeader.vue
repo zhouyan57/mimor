@@ -7,7 +7,7 @@ defineProps<{ mimor: MimorState }>()
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
-    <div class="text-stone-700 font-bold">
+    <div class="font-bold text-stone-700">
       <Lang :class="[mimor.theme.notWhite && 'text-white']">
         <template #zh>进展：{{ mimor.progress }}</template>
         <template #en>Progress: {{ mimor.progress }}</template>

@@ -18,7 +18,7 @@ defineProps<{
     <textarea
       :id="name"
       :name="name"
-      class="w-full rounded-sm border p-3 border-stone-500"
+      class="w-full rounded-sm border border-stone-500 p-3"
       :type="type || 'text'"
       :maxlength="32"
       :spellcheck="false"
@@ -27,7 +27,7 @@ defineProps<{
 
     <ol
       v-if="form.unprocessable?.errors[name]"
-      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
+      class="list-inside list-disc py-1 text-base font-bold text-orange-400"
     >
       <li
         v-for="(message, index) of form.unprocessable.errors[name]"

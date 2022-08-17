@@ -7,7 +7,7 @@ defineProps<{ mimor: MimorState }>()
 </script>
 
 <template>
-  <div class="flex flex-col justify-between w-full h-full">
+  <div class="flex h-full w-full flex-col justify-between">
     <IsRememberedHeader :mimor="mimor" />
 
     <Transition
@@ -20,7 +20,7 @@ defineProps<{ mimor: MimorState }>()
     >
       <div
         :key="mimor.currentKey"
-        class="body p-3 font-serif overscroll-contain overflow-y-auto"
+        class="body overflow-y-auto overscroll-contain p-3 font-serif"
       >
         <slot />
       </div>

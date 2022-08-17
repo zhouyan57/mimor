@@ -20,10 +20,10 @@ const state = reactive(new State())
       </Lang>
     </template>
 
-    <div class="h-full flex flex-col">
+    <div class="flex h-full flex-col">
       <Lang>
         <template #zh>
-          <div class="flex flex-col py-2 space-y-4 max-w-xl">
+          <div class="flex max-w-xl flex-col space-y-4 py-2">
             <h1 class="font-logo text-xl font-bold">主动回顾</h1>
             <p class="text-xl">
               在学习时，主动地将想要记住的点拆解为问答卡片，可以在之后作为测试来回顾。
@@ -39,7 +39,7 @@ const state = reactive(new State())
           </div>
         </template>
         <template #en>
-          <div class="flex flex-col py-2 space-y-4 max-w-xl">
+          <div class="flex max-w-xl flex-col space-y-4 py-2">
             <h1 class="font-logo text-xl font-bold">Active recall</h1>
             <p class="text-xl">
               When learning, when want to remember something, actively making

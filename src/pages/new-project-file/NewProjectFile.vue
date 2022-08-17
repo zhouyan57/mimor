@@ -59,7 +59,7 @@ const form = useForm({ path: '', content: '' })
           </template>
 
           <template #input-end>
-            <div class="font-bold text-sm px-1.5">.mimor</div>
+            <div class="px-1.5 text-sm font-bold">.mimor</div>
           </template>
         </FormInput>
       </div>

@@ -7,7 +7,7 @@ defineProps<{ state: State; file: FileJson }>()
 </script>
 
 <template>
-  <div class="border border-stone-500 rounded-sm px-3 py-2">
+  <div class="rounded-sm border border-stone-500 px-3 py-2">
     <Link
       :href="`/projects/${state.name}/files/${file.path}`"
       class="font-bold hover:underline"

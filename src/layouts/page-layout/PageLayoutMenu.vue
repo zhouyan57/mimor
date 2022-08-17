@@ -25,7 +25,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <MenuItems
-        class="z-50 flex flex-col pb-20 justify-center fixed bg-white top-0 right-0 h-screen w-screen border-4 px-2 space-y-2"
+        class="fixed top-0 right-0 z-50 flex h-screen w-screen flex-col justify-center space-y-2 border-4 bg-white px-2 pb-20"
       >
         <div class="fixed top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
@@ -46,7 +46,7 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div class="py-2 space-y-2">
+        <div class="space-y-2 py-2">
           <MenuItem as="div" v-slot="{ active }">
             <Link
               v-if="$app.auth.user"
@@ -55,7 +55,7 @@ defineProps<{ state: State }>()
             >
               <Lang
                 :class="[
-                  active && 'underline decoration-6',
+                  active && 'decoration-6 underline',
                   active && 'text-stone-600',
                 ]"
               >
@@ -70,7 +70,7 @@ defineProps<{ state: State }>()
               href="/explore"
               class="hover:underline"
               :class="[
-                active && 'underline decoration-6',
+                active && 'decoration-6 underline',
                 active && 'text-stone-600',
               ]"
             >
@@ -96,9 +96,9 @@ defineProps<{ state: State }>()
             <MenuItem as="div" v-slot="{ active }">
               <button
                 @click="$app.auth.logout()"
-                class="text-stone-600 text-xl"
+                class="text-xl text-stone-600"
                 :class="[
-                  active && 'underline decoration-6',
+                  active && 'decoration-6 underline',
                   active && 'text-stone-600',
                 ]"
               >
@@ -115,7 +115,7 @@ defineProps<{ state: State }>()
               <Link
                 href="/login"
                 :class="[
-                  active && 'underline decoration-6',
+                  active && 'decoration-6 underline',
                   active && 'text-stone-600',
                 ]"
               >
@@ -126,13 +126,13 @@ defineProps<{ state: State }>()
               </Link>
             </MenuItem>
 
-            <div class="font-bold px-2">/</div>
+            <div class="px-2 font-bold">/</div>
 
             <MenuItem as="div" v-slot="{ active }">
               <Link
                 href="/register"
                 :class="[
-                  active && 'underline decoration-6',
+                  active && 'decoration-6 underline',
                   active && 'text-stone-600',
                 ]"
               >

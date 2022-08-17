@@ -8,7 +8,7 @@ function formatParam(param: string | Array<string>): string {
 </script>
 
 <template>
-  <div class="py-20 mx-auto px-3 w-full flex h-full max-w-md flex-col">
+  <div class="mx-auto flex h-full w-full max-w-md flex-col py-20 px-3">
     <Head>
       <title v-if="$app.lang.zh">404 | 谜墨</title>
       <title v-else>404 | Mimor</title>
@@ -27,7 +27,7 @@ function formatParam(param: string | Array<string>): string {
           <template #zh>路径：</template>
           <template #en>Path: </template>
         </Lang>
-        <div class="px-3 font-bold text-sm">
+        <div class="px-3 text-sm font-bold">
           /{{ formatParam($route.params.pathParts) }}
         </div>
       </div>
