@@ -31,21 +31,19 @@ function formatParam(param: string | Array<string>): string {
     </Head>
 
     <template #title>
-      <div class="font-sans whitespace-pre flex flex-col overflow-x-auto">
-        <div class="text-lg text-stone-600">{{ state.path }}</div>
+      <div
+        class="font-sans w-full text-xl whitespace-pre flex overflow-x-auto overflow-y-hidden"
+      >
+        <Link
+          :href="`/projects/${state.project.name}`"
+          class="hover:underline font-bold"
+        >
+          {{ state.project.name }}
+        </Link>
+
+        <div class="text-stone-600">/{{ state.path }}</div>
       </div>
     </template>
-
-    <div class="fonttext-lg whitespace-pre flex overflow-x-auto">
-      <Link
-        :href="`/projects/${state.project.name}`"
-        class="hover:underline font-bold"
-      >
-        {{ state.project.name }}
-      </Link>
-
-      <div class="text-stone-600">/{{ state.path }}</div>
-    </div>
 
     <ProjectFileEditor v-if="state.file" :state="state" :file="state.file" />
   </PageLayout>
