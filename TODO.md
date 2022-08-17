@@ -1,7 +1,5 @@
 # project
 
-FormTextarea
-
 ProjectsNew -- improve style
 ProjectsNew -- post to api
 

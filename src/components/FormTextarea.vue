@@ -15,7 +15,7 @@ defineProps<{
       <slot name="label"></slot>
     </label>
 
-    <input
+    <textarea
       :id="name"
       :name="name"
       class="w-full rounded-sm border p-3 font-bold border-stone-900"
@@ -23,7 +23,7 @@ defineProps<{
       :maxlength="32"
       :spellcheck="false"
       :required="required"
-    />
+    ></textarea>
 
     <ol
       v-if="form.unprocessable?.errors[name]"
