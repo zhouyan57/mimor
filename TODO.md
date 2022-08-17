@@ -1,12 +1,6 @@
 # project
 
-
 ProjectFileList -- link to `projects/{name}/new-file` in tab
-
-add title to new-project link
-
-add title to new-file link
-
 
 NewProjectFile -- route to `projects/{name}/new-file`
 
