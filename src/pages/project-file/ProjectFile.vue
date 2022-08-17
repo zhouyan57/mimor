@@ -36,5 +36,9 @@ function formatParam(param: string | Array<string>): string {
       <div>{{ state.project.name }}</div>
       <div>{{ state.path }}</div>
     </div>
+
+    <div v-if="state.file">
+      {{ state.file.content }}
+    </div>
   </PageLayout>
 </template>

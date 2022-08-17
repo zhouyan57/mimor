@@ -122,4 +122,35 @@ export class Api {
 
     return ty.array(FileSchema).validate(data)
   }
+
+  async projectFile(name: string, path: string) {
+    if (!app.auth.user) {
+      console.log({
+        who: 'app.api.projectFile',
+        message: 'no user',
+      })
+      return
+    } 
+
+    const response = await fetch(
+      `${this.url}/users/${app.auth.user.username}/projects/${name}/files/${path}`,
+      {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          Accept: 'application/json',
+        },
+      }
+    )
+
+    if (!response.ok) {
+      console.log({
+        who: 'app.api.projectFile',
+        message: 'response not ok',
+        response,
+      })
+      return
+    }
+
+    return FileSchema.validate(await response.json())
+  }
 }
