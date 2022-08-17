@@ -1,12 +1,9 @@
 # project
 
-ProjectFileList -- link to `projects/{name}/new-file` in tab
-
 NewProjectFile -- route to `projects/{name}/new-file`
 
 Project -- recall a file
 Project -- recall a project (all files)
-
 
 ProjectFileList -- fix style
 ProjectFileListItem -- fix style

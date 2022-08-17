@@ -12,10 +12,23 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 <template>
   <div class="py-2 h-full relative">
     <div class="border-b py-1 border-stone-800">
-      <Lang class="font-bold text-lg">
-        <template #zh>文件</template>
-        <template #en>Files</template>
-      </Lang>
+      <div class="flex items-center space-x-2">
+        <Lang class="font-bold font-logo text-xl">
+          <template #zh>文件</template>
+          <template #en>Files</template>
+        </Lang>
+
+        <div>
+          <Link
+        :href="`/projects/${state.name}/new-file`"
+        :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
+          >
+            <PlusIcon
+              class="w-5 h-5 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-1"
+            />
+          </Link>
+        </div>
+      </div>
     </div>
 
     <div v-for="file in files" :key="file.path">
