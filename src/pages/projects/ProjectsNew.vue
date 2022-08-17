@@ -42,7 +42,7 @@ const form = useForm({ name: '', description: '' })
             {
               headers: { Authorization: `Bearer ${$app.api.token}` },
               then: () => {
-                $router.push('/projects') 
+                $router.push('/projects')
               },
             }
           )
