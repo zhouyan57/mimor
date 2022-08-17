@@ -38,7 +38,7 @@ const form = useForm({ path: '', content: '' })
         (event) => {
           if (!$app.auth.user) return
 
-          form.postByEvent(
+          form.post(
             event,
             `${$app.api.url}/users/${$app.auth.user.username}/projects/${$route.params.name}/files`,
             {

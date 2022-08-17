@@ -16,20 +16,20 @@ export class Form<T extends Values> {
 
   constructor(public values: T) {}
 
-  async postByEvent(
-    event: Event,
-    url: string,
-    options?: PostOptions<T>
-  ): Promise<void> {
+  loadValuesFromEvent(event: Event) {
     const target: any = event.target
     for (const key of Object.keys(this.values)) {
       ;(this.values as any)[key] = target[key].value
     }
-
-    await this.post(url, options)
   }
 
-  async post(url: string, options?: PostOptions<T>): Promise<void> {
+  async post(
+    event: Event,
+    url: string,
+    options?: PostOptions<T>
+  ): Promise<void> {
+    this.loadValuesFromEvent(event)
+
     this.processing = true
 
     this.response = undefined

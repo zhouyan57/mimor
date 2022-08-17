@@ -19,7 +19,7 @@ const form = useForm({ email: '' })
     class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
     @submit.prevent="
       (event) => {
-        form.postByEvent(event, `${$app.api.url}/login`, {
+        form.post(event, `${$app.api.url}/login`, {
           then: async (response) => {
             state.verifying = await response.json()
           },
