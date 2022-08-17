@@ -1,10 +1,6 @@
 # project
 
-project-file
-
 Project -- link to project-file-new
-
-ProjectState -- load `files`
 
 ProjectFileList
 

@@ -3,8 +3,8 @@ import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { ProjectState as State } from './ProjectState'
 import ProjectFileList from './ProjectFileList.vue'
+import { ProjectState as State } from './ProjectState'
 
 const route = useRoute()
 

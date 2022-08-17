@@ -1,4 +1,5 @@
 import ty from '@xieyuheng/ty'
+import { FileSchema } from '../jsons/FileJson'
 import { ProjectSchema } from '../jsons/ProjectJson'
 import { UserSchema } from '../jsons/UserJson'
 
@@ -87,5 +88,38 @@ export class Api {
     }
 
     return ProjectSchema.validate(await response.json())
+  }
+
+  async projectFiles(name: string) {
+    if (!app.auth.user) {
+      console.log({
+        who: 'app.api.projectFiles',
+        message: 'no user',
+      })
+      return
+    }
+
+    const response = await fetch(
+      `${this.url}/users/${app.auth.user.username}/projects/${name}/files`,
+      {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          Accept: 'application/json',
+        },
+      }
+    )
+
+    if (!response.ok) {
+      console.log({
+        who: 'app.api.projectFiles',
+        message: 'response not ok',
+        response,
+      })
+      return
+    }
+
+    const { data } = await response.json()
+
+    return ty.array(FileSchema).validate(data)
   }
 }
