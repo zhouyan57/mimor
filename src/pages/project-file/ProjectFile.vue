@@ -2,7 +2,7 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
-import { PlayIcon, XIcon, PencilIcon } from '@heroicons/vue/outline'
+import { PlayIcon, PencilIcon } from '@heroicons/vue/outline'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileEditor from './ProjectFileEditor.vue'
