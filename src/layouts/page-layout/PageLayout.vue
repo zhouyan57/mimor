@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
@@ -7,22 +8,38 @@ import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
-const { options } = defineProps<{
+const { mode, options } = defineProps<{
+  mode?: string
   options?: {
     onInitialized?: (state: State) => Promise<void>
   }
 }>()
 
+const router = useRouter()
+
 const state = reactive(new State())
 
 onMounted(async () => {
   await app.auth.initialize()
+
+  maybeRedirect()
+
   if (options?.onInitialized) {
     await options?.onInitialized(state)
   }
 
   state.loading = false
 })
+
+function maybeRedirect() {
+  if (mode === 'auth' && !app.auth.user) {
+    router.replace('/explore')
+  }
+
+  if (mode === 'guest' && app.auth.user) {
+    router.replace('/projects')
+  }
+}
 </script>
 
 <template>

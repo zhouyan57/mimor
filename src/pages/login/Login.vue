@@ -10,15 +10,7 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <PageLayout
-    :options="{
-      onInitialized: async () => {
-        if ($app.auth.user) {
-          $router.replace('/projects')
-        }
-      },
-    }"
-  >
+  <PageLayout mode="guest">
     <Head>
       <title v-if="$app.lang.zh">登录 | 谜墨</title>
       <title v-else>Login | Mimor</title>

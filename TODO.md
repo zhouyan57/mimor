@@ -1,5 +1,4 @@
-redirect unauthed user in PageLayout
-
+use PageLayout mode
 
 ProjectFileState -- load `file`
 
