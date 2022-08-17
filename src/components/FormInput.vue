@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { Form } from '../models/Form'
+
 defineProps<{
+  form: Form<any>
   name: string
   type?: string
   required?: boolean
@@ -22,6 +25,16 @@ defineProps<{
       :required="required"
     />
 
-    <slot name="footer"></slot>
+    <ol
+      v-if="form.unprocessable?.errors[name]"
+      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
+    >
+      <li
+        v-for="(message, index) of form.unprocessable.errors[name]"
+        :key="index"
+      >
+        {{ message }}
+      </li>
+    </ol>
   </div>
 </template>

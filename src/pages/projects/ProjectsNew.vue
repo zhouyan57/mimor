@@ -30,7 +30,7 @@ const form = useForm({ name: '', description: '' })
     </template>
 
     <form class="flex max-w-lg flex-col space-y-2">
-      <FormInput name="name" required>
+      <FormInput :form="form" name="name" required>
         <template #label>
           <Lang>
             <template #zh>项目名</template>
@@ -39,7 +39,7 @@ const form = useForm({ name: '', description: '' })
         </template>
       </FormInput>
 
-      <FormInput name="description">
+      <FormInput :form="form" name="description">
         <template #label>
           <Lang>
             <template #zh>项目描述</template>

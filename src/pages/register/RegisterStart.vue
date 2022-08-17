@@ -28,7 +28,7 @@ const form = useForm({ username: '', name: '', email: '' })
       <template #en>Register</template>
     </Lang>
 
-    <FormInput name="username" required>
+    <FormInput :form="form" name="username" required>
       <template #label>
         <Lang>
           <template #zh>用户名</template>
@@ -37,19 +37,7 @@ const form = useForm({ username: '', name: '', email: '' })
       </template>
     </FormInput>
 
-    <ol
-      v-if="form.unprocessable?.errors.username"
-      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
-    >
-      <li
-        v-for="(message, index) of form.unprocessable.errors.username"
-        :key="index"
-      >
-        {{ message }}
-      </li>
-    </ol>
-
-    <FormInput name="name" required>
+    <FormInput :form="form" name="name" required>
       <template #label>
         <Lang>
           <template #zh>名字</template>
@@ -58,7 +46,7 @@ const form = useForm({ username: '', name: '', email: '' })
       </template>
     </FormInput>
 
-    <FormInput name="email" type="email" required>
+    <FormInput :form="form" name="email" type="email" required>
       <template #label>
         <Lang>
           <template #zh>电子邮箱</template>
@@ -66,18 +54,6 @@ const form = useForm({ username: '', name: '', email: '' })
         </Lang>
       </template>
     </FormInput>
-
-    <ol
-      v-if="form.unprocessable?.errors.username"
-      class="list-inside list-disc font-bold text-orange-400 text-base py-1"
-    >
-      <li
-        v-for="(message, index) of form.unprocessable.errors.email"
-        :key="index"
-      >
-        {{ message }}
-      </li>
-    </ol>
 
     <div class="flex flex-col justify-center py-4">
       <hr class="border-t border-stone-600" />
