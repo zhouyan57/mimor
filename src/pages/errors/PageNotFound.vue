@@ -8,7 +8,7 @@ function formatSlugs(slugs: string | Array<string>): string {
 </script>
 
 <template>
-  <div class="py-20 mx-auto flex h-full max-w-md flex-col">
+  <div class="py-20 mx-auto px-3 w-full flex h-full max-w-md flex-col">
     <Head>
       <title v-if="$app.lang.zh">404 | 谜墨</title>
       <title v-else>404 | Mimor</title>
@@ -16,17 +16,20 @@ function formatSlugs(slugs: string | Array<string>): string {
 
     <div class="flex flex-col space-y-2">
       <div class="text-3xl font-bold">404</div>
-      <div class="text-xl">
+      <div class="text-xl font-bold">
         <Lang>
           <template #zh>没有这个页面</template>
           <template #en>Page Not Found</template>
         </Lang>
       </div>
-      <div class="text-lg">
+      <div>
         <Lang>
-          <template #zh>路径：/{{ formatSlugs($route.params.slugs) }}</template>
-          <template #en>Path: /{{ formatSlugs($route.params.slugs) }}</template>
+          <template #zh>路径：</template>
+          <template #en>Path: </template>
         </Lang>
+        <div class="px-3 font-bold text-sm">
+          /{{ formatSlugs($route.params.slugs) }}
+        </div>
       </div>
     </div>
   </div>
