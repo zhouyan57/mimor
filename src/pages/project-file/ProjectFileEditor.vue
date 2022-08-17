@@ -7,10 +7,10 @@ defineProps<{ state: State; file: FileJson }>()
 
 <template>
   <div
-    class="w-full h-full flex flex-col shadow focus-within:ring-1 rounded-sm focus-within:ring-stone-500 p-2"
+    class="w-full h-full flex flex-col shadow-md focus-within:ring-1 rounded-sm focus-within:ring-stone-500 p-2"
   >
     <textarea
-      class="font-mono text-sm w-full h-full resize-none focus:outline-none"
+      class="font-mono w-full h-full resize-none focus:outline-none"
       v-model="file.content"
     ></textarea>
 
