@@ -2,6 +2,7 @@
 import { reactive } from 'vue'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
+import FormTextarea from '../../components/FormTextarea.vue'
 import Lang from '../../components/Lang.vue'
 import { useForm } from '../../hooks/useForm'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -39,14 +40,14 @@ const form = useForm({ name: '', description: '' })
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="description">
+      <FormTextarea :form="form" name="description">
         <template #label>
           <Lang>
             <template #zh>项目描述</template>
             <template #en>Description</template>
           </Lang>
         </template>
-      </FormInput>
+      </FormTextarea>
 
       <div class="flex flex-col justify-center py-4">
         <hr class="border-t border-stone-600" />

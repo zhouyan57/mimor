@@ -1,7 +1,5 @@
 # project
 
-login use FormInput
-
 FormTextarea
 
 ProjectsNew -- improve style

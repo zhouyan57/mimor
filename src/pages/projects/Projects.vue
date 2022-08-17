@@ -20,10 +20,19 @@ const state = reactive(new State())
     }"
   >
     <template #title>
-      <Lang>
-        <template #zh>项目</template>
-        <template #en>Projects</template>
-      </Lang>
+      <div class="flex space-x-2 items-center">
+        <Lang>
+          <template #zh>项目</template>
+          <template #en>Projects</template>
+        </Lang>
+        <div>
+          <Link href="/projects/new">
+            <PlusIcon
+              class="w-6 h-6 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-1"
+            />
+          </Link>
+        </div>
+      </div>
     </template>
 
     <div class="h-full flex flex-col relative">
