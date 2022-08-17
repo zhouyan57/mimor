@@ -7,7 +7,7 @@ defineProps<{ state: State; project: ProjectJson }>()
 </script>
 
 <template>
-  <div class="space-y-2 rounded-sm border border-stone-500 px-3 py-2 text-xl">
+  <div class="rounded-sm border border-stone-500 px-3 py-2 text-xl">
     <Link :href="`/projects/${project.name}`" class="font-bold hover:underline">
       {{ project.name }}
     </Link>
