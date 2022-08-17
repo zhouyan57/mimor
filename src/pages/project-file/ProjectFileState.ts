@@ -12,12 +12,12 @@ export class ProjectFileState {
     }
   ) {}
 
-  get project() {
-    return this.options.project
-  }
-
   get path() {
     return this.options.path
+  }
+
+  get project() {
+    return this.options.project
   }
 
   async load() {

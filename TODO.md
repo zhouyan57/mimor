@@ -1,7 +1,9 @@
 ProjectFileState -- load `file`
 
 ProjectFile -- recall
-ProjectFile -- edit
+
+ProjectFileEditor
+
 
 Project -- recall a file
 Project -- recall a project (all files)

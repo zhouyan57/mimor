@@ -6,9 +6,9 @@ import Login from './login/Login.vue'
 import LoginEmailConfirmationSuccessPage from './login/LoginEmailConfirmationSuccessPage.vue'
 import NewProjectFile from './new-project-file/NewProjectFile.vue'
 import NewProject from './new-project/NewProject.vue'
+import ProjectFile from './project-file/ProjectFile.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
-import ProjectFile from './project-file/ProjectFile.vue'
 import Register from './register/Register.vue'
 import RegisterEmailConfirmationSuccessPage from './register/RegisterEmailConfirmationSuccessPage.vue'
 
@@ -30,5 +30,5 @@ export const routes: Array<RouteRecordRaw> = [
     path: '/notifications/register-email-confirmation-success',
     component: RegisterEmailConfirmationSuccessPage,
   },
-  { path: '/:slugs(.*)*', component: PageNotFound },
+  { path: '/:pathParts(.*)*', component: PageNotFound },
 ]

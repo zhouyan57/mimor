@@ -2,8 +2,8 @@
 import { Head } from '@vueuse/head'
 import Lang from '../../components/Lang.vue'
 
-function formatSlugs(slugs: string | Array<string>): string {
-  return typeof slugs === 'string' ? slugs : slugs.join('/')
+function formatParam(param: string | Array<string>): string {
+  return typeof param === 'string' ? param : param.join('/')
 }
 </script>
 
@@ -28,7 +28,7 @@ function formatSlugs(slugs: string | Array<string>): string {
           <template #en>Path: </template>
         </Lang>
         <div class="px-3 font-bold text-sm">
-          /{{ formatSlugs($route.params.slugs) }}
+          /{{ formatParam($route.params.pathParts) }}
         </div>
       </div>
     </div>
