@@ -13,17 +13,7 @@ function formatPath(pathParts: string | Array<string>): string {
 </script>
 
 <template>
-  <PageLayout
-    :options="{
-      onInitialized: async () => {
-        if (!$app.auth.user) {
-          $router.replace('/explore')
-        }
-
-        await state.load()
-      },
-    }"
-  >
+  <PageLayout mode="auth" :options="{ onInitialized: () => state.load() }">
     <Head>
       <title v-if="$app.lang.zh">
         {{ formatPath($route.params.pathParts) }} | 谜墨

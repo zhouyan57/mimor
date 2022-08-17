@@ -12,17 +12,7 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <PageLayout
-    :options="{
-      onInitialized: async () => {
-        if (!$app.auth.user) {
-          $router.replace('/explore')
-        }
-
-        await state.load()
-      },
-    }"
-  >
+  <PageLayout mode="auth" :options="{ onInitialized: () => state.load() }">
     <Head>
       <title v-if="$app.lang.zh">项目 | 谜墨</title>
       <title v-else>Projects | Mimor</title>

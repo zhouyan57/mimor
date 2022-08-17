@@ -1,5 +1,3 @@
-use PageLayout mode
-
 ProjectFileState -- load `file`
 
 ProjectFile -- recall

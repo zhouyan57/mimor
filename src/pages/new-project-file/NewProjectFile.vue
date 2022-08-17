@@ -11,15 +11,7 @@ const form = useForm({ path: '', content: '' })
 </script>
 
 <template>
-  <PageLayout
-    :options="{
-      onInitialized: async () => {
-        if (!$app.auth.user) {
-          $router.replace('/explore')
-        }
-      },
-    }"
-  >
+  <PageLayout mode="auth">
     <Head>
       <title v-if="$app.lang.zh">新文件 | 谜墨</title>
       <title v-else>New File | Mimor</title>
