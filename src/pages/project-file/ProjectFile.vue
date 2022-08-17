@@ -53,12 +53,14 @@ function isRecall() {
 
         <Link
           v-if="isRecall()"
+          mode="replace"
           :href="`/projects/${state.project.name}/files/${state.path}`"
         >
           <PencilIcon class="h-5 w-5" />
         </Link>
         <Link
           v-else
+          mode="replace"
           :href="`/projects/${state.project.name}/files/${state.path}?recall`"
         >
           <PlayIcon class="h-5 w-5" />

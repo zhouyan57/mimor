@@ -4,7 +4,18 @@
 </script>
 
 <template>
-  <span @click="typeof $attrs?.href === 'string' && $router.push($attrs.href)"
+  <span
+    @click="
+      () => {
+        if (typeof $attrs.href === 'string') {
+          if ($attrs.replace) {
+            $router.replace($attrs.href)
+          } else {
+            $router.push($attrs.href)
+          }
+        }
+      }
+    "
     ><a><slot /></a
   ></span>
 </template>
