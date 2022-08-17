@@ -67,7 +67,7 @@ async function revoke() {
         class="py-2 font-sans font-bold hover:text-stone-500"
         @click="revoke()"
       >
-        <Lang class="p-2 text-lg border rounded-sm border-stone-900">
+        <Lang class="p-2 text-lg">
           <template #zh> 撤销 </template>
           <template #en> Revoke </template>
         </Lang>
