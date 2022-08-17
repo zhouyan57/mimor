@@ -1,6 +1,5 @@
-ProjectFile -- recall
-
-ProjectFileEditor
+ProjectFileEditor -- save
+ProjectFileEditor -- recall
 
 Project -- recall a file
 Project -- recall a project (all files)
@@ -8,6 +7,8 @@ Project -- recall a project (all files)
 
 ProjectList -- recall a project (all files)
 ProjectList -- be able to sort projects.
+
+improve data loading -- use cache
 
 # rendering
 

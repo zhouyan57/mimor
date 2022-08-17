@@ -4,6 +4,7 @@ import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import ProjectFileEditor from './ProjectFileEditor.vue'
 import { ProjectFileState as State } from './ProjectFileState'
 
 const route = useRoute()
@@ -46,8 +47,6 @@ function formatParam(param: string | Array<string>): string {
       <div class="text-stone-600">/{{ state.path }}</div>
     </div>
 
-    <div v-if="state.file">
-      {{ state.file.content }}
-    </div>
+    <ProjectFileEditor v-if="state.file" :state="state" :file="state.file" />
   </PageLayout>
 </template>
