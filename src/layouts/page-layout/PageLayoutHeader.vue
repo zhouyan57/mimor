@@ -7,7 +7,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="w-full overflow-x-auto flex items-center pb-2">
+  <div class="w-full overflow-x-auto flex items-center">
     <PageLayoutMenu class="block md:hidden pr-1" :state="state" />
 
     <div class="w-full overflow-x-auto text-2xl font-bold font-logo">

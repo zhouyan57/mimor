@@ -58,12 +58,13 @@ function maybeRedirect() {
       <PageLayoutSidebar :state="state" />
     </div>
 
-    <div class="h-full flex flex-col w-full md:w-3/4">
+    <div class="h-full flex flex-col w-full md:w-3/4 space-y-2">
       <PageLayoutHeader :state="state">
         <template #title>
           <slot name="title" />
         </template>
       </PageLayoutHeader>
+
       <slot />
     </div>
   </div>
