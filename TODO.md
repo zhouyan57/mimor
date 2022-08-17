@@ -1,6 +1,4 @@
 # project
-
-NewProjectFile -- use PageLayout
 NewProjectFile -- post to api
 
 Project -- recall a file
