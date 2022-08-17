@@ -9,7 +9,7 @@ import { PageLayoutState as State } from './PageLayoutState'
 
 const { options } = defineProps<{
   options?: {
-    onInitialized?: (state: State) => void | Promise<void>
+    onInitialized?: (state: State) => Promise<void>
   }
 }>()
 

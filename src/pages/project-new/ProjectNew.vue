@@ -12,7 +12,7 @@ const form = useForm({ name: '', description: '' })
 <template>
   <PageLayout
     :options="{
-      onInitialized: () => {
+      onInitialized: async () => {
         if (!$app.auth.user) {
           $router.replace('/explore')
         }

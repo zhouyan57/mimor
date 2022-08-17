@@ -13,12 +13,12 @@ const state = reactive(new State())
 <template>
   <PageLayout
     :options="{
-      onInitialized: () => {
+      onInitialized: async () => {
         if (!$app.auth.user) {
           $router.replace('/explore')
         }
 
-        state.load()
+        await state.load()
       },
     }"
   >
