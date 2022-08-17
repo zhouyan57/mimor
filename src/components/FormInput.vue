@@ -12,18 +12,22 @@ defineProps<{
 <template>
   <div class="flex flex-col">
     <label :for="name" class="py-2 font-sans">
-      <slot name="label"></slot>
+      <slot name="label" />
     </label>
 
-    <input
-      :id="name"
-      :name="name"
-      class="w-full rounded-sm border p-3 font-bold border-stone-900"
-      :type="type || 'text'"
-      :maxlength="32"
-      :spellcheck="false"
-      :required="required"
-    />
+    <div class="w-full flex items-center rounded-sm border border-stone-900">
+      <input
+        :id="name"
+        :name="name"
+        class="w-full p-3 font-bold"
+        :type="type || 'text'"
+        :maxlength="32"
+        :spellcheck="false"
+        :required="required"
+      />
+
+      <slot name="input-end" />
+    </div>
 
     <ol
       v-if="form.unprocessable?.errors[name]"

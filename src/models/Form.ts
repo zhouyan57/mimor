@@ -1,7 +1,8 @@
 export type Values = Record<string, string>
 
-interface PostOptions {
+interface PostOptions<T> {
   headers?: Record<string, string>
+  prepare?: (values: T) => Promise<any>
   then?: (response: Response) => Promise<void>
 }
 
@@ -18,7 +19,7 @@ export class Form<T extends Values> {
   async postByEvent(
     event: Event,
     url: string,
-    options?: PostOptions
+    options?: PostOptions<T>
   ): Promise<void> {
     const target: any = event.target
     for (const key of Object.keys(this.values)) {
@@ -28,7 +29,7 @@ export class Form<T extends Values> {
     await this.post(url, options)
   }
 
-  async post(url: string, options?: PostOptions): Promise<void> {
+  async post(url: string, options?: PostOptions<T>): Promise<void> {
     this.processing = true
 
     this.response = undefined
@@ -36,6 +37,10 @@ export class Form<T extends Values> {
     this.unprocessable = undefined
 
     try {
+      const values = options?.prepare
+        ? await options?.prepare(this.values)
+        : this.values
+
       this.response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -43,7 +48,7 @@ export class Form<T extends Values> {
           Accept: 'application/json',
           ...options?.headers,
         },
-        body: JSON.stringify(this.values),
+        body: JSON.stringify(values),
       })
 
       if (this.response.status === 422) {

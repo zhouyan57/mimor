@@ -43,9 +43,13 @@ const form = useForm({ path: '', content: '' })
             `${$app.api.url}/users/${$app.auth.user.username}/projects/${$route.params.name}/files`,
             {
               headers: { Authorization: `Bearer ${$app.api.token}` },
+              prepare: async (values) => ({
+                ...values,
+                path: `${values.path}.mimor`,
+              }),
               then: async () => {
                 $router.replace(
-                  `/projects/${$route.params.name}/files/${form.values.path}`
+                  `/projects/${$route.params.name}/files/${form.values.path}.mimor`
                 )
               },
             }
@@ -53,14 +57,20 @@ const form = useForm({ path: '', content: '' })
         }
       "
     >
-      <FormInput :form="form" name="path" required>
-        <template #label>
-          <Lang>
-            <template #zh>路径</template>
-            <template #en>Path</template>
-          </Lang>
-        </template>
-      </FormInput>
+      <div class="flex w-full items-center">
+        <FormInput class="w-full" :form="form" name="path" required>
+          <template #label>
+            <Lang>
+              <template #zh>路径</template>
+              <template #en>Path</template>
+            </Lang>
+          </template>
+
+          <template #input-end>
+            <div class="font-bold text-sm px-1.5">.mimor</div>
+          </template>
+        </FormInput>
+      </div>
 
       <FormTextarea :form="form" name="content">
         <template #label>
