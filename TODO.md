@@ -1,13 +1,10 @@
-cache loaded data
+app.api -- cache fetched data -- how to?
 
 Project -- recall a file
 Project -- recall a project (all files)
-[maybe] Project -- use tabs
 
 ProjectList -- recall a project (all files)
 ProjectList -- be able to sort projects.
-
-improve data loading -- use cache
 
 # rendering
 
