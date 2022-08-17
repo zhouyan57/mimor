@@ -22,14 +22,12 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        // "Helvetica",
         "Linux Biolinum O",
         "LXGW New Clear Gothic",
         "LXGW Clear Gothic",
         "sans-serif",
       ],
       serif: [
-        // "Helvetica",
         // "EB Garamond",
         "Linux Libertine O",
         // "Source Han Serif SC",
