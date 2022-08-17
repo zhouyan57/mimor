@@ -18,7 +18,7 @@ defineProps<{
     <textarea
       :id="name"
       :name="name"
-      class="w-full rounded-sm border p-3 font-bold border-stone-500"
+      class="w-full rounded-sm border p-3 border-stone-500"
       :type="type || 'text'"
       :maxlength="32"
       :spellcheck="false"
