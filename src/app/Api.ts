@@ -1,4 +1,4 @@
-import ty from '@xieyuheng/ty'
+import { ty } from '@xieyuheng/ty'
 import { FileSchema } from '../jsons/FileJson'
 import { ProjectSchema } from '../jsons/ProjectJson'
 import { UserSchema } from '../jsons/UserJson'
