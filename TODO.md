@@ -1,7 +1,5 @@
 # project
 
-jsons/FileJson
-
 project-file
 
 Project -- link to project-file-new
