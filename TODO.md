@@ -1,12 +1,23 @@
 # project
 
-Project -- link to `projects/{name}/new-file`
+
+ProjectFileList -- link to `projects/{name}/new-file` in tab
+
+add title to new-project link
+
+add title to new-file link
+
+
+NewProjectFile -- route to `projects/{name}/new-file`
 
 Project -- recall a file
 Project -- recall a project (all files)
 
+
 ProjectFileList -- fix style
 ProjectFileListItem -- fix style
+
+[maybe] Project -- use tabs
 
 # project-list
 
@@ -16,7 +27,7 @@ ProjectList -- be able to sort projects.
 
 # project-file
 
-route to `/projects/{name}/files`
+ProjectFile -- route to `/projects/{name}/files/{path}`
 
 ProjectFile -- recall
 

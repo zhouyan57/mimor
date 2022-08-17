@@ -11,6 +11,10 @@ export class ProjectState {
     }
   ) {}
 
+  get name(): string {
+    return this.options.name
+  }
+
   async load() {
     this.project = await app.api.project(this.options.name)
     this.files = await app.api.projectFiles(this.options.name)
