@@ -1,20 +1,24 @@
 # project
 
-Project -- a project page is a files manager with preview.
+move ProjectNew to `/project-new`
+
+move Project to `/project`
+
+ProjectNew -- jump to newly created project
 
 Project -- create new file
 
-Project -- list files
+Project -- flat list files
 
 Project -- edit file
 
-Project -- support file tree
+[maybe] Project -- support file tree
 
 Project -- be able to recall a project.
 
 ProjectList -- can recall a project directly.
 
-support `name_zh` & `name_en`
+ProjectList -- be able to sort projects.
 
 # rendering
 
@@ -26,7 +30,9 @@ support paragraph
 
 PageLayout -- style
 
-# user and user‘s projects
+# user
+
+support `name_zh` & `name_en`
 
 Mimor fullscreen
 
@@ -35,12 +41,6 @@ set meta theme-color in Mimor fullscreen -- unmount should undo the color
 # embedded
 
 embedded route for iframe
-
-# editor
-
-MimorEditor -- simple plaintext editor
-
-MimorEditor -- generic web xml editor
 
 # learn
 

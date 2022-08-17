@@ -48,7 +48,7 @@ const form = useForm({ name: '', description: '' })
       <FormInput :form="form" name="name" required>
         <template #label>
           <Lang>
-            <template #zh>项目名</template>
+            <template #zh>名字</template>
             <template #en>Name</template>
           </Lang>
         </template>
@@ -57,7 +57,7 @@ const form = useForm({ name: '', description: '' })
       <FormTextarea :form="form" name="description">
         <template #label>
           <Lang>
-            <template #zh>项目描述</template>
+            <template #zh>描述</template>
             <template #en>Description</template>
           </Lang>
         </template>
