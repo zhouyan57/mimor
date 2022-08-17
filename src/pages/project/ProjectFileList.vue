@@ -11,7 +11,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 
 <template>
   <div class="py-2 h-full relative">
-    <div class="border-b py-1 border-stone-900">
+    <div class="border-b py-1 border-stone-500">
       <div class="flex items-center space-x-2">
         <Lang class="font-bold font-logo text-xl">
           <template #zh>文件</template>
@@ -24,7 +24,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
           >
             <PlusIcon
-              class="w-5 h-5 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-1"
+              class="w-5 h-5 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-1"
             />
           </Link>
         </div>
@@ -43,7 +43,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
         :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
       >
         <PlusIcon
-          class="w-8 h-8 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
+          class="w-8 h-8 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
         />
       </Link>
     </div>

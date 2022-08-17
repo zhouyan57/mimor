@@ -18,7 +18,7 @@ defineProps<{
       <slot name="label" />
     </label>
 
-    <div class="w-full flex items-center rounded-sm border border-stone-900">
+    <div class="w-full flex items-center rounded-sm border border-stone-500">
       <input
         :id="name"
         :name="name"

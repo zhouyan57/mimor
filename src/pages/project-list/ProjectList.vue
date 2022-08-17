@@ -40,7 +40,7 @@ const state = reactive(new State())
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
           >
             <PlusIcon
-              class="w-6 h-6 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-1"
+              class="w-6 h-6 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-1"
             />
           </Link>
         </div>
@@ -66,7 +66,7 @@ const state = reactive(new State())
           :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
         >
           <PlusIcon
-            class="w-8 h-8 text-stone-500 border border-stone-400 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
+            class="w-8 h-8 text-stone-500 border border-stone-500 hover:bg-stone-100 rounded-full p-2 bg-white shadow"
           />
         </Link>
       </div>

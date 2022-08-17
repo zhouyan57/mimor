@@ -31,7 +31,7 @@ defineProps<{ state: State }>()
           <MenuItem as="div" v-slot="{ active }">
             <XIcon
               class="h-8 w-8"
-              :class="[active && 'border-4 border-stone-600']"
+              :class="[active && 'border-4 border-stone-500']"
             />
           </MenuItem>
         </div>
@@ -84,7 +84,7 @@ defineProps<{ state: State }>()
           <PageLayoutLang :state="state" />
         </div>
 
-        <div class="border-t border-stone-900 py-3">
+        <div class="border-t border-stone-500 py-3">
           <div v-if="$app.auth.user" class="flex items-end justify-between">
             <div>
               <div class="font-bold">{{ $app.auth.user.name }}</div>

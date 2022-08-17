@@ -1,4 +1,4 @@
-ProjectFileListItem -- fix style
+ProjectFileListItem -- link to `/projects/{name}/files/{path}`
 
 ProjectFile -- route to `/projects/{name}/files/{path}`
 ProjectFile -- recall
