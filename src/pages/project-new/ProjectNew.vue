@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'
@@ -19,6 +20,11 @@ const form = useForm({ name: '', description: '' })
       },
     }"
   >
+    <Head>
+      <title v-if="$app.lang.zh">新项目 | 谜墨</title>
+      <title v-else>New Project | Mimor</title>
+    </Head>
+
     <template #title>
       <Lang>
         <template #zh>创建新项目</template>

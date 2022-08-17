@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import LoginStart from './LoginStart.vue'
@@ -18,6 +19,11 @@ const state = reactive(new State())
       },
     }"
   >
+    <Head>
+      <title v-if="$app.lang.zh">登录 | 谜墨</title>
+      <title v-else>Login | Mimor</title>
+    </Head>
+
     <div
       v-if="!state.verifying"
       class="py-2 flex h-full flex-col items-center md:pt-10 md:pr-20"

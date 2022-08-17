@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/outline'
+import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
@@ -22,6 +23,11 @@ const state = reactive(new State())
       },
     }"
   >
+    <Head>
+      <title v-if="$app.lang.zh">项目 | 谜墨</title>
+      <title v-else>Projects | Mimor</title>
+    </Head>
+
     <template #title>
       <div class="flex space-x-2 items-center">
         <Lang>

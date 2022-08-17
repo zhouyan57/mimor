@@ -1,18 +1,20 @@
 # project
 
+Project -- show flat list of files
+
 ProjectState -- load `files`
 
-Project -- create new file
+Project -- show flat list of files
 
-Project -- flat list files
+Project -- create new file
 
 Project -- edit file
 
 [maybe] Project -- support file tree
 
-Project -- be able to recall a project.
+Project -- recall a file
 
-ProjectList -- can recall a project directly.
+ProjectList -- recall a project (all files)
 
 ProjectList -- be able to sort projects.
 

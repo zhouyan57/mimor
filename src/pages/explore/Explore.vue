@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@vueuse/head'
 import { onMounted, reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
@@ -12,6 +13,11 @@ onMounted(() => state.load())
 
 <template>
   <PageLayout>
+    <Head>
+      <title v-if="$app.lang.zh">探索 | 谜墨</title>
+      <title v-else>Explore | Mimor</title>
+    </Head>
+
     <template #title>
       <Lang>
         <template #zh>探索</template>

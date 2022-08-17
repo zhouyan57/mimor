@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -25,8 +26,12 @@ const state = reactive(
       },
     }"
   >
+    <Head>
+      <title>{{ $route.params.name }} | 谜墨</title>
+    </Head>
+
     <template #title>
-      <div>{{ $route.params.name }}</div>
+      <div class="font-sans">{{ $route.params.name }}</div>
     </template>
 
     <div v-if="state.project">
