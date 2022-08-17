@@ -1,9 +1,5 @@
 # project
 
-ProjectListItem -- click goto project page -- `Project`
-
-- `/projects/{name}`
-
 ProjectList -- button can recall a project.
 
 project -- a project we have button to recall a project.
