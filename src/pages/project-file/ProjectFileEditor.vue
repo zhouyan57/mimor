@@ -14,10 +14,10 @@ defineProps<{ state: State; file: FileJson }>()
       v-model="file.content"
     ></textarea>
 
-    <div class="flex w-full justify-end border-t border-stone-500 pt-2">
-      <div class="space-x-3 self-end text-stone-500">
-        <button class="font-bold">Recall</button>
-        <button class="font-bold">Save</button>
+    <div class="flex w-full justify-end border-t border-stone-500 pt-1">
+      <div class="space-x-3 self-end text-lg">
+        <button class="hover:underline">Recall</button>
+        <button class="hover:underline">Save</button>
       </div>
     </div>
   </div>

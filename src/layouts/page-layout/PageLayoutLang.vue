@@ -39,7 +39,7 @@ defineProps<{ state: State }>()
           :value="tag"
         >
           <div
-            class="flex min-w-max items-center p-2"
+            class="flex min-w-max items-center px-2 py-1"
             :class="[active && `bg-stone-100`]"
           >
             {{ $app.lang.findTagName(tag) }}
