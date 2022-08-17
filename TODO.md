@@ -1,22 +1,38 @@
 # project
 
-Project -- show flat list of files
+jsons/FileJson
+
+project-file
+
+Project -- link to project-file-new
 
 ProjectState -- load `files`
 
-Project -- show flat list of files
+ProjectFileList
 
-Project -- create new file
+ProjectFileListItem
 
-Project -- edit file
+Project -- recall a file
+
+Project -- recall a project (all files)
 
 [maybe] Project -- support file tree
 
-Project -- recall a file
+#  project-list
 
 ProjectList -- recall a project (all files)
 
 ProjectList -- be able to sort projects.
+
+# project-file-new
+
+ProjectFileNew -- create new file
+
+# project-file
+
+ProjectFile -- recall
+
+ProjectFile -- edit
 
 # rendering
 

@@ -4,6 +4,7 @@ import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ProjectState as State } from './ProjectState'
+import ProjectFileList from './ProjectFileList.vue'
 
 const route = useRoute()
 
@@ -34,10 +35,10 @@ const state = reactive(
       <div class="font-sans">{{ $route.params.name }}</div>
     </template>
 
-    <div v-if="state.project">
-      <div v-if="state.project.description">
-        {{ state.project.description }}
-      </div>
+    <div v-if="state.project?.description" class="font-serif text-lg">
+      {{ state.project.description }}
     </div>
+
+    <ProjectFileList :state="state" />
   </PageLayout>
 </template>
