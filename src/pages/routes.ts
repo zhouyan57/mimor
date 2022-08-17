@@ -6,7 +6,7 @@ import Login from './login/Login.vue'
 import LoginEmailConfirmationSuccessPage from './login/LoginEmailConfirmationSuccessPage.vue'
 import Project from './project-list/Project.vue'
 import ProjectList from './project-list/ProjectList.vue'
-import ProjectNew from './project-list/ProjectNew.vue'
+import ProjectNew from './project-new/ProjectNew.vue'
 import Register from './register/Register.vue'
 import RegisterEmailConfirmationSuccessPage from './register/RegisterEmailConfirmationSuccessPage.vue'
 export const routes: Array<RouteRecordRaw> = [
