@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'

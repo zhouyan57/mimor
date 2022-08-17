@@ -1,8 +1,8 @@
 # project
 
-ProjectList -- list projects
+extract ProjectListItem
 
-ProjectList -- click goto project page -- `Project`
+ProjectListItem -- click goto project page -- `Project`
 
 - `/projects/{name}`
 

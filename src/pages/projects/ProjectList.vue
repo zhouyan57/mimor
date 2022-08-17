@@ -16,6 +16,8 @@ const state = reactive(new State())
         if (!$app.auth.user) {
           $router.replace('/explore')
         }
+
+        state.load()
       },
     }"
   >
@@ -36,6 +38,13 @@ const state = reactive(new State())
     </template>
 
     <div class="h-full flex flex-col relative">
+      <div>
+        <div v-for="project of state.projects" :key="project.name">
+          <div>{{ project.name }}</div>
+          <div>{{ project.description }}</div>
+        </div>
+      </div>
+
       <div class="absolute z-10 bottom-2 right-2">
         <Link href="/projects/new">
           <PlusIcon

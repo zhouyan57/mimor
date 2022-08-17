@@ -1,3 +1,5 @@
+import ty from '@xieyuheng/ty'
+import { ProjectSchema } from '../jsons/ProjectJson'
 import { UserSchema } from '../jsons/UserJson'
 
 export class Api {
@@ -21,5 +23,38 @@ export class Api {
     }
 
     return UserSchema.validate(await response.json())
+  }
+
+  async projects() {
+    if (!app.auth.user) {
+      console.log({
+        who: 'app.api.projects',
+        message: 'no user',
+      })
+      return []
+    }
+
+    const response = await fetch(
+      `${this.url}/users/${app.auth.user.username}/projects`,
+      {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          Accept: 'application/json',
+        },
+      }
+    )
+
+    if (!response.ok) {
+      console.log({
+        who: 'app.api.projects',
+        message: 'response not ok',
+        response,
+      })
+      return []
+    }
+
+    const { data } = await response.json()
+
+    return ty.array(ProjectSchema).validate(data)
   }
 }
