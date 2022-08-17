@@ -2,7 +2,7 @@ export type Values = Record<string, string>
 
 interface PostOptions {
   headers?: Record<string, string>
-  then?: (result: any) => void | Promise<void>
+  then?: (response: Response) => Promise<void>
 }
 
 type Unprocessable<T> = { message: string; errors: Record<string, string> }
@@ -51,8 +51,7 @@ export class Form<T extends Values> {
       }
 
       if (this.response.ok && options?.then) {
-        const data = await this.response.json()
-        options.then(data)
+        await options.then(this.response)
       }
     } catch (error) {
       if (!(error instanceof Error)) throw error

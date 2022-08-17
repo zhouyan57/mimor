@@ -18,8 +18,8 @@ const form = useForm({ email: '' })
     class="flex max-w-md flex-col pt-20 space-y-2 text-xl"
     @submit.prevent="
       form.post(state.links.login, {
-        then: (result) => {
-          state.verifying = result
+        then: async (response) => {
+          state.verifying = await response.json()
         },
       })
     "

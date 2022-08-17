@@ -17,8 +17,8 @@ const form = useForm({ username: '', name: '', email: '' })
     @submit.prevent="
       (event) =>
         form.postByEvent(event, state.links.register, {
-          then: (result) => {
-            state.verifying = result
+          then: async (response) => {
+            state.verifying = await response.json()
           },
         })
     "
