@@ -48,7 +48,7 @@ const state = reactive(new State())
       </div>
       <div v-else>
         <Lang>
-          <template #zh>加载项目中…</template>
+          <template #zh>项目加载中…</template>
           <template #en>Loading projects...</template>
         </Lang>
       </div>

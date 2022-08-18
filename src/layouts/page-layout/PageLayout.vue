@@ -7,6 +7,7 @@ import PageLayoutHeader from './PageLayoutHeader.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import { PageLayoutState as State } from './PageLayoutState'
+import { wait } from '../../utils/wait'
 
 const { mode, options } = defineProps<{
   mode?: string
@@ -22,9 +23,10 @@ const state = reactive(new State())
 onMounted(async () => {
   state.loading = true
   await app.auth.initialize()
-  state.loading = false
 
   maybeRedirect()
+
+  state.loading = false
 
   if (options?.onInitialized) {
     options.onInitialized(state)

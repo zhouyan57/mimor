@@ -1,3 +1,5 @@
+app as a global store
+
 use dotted line for file list
 
 Project -- recall a file
