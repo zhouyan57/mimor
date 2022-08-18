@@ -1,5 +1,5 @@
 import { ty } from '@xieyuheng/ty'
-import { ProjectSchema } from '../../jsons/ProjectJson'
+import { ProjectSchema, ProjectJson } from '../../jsons/ProjectJson'
 import { ProjectRepoRemote } from './ProjectRepoRemote'
 import { ProjectRepoMemory } from './ProjectRepoMemory'
 
