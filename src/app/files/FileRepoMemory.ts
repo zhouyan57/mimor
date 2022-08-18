@@ -3,28 +3,20 @@ import { FileSchema } from '../../jsons/FileJson'
 import { FileJson } from '../../jsons/FileJson'
 
 export class FileRepoMemory {
-  async all(username: string, name: string) {
-    return app.api.http.get({
-      url: `/users/${username}/projects/${name}/files`,
-      path: 'data',
-      schema: ty.array(FileSchema),
-    })
+  async all(username: string, projectName: string) {
+    throw new Error()
   }
 
-  async get(username: string, name: string, path: string) {
-    return app.api.http.get({
-      url: `/users/${username}/projects/${name}/files/${path}`,
-      schema: FileSchema,
-    })
+  async get(username: string, projectName: string, path: string) {
+    throw new Error()
   }
 
-  async put(username: string, name: string, file: FileJson) {
-    await app.api.http.fetch(
-      `/users/${username}/projects/${name}/files/${file.path}`,
-      {
-        method: 'PUT',
-        body: JSON.stringify(file),
-      }
-    )
+  async put(
+    username: string,
+    projectName: string,
+    path: string,
+    file: FileJson
+  ) {
+    throw new Error()
   }
 }

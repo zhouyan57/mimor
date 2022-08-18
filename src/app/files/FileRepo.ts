@@ -8,15 +8,20 @@ export class FileRepo {
   remote = new FileRepoRemote()
   memory = new FileRepoMemory()
 
-  async all(username: string, name: string) {
-    return this.remote.all(username, name)
+  async all(username: string, projectName: string) {
+    return this.remote.all(username, projectName)
   }
 
-  async get(username: string, name: string, path: string) {
-    return this.remote.get(username, name, path)
+  async get(username: string, projectName: string, path: string) {
+    return this.remote.get(username, projectName, path)
   }
 
-  async put(username: string, name: string, file: FileJson) {
-    return this.remote.put(username, name, file)
+  async put(
+    username: string,
+    projectName: string,
+    path: string,
+    file: FileJson
+  ) {
+    return this.remote.put(username, projectName, path, file)
   }
 }
