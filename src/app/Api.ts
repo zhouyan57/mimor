@@ -37,9 +37,7 @@ export class Api {
     })
   }
 
-  async project(name: string) {
-    const { username } = app.auth.userOrFail()
-
+  async project(username: string, name: string) {
     return this.http.get({
       url: `/users/${username}/projects/${name}`,
       schema: ProjectSchema,

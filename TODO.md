@@ -1,4 +1,3 @@
-app.api.projects -- take username
 app.api.project -- take username
 app.api.files -- take username
 app.api.file -- take username
