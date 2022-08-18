@@ -27,21 +27,6 @@ export class Api {
     })
   }
 
-  async projects(username: string) {
-    return this.http.get({
-      url: `/users/${username}/projects`,
-      path: 'data',
-      schema: ty.array(ProjectSchema),
-    })
-  }
-
-  async project(username: string, name: string) {
-    return this.http.get({
-      url: `/users/${username}/projects/${name}`,
-      schema: ProjectSchema,
-    })
-  }
-
   async files(username: string, name: string) {
     return this.http.get({
       url: `/users/${username}/projects/${name}/files`,

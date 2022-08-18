@@ -1,10 +1,16 @@
-use ProjectRepoRemote
-ProjectRepo
+use FileRepoRemote
+
+ProjectRepo redirect to ProjectRepoRemote
+
+FileRepo redirect to FileRepoRemote
+
 ProjectRepoInMemory
 
-use FileRepoRemote
+ProjectRepo use ProjectRepoInMemory to handle cache
+
 FileRepoInMemory
-FileRepo
+
+FileRepo use FileRepoInMemory for cache
 
 use dotted line for file list
 

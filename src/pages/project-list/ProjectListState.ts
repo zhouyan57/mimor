@@ -6,6 +6,6 @@ export class ProjectListState {
 
   async load() {
     const { username } = app.auth.userOrFail()
-    this.projects = await app.api.projects(username)
+    this.projects = await app.projects.all(username)
   }
 }
