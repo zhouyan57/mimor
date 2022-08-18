@@ -2,8 +2,6 @@ use ProjectRepoRemote
 ProjectRepo
 ProjectRepoInMemory
 
-rename FileStore to FileRepoRemote
-
 use FileRepoRemote
 FileRepoInMemory
 FileRepo
