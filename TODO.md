@@ -1,5 +1,3 @@
-FileRepo
-
 FileRepo redirect to FileRepoRemote
 
 ProjectRepoInMemory
