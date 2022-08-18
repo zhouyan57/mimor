@@ -7,7 +7,7 @@ import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileEditor from './ProjectFileEditor.vue'
 import ProjectFileRecall from './ProjectFileRecall.vue'
-import { ProjectFileState as State } from './ProjectFileState'
+import { ProjectFileState as State } from './FileState'
 
 const route = useRoute()
 
