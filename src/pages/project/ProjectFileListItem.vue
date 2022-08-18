@@ -17,7 +17,7 @@ defineProps<{ state: State; file: FileJson }>()
     </Link>
 
     <div class="flex grow items-center">
-      <div class="flex grow flex-col justify-center pl-1.5 pr-0.5 pt-px">
+      <div class="flex grow flex-col justify-center pl-1.5 pr-0.5 pt-0.5 pb-px">
         <div class="w-full border-b border-dashed border-stone-500"></div>
         <div class="w-full border-t border-dashed border-stone-500"></div>
       </div>
