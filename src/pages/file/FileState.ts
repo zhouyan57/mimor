@@ -30,7 +30,7 @@ export class FileState {
     if (this.file) {
       this.saving = true
       const { username } = app.auth.userOrFail()
-      await app.files.set(username, this.project.name, this.file)
+      await app.files.put(username, this.project.name, this.file)
       this.saving = false
     }
   }
