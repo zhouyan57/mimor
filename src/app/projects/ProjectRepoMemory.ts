@@ -4,18 +4,18 @@ export class ProjectRepoMemory {
   map: Map<string, Map<string, ProjectJson>> = new Map()
 
   load(username: string, projects: Array<ProjectJson>) {
-    const map = new Map()
+    const innerMap = new Map()
     for (const project of projects) {
-      map.set(project.name, project)
+      innerMap.set(project.name, project)
     }
 
-    this.map.set(username, map)
+    this.map.set(username, innerMap)
   }
 
   async all(username: string) {
-    const map = this.map.get(username)
-    if (!map) return undefined
-    return Array.from(map.values())
+    const innerMap = this.map.get(username)
+    if (!innerMap) return undefined
+    return Array.from(innerMap.values())
   }
 
   async get(username: string, name: string) {
@@ -23,6 +23,7 @@ export class ProjectRepoMemory {
   }
 
   async put(username: string, name: string, project: ProjectJson) {
-    this.map.get(username)?.set(name, project)
+    this.map.get(username)?.delete(name)
+    this.map.get(username)?.set(project.name, project)
   }
 }

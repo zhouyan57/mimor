@@ -9,11 +9,32 @@ export class FileRepo {
   memory = new FileRepoMemory()
 
   async all(username: string, projectName: string) {
-    return this.remote.all(username, projectName)
+    const found = await this.memory.all(username, projectName)
+    if (found) {
+      console.log("found file all cache") 
+      return found
+    }
+
+    const files = await this.remote.all(username, projectName)
+
+    if (files) {
+      this.memory.load(username, projectName, files)
+    }
+
+    return files
   }
 
   async get(username: string, projectName: string, path: string) {
-    return this.remote.get(username, projectName, path)
+    const found = await this.memory.get(username, projectName, path)
+    if (found) return found
+
+    const file = await this.remote.get(username, projectName, path)
+
+    if (file) {
+      this.memory.put(username, projectName, path, file)
+    }
+
+    return file
   }
 
   async put(
@@ -22,6 +43,7 @@ export class FileRepo {
     path: string,
     file: FileJson
   ) {
-    return this.remote.put(username, projectName, path, file)
+    await this.remote.put(username, projectName, path, file)
+    await this.memory.put(username, projectName, path, file)
   }
 }

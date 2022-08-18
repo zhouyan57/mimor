@@ -1,5 +1,3 @@
-FileRepo use FileRepoMemory for cache
-
 Form should not depends on response -- use async callback instead
 
 NewProject -- use ProjectRepo to handle cache
