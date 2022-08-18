@@ -2,7 +2,7 @@
 import Link from '../../components/Link.vue'
 import Lang from '../../components/Lang.vue'
 import { PlayIcon } from '@heroicons/vue/outline'
-import { ProjectFileState as State } from './FileState'
+import { FileState as State } from './FileState'
 
 defineProps<{ state: State }>()
 </script>

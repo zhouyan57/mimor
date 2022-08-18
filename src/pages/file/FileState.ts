@@ -1,6 +1,6 @@
 import { FileJson } from '../../jsons/FileJson'
 
-export class ProjectFileState {
+export class FileState {
   file?: FileJson
   saving = false
 

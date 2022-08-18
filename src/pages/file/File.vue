@@ -5,9 +5,9 @@ import { useRoute } from 'vue-router'
 import { PlayIcon, PencilIcon } from '@heroicons/vue/outline'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import ProjectFileEditor from './ProjectFileEditor.vue'
-import ProjectFileRecall from './ProjectFileRecall.vue'
-import { ProjectFileState as State } from './FileState'
+import FileEditor from './FileEditor.vue'
+import FileRecall from './FileRecall.vue'
+import { FileState as State } from './FileState'
 
 const route = useRoute()
 
@@ -68,7 +68,7 @@ function isRecall() {
       </div>
     </template>
 
-    <ProjectFileRecall v-if="isRecall()" :state="state" />
-    <ProjectFileEditor v-else :state="state" />
+    <FileRecall v-if="isRecall()" :state="state" />
+    <FileEditor v-else :state="state" />
   </PageLayout>
 </template>
