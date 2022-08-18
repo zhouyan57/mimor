@@ -1,17 +1,3 @@
-ProjectStore
-
-- projects.all(username)
-- projects.get(username, name)
-- projects.set(username, name, project)
-- projects.delete(username, name, project)
-
-FileStore
-
-- files.all(username, name)
-- files.get(username, name, path)
-- files.set(username, name, path, file)
-- files.delete(username, name, path)
-
 use dotted line for file list
 
 Project -- recall a file
