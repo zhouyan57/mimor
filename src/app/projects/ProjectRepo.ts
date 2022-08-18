@@ -8,10 +8,28 @@ export class ProjectRepo {
   memory = new ProjectRepoMemory()
 
   async all(username: string) {
-    return this.remote.all(username)
+    const found = await this.memory.all(username)
+    if (found) return found
+
+    const projects = await this.remote.all(username)
+
+    if (projects) {
+      this.memory.load(username, projects)
+    }
+
+    return projects
   }
 
   async get(username: string, name: string) {
-    return this.remote.get(username, name)
+    const found = await this.memory.get(username, name)
+    if (found) return found
+
+    const project = await this.remote.get(username, name)
+
+    if (project) {
+      this.memory.put(username, name, project)
+    }
+
+    return project
   }
 }

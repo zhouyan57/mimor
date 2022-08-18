@@ -1,7 +1,9 @@
-ProjectRepoMemory
-ProjectRepo use ProjectRepoMemory to handle cache
 FileRepo
 FileRepo use FileRepoMemory for cache
+
+Form should not depends on response -- use async callback instead
+
+NewProject -- use ProjectRepo to handle cache
 
 use dotted line for file list
 
