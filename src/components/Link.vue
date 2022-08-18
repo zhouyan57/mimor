@@ -8,7 +8,7 @@
     @click="
       () => {
         if (typeof $attrs.href === 'string') {
-          if ($attrs.replace) {
+          if ($attrs.mode === 'replace') {
             $router.replace($attrs.href)
           } else {
             $router.push($attrs.href)
