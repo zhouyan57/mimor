@@ -1,4 +1,6 @@
-app.api -- cache fetched data -- how to?
+http.purge
+
+- purge cache for `app.api`
 
 use dotted line for file list
 
