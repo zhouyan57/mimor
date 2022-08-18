@@ -1,7 +1,3 @@
-app.api.files -- take username
-app.api.file -- take username
-app.api.saveFile -- take username
-
 ProjectStore
 
 - projects.all(username)

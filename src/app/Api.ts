@@ -42,9 +42,7 @@ export class Api {
     })
   }
 
-  async files(name: string) {
-    const { username } = app.auth.userOrFail()
-
+  async files(username: string, name: string) {
     return this.http.get({
       url: `/users/${username}/projects/${name}/files`,
       path: 'data',
@@ -52,18 +50,14 @@ export class Api {
     })
   }
 
-  async file(name: string, path: string) {
-    const { username } = app.auth.userOrFail()
-
+  async file(username: string, name: string, path: string) {
     return this.http.get({
       url: `/users/${username}/projects/${name}/files/${path}`,
       schema: FileSchema,
     })
   }
 
-  async saveFile(name: string, file: FileJson) {
-    const { username } = app.auth.userOrFail()
-
+  async saveFile(username: string, name: string, file: FileJson) {
     await this.http.fetch(
       `/users/${username}/projects/${name}/files/${file.path}`,
       {
