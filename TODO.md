@@ -3,9 +3,14 @@ Form should not depends on response -- use async callback instead
 NewProject -- use ProjectRepo to handle cache
 NewFile -- use FileRepo to handle cache
 
+「创建新文件」->「创建新谜墨」
+
+ProjectFileList -- loading file list
+
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
 ProjectList -- be able to sort projects.
+ProjectFileList -- be able to sort files.
 
 FileRecall -- report on XML parsing error
 
