@@ -46,7 +46,7 @@ export class Api {
     })
   }
 
-  async projectFiles(name: string) {
+  async files(name: string) {
     const { username } = app.auth.userOrFail()
 
     return this.http.get({
@@ -56,7 +56,7 @@ export class Api {
     })
   }
 
-  async projectFile(name: string, path: string) {
+  async file(name: string, path: string) {
     const { username } = app.auth.userOrFail()
 
     return this.http.get({
@@ -65,7 +65,7 @@ export class Api {
     })
   }
 
-  async saveProjectFile(name: string, file: FileJson) {
+  async saveFile(name: string, file: FileJson) {
     const { username } = app.auth.userOrFail()
 
     await this.http.fetch(

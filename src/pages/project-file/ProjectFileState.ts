@@ -22,13 +22,13 @@ export class ProjectFileState {
   }
 
   async load() {
-    this.file = await app.api.projectFile(this.project.name, this.path)
+    this.file = await app.api.file(this.project.name, this.path)
   }
 
   async save() {
     if (this.file) {
       this.saving = true
-      await app.api.saveProjectFile(this.project.name, this.file)
+      await app.api.saveFile(this.project.name, this.file)
       this.saving = false
     }
   }

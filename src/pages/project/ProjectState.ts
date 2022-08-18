@@ -17,6 +17,6 @@ export class ProjectState {
 
   async load() {
     this.project = await app.api.project(this.options.name)
-    this.files = await app.api.projectFiles(this.options.name)
+    this.files = await app.api.files(this.options.name)
   }
 }

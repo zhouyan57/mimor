@@ -1,5 +1,4 @@
-rename projectFiles to files
-rename projectFile to file
+remove project prefix for file components
 
 
 app as a global store
