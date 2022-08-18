@@ -1,3 +1,13 @@
+use ProjectRepoRemote
+ProjectRepo
+ProjectRepoInMemory
+
+rename FileStore to FileRepoRemote
+
+use FileRepoRemote
+FileRepoInMemory
+FileRepo
+
 use dotted line for file list
 
 Project -- recall a file

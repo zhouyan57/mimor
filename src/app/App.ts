@@ -1,14 +1,14 @@
 import { Api } from './Api'
 import { Auth } from './Auth'
 import { Lang } from './Lang'
-import { ProjectStore } from './ProjectStore'
+import { ProjectRepoRemote } from './projects/ProjectRepoRemote'
 import { FileStore } from './FileStore'
 
 export class App {
   lang = new Lang()
   auth = new Auth()
   api = new Api()
-  projects = new ProjectStore()
+  projects = new ProjectRepoRemote()
   files = new FileStore()
 
   get name(): string {
