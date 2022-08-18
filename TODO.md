@@ -1,4 +1,4 @@
-ProjectRepo redirect to ProjectRepoRemote
+FileRepo
 
 FileRepo redirect to FileRepoRemote
 

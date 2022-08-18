@@ -1,7 +1,7 @@
 import { Api } from './Api'
 import { Auth } from './Auth'
 import { Lang } from './Lang'
-import { ProjectRepoRemote } from './projects/ProjectRepoRemote'
+import { ProjectRepo } from './projects/ProjectRepo'
 import { FileRepoRemote } from './files/FileRepoRemote'
 
 export class App {
@@ -9,7 +9,7 @@ export class App {
   auth = new Auth()
   api = new Api()
 
-  projects = new ProjectRepoRemote()
+  projects = new ProjectRepo()
   files = new FileRepoRemote()
 
   get name(): string {
