@@ -1,7 +1,22 @@
-remove project prefix for file components
+app.api.projects -- take username
+app.api.project -- take username
+app.api.files -- take username
+app.api.file -- take username
+app.api.saveFile -- take username
 
+ProjectStore
 
-app as a global store
+- projects.all(username)
+- projects.get(username, name)
+- projects.set(username, name, project)
+- projects.delete(username, name, project)
+
+FileStore
+
+- files.all(username, name)
+- files.get(username, name, path)
+- files.set(username, name, path, file)
+- files.delete(username, name, path)
 
 use dotted line for file list
 
