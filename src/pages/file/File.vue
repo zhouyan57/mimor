@@ -56,14 +56,14 @@ function isRecall() {
           mode="replace"
           :href="`/projects/${state.project.name}/files/${state.path}`"
         >
-          <PencilIcon class="h-5 w-5" />
+          <PencilIcon class="h-5 w-5 stroke-1" />
         </Link>
         <Link
           v-else
           mode="replace"
           :href="`/projects/${state.project.name}/files/${state.path}?recall`"
         >
-          <PlayIcon class="h-5 w-5" />
+          <PlayIcon class="h-5 w-5 stroke-1" />
         </Link>
       </div>
     </template>

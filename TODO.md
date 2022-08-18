@@ -1,11 +1,10 @@
-Form should not depends on response -- use async callback instead
-
 try feather icons
+
+Form should not depends on response -- use async callback instead
 
 NewProject -- use ProjectRepo to handle cache
 NewFile -- use FileRepo to handle cache
 
-Project -- recall a file
 Project -- recall a project (all files)
 
 ProjectList -- recall a project (all files)

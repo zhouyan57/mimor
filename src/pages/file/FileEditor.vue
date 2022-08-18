@@ -39,7 +39,7 @@ defineProps<{ state: State }>()
               <template #en>Recall</template>
             </Lang>
 
-            <PlayIcon class="h-4 w-4" />
+            <PlayIcon class="h-5 w-5 stroke-1" />
           </div>
         </Link>
       </div>
