@@ -16,14 +16,14 @@ defineProps<{ state: State; file: FileJson }>()
       {{ file.path }}
     </Link>
 
-    <div class="flex grow">
-      <div class="flex grow flex-col justify-center pl-1.5 pr-0.5 pt-0.5">
-        <div class="w-full border-b border-dashed border-stone-900"></div>
-        <div class="w-full border-t border-dashed border-stone-900"></div>
+    <div class="flex grow items-center">
+      <div class="flex grow flex-col justify-center pl-1.5 pr-0.5 pt-px">
+        <div class="w-full border-b border-dashed border-stone-500"></div>
+        <div class="w-full border-t border-dashed border-stone-500"></div>
       </div>
 
       <Link :href="`/projects/${state.name}/files/${file.path}?recall`">
-        <PlayIcon class="mt-0.5 mb-px h-5 w-5 stroke-1" />
+        <PlayIcon class="h-5 w-5 stroke-1 p-px" />
       </Link>
     </div>
   </div>
