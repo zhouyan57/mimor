@@ -1,3 +1,7 @@
+rename projectFiles to files
+rename projectFile to file
+
+
 app as a global store
 
 use dotted line for file list
