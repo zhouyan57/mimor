@@ -1,5 +1,3 @@
-http.get -- take url as first arg
-
 FileRepo
 FileRepo use FileRepoMemory for cache
 

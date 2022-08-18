@@ -20,10 +20,11 @@ export class Http {
   }
 
   async get<T>(
-    args: { url: string; schema: Schema<T>; path?: string },
+    url: string,
+    args: { schema: Schema<T>; path?: string },
     options?: RequestInit
   ): Promise<T | undefined> {
-    const url = this.mergeUrl(args.url)
+    url = this.mergeUrl(url)
     options = this.mergeOptions(options)
 
     const response = await fetch(url, options)
