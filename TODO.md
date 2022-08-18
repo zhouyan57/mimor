@@ -1,5 +1,3 @@
-FileRepo redirect to FileRepoRemote
-
 ProjectRepoInMemory
 
 ProjectRepo use ProjectRepoInMemory to handle cache
