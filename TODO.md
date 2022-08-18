@@ -6,9 +6,10 @@ NewProject -- use ProjectRepo to handle cache
 NewFile -- use FileRepo to handle cache
 
 Project -- recall a project (all files)
-
 ProjectList -- recall a project (all files)
 ProjectList -- be able to sort projects.
+
+FileRecall -- report on XML parsing error
 
 # rendering
 
