@@ -26,29 +26,4 @@ export class Api {
       schema: UserSchema,
     })
   }
-
-  async files(username: string, name: string) {
-    return this.http.get({
-      url: `/users/${username}/projects/${name}/files`,
-      path: 'data',
-      schema: ty.array(FileSchema),
-    })
-  }
-
-  async file(username: string, name: string, path: string) {
-    return this.http.get({
-      url: `/users/${username}/projects/${name}/files/${path}`,
-      schema: FileSchema,
-    })
-  }
-
-  async saveFile(username: string, name: string, file: FileJson) {
-    await this.http.fetch(
-      `/users/${username}/projects/${name}/files/${file.path}`,
-      {
-        method: 'PUT',
-        body: JSON.stringify(file),
-      }
-    )
-  }
 }

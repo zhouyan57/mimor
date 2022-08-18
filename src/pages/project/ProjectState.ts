@@ -18,6 +18,6 @@ export class ProjectState {
   async load() {
     const { username } = app.auth.userOrFail()
     this.project = await app.projects.get(username, this.options.name)
-    this.files = await app.api.files(username, this.options.name)
+    this.files = await app.files.all(username, this.options.name)
   }
 }
