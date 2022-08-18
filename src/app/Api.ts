@@ -27,9 +27,7 @@ export class Api {
     })
   }
 
-  async projects() {
-    const { username } = app.auth.userOrFail()
-
+  async projects(username: string) {
     return this.http.get({
       url: `/users/${username}/projects`,
       path: 'data',
