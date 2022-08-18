@@ -1,35 +1,28 @@
-import { ty } from '@xieyuheng/ty'
-import { ProjectSchema, ProjectJson } from '../../jsons/ProjectJson'
+import { ProjectJson } from '../../jsons/ProjectJson'
 
 export class ProjectRepoMemory {
-  loaded = false
-  projects: Map<string, ProjectJson> = new Map()
+  map: Map<string, Map<string, ProjectJson>> = new Map()
 
   load(username: string, projects: Array<ProjectJson>) {
+    const map = new Map()
     for (const project of projects) {
-      const key = this.formatKey(username, project.name)
-      this.projects.set(key, project)
+      map.set(project.name, project)
     }
 
-    this.loaded = true
+    this.map.set(username, map)
   }
 
   async all(username: string) {
-    if (!this.loaded) return undefined
-    return Array.from(this.projects.values())
-  }
-
-  formatKey(username: string, name: string): string {
-    return `${username}/${name}`
+    const map = this.map.get(username)
+    if (!map) return undefined
+    return Array.from(map.values())
   }
 
   async get(username: string, name: string) {
-    const key = this.formatKey(username, name)
-    return this.projects.get(key)
+    return this.map.get(username)?.get(name)
   }
 
   async put(username: string, name: string, project: ProjectJson) {
-    const key = this.formatKey(username, name)
-    this.projects.set(key, project)
+    this.map.get(username)?.set(name, project)
   }
 }

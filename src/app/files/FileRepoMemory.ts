@@ -1,10 +1,13 @@
 import { ty } from '@xieyuheng/ty'
-import { FileSchema } from '../../jsons/FileJson'
 import { FileJson } from '../../jsons/FileJson'
 
 export class FileRepoMemory {
+  loaded = false
+  files: Map<string, FileJson> = new Map()
+  
   async all(username: string, projectName: string) {
-    throw new Error()
+    if (!this.loaded) return undefined
+    return Array.from(this.files.values())
   }
 
   async get(username: string, projectName: string, path: string) {
