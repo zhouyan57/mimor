@@ -11,7 +11,7 @@ export class FileRepo {
   async all(username: string, projectName: string) {
     const found = await this.memory.all(username, projectName)
     if (found) {
-      console.log("found file all cache") 
+      console.log('found file all cache')
       return found
     }
 
