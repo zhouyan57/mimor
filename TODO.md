@@ -1,7 +1,3 @@
-http.purge
-
-- purge cache for `app.api`
-
 use dotted line for file list
 
 Project -- recall a file

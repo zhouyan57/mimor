@@ -76,6 +76,14 @@ export class Http {
     return json
   }
 
+  purge(args: { url: string }, options?: RequestInit) {
+    const url = this.mergeUrl(args.url)
+    options = this.mergeOptions(options)
+
+    const key = JSON.stringify({ url, options })
+    this.cached.delete(key)
+  }
+
   async fetch(url: string, options?: RequestInit): Promise<Response> {
     url = this.mergeUrl(url)
     options = this.mergeOptions(options)
