@@ -23,7 +23,7 @@ defineProps<{ state: State; file: FileJson }>()
       </div>
 
       <Link :href="`/projects/${state.name}/files/${file.path}?recall`">
-        <PlayIcon class="mt-0.5 mb-px h-5 w-5 stroke-1 p-px" />
+        <PlayIcon class="mt-0.5 mb-px h-5 w-5 stroke-1" />
       </Link>
     </div>
   </div>
