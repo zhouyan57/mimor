@@ -1,10 +1,7 @@
-ProjectRepoInMemory
-
-ProjectRepo use ProjectRepoInMemory to handle cache
-
-FileRepoInMemory
-
-FileRepo use FileRepoInMemory for cache
+ProjectRepoMemory
+ProjectRepo use ProjectRepoMemory to handle cache
+FileRepo
+FileRepo use FileRepoMemory for cache
 
 use dotted line for file list
 
