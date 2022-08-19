@@ -1,5 +1,9 @@
 ProjectFileList -- loading file list
 
+move `components/Loading` to `PageLoading`
+
+use Loading component for all loading screen
+
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
 
@@ -8,9 +12,15 @@ ProjectFileList -- be able to sort files.
 
 FileRecall -- report on XML parsing error
 
-[maybe] NewMimor instead of NewFile
+File -- be able to split screen on desktop
 
-- 「创建新文件」->「创建新谜墨」
+File -- be able to preview all cards
+
+File -- recall in fullscreen
+
+- set meta theme-color in Mimor fullscreen
+
+  - do not forget to undo meta theme-color
 
 # rendering
 
@@ -20,15 +30,13 @@ support paragraph
 
 <code> node
 
-recall in fullscreen
-
-- set meta theme-color in Mimor fullscreen
-
-  - do not forget to undo meta theme-color
-
 # user
 
 support `name_zh` & `name_en`
+
+# timeline
+
+> user can add project into his timeline
 
 # embedded
 
