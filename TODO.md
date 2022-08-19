@@ -1,19 +1,16 @@
-NewProject -- use ProjectRepo to handle cache
-
-NewFile -- use FileRepo to handle cache
-
-NewMimor instead of NewFile
-
-- 「创建新文件」->「创建新谜墨」
-
 ProjectFileList -- loading file list
 
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
+
 ProjectList -- be able to sort projects.
 ProjectFileList -- be able to sort files.
 
 FileRecall -- report on XML parsing error
+
+[maybe] NewMimor instead of NewFile
+
+- 「创建新文件」->「创建新谜墨」
 
 # rendering
 
