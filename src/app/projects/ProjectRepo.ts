@@ -20,6 +20,11 @@ export class ProjectRepo {
     return projects
   }
 
+  async post(username: string, project: ProjectJson) {
+    await this.remote.post(username, project)
+    await this.memory.post(username, project)
+  }
+
   async get(username: string, name: string) {
     const found = await this.memory.get(username, name)
     if (found) return found

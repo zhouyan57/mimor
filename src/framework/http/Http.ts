@@ -7,6 +7,12 @@ export type HttpOptions = {
   headers: () => Record<string, string>
 }
 
+export class HttpError extends Error {
+  constructor(public message: string, public response: Response) {
+    super()
+  }
+}
+
 export class Http {
   constructor(public options: HttpOptions) {}
 
@@ -30,15 +36,7 @@ export class Http {
     const response = await fetch(url, options)
 
     if (!response.ok) {
-      console.log({
-        who: 'Http.get',
-        message: 'response not ok',
-        url,
-        options,
-        response,
-      })
-
-      return undefined
+      throw new HttpError('response not ok', response)
     }
 
     const { path, schema } = args
@@ -55,13 +53,7 @@ export class Http {
     const response = await fetch(url, options)
 
     if (!response.ok) {
-      console.log({
-        who: 'Http.fetch',
-        message: 'response not ok',
-        url,
-        options,
-        response,
-      })
+      throw new HttpError('response not ok', response)
     }
 
     return response

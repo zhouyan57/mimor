@@ -13,6 +13,16 @@ export class FileRepoRemote {
     )
   }
 
+  async post(username: string, projectName: string, file: FileJson) {
+    await app.api.http.fetch(
+      `/users/${username}/projects/${projectName}/files`,
+      {
+        method: 'POST',
+        body: JSON.stringify(file),
+      }
+    )
+  }
+
   async get(username: string, projectName: string, path: string) {
     return app.api.http.get(
       `/users/${username}/projects/${projectName}/files/${path}`,

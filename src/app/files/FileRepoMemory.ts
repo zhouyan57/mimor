@@ -25,6 +25,10 @@ export class FileRepoMemory {
     return Array.from(innerInnerMap.values())
   }
 
+  async post(username: string, projectName: string, file: FileJson) {
+    this.map.get(username)?.get(projectName)?.set(file.path, file)
+  }
+
   async get(username: string, projectName: string, path: string) {
     return this.map.get(username)?.get(projectName)?.get(path)
   }

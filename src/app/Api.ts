@@ -8,6 +8,7 @@ export class Api {
     url: this.url,
     headers: () => ({
       Authorization: `Bearer ${this.token}`,
+      'Content-Type': 'application/json',
       Accept: 'application/json',
     }),
   })

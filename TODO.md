@@ -1,9 +1,10 @@
-Form should not depends on response -- use async callback instead
-
 NewProject -- use ProjectRepo to handle cache
+
 NewFile -- use FileRepo to handle cache
 
-「创建新文件」->「创建新谜墨」
+NewMimor instead of NewFile
+
+- 「创建新文件」->「创建新谜墨」
 
 ProjectFileList -- loading file list
 

@@ -18,6 +18,10 @@ export class ProjectRepoMemory {
     return Array.from(innerMap.values())
   }
 
+  async post(username: string, project: ProjectJson) {
+    this.map.get(username)?.set(project.name, project)
+  }
+
   async get(username: string, name: string) {
     return this.map.get(username)?.get(name)
   }

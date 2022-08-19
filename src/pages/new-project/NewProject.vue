@@ -30,16 +30,13 @@ const form = useForm({ name: '', description: '' })
         (event) => {
           if (!$app.auth.user) return
 
-          form.post(
-            event,
-            `${$app.api.url}/users/${$app.auth.user.username}/projects`,
-            {
-              headers: { Authorization: `Bearer ${$app.api.token}` },
-              then: async () => {
-                $router.replace(`/projects/${form.values.name}`)
-              },
-            }
-          )
+          form.submit(event, {
+            action: async (values) => {
+              if (!$app.auth.user) return
+              await $app.projects.post($app.auth.user.username, values)
+              $router.replace(`/projects/${form.values.name}`)
+            },
+          })
         }
       "
     >

@@ -30,22 +30,22 @@ const form = useForm({ path: '', content: '' })
         (event) => {
           if (!$app.auth.user) return
 
-          form.post(
-            event,
-            `${$app.api.url}/users/${$app.auth.user.username}/projects/${$route.params.name}/files`,
-            {
-              headers: { Authorization: `Bearer ${$app.api.token}` },
-              prepare: async (values) => ({
-                ...values,
-                path: `${values.path}.mimor`,
-              }),
-              then: async () => {
-                $router.replace(
-                  `/projects/${$route.params.name}/files/${form.values.path}.mimor`
-                )
-              },
-            }
-          )
+          form.submit(event, {
+            action: async (values) => {
+              if (!$app.auth.user) return
+              await $app.files.post(
+                $app.auth.user.username,
+                $route.params.name as string,
+                {
+                  ...values,
+                  path: `${values.path}.mimor`,
+                }
+              )
+              $router.replace(
+                `/projects/${$route.params.name}/files/${form.values.path}.mimor`
+              )
+            },
+          })
         }
       "
     >

@@ -21,6 +21,11 @@ export class FileRepo {
     return files
   }
 
+  async post(username: string, projectName: string, file: FileJson) {
+    await this.remote.post(username, projectName, file)
+    await this.memory.post(username, projectName, file)
+  }
+
   async get(username: string, projectName: string, path: string) {
     const found = await this.memory.get(username, projectName, path)
     if (found) return found
