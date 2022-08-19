@@ -1,3 +1,8 @@
+[bug] fix file list cache when starting from project
+
+- starting -- http://localhost:5173/projects/cicada-study-group
+  nav to file, and back, will reload file list
+
 ProjectFileList -- loading file list
 
 move `components/Loading` to `PageLoading`
