@@ -4,6 +4,7 @@ import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
+import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectListItem from './ProjectListItem.vue'
 import { ProjectListState as State } from './ProjectListState'
@@ -47,10 +48,12 @@ const state = reactive(new State())
         </div>
       </div>
       <div v-else>
-        <Lang>
-          <template #zh>项目加载中…</template>
-          <template #en>Loading projects...</template>
-        </Lang>
+        <Loading>
+          <Lang>
+            <template #zh>项目加载中……</template>
+            <template #en>Loading projects...</template>
+          </Lang>
+        </Loading>
       </div>
 
       <div class="absolute bottom-2 right-2 z-10">
