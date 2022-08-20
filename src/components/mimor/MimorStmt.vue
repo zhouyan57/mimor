@@ -14,7 +14,7 @@ onMounted(() => {
   if (!isElement(node)) return
   const effect = program.router.findEffect(node)
   if (!effect) return
-  effect({ mimor, element: node })
+  effect({ mimor, program, element: node })
   program.next()
 })
 </script>

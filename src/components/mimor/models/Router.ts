@@ -1,10 +1,7 @@
 import { Component, markRaw } from 'vue'
 import { isElement, XElement, XNode } from '../../../libs/x-node'
 import { MimorState } from '../MimorState'
-
-export type EffectOptions = { mimor: MimorState; element: XElement }
-
-export type Effect = (options: EffectOptions) => void
+import { Effect, EffectOptions } from './Effect'
 
 type Route =
   | { kind: 'Card'; component: Component }

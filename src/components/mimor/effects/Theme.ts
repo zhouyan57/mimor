@@ -1,4 +1,4 @@
-import { EffectOptions } from '../models/Router'
+import { EffectOptions } from '../models/Effect'
 
 export function Theme({ mimor, element }: EffectOptions) {
   const name = element.attributes['color'] || element.attributes['颜色']

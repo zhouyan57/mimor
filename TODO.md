@@ -1,6 +1,4 @@
-pass Program to Effect
-
-MimorState has handles error state
+MimorState handles error state
 
 refactor MimorState to handle parsing error
 
