@@ -26,9 +26,8 @@ const state = reactive(new State(options))
     </div>
     <div v-if="state.parsingError">
       <div class="text-xl font-bold text-red-500">ParsingError</div>
-      <div>
-        <div>column: {{ state.parsingError.column }}</div>
-        <div>line: {{ state.parsingError.line }}</div>
+      <div class="border bg-red-200 p-2">
+        <pre class="overflow-auto">{{ state.parsingError.message }}</pre>
       </div>
     </div>
     <div v-if="state.error">

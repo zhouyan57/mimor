@@ -2,6 +2,8 @@ import { ty } from '@xieyuheng/ty'
 import { FileJson } from '../../jsons/FileJson'
 
 export class FileRepoMemory {
+  loaded: Set<string> = new Set()
+
   map: Map<string, Map<string, FileJson>> = new Map()
 
   key(username: string, projectName: string) {
@@ -16,12 +18,16 @@ export class FileRepoMemory {
 
     const key = this.key(username, projectName)
     this.map.set(key, innerMap)
+    this.loaded.add(key)
   }
 
   async all(username: string, projectName: string) {
     const key = this.key(username, projectName)
+    if (!this.loaded.has(key)) return undefined
+
     const innerMap = this.map.get(key)
     if (!innerMap) return undefined
+
     return Array.from(innerMap.values())
   }
 

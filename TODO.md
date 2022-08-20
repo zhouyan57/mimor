@@ -1,12 +1,6 @@
-MimorState show ParsingError in context
-
-refactor MimorState to handle parsing error
-
-FileRecall -- report on XML parsing error
-
 ProjectRepoMemory -- fix load for all
 
-FileRepoMemory -- fix load for all
+MimorState -- show ParsingError in context
 
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
