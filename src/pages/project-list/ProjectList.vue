@@ -47,14 +47,12 @@ const state = reactive(new State())
           <ProjectListItem :state="state" :project="project" />
         </div>
       </div>
-      <div v-else>
-        <Loading>
-          <Lang>
-            <template #zh>项目加载中……</template>
-            <template #en>Loading projects...</template>
-          </Lang>
-        </Loading>
-      </div>
+      <Loading v-else class="text-xl">
+        <Lang>
+          <template #zh>项目加载中……</template>
+          <template #en>Loading projects...</template>
+        </Lang>
+      </Loading>
 
       <div class="absolute bottom-2 right-2 z-10">
         <Link

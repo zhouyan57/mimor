@@ -1,5 +1,3 @@
-File -- loading use `components/Loading`
-
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
 

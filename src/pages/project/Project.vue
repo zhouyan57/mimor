@@ -33,13 +33,11 @@ const state = reactive(
     </div>
 
     <ProjectFileList v-if="state.files" :state="state" :files="state.files" />
-    <div v-else>
-      <Loading>
-        <Lang>
-          <template #zh>文件加载中……</template>
-          <template #en>Loading files...</template>
-        </Lang>
-      </Loading>
-    </div>
+    <Loading v-else class="text-xl">
+      <Lang>
+        <template #zh>文件加载中……</template>
+        <template #en>Loading files...</template>
+      </Lang>
+    </Loading>
   </PageLayout>
 </template>

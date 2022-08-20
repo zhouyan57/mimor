@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Link from '../../components/Link.vue'
 import Lang from '../../components/Lang.vue'
+import Loading from '../../components/Loading.vue'
 import { PlayIcon } from '@heroicons/vue/outline'
 import { FileState as State } from './FileState'
 
