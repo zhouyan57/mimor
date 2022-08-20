@@ -1,7 +1,6 @@
 import { Component, markRaw } from 'vue'
-import { isElement, XElement, XNode } from '../../../libs/x-node'
-import { MimorState } from '../MimorState'
-import { Effect, EffectOptions } from './Effect'
+import { isElement, XNode } from '../../../libs/x-node'
+import { Effect } from './Effect'
 
 type Route =
   | { kind: 'Card'; component: Component }

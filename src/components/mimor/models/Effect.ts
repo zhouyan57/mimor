@@ -1,5 +1,4 @@
-import { Component, markRaw } from 'vue'
-import { isElement, XElement, XNode } from '../../../libs/x-node'
+import { XElement } from '../../../libs/x-node'
 import { MimorState } from '../MimorState'
 import { Program } from './Program'
 

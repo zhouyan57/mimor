@@ -1,6 +1,5 @@
-import { isElement, parseNodes, XElement, XNode } from '../../libs/x-node'
+import { parseNodes } from '../../libs/x-node'
 import { Theme } from './models/Theme'
-import { Router } from './models/Router'
 import { Program } from './models/Program'
 import { mountRoutes } from './mountRoutes'
 
