@@ -33,6 +33,7 @@ const form = useForm({ path: '', content: '' })
           form.submit(event, {
             action: async (values) => {
               if (!$app.auth.user) return
+
               await $app.files.post(
                 $app.auth.user.username,
                 $route.params.name as string,
@@ -41,6 +42,7 @@ const form = useForm({ path: '', content: '' })
                   path: `${values.path}.mimor`,
                 }
               )
+
               $router.replace(
                 `/projects/${$route.params.name}/files/${form.values.path}.mimor`
               )

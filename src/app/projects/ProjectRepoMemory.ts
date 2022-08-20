@@ -19,6 +19,7 @@ export class ProjectRepoMemory {
   }
 
   async post(username: string, project: ProjectJson) {
+    this.map.set(username, this.map.get(username) || new Map())
     this.map.get(username)?.set(project.name, project)
   }
 
@@ -27,6 +28,7 @@ export class ProjectRepoMemory {
   }
 
   async put(username: string, name: string, project: ProjectJson) {
+    this.map.set(username, this.map.get(username) || new Map())
     this.map.get(username)?.delete(name)
     this.map.get(username)?.set(project.name, project)
   }

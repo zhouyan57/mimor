@@ -33,7 +33,9 @@ const form = useForm({ name: '', description: '' })
           form.submit(event, {
             action: async (values) => {
               if (!$app.auth.user) return
+
               await $app.projects.post($app.auth.user.username, values)
+
               $router.replace(`/projects/${form.values.name}`)
             },
           })

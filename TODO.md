@@ -1,7 +1,6 @@
-[bug] fix file list cache when starting from project
+ProjectRepoMemory -- quit using nested map
 
-- starting -- http://localhost:5173/projects/cicada-study-group
-  nav to file, and back, will reload file list
+FileRepoMemory -- quit using nested map
 
 ProjectFileList -- loading file list
 
