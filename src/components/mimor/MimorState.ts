@@ -1,11 +1,11 @@
 import { parseNodes } from '../../libs/x-node'
 import { Theme } from './models/Theme'
-import { Program } from './models/Program'
+import { Program, ProgramOptions } from './models/Program'
 import { mountRoutes } from './mountRoutes'
 
 export interface MimorOptions {
   text: string
-  onFinished: () => void
+  program: ProgramOptions
 }
 
 export class MimorState {
@@ -19,8 +19,7 @@ export class MimorState {
       this.error = new Error('No cards.')
     }
 
-    this.program = new Program(nodes, options)
-
+    this.program = new Program(nodes, options.program)
     mountRoutes(this.program.router)
   }
 }

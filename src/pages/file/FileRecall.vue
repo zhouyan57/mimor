@@ -13,8 +13,10 @@ defineProps<{ state: State }>()
     class="h-full"
     :options="{
       text: state.file.content,
-      onFinished: () => {
-        $router.push(`/projects/${state.project.name}/files/${state.path}`)
+      program: {
+        onFinished: () => {
+          $router.push(`/projects/${state.project.name}/files/${state.path}`)
+        },
       },
     }"
   />

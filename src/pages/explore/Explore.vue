@@ -34,8 +34,10 @@ onMounted(() => state.load())
         :key="state.flag.toString()"
         :options="{
           text: state.text,
-          onFinished: () => {
-            state.finished = true
+          program: {
+            onFinished: () => {
+              state.finished = true
+            },
           },
         }"
       />
