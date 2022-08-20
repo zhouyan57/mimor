@@ -15,7 +15,7 @@ export class Program {
     this.remaining = [...Array(this.length).keys()]
     const index = this.remaining.shift()
     if (index === undefined) {
-      throw new Error('initial nodes can not be empty.')
+      throw new Error('No cards.')
     }
 
     this.pointer = index

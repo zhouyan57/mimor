@@ -24,15 +24,21 @@ const state = reactive(new State(options))
         />
       </IsRemembered>
     </div>
-    <div v-if="state.parsingError">
-      <div class="text-xl font-bold text-red-500">ParsingError</div>
-      <div class="border bg-red-200 p-2">
-        <pre class="overflow-auto">{{ state.parsingError.message }}</pre>
-      </div>
+
+    <div
+      v-if="state.parsingError"
+      class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
+    >
+      <div class="text-xl font-bold text-orange-500">ParsingError</div>
+      <pre class="overflow-auto">{{ state.parsingError.message }}</pre>
     </div>
-    <div v-if="state.error">
+
+    <div
+      v-if="state.error"
+      class="rounded-sm border border-red-300 bg-red-200 py-2 px-3"
+    >
       <div class="text-xl font-bold text-red-500">Error</div>
-      <div>{{ state.error.message }}</div>
+      <pre class="overflow-auto">{{ state.error.message }}</pre>
     </div>
   </div>
 </template>

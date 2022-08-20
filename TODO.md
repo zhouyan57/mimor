@@ -1,5 +1,3 @@
-MimorState -- show ParsingError in context
-
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
 
