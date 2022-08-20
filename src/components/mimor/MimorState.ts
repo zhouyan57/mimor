@@ -15,11 +15,11 @@ export class MimorState {
 
   constructor(public options: MimorOptions) {
     const nodes = parseNodes(options.text)
-    if (nodes) {
+    if (nodes.length === 0) {
       this.error = new Error('No cards.')
+    } else {
+      this.program = new Program(nodes, options.program)
+      mountRoutes(this.program.router)
     }
-
-    this.program = new Program(nodes, options.program)
-    mountRoutes(this.program.router)
   }
 }
