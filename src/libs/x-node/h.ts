@@ -22,7 +22,9 @@ export function h(...args: Args): XElement {
     return { tag, attributes, children: rest }
   }
 
-  throw new Error(`Unknown args: ${JSON.stringify(args)}`)
+  throw new Error(
+    `[x-node internal error] unknown args: ${JSON.stringify(args)}`
+  )
 }
 
 type NormalArgs = [

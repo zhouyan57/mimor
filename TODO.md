@@ -1,10 +1,12 @@
+refactor MimorState to handle parsing error
+
+FileRecall -- report on XML parsing error
+
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)
 
 ProjectList -- be able to sort projects.
 ProjectFileList -- be able to sort files.
-
-FileRecall -- report on XML parsing error
 
 File -- be able to split screen on desktop
 
