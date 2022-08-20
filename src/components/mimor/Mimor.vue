@@ -10,17 +10,23 @@ const state = reactive(new State(options))
 </script>
 
 <template>
-  <div
-    v-if="state.program"
-    class="overflow-hidden border"
-    :class="[state.theme.bg(300)]"
-  >
-    <IsRemembered :mimor="state" :program="state.program">
-      <MimorStmt
-        :mimor="state"
-        :program="state.program"
-        :node="state.program.current"
-      />
-    </IsRemembered>
+  <div class="h-full">
+    <div
+      v-if="state.program"
+      class="h-full overflow-hidden border"
+      :class="[state.theme.bg(300)]"
+    >
+      <IsRemembered :mimor="state" :program="state.program">
+        <MimorStmt
+          :mimor="state"
+          :program="state.program"
+          :node="state.program.current"
+        />
+      </IsRemembered>
+    </div>
+    <div v-if="state.error">
+      <div class="text-xl font-bold text-red-500">Error</div>
+      <pre>{{ state.error.message }}</pre>
+    </div>
   </div>
 </template>

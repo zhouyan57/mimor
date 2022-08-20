@@ -77,14 +77,22 @@ test('error on disallowed character in tag name', () => {
   }).toThrow()
 })
 
-test('error on unbound namespace prefix', () => {
-  expect(() => {
-    const nodes = parseNodes(
-      `
-  <question theme:color="red">
-    Q
-  </question>
+test('namespace prefix', () => {
+  const nodes = parseNodes(
+    `
+<question theme:color="red">
+  Q
+</question>
 `
-    )
-  }).toThrow()
+  )
+
+  expect(nodes).toEqual([
+    '\n',
+    {
+      tag: 'question',
+      attributes: { 'theme:color': 'red' },
+      children: ['\n  Q\n'],
+    },
+    '\n',
+  ])
 })

@@ -1,3 +1,4 @@
+import parseXml, { XmlNode, XmlElement, XmlText } from '@rgrove/parse-xml'
 import { h, XElement, XNode } from './index'
 
 export class ParsingError extends Error {
@@ -7,42 +8,24 @@ export class ParsingError extends Error {
 }
 
 export function parseNodes(input: string): Array<XNode> {
-  const domParser = new window.DOMParser()
-  const nodes = []
-  const dom = domParser.parseFromString(
-    `<root>${input}</root>`,
-    'application/xml'
-  )
-
-  const errorElement = dom.querySelector('parsererror')
-
-  if (errorElement) {
-    throw new ParsingError('x-node parsing error', errorElement)
-  }
-
-  const root = dom.childNodes[0]
-  return fromNodes(root.childNodes)
+  const root = parseXml(`<root>${input}</root>`)
+  return fromNodes((root.children[0] as any).children)
 }
 
-function fromNodes(childNodes: NodeListOf<ChildNode>): Array<XNode> {
+function fromNodes(childNodes: Array<XmlNode>): Array<XNode> {
   const nodes = []
-  for (const node of Array.from(childNodes)) {
-    if (node.nodeType === 1) nodes.push(fromElement(node as Element))
-    if (node.nodeType === 3) nodes.push(fromText(node as Text))
+  for (const node of childNodes) {
+    if (node.type === 'element') nodes.push(fromElement(node as XmlElement))
+    if (node.type === 'text') nodes.push(fromText(node as XmlText))
   }
 
   return nodes
 }
 
-function fromText(node: Text): string {
-  return node.wholeText
+function fromText(node: XmlText): string {
+  return node.text
 }
 
-function fromElement(node: Element): XElement {
-  const attributes: Record<string, string> = {}
-  for (const attribute of Array.from(node.attributes)) {
-    attributes[attribute.name] = attribute.value
-  }
-
-  return h(node.tagName, attributes, fromNodes(node.childNodes))
+function fromElement(node: XmlElement): XElement {
+  return h(node.name, node.attributes, fromNodes(node.children))
 }
