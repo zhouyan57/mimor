@@ -9,27 +9,30 @@ export class ProjectRepoMemory {
       innerMap.set(project.name, project)
     }
 
-    this.map.set(username, innerMap)
+    const key = username
+    this.map.set(key, innerMap)
   }
 
   async all(username: string) {
-    const innerMap = this.map.get(username)
+    const key = username
+    const innerMap = this.map.get(key)
     if (!innerMap) return undefined
     return Array.from(innerMap.values())
   }
 
   async post(username: string, project: ProjectJson) {
-    this.map.set(username, this.map.get(username) || new Map())
-    this.map.get(username)?.set(project.name, project)
+    await this.put(username, project.name, project)
   }
 
   async get(username: string, name: string) {
-    return this.map.get(username)?.get(name)
+    const key = username
+    return this.map.get(key)?.get(name)
   }
 
   async put(username: string, name: string, project: ProjectJson) {
-    this.map.set(username, this.map.get(username) || new Map())
-    this.map.get(username)?.delete(name)
-    this.map.get(username)?.set(project.name, project)
+    const key = username
+    this.map.set(key, this.map.get(key) || new Map())
+    this.map.get(key)?.delete(name)
+    this.map.get(key)?.set(project.name, project)
   }
 }

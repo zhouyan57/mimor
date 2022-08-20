@@ -1,9 +1,3 @@
-ProjectRepoMemory -- quit using nested map
-
-FileRepoMemory -- quit using nested map
-
-ProjectFileList -- loading file list
-
 move `components/Loading` to `PageLoading`
 
 use Loading component for all loading screen

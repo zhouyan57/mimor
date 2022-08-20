@@ -2,35 +2,36 @@ import { ty } from '@xieyuheng/ty'
 import { FileJson } from '../../jsons/FileJson'
 
 export class FileRepoMemory {
-  map: Map<string, Map<string, Map<string, FileJson>>> = new Map()
+  map: Map<string, Map<string, FileJson>> = new Map()
+
+  key(username: string, projectName: string) {
+    return `${username}/${projectName}`
+  }
 
   load(username: string, projectName: string, files: Array<FileJson>) {
-    const innerInnerMap = new Map()
+    const innerMap = new Map()
     for (const file of files) {
-      innerInnerMap.set(file.path, file)
+      innerMap.set(file.path, file)
     }
 
-    const innerMap = this.map.get(username) || new Map()
-    innerMap.set(projectName, innerInnerMap)
-    this.map.set(username, innerMap)
+    const key = this.key(username, projectName)
+    this.map.set(key, innerMap)
   }
 
   async all(username: string, projectName: string) {
-    const innerMap = this.map.get(username)
+    const key = this.key(username, projectName)
+    const innerMap = this.map.get(key)
     if (!innerMap) return undefined
-
-    const innerInnerMap = innerMap.get(projectName)
-    if (!innerInnerMap) return undefined
-
-    return Array.from(innerInnerMap.values())
+    return Array.from(innerMap.values())
   }
 
   async post(username: string, projectName: string, file: FileJson) {
-    this.map.get(username)?.get(projectName)?.set(file.path, file)
+    await this.put(username, projectName, file.path, file)
   }
 
   async get(username: string, projectName: string, path: string) {
-    return this.map.get(username)?.get(projectName)?.get(path)
+    const key = this.key(username, projectName)
+    return this.map.get(key)?.get(path)
   }
 
   async put(
@@ -39,7 +40,9 @@ export class FileRepoMemory {
     path: string,
     file: FileJson
   ) {
-    this.map.get(username)?.get(projectName)?.delete(path)
-    this.map.get(username)?.get(projectName)?.set(file.path, file)
+    const key = this.key(username, projectName)
+    this.map.set(key, this.map.get(key) || new Map())
+    this.map.get(key)?.delete(path)
+    this.map.get(key)?.set(file.path, file)
   }
 }
