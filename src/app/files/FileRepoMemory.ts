@@ -2,9 +2,8 @@ import { ty } from '@xieyuheng/ty'
 import { FileJson } from '../../jsons/FileJson'
 
 export class FileRepoMemory {
-  loaded: Set<string> = new Set()
-
   map: Map<string, Map<string, FileJson>> = new Map()
+  loaded: Set<string> = new Set()
 
   key(username: string, projectName: string) {
     return `${username}/${projectName}`

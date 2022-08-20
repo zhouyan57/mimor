@@ -2,6 +2,7 @@ import { ProjectJson } from '../../jsons/ProjectJson'
 
 export class ProjectRepoMemory {
   map: Map<string, Map<string, ProjectJson>> = new Map()
+  loaded: Set<string> = new Set()
 
   load(username: string, projects: Array<ProjectJson>) {
     const innerMap = new Map()
@@ -11,12 +12,16 @@ export class ProjectRepoMemory {
 
     const key = username
     this.map.set(key, innerMap)
+    this.loaded.add(key)
   }
 
   async all(username: string) {
     const key = username
+    if (!this.loaded.has(key)) return undefined
+
     const innerMap = this.map.get(key)
     if (!innerMap) return undefined
+
     return Array.from(innerMap.values())
   }
 

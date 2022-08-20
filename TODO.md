@@ -1,5 +1,3 @@
-ProjectRepoMemory -- fix load for all
-
 MimorState -- show ParsingError in context
 
 Project -- recall a project (all files)
