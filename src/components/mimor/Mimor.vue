@@ -24,9 +24,16 @@ const state = reactive(new State(options))
         />
       </IsRemembered>
     </div>
+    <div v-if="state.parsingError">
+      <div class="text-xl font-bold text-red-500">ParsingError</div>
+      <div>
+        <div>column: {{ state.parsingError.column }}</div>
+        <div>line: {{ state.parsingError.line }}</div>
+      </div>
+    </div>
     <div v-if="state.error">
       <div class="text-xl font-bold text-red-500">Error</div>
-      <pre>{{ state.error.message }}</pre>
+      <div>{{ state.error.message }}</div>
     </div>
   </div>
 </template>

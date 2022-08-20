@@ -1,4 +1,4 @@
-MimorState handles error state
+MimorState show ParsingError in context
 
 refactor MimorState to handle parsing error
 
