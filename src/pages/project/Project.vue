@@ -2,6 +2,8 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
+import Lang from '../../components/Lang.vue'
+import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileList from './ProjectFileList.vue'
 import { ProjectState as State } from './ProjectState'
@@ -31,5 +33,13 @@ const state = reactive(
     </div>
 
     <ProjectFileList v-if="state.files" :state="state" :files="state.files" />
+    <div v-else>
+      <Loading>
+        <Lang>
+          <template #zh>文件加载中……</template>
+          <template #en>Loading files...</template>
+        </Lang>
+      </Loading>
+    </div>
   </PageLayout>
 </template>

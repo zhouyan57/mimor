@@ -1,5 +1,3 @@
-Project -- loading use `components/Loading`
-
 File -- loading use `components/Loading`
 
 Project -- recall a project (all files)

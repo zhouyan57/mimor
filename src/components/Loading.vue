@@ -3,7 +3,7 @@ import Lang from './Lang.vue'
 </script>
 
 <template>
-  <div class="flex flex-col items-start text-xl text-stone-500">
+  <div class="flex flex-col items-start text-lg text-stone-500">
     <slot>
       <Lang>
         <template #zh>加载中……</template>
