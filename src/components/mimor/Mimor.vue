@@ -10,9 +10,17 @@ const state = reactive(new State(options))
 </script>
 
 <template>
-  <div class="overflow-hidden border" :class="[state.theme.bg(300)]">
-    <IsRemembered :mimor="state">
-      <MimorStmt :mimor="state" :node="state.current" />
+  <div
+    v-if="state.program"
+    class="overflow-hidden border"
+    :class="[state.theme.bg(300)]"
+  >
+    <IsRemembered :mimor="state" :program="state.program">
+      <MimorStmt
+        :mimor="state"
+        :program="state.program"
+        :node="state.program.current"
+      />
     </IsRemembered>
   </div>
 </template>

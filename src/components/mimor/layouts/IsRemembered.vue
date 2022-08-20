@@ -2,13 +2,17 @@
 import { MimorState } from '../MimorState'
 import IsRememberedControl from './IsRememberedControl.vue'
 import IsRememberedHeader from './IsRememberedHeader.vue'
+import { Program } from '../models/Program'
 
-defineProps<{ mimor: MimorState }>()
+defineProps<{
+  mimor: MimorState
+  program: Program
+}>()
 </script>
 
 <template>
   <div class="flex h-full w-full flex-col justify-between">
-    <IsRememberedHeader :mimor="mimor" />
+    <IsRememberedHeader :mimor="mimor" :program="program" />
 
     <Transition
       enter-active-class="transition duration-100 delay-75 ease-linear"
@@ -19,13 +23,13 @@ defineProps<{ mimor: MimorState }>()
       leave-to-class="transform transform-gpu origin-left opacity-0 scale-50 -rotate-20"
     >
       <div
-        :key="mimor.currentKey"
+        :key="program.currentKey"
         class="body overflow-y-auto overscroll-contain p-3 font-serif"
       >
         <slot />
       </div>
     </Transition>
 
-    <IsRememberedControl :mimor="mimor" />
+    <IsRememberedControl :mimor="mimor" :program="program" />
   </div>
 </template>

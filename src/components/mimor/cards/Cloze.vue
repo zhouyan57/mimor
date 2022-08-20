@@ -3,8 +3,13 @@ import { matchElement, XElement } from '../../../libs/x-node'
 import MimorNode from '../MimorNode.vue'
 import MimorNodes from '../MimorNodes.vue'
 import { MimorState } from '../MimorState'
+import { Program } from '../models/Program'
 
-defineProps<{ mimor: MimorState; element: XElement }>()
+defineProps<{
+  mimor: MimorState
+  program: Program
+  element: XElement
+}>()
 </script>
 
 <template>
@@ -12,8 +17,9 @@ defineProps<{ mimor: MimorState; element: XElement }>()
     <span v-for="(child, index) of element.children" :key="index">
       <span v-if="matchElement(child, { tags: ['blank', '空'] })">
         <MimorNodes
-          v-if="mimor.revealed"
+          v-if="program.revealed"
           :mimor="mimor"
+          :program="program"
           :nodes="child.children"
           class="font-bold"
           :class="[
@@ -37,7 +43,7 @@ defineProps<{ mimor: MimorState; element: XElement }>()
           >____</span
         >
       </span>
-      <MimorNode v-else :mimor="mimor" :node="child" />
+      <MimorNode v-else :mimor="mimor" :program="program" :node="child" />
     </span>
   </div>
 </template>

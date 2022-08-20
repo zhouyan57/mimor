@@ -1,6 +1,7 @@
 import { isElement, parseNodes, XElement, XNode } from '../../libs/x-node'
-import { Router } from './models/Router'
 import { Theme } from './models/Theme'
+import { Router } from './models/Router'
+import { Program } from './models/Program'
 import { mountRoutes } from './mountRoutes'
 
 export interface MimorOptions {
@@ -9,75 +10,18 @@ export interface MimorOptions {
 }
 
 export class MimorState {
-  router = new Router()
   theme = new Theme('orange')
-  nodes: Array<XNode>
-  pointer: number
-  remaining: Array<number>
-  revealed = false
+  program?: Program
+  error?: Error
 
   constructor(public options: MimorOptions) {
-    this.nodes = parseNodes(options.text)
-    this.remaining = [...Array(this.length).keys()]
-    const index = this.remaining.shift()
-    if (index === undefined) {
-      throw new Error('initial nodes can not be empty.')
+    const nodes = parseNodes(options.text)
+    if (nodes) {
+      this.error = new Error('No cards.')
     }
 
-    this.pointer = index
-    mountRoutes(this.router)
-  }
+    this.program = new Program(nodes, options)
 
-  forgotten(): void {
-    this.remaining.push(this.pointer)
-    this.next()
-  }
-
-  remembered(): void {
-    this.next()
-  }
-
-  next(): void {
-    const index = this.remaining.shift()
-    if (index === undefined) {
-      this.options.onFinished()
-    } else {
-      this.pointer = index
-      this.revealed = false
-    }
-  }
-
-  get elements() {
-    return this.nodes.filter(isElement)
-  }
-
-  get current(): XElement {
-    return this.elements[this.pointer]
-  }
-
-  get currentKey(): string {
-    return JSON.stringify(this.current)
-  }
-
-  get length(): number {
-    return this.elements.length
-  }
-
-  get finished(): boolean {
-    return this.remaining.length === 0
-  }
-
-  get progress(): string {
-    const total = this.elements
-      .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, flag) => sum + flag, 0)
-
-    const remaining = this.remaining
-      .map((index) => this.elements[index])
-      .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, flag) => sum + flag, 0)
-
-    const remembered = total - remaining
-    return `${remembered} / ${total}`
+    mountRoutes(this.program.router)
   }
 }

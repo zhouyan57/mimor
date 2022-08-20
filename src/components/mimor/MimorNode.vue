@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { isElement, XNode } from '../../libs/x-node'
 import { MimorState } from './MimorState'
+import { Program } from './models/Program'
 
-defineProps<{ mimor: MimorState; node: XNode }>()
+defineProps<{
+  mimor: MimorState
+  program: Program
+  node: XNode
+}>()
 </script>
 
 <template>
   <span v-if="!isElement(node)">{{ node }}</span>
   <component
-    v-else-if="mimor.router.findNode(node)"
-    :is="mimor.router.findNode(node)"
+    v-else-if="program.router.findNode(node)"
+    :is="program.router.findNode(node)"
     :mimor="mimor"
+    :program="program"
     :element="node"
   />
   <div v-else>

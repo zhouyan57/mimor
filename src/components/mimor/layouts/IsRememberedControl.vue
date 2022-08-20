@@ -2,15 +2,19 @@
 import { CheckIcon, EyeIcon, XIcon } from '@heroicons/vue/outline'
 import Lang from '../../../components/Lang.vue'
 import { MimorState } from '../MimorState'
+import { Program } from '../models/Program'
 
-defineProps<{ mimor: MimorState }>()
+defineProps<{
+  mimor: MimorState
+  program: Program
+}>()
 </script>
 
 <template>
   <div class="w-full pb-1.5 text-xl font-bold">
     <button
-      v-if="!mimor.revealed"
-      @click="mimor.revealed = true"
+      v-if="!program.revealed"
+      @click="program.revealed = true"
       class="flex w-full flex-col items-start border p-3"
       :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
     >
@@ -28,7 +32,7 @@ defineProps<{ mimor: MimorState }>()
 
     <div v-else class="flex w-full justify-between space-x-1">
       <button
-        @click="mimor.forgotten()"
+        @click="program.forgotten()"
         class="flex w-full flex-col items-start border p-3"
         :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
@@ -47,7 +51,7 @@ defineProps<{ mimor: MimorState }>()
       </button>
 
       <button
-        @click="mimor.remembered()"
+        @click="program.remembered()"
         class="flex w-full flex-col items-start border p-3"
         :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
