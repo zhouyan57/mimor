@@ -27,9 +27,7 @@ export class ProjectRepo {
 
   async get(username: string, name: string) {
     const found = await this.memory.get(username, name)
-    if (found) 
-      return found
-    
+    if (found) return found
 
     const project = await this.remote.get(username, name)
 

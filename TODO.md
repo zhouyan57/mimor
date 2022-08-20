@@ -1,6 +1,4 @@
-move `components/Loading` to `PageLoading`
-
-use Loading component for all loading screen
+`components/Loading` -- for all loading screen
 
 Project -- recall a project (all files)
 ProjectList -- recall a project (all files)

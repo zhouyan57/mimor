@@ -2,7 +2,7 @@
 import { onMounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
-import Loading from '../../components/Loading.vue'
+import PageLoading from './PageLoading.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
@@ -45,12 +45,12 @@ function maybeRedirect() {
 </script>
 
 <template>
-  <Loading v-if="state.loading">
+  <PageLoading v-if="state.loading">
     <Lang>
-      <template #zh>加载中。。。</template>
+      <template #zh>加载中……</template>
       <template #en>Loading...</template>
     </Lang>
-  </Loading>
+  </PageLoading>
   <div v-else class="flex h-screen p-3">
     <div class="hidden h-full w-1/4 flex-col md:flex">
       <div class="pb-3">
