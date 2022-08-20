@@ -1,18 +1,13 @@
-Project -- recall a project (all files)
-ProjectList -- recall a project (all files)
+# config
 
-ProjectList -- be able to sort projects.
-ProjectFileList -- be able to sort files.
+Config use PageLayout
 
-File -- be able to split screen on desktop
+config link in sidebar
+config link in menu
 
-File -- be able to preview all cards
-
-File -- recall in fullscreen
-
-- set meta theme-color in Mimor fullscreen
-
-  - do not forget to undo meta theme-color
+Config -- lang
+Config -- name_zh
+Config -- name_en
 
 # rendering
 
@@ -22,9 +17,23 @@ support paragraph
 
 <code> node
 
-# user
+# project and file
 
-support `name_zh` & `name_en`
+ProjectList -- be able to sort projects.
+ProjectFileList -- be able to sort files.
+
+# recall
+
+Project -- recall a project (all files)
+ProjectList -- recall a project (all files)
+
+File -- be able to split screen on desktop
+File -- be able to preview all cards
+
+File -- recall in fullscreen
+
+- set meta theme-color in Mimor fullscreen
+  - do not forget to undo meta theme-color
 
 # timeline
 

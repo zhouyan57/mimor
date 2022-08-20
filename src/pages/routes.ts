@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 import PageNotFound from './errors/PageNotFound.vue'
 import Explore from './explore/Explore.vue'
+import Config from './config/Config.vue'
 import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import LoginEmailConfirmationSuccessPage from './login/LoginEmailConfirmationSuccessPage.vue'
@@ -19,6 +20,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/projects/:name', component: Project },
   { path: '/projects/:name/new-file', component: NewFile },
   { path: '/projects/:name/files/:pathParts(.*)*', component: File },
+  { path: '/config', component: Config },
   { path: '/explore', component: Explore },
   { path: '/register', component: Register },
   { path: '/login', component: Login },
