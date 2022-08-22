@@ -1,6 +1,11 @@
 # config
 
-Config -- form post -- assume backend api
+ConfigRepo -- form post -- assume backend api
+
+- `app.config.get`
+- `app.config.put`
+
+- `/api/config`
 
 # rendering
 

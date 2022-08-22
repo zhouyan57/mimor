@@ -16,10 +16,4 @@ export class Api {
   get token() {
     return localStorage.getItem('token') || ''
   }
-
-  async user() {
-    return this.http.get(`/user`, {
-      schema: UserSchema,
-    })
-  }
 }

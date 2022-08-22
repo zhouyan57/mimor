@@ -1,6 +1,7 @@
 import { Api } from './Api'
 import { Auth } from './Auth'
 import { Lang } from './Lang'
+import { UserRepo } from './users/UserRepo'
 import { ProjectRepo } from './projects/ProjectRepo'
 import { FileRepo } from './files/FileRepo'
 
@@ -9,6 +10,7 @@ export class App {
   auth = new Auth()
   api = new Api()
 
+  users = new UserRepo()
   projects = new ProjectRepo()
   files = new FileRepo()
 
