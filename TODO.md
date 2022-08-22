@@ -1,6 +1,5 @@
 # config
 
-config link in sidebar
 config link in menu
 
 Config -- lang
