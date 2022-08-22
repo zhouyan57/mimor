@@ -1,8 +1,10 @@
 # config
 
-Config -- show username and email
-Config -- form -- use FormSelect
+FormInput disabled style
+FormTextarea disabled style
+extract FormDivider
 Config -- form display default
+Config -- form -- use FormSelect
 Config -- form post -- assume backend api
 
 # rendering

@@ -10,8 +10,10 @@ import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 
 const form = useForm({
-  lang: '',
+  username: '',
+  email: '',
   name: '',
+  lang: '',
   name_zh: '',
   name_en: '',
 })
@@ -45,33 +47,38 @@ const form = useForm({
         }
       "
     >
-      <div class="flex w-full items-center">
-        <FormInput class="w-full" :form="form" name="path" disabled>
-          <template #label>
-            <Lang>
-              <template #zh>语言</template>
-              <template #en>Lang</template>
-            </Lang>
-          </template>
-        </FormInput>
-      </div>
+      <FormInput class="w-full" :form="form" name="username" disabled>
+        <template #label>
+          <Lang>
+            <template #zh>用户名</template>
+            <template #en>Username</template>
+          </Lang>
+        </template>
+      </FormInput>
 
-      <div class="flex w-full items-center">
-        <FormInput class="w-full" :form="form" name="path">
-          <template #label>
-            <Lang>
-              <template #zh>语言</template>
-              <template #en>Lang</template>
-            </Lang>
-          </template>
-        </FormInput>
-      </div>
+      <FormInput :form="form" name="email" disabled>
+        <template #label>
+          <Lang>
+            <template #zh>邮箱</template>
+            <template #en>Email</template>
+          </Lang>
+        </template>
+      </FormInput>
 
       <FormInput :form="form" name="name">
         <template #label>
           <Lang>
             <template #zh>名字</template>
             <template #en>Name</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <FormInput class="w-full" :form="form" name="path">
+        <template #label>
+          <Lang>
+            <template #zh>语言</template>
+            <template #en>Lang</template>
           </Lang>
         </template>
       </FormInput>
