@@ -42,7 +42,7 @@ defineProps<{ state: State }>()
         class="flex min-w-max items-end justify-between"
       >
         <div>
-          <Lang>
+          <Lang class="font-logo">
             <template #zh>
               <div class="font-bold">
                 {{ $app.auth.config?.name_zh || $app.auth.user.name }}

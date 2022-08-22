@@ -1,6 +1,4 @@
-menu show name_zh or name_en
-
-fix FormSelect
+fix FormSelect style
 
 PageLayoutLang -- put config lang on change
 
