@@ -17,7 +17,6 @@ const { stop } = poll<{ name: string; token: string }>({
   target: async () => {
     console.log({ who: 'RegisterVerifying', message: 'polling' })
     const response = await fetch(verifying.links.verify, {})
-    // if (response.ok)
     return await response.json()
   },
   check: (confirmed) => Boolean(confirmed),

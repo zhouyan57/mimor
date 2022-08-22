@@ -29,11 +29,7 @@ export class Form<T extends Values> {
     }
   }
 
-  async submit(action: (values: T) => Promise<void>) {
-    return (event: Event) => this.submitEvent(event, action)
-  }
-
-  async submitEvent(
+  async submit(
     event: Event,
     action: (values: T) => Promise<void>
   ): Promise<void> {

@@ -20,9 +20,10 @@ const form = useForm({
   <form
     class="flex max-w-md flex-col space-y-2 pt-20 text-xl"
     @submit.prevent="
-      form.submit(async (values) => {
-        state.verifying = await $app.auth.login.start(values)
-      })
+      (event) =>
+        form.submit(event, async (values) => {
+          state.verifying = await $app.auth.login.start(values)
+        })
     "
   >
     <div class="flex flex-col pb-2">
