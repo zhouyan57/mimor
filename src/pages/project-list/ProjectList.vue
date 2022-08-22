@@ -51,7 +51,7 @@ const state = reactive(new State())
         </Lang>
       </Loading>
 
-      <div class="fixed bottom-4 right-3 z-10">
+      <div class="fixed bottom-3 right-3 z-10">
         <Link
           href="/new-project"
           :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"

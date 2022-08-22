@@ -10,7 +10,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 </script>
 
 <template>
-  <div class="relative h-full">
+  <div class="h-full">
     <div class="border-b border-stone-500 py-1">
       <div class="flex items-center space-x-2">
         <Lang class="font-logo text-xl font-bold">
@@ -37,7 +37,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
       </div>
     </div>
 
-    <div class="absolute bottom-2 right-2 z-10">
+    <div class="fixed bottom-3 right-3 z-10">
       <Link
         :href="`/projects/${state.name}/new-file`"
         :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
