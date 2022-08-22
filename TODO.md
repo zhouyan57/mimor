@@ -1,11 +1,23 @@
 # config
 
-ConfigRepo -- form post -- assume backend api
 
-- `app.config.get`
-- `app.config.put`
 
-- `/api/config`
+
+
+ConfigSchema & ConfigJson
+
+ConfigRepo.put
+
+ConfigRepoRemote.get
+ConfigRepoRemote.put
+
+Config -- form post -- assume backend api
+
+- `app.configs.put`
+
+init app.auth.config
+
+- by `app.configs.get`
 
 # rendering
 
