@@ -30,8 +30,8 @@ async function load() {
   Object.assign(form.values, {
     username: user.username,
     email: user.email,
-    name: user.name,
-    lang: app.lang.tag,
+    name: config.name,
+    lang: config.lang,
     name_zh: config.name_zh,
     name_en: config.name_en,
   })
