@@ -1,7 +1,6 @@
 # config
 
 ConfigRepo.put -- update auth.config
-ConfigRepo.put -- update auth.user.name
 
 PageLayoutLang put config lang on change
 
