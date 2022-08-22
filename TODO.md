@@ -1,5 +1,4 @@
 fix FormSelect style -- use headlessui
-fix project box style
 
 # rendering
 
