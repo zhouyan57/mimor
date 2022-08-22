@@ -16,11 +16,11 @@ const { stop } = poll<{ name: string; token: string }>({
   interval: 3000,
   target: async () => {
     console.log({ who: 'LoginVerifying', message: 'polling' })
-    const response = await fetch(verifying.links.verify, {})
+    const response = await fetch(verifying.links.verify)
     if (!response.ok) return
     return await response.json()
   },
-  check: (confirmed) => Boolean(confirmed),
+  check: async (confirmed) => Boolean(confirmed),
   then: async ({ token }) => {
     await app.auth.saveTokenAndLoad(token)
     router.replace('/projects')

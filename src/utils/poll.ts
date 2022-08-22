@@ -1,11 +1,9 @@
 type TimerId = ReturnType<typeof setInterval>
 
-type MaybePromise<A> = Promise<A> | A
-
 export function poll<A>(options: {
-  target: () => MaybePromise<A>
-  check: (data: A) => MaybePromise<boolean>
-  then: (data: A) => MaybePromise<void>
+  target: () => Promise<A>
+  check: (data: A) => Promise<boolean>
+  then: (data: A) => Promise<void>
   interval: number
 }): { stop: () => void } {
   const { target, check, then, interval } = options
