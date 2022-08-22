@@ -13,6 +13,7 @@ import Project from './project/Project.vue'
 import Register from './register/Register.vue'
 import RegisterEmailSuccess from './register/RegisterEmailSuccess.vue'
 
+// prettier-ignore
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
   { path: '/projects', component: ProjectList },
@@ -24,13 +25,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/explore', component: Explore },
   { path: '/register', component: Register },
   { path: '/login', component: Login },
-  {
-    path: '/notifications/login-email-success',
-    component: LoginEmailSuccess,
-  },
-  {
-    path: '/notifications/register-email-success',
-    component: RegisterEmailSuccess,
-  },
+  { path: '/notifications/login-email-success', component: LoginEmailSuccess },
+  { path: '/notifications/register-email-success', component: RegisterEmailSuccess },
   { path: '/:pathParts(.*)*', component: PageNotFound },
 ]
