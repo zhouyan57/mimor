@@ -38,7 +38,7 @@ const state = reactive(new State())
       </div>
     </template>
 
-    <div class="relative flex flex-col">
+    <div class="flex flex-col">
       <div v-if="state.projects" class="space-y-3 md:pr-4">
         <div v-for="project of state.projects" :key="project.name">
           <ProjectListItem :state="state" :project="project" />
@@ -51,7 +51,7 @@ const state = reactive(new State())
         </Lang>
       </Loading>
 
-      <div class="absolute bottom-2 right-2 z-10">
+      <div class="fixed bottom-4 right-3 z-10">
         <Link
           href="/new-project"
           :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
