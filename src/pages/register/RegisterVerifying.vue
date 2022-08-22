@@ -20,7 +20,7 @@ const { stop } = poll<{ name: string; token: string }>({
     if (!response.ok) return
     return await response.json()
   },
-  check: async (confirmed) => Boolean(confirmed),
+  check: async (ok) => Boolean(ok),
   then: async ({ token }) => {
     await app.auth.saveTokenAndLoad(token)
     router.replace('/projects')
