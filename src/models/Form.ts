@@ -30,7 +30,7 @@ export class Form<T extends Values> {
       } else {
         console.log({
           who: 'Form.loadValuesFromEvent',
-          message: `The event target does not have key: ${key}`
+          message: `The event target does not have key: ${key}`,
         })
       }
     }

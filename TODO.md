@@ -1,8 +1,5 @@
 # configx
 
-ConfigRepoRemote.get
-ConfigRepoRemote.put
-
 init app.auth.config
 
 - by `app.configs.get`

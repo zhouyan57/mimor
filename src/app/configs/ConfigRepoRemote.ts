@@ -4,12 +4,15 @@ import { wait } from '../../utils/wait'
 
 export class ConfigRepoRemote {
   async get(username: string) {
-    // throw new Error('TODO')
-    await wait(3000)
+    return await app.api.http.get(`/users/${username}/config`, {
+      schema: ConfigSchema,
+    })
   }
 
   async put(username: string, config: ConfigJson) {
-    // throw new Error('TODO')
-    await wait(3000)
+    await app.api.http.fetch(`/users/${username}/config`, {
+      method: 'PUT',
+      body: JSON.stringify(config),
+    })
   }
 }
