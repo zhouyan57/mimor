@@ -9,20 +9,24 @@ import { RegisterState as State } from './RegisterState'
 
 const { state } = defineProps<{ state: State }>()
 
-const form = useForm({ 
-  username: '', name: '', email: '' })
+const form = useForm({
+  username: '',
+  name: '',
+  email: '',
+})
 </script>
 
 <template>
   <form
     class="flex max-w-lg flex-col space-y-2 text-xl"
     @submit.prevent="
-      (event) =>
-        form.post(event, `${$app.api.url}/register`, {
-          then: async (response) => {
-            state.verifying = await response.json()
+      (event) => {
+        form.submit(event, {
+          action: async (values) => {
+            state.verifying = await $app.auth.register.start(values)
           },
         })
+      }
     "
   >
     <Lang class="font-logo text-3xl font-bold">

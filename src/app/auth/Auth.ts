@@ -1,10 +1,13 @@
 import { UserJson } from '../../jsons/UserJson'
 import { ConfigJson } from '../../jsons/ConfigJson'
+import { Register } from './Register'
 
 export class Auth {
   user?: UserJson
   config?: ConfigJson
   initialized = false
+
+  register = new Register()
 
   async initialize() {
     if (this.initialized) {
@@ -24,7 +27,7 @@ export class Auth {
     })
   }
 
-  async login(token: string) {
+  async saveTokenAndLoad(token: string) {
     localStorage.setItem('token', token)
     await this.load()
     console.log({ who: 'app.auth.login' })
@@ -33,6 +36,7 @@ export class Auth {
   logout(): void {
     localStorage.removeItem('token')
     this.user = undefined
+    this.config = undefined
     console.log({ who: 'app.auth.logout' })
   }
 

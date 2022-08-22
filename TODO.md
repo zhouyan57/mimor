@@ -1,13 +1,13 @@
-auth.login.post
-auth.login.verify
-
-auth.register.post
-auth.register.verify
-
-refactor poll
+auth.login.start
 
 extract `http.post` with `output.schema`
 remove `form.post` only use `form.submit`
+
+refactor poll
+
+auth.register.verify
+auth.login.verify
+
 fix FormSelect style -- use headlessui
 PageLayoutLang -- put config lang on change
 add input length limit to forms

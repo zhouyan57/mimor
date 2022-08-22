@@ -20,7 +20,7 @@ const { stop } = poll<{ name: string; token: string }>({
   },
   check: (confirmed) => Boolean(confirmed),
   then: async ({ token }) => {
-    await app.auth.login(token)
+    await app.auth.saveTokenAndLoad(token)
     router.replace('/projects')
   },
   interval: 3000,
