@@ -37,7 +37,10 @@ defineProps<{ state: State }>()
     </div>
 
     <div class="border-t border-stone-500 pt-2">
-      <div v-if="$app.auth.user" class="flex items-end justify-between">
+      <div
+        v-if="$app.auth.user"
+        class="flex min-w-max items-end justify-between"
+      >
         <div>
           <div class="font-bold">{{ $app.auth.user.name }}</div>
           <div class="text-xl text-stone-600">
@@ -46,7 +49,7 @@ defineProps<{ state: State }>()
         </div>
 
         <button
-          class="text-xl text-stone-600 hover:underline"
+          class="min-w-max text-xl text-stone-600 hover:underline"
           @click="
             () => {
               $app.auth.logout()

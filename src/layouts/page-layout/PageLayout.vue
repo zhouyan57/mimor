@@ -52,7 +52,7 @@ function maybeRedirect() {
     </Lang>
   </PageLoading>
   <div v-else class="flex h-screen">
-    <div class="hidden h-full w-1/4 flex-col p-3 md:flex">
+    <div class="hidden h-full w-72 shrink-0 flex-col p-3 md:flex">
       <div class="pb-3">
         <PageLayoutLogo :state="state" />
       </div>
@@ -60,14 +60,14 @@ function maybeRedirect() {
       <PageLayoutSidebar :state="state" />
     </div>
 
-    <div class="flex h-full w-full flex-col space-y-2 p-3 md:w-3/4">
-      <PageLayoutHeader :state="state">
+    <div class="flex h-full w-full flex-col space-y-2 py-3">
+      <PageLayoutHeader class="px-3" :state="state">
         <template #title>
           <slot name="title" />
         </template>
       </PageLayoutHeader>
 
-      <div class="h-full w-full overflow-y-auto">
+      <div class="h-full w-full overflow-y-auto px-3">
         <slot />
       </div>
     </div>

@@ -1,7 +1,5 @@
 # config
 
-fix sidebar width
-
 Config -- form -- use FormSelect
 Config -- form post -- assume backend api
 
