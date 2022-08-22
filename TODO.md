@@ -1,7 +1,5 @@
 # config
 
-ConfigRepo.put -- update auth.config
-
 PageLayoutLang put config lang on change
 
 sidebar show name_zh or name_en

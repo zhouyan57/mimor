@@ -49,4 +49,11 @@ export class Auth {
       app.lang.tag = this.config.lang
     }
   }
+
+  reconfig(config: ConfigJson) {
+    this.config = config
+    if (config.name && this.user) {
+      this.user.name = config.name
+    }
+  }
 }

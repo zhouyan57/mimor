@@ -10,13 +10,7 @@ export class ConfigRepo {
 
   async put(username: string, config: ConfigJson) {
     await this.remote.put(username, config)
-
-    if (config.lang) {
-      app.lang.tag = config.lang      
-    }
-    
-    if (config.name && app.auth.user) {
-      app.auth.user.name = config.name
-    }
+    app.lang.reconfig(config)
+    app.auth.reconfig(config)
   }
 }

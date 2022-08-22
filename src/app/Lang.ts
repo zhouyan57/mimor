@@ -1,3 +1,5 @@
+import { ConfigJson } from '../jsons/ConfigJson'
+
 function initialTag(): string {
   const local = localStorage.getItem('lang')
   if (local) return local
@@ -43,5 +45,11 @@ export class Lang {
 
   get tagName(): string {
     return this.findTagName(this.tag)
+  }
+
+  reconfig(config: ConfigJson) {
+    if (config.lang) {
+      this.tag = config.lang
+    }
   }
 }
