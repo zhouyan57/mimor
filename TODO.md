@@ -1,5 +1,7 @@
 # config
 
+Config -- form
+
 Config -- lang
 Config -- name_zh
 Config -- name_en
