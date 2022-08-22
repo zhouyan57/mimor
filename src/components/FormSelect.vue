@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { Form } from '../models/Form'
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+} from '@headlessui/vue'
+import { CheckIcon, SelectorIcon } from '@heroicons/vue/outline'
 
 defineProps<{
   form: Form<any>

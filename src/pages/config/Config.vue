@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, watch } from 'vue'
+import { watch } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
@@ -7,8 +7,6 @@ import FormSelect from '../../components/FormSelect.vue'
 import FormDivider from '../../components/FormDivider.vue'
 import { useForm } from '../../hooks/useForm'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
-import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 
 const form = useForm({
