@@ -1,7 +1,7 @@
-auth.login.start
+remove `form.post`, only use `form.submit`
+extract `http.post` -- with `output.schema`
 
-extract `http.post` with `output.schema`
-remove `form.post` only use `form.submit`
+simplify the interface of `form.submit`
 
 refactor poll
 

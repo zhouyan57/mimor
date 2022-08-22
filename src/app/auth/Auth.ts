@@ -1,6 +1,7 @@
 import { UserJson } from '../../jsons/UserJson'
 import { ConfigJson } from '../../jsons/ConfigJson'
 import { Register } from './Register'
+import { Login } from './Login'
 
 export class Auth {
   user?: UserJson
@@ -8,6 +9,7 @@ export class Auth {
   initialized = false
 
   register = new Register()
+  login = new Login()
 
   async initialize() {
     if (this.initialized) {
