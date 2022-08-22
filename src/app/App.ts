@@ -1,5 +1,5 @@
 import { Api } from './Api'
-import { Auth } from './Auth'
+import { Auth } from './auth/Auth'
 import { Lang } from './Lang'
 import { UserRepo } from './users/UserRepo'
 import { ProjectRepo } from './projects/ProjectRepo'

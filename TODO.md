@@ -1,5 +1,11 @@
 auth.login.post
+auth.login.verify
+
 auth.register.post
+auth.register.verify
+
+refactor poll
+
 extract `http.post` with `output.schema`
 remove `form.post` only use `form.submit`
 fix FormSelect style -- use headlessui

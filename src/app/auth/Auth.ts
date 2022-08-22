@@ -1,5 +1,5 @@
-import { UserJson } from '../jsons/UserJson'
-import { ConfigJson } from '../jsons/ConfigJson'
+import { UserJson } from '../../jsons/UserJson'
+import { ConfigJson } from '../../jsons/ConfigJson'
 
 export class Auth {
   user?: UserJson

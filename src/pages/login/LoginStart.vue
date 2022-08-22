@@ -11,7 +11,9 @@ import { LoginState as State } from './LoginState'
 
 const { state } = defineProps<{ state: State }>()
 
-const form = useForm({ email: '' })
+const form = useForm({
+  email: '',
+})
 </script>
 
 <template>
