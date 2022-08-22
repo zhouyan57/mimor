@@ -14,17 +14,19 @@ const form = useForm({
   name: '',
   email: '',
 })
+
+function submit(event: Event) {
+  form.submit(event, async (values) => {
+    const verifying = await app.auth.register.start(values)
+    if (verifying) state.verifying = verifying
+  })
+}
 </script>
 
 <template>
   <form
     class="flex max-w-lg flex-col space-y-2 text-xl"
-    @submit.prevent="
-      (event) =>
-        form.submit(event, async (values) => {
-          state.verifying = await $app.auth.register.start(values)
-        })
-    "
+    @submit.prevent="submit"
   >
     <Lang class="font-logo text-3xl font-bold">
       <template #zh>注册</template>

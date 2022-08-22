@@ -16,11 +16,13 @@ export class FileRepoRemote {
   }
 
   async post(username: string, projectName: string, file: FileJson) {
-    await app.api.http.fetch(
+    await app.api.http.post(
       `/users/${username}/projects/${projectName}/files`,
       {
-        method: 'POST',
         body: JSON.stringify(file),
+        output: {
+          schema: ty.any(),
+        },
       }
     )
   }
@@ -42,11 +44,13 @@ export class FileRepoRemote {
     path: string,
     file: FileJson
   ) {
-    await app.api.http.fetch(
+    await app.api.http.put(
       `/users/${username}/projects/${projectName}/files/${path}`,
       {
-        method: 'PUT',
         body: JSON.stringify(file),
+        output: {
+          schema: ty.any(),
+        },
       }
     )
   }

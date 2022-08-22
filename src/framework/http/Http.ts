@@ -2,10 +2,10 @@ import { ty, Schema } from '@xieyuheng/ty'
 import merge from 'lodash/merge'
 import get from 'lodash/get'
 
-export type HttpOptions = {
-  url: string
-  headers: () => Record<string, string>
-}
+export type RequestOptions<O> = {
+  output: { schema: Schema<O> }
+  path?: string
+} & RequestInit
 
 export class HttpError extends Error {
   constructor(public message: string, public response: Response) {
@@ -14,51 +14,53 @@ export class HttpError extends Error {
 }
 
 export class Http {
-  constructor(public options: HttpOptions) {}
+  constructor(
+    public options: {
+      url: string
+      headers: () => Record<string, string>
+    }
+  ) {}
 
-  mergeUrl(url: string): string {
-    return this.options.url + url
-  }
-
-  mergeOptions(options?: RequestInit): RequestInit {
-    const headers = merge(options?.headers, this.options.headers())
-    return { ...options, headers }
-  }
-
-  async get<T>(
+  async get<O>(
     url: string,
-    args: { output: { schema: Schema<T> }; path?: string },
-    options?: RequestInit
-  ): Promise<T | undefined> {
-    url = this.mergeUrl(url)
-    options = this.mergeOptions(options)
+    options: RequestOptions<O>
+  ): Promise<O | undefined> {
+    return this.fetch('GET', url, options)
+  }
 
-    const response = await fetch(url, options)
+  async post<O>(
+    url: string,
+    options: RequestOptions<O>
+  ): Promise<O | undefined> {
+    return this.fetch('POST', url, options)
+  }
 
+  async put<O>(
+    url: string,
+    options: RequestOptions<O>
+  ): Promise<O | undefined> {
+    return this.fetch('PUT', url, options)
+  }
+
+  async fetch<O>(
+    method: string,
+    url: string,
+    options: RequestOptions<O>
+  ): Promise<O | undefined> {
+    url = this.options.url + url
+    options = {
+      ...options,
+      headers: merge(options.headers, this.options.headers()),
+    }
+
+    const response = await fetch(url, { ...options, method })
     if (!response.ok) {
       throw new HttpError('response not ok', response)
     }
-
-    const {
-      path,
-      output: { schema },
-    } = args
 
     const body = await response.json()
-
-    return schema.validate(path ? get(body, path) : body)
-  }
-
-  async fetch(url: string, options?: RequestInit): Promise<Response> {
-    url = this.mergeUrl(url)
-    options = this.mergeOptions(options)
-
-    const response = await fetch(url, options)
-
-    if (!response.ok) {
-      throw new HttpError('response not ok', response)
-    }
-
-    return response
+    return options.output.schema.validate(
+      options.path ? get(body, options.path) : body
+    )
   }
 }

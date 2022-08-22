@@ -12,9 +12,11 @@ export class ProjectRepoRemote {
   }
 
   async post(username: string, project: ProjectJson) {
-    await app.api.http.fetch(`/users/${username}/projects`, {
-      method: 'POST',
+    await app.api.http.post(`/users/${username}/projects`, {
       body: JSON.stringify(project),
+      output: {
+        schema: ty.any(),
+      },
     })
   }
 

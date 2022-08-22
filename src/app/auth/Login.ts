@@ -1,14 +1,10 @@
+import { VerifyingSchema } from '../../jsons/VerifyingJson'
+
 export class Login {
   async start(body: { email: string }) {
-    const response = await app.api.http.fetch(`/login`, {
-      method: 'POST',
+    return await app.api.http.post(`/login`, {
+      output: { schema: VerifyingSchema },
       body: JSON.stringify(body),
     })
-
-    return await response.json()
-  }
-
-  async verify() {
-    //
   }
 }

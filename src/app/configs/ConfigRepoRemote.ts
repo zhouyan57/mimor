@@ -10,9 +10,9 @@ export class ConfigRepoRemote {
   }
 
   async put(username: string, config: ConfigJson) {
-    await app.api.http.fetch(`/users/${username}/config`, {
-      method: 'PUT',
+    await app.api.http.put(`/users/${username}/config`, {
       body: JSON.stringify(config),
+      output: { schema: ty.any() },
     })
   }
 }

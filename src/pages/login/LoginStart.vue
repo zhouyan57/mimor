@@ -14,17 +14,19 @@ const { state } = defineProps<{ state: State }>()
 const form = useForm({
   email: '',
 })
+
+function submit(event: Event) {
+  form.submit(event, async (values) => {
+    const verifying = await app.auth.login.start(values)
+    if (verifying) state.verifying = verifying
+  })
+}
 </script>
 
 <template>
   <form
     class="flex max-w-md flex-col space-y-2 pt-20 text-xl"
-    @submit.prevent="
-      (event) =>
-        form.submit(event, async (values) => {
-          state.verifying = await $app.auth.login.start(values)
-        })
-    "
+    @submit.prevent="submit"
   >
     <div class="flex flex-col pb-2">
       <div class="flex items-baseline justify-between">
