@@ -30,18 +30,23 @@ export class Auth {
     console.log({ who: 'app.auth.login' })
   }
 
+  logout(): void {
+    localStorage.removeItem('token')
+    this.user = undefined
+    console.log({ who: 'app.auth.logout' })
+  }
+
   async load() {
     this.user = await app.safe(() => app.users.current())
+
     this.config = await app.safe(async () => {
       if (this.user) {
         return await app.configs.get(this.user.username)
       }
     })
-  }
 
-  logout(): void {
-    localStorage.removeItem('token')
-    this.user = undefined
-    console.log({ who: 'app.auth.logout' })
+    if (this.config?.lang) {
+      app.lang.tag = this.config.lang
+    }
   }
 }

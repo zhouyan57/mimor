@@ -1,7 +1,5 @@
 # config
 
-app.lang.tag use config
-
 ConfigRepo.put -- update auth.config
 ConfigRepo.put -- update auth.user.name
 ConfigRepo.put -- update lang.tag
