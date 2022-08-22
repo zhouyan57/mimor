@@ -47,11 +47,11 @@ async function load() {
       class="flex max-w-lg flex-col space-y-2 pb-2 text-xl"
       @submit.prevent="
         (event) => {
-          if (!$app.auth.user) return
-
           form.submit(event, {
             action: async (values) => {
               if (!$app.auth.user) return
+
+              // await $app.user.config.post(values)
             },
           })
         }
@@ -87,8 +87,10 @@ async function load() {
       <FormSelect
         :form="form"
         name="lang"
-        :options="{ 
-zh: '中文', en: 'English' }"
+        :options="{
+          zh: '中文',
+          en: 'English',
+        }"
       >
         <template #label>
           <Lang>

@@ -32,8 +32,6 @@ const form = useForm({
       class="flex max-w-lg flex-col space-y-2 text-xl"
       @submit.prevent="
         (event) => {
-          if (!$app.auth.user) return
-
           form.submit(event, {
             action: async (values) => {
               if (!$app.auth.user) return
