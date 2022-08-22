@@ -1,5 +1,9 @@
-fix FormSelect style
-
+rename `http.get` schema to output.schema
+extract `http.post` with output schema
+auth.login.post
+auth.register.post
+remove `form.post` only use `form.submit`
+fix FormSelect style -- use headlessui
 PageLayoutLang -- put config lang on change
 
 # rendering
