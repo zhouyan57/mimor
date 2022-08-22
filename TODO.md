@@ -1,4 +1,3 @@
-remove `form.post`, only use `form.submit`
 extract `http.post` -- with `output.schema`
 
 simplify the interface of `form.submit`

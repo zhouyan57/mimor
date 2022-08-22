@@ -64,47 +64,4 @@ export class Form<T extends Values> {
 
     this.processing = false
   }
-
-  async post(
-    event: Event,
-    url: string,
-    options?: PostOptions<T>
-  ): Promise<void> {
-    this.loadValuesFromEvent(event)
-
-    this.processing = true
-
-    this.response = undefined
-    this.error = undefined
-    this.unprocessable = undefined
-
-    try {
-      const values = options?.prepare
-        ? await options?.prepare(this.values)
-        : this.values
-
-      this.response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          ...options?.headers,
-        },
-        body: JSON.stringify(values),
-      })
-
-      if (this.response.status === 422) {
-        this.unprocessable = await this.response.json()
-      }
-
-      if (this.response.ok && options?.then) {
-        await options.then(this.response)
-      }
-    } catch (error) {
-      if (!(error instanceof Error)) throw error
-      this.error = error
-    }
-
-    this.processing = false
-  }
 }
