@@ -1,5 +1,3 @@
-fix FormSelect style -- use headlessui
-
 # rendering
 
 support paragraph

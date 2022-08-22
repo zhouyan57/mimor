@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import { Form } from '../models/Form'
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/vue'
-import { CheckIcon, SelectorIcon } from '@heroicons/vue/outline'
 
 defineProps<{
   form: Form<any>
@@ -23,7 +16,7 @@ defineProps<{
 
     <div class="flex w-full items-center rounded-sm border border-stone-500">
       <select
-        class="w-full bg-white p-3 font-bold disabled:bg-stone-100"
+        class="w-full bg-white px-1.5 py-1 font-bold disabled:bg-stone-100"
         :id="name"
         :name="name"
         :value="form.values[name]"
