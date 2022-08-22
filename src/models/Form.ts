@@ -12,7 +12,10 @@ interface SubmitOptions<T> {
   action: (values: T) => Promise<void>
 }
 
-type Unprocessable<T> = { message: string; errors: Record<string, string> }
+type Unprocessable<T> = {
+  message: string
+  errors: Record<string, string>
+}
 
 export class Form<T extends Values> {
   processing = false
@@ -46,7 +49,9 @@ export class Form<T extends Values> {
     this.unprocessable = undefined
 
     try {
-      await options.action(this.values)
+      // NOTE We should not pass reactive `this.values` around.
+      const values = JSON.parse(JSON.stringify(this.values))
+      await options.action(values)
     } catch (error) {
       if (!(error instanceof Error)) throw error
       this.error = error
