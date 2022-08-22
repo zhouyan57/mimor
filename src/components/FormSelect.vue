@@ -16,7 +16,7 @@ defineProps<{
 
     <div class="flex w-full items-center rounded-sm border border-stone-500">
       <select
-        class="w-full bg-white px-1.5 py-1.5 font-bold disabled:bg-stone-100"
+        class="w-full bg-white px-2 py-3 font-bold disabled:bg-stone-100"
         :id="name"
         :name="name"
         :value="form.values[name]"
