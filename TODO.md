@@ -32,6 +32,12 @@ File -- recall in fullscreen
 
 embedded route for iframe
 
+# authors
+
+be able to share projects to friends
+
+explore by topics or by authors
+
 # learn
 
 learn about html <span> v.s. <div>
