@@ -99,14 +99,14 @@ defineProps<{ state: State }>()
         <div class="border-t border-stone-500 py-3">
           <div v-if="$app.auth.user" class="flex items-end justify-between">
             <div>
-              <Lang>
+              <Lang class="font-logo font-bold">
                 <template #zh>
-                  <div class="font-bold">
+                  <div>
                     {{ $app.auth.config?.name_zh || $app.auth.user.name }}
                   </div>
                 </template>
                 <template #en>
-                  <div class="font-bold">
+                  <div>
                     {{ $app.auth.config?.name_en || $app.auth.user.name }}
                   </div>
                 </template>
