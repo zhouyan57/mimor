@@ -1,10 +1,8 @@
-# config
-
-PageLayoutLang put config lang on change
-
-sidebar show name_zh or name_en
 menu show name_zh or name_en
 
+fix FormSelect
+
+PageLayoutLang -- put config lang on change
 
 # rendering
 
