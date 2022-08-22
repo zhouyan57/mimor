@@ -31,7 +31,7 @@ function isRecall() {
 
 <template>
   <PageLayout mode="auth" :options="{ onInitialized: () => state.load() }">
-    <Head>
+    <Head v-if="state.path">
       <title v-if="$app.lang.zh">{{ state.path }} | 谜墨</title>
       <title v-else>{{ state.path }} | Mimor</title>
     </Head>
