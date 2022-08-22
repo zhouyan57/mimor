@@ -55,6 +55,7 @@ const form = useForm({ email: '' })
       name="email"
       type="email"
       autocomplete="email"
+      required
       :placeholder="$app.lang.zh ? '电子邮箱' : 'Email'"
     >
       <template #input-end>

@@ -1,5 +1,6 @@
 # config
 
+Config -- show username and email
 Config -- form -- use FormSelect
 Config -- form display default
 Config -- form post -- assume backend api

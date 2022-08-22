@@ -4,11 +4,6 @@ import { Form } from '../models/Form'
 defineProps<{
   form: Form<any>
   name: string
-  type?: string
-  autocomplete?: string
-  placeholder?: string
-  spellcheck?: boolean
-  required?: boolean
 }>()
 </script>
 
@@ -23,12 +18,7 @@ defineProps<{
         :id="name"
         :name="name"
         class="w-full p-3 font-bold"
-        :type="type || 'text'"
-        :autocomplete="autocomplete"
-        :placeholder="placeholder"
-        :maxlength="32"
-        :spellcheck="spellcheck"
-        :required="required"
+        v-bind="$attrs"
       />
 
       <slot name="input-end" />

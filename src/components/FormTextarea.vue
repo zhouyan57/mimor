@@ -4,8 +4,6 @@ import { Form } from '../models/Form'
 defineProps<{
   form: Form<any>
   name: string
-  type?: string
-  required?: boolean
 }>()
 </script>
 
@@ -19,10 +17,7 @@ defineProps<{
       :id="name"
       :name="name"
       class="w-full rounded-sm border border-stone-500 p-3"
-      :type="type || 'text'"
-      :maxlength="32"
-      :spellcheck="false"
-      :required="required"
+      v-bind="$attrs"
     ></textarea>
 
     <ol

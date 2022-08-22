@@ -32,7 +32,7 @@ const form = useForm({
     </template>
 
     <form
-      class="flex max-w-lg flex-col space-y-2 text-xl"
+      class="flex max-w-lg flex-col space-y-2 pb-2 text-xl"
       @submit.prevent="
         (event) => {
           if (!$app.auth.user) return
@@ -45,6 +45,17 @@ const form = useForm({
         }
       "
     >
+      <div class="flex w-full items-center">
+        <FormInput class="w-full" :form="form" name="path" disabled>
+          <template #label>
+            <Lang>
+              <template #zh>语言</template>
+              <template #en>Lang</template>
+            </Lang>
+          </template>
+        </FormInput>
+      </div>
+
       <div class="flex w-full items-center">
         <FormInput class="w-full" :form="form" name="path">
           <template #label>
@@ -59,8 +70,8 @@ const form = useForm({
       <FormInput :form="form" name="name">
         <template #label>
           <Lang>
-            <template #zh>Name</template>
-            <template #en>名字</template>
+            <template #zh>名字</template>
+            <template #en>Name</template>
           </Lang>
         </template>
       </FormInput>
@@ -68,8 +79,8 @@ const form = useForm({
       <FormInput :form="form" name="name_en">
         <template #label>
           <Lang>
-            <template #zh>English Name</template>
-            <template #en>英文名</template>
+            <template #zh>英文名</template>
+            <template #en>English Name</template>
           </Lang>
         </template>
       </FormInput>
@@ -77,8 +88,8 @@ const form = useForm({
       <FormInput :form="form" name="name_zh">
         <template #label>
           <Lang>
-            <template #zh>Chinese Name</template>
-            <template #en>中文名</template>
+            <template #zh>中文名</template>
+            <template #en>Chinese Name</template>
           </Lang>
         </template>
       </FormInput>
