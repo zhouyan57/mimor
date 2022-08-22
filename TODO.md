@@ -1,5 +1,4 @@
 fix FormSelect style -- use headlessui
-PageLayoutLang -- put config lang on change
 add input length limit to forms
 File -- fix the position of create button
 Project -- fix the position of create button

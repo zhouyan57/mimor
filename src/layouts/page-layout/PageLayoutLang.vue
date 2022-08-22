@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { watch } from 'vue'
 import {
   Listbox,
   ListboxButton,
@@ -10,6 +11,19 @@ import Lang from '../../components/Lang.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
 defineProps<{ state: State }>()
+
+watch(
+  () => app.lang.tag,
+  () => {
+    app.safe(async () => {
+      if (app.auth.user?.username) {
+        await app.configs.put(app.auth.user.username, {
+          lang: app.lang.tag,
+        })
+      }
+    })
+  }
+)
 </script>
 
 <template>

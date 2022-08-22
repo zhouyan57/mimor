@@ -9,7 +9,7 @@ export class ConfigRepoRemote {
     })
   }
 
-  async put(username: string, config: ConfigJson) {
+  async put(username: string, config: Partial<ConfigJson>) {
     await app.api.http.put(`/users/${username}/config`, {
       body: JSON.stringify(config),
       output: { schema: ty.any() },

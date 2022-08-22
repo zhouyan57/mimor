@@ -8,7 +8,7 @@ export class ConfigRepo {
     return await this.remote.get(username)
   }
 
-  async put(username: string, config: ConfigJson) {
+  async put(username: string, config: Partial<ConfigJson>) {
     await this.remote.put(username, config)
     app.lang.reconfig(config)
     app.auth.reconfig(config)

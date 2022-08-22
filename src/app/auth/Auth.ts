@@ -5,7 +5,7 @@ import { Login } from './Login'
 
 export class Auth {
   user?: UserJson
-  config?: ConfigJson
+  config?: Partial<ConfigJson>
   initialized = false
 
   register = new Register()
@@ -56,8 +56,10 @@ export class Auth {
     }
   }
 
-  reconfig(config: ConfigJson) {
-    this.config = config
+  reconfig(config: Partial<ConfigJson>) {
+    this.config = this.config || {}
+    Object.assign(this.config, config)
+
     if (config.name && this.user) {
       this.user.name = config.name
     }

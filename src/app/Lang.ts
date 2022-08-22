@@ -21,6 +21,7 @@ export class Lang {
 
   set tag(tag: string) {
     this._tag = tag
+
     localStorage.setItem('lang', tag)
   }
 
@@ -47,7 +48,7 @@ export class Lang {
     return this.findTagName(this.tag)
   }
 
-  reconfig(config: ConfigJson) {
+  reconfig(config: Partial<ConfigJson>) {
     if (config.lang) {
       this.tag = config.lang
     }

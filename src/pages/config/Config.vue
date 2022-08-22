@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
@@ -19,6 +19,13 @@ const form = useForm({
   name_zh: '',
   name_en: '',
 })
+
+watch(
+  () => app.lang.tag,
+  () => {
+    form.values.lang = app.lang.tag
+  }
+)
 
 async function load() {
   const user = app.auth.user
