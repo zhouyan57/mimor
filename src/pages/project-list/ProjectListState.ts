@@ -5,7 +5,9 @@ export class ProjectListState {
   projects?: Array<ProjectJson>
 
   async load() {
-    const { username } = app.auth.userOrFail()
-    this.projects = await app.safe(() => app.projects.all(username))
+    const user = app.auth.user
+    if (!user) return
+
+    this.projects = await app.safe(() => app.projects.all(user.username))
   }
 }

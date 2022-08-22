@@ -22,9 +22,11 @@ export class FileState {
   }
 
   async load() {
-    const { username } = app.auth.userOrFail()
+    const user = app.auth.user
+    if (!user) return
+
     this.file = await app.safe(() =>
-      app.files.get(username, this.project.name, this.path)
+      app.files.get(user.username, this.project.name, this.path)
     )
   }
 
@@ -33,9 +35,11 @@ export class FileState {
 
     await app.safe(async () => {
       if (this.file) {
-        const { username } = app.auth.userOrFail()
+        const user = app.auth.user
+        if (!user) return
+
         await app.files.put(
-          username,
+          user.username,
           this.project.name,
           this.file.path,
           this.file

@@ -6,14 +6,6 @@ export class Auth {
   config?: ConfigJson
   initialized = false
 
-  userOrFail(): UserJson {
-    if (!this.user) {
-      throw new Error('no user')
-    }
-
-    return this.user
-  }
-
   async initialize() {
     if (this.initialized) {
       return console.log({

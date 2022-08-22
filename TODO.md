@@ -1,4 +1,4 @@
-# configx
+# config
 
 Config -- use `app.auth.config`
 

@@ -21,12 +21,19 @@ const form = useForm({
 })
 
 async function load() {
-  const user = app.auth.userOrFail()
+  const user = app.auth.user
+  if (!user) return
+
+  const config = app.auth.config
+  if (!config) return
+
   Object.assign(form.values, {
     username: user.username,
     email: user.email,
     name: user.name,
     lang: app.lang.tag,
+    name_zh: config.name_zh,
+    name_en: config.name_en,
   })
 }
 </script>
@@ -102,20 +109,20 @@ async function load() {
         </template>
       </FormSelect>
 
-      <FormInput :form="form" name="name_en">
-        <template #label>
-          <Lang>
-            <template #zh>英文名</template>
-            <template #en>English Name</template>
-          </Lang>
-        </template>
-      </FormInput>
-
       <FormInput :form="form" name="name_zh">
         <template #label>
           <Lang>
             <template #zh>中文名</template>
             <template #en>Chinese Name</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <FormInput :form="form" name="name_en">
+        <template #label>
+          <Lang>
+            <template #zh>英文名</template>
+            <template #en>English Name</template>
           </Lang>
         </template>
       </FormInput>

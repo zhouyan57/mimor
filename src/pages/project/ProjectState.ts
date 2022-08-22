@@ -16,12 +16,15 @@ export class ProjectState {
   }
 
   async load() {
-    const { username } = app.auth.userOrFail()
+    const user = app.auth.user
+    if (!user) return
+
     this.project = await app.safe(() =>
-      app.projects.get(username, this.options.name)
+      app.projects.get(user.username, this.options.name)
     )
+
     this.files = await app.safe(() =>
-      app.files.all(username, this.options.name)
+      app.files.all(user.username, this.options.name)
     )
   }
 }
