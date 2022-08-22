@@ -5,7 +5,9 @@ export class ProjectRepoRemote {
   async all(username: string) {
     return app.api.http.get(`/users/${username}/projects`, {
       path: 'data',
-      schema: ty.array(ProjectSchema),
+      output: {
+        schema: ty.array(ProjectSchema),
+      },
     })
   }
 
@@ -18,7 +20,9 @@ export class ProjectRepoRemote {
 
   async get(username: string, name: string) {
     return app.api.http.get(`/users/${username}/projects/${name}`, {
-      schema: ProjectSchema,
+      output: {
+        schema: ProjectSchema,
+      },
     })
   }
 }

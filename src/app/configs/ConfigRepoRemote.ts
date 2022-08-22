@@ -5,7 +5,7 @@ import { wait } from '../../utils/wait'
 export class ConfigRepoRemote {
   async get(username: string) {
     return await app.api.http.get(`/users/${username}/config`, {
-      schema: ConfigSchema,
+      output: { schema: ConfigSchema },
     })
   }
 

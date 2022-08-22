@@ -8,7 +8,9 @@ export class FileRepoRemote {
       `/users/${username}/projects/${projectName}/files`,
       {
         path: 'data',
-        schema: ty.array(FileSchema),
+        output: {
+          schema: ty.array(FileSchema),
+        },
       }
     )
   }
@@ -27,7 +29,9 @@ export class FileRepoRemote {
     return app.api.http.get(
       `/users/${username}/projects/${projectName}/files/${path}`,
       {
-        schema: FileSchema,
+        output: {
+          schema: FileSchema,
+        },
       }
     )
   }

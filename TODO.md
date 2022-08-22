@@ -1,10 +1,12 @@
-rename `http.get` schema to output.schema
-extract `http.post` with output schema
 auth.login.post
 auth.register.post
+extract `http.post` with `output.schema`
 remove `form.post` only use `form.submit`
 fix FormSelect style -- use headlessui
 PageLayoutLang -- put config lang on change
+add input length limit to forms
+File -- fix the position of create button
+Project -- fix the position of create button
 
 # rendering
 

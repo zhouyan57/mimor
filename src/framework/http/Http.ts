@@ -27,7 +27,7 @@ export class Http {
 
   async get<T>(
     url: string,
-    args: { schema: Schema<T>; path?: string },
+    args: { output: { schema: Schema<T> }; path?: string },
     options?: RequestInit
   ): Promise<T | undefined> {
     url = this.mergeUrl(url)
@@ -39,7 +39,10 @@ export class Http {
       throw new HttpError('response not ok', response)
     }
 
-    const { path, schema } = args
+    const {
+      path,
+      output: { schema },
+    } = args
 
     const body = await response.json()
 
