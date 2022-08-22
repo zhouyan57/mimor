@@ -7,7 +7,10 @@ import Lang from '../../components/Lang.vue'
 import { useForm } from '../../hooks/useForm'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 
-const form = useForm({ name: '', description: '' })
+const form = useForm({
+  name: '',
+  description: '',
+})
 </script>
 
 <template>

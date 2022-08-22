@@ -1,12 +1,8 @@
 # config
 
-Config -- form
-
-Config -- lang
-
-Config -- name_zh
-
-Config -- name_en
+Config -- form -- use FormSelect
+Config -- form display default
+Config -- form post -- assume backend api
 
 # rendering
 

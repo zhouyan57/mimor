@@ -21,7 +21,7 @@ export class App {
       return await f()
     } catch (error) {
       if (!(error instanceof Error)) {
-        console.log('Safely catched error:', error)
+        console.dir('Safely catched error:', error)
       } else {
         console.log('Safely catched error:', error.message)
       }

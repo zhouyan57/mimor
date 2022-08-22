@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { Head } from '@vueuse/head'
+import FormButton from '../../components/FormButton.vue'
+import FormInput from '../../components/FormInput.vue'
+import { useForm } from '../../hooks/useForm'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+
+const form = useForm({
+  lang: '',
+  name: '',
+  name_zh: '',
+  name_en: '',
+})
 </script>
 
 <template>
@@ -21,6 +31,68 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
       </Lang>
     </template>
 
-    <div>TODO</div>
+    <form
+      class="flex max-w-lg flex-col space-y-2 text-xl"
+      @submit.prevent="
+        (event) => {
+          if (!$app.auth.user) return
+
+          form.submit(event, {
+            action: async (values) => {
+              if (!$app.auth.user) return
+            },
+          })
+        }
+      "
+    >
+      <div class="flex w-full items-center">
+        <FormInput class="w-full" :form="form" name="path">
+          <template #label>
+            <Lang>
+              <template #zh>语言</template>
+              <template #en>Lang</template>
+            </Lang>
+          </template>
+        </FormInput>
+      </div>
+
+      <FormInput :form="form" name="name">
+        <template #label>
+          <Lang>
+            <template #zh>Name</template>
+            <template #en>名字</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <FormInput :form="form" name="name_en">
+        <template #label>
+          <Lang>
+            <template #zh>English Name</template>
+            <template #en>英文名</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <FormInput :form="form" name="name_zh">
+        <template #label>
+          <Lang>
+            <template #zh>Chinese Name</template>
+            <template #en>中文名</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <div class="flex flex-col justify-center py-4">
+        <hr class="border-t border-stone-500" />
+      </div>
+
+      <FormButton :disabled="form.processing">
+        <Lang>
+          <template #zh>保存</template>
+          <template #en>Save</template>
+        </Lang>
+      </FormButton>
+    </form>
   </PageLayout>
 </template>
