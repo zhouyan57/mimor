@@ -15,4 +15,18 @@ export class App {
   get name(): string {
     return this.lang.zh ? '谜墨' : 'Mimor'
   }
+
+  async safe<T>(f: () => Promise<T>): Promise<T | undefined> {
+    try {
+      return await f()
+    } catch (error) {
+      if (!(error instanceof Error)) {
+        console.log('Safely catched error:', error)
+      } else {
+        console.log('Safely catched error:', error.message)
+      }
+
+      return undefined
+    }
+  }
 }
