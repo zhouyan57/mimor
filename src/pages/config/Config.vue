@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
+import FormSelect from '../../components/FormSelect.vue'
 import FormDivider from '../../components/FormDivider.vue'
 import { useForm } from '../../hooks/useForm'
 import Lang from '../../components/Lang.vue'
@@ -22,6 +23,9 @@ const form = useForm({
 async function load() {
   const user = app.auth.userOrFail()
   Object.assign(form.values, user)
+  Object.assign(form.values, {
+    lang: app.lang.tag,
+  })
 }
 </script>
 
@@ -80,14 +84,19 @@ async function load() {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="path">
+      <FormSelect
+        :form="form"
+        name="lang"
+        :options="{ 
+zh: '中文', en: 'English' }"
+      >
         <template #label>
           <Lang>
             <template #zh>语言</template>
             <template #en>Lang</template>
           </Lang>
         </template>
-      </FormInput>
+      </FormSelect>
 
       <FormInput :form="form" name="name_en">
         <template #label>

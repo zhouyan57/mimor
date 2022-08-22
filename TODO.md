@@ -1,6 +1,5 @@
 # config
 
-Config -- form -- use FormSelect
 Config -- form post -- assume backend api
 
 # rendering
