@@ -20,12 +20,9 @@ const form = useForm({
   <form
     class="flex max-w-lg flex-col space-y-2 text-xl"
     @submit.prevent="
-      (event) =>
-        form.submit(event, {
-          action: async (values) => {
-            state.verifying = await $app.auth.register.start(values)
-          },
-        })
+      form.submit(async (values) => {
+        state.verifying = await $app.auth.register.start(values)
+      })
     "
   >
     <Lang class="font-logo text-3xl font-bold">

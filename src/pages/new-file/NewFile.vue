@@ -31,26 +31,19 @@ const form = useForm({
     <form
       class="flex max-w-lg flex-col space-y-2 text-xl"
       @submit.prevent="
-        (event) => {
-          form.submit(event, {
-            action: async (values) => {
-              if (!$app.auth.user) return
+        form.submit(async (values) => {
+          if (!$app.auth.user) return
 
-              await $app.files.post(
-                $app.auth.user.username,
-                $route.params.name as string,
-                {
-                  ...values,
-                  path: `${values.path}.mimor`,
-                }
-              )
+          await $app.files.post(
+            $app.auth.user.username,
+            $route.params.name as string,
+            { ...values, path: `${values.path}.mimor` }
+          )
 
-              $router.replace(
-                `/projects/${$route.params.name}/files/${form.values.path}.mimor`
-              )
-            },
-          })
-        }
+          $router.replace(
+            `/projects/${$route.params.name}/files/${form.values.path}.mimor`
+          )
+        })
       "
     >
       <FormInput :form="form" name="path" required>

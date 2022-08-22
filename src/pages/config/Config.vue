@@ -55,15 +55,11 @@ async function load() {
     <form
       class="flex max-w-lg flex-col space-y-2 pb-2 text-xl"
       @submit.prevent="
-        (event) => {
-          form.submit(event, {
-            action: async (values) => {
-              if (!$app.auth.user) return
+        form.submit(async (values) => {
+          if (!$app.auth.user) return
 
-              await $app.configs.put($app.auth.user.username, values)
-            },
-          })
-        }
+          await $app.configs.put($app.auth.user.username, values)
+        })
       "
     >
       <FormInput :form="form" name="username" disabled>

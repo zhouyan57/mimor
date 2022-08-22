@@ -2,16 +2,6 @@ import { HttpError } from '../framework/http'
 
 export type Values = Record<string, string>
 
-interface PostOptions<T> {
-  headers?: Record<string, string>
-  prepare?: (values: T) => Promise<any>
-  then?: (response: Response) => Promise<void>
-}
-
-interface SubmitOptions<T> {
-  action: (values: T) => Promise<void>
-}
-
 type Unprocessable<T> = {
   message: string
   errors: Record<string, string>
@@ -39,7 +29,14 @@ export class Form<T extends Values> {
     }
   }
 
-  async submit(event: Event, options: SubmitOptions<T>): Promise<void> {
+  async submit(action: (values: T) => Promise<void>) {
+    return (event: Event) => this.submitEvent(event, action)
+  }
+
+  async submitEvent(
+    event: Event,
+    action: (values: T) => Promise<void>
+  ): Promise<void> {
     this.loadValuesFromEvent(event)
 
     this.processing = true
@@ -51,7 +48,7 @@ export class Form<T extends Values> {
     try {
       // NOTE We should not pass reactive `this.values` around.
       const values = JSON.parse(JSON.stringify(this.values))
-      await options.action(values)
+      await action(values)
     } catch (error) {
       if (!(error instanceof Error)) throw error
       this.error = error

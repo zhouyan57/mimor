@@ -1,8 +1,6 @@
-extract `http.post` -- with `output.schema`
-
-simplify the interface of `form.submit`
-
 refactor poll
+
+extract `http.post` -- with `output.schema`
 
 auth.register.verify
 auth.login.verify
