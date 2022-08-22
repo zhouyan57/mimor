@@ -5,10 +5,13 @@ export class ConfigRepo {
   remote = new ConfigRepoRemote()
 
   async get(username: string) {
-    return this.remote.get(username)
+    return await this.remote.get(username)
   }
 
   async put(username: string, config: ConfigJson) {
-    return this.remote.put(username, config)
+    await this.remote.put(username, config)
+    if (config.lang) {
+      app.lang.tag = config.lang
+    }
   }
 }

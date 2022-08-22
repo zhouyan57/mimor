@@ -2,7 +2,12 @@
 
 ConfigRepo.put -- update auth.config
 ConfigRepo.put -- update auth.user.name
-ConfigRepo.put -- update lang.tag
+
+PageLayoutLang put config lang on change
+
+sidebar show name_zh or name_en
+menu show name_zh or name_en
+
 
 # rendering
 
