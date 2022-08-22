@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { useRouter } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'
@@ -12,6 +13,18 @@ const form = useForm({
   name: '',
   description: '',
 })
+
+const router = useRouter()
+
+function submit(event: Event) {
+  form.submit(event, async (values) => {
+    if (!app.auth.user) return
+
+    await app.projects.post(app.auth.user.username, values)
+
+    router.replace(`/projects/${form.values.name}`)
+  })
+}
 </script>
 
 <template>
@@ -30,16 +43,7 @@ const form = useForm({
 
     <form
       class="flex max-w-lg flex-col space-y-2 text-xl"
-      @submit.prevent="
-        (event) =>
-          form.submit(event, async (values) => {
-            if (!$app.auth.user) return
-
-            await $app.projects.post($app.auth.user.username, values)
-
-            $router.replace(`/projects/${form.values.name}`)
-          })
-      "
+      @submit.prevent="submit"
     >
       <FormInput :form="form" name="name" required>
         <template #label>

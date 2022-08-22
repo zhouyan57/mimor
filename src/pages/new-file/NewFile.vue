@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { useRouter, useRoute } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'
@@ -12,6 +13,24 @@ const form = useForm({
   path: '',
   content: '',
 })
+
+const router = useRouter()
+const route = useRoute()
+
+function submit(event: Event) {
+  form.submit(event, async (values) => {
+    if (!app.auth.user) return
+
+    await app.files.post(app.auth.user.username, route.params.name as string, {
+      ...values,
+      path: `${values.path}.mimor`,
+    })
+
+    router.replace(
+      `/projects/${route.params.name}/files/${form.values.path}.mimor`
+    )
+  })
+}
 </script>
 
 <template>
@@ -30,22 +49,7 @@ const form = useForm({
 
     <form
       class="flex max-w-lg flex-col space-y-2 text-xl"
-      @submit.prevent="
-        (event) =>
-          form.submit(event, async (values) => {
-            if (!$app.auth.user) return
-
-            await $app.files.post(
-              $app.auth.user.username,
-              $route.params.name as string,
-              { ...values, path: `${values.path}.mimor` }
-            )
-
-            $router.replace(
-              `/projects/${$route.params.name}/files/${form.values.path}.mimor`
-            )
-          })
-      "
+      @submit.prevent="submit"
     >
       <FormInput :form="form" name="path" required>
         <template #label>
