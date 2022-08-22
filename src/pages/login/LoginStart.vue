@@ -56,6 +56,7 @@ function submit(event: Event) {
       name="email"
       type="email"
       autocomplete="email"
+      maxlength="256"
       required
       :placeholder="$app.lang.zh ? '电子邮箱' : 'Email'"
     >

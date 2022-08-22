@@ -33,7 +33,7 @@ function submit(event: Event) {
       <template #en>Register</template>
     </Lang>
 
-    <FormInput :form="form" name="username" required>
+    <FormInput :form="form" name="username" required maxlength="64">
       <template #label>
         <Lang>
           <template #zh>用户名</template>
@@ -42,7 +42,7 @@ function submit(event: Event) {
       </template>
     </FormInput>
 
-    <FormInput :form="form" name="name" required>
+    <FormInput :form="form" name="name" required maxlength="64">
       <template #label>
         <Lang>
           <template #zh>名字</template>
@@ -51,7 +51,7 @@ function submit(event: Event) {
       </template>
     </FormInput>
 
-    <FormInput :form="form" name="email" type="email" required>
+    <FormInput :form="form" name="email" type="email" required maxlength="256">
       <template #label>
         <Lang>
           <template #zh>电子邮箱</template>

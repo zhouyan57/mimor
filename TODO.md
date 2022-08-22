@@ -1,5 +1,5 @@
 fix FormSelect style -- use headlessui
-add input length limit to forms
+fix project box style
 
 # rendering
 

@@ -51,7 +51,7 @@ function submit(event: Event) {
       class="flex max-w-lg flex-col space-y-2 text-xl"
       @submit.prevent="submit"
     >
-      <FormInput :form="form" name="path" required>
+      <FormInput :form="form" name="path" required maxlength="256">
         <template #label>
           <Lang>
             <template #zh>路径</template>
@@ -64,7 +64,7 @@ function submit(event: Event) {
         </template>
       </FormInput>
 
-      <FormTextarea :form="form" name="content">
+      <FormTextarea :form="form" name="content" maxlength="100000">
         <template #label>
           <Lang>
             <template #zh>内容</template>

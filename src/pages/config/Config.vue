@@ -88,7 +88,7 @@ async function load() {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="name">
+      <FormInput :form="form" name="name" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>名字</template>
@@ -100,6 +100,7 @@ async function load() {
       <FormSelect
         :form="form"
         name="lang"
+        maxlength="10"
         :options="{
           zh: '中文',
           en: 'English',
@@ -113,7 +114,7 @@ async function load() {
         </template>
       </FormSelect>
 
-      <FormInput :form="form" name="name_zh">
+      <FormInput :form="form" name="name_zh" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>中文名</template>
@@ -122,7 +123,7 @@ async function load() {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="name_en">
+      <FormInput :form="form" name="name_en" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>英文名</template>
