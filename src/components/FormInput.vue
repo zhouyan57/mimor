@@ -15,9 +15,10 @@ defineProps<{
 
     <div class="flex w-full items-center rounded-sm border border-stone-500">
       <input
+        class="w-full p-3 font-bold disabled:bg-stone-100"
         :id="name"
         :name="name"
-        class="w-full p-3 font-bold disabled:bg-stone-100"
+        :value="form.values[name]"
         v-bind="$attrs"
       />
 

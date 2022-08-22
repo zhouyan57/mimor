@@ -14,9 +14,10 @@ defineProps<{
     </label>
 
     <textarea
+      class="w-full rounded-sm border border-stone-500 p-3 disabled:bg-stone-100"
       :id="name"
       :name="name"
-      class="w-full rounded-sm border border-stone-500 p-3 disabled:bg-stone-100"
+      :value="form.values[name]"
       v-bind="$attrs"
     ></textarea>
 

@@ -17,10 +17,15 @@ const form = useForm({
   name_zh: '',
   name_en: '',
 })
+
+async function load() {
+  const user = app.auth.userOrFail()
+  Object.assign(form.values, user)
+}
 </script>
 
 <template>
-  <PageLayout mode="auth">
+  <PageLayout mode="auth" :options="{ onInitialized: () => load() }">
     <Head>
       <title v-if="$app.lang.zh">配置 | 谜墨</title>
       <title v-else>Config | Mimor</title>
