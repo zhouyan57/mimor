@@ -1,7 +1,5 @@
 # config
 
-config link in menu
-
 Config -- lang
 Config -- name_zh
 Config -- name_en

@@ -47,12 +47,8 @@ defineProps<{ state: State }>()
         </div>
 
         <div class="space-y-2 py-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              v-if="$app.auth.user"
-              href="/projects"
-              class="hover:underline"
-            >
+          <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
+            <Link href="/projects" class="hover:underline">
               <Lang
                 :class="[
                   active && 'decoration-6 underline',
@@ -77,6 +73,22 @@ defineProps<{ state: State }>()
               <Lang>
                 <template #zh>探索</template>
                 <template #en>Explore</template>
+              </Lang>
+            </Link>
+          </MenuItem>
+
+          <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
+            <Link
+              href="/config"
+              class="hover:underline"
+              :class="[
+                active && 'decoration-6 underline',
+                active && 'text-stone-600',
+              ]"
+            >
+              <Lang>
+                <template #zh>配置</template>
+                <template #en>Config</template>
               </Lang>
             </Link>
           </MenuItem>

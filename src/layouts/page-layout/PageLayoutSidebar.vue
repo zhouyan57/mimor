@@ -26,14 +26,14 @@ defineProps<{ state: State }>()
         </Lang>
       </Link>
 
-      <PageLayoutLang :state="state" />
-
       <Link v-if="$app.auth.user" href="/config" class="hover:underline">
         <Lang>
           <template #zh>配置</template>
           <template #en>Config</template>
         </Lang>
       </Link>
+
+      <PageLayoutLang :state="state" />
     </div>
 
     <div class="border-t border-stone-500 pt-2">
