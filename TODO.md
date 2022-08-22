@@ -1,7 +1,5 @@
 # config
 
-FormInput disabled style
-FormTextarea disabled style
 extract FormDivider
 Config -- form display default
 Config -- form -- use FormSelect

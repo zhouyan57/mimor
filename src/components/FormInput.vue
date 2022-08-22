@@ -17,7 +17,7 @@ defineProps<{
       <input
         :id="name"
         :name="name"
-        class="w-full p-3 font-bold"
+        class="w-full p-3 font-bold disabled:bg-stone-100"
         v-bind="$attrs"
       />
 
