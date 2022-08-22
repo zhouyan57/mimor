@@ -25,7 +25,14 @@ export class Form<T extends Values> {
   loadValuesFromEvent(event: Event) {
     const target: any = event.target
     for (const key of Object.keys(this.values)) {
-      ;(this.values as any)[key] = target[key].value
+      if (target.hasOwnProperty(key)) {
+        ;(this.values as any)[key] = target[key].value
+      } else {
+        console.log({
+          who: 'Form.loadValuesFromEvent',
+          message: `The event target does not have key: ${key}`
+        })
+      }
     }
   }
 

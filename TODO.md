@@ -1,14 +1,7 @@
 # configx
 
-
-Config -- form post -- assume backend api
-
-- `app.configs.put`
-
 ConfigRepoRemote.get
 ConfigRepoRemote.put
-
-
 
 init app.auth.config
 

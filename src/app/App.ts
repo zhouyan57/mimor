@@ -4,6 +4,7 @@ import { Lang } from './Lang'
 import { UserRepo } from './users/UserRepo'
 import { ProjectRepo } from './projects/ProjectRepo'
 import { FileRepo } from './files/FileRepo'
+import { ConfigRepo } from './configs/ConfigRepo'
 
 export class App {
   lang = new Lang()
@@ -13,6 +14,7 @@ export class App {
   users = new UserRepo()
   projects = new ProjectRepo()
   files = new FileRepo()
+  configs = new ConfigRepo()
 
   get name(): string {
     return this.lang.zh ? '谜墨' : 'Mimor'

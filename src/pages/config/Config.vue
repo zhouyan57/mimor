@@ -22,8 +22,10 @@ const form = useForm({
 
 async function load() {
   const user = app.auth.userOrFail()
-  Object.assign(form.values, user)
   Object.assign(form.values, {
+    username: user.username,
+    email: user.email,
+    name: user.name,
     lang: app.lang.tag,
   })
 }
@@ -51,7 +53,7 @@ async function load() {
             action: async (values) => {
               if (!$app.auth.user) return
 
-              // await $app.user.config.post(values)
+              await $app.configs.put($app.auth.user.username, values)
             },
           })
         }
