@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
+import FormDivider from '../../components/FormDivider.vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import { useForm } from '../../hooks/useForm'
@@ -55,9 +56,7 @@ const form = useForm({ username: '', name: '', email: '' })
       </template>
     </FormInput>
 
-    <div class="flex flex-col justify-center py-4">
-      <hr class="border-t border-stone-500" />
-    </div>
+    <FormDivider />
 
     <FormButton :disabled="form.processing">
       <Lang>

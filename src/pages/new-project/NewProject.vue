@@ -3,6 +3,7 @@ import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'
+import FormDivider from '../../components/FormDivider.vue'
 import Lang from '../../components/Lang.vue'
 import { useForm } from '../../hooks/useForm'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -63,9 +64,7 @@ const form = useForm({
         </template>
       </FormTextarea>
 
-      <div class="flex flex-col justify-center py-4">
-        <hr class="border-t border-stone-500" />
-      </div>
+      <FormDivider />
 
       <FormButton :disabled="form.processing">
         <Lang>
