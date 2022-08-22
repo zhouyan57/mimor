@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
+import FormDivider from '../../components/FormDivider.vue'
 import { useForm } from '../../hooks/useForm'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
@@ -106,9 +107,7 @@ async function load() {
         </template>
       </FormInput>
 
-      <div class="flex flex-col justify-center py-4">
-        <hr class="border-t border-stone-500" />
-      </div>
+      <FormDivider />
 
       <FormButton :disabled="form.processing">
         <Lang>
