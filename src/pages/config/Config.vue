@@ -53,7 +53,7 @@ async function load() {
         }
       "
     >
-      <FormInput class="w-full" :form="form" name="username" disabled>
+      <FormInput :form="form" name="username" disabled>
         <template #label>
           <Lang>
             <template #zh>用户名</template>
@@ -80,7 +80,7 @@ async function load() {
         </template>
       </FormInput>
 
-      <FormInput class="w-full" :form="form" name="path">
+      <FormInput :form="form" name="path">
         <template #label>
           <Lang>
             <template #zh>语言</template>
