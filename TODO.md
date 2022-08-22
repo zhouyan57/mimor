@@ -1,9 +1,7 @@
-refactor poll
-
-extract `http.post` -- with `output.schema`
-
 auth.register.verify
 auth.login.verify
+
+extract `http.post` -- with `output.schema`
 
 fix FormSelect style -- use headlessui
 PageLayoutLang -- put config lang on change

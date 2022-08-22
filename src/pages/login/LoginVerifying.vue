@@ -13,6 +13,7 @@ const { state, verifying } = defineProps<{
 const router = useRouter()
 
 const { stop } = poll<{ name: string; token: string }>({
+  interval: 3000,
   target: async () => {
     console.log({ who: 'LoginVerifying', message: 'polling' })
     const response = await fetch(verifying.links.verify, {})
@@ -23,7 +24,6 @@ const { stop } = poll<{ name: string; token: string }>({
     await app.auth.saveTokenAndLoad(token)
     router.replace('/projects')
   },
-  interval: 3000,
 })
 
 async function revoke() {
