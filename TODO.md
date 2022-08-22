@@ -1,7 +1,5 @@
 # config
 
-Config use PageLayout
-
 config link in sidebar
 config link in menu
 
