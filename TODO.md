@@ -1,8 +1,8 @@
 # configx
 
-init app.auth.config
+Config -- use `app.auth.config`
 
-- by `app.configs.get`
+ConfigRepo.put -- update auth.config
 
 # rendering
 
