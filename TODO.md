@@ -1,14 +1,14 @@
-# recall
-
-File -- be able to split screen on desktop
-File -- be able to preview all cards
-
 # project and file
 
 ProjectList -- show times in item
 
 ProjectList -- be able to sort projects
 ProjectFileList -- be able to sort files
+
+# recall
+
+File -- be able to split screen on desktop
+File -- be able to preview all cards
 
 # timeline
 
