@@ -11,17 +11,17 @@ defineProps<{ state: State; project: ProjectJson }>()
   <div
     class="flex flex-col overflow-x-auto rounded-sm border border-stone-500 py-3 text-xl"
   >
-    <div class="flex justify-between px-3">
-      <div>
-      <Link
-        :href="`/projects/${project.name}`"
-        class="overflow-x-auto font-bold hover:underline"
-      >
-        {{ project.name }}
-      </Link>
+    <div class="flex items-center justify-between px-3">
+      <div class="overflow-x-auto whitespace-pre">
+        <Link
+          :href="`/projects/${project.name}`"
+          class="overflow-x-auto font-bold hover:underline"
+        >
+          {{ project.name }}
+        </Link>
       </div>
 
-      <div >
+      <div class="ml-1">
         <Link :href="`/projects/${project.name}?recall`">
           <PlayIcon class="h-6 w-6 stroke-1" />
         </Link>

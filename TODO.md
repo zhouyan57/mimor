@@ -4,8 +4,6 @@ LayoutFooter -- just for a padding
 
 # recall
 
-Project -- -- link to `/projects/{name}?recall`
-
 ProjectRecall -- recall a project (all files)
 
 File -- be able to split screen on desktop

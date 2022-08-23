@@ -2,7 +2,9 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
+import { PlayIcon } from '@heroicons/vue/outline'
 import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectFileList from './ProjectFileList.vue'
@@ -20,7 +22,14 @@ defineProps<{ state: State }>()
     </Head>
 
     <template #title>
-      <div class="font-sans">{{ $route.params.name }}</div>
+      <div class="flex items-center justify-between">
+        <div class="font-sans">{{ $route.params.name }}</div>
+        <div>
+          <Link :href="`/projects/${$route.params.name}?recall`">
+            <PlayIcon class="h-6 w-6 stroke-1" />
+          </Link>
+        </div>
+      </div>
     </template>
 
     <div v-if="state.project?.description" class="font-serif text-lg">
