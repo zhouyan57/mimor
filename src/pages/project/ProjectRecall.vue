@@ -10,5 +10,5 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="h-full">hi</div>
+  <div class="h-full">ProjectRecall</div>
 </template>

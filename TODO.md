@@ -2,11 +2,10 @@ move menu button to the bottom left corner
 
 # recall
 
-ProjectRecall -- recall a project (all files)
-
 ProjectListItem -- link to `/projects/{name}?recall`
-
 Project -- -- link to `/projects/{name}?recall`
+
+ProjectRecall -- recall a project (all files)
 
 File -- be able to split screen on desktop
 File -- be able to preview all cards
