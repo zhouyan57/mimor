@@ -1,5 +1,3 @@
-extract PageLayoutControl
-
 extract FileEditorControl
 
 ProjectListControl -- bottom control

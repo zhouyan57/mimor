@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted, reactive } from 'vue'
+import { onMounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { Bars3Icon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import PageLoading from './PageLoading.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
-import PageLayoutMenu from './PageLayoutMenu.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
+import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
-import { wait } from '../../utils/wait'
 
 const { mode, options } = defineProps<{
   mode?: string
@@ -22,16 +19,6 @@ const { mode, options } = defineProps<{
 const router = useRouter()
 
 const state = reactive(new State())
-
-const menuButtonElement = ref<HTMLElement | null>(null)
-
-function clickMenu() {
-  if (menuButtonElement.value) {
-    if (menuButtonElement.value.click instanceof Function) {
-      menuButtonElement.value.click()
-    }
-  }
-}
 
 onMounted(async () => {
   state.loading = true
@@ -85,12 +72,7 @@ function maybeRedirect() {
       </div>
 
       <div class="fixed bottom-20 right-4 z-30 md:hidden">
-        <button
-          class="rounded-full bg-white border border-stone-300 p-3 shadow-md"
-          @click="clickMenu()"
-        >
-          <PageLayoutMenu ref="menuButtonElement" :state="state" />
-        </button>
+        <PageLayoutControl :state="state" />
       </div>
     </div>
   </div>
