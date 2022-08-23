@@ -20,7 +20,7 @@ const state = reactive(new State(options))
         <MimorStmt
           :mimor="state"
           :program="state.program"
-          :node="state.program.current"
+          :element="state.program.current"
         />
       </IsRemembered>
     </div>

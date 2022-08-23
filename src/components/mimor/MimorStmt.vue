@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { isElement, XNode } from '../../libs/x-node'
+import { isElement, XElement } from '../../libs/x-node'
 import { MimorState } from './MimorState'
 import { Program } from './models/Program'
 
-const { mimor, program, node } = defineProps<{
+const {
+  mimor,
+  program,
+  element: node,
+} = defineProps<{
   mimor: MimorState
   program: Program
-  node: XNode
+  element: XElement
 }>()
 
 onMounted(() => {
-  if (!isElement(node)) return
   const effect = program.router.findEffect(node)
   if (!effect) return
   effect({ mimor, program, element: node })
@@ -20,17 +23,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <span v-if="!isElement(node)">{{ node }}</span>
   <component
-    v-else-if="program.router.findCard(node)"
-    :is="program.router.findCard(node)"
+    v-if="program.router.findCard(element)"
+    :is="program.router.findCard(element)"
     :mimor="mimor"
     :program="program"
-    :element="node"
+    :element="element"
   />
-  <div v-else-if="program.router.findEffect(node)"></div>
+  <div v-else-if="program.router.findEffect(element)"></div>
   <div v-else>
     <div class="text-xl font-bold text-red-500">Unknown statement:</div>
-    <pre class="overflow-auto overscroll-contain text-red-500">{{ node }}</pre>
+    <pre class="overflow-auto overscroll-contain text-red-500">{{
+      element
+    }}</pre>
   </div>
 </template>
