@@ -67,8 +67,11 @@ function submit(event: Event) {
           type="submit"
           :disabled="form.processing"
         >
-          <UserCircleIcon v-if="!form.processing" class="h-8 w-8" />
-          <EllipsisHorizontalCircleIcon v-if="form.processing" class="h-8 w-8" />
+          <UserCircleIcon v-if="!form.processing" class="h-8 w-8 stroke-1" />
+          <EllipsisHorizontalCircleIcon
+            v-if="form.processing"
+            class="h-8 w-8 stroke-1"
+          />
         </button>
       </template>
     </FormInput>
