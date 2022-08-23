@@ -30,7 +30,7 @@ defineProps<{ state: State }>()
         <div class="fixed top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
             <XMarkIcon
-              class="h-8 w-8"
+              class="h-8 w-8 stroke-1"
               :class="[active && 'border-4 border-stone-500']"
             />
           </MenuItem>
@@ -172,7 +172,7 @@ defineProps<{ state: State }>()
         <div class="fixed bottom-4 right-2">
           <MenuItem as="div" v-slot="{ active }">
             <XMarkIcon
-              class="h-8 w-8"
+              class="h-8 w-8 stroke-1"
               :class="[active && 'border-4 border-stone-500']"
             />
           </MenuItem>
