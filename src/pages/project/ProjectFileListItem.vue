@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Link from '../../components/Link.vue'
 import type { FileJson } from '../../jsons/FileJson'
-import { PlayIcon } from '@heroicons/vue/outline'
+import { PlayIcon } from '@heroicons/vue/24/outline'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State; file: FileJson }>()

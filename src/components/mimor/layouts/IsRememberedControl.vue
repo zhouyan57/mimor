@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CheckIcon, EyeIcon, XIcon } from '@heroicons/vue/outline'
+import { CheckIcon, EyeIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../../components/Lang.vue'
 import { MimorState } from '../MimorState'
 import { Program } from '../models/Program'
@@ -36,7 +36,7 @@ defineProps<{
         class="flex w-full flex-col items-start border p-3"
         :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
       >
-        <XIcon
+        <XMarkIcon
           class="h-6 w-6"
           :class="[
             mimor.theme.name === 'yellow'

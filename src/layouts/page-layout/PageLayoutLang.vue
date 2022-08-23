@@ -6,7 +6,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/vue'
-import { CheckIcon, SelectorIcon } from '@heroicons/vue/outline'
+import { CheckIcon, ArrowsUpDownIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
@@ -34,7 +34,7 @@ watch(
         <template #en>Lang</template>
       </Lang>
 
-      <SelectorIcon class="h-5 w-5" />
+      <ArrowsUpDownIcon class="h-5 w-5" />
     </ListboxButton>
 
     <Transition

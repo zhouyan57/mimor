@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import PageLayoutLang from './PageLayoutLang.vue'
@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
 <template>
   <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
-      <MenuIcon class="h-7 w-7 text-stone-500" />
+      <Bars3Icon class="h-7 w-7 text-stone-500" />
     </MenuButton>
 
     <Transition
@@ -29,7 +29,7 @@ defineProps<{ state: State }>()
       >
         <div class="fixed top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
-            <XIcon
+            <XMarkIcon
               class="h-8 w-8"
               :class="[active && 'border-4 border-stone-500']"
             />

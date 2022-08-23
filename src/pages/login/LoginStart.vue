@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
-  ArrowCircleRightIcon,
-  DotsCircleHorizontalIcon,
-} from '@heroicons/vue/outline/index.js'
+  UserCircleIcon,
+  EllipsisHorizontalCircleIcon,
+} from '@heroicons/vue/24/outline/index.js'
 import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
@@ -67,8 +67,8 @@ function submit(event: Event) {
           type="submit"
           :disabled="form.processing"
         >
-          <ArrowCircleRightIcon v-if="!form.processing" class="h-8 w-8" />
-          <DotsCircleHorizontalIcon v-if="form.processing" class="h-8 w-8" />
+          <UserCircleIcon v-if="!form.processing" class="h-8 w-8" />
+          <EllipsisHorizontalCircleIcon v-if="form.processing" class="h-8 w-8" />
         </button>
       </template>
     </FormInput>

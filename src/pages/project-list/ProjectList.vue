@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PlusIcon } from '@heroicons/vue/outline'
+import { PlusIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'

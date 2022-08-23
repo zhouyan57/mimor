@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Link from '../../components/Link.vue'
-import { PlayIcon } from '@heroicons/vue/outline'
+import { PlayIcon } from '@heroicons/vue/24/outline'
 import type { ProjectJson } from '../../jsons/ProjectJson'
 import { ProjectListState as State } from './ProjectListState'
 
