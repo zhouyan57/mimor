@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
@@ -8,17 +8,23 @@ import Loading from '../../components/Loading.vue'
 import { ProjectState as State } from './ProjectState'
 import Mimor from '../../components/mimor/Mimor.vue'
 
-const props = defineProps<{ state: State }>()
+const { state } = defineProps<{ state: State }>()
 
 const text = computed(() => {
-  if (!props.state.files) return ''
-  return props.state.files.map((file) => file.content).join('\n')
+  if (!state.files) return ''
+  return state.files.map((file) => file.content).join('\n')
+})
+
+onMounted(async () => {
+  if (!state.files) {
+    await state.load()
+  }
 })
 </script>
 
 <template>
   <Mimor
-    v-if="text"
+    v-if="state.files"
     class="h-screen"
     :options="{
       text,
