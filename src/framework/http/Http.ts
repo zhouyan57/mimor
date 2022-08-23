@@ -3,8 +3,7 @@ import merge from 'lodash/merge'
 import get from 'lodash/get'
 
 export type RequestOptions<O> = {
-  output: { schema: Schema<O> }
-  path?: string
+  output?: { schema: Schema<O>; path?: string }
 } & RequestInit
 
 export class HttpError extends Error {
@@ -58,9 +57,11 @@ export class Http {
       throw new HttpError('response not ok', response)
     }
 
+    if (!options?.output) return undefined
+
     const body = await response.json()
     return options.output.schema.validate(
-      options.path ? get(body, options.path) : body
+      options.output.path ? get(body, options.output.path) : body
     )
   }
 }

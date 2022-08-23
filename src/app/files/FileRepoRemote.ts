@@ -7,9 +7,9 @@ export class FileRepoRemote {
     return app.api.http.get(
       `/users/${username}/projects/${projectName}/files`,
       {
-        path: 'data',
         output: {
           schema: ty.array(FileSchema),
+          path: 'data',
         },
       }
     )
@@ -18,12 +18,7 @@ export class FileRepoRemote {
   async post(username: string, projectName: string, file: FileJson) {
     await app.api.http.post(
       `/users/${username}/projects/${projectName}/files`,
-      {
-        body: JSON.stringify(file),
-        output: {
-          schema: ty.any(),
-        },
-      }
+      { body: JSON.stringify(file) }
     )
   }
 
@@ -46,12 +41,7 @@ export class FileRepoRemote {
   ) {
     await app.api.http.put(
       `/users/${username}/projects/${projectName}/files/${path}`,
-      {
-        body: JSON.stringify(file),
-        output: {
-          schema: ty.any(),
-        },
-      }
+      { body: JSON.stringify(file) }
     )
   }
 }

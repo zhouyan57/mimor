@@ -2,6 +2,7 @@
 import { isElement, XNode } from '../../libs/x-node'
 import { MimorState } from './MimorState'
 import { Program } from './models/Program'
+import MimorText from './MimorText.vue'
 
 defineProps<{
   mimor: MimorState
@@ -11,7 +12,12 @@ defineProps<{
 </script>
 
 <template>
-  <span v-if="!isElement(node)">{{ node }}</span>
+  <MimorText
+    v-if="!isElement(node)"
+    :mimor="mimor"
+    :program="program"
+    :text="node"
+  />
   <component
     v-else-if="program.router.findNode(node)"
     :is="program.router.findNode(node)"
