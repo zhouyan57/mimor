@@ -1,5 +1,3 @@
-extract FileEditorControl
-
 ProjectListControl -- bottom control
 
 ProjectControl -- bottom control
