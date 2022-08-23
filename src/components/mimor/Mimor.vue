@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { Head } from '@vueuse/head'
+import { reactive, computed } from 'vue'
 import IsRemembered from './layouts/IsRemembered.vue'
 import type { MimorOptions } from './MimorState'
 import { MimorState as State } from './MimorState'
@@ -11,6 +12,13 @@ const state = reactive(new State(options))
 
 <template>
   <div class="h-full">
+    <Head>
+      <meta
+        name="theme-color"
+        :content="state.options.fullscreen ? state.theme.color : ''"
+      />
+    </Head>
+
     <div
       v-if="state.program"
       class="h-full overflow-hidden"

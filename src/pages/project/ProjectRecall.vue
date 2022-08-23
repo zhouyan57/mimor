@@ -28,6 +28,7 @@ onMounted(async () => {
     class="h-screen"
     :options="{
       text,
+      fullscreen: true,
       program: {
         onFinished: () => {
           $router.push(`/projects/${state.name}`)

@@ -5,6 +5,7 @@ import { mountRoutes } from './mountRoutes'
 
 export interface MimorOptions {
   text: string
+  fullscreen?: boolean
   program: ProgramOptions
 }
 

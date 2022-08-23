@@ -1,7 +1,3 @@
-ProjectRecall -- set meta theme-color in Mimor fullscreen
-
-- do not forget to undo meta theme-color
-
 # recall
 
 File -- be able to split screen on desktop
