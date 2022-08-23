@@ -1,7 +1,5 @@
 move menu button to the bottom left corner
 
-LayoutFooter -- just for a padding
-
 # recall
 
 ProjectRecall -- recall a project (all files)
