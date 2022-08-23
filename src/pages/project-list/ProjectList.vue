@@ -50,17 +50,6 @@ const state = reactive(new State())
           <template #en>Loading projects...</template>
         </Lang>
       </Loading>
-
-      <div class="fixed bottom-3 right-3 z-10">
-        <Link
-          href="/new-project"
-          :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
-        >
-          <PlusIcon
-            class="h-8 w-8 rounded-full border border-stone-500 bg-white p-2 text-stone-500 shadow hover:bg-stone-100"
-          />
-        </Link>
-      </div>
     </div>
   </PageLayout>
 </template>

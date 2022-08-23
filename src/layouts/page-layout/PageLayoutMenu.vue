@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
 <template>
   <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
-      <Bars3Icon class="h-7 w-7 text-stone-500" />
+      <Bars3Icon class="h-6 w-6 text-stone-500" />
     </MenuButton>
 
     <Transition
@@ -25,7 +25,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <MenuItems
-        class="fixed top-0 right-0 z-50 flex h-screen w-screen flex-col justify-center space-y-2 border-4 bg-white px-2 pb-20"
+        class="fixed top-0 right-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 border-4 bg-white px-2 pb-20"
       >
         <div class="fixed top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
@@ -46,7 +46,7 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div class="space-y-2 py-2">
+        <div class="space-y-2 py-2 flex flex-col items-start">
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link href="/projects" class="hover:underline">
               <Lang
@@ -167,6 +167,15 @@ defineProps<{ state: State }>()
               </Link>
             </MenuItem>
           </div>
+        </div>
+
+        <div class="fixed bottom-4 right-2">
+          <MenuItem as="div" v-slot="{ active }">
+            <XMarkIcon
+              class="h-8 w-8"
+              :class="[active && 'border-4 border-stone-500']"
+            />
+          </MenuItem>
         </div>
       </MenuItems>
     </Transition>

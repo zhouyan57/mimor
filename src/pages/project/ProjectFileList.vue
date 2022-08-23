@@ -36,16 +36,5 @@ defineProps<{ state: State; files: Array<FileJson> }>()
         <ProjectFileListItem :state="state" :file="file" />
       </div>
     </div>
-
-    <div class="fixed bottom-3 right-3 z-10">
-      <Link
-        :href="`/projects/${state.name}/new-file`"
-        :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
-      >
-        <PlusIcon
-          class="h-8 w-8 rounded-full border border-stone-500 bg-white p-2 text-stone-500 shadow hover:bg-stone-100"
-        />
-      </Link>
-    </div>
   </div>
 </template>

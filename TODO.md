@@ -1,4 +1,10 @@
-move menu button to the bottom left corner
+extract PageLayoutControl
+
+extract FileEditorControl
+
+ProjectListControl -- bottom control
+
+ProjectControl -- bottom control
 
 # recall
 
