@@ -8,8 +8,8 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex w-full justify-end border-t border-stone-500 pt-1">
-    <div class="flex space-x-3 self-end text-lg">
+  <div class="flex w-full justify-end border-t border-stone-500 pt-2">
+    <div class="flex space-x-3 self-end text-xl">
       <button
         class="hover:underline"
         :class="[state.saving && 'text-yellow-500']"
@@ -30,7 +30,7 @@ defineProps<{ state: State }>()
             <template #en>Recall</template>
           </Lang>
 
-          <PlayIcon class="h-5 w-5 stroke-1" />
+          <PlayIcon class="h-6 w-6 stroke-1" />
         </div>
       </Link>
     </div>

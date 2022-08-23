@@ -1,5 +1,3 @@
-ProjectListControl -- bottom control
-
 ProjectControl -- bottom control
 
 ProjectRecall -- set meta theme-color in Mimor fullscreen

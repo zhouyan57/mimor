@@ -8,6 +8,7 @@ import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectListItem from './ProjectListItem.vue'
 import { ProjectListState as State } from './ProjectListState'
+import ProjectListControl from './ProjectListControl.vue'
 
 const state = reactive(new State())
 </script>
@@ -38,12 +39,17 @@ const state = reactive(new State())
       </div>
     </template>
 
-    <div class="flex flex-col">
-      <div v-if="state.projects" class="space-y-3">
-        <div v-for="project of state.projects" :key="project.name">
-          <ProjectListItem :state="state" :project="project" />
+    <div class="flex flex-col h-full">
+      <div v-if="state.projects" class="flex flex-col h-full">
+        <div class="h-full flex flex-col overflow-y-auto space-y-3 pb-2">
+          <div v-for="project of state.projects" :key="project.name">
+            <ProjectListItem :state="state" :project="project" />
+          </div>
         </div>
+
+        <ProjectListControl :state="state" />
       </div>
+
       <Loading v-else class="text-xl">
         <Lang>
           <template #zh>项目加载中……</template>
