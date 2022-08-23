@@ -16,7 +16,9 @@ export class Theme {
   }
 
   get color(): string {
-    return (tailwindColors as any)[this.name][300] || '#ffffff'
+    let name = this.name
+    if (name === 'blue') name = 'sky'
+    return (tailwindColors as any)[name][300] || '#ffffff'
   }
 
   get isWhite(): boolean {
