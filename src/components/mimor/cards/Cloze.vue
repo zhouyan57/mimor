@@ -15,7 +15,13 @@ defineProps<{
 <template>
   <div class="text-2xl">
     <span v-for="(child, index) of element.children" :key="index">
-      <span v-if="matchElement(child, { tags: ['blank', '空'] })">
+      <MimorNode
+        v-if="!matchElement(child, { tags: ['blank', '空'] })"
+        :mimor="mimor"
+        :program="program"
+        :node="child"
+      />
+      <span v-else class="px-0.5">
         <MimorNodes
           v-if="program.revealed"
           :mimor="mimor"
@@ -43,7 +49,6 @@ defineProps<{
           >____</span
         >
       </span>
-      <MimorNode v-else :mimor="mimor" :program="program" :node="child" />
     </span>
   </div>
 </template>

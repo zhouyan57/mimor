@@ -9,13 +9,21 @@ const props = defineProps<{
   text: string
 }>()
 
-const parts = computed(() => props.text.trim().split('\n'))
+const isInline = computed(() => !props.text.includes('\n'))
+
+const lines = computed(() => props.text.trim().split('\n'))
+
+function isNewline(line: string): boolean {
+  return line.trim() === ''
+}
 </script>
 
 <template>
-  <span
-    ><span v-for="(part, index) of parts" :key="index"
-      ><span v-if="part.trim()">{{ part }}</span
-      ><span v-else class="block py-1.5"></span></span
-  ></span>
+  <span v-if="isInline">{{ text }}</span>
+  <span v-else>
+    <span v-for="(line, index) of lines" :key="index">
+      <span v-if="isNewline(line)" class="block py-1.5"> </span>
+      <span v-else>{{ line }}</span>
+    </span>
+  </span>
 </template>
