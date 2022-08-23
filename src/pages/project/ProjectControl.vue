@@ -2,7 +2,7 @@
 import Link from '../../components/Link.vue'
 import Lang from '../../components/Lang.vue'
 import { PlusIcon } from '@heroicons/vue/24/outline'
-import { ProjectListState as State } from './ProjectListState'
+import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State }>()
 </script>
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex w-full justify-end border-t border-stone-500 pt-2">
     <div class="flex space-x-3 self-end text-xl">
-      <Link href="/new-project" class="hover:underline">
+      <Link :href="`/projects/${state.name}/new-file`" class="hover:underline">
         <div class="flex items-center space-x-0.5 hover:underline">
           <Lang>
             <template #zh>创建</template>
