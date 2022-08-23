@@ -1,8 +1,9 @@
 move menu button to the bottom left corner
 
+LayoutFooter -- just for a padding
+
 # recall
 
-ProjectListItem -- link to `/projects/{name}?recall`
 Project -- -- link to `/projects/{name}?recall`
 
 ProjectRecall -- recall a project (all files)
