@@ -1,7 +1,3 @@
-# rendering
-
-<code> node
-
 # project and file
 
 ProjectList -- be able to sort projects.
