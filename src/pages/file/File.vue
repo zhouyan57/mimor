@@ -23,10 +23,6 @@ const state = reactive(
 function formatParam(param: string | Array<string>): string {
   return typeof param === 'string' ? param : param.join('/')
 }
-
-function isRecall() {
-  return route.query.recall !== undefined
-}
 </script>
 
 <template>
@@ -52,7 +48,7 @@ function isRecall() {
         </div>
 
         <Link
-          v-if="isRecall()"
+          v-if="$route.query.recall !== undefined"
           mode="replace"
           :href="`/projects/${state.project.name}/files/${state.path}`"
         >
@@ -68,7 +64,7 @@ function isRecall() {
       </div>
     </template>
 
-    <FileRecall v-if="isRecall()" :state="state" />
+    <FileRecall v-if="$route.query.recall !== undefined" :state="state" />
     <FileEditor v-else :state="state" />
   </PageLayout>
 </template>
