@@ -30,7 +30,7 @@ onMounted(() => state.load())
 
       <Mimor
         v-else-if="!state.finished"
-        class="h-full"
+        class="h-full border"
         :key="state.flag.toString()"
         :options="{
           text: state.text,

@@ -13,7 +13,7 @@ const state = reactive(new State(options))
   <div class="h-full">
     <div
       v-if="state.program"
-      class="h-full overflow-hidden border"
+      class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"
     >
       <IsRemembered :mimor="state" :program="state.program">
