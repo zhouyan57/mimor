@@ -15,9 +15,12 @@ may not be good enough when things do.
 
   <answer>
     Write Shameless Green code first.
+
     - TDD will teach us how to do this.
-    - abstraction should be guided by new requirements, keep it simple when there is no new requirements
-    - new design with new abstraction should be achieved by refactoring
+
+    - abstraction should be guided by new requirements, keep it simple when there is no new requirements.
+
+    - new design with new abstraction should be achieved by refactoring.
 
   </answer>
 </question>

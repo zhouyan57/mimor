@@ -1,9 +1,5 @@
 # rendering
 
-support paragraph
-
-- add a break after text ending with two "\n\n"
-
 <code> node
 
 # project and file

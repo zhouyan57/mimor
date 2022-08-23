@@ -15,7 +15,7 @@ defineProps<{
 <template>
   <div>
     <div v-for="(child, index) of element.children" :key="index">
-      <div v-if="matchElement(child, { tags: ['answer', '答'] })">
+      <div v-if="matchElement(child, { tags: ['answer', '答'] })" class="py-2">
         <Transition
           enter-active-class="transition duration-700 ease-in-out"
           enter-from-class="transform transform-gpu opacity-0"
