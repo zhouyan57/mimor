@@ -98,7 +98,7 @@ defineProps<{ state: State }>()
 
         <div class="border-t border-stone-500 py-3">
           <div v-if="$app.auth.user" class="flex items-end justify-between">
-            <div>
+            <div class="flex flex-col items-start">
               <Lang class="font-logo font-bold">
                 <template #zh>
                   <div>
