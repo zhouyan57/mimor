@@ -6,20 +6,20 @@ ProjectListControl -- bottom control
 
 ProjectControl -- bottom control
 
+ProjectRecall -- set meta theme-color in Mimor fullscreen
+
+- do not forget to undo meta theme-color
+
 # recall
 
 File -- be able to split screen on desktop
 File -- be able to preview all cards
 
-File -- recall in fullscreen
-
-- set meta theme-color in Mimor fullscreen
-  - do not forget to undo meta theme-color
-
 # project and file
 
-ProjectList -- be able to sort projects
 ProjectList -- show times in item
+
+ProjectList -- be able to sort projects
 ProjectFileList -- be able to sort files
 
 # timeline
