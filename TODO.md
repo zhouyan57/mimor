@@ -1,9 +1,21 @@
+white as default theme
+
 # project and file
 
 ProjectList -- show times in item
 
 ProjectList -- be able to sort projects
 ProjectFileList -- be able to sort files
+
+# authors
+
+be able to share projects to friends
+
+explore by topics or by authors
+
+# learn
+
+learn about html <span> v.s. <div>
 
 # recall
 
@@ -17,13 +29,3 @@ File -- be able to preview all cards
 # embedded
 
 embedded route for iframe
-
-# authors
-
-be able to share projects to friends
-
-explore by topics or by authors
-
-# learn
-
-learn about html <span> v.s. <div>
