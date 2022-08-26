@@ -6,7 +6,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <button class="rounded-full bg-white border border-stone-300 p-3 shadow-md">
+  <button class="rounded-full border border-stone-300 bg-white p-3 shadow-md">
     <PageLayoutMenu :state="state" />
   </button>
 </template>

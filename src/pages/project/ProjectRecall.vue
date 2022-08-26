@@ -39,7 +39,7 @@ onMounted(async () => {
 
   <Loading
     v-else
-    class="flex flex-col h-screen justify-center items-center text-xl"
+    class="flex h-screen flex-col items-center justify-center text-xl"
   >
     <Lang>
       <template #zh>回顾加载中……</template>

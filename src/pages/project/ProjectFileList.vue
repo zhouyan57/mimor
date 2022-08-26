@@ -10,7 +10,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 </script>
 
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex h-full flex-col">
     <div class="border-b border-stone-500 py-1">
       <div class="flex items-center space-x-2">
         <Lang class="font-logo text-xl font-bold">
@@ -31,7 +31,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
       </div>
     </div>
 
-    <div class="space-y-2 py-2 h-full overflow-y-auto">
+    <div class="h-full space-y-2 overflow-y-auto py-2">
       <div v-for="file in files" :key="file.path">
         <ProjectFileListItem :state="state" :file="file" />
       </div>

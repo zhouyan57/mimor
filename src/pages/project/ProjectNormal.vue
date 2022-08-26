@@ -32,15 +32,15 @@ defineProps<{ state: State }>()
       </div>
     </template>
 
-    <div class="flex flex-col h-full justify-between">
+    <div class="flex h-full flex-col justify-between">
       <div
         v-if="state.project?.description"
-        class="font-serif max-h-max text-xl"
+        class="max-h-max font-serif text-xl"
       >
         {{ state.project.description }}
       </div>
 
-      <div class="overflow-y-auto h-full">
+      <div class="h-full overflow-y-auto">
         <ProjectFileList
           v-if="state.files"
           :state="state"

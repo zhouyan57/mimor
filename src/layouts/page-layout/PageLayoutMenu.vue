@@ -46,7 +46,7 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div class="space-y-2 py-2 flex flex-col items-start">
+        <div class="flex flex-col items-start space-y-2 py-2">
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link href="/projects" class="hover:underline">
               <Lang
