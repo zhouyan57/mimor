@@ -3,8 +3,21 @@ import Link from '../../components/Link.vue'
 import { PlayIcon } from '@heroicons/vue/24/outline'
 import type { ProjectJson } from '../../jsons/ProjectJson'
 import { ProjectListState as State } from './ProjectListState'
+import { formatDate, formatAgo } from '../../utils/formatDate'
 
 defineProps<{ state: State; project: ProjectJson }>()
+
+function projectFormatAgo(project: ProjectJson): string {
+  if (project.created_at) {
+    return formatAgo(project.created_at, { lang: app.lang.tag })
+  }
+
+  if (project.updated_at) {
+    return formatAgo(project.updated_at, { lang: app.lang.tag })
+  }
+
+  return formatAgo(new Date(), { lang: app.lang.tag })
+}
 </script>
 
 <template>
@@ -30,6 +43,10 @@ defineProps<{ state: State; project: ProjectJson }>()
 
     <div v-if="project.description" class="px-3 font-serif">
       {{ project.description }}
+    </div>
+
+    <div class="flex flex-col items-end px-3 pt-1.5 text-lg">
+      {{ projectFormatAgo(project) }}
     </div>
   </div>
 </template>

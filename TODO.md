@@ -1,9 +1,22 @@
 # project and file
 
-ProjectList -- show times in item
+ProjectList -- last update at the top
+ProjectFileList -- last update at the top
 
-ProjectList -- be able to sort projects
-ProjectFileList -- be able to sort files
+`this.memory.post` should use returned data
+
+- [backend] post should return data `created_at`
+
+  ```
+  const data = await this.remote.post(username, project)
+  await this.memory.post(username, data)
+  ```
+
+[maybe] quit abstract over fetch
+
+- the abstraction is to shallow
+- for better error report
+
 
 # authors
 
