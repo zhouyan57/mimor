@@ -1,17 +1,22 @@
-# project and file
-
-ProjectList -- update project when edit files in it
-
-[maybe] quit abstract over fetch
+quit abstract over fetch
 
 - the abstraction is to shallow
 - for better error report
+- note about this in STYLE-GUIDE
+
+[mobile] menu on mobile should push route history
+
+# project and file
+
+ProjectList -- update project when edit files in it
 
 # authors
 
 be able to share projects to friends
 
 explore by topics or by authors
+
+[backend] user can not edit other user's projects and files
 
 # learn
 
