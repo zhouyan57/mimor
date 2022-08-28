@@ -16,7 +16,7 @@ function projectFormatAgo(project: ProjectJson): string {
   <div
     class="flex flex-col overflow-x-auto rounded-sm border border-stone-500 py-2 text-xl"
   >
-    <div class="flex items-center justify-between px-3 py-2">
+    <div class="flex items-center justify-between px-3 py-1">
       <div class="overflow-x-auto whitespace-pre">
         <Link
           :href="`/projects/${project.name}`"
@@ -33,11 +33,11 @@ function projectFormatAgo(project: ProjectJson): string {
       </div>
     </div>
 
-    <div v-if="project.description" class="px-3 py-2 font-serif">
+    <div v-if="project.description" class="px-3 py-1 font-serif">
       {{ project.description }}
     </div>
 
-    <div class="flex flex-col items-end px-3 py-2 text-lg">
+    <div class="flex flex-col items-end px-3 py-1 text-lg">
       {{ projectFormatAgo(project) }}
     </div>
   </div>
