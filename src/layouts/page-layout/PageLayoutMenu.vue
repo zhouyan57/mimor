@@ -61,7 +61,6 @@ defineProps<{ state: State }>()
             </Link>
           </MenuItem>
 
-          
           <MenuItem as="div" v-slot="{ active }">
             <Link
               href="/authors"
@@ -78,7 +77,7 @@ defineProps<{ state: State }>()
             </Link>
           </MenuItem>
 
-<MenuItem as="div" v-slot="{ active }">
+          <MenuItem as="div" v-slot="{ active }">
             <Link
               href="/explore"
               class="hover:underline"
@@ -93,7 +92,6 @@ defineProps<{ state: State }>()
               </Lang>
             </Link>
           </MenuItem>
-
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link

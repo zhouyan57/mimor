@@ -3,11 +3,10 @@ ProjectList -- update project when edit files in it
 
 # authors
 
-AuthorList use PageLayout
-`/authors/{authorName}` route
+[backend] user can not edit other user's projects and files
 be able to share projects to friends
 explore by topics or by authors
-[backend] user can not edit other user's projects and files
+`/authors/{authorName}` route
 
 # recall
 
