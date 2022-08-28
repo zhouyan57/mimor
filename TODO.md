@@ -1,9 +1,5 @@
 quit abstract over fetch
 
-- the abstraction is to shallow
-- for better error report
-- note about this in STYLE-GUIDE
-
 [mobile] menu on mobile should push route history
 
 # project and file
