@@ -11,6 +11,7 @@ import File from './file/File.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
 import Register from './register/Register.vue'
+import AuthorList from './author-list/AuthorList.vue'
 import RegisterEmailSuccess from './register/RegisterEmailSuccess.vue'
 
 // prettier-ignore
@@ -21,6 +22,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/projects/:name', component: Project },
   { path: '/projects/:name/new-file', component: NewFile },
   { path: '/projects/:name/files/:pathParts(.*)*', component: File },
+  { path: '/authors', component: AuthorList },
   { path: '/config', component: Config },
   { path: '/explore', component: Explore },
   { path: '/register', component: Register },
