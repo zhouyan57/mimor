@@ -25,7 +25,7 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <MenuItems
-        class="fixed top-0 left-0 z-40 flex h-screen w-5/6 flex-col justify-center space-y-2 border-4 border-stone-300 bg-white bg-white px-2 pb-20 shadow-lg"
+        class="fixed top-0 left-0 z-40 flex h-screen w-11/12 flex-col justify-center space-y-2 border-4 border-stone-300 bg-white bg-white px-2 pb-20 shadow-lg"
       >
         <div class="absolute top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
