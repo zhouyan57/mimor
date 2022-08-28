@@ -19,17 +19,17 @@ defineProps<{ state: State }>()
         </Lang>
       </Link>
 
-      <Link href="/explore" class="hover:underline">
-        <Lang>
-          <template #zh>探索</template>
-          <template #en>Explore</template>
-        </Lang>
-      </Link>
-
       <Link href="/authors" class="hover:underline">
         <Lang>
           <template #zh>作者</template>
           <template #en>Authors</template>
+        </Lang>
+      </Link>
+
+      <Link href="/explore" class="hover:underline">
+        <Lang>
+          <template #zh>探索</template>
+          <template #en>Explore</template>
         </Lang>
       </Link>
 

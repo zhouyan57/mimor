@@ -61,22 +61,7 @@ defineProps<{ state: State }>()
             </Link>
           </MenuItem>
 
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              href="/explore"
-              class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>探索</template>
-                <template #en>Explore</template>
-              </Lang>
-            </Link>
-          </MenuItem>
-
+          
           <MenuItem as="div" v-slot="{ active }">
             <Link
               href="/authors"
@@ -92,6 +77,23 @@ defineProps<{ state: State }>()
               </Lang>
             </Link>
           </MenuItem>
+
+<MenuItem as="div" v-slot="{ active }">
+            <Link
+              href="/explore"
+              class="hover:underline"
+              :class="[
+                active && 'decoration-6 underline',
+                active && 'text-stone-600',
+              ]"
+            >
+              <Lang>
+                <template #zh>探索</template>
+                <template #en>Explore</template>
+              </Lang>
+            </Link>
+          </MenuItem>
+
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link
