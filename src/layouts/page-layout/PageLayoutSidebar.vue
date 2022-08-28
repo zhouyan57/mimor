@@ -26,6 +26,13 @@ defineProps<{ state: State }>()
         </Lang>
       </Link>
 
+      <Link href="/authors" class="hover:underline">
+        <Lang>
+          <template #zh>作者</template>
+          <template #en>Authors</template>
+        </Lang>
+      </Link>
+
       <Link v-if="$app.auth.user" href="/config" class="hover:underline">
         <Lang>
           <template #zh>配置</template>

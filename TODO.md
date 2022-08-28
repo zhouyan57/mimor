@@ -3,7 +3,6 @@ ProjectList -- update project when edit files in it
 
 # authors
 
-link to `/authors`
 AuthorList use PageLayout
 `/authors/{authorName}` route
 be able to share projects to friends
