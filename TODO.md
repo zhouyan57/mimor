@@ -2,20 +2,10 @@
 
 ProjectList -- update project when edit files in it
 
-`this.memory.post` should use returned data
-
-- [backend] post should return data `created_at`
-
-  ```
-  const data = await this.remote.post(username, project)
-  await this.memory.post(username, data)
-  ```
-
 [maybe] quit abstract over fetch
 
 - the abstraction is to shallow
 - for better error report
-
 
 # authors
 

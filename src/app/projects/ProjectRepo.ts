@@ -20,8 +20,8 @@ export class ProjectRepo {
   }
 
   async post(username: string, project: ProjectJson) {
-    await this.remote.post(username, project)
-    await this.memory.post(username, project)
+    const data = await this.remote.post(username, project)
+    if (data) await this.memory.post(username, data)
   }
 
   async get(username: string, name: string) {
