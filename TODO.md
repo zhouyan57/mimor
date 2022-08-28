@@ -1,5 +1,4 @@
 ProjectList -- update project when edit files in it
-[mobile] menu on mobile should push route history
 
 # authors
 

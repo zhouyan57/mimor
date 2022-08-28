@@ -25,9 +25,9 @@ defineProps<{ state: State }>()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <MenuItems
-        class="fixed top-0 right-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 border-4 bg-white px-2 pb-20"
+        class="fixed top-0 left-0 z-40 flex h-screen w-5/6 flex-col justify-center space-y-2 border-4 border-stone-300 bg-white bg-white px-2 pb-20 shadow-lg"
       >
-        <div class="fixed top-2 left-2">
+        <div class="absolute top-2 left-2">
           <MenuItem as="div" v-slot="{ active }">
             <XMarkIcon
               class="h-8 w-8 stroke-1"
@@ -36,7 +36,7 @@ defineProps<{ state: State }>()
           </MenuItem>
         </div>
 
-        <div class="fixed top-0 right-3">
+        <div class="absolute top-0 right-3">
           <MenuItem as="div" v-slot="{ active }">
             <PageLayoutLogo
               class="font-light"
@@ -115,7 +115,7 @@ defineProps<{ state: State }>()
         <div class="border-t border-stone-500 py-3">
           <div v-if="$app.auth.user" class="flex items-end justify-between">
             <div class="flex flex-col items-start">
-              <Lang class="font-logo font-bold">
+              <Lang class="overflow-x-auto whitespace-pre font-logo font-bold">
                 <template #zh>
                   <div>
                     {{ $app.auth.config?.name_zh || $app.auth.user.name }}
@@ -128,7 +128,9 @@ defineProps<{ state: State }>()
                 </template>
               </Lang>
 
-              <div class="text-xl text-stone-600">
+              <div
+                class="overflow-x-auto whitespace-pre text-xl text-stone-600"
+              >
                 {{ $app.auth.user.username }}
               </div>
             </div>
@@ -183,15 +185,6 @@ defineProps<{ state: State }>()
               </Link>
             </MenuItem>
           </div>
-        </div>
-
-        <div class="fixed bottom-4 right-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <XMarkIcon
-              class="h-8 w-8 stroke-1"
-              :class="[active && 'border-4 border-stone-500']"
-            />
-          </MenuItem>
         </div>
       </MenuItems>
     </Transition>
