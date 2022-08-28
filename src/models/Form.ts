@@ -1,4 +1,4 @@
-import { HttpError } from '../framework/http'
+import { HttpError } from '../errors/HttpError'
 
 export type Values = Record<string, string>
 

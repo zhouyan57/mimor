@@ -1,11 +1,16 @@
 import { UserSchema } from '../../jsons/UserJson'
+import { HttpError } from '../../errors/HttpError'
 
 export class UserRepoRemote {
   async current() {
-    return app.api.http.get(`/user`, {
-      output: {
-        schema: UserSchema,
-      },
+    const response = await fetch(`${app.api.url}/user`, {
+      headers: app.api.headers,
     })
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return UserSchema.validate(await response.json())
   }
 }

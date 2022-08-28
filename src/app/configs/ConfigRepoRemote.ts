@@ -1,17 +1,28 @@
-import { ty } from '@xieyuheng/ty'
 import { ConfigJson, ConfigSchema } from '../../jsons/ConfigJson'
-import { wait } from '../../utils/wait'
+import { HttpError } from '../../errors/HttpError'
 
 export class ConfigRepoRemote {
   async get(username: string) {
-    return await app.api.http.get(`/users/${username}/config`, {
-      output: { schema: ConfigSchema },
+    const response = await fetch(`${app.api.url}/users/${username}/config`, {
+      headers: app.api.headers,
     })
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return ConfigSchema.validate(await response.json())
   }
 
   async put(username: string, config: Partial<ConfigJson>) {
-    await app.api.http.put(`/users/${username}/config`, {
+    const response = await fetch(`${app.api.url}/users/${username}/config`, {
+      method: 'PUT',
+      headers: app.api.headers,
       body: JSON.stringify(config),
     })
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
   }
 }

@@ -1,36 +1,56 @@
 import { ty } from '@xieyuheng/ty'
 import { FileSchema } from '../../jsons/FileJson'
 import { FileJson } from '../../jsons/FileJson'
+import { HttpError } from '../../errors/HttpError'
 
 export class FileRepoRemote {
   async all(username: string, projectName: string) {
-    return app.api.http.get(
-      `/users/${username}/projects/${projectName}/files`,
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${projectName}/files`,
       {
-        output: {
-          schema: ty.array(FileSchema),
-          path: 'data',
-        },
+        headers: app.api.headers,
       }
     )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    const { data } = await response.json()
+
+    return ty.array(FileSchema).validate(data)
   }
 
   async post(username: string, projectName: string, file: FileJson) {
-    await app.api.http.post(
-      `/users/${username}/projects/${projectName}/files`,
-      { body: JSON.stringify(file) }
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${projectName}/files`,
+      {
+        method: 'POST',
+        headers: app.api.headers,
+        body: JSON.stringify(file),
+      }
     )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return FileSchema.validate(await response.json())
   }
 
   async get(username: string, projectName: string, path: string) {
-    return app.api.http.get(
-      `/users/${username}/projects/${projectName}/files/${path}`,
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${projectName}/files/${path}`,
       {
-        output: {
-          schema: FileSchema,
-        },
+        headers: app.api.headers,
       }
     )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return FileSchema.validate(await response.json())
   }
 
   async put(
@@ -39,9 +59,17 @@ export class FileRepoRemote {
     path: string,
     file: FileJson
   ) {
-    await app.api.http.put(
-      `/users/${username}/projects/${projectName}/files/${path}`,
-      { body: JSON.stringify(file) }
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${projectName}/files/${path}`,
+      {
+        method: 'PUT',
+        headers: app.api.headers,
+        body: JSON.stringify(file),
+      }
     )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
   }
 }
