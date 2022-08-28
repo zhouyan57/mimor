@@ -10,4 +10,8 @@ export class ProjectListState {
 
     this.projects = await app.safe(() => app.projects.all(user.username))
   }
+
+  get sortedProjects(): Array<ProjectJson> | undefined {
+    return this.projects && app.projects.sortByDate(this.projects)
+  }
 }

@@ -8,23 +8,15 @@ import { formatDate, formatAgo } from '../../utils/formatDate'
 defineProps<{ state: State; project: ProjectJson }>()
 
 function projectFormatAgo(project: ProjectJson): string {
-  if (project.created_at) {
-    return formatAgo(project.created_at, { lang: app.lang.tag })
-  }
-
-  if (project.updated_at) {
-    return formatAgo(project.updated_at, { lang: app.lang.tag })
-  }
-
-  return formatAgo(new Date(), { lang: app.lang.tag })
+  return formatAgo(app.projects.date(project), { lang: app.lang.tag })
 }
 </script>
 
 <template>
   <div
-    class="flex flex-col overflow-x-auto rounded-sm border border-stone-500 py-3 text-xl"
+    class="flex flex-col overflow-x-auto rounded-sm border border-stone-500 py-2 text-xl"
   >
-    <div class="flex items-center justify-between px-3">
+    <div class="flex items-center justify-between px-3 py-2">
       <div class="overflow-x-auto whitespace-pre">
         <Link
           :href="`/projects/${project.name}`"
@@ -41,11 +33,11 @@ function projectFormatAgo(project: ProjectJson): string {
       </div>
     </div>
 
-    <div v-if="project.description" class="px-3 font-serif">
+    <div v-if="project.description" class="px-3 py-2 font-serif">
       {{ project.description }}
     </div>
 
-    <div class="flex flex-col items-end px-3 pt-1.5 text-lg">
+    <div class="flex flex-col items-end px-3 py-2 text-lg">
       {{ projectFormatAgo(project) }}
     </div>
   </div>

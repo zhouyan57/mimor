@@ -42,7 +42,7 @@ const state = reactive(new State())
     <div class="flex h-full flex-col">
       <div v-if="state.projects" class="flex h-full flex-col">
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
-          <div v-for="project of state.projects" :key="project.name">
+          <div v-for="project of state.sortedProjects" :key="project.name">
             <ProjectListItem :state="state" :project="project" />
           </div>
         </div>

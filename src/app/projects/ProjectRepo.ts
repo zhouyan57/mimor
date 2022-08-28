@@ -36,4 +36,22 @@ export class ProjectRepo {
 
     return project
   }
+
+  sortByDate(projects: Array<ProjectJson>): Array<ProjectJson> {
+    return projects.sort((left, right) => {
+      return this.date(right).getTime() - this.date(left).getTime()
+    })
+  }
+
+  date(project: ProjectJson): Date {
+    if (project.created_at) {
+      return new Date(project.created_at)
+    }
+
+    if (project.updated_at) {
+      return new Date(project.updated_at)
+    }
+
+    return new Date()
+  }
 }
