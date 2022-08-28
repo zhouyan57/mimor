@@ -1,10 +1,6 @@
-quit abstract over fetch
-
-[mobile] menu on mobile should push route history
-
-# project and file
-
+quit abstract over `fetch`
 ProjectList -- update project when edit files in it
+[mobile] menu on mobile should push route history
 
 # authors
 
