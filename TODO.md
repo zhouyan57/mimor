@@ -1,6 +1,6 @@
 # project and file
 
-ProjectFileList -- last update at the top
+ProjectList -- update project when edit files in it
 
 `this.memory.post` should use returned data
 

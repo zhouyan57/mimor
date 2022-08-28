@@ -1,5 +1,6 @@
 import { FileJson } from '../../jsons/FileJson'
 import { ProjectJson } from '../../jsons/ProjectJson'
+import { comparePath } from '../../utils/comparePath'
 
 export class ProjectState {
   project?: ProjectJson
@@ -25,6 +26,13 @@ export class ProjectState {
 
     this.files = await app.safe(() =>
       app.files.all(user.username, this.options.name)
+    )
+  }
+
+  get sortedFiles(): Array<FileJson> | undefined {
+    return (
+      this.files &&
+      this.files.sort((left, right) => comparePath(left.path, right.path))
     )
   }
 }

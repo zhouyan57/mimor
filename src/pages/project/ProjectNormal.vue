@@ -42,9 +42,9 @@ defineProps<{ state: State }>()
 
       <div class="h-full overflow-y-auto">
         <ProjectFileList
-          v-if="state.files"
+          v-if="state.sortedFiles"
           :state="state"
-          :files="state.files"
+          :files="state.sortedFiles"
         />
         <Loading v-else class="text-xl">
           <Lang>
