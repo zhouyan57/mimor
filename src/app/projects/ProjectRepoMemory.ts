@@ -40,4 +40,11 @@ export class ProjectRepoMemory {
     this.map.get(key)?.delete(name)
     this.map.get(key)?.set(project.name, project)
   }
+
+  async touch(username: string, name: string) {
+    const project = await this.get(username, name)
+    if (project) {
+      project.updated_at = new Date().toISOString()
+    }
+  }
 }

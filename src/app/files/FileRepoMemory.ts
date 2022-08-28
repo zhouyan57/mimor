@@ -32,6 +32,7 @@ export class FileRepoMemory {
 
   async post(username: string, projectName: string, file: FileJson) {
     await this.put(username, projectName, file.path, file)
+    await app.projects.memory.touch(username, projectName)
   }
 
   async get(username: string, projectName: string, path: string) {
@@ -49,5 +50,6 @@ export class FileRepoMemory {
     this.map.set(key, this.map.get(key) || new Map())
     this.map.get(key)?.delete(path)
     this.map.get(key)?.set(file.path, file)
+    await app.projects.memory.touch(username, projectName)
   }
 }

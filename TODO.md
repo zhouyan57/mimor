@@ -1,5 +1,3 @@
-ProjectList -- update project when edit files in it
-
 # authors
 
 [backend] user can not edit other user's projects and files

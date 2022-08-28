@@ -44,12 +44,12 @@ export class ProjectRepo {
   }
 
   date(project: ProjectJson): Date {
-    if (project.created_at) {
-      return new Date(project.created_at)
-    }
-
     if (project.updated_at) {
       return new Date(project.updated_at)
+    }
+
+    if (project.created_at) {
+      return new Date(project.created_at)
     }
 
     return new Date()
