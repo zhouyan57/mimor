@@ -1,5 +1,3 @@
-white as default theme
-
 # project and file
 
 ProjectList -- show times in item

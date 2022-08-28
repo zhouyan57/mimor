@@ -10,7 +10,7 @@ export interface MimorOptions {
 }
 
 export class MimorState {
-  theme = new Theme('orange')
+  theme = new Theme('white')
   program?: Program
   error?: Error
   parsingError?: ParsingError
