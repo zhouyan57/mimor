@@ -1,8 +1,15 @@
 # authors
 
+explore has tabs
+
+- topics
+- authors
+
+move to `explore/authors`
+
 [backend] user can not edit other user's projects and files
 be able to share projects to friends
-explore by topics or by authors
+
 `/authors/{authorName}` route
 
 # recall
