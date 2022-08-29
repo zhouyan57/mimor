@@ -1,16 +1,21 @@
 # authors
 
-explore has tabs
+authors as top level route for projects
 
-- topics
-- authors
+`/authors/{username}` redirect to `/authors/{username}/projects` for now
 
-move to `explore/authors`
-
-[backend] user can not edit other user's projects and files
 be able to share projects to friends
 
-`/authors/{authorName}` route
+- projects should not be limited to `auth` user
+
+[backend] user can not edit other user's projects and files
+
+# explore
+
+explore has tabs
+
+- `explore/authors`
+- `explore/topics`
 
 # recall
 
