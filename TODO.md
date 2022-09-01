@@ -1,6 +1,3 @@
-new-project -- only for self
-new-file -- only for self
-
 AuthorList -- list of all users with pagination
 project page show user name
 [backend] user can not edit other user's projects and files

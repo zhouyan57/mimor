@@ -10,7 +10,7 @@ import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
 const { options, auth, guest } = defineProps<{
-  auth?: boolean
+  auth?: boolean | { username: string }
   guest?: boolean
   options?: {
     onInitialized?: (state: State) => Promise<void>
@@ -35,12 +35,22 @@ onMounted(async () => {
 })
 
 function maybeRedirect() {
-  if (auth && !app.auth.user) {
-    router.replace('/')
+  if (auth) {
+    if (!app.auth.user) {
+      router.replace('/')
+    }
+
+    if (typeof auth === 'object' && app.auth.user) {
+      if (auth.username !== app.auth.user.username) {
+        router.replace('/')
+      }
+    }
   }
 
-  if (guest && app.auth.user) {
-    router.replace('/')
+  if (guest) {
+    if (app.auth.user) {
+      router.replace('/')
+    }
   }
 }
 </script>

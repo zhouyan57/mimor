@@ -29,7 +29,7 @@ function submit(event: Event) {
 </script>
 
 <template>
-  <PageLayout auth>
+  <PageLayout :auth="{ username: $route.params.username as string }">
     <Head>
       <title v-if="$app.lang.zh">新项目 | 谜墨</title>
       <title v-else>New Project | Mimor</title>
