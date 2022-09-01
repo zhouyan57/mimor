@@ -1,12 +1,3 @@
-# homepage
-
-homepage has tabs in title line
-
-- `authors`
-- `topics`
-
-homepage link to about
-
 # authors
 
 authors as top level route for projects

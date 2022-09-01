@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { onMounted, reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { HomeState as State } from './HomeState'
@@ -19,10 +20,28 @@ onMounted(() => state.load())
     </Head>
 
     <template #title>
-      <Lang>
-        <template #zh>首页</template>
-        <template #en>Home</template>
-      </Lang>
+      <div class="flex space-x-2">
+        <Link href="/" class="hover:underline">
+          <Lang>
+            <template #zh>首页</template>
+            <template #en>Home</template>
+          </Lang>
+        </Link>
+
+        <Link href="/authors" class="hover:underline">
+          <Lang>
+            <template #zh>作者</template>
+            <template #en>Authors</template>
+          </Lang>
+        </Link>
+
+        <Link href="/about" class="hover:underline">
+          <Lang>
+            <template #zh>关于</template>
+            <template #en>About</template>
+          </Lang>
+        </Link>
+      </div>
     </template>
 
     <div class="flex h-full flex-col">
