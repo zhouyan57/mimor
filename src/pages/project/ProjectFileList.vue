@@ -18,7 +18,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
           <template #en>Files</template>
         </Lang>
 
-        <div        v-if="$app.auth.user?.username === $route.params.username">
+        <div v-if="$app.auth.user?.username === $route.params.username">
           <Link
             :href="`/authors/${$route.params.username}/projects/${state.name}/new-file`"
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
