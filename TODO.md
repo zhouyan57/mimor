@@ -1,16 +1,11 @@
-# explore
+# homepage
 
+homepage has tabs in title line
 
+- `authors`
+- `topics`
 
-`/` redirect to explore
-
-explore has tabs
-
-- `explore/authors`
-- `explore/topics`
-
-homepage has tabs
-homepage as explore
+homepage link to about
 
 # authors
 

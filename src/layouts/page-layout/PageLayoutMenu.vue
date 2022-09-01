@@ -47,6 +47,22 @@ defineProps<{ state: State }>()
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
+          <MenuItem as="div" v-slot="{ active }">
+            <Link
+              href="/"
+              class="hover:underline"
+              :class="[
+                active && 'decoration-6 underline',
+                active && 'text-stone-600',
+              ]"
+            >
+              <Lang>
+                <template #zh>首页</template>
+                <template #en>Home</template>
+              </Lang>
+            </Link>
+          </MenuItem>
+
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link href="/projects" class="hover:underline">
               <Lang
@@ -61,37 +77,7 @@ defineProps<{ state: State }>()
             </Link>
           </MenuItem>
 
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              href="/authors"
-              class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>作者</template>
-                <template #en>Authors</template>
-              </Lang>
-            </Link>
-          </MenuItem>
 
-          <MenuItem as="div" v-slot="{ active }">
-            <Link
-              href="/explore"
-              class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>探索</template>
-                <template #en>Explore</template>
-              </Lang>
-            </Link>
-          </MenuItem>
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link

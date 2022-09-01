@@ -12,24 +12,18 @@ defineProps<{ state: State }>()
     <div
       class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2"
     >
+
+      <Link href="/" class="hover:underline">
+        <Lang>
+          <template #zh>首页</template>
+          <template #en>Home</template>
+        </Lang>
+      </Link>
+
       <Link v-if="$app.auth.user" href="/projects" class="hover:underline">
         <Lang>
           <template #zh>项目</template>
           <template #en>Projects</template>
-        </Lang>
-      </Link>
-
-      <Link href="/authors" class="hover:underline">
-        <Lang>
-          <template #zh>作者</template>
-          <template #en>Authors</template>
-        </Lang>
-      </Link>
-
-      <Link href="/explore" class="hover:underline">
-        <Lang>
-          <template #zh>探索</template>
-          <template #en>Explore</template>
         </Lang>
       </Link>
 
