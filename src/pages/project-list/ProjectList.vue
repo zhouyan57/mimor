@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
+import { useRouter, useRoute } from 'vue-router'
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
@@ -10,7 +11,13 @@ import ProjectListItem from './ProjectListItem.vue'
 import { ProjectListState as State } from './ProjectListState'
 import ProjectListControl from './ProjectListControl.vue'
 
-const state = reactive(new State())
+const route = useRoute()
+
+const state = reactive(
+  new State({
+    username: route.params.username as string,
+  })
+)
 </script>
 
 <template>

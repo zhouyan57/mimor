@@ -3,6 +3,11 @@ import { ProjectJson } from '../../jsons/ProjectJson'
 
 export class ProjectListState {
   projects?: Array<ProjectJson>
+  username: string
+
+  constructor(options: { username: string }) {
+    this.username = options.username
+  }
 
   async load() {
     const user = app.auth.user
