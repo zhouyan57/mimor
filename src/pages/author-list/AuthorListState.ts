@@ -1,15 +1,7 @@
-type Author = {
-  username: string
-  name: string
-  config: {
-    lang: string | null
-    name_zh: string | null
-    name_en: string | null
-  }
-}
+import { AuthorJson } from '../../jsons/AuthorJson'
 
 export class AuthorListState {
-  authors?: Array<Author>
+  authors?: Array<AuthorJson>
 
   async load() {
     const result = await app.safe(() => app.users.search({ page: 1 }))

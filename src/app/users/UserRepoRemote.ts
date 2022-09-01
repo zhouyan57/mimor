@@ -27,4 +27,16 @@ export class UserRepoRemote {
 
     return await response.json()
   }
+
+  async get(username: string) {
+    const response = await fetch(`${app.api.url}/users/${username}`, {
+      headers: app.api.headers,
+    })
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return UserSchema.validate(await response.json())
+  }
 }
