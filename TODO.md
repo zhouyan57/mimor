@@ -1,6 +1,5 @@
-project -- only edit self
+add prettier to pre-commit hook
 file -- only edit self
-
 new-project -- only for self
 new-file -- only for self
 
