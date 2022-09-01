@@ -28,8 +28,6 @@ export class FileState {
 
     await app.safe(async () => {
       if (this.file) {
-
-
         await app.files.put(
           this.username,
           this.project.name,
