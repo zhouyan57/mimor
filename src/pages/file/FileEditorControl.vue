@@ -11,6 +11,7 @@ defineProps<{ state: State }>()
   <div class="flex w-full justify-end border-t border-stone-500 pt-2">
     <div class="flex space-x-3 self-end text-xl">
       <button
+        v-if="$app.auth.user?.username === $route.params.username"
         class="hover:underline"
         :class="[state.saving && 'text-yellow-500']"
         @click="state.save()"

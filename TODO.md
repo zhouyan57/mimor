@@ -1,4 +1,3 @@
-file -- only edit self
 new-project -- only for self
 new-file -- only for self
 
