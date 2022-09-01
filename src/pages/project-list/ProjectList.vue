@@ -47,6 +47,11 @@ const state = reactive(
     </template>
 
     <div class="flex h-full flex-col">
+      <div v-if="state.author" class="flex h-full flex-col">
+        <div>{{ state.author.username }}</div>
+        <div>{{ state.author.name }}</div>
+      </div>
+
       <div v-if="state.projects" class="flex h-full flex-col">
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
           <div v-for="project of state.sortedProjects" :key="project.name">

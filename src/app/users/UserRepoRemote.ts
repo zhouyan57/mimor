@@ -1,4 +1,5 @@
 import { UserSchema } from '../../jsons/UserJson'
+import { AuthorSchema } from '../../jsons/AuthorJson'
 import { HttpError } from '../../errors/HttpError'
 
 export class UserRepoRemote {
@@ -37,6 +38,6 @@ export class UserRepoRemote {
       throw new HttpError('response not ok', response)
     }
 
-    return UserSchema.validate(await response.json())
+    return AuthorSchema.validate(await response.json())
   }
 }

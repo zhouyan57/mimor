@@ -10,4 +10,8 @@ export class UserRepo {
   async search(options: { page: number }) {
     return this.remote.search(options)
   }
+
+  async get(username: string) {
+    return this.remote.get(username)
+  }
 }
