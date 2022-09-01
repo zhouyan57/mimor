@@ -1,3 +1,5 @@
+ProjectListState -- has `user` and `config`
+
 project-list -- show user name
 project -- show user name
 project -- link to go back project-list
