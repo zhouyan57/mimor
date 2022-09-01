@@ -11,6 +11,7 @@ defineProps<{ state: State }>()
   <div class="flex w-full justify-end border-t border-stone-500 pt-2">
     <div class="flex space-x-3 self-end text-xl">
       <Link
+        v-if="$app.auth.user?.username === $route.params.username"
         :href="`/authors/${$route.params.username}/new-project`"
         class="hover:underline"
       >

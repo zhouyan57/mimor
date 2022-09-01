@@ -1,4 +1,3 @@
-project-list -- only edit self
 project -- only edit self
 file -- only edit self
 

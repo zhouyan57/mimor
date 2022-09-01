@@ -33,7 +33,7 @@ const state = reactive(
           <template #zh>项目</template>
           <template #en>Projects</template>
         </Lang>
-        <div>
+        <div v-if="$app.auth.user?.username === $route.params.username">
           <Link
             :href="`/authors/${$route.params.username}/new-project`"
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
