@@ -1,3 +1,17 @@
+# explore
+
+
+
+`/` redirect to explore
+
+explore has tabs
+
+- `explore/authors`
+- `explore/topics`
+
+homepage has tabs
+homepage as explore
+
 # authors
 
 authors as top level route for projects
@@ -9,13 +23,6 @@ be able to share projects to friends
 - projects should not be limited to `auth` user
 
 [backend] user can not edit other user's projects and files
-
-# explore
-
-explore has tabs
-
-- `explore/authors`
-- `explore/topics`
 
 # recall
 

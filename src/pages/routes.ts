@@ -3,6 +3,7 @@ import PageNotFound from './errors/PageNotFound.vue'
 import Explore from './explore/Explore.vue'
 import Config from './config/Config.vue'
 import Home from './home/Home.vue'
+import About from './about/About.vue'
 import Login from './login/Login.vue'
 import LoginEmailSuccess from './login/LoginEmailSuccess.vue'
 import NewFile from './new-file/NewFile.vue'
@@ -17,6 +18,7 @@ import RegisterEmailSuccess from './register/RegisterEmailSuccess.vue'
 // prettier-ignore
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
+  { path: '/about', component: About },
   { path: '/projects', component: ProjectList },
   { path: '/new-project', component: NewProject },
   { path: '/projects/:name', component: Project },
