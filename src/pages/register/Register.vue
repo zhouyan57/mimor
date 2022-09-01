@@ -10,7 +10,7 @@ const state = reactive(new State())
 </script>
 
 <template>
-  <PageLayout mode="guest">
+  <PageLayout guest>
     <Head>
       <title v-if="$app.lang.zh">注册 | 谜墨</title>
       <title v-else>Register | Mimor</title>

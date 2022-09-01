@@ -9,9 +9,9 @@ import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
-const { mode, options, auth } = defineProps<{
-  mode?: string
+const { options, auth, guest } = defineProps<{
   auth?: boolean
+  guest?: boolean
   options?: {
     onInitialized?: (state: State) => Promise<void>
   }
@@ -39,8 +39,8 @@ function maybeRedirect() {
     router.replace('/')
   }
 
-  if (mode === 'guest' && app.auth.user) {
-    router.replace('/projects')
+  if (guest && app.auth.user) {
+    router.replace('/')
   }
 }
 </script>

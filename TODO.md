@@ -1,7 +1,3 @@
-PageLayout take `guest` instead of `mode="guest"`
-
-- remove `mode`
-
 new-project -- only for self
 new-file -- only for self
 
