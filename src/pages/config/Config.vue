@@ -44,7 +44,7 @@ async function load() {
 </script>
 
 <template>
-  <PageLayout mode="auth" :options="{ onInitialized: () => load() }">
+  <PageLayout auth :options="{ onInitialized: () => load() }">
     <Head>
       <title v-if="$app.lang.zh">配置 | 谜墨</title>
       <title v-else>Config | Mimor</title>

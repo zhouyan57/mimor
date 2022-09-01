@@ -9,8 +9,9 @@ import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
-const { mode, options } = defineProps<{
+const { mode, options, auth } = defineProps<{
   mode?: string
+  auth?: boolean
   options?: {
     onInitialized?: (state: State) => Promise<void>
   }
@@ -34,7 +35,7 @@ onMounted(async () => {
 })
 
 function maybeRedirect() {
-  if (mode === 'auth' && !app.auth.user) {
+  if (auth && !app.auth.user) {
     router.replace('/')
   }
 

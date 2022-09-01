@@ -15,7 +15,6 @@ const form = useForm({
 })
 
 const router = useRouter()
-const route = useRoute()
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
@@ -23,14 +22,14 @@ function submit(event: Event) {
 
     await app.projects.post(app.auth.user.username, values)
     router.replace(
-      `/authors/${route.params.username}/projects/${form.values.name}`
+      `/authors/${app.auth.user.username}/projects/${form.values.name}`
     )
   })
 }
 </script>
 
 <template>
-  <PageLayout mode="auth">
+  <PageLayout auth>
     <Head>
       <title v-if="$app.lang.zh">新项目 | 谜墨</title>
       <title v-else>New Project | Mimor</title>
