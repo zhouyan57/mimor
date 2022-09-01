@@ -1,5 +1,8 @@
+project-list -- show user name
+project -- show user name
+project -- link to go back project-list
+file -- link to go back project -- more easy to see
 AuthorList -- list of all users with pagination
-project page show user name
 [backend] user can not edit other user's projects and files
 
 # recall
@@ -14,3 +17,8 @@ user can add project into his timeline
 # embedded
 
 embedded route for iframe
+
+# homepage
+
+improve homepage
+docs in homepage
