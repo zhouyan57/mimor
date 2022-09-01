@@ -35,7 +35,7 @@ onMounted(async () => {
 
 function maybeRedirect() {
   if (mode === 'auth' && !app.auth.user) {
-    router.replace('/explore')
+    router.replace('/')
   }
 
   if (mode === 'guest' && app.auth.user) {

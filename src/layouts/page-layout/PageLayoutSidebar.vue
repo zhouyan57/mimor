@@ -69,7 +69,7 @@ defineProps<{ state: State }>()
           @click="
             () => {
               $app.auth.logout()
-              $router.replace('/explore')
+              $router.replace('/')
             }
           "
         >
