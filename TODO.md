@@ -1,13 +1,7 @@
-project-list & project should not be limited to `auth` user
-
-file-list should not be limited to `auth` user
-file should not be limited to `auth` user
-
-project-list only edit self
-project only edit self
-
-file-list only edit self
-file only edit self
+project-list & project -- not be limited to `auth` user
+file -- not be limited to `auth` user
+project-list & project -- only edit self
+file -- only edit self
 
 AuthorList -- list of all users with pagination
 project page show user name

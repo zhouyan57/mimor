@@ -13,10 +13,9 @@ const route = useRoute()
 
 const state = reactive(
   new State({
+    username: route.params.username as string,
     path: formatParam(route.params.pathParts),
-    project: {
-      name: formatParam(route.params.name),
-    },
+    project: { name: route.params.name as string },
   })
 )
 

@@ -3,30 +3,23 @@ import { FileJson } from '../../jsons/FileJson'
 export class FileState {
   file?: FileJson
   saving = false
+  username: string
+  path: string
+  project: { name: string }
 
-  constructor(
-    public options: {
-      path: string
-      project: {
-        name: string
-      }
-    }
-  ) {}
-
-  get path() {
-    return this.options.path
-  }
-
-  get project() {
-    return this.options.project
+  constructor(options: {
+    username: string
+    path: string
+    project: { name: string }
+  }) {
+    this.username = options.username
+    this.path = options.path
+    this.project = options.project
   }
 
   async load() {
-    const user = app.auth.user
-    if (!user) return
-
     this.file = await app.safe(() =>
-      app.files.get(user.username, this.project.name, this.path)
+      app.files.get(this.username, this.project.name, this.path)
     )
   }
 
@@ -35,11 +28,10 @@ export class FileState {
 
     await app.safe(async () => {
       if (this.file) {
-        const user = app.auth.user
-        if (!user) return
+
 
         await app.files.put(
-          user.username,
+          this.username,
           this.project.name,
           this.file.path,
           this.file
