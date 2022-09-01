@@ -1,4 +1,3 @@
-project -- not be limited to `auth` user
 file -- not be limited to `auth` user
 
 project-list -- only edit self

@@ -15,7 +15,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <PageLayout mode="auth" :options="{ onInitialized: () => state.load() }">
+  <PageLayout :options="{ onInitialized: () => state.load() }">
     <Head v-if="$route.params.name">
       <title v-if="$app.lang.zh">{{ $route.params.name }} | 谜墨</title>
       <title v-else>{{ $route.params.name }} | Mimor</title>
