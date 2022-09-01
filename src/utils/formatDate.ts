@@ -70,7 +70,7 @@ export function formatDetla(t: number, options: { lang: string }): string {
   const d = Math.floor(h / 24)
 
   if (d) return lang.startsWith('zh') ? `${d} 天前` : `${d} days ago`
-  if (h) return lang.startsWith('zh') ? `${d} 小时前` : `${h} hours ago`
-  if (m) return lang.startsWith('zh') ? `${d} 分钟前` : `${m} minutes ago`
+  if (h) return lang.startsWith('zh') ? `${h} 小时前` : `${h} hours ago`
+  if (m) return lang.startsWith('zh') ? `${m} 分钟前` : `${m} minutes ago`
   else return lang.startsWith('zh') ? `刚才` : `just now`
 }
