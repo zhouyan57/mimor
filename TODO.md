@@ -1,6 +1,8 @@
-project-list & project -- not be limited to `auth` user
+project -- not be limited to `auth` user
 file -- not be limited to `auth` user
-project-list & project -- only edit self
+
+project-list -- only edit self
+project -- only edit self
 file -- only edit self
 
 AuthorList -- list of all users with pagination

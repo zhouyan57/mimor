@@ -21,7 +21,7 @@ const state = reactive(
 </script>
 
 <template>
-  <PageLayout mode="auth" :options="{ onInitialized: () => state.load() }">
+  <PageLayout :options="{ onInitialized: () => state.load() }">
     <Head>
       <title v-if="$app.lang.zh">项目 | 谜墨</title>
       <title v-else>Projects | Mimor</title>
