@@ -10,7 +10,7 @@ defineProps<{ state: State; file: FileJson }>()
 <template>
   <div class="flex w-full justify-between py-0.5">
     <Link
-      :href="`/projects/${state.name}/files/${file.path}`"
+      :href="`/authors/${$route.params.username}/projects/${state.name}/files/${file.path}`"
       class="overflow-x-auto overflow-y-hidden whitespace-pre font-bold hover:underline"
     >
       {{ file.path }}
@@ -22,7 +22,9 @@ defineProps<{ state: State; file: FileJson }>()
         <div class="w-full border-t border-dashed border-stone-500"></div>
       </div>
 
-      <Link :href="`/projects/${state.name}/files/${file.path}?recall`">
+      <Link
+        :href="`/authors/${$route.params.username}/projects/${state.name}/files/${file.path}?recall`"
+      >
         <PlayIcon class="h-5 w-5 stroke-1 p-px" />
       </Link>
     </div>

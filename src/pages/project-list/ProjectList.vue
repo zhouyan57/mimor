@@ -28,7 +28,7 @@ const state = reactive(new State())
         </Lang>
         <div>
           <Link
-            href="/new-project"
+            :href="`/authors/${$route.params.username}/new-project`"
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
           >
             <PlusIcon

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormTextarea from '../../components/FormTextarea.vue'
@@ -15,14 +15,16 @@ const form = useForm({
 })
 
 const router = useRouter()
+const route = useRoute()
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
     if (!app.auth.user) return
 
     await app.projects.post(app.auth.user.username, values)
-
-    router.replace(`/projects/${form.values.name}`)
+    router.replace(
+      `/authors/${route.params.username}/projects/${form.values.name}`
+    )
   })
 }
 </script>

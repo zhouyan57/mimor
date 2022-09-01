@@ -27,7 +27,7 @@ function submit(event: Event) {
     })
 
     router.replace(
-      `/projects/${route.params.name}/files/${form.values.path}.mimor`
+      `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}.mimor`
     )
   })
 }

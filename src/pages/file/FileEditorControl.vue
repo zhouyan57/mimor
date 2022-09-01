@@ -22,7 +22,7 @@ defineProps<{ state: State }>()
       </button>
 
       <Link
-        :href="`/projects/${state.project.name}/files/${state.path}?recall`"
+        :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?recall`"
       >
         <div class="flex items-center space-x-0.5 hover:underline">
           <Lang>

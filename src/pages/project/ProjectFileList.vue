@@ -20,7 +20,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
 
         <div>
           <Link
-            :href="`/projects/${state.name}/new-file`"
+            :href="`/authors/${$route.params.username}/projects/${state.name}/new-file`"
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
           >
             <PlusIcon

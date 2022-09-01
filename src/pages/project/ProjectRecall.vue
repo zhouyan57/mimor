@@ -31,7 +31,9 @@ onMounted(async () => {
       fullscreen: true,
       program: {
         onFinished: () => {
-          $router.push(`/projects/${state.name}`)
+          $router.push(
+            `/authors/${$route.params.username}/projects/${state.name}`
+          )
         },
       },
     }"

@@ -61,7 +61,10 @@ defineProps<{ state: State }>()
           </MenuItem>
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
-            <Link href="/projects" class="hover:underline">
+            <Link
+              :href="`/authors/${$app.auth.user.username}/projects`"
+              class="hover:underline"
+            >
               <Lang
                 :class="[
                   active && 'decoration-6 underline',

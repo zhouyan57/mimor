@@ -38,7 +38,7 @@ function formatParam(param: string | Array<string>): string {
           class="flex w-full overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
         >
           <Link
-            :href="`/projects/${state.project.name}`"
+            :href="`/authors/${$route.params.username}/projects/${state.project.name}`"
             class="font-bold hover:underline"
           >
             {{ state.project.name }}
@@ -50,14 +50,14 @@ function formatParam(param: string | Array<string>): string {
         <Link
           v-if="$route.query.recall !== undefined"
           mode="replace"
-          :href="`/projects/${state.project.name}/files/${state.path}`"
+          :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}`"
         >
           <PencilIcon class="h-5 w-5 stroke-1" />
         </Link>
         <Link
           v-else
           mode="replace"
-          :href="`/projects/${state.project.name}/files/${state.path}?recall`"
+          :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?recall`"
         >
           <PlayIcon class="h-5 w-5 stroke-1" />
         </Link>

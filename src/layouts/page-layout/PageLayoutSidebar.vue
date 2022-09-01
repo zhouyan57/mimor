@@ -19,7 +19,11 @@ defineProps<{ state: State }>()
         </Lang>
       </Link>
 
-      <Link v-if="$app.auth.user" href="/projects" class="hover:underline">
+      <Link
+        v-if="$app.auth.user"
+        :href="`/authors/${$app.auth.user.username}/projects`"
+        class="hover:underline"
+      >
         <Lang>
           <template #zh>项目</template>
           <template #en>Projects</template>

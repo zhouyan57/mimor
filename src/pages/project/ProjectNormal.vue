@@ -25,7 +25,9 @@ defineProps<{ state: State }>()
       <div class="flex items-center justify-between">
         <div class="font-sans">{{ $route.params.name }}</div>
         <div>
-          <Link :href="`/projects/${$route.params.name}?recall`">
+          <Link
+            :href="`/authors/${$route.params.username}/projects/${$route.params.name}?recall`"
+          >
             <PlayIcon class="h-6 w-6 stroke-1" />
           </Link>
         </div>

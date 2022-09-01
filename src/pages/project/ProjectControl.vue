@@ -10,7 +10,10 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex w-full justify-end border-t border-stone-500 pt-2">
     <div class="flex space-x-3 self-end text-xl">
-      <Link :href="`/projects/${state.name}/new-file`" class="hover:underline">
+      <Link
+        :href="`/authors/${$route.params.username}/projects/${state.name}/new-file`"
+        class="hover:underline"
+      >
         <div class="flex items-center space-x-0.5 hover:underline">
           <Lang>
             <template #zh>创建</template>

@@ -19,7 +19,7 @@ function projectFormatAgo(project: ProjectJson): string {
     <div class="flex items-center justify-between px-3 py-1">
       <div class="overflow-x-auto whitespace-pre">
         <Link
-          :href="`/projects/${project.name}`"
+          :href="`/authors/${$route.params.username}/projects/${project.name}`"
           class="overflow-x-auto font-bold hover:underline"
         >
           {{ project.name }}
@@ -27,7 +27,9 @@ function projectFormatAgo(project: ProjectJson): string {
       </div>
 
       <div class="ml-1">
-        <Link :href="`/projects/${project.name}?recall`">
+        <Link
+          :href="`/authors/${$route.params.username}/projects/${project.name}?recall`"
+        >
           <PlayIcon class="h-6 w-6 stroke-1" />
         </Link>
       </div>
