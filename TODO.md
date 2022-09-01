@@ -1,13 +1,9 @@
 # authors
 
 authors as top level route for projects
-
 `/authors/{username}` redirect to `/authors/{username}/projects` for now
-
 be able to share projects to friends
-
 - projects should not be limited to `auth` user
-
 [backend] user can not edit other user's projects and files
 
 # recall

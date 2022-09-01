@@ -12,7 +12,6 @@ defineProps<{ state: State }>()
     <div
       class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2"
     >
-
       <Link href="/" class="hover:underline">
         <Lang>
           <template #zh>首页</template>

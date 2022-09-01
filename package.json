@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.6.7",
-    "@heroicons/vue": "^2.0.8",
+    "@heroicons/vue": "^2.0.10",
     "@rgrove/parse-xml": "^3.0.0",
     "@vueuse/core": "^9.1.1",
     "@vueuse/head": "^0.7.9",
@@ -20,7 +20,7 @@
     "lodash": "^4.17.21",
     "register-service-worker": "^1.7.2",
     "tailwindcss": "^3.1.8",
-    "vue": "^3.2.37",
+    "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
@@ -34,9 +34,9 @@
     "prettier-plugin-organize-imports": "^3.1.0",    
     "typescript": "^4.8.2",
     "vite": "^3.0.9",
-    "vite-plugin-pwa": "^0.12.3",
+    "vite-plugin-pwa": "^0.12.4",
     "vite-plugin-rewrite-all": "^1.0.0",
     "vitest": "^0.22.1",
-    "vue-tsc": "^0.40.3"
+    "vue-tsc": "^0.40.5"
   }
 }

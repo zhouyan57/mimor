@@ -28,11 +28,8 @@ defineProps<{ state: State }>()
         class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white bg-white px-2 pb-20"
       >
         <div class="absolute top-2 left-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <XMarkIcon
-              class="h-10 w-10 stroke-1"
-              :class="[active && 'border-4 border-stone-500']"
-            />
+          <MenuItem as="div">
+            <XMarkIcon class="h-10 w-10 stroke-1" />
           </MenuItem>
         </div>
 
@@ -76,8 +73,6 @@ defineProps<{ state: State }>()
               </Lang>
             </Link>
           </MenuItem>
-
-
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
             <Link
