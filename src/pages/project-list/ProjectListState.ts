@@ -1,4 +1,3 @@
-import { use } from 'chai'
 import { ProjectJson } from '../../jsons/ProjectJson'
 
 export class ProjectListState {
