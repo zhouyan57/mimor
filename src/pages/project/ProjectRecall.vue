@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import { PlusIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
-import { FileJson } from '../../jsons/FileJson'
 import Loading from '../../components/Loading.vue'
 import { ProjectState as State } from './ProjectState'
 import Mimor from '../../components/mimor/Mimor.vue'

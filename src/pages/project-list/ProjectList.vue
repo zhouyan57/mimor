@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'

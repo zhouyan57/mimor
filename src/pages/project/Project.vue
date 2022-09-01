@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
-import Lang from '../../components/Lang.vue'
-import Loading from '../../components/Loading.vue'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectNormal from './ProjectNormal.vue'
 import ProjectRecall from './ProjectRecall.vue'
 import { ProjectState as State } from './ProjectState'

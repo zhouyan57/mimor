@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { reactive } from 'vue'
-import { useRoute } from 'vue-router'
 import { PlayIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
