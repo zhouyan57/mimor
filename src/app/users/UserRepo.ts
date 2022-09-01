@@ -6,4 +6,8 @@ export class UserRepo {
   async current() {
     return this.remote.current()
   }
+
+  async search(options: { page: number }) {
+    return this.remote.search(options)
+  }
 }
