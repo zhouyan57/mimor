@@ -1,5 +1,4 @@
-project-list should not be limited to `auth` user
-project should not be limited to `auth` users
+project-list & project should not be limited to `auth` user
 
 file-list should not be limited to `auth` user
 file should not be limited to `auth` user

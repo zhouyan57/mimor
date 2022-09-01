@@ -10,10 +10,7 @@ export class ProjectListState {
   }
 
   async load() {
-    const user = app.auth.user
-    if (!user) return
-
-    this.projects = await app.safe(() => app.projects.all(user.username))
+    this.projects = await app.safe(() => app.projects.all(this.username))
   }
 
   get sortedProjects(): Array<ProjectJson> | undefined {

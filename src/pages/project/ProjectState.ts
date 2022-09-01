@@ -14,14 +14,11 @@ export class ProjectState {
   }
 
   async load() {
-    const user = app.auth.user
-    if (!user) return
-
     this.project = await app.safe(() =>
-      app.projects.get(user.username, this.name)
+      app.projects.get(this.username, this.name)
     )
 
-    this.files = await app.safe(() => app.files.all(user.username, this.name))
+    this.files = await app.safe(() => app.files.all(this.username, this.name))
   }
 
   get sortedFiles(): Array<FileJson> | undefined {
