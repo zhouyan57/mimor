@@ -8,7 +8,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex h-full flex-col justify-between pr-4 text-2xl">
+  <div class="flex h-full flex-col justify-between pr-4">
     <div
       class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2"
     >
@@ -46,7 +46,7 @@ defineProps<{ state: State }>()
         class="flex min-w-max items-end justify-between"
       >
         <div>
-          <Lang class="font-logo font-bold">
+          <Lang class="font-logo text-2xl font-bold">
             <template #zh>
               <div>
                 {{ $app.auth.config?.name_zh || $app.auth.user.name }}

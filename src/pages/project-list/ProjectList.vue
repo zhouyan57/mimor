@@ -47,9 +47,23 @@ const state = reactive(
     </template>
 
     <div class="flex h-full flex-col">
-      <div v-if="state.author" class="flex h-full flex-col">
-        <div>{{ state.author.username }}</div>
-        <div>{{ state.author.name }}</div>
+      <div v-if="state.author" class="flex h-full flex-col py-2">
+        <Lang class="font-logo text-2xl font-bold">
+          <template #zh>
+            <div>
+              {{ state.author.config?.name_zh || state.author.name }}
+            </div>
+          </template>
+          <template #en>
+            <div>
+              {{ state.author.config?.name_en || state.author.name }}
+            </div>
+          </template>
+        </Lang>
+
+        <div class="text-xl text-stone-600">
+          {{ state.author.username }}
+        </div>
       </div>
 
       <div v-if="state.projects" class="flex h-full flex-col">
