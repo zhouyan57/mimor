@@ -20,7 +20,7 @@ const state = reactive(new State())
 
     <div class="flex h-full flex-col">
       <div v-if="state.authors" class="flex h-full flex-col">
-        <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
+        <div class="flex h-full flex-col space-y-2 overflow-y-auto pb-2">
           <div v-for="author of state.authors" :key="author.name">
             <AuthorListItem :state="state" :author="author" />
           </div>

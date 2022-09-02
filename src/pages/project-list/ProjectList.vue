@@ -47,7 +47,7 @@ const state = reactive(
     </template>
 
     <div class="flex h-full flex-col">
-      <div v-if="state.author" class="flex h-full flex-col py-2">
+      <div v-if="state.author" class="flex h-full flex-col pb-2">
         <Lang class="font-logo text-2xl font-bold">
           <template #zh>
             <div>

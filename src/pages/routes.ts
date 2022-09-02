@@ -19,7 +19,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/authors', component: AuthorList },
-  { path: '/authors/:username', redirect: '/authors/:username/projects' },
+  { path: '/authors/:username', redirect: ({params}) => `/authors/${params.username}/projects` },
   { path: '/authors/:username/projects', component: ProjectList },
   { path: '/authors/:username/new-project', component: NewProject },
   { path: '/authors/:username/projects/:name', component: Project },

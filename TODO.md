@@ -1,13 +1,11 @@
-AuthorListItem -- link to author page
+AuthorListItem -- fix style
 
-- which redirect to author's projects for now
+menu -- link to author page
+sidebar -- link to author page
 
 project -- show user name
-
 project -- link to go back project-list
-
 file -- link to go back project -- more easy to see
-
 AuthorList -- handle pagination
 
 # recall
