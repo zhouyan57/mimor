@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex h-full flex-col justify-between pr-4">
     <div
-      class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2"
+      class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2 text-2xl"
     >
       <Link href="/" class="hover:underline">
         <Lang>

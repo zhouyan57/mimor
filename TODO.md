@@ -1,18 +1,12 @@
-project-list -- show user name -- fix style
+AuthorListItem -- link to author page
 
-- change by lang
+- which redirect to author's projects for now
 
 project -- show user name
 
 project -- link to go back project-list
 
 file -- link to go back project -- more easy to see
-
-extract AuthorListItem
-
-AuthorListItem -- link to author page
-
-- which redirect to author's projects for now
 
 AuthorList -- handle pagination
 

@@ -4,6 +4,7 @@ import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import Loading from '../../components/Loading.vue'
 import { AuthorListState as State } from './AuthorListState'
+import AuthorListItem from './AuthorListItem.vue'
 
 const state = reactive(new State())
 </script>
@@ -21,7 +22,7 @@ const state = reactive(new State())
       <div v-if="state.authors" class="flex h-full flex-col">
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
           <div v-for="author of state.authors" :key="author.name">
-            {{ author }}
+            <AuthorListItem :state="state" :author="author" />
           </div>
         </div>
       </div>
