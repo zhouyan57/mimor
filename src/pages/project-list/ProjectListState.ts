@@ -12,7 +12,7 @@ export class ProjectListState {
 
   async load() {
     this.projects = await app.safe(() => app.projects.all(this.username))
-    this.author = await app.safe(() => app.users.get(this.username))
+    this.author = await app.safe(() => app.authors.get(this.username))
   }
 
   get sortedProjects(): Array<ProjectJson> | undefined {

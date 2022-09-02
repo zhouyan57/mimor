@@ -1,5 +1,3 @@
-`app.authors` instead of `app.users`
-
 project-list -- show user name -- fix style
 project -- show user name
 project -- link to go back project-list
