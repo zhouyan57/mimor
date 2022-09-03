@@ -44,7 +44,7 @@ export class FileRepoMemory {
     username: string,
     projectName: string,
     path: string,
-    file: FileJson
+    file: FileJson,
   ) {
     const key = this.key(username, projectName)
     this.map.set(key, this.map.get(key) || new Map())

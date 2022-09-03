@@ -13,7 +13,7 @@ export function formatDate(t: Date | number | string): string {
 
 export function formatTime(
   t: Date | number | string,
-  opts?: { withMilliseconds?: boolean }
+  opts?: { withMilliseconds?: boolean },
 ): string {
   if (typeof t === 'string') t = new Date(t)
   if (typeof t === 'number') t = new Date(t)
@@ -33,7 +33,7 @@ export function formatTime(
 
 export function formatDateTime(
   t: Date | number,
-  opts?: { withMilliseconds?: boolean }
+  opts?: { withMilliseconds?: boolean },
 ): string {
   if (typeof t === 'number') t = new Date(t)
 
@@ -45,7 +45,7 @@ export function formatDateTime(
 
 export function formatAgo(
   t: Date | number | string,
-  options: { lang: string }
+  options: { lang: string },
 ): string {
   if (typeof t === 'string') t = new Date(t)
   if (typeof t === 'number') t = new Date(t)

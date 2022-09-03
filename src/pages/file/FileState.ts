@@ -19,7 +19,7 @@ export class FileState {
 
   async load() {
     this.file = await app.safe(() =>
-      app.files.get(this.username, this.project.name, this.path)
+      app.files.get(this.username, this.project.name, this.path),
     )
   }
 
@@ -32,7 +32,7 @@ export class FileState {
           this.username,
           this.project.name,
           this.file.path,
-          this.file
+          this.file,
         )
       }
     })

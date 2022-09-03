@@ -15,7 +15,7 @@ export class ProjectState {
 
   async load() {
     this.project = await app.safe(() =>
-      app.projects.get(this.username, this.name)
+      app.projects.get(this.username, this.name),
     )
 
     this.files = await app.safe(() => app.files.all(this.username, this.name))

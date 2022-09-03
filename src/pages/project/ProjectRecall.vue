@@ -29,7 +29,7 @@ onMounted(async () => {
       program: {
         onFinished: () => {
           $router.push(
-            `/authors/${$route.params.username}/projects/${state.name}`
+            `/authors/${$route.params.username}/projects/${state.name}`,
           )
         },
       },

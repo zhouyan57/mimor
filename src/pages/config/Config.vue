@@ -22,7 +22,7 @@ watch(
   () => app.lang.tag,
   () => {
     form.values.lang = app.lang.tag
-  }
+  },
 )
 
 async function load() {

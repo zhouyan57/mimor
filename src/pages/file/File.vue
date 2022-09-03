@@ -16,7 +16,7 @@ const state = reactive(
     username: route.params.username as string,
     path: formatParam(route.params.pathParts),
     project: { name: route.params.name as string },
-  })
+  }),
 )
 
 function formatParam(param: string | Array<string>): string {

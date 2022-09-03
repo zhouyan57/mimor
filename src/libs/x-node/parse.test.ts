@@ -9,7 +9,7 @@ test('basic', () => {
 note
 
 <answer> hi </answer>
-`
+`,
   )
 
   expect(nodes).toEqual([
@@ -33,7 +33,7 @@ test('Chinese tag name', () => {
 note
 
 <答> hi </答>
-`
+`,
   )
 
   expect(nodes).toEqual([
@@ -53,7 +53,7 @@ test('Self closing tag', () => {
   const nodes = parseNodes(
     `
 <主题 颜色="青" />
-`
+`,
   )
 
   expect(nodes).toEqual([
@@ -83,7 +83,7 @@ test('namespace prefix', () => {
 <question theme:color="red">
   Q
 </question>
-`
+`,
   )
 
   expect(nodes).toEqual([

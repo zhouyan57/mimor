@@ -12,7 +12,7 @@ export function isElement(node: XNode): node is XElement {
 
 export function matchElement(
   node: XNode,
-  options: { tags: Array<string> }
+  options: { tags: Array<string> },
 ): node is XElement {
   if (!isElement(node)) return false
 

@@ -23,14 +23,14 @@ export function h(...args: Args): XElement {
   }
 
   throw new Error(
-    `[x-node internal error] unknown args: ${JSON.stringify(args)}`
+    `[x-node internal error] unknown args: ${JSON.stringify(args)}`,
   )
 }
 
 type NormalArgs = [
   tag: string,
   attributes: Record<string, string>,
-  children: Array<XNode>
+  children: Array<XNode>,
 ]
 
 function isNormalArgs(args: Args): args is NormalArgs {
@@ -52,7 +52,7 @@ function isTagChildrenArgs(args: Args): args is TagChildrenArgs {
 type TagAttributesRestArgs = [
   tag: string,
   attributes: Record<string, string>,
-  ...rest: Array<XNode>
+  ...rest: Array<XNode>,
 ]
 
 function isTagAttributesRestArgs(args: Args): args is TagAttributesRestArgs {

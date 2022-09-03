@@ -43,7 +43,7 @@ export class FileRepo {
     username: string,
     projectName: string,
     path: string,
-    file: FileJson
+    file: FileJson,
   ) {
     await this.remote.put(username, projectName, path, file)
     await this.memory.put(username, projectName, path, file)

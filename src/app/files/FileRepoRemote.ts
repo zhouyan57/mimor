@@ -9,7 +9,7 @@ export class FileRepoRemote {
       `${app.api.url}/users/${username}/projects/${projectName}/files`,
       {
         headers: app.api.headers,
-      }
+      },
     )
 
     if (!response.ok) {
@@ -28,7 +28,7 @@ export class FileRepoRemote {
         method: 'POST',
         headers: app.api.headers,
         body: JSON.stringify(file),
-      }
+      },
     )
 
     if (!response.ok) {
@@ -43,7 +43,7 @@ export class FileRepoRemote {
       `${app.api.url}/users/${username}/projects/${projectName}/files/${path}`,
       {
         headers: app.api.headers,
-      }
+      },
     )
 
     if (!response.ok) {
@@ -57,7 +57,7 @@ export class FileRepoRemote {
     username: string,
     projectName: string,
     path: string,
-    file: FileJson
+    file: FileJson,
   ) {
     const response = await fetch(
       `${app.api.url}/users/${username}/projects/${projectName}/files/${path}`,
@@ -65,7 +65,7 @@ export class FileRepoRemote {
         method: 'PUT',
         headers: app.api.headers,
         body: JSON.stringify(file),
-      }
+      },
     )
 
     if (!response.ok) {

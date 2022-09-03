@@ -11,7 +11,7 @@ const state = reactive(
   new State({
     username: route.params.username as string,
     name: route.params.name as string,
-  })
+  }),
 )
 </script>
 

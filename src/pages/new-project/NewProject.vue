@@ -22,7 +22,7 @@ function submit(event: Event) {
 
     await app.projects.post(app.auth.user.username, values)
     router.replace(
-      `/authors/${app.auth.user.username}/projects/${form.values.name}`
+      `/authors/${app.auth.user.username}/projects/${form.values.name}`,
     )
   })
 }

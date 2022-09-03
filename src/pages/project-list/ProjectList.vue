@@ -16,7 +16,7 @@ const route = useRoute()
 const state = reactive(
   new State({
     username: route.params.username as string,
-  })
+  }),
 )
 </script>
 

@@ -36,7 +36,7 @@ export class ProjectRepoRemote {
       `${app.api.url}/users/${username}/projects/${name}`,
       {
         headers: app.api.headers,
-      }
+      },
     )
 
     if (!response.ok) {
