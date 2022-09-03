@@ -80,7 +80,7 @@ defineProps<{ state: State }>()
         </button>
       </div>
 
-      <div v-if="!$app.auth.user" class="flex">
+      <div v-if="!$app.auth.user" class="flex text-2xl">
         <Link href="/login" class="hover:underline">
           <Lang>
             <template #zh>登录</template>
