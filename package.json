@@ -40,6 +40,6 @@
     "vite-plugin-pwa": "^0.12.6",
     "vite-plugin-rewrite-all": "^1.0.0",
     "vitest": "^0.22.1",
-    "vue-tsc": "^0.40.5"
+    "vue-tsc": "^0.40.6"
   }
 }
