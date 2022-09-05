@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import { app } from './app'
 import App from './App.vue'
 import './assets/styles/index.css'
+import './assets/fonts/index.css'
 import router from './router'
 
 const root = createApp(App)

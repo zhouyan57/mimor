@@ -1,7 +1,3 @@
-extract fonts/index.css
-
-/_ We should not import fonts from `styles/index.css`, it will effect the dev server. _/
-
 AuthorListItem -- fix style
 
 menu -- link to author page
