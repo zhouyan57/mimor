@@ -1,4 +1,3 @@
-project -- username -- link to go back project-list
 file -- link to go back project -- more easy to see
 AuthorList -- handle pagination
 
