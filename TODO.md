@@ -6,6 +6,10 @@ File -- be able to split screen on desktop
 
 File -- be able to preview all cards
 
+upload file from local
+
+upload directory from load
+
 # timeline
 
 user can add project into his timeline
