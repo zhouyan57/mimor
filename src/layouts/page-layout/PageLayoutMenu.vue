@@ -114,7 +114,7 @@ defineProps<{ state: State }>()
 
               <Link
                 :href="`/authors/${$app.auth.user.username}`"
-                class="overflow-x-auto whitespace-pre text-xl text-stone-600 hover:underline"
+                class="overflow-x-auto whitespace-pre text-xl hover:underline"
               >
                 {{ $app.auth.user.username }}
               </Link>

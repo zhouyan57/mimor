@@ -59,9 +59,12 @@ defineProps<{ state: State }>()
             </template>
           </Lang>
 
-          <div class="text-xl text-stone-600">
+          <Link
+            :href="`/authors/${$app.auth.user.username}`"
+            class="overflow-x-auto whitespace-pre text-xl hover:underline"
+          >
             {{ $app.auth.user.username }}
-          </div>
+          </Link>
         </div>
 
         <button
