@@ -85,7 +85,7 @@ watch(
         </Lang>
       </Loading>
 
-      <div v-if="state.projects" class="flex h-full flex-col">
+      <div v-if="state.projects" class="flex h-full flex-col overflow-y-auto">
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
           <div v-for="project of state.sortedProjects" :key="project.name">
             <ProjectListItem :state="state" :project="project" />
