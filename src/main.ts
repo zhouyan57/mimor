@@ -6,7 +6,6 @@ import './assets/styles/index.css'
 import router from './router'
 
 const root = createApp(App)
-const head = createHead()
 
 root.config.globalProperties.$app = app
 
@@ -17,6 +16,6 @@ declare module 'vue' {
 }
 
 root.use(router)
-root.use(head)
+root.use(createHead())
 
 root.mount('#app')
