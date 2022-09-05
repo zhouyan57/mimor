@@ -29,7 +29,7 @@ defineProps<{
 
     <Link
       :href="`/authors/${author.username}`"
-      class="text-xl text-stone-600 hover:underline"
+      class="overflow-x-auto whitespace-pre text-xl text-stone-600 hover:underline"
     >
       {{ author.username }}
     </Link>

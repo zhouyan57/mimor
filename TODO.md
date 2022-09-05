@@ -1,4 +1,3 @@
-menu -- link to author page
 sidebar -- link to author page
 
 project -- show user name

@@ -112,11 +112,12 @@ defineProps<{ state: State }>()
                 </template>
               </Lang>
 
-              <div
-                class="overflow-x-auto whitespace-pre text-xl text-stone-600"
+              <Link
+                :href="`/authors/${$app.auth.user.username}`"
+                class="overflow-x-auto whitespace-pre text-xl text-stone-600 hover:underline"
               >
                 {{ $app.auth.user.username }}
-              </div>
+              </Link>
             </div>
 
             <MenuItem as="div" v-slot="{ active }">
