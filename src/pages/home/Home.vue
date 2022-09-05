@@ -21,12 +21,10 @@ onMounted(() => state.load())
 
     <template #title>
       <div class="flex justify-between space-x-2">
-        <Link href="/" class="hover:underline">
-          <Lang>
-            <template #zh>首页</template>
-            <template #en>Home</template>
-          </Lang>
-        </Link>
+        <Lang>
+          <template #zh>首页</template>
+          <template #en>Home</template>
+        </Lang>
 
         <div class="flex justify-end space-x-2">
           <Link href="/authors" class="hover:underline">

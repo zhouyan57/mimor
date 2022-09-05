@@ -1,5 +1,3 @@
-AuthorListItem -- fix style
-
 menu -- link to author page
 sidebar -- link to author page
 

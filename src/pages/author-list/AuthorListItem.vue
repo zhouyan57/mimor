@@ -11,7 +11,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex h-full flex-col">
+  <div
+    class="flex h-full flex-col space-y-1 rounded-sm border border-stone-500 p-3"
+  >
     <Lang class="font-logo text-2xl font-bold">
       <template #zh>
         <div>
