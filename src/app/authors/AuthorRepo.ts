@@ -6,7 +6,9 @@ export class AuthorRepo {
   memory = new AuthorRepoMemory()
 
   async search(options: { page: number }) {
-    return this.remote.search(options)
+    const result = await this.remote.search(options)
+    this.memory.load(result.data)
+    return result
   }
 
   async get(username: string) {
