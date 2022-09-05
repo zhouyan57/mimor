@@ -10,6 +10,13 @@ export class ProjectListState {
     this.username = options.username
   }
 
+  async update(options: { username: string }) {
+    this.username = options.username
+    this.projects = undefined
+    this.author = undefined
+    await this.load()
+  }
+
   async load() {
     this.projects = await app.safe(() => app.projects.all(this.username))
     this.author = await app.safe(() => app.authors.get(this.username))

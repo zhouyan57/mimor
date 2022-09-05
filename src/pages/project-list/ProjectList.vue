@@ -2,7 +2,7 @@
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
 import { useRoute } from 'vue-router'
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
@@ -17,6 +17,15 @@ const state = reactive(
   new State({
     username: route.params.username as string,
   }),
+)
+
+watch(
+  () => route.params.username,
+  () => {
+    state.update({
+      username: route.params.username as string,
+    })
+  },
 )
 </script>
 
@@ -61,10 +70,20 @@ const state = reactive(
           </template>
         </Lang>
 
-        <div class="text-xl text-stone-600">
+        <Link
+          :href="`/authors/${state.author.username}`"
+          class="overflow-x-auto whitespace-pre text-xl hover:underline"
+        >
           {{ state.author.username }}
-        </div>
+        </Link>
       </div>
+
+      <Loading v-else class="text-xl">
+        <Lang>
+          <template #zh>项目作者中……</template>
+          <template #en>Loading author...</template>
+        </Lang>
+      </Loading>
 
       <div v-if="state.projects" class="flex h-full flex-col">
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
