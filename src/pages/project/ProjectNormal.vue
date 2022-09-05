@@ -15,13 +15,20 @@ defineProps<{ state: State }>()
 <template>
   <PageLayout :options="{ onInitialized: () => state.load() }">
     <Head v-if="$route.params.name">
-      <title v-if="$app.lang.zh">{{ $route.params.name }} | 谜墨</title>
-      <title v-else>{{ $route.params.name }} | Mimor</title>
+      <title v-if="$app.lang.zh">
+        {{ $route.params.username }}/{{ $route.params.name }} | 谜墨
+      </title>
+      <title v-else>
+        {{ $route.params.username }}/{{ $route.params.name }} | Mimor
+      </title>
     </Head>
 
     <template #title>
       <div class="flex items-center justify-between">
-        <div class="font-sans">{{ $route.params.name }}</div>
+        <div class="font-sans">
+          {{ $route.params.username }}/{{ $route.params.name }}
+        </div>
+
         <div>
           <Link
             :href="`/authors/${$route.params.username}/projects/${$route.params.name}?recall`"
