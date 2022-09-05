@@ -1,4 +1,3 @@
-file -- link to go back project -- more easy to see
 AuthorList -- handle pagination
 
 # recall

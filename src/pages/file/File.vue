@@ -34,8 +34,16 @@ function formatParam(param: string | Array<string>): string {
     <template #title>
       <div class="flex w-full items-center space-x-2">
         <div
-          class="flex w-full overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
+          class="flex w-full space-x-1 overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
         >
+          <Link
+            :href="`/authors/${$route.params.username}`"
+            class="hover:underline"
+            >{{ $route.params.username }}</Link
+          >
+
+          <div>/</div>
+
           <Link
             :href="`/authors/${$route.params.username}/projects/${state.project.name}`"
             class="font-bold hover:underline"
@@ -43,7 +51,7 @@ function formatParam(param: string | Array<string>): string {
             {{ state.project.name }}
           </Link>
 
-          <div class="text-stone-600">/{{ state.path }}</div>
+          <div class="font-normal">/{{ state.path }}</div>
         </div>
 
         <Link

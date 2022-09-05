@@ -25,13 +25,20 @@ defineProps<{ state: State }>()
 
     <template #title>
       <div class="flex items-center justify-between">
-        <span class="font-sans">
+        <div
+          class="flex space-x-1 overflow-x-auto overflow-y-hidden whitespace-pre font-sans"
+        >
           <Link
             :href="`/authors/${$route.params.username}`"
             class="hover:underline"
-            >{{ $route.params.username }}</Link
-          >/{{ $route.params.name }}
-        </span>
+          >
+            {{ $route.params.username }}
+          </Link>
+
+          <div>/</div>
+
+          <div class="font-normal">{{ $route.params.name }}</div>
+        </div>
 
         <div>
           <Link
