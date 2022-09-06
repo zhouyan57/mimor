@@ -1,5 +1,3 @@
-File -- fix PageLayout title path
-
 FileEdit -- be able to delete file and redirect
 
 ProjectList -- big button to create the first project

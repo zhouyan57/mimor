@@ -35,15 +35,7 @@ const route = useRoute()
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
-    if (!app.auth.user) return
-
-    await app.files.put(
-      app.auth.user.username,
-      route.params.name as string,
-      formatParam(route.params.pathParts),
-      values,
-    )
-
+    await state.update(values)
     router.replace(
       `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}?edit`,
     )
