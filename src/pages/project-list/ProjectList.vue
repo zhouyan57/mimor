@@ -44,7 +44,7 @@ watch(
         </Lang>
         <div v-if="$app.auth.user?.username === $route.params.username">
           <Link
-            :href="`/authors/${$route.params.username}/new-project`"
+            :href="`/authors/${$route.params.username}/create-project`"
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
           >
             <PlusIcon

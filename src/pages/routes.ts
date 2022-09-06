@@ -7,7 +7,7 @@ import AuthorList from './author-list/AuthorList.vue'
 import Login from './login/Login.vue'
 import LoginEmailSuccess from './login/LoginEmailSuccess.vue'
 import NewFile from './new-file/NewFile.vue'
-import NewProject from './new-project/NewProject.vue'
+import CreateProject from './create-project/CreateProject.vue'
 import File from './file/File.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
@@ -21,7 +21,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/authors', component: AuthorList },
   { path: '/authors/:username', redirect: ({params}) => `/authors/${params.username}/projects` },
   { path: '/authors/:username/projects', component: ProjectList },
-  { path: '/authors/:username/new-project', component: NewProject },
+  { path: '/authors/:username/create-project', component: CreateProject },
   { path: '/authors/:username/projects/:name', component: Project },
   { path: '/authors/:username/projects/:name/new-file', component: NewFile },
   { path: '/authors/:username/projects/:name/files/:pathParts(.*)*', component: File },
