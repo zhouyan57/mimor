@@ -7,6 +7,7 @@ import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import FileEditor from './FileEditor.vue'
 import FileRecall from './FileRecall.vue'
+import FileEdit from './FileEdit.vue'
 import { FileState as State } from './FileState'
 
 const route = useRoute()
@@ -72,6 +73,7 @@ function formatParam(param: string | Array<string>): string {
     </template>
 
     <FileRecall v-if="$route.query.recall !== undefined" :state="state" />
+    <FileEdit v-if="$route.query.edit !== undefined" :state="state" />
     <FileEditor v-else :state="state" />
   </PageLayout>
 </template>

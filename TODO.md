@@ -1,8 +1,4 @@
-File -- be able to delete & rename file
-
-Edit-file
-
-- route /authors/{username}/projects/{projectName}/edit-file/{path}
+FileEdit -- be able to delete & rename file
 
 ProjectList -- big button to create the first project
 
