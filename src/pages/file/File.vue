@@ -70,7 +70,7 @@ const state = reactive(
     </template>
 
     <FileRecall v-if="$route.query.recall !== undefined" :state="state" />
-    <FileEdit v-if="$route.query.edit !== undefined" :state="state" />
+    <FileEdit v-else-if="$route.query.edit !== undefined" :state="state" />
     <FileEditor v-else :state="state" />
   </PageLayout>
 </template>
