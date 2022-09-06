@@ -54,4 +54,13 @@ export class FileState {
       await this.update(this.file)
     }
   }
+
+  async delete() {
+    await app.safe(async () => {
+      if (this.file) {
+        await app.files.delete(this.username, this.project.name, this.file.path)
+        this.file = undefined
+      }
+    })
+  }
 }

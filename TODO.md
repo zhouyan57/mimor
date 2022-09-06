@@ -1,4 +1,6 @@
-FileEdit -- be able to delete file and redirect
+app.files.delete(username, projectName, path)
+
+FileEdit -- delete use `window.conform`
 
 ProjectList -- big button to create the first project
 

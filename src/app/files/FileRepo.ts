@@ -48,4 +48,8 @@ export class FileRepo {
     await this.remote.put(username, projectName, path, file)
     await this.memory.put(username, projectName, path, file)
   }
+
+  async delete(username: string, projectName: string, path: string) {
+    //
+  }
 }

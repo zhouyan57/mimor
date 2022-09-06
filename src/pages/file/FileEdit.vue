@@ -44,38 +44,58 @@ function submit(event: Event) {
 </script>
 
 <template>
-  <form
-    v-if="state.file"
-    class="flex max-w-lg flex-col space-y-2 text-xl"
-    @submit.prevent="submit"
-  >
-    <FormInput :form="form" name="path" required maxlength="256">
-      <template #label>
+  <div v-if="state.file">
+    <form
+      class="flex max-w-lg flex-col space-y-2 text-xl"
+      @submit.prevent="submit"
+    >
+      <FormInput :form="form" name="path" required maxlength="256">
+        <template #label>
+          <Lang>
+            <template #zh>路径</template>
+            <template #en>Path</template>
+          </Lang>
+        </template>
+      </FormInput>
+
+      <FormTextarea :form="form" name="content" maxlength="100000">
+        <template #label>
+          <Lang>
+            <template #zh>内容</template>
+            <template #en>Content</template>
+          </Lang>
+        </template>
+      </FormTextarea>
+
+      <FormDivider />
+
+      <FormButton :disabled="form.processing">
         <Lang>
-          <template #zh>路径</template>
-          <template #en>Path</template>
+          <template #zh>保存</template>
+          <template #en>Save</template>
         </Lang>
-      </template>
-    </FormInput>
+      </FormButton>
+    </form>
 
-    <FormTextarea :form="form" name="content" maxlength="100000">
-      <template #label>
+    <div class="flex max-w-lg flex-col space-y-2 py-2 text-xl">
+      <FormButton
+        @click="
+          ;async () => {
+            await state.delete()
+            $router.replace(
+              `/authors/${state.username}/projects/${state.project.name}`,
+            )
+          }
+        "
+        class="bg-red-100 text-red-500"
+      >
         <Lang>
-          <template #zh>内容</template>
-          <template #en>Content</template>
+          <template #zh>删除</template>
+          <template #en>Delete</template>
         </Lang>
-      </template>
-    </FormTextarea>
-
-    <FormDivider />
-
-    <FormButton :disabled="form.processing">
-      <Lang>
-        <template #zh>保存</template>
-        <template #en>Save</template>
-      </Lang>
-    </FormButton>
-  </form>
+      </FormButton>
+    </div>
+  </div>
 
   <Loading v-else class="text-xl">
     <Lang>

@@ -16,7 +16,7 @@ defineProps<{ state: State }>()
       program: {
         onFinished: () => {
           $router.push(
-            `/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}`,
+            `/authors/${state.username}/projects/${state.project.name}/files/${state.path}`,
           )
         },
       },
