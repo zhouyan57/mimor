@@ -1,9 +1,10 @@
-File -- be able to delete file
-File -- be able to rename file
+rename create-file to file-create
 
-- http://localhost:5173/authors/xieyuheng/projects/patterns-of-language-design/new-file
+File -- be able to delete & rename file
 
-- http://localhost:5173/authors/xieyuheng/projects/patterns-of-language-design/files/04-logic-and-type-system.mimor.mimor/edit
+Edit-file
+
+- route /authors/{username}/projects/{projectName}/edit-file/{path}
 
 ProjectList -- big button to create the first project
 
