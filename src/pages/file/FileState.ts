@@ -2,19 +2,26 @@ import { FileJson } from '../../jsons/FileJson'
 
 export class FileState {
   file?: FileJson
-  saving = false
-  username: string
-  path: string
-  project: { name: string }
+  updating = false
 
-  constructor(options: {
-    username: string
-    path: string
-    project: { name: string }
-  }) {
-    this.username = options.username
-    this.path = options.path
-    this.project = options.project
+  constructor(
+    public options: {
+      username: string
+      path: string
+      project: { name: string }
+    },
+  ) {}
+
+  get path(): string {
+    return this.file?.path || this.options.path
+  }
+
+  get username(): string {
+    return this.options.username
+  }
+
+  get project(): { name: string } {
+    return this.options.project
   }
 
   async load() {
@@ -23,8 +30,8 @@ export class FileState {
     )
   }
 
-  async save() {
-    this.saving = true
+  async update(file: FileJson) {
+    this.updating = true
 
     await app.safe(async () => {
       if (this.file) {
@@ -32,11 +39,17 @@ export class FileState {
           this.username,
           this.project.name,
           this.file.path,
-          this.file,
+          file,
         )
       }
     })
 
-    this.saving = false
+    this.updating = false
+  }
+
+  async save() {
+    if (this.file) {
+      await this.update(this.file)
+    }
   }
 }

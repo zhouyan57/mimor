@@ -13,7 +13,7 @@ defineProps<{ state: State }>()
       <button
         v-if="$app.auth.user?.username === $route.params.username"
         class="hover:underline"
-        :class="[state.saving && 'text-yellow-500']"
+        :class="[state.updating && 'text-yellow-500']"
         @click="state.save()"
       >
         <Lang>
