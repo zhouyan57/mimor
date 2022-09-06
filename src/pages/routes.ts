@@ -6,7 +6,7 @@ import About from './about/About.vue'
 import AuthorList from './author-list/AuthorList.vue'
 import Login from './login/Login.vue'
 import LoginEmailSuccess from './login/LoginEmailSuccess.vue'
-import NewFile from './new-file/NewFile.vue'
+import CreateFile from './create-file/CreateFile.vue'
 import CreateProject from './create-project/CreateProject.vue'
 import File from './file/File.vue'
 import ProjectList from './project-list/ProjectList.vue'
@@ -23,7 +23,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/authors/:username/projects', component: ProjectList },
   { path: '/authors/:username/create-project', component: CreateProject },
   { path: '/authors/:username/projects/:name', component: Project },
-  { path: '/authors/:username/projects/:name/new-file', component: NewFile },
+  { path: '/authors/:username/projects/:name/create-file', component: CreateFile },
   { path: '/authors/:username/projects/:name/files/:pathParts(.*)*', component: File },
   { path: '/config', component: Config },
   { path: '/register', component: Register },

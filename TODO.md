@@ -1,5 +1,3 @@
-rename new-file to create-file
-
 File -- be able to delete file
 File -- be able to rename file
 
