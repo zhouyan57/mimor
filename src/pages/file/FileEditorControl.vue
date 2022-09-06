@@ -8,8 +8,21 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex w-full justify-end border-t border-stone-500 pt-2">
-    <div class="flex space-x-3 self-end text-xl">
+  <div class="flex w-full justify-between border-t border-stone-500 pt-2">
+    <div class="flex space-x-3 text-xl">
+      <Link
+        :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?edit`"
+      >
+        <div class="flex items-center space-x-0.5 hover:underline">
+          <Lang>
+            <template #zh>编辑</template>
+            <template #en>Edit</template>
+          </Lang>
+        </div>
+      </Link>
+    </div>
+
+    <div class="flex space-x-3 text-xl">
       <button
         v-if="$app.auth.user?.username === $route.params.username"
         class="hover:underline"
