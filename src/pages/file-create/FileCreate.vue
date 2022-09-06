@@ -23,11 +23,11 @@ function submit(event: Event) {
 
     await app.files.post(app.auth.user.username, route.params.name as string, {
       ...values,
-      path: `${values.path}.mimor`,
+      path: `${values.path}`,
     })
 
     router.replace(
-      `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}.mimor`,
+      `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}`,
     )
   })
 }
@@ -57,10 +57,6 @@ function submit(event: Event) {
             <template #zh>路径</template>
             <template #en>Path</template>
           </Lang>
-        </template>
-
-        <template #input-end>
-          <div class="px-1.5 text-sm font-bold">.mimor</div>
         </template>
       </FormInput>
 

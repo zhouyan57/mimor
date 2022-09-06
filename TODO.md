@@ -1,4 +1,5 @@
-FileEdit -- be able to delete & rename file
+FileEdit -- be able to save file with new name and redirect
+FileEdit -- be able to delete file and redirect
 
 ProjectList -- big button to create the first project
 
