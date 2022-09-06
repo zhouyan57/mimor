@@ -1,8 +1,18 @@
-create some real contents
+fix title overflow-x-auto
+
+ProjectList -- big button to create the first project
+
+Project -- big big to create the first file
+
+ProjectList -- be able to fold the description
+
+Project -- be able to edit the project info
+
+404 page for undefined author and project and file
 
 AuthorList -- handle pagination
 
-- seed the database
+- seed the database to test pagination
 
 # guitar
 

@@ -97,9 +97,12 @@ defineProps<{ state: State }>()
         </div>
 
         <div class="border-t border-stone-500 py-3">
-          <div v-if="$app.auth.user" class="flex items-end justify-between">
+          <div
+            v-if="$app.auth.user"
+            class="flex flex-wrap items-end justify-between"
+          >
             <div class="flex flex-col items-start">
-              <Lang class="overflow-x-auto whitespace-pre font-logo font-bold">
+              <Lang class="font-logo font-bold">
                 <template #zh>
                   <div>
                     {{ $app.auth.config?.name_zh || $app.auth.user.name }}
@@ -126,10 +129,7 @@ defineProps<{ state: State }>()
               <button
                 @click="$app.auth.logout()"
                 class="text-xl text-stone-600"
-                :class="[
-                  active && 'decoration-6 underline',
-                  active && 'text-stone-600',
-                ]"
+                :class="[active && 'decoration-6 underline']"
               >
                 <Lang>
                   <template #zh>退出</template>
