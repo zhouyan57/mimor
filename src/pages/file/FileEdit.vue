@@ -80,8 +80,8 @@ function submit(event: Event) {
     <div class="flex max-w-lg flex-col space-y-2 py-2 text-xl">
       <FormButton
         @click="
-          ;async () => {
-            await state.delete()
+          () => {
+            state.delete()
             $router.replace(
               `/authors/${state.username}/projects/${state.project.name}`,
             )
