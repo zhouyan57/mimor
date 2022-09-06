@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.6.7",
+    "@headlessui/vue": "^1.7.0",
     "@heroicons/vue": "^2.0.10",
     "@rgrove/parse-xml": "^3.0.0",
     "@vueuse/core": "^9.2.0",
@@ -40,6 +40,6 @@
     "vite-plugin-pwa": "^0.12.6",
     "vite-plugin-rewrite-all": "^1.0.0",
     "vitest": "^0.23.1",
-    "vue-tsc": "^0.40.7"
+    "vue-tsc": "^0.40.9"
   }
 }
