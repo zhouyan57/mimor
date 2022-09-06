@@ -1,5 +1,3 @@
-fix title overflow-x-auto
-
 ProjectList -- big button to create the first project
 
 Project -- big big to create the first file
@@ -53,3 +51,5 @@ understand `<div>` vs `<span>`
 understand `overflow-y-auto`
 
 - used in child should also be used in parent
+
+  - sometimes not
