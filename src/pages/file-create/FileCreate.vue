@@ -21,10 +21,11 @@ function submit(event: Event) {
   form.submit(event, async (values) => {
     if (!app.auth.user) return
 
-    await app.files.post(app.auth.user.username, route.params.name as string, {
-      ...values,
-      path: `${values.path}`,
-    })
+    await app.files.post(
+      app.auth.user.username,
+      route.params.name as string,
+      values,
+    )
 
     router.replace(
       `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}`,

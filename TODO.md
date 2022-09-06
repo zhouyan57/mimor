@@ -1,4 +1,7 @@
-FileEdit -- be able to save file with new name and redirect
+extract formatParam to utils/
+
+File -- title watch state.file change
+
 FileEdit -- be able to delete file and redirect
 
 ProjectList -- big button to create the first project
