@@ -10,6 +10,7 @@ import FormTextarea from '../../components/FormTextarea.vue'
 import FormDivider from '../../components/FormDivider.vue'
 import { FileState as State } from './FileState'
 import { useForm } from '../../hooks/useForm'
+import { formatParam } from '../../utils/formatParam'
 
 const { state } = defineProps<{ state: State }>()
 
@@ -47,10 +48,6 @@ function submit(event: Event) {
       `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}?edit`,
     )
   })
-}
-
-function formatParam(param: string | Array<string>): string {
-  return typeof param === 'string' ? param : param.join('/')
 }
 </script>
 

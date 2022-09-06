@@ -1,5 +1,3 @@
-extract formatParam to utils/
-
 File -- title watch state.file change
 
 FileEdit -- be able to delete file and redirect

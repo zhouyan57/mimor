@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import Lang from '../../components/Lang.vue'
-
-function formatParam(param: string | Array<string>): string {
-  return typeof param === 'string' ? param : param.join('/')
-}
+import { formatParam } from '../../utils/formatParam'
 </script>
 
 <template>

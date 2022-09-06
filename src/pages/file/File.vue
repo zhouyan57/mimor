@@ -9,6 +9,7 @@ import FileEditor from './FileEditor.vue'
 import FileRecall from './FileRecall.vue'
 import FileEdit from './FileEdit.vue'
 import { FileState as State } from './FileState'
+import { formatParam } from '../../utils/formatParam'
 
 const route = useRoute()
 
@@ -19,10 +20,6 @@ const state = reactive(
     project: { name: route.params.name as string },
   }),
 )
-
-function formatParam(param: string | Array<string>): string {
-  return typeof param === 'string' ? param : param.join('/')
-}
 </script>
 
 <template>
