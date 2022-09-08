@@ -1,7 +1,5 @@
 # Project
 
-Project -- refactor structure use PageLayout in Project instead of ProjectNormal
-
 ProjectConfig -- with ProjectHead and ProjectTitle
 ProjectConfig -- be able to edit the project info
 ProjectConfig -- be able to delete project

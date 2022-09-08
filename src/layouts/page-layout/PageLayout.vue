@@ -9,7 +9,7 @@ import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
-const { options, auth, guest } = defineProps<{
+const { auth, guest } = defineProps<{
   auth?: boolean | { username: string }
   guest?: boolean
 }>()
