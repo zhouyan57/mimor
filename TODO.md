@@ -1,7 +1,5 @@
 # Project
 
-Project -- change edit to config
-
 File -- extra FileTitle
 Project -- extra ProjectTitle
 
