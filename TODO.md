@@ -1,10 +1,10 @@
-ProjectList -- big button to create the first project
-
 Project -- big to create the first file
 
 ProjectList -- improve description style
 
 Project -- be able to edit the project info
+
+Project -- be able to delete project
 
 404 page for undefined author and project and file
 

@@ -8,6 +8,7 @@ import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectListItem from './ProjectListItem.vue'
+import ProjectListCreateTheFirstProject from './ProjectListCreateTheFirstProject.vue'
 import { ProjectListState as State } from './ProjectListState'
 import ProjectListControl from './ProjectListControl.vue'
 
@@ -89,6 +90,15 @@ watch(
         <div class="flex h-full flex-col space-y-3 overflow-y-auto pb-2">
           <div v-for="project of state.sortedProjects" :key="project.name">
             <ProjectListItem :state="state" :project="project" />
+          </div>
+
+          <div
+            v-if="
+              state.sortedProjects === undefined ||
+              state.sortedProjects.length === 0
+            "
+          >
+            <ProjectListCreateTheFirstProject :state="state" />
           </div>
         </div>
 
