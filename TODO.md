@@ -1,6 +1,5 @@
 # Project
 
-ProjectEdit -- use PageLayout
 Project -- link to ProjectEdit
 
 File -- extra FileTitle

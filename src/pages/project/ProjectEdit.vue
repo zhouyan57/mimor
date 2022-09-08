@@ -12,4 +12,8 @@ import { ProjectState as State } from './ProjectState'
 defineProps<{ state: State }>()
 </script>
 
-<template>ProjectEdit</template>
+<template>
+  <PageLayout>
+    <div>ProjectEdit</div>
+  </PageLayout>
+</template>
