@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { watch, onMounted } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
@@ -26,6 +26,8 @@ watch(
 )
 
 async function load() {
+  await app.auth.initialize()
+
   const user = app.auth.user
   if (!user) return
 
@@ -41,10 +43,14 @@ async function load() {
     name_en: config.name_en,
   })
 }
+
+onMounted(async () => {
+  await load()
+})
 </script>
 
 <template>
-  <PageLayout auth :options="{ onInitialized: () => load() }">
+  <PageLayout auth>
     <Head>
       <title v-if="$app.lang.zh">配置 | 谜墨</title>
       <title v-else>Config | Mimor</title>

@@ -24,9 +24,7 @@ const state = reactive(new State())
 onMounted(async () => {
   state.loading = true
   await app.auth.initialize()
-
   maybeRedirect()
-
   state.loading = false
 
   if (options?.onInitialized) {

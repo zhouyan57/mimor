@@ -12,34 +12,20 @@ export class Auth {
   login = new Login()
 
   async initialize() {
-    if (this.initialized) {
-      return console.log({
-        who: 'app.auth.initialize',
-        message: 'already initialized',
-      })
-    }
-
+    if (this.initialized) return
     await this.load()
-
     this.initialized = true
-
-    console.log({
-      who: 'app.auth.initialize',
-      message: 'initialized for the first time',
-    })
   }
 
   async saveTokenAndLoad(token: string) {
     localStorage.setItem('token', token)
     await this.load()
-    console.log({ who: 'app.auth.login' })
   }
 
   logout(): void {
     localStorage.removeItem('token')
     this.user = undefined
     this.config = undefined
-    console.log({ who: 'app.auth.logout' })
   }
 
   async load() {
