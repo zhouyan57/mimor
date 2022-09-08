@@ -24,7 +24,7 @@ defineProps<{ state: State; files: Array<FileJson> }>()
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
           >
             <PlusIcon
-              class="h-5 w-5 rounded-full border border-stone-500 p-1 text-stone-500 hover:bg-stone-100"
+              class="h-5 w-5 rounded-full border border-stone-500 p-1"
             />
           </Link>
         </div>

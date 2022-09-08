@@ -48,7 +48,7 @@ watch(
             :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
           >
             <PlusIcon
-              class="h-6 w-6 rounded-full border border-stone-500 p-1 text-stone-500 hover:bg-stone-100"
+              class="h-6 w-6 rounded-full border border-stone-500 p-1"
             />
           </Link>
         </div>
