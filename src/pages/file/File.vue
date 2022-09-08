@@ -2,8 +2,6 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
-import { PlayIcon, PencilIcon } from '@heroicons/vue/24/outline'
-import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import FileTitle from './FileTitle.vue'
 import FileEditor from './FileEditor.vue'
