@@ -55,6 +55,7 @@ export class FileRepoMemory {
 
   async delete(username: string, projectName: string, path: string) {
     const key = this.key(username, projectName)
-    return this.map.get(key)?.delete(path)
+    this.map.get(key)?.delete(path)
+    await app.projects.memory.touch(username, projectName)
   }
 }
