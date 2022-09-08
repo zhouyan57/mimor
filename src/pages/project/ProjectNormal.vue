@@ -14,13 +14,11 @@ defineProps<{ state: State }>()
 
 <template>
   <PageLayout :options="{ onInitialized: () => state.load() }">
-    <Head v-if="$route.params.name">
+    <Head>
       <title v-if="$app.lang.zh">
-        {{ $route.params.username }}/{{ $route.params.name }} | 谜墨
+        {{ state.username }}/{{ state.name }} | 谜墨
       </title>
-      <title v-else>
-        {{ $route.params.username }}/{{ $route.params.name }} | Mimor
-      </title>
+      <title v-else>{{ state.username }}/{{ state.name }} | Mimor</title>
     </Head>
 
     <template #title>
@@ -28,21 +26,18 @@ defineProps<{ state: State }>()
         <div
           class="flex space-x-1 overflow-x-auto overflow-y-hidden whitespace-pre font-sans"
         >
-          <Link
-            :href="`/authors/${$route.params.username}`"
-            class="hover:underline"
-          >
-            {{ $route.params.username }}
+          <Link :href="`/authors/${state.username}`" class="hover:underline">
+            {{ state.username }}
           </Link>
 
           <div>/</div>
 
-          <div class="font-normal">{{ $route.params.name }}</div>
+          <div class="font-normal">{{ state.name }}</div>
         </div>
 
         <div>
           <Link
-            :href="`/authors/${$route.params.username}/projects/${$route.params.name}?recall`"
+            :href="`/authors/${state.username}/projects/${state.name}?recall`"
           >
             <PlayIcon class="h-6 w-6 stroke-1" />
           </Link>
