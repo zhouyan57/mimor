@@ -1,11 +1,22 @@
 # Project
 
+ProjectList -- description height limit
+
 ProjectConfig -- be able to edit the project info
+
 ProjectConfig -- be able to delete project
 
-ProjectList -- improve description style
+ProjectCreate -- limit description length to 256
 
-Project can be `public` or `private`
+ProjectConfig -- limit description length to 256
+
+Project can be `public` or `private` -- `public` by default
+
+# File
+
+FileCreate -- limit path to end with .mimor
+
+FileConfig -- limit path to end with .mimor
 
 # Author
 
@@ -14,6 +25,10 @@ AuthorList -- handle pagination
 - seed the database to test pagination
 
 404 page for undefined author and project and file
+
+Config -- can delete author
+
+Can follow other author
 
 # Recall
 

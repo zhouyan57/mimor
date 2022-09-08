@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { onMounted, reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
+import Loading from '../../components/Loading.vue'
 import Link from '../../components/Link.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -45,7 +46,7 @@ onMounted(() => state.load())
     </template>
 
     <div class="flex h-full flex-col">
-      <div v-if="state.loading">Loading...</div>
+      <Loading class="text-xl" v-if="state.loading" />
 
       <Mimor
         v-else-if="!state.finished"
