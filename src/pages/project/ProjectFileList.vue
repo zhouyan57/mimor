@@ -4,6 +4,7 @@ import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import { FileJson } from '../../jsons/FileJson'
 import ProjectFileListItem from './ProjectFileListItem.vue'
+import ProjectFileListCreateTheFirstFile from './ProjectFileListCreateTheFirstFile.vue'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State; files: Array<FileJson> }>()
@@ -34,6 +35,18 @@ defineProps<{ state: State; files: Array<FileJson> }>()
     <div class="h-full space-y-2 overflow-y-auto py-2">
       <div v-for="file in files" :key="file.path">
         <ProjectFileListItem :state="state" :file="file" />
+      </div>
+
+      <div v-if="files.length === 0">
+        <div v-if="$app.auth.user?.username === $route.params.username">
+          <ProjectFileListCreateTheFirstFile :state="state" />
+        </div>
+        <div v-else>
+          <Lang class="text-xl text-stone-500">
+            <template #zh>空的文件列表</template>
+            <template #en>Empty file list.</template>
+          </Lang>
+        </div>
       </div>
     </div>
   </div>

@@ -103,8 +103,8 @@ watch(
             </div>
             <div v-else>
               <Lang class="text-xl text-stone-500">
-                <template #zh>空的项目</template>
-                <template #en>Empty project.</template>
+                <template #zh>空的项目列表</template>
+                <template #en>Empty project list.</template>
               </Lang>
             </div>
           </div>

@@ -1,5 +1,3 @@
-Project -- big to create the first file
-
 ProjectList -- improve description style
 
 Project -- be able to edit the project info
