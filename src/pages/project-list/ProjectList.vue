@@ -98,7 +98,15 @@ watch(
               state.sortedProjects.length === 0
             "
           >
-            <ProjectListCreateTheFirstProject :state="state" />
+            <div v-if="$app.auth.user?.username === $route.params.username">
+              <ProjectListCreateTheFirstProject :state="state" />
+            </div>
+            <div v-else>
+              <Lang class="text-xl text-stone-500">
+                <template #zh>空的项目</template>
+                <template #en>Empty project.</template>
+              </Lang>
+            </div>
           </div>
         </div>
 
