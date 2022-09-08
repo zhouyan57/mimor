@@ -1,5 +1,3 @@
-FileEdit -- delete use `window.conform`
-
 ProjectList -- big button to create the first project
 
 Project -- big big to create the first file

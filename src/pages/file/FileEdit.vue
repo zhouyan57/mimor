@@ -43,8 +43,14 @@ function submit(event: Event) {
 }
 
 async function remove() {
-  await state.remove()
-  router.replace(`/authors/${state.username}/projects/${state.project.name}`)
+  const path = `${state.username} / ${state.project.name} / ${state.file.path}`
+
+  const message = app.lang.zh ? `删除文件：${path}` : `Delete file： ${path}`
+
+  if (window.confirm(message)) {
+    await state.remove()
+    router.replace(`/authors/${state.username}/projects/${state.project.name}`)
+  }
 }
 </script>
 
