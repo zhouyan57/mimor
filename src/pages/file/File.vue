@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import FileHead from './FileHead.vue'
 import FileTitle from './FileTitle.vue'
 import FileEditor from './FileEditor.vue'
 import FileRecall from './FileRecall.vue'
@@ -23,10 +23,7 @@ const state = reactive(
 
 <template>
   <PageLayout :options="{ onInitialized: () => state.load() }">
-    <Head v-if="state.path">
-      <title v-if="$app.lang.zh">{{ state.path }} | 谜墨</title>
-      <title v-else>{{ state.path }} | Mimor</title>
-    </Head>
+    <FileHead :state="state" />
 
     <template #title>
       <FileTitle :state="state" />
