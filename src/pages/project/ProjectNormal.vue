@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
 import { PlayIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import ProjectHead from './ProjectHead.vue'
 import ProjectFileList from './ProjectFileList.vue'
 import ProjectControl from './ProjectControl.vue'
 import { ProjectState as State } from './ProjectState'
@@ -14,12 +14,7 @@ defineProps<{ state: State }>()
 
 <template>
   <PageLayout :options="{ onInitialized: () => state.load() }">
-    <Head>
-      <title v-if="$app.lang.zh">
-        {{ state.username }}/{{ state.name }} | 谜墨
-      </title>
-      <title v-else>{{ state.username }}/{{ state.name }} | Mimor</title>
-    </Head>
+    <ProjectHead :state="state" />
 
     <template #title>
       <div class="flex items-center justify-between">

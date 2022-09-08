@@ -1,7 +1,6 @@
 # Project
 
 Project -- extra ProjectTitle
-Project -- extra ProjectHead
 
 ProjectConfig -- be able to edit the project info
 ProjectConfig -- be able to delete project
