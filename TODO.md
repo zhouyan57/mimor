@@ -1,11 +1,11 @@
 # Project
 
-ProjectList -- extract ProjectListTitle
-
 ProjectList -- quit using `onInitialized` of `PageLayout`
-ProjectNormal -- quit using `onInitialized` of `PageLayout`
 AuthorList -- quit using `onInitialized` of `PageLayout`
+ProjectNormal -- quit using `onInitialized` of `PageLayout`
 File -- quit using `onInitialized` of `PageLayout`
+
+Project -- refactor structure use PageLayout in Project instead of ProjectNormal
 
 remove `onInitialized` of `PageLayout`
 

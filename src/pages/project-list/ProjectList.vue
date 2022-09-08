@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { PlusIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'vue-router'
 import { reactive, watch } from 'vue'
 import Lang from '../../components/Lang.vue'
@@ -7,6 +6,7 @@ import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectListHead from './ProjectListHead.vue'
+import ProjectListTitle from './ProjectListTitle.vue'
 import ProjectListItem from './ProjectListItem.vue'
 import ProjectListCreateTheFirstProject from './ProjectListCreateTheFirstProject.vue'
 import { ProjectListState as State } from './ProjectListState'
@@ -35,22 +35,7 @@ watch(
     <ProjectListHead :state="state" />
 
     <template #title>
-      <div class="flex items-center space-x-2">
-        <Lang>
-          <template #zh>项目</template>
-          <template #en>Projects</template>
-        </Lang>
-        <div v-if="$app.auth.user?.username === $route.params.username">
-          <Link
-            :href="`/authors/${$route.params.username}/project-create`"
-            :title="$app.lang.zh ? '创建新项目' : 'Create a new project.'"
-          >
-            <PlusIcon
-              class="h-6 w-6 rounded-full border border-stone-500 p-1"
-            />
-          </Link>
-        </div>
-      </div>
+      <ProjectListTitle :state="state" />
     </template>
 
     <div class="flex h-full flex-col">
