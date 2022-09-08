@@ -1,7 +1,5 @@
 # Project
 
-Config extract ConfigState.ts
-
 ProjectList -- quit using `onInitialized` of `PageLayout`
 ProjectNormal -- quit using `onInitialized` of `PageLayout`
 AuthorList -- quit using `onInitialized` of `PageLayout`

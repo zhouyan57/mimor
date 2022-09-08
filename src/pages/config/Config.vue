@@ -1,51 +1,25 @@
 <script setup lang="ts">
-import { watch, onMounted } from 'vue'
+import { watch, onMounted, reactive } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormSelect from '../../components/FormSelect.vue'
 import FormDivider from '../../components/FormDivider.vue'
-import { useForm } from '../../hooks/useForm'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { ConfigState as State } from './ConfigState'
 
-const form = useForm({
-  username: '',
-  email: '',
-  name: '',
-  lang: '',
-  name_zh: '',
-  name_en: '',
-})
+const state = reactive(new State())
 
 watch(
   () => app.lang.tag,
   () => {
-    form.values.lang = app.lang.tag
+    state.form.values.lang = app.lang.tag
   },
 )
 
-async function load() {
-  await app.auth.initialize()
-
-  const user = app.auth.user
-  if (!user) return
-
-  const config = app.auth.config
-  if (!config) return
-
-  Object.assign(form.values, {
-    username: user.username,
-    email: user.email,
-    name: config.name,
-    lang: config.lang,
-    name_zh: config.name_zh,
-    name_en: config.name_en,
-  })
-}
-
 onMounted(async () => {
-  await load()
+  await state.load()
 })
 </script>
 
@@ -67,14 +41,14 @@ onMounted(async () => {
       class="flex max-w-lg flex-col space-y-2 pb-2 text-xl"
       @submit.prevent="
         (event) =>
-          form.submit(event, async (values) => {
+          state.form.submit(event, async (values) => {
             if (!$app.auth.user) return
 
             await $app.configs.put($app.auth.user.username, values)
           })
       "
     >
-      <FormInput :form="form" name="username" disabled>
+      <FormInput :form="state.form" name="username" disabled>
         <template #label>
           <Lang>
             <template #zh>用户名</template>
@@ -83,7 +57,7 @@ onMounted(async () => {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="email" disabled>
+      <FormInput :form="state.form" name="email" disabled>
         <template #label>
           <Lang>
             <template #zh>邮箱</template>
@@ -92,7 +66,7 @@ onMounted(async () => {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="name" maxlength="64">
+      <FormInput :form="state.form" name="name" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>名字</template>
@@ -102,7 +76,7 @@ onMounted(async () => {
       </FormInput>
 
       <FormSelect
-        :form="form"
+        :form="state.form"
         name="lang"
         maxlength="10"
         :options="{
@@ -118,7 +92,7 @@ onMounted(async () => {
         </template>
       </FormSelect>
 
-      <FormInput :form="form" name="name_zh" maxlength="64">
+      <FormInput :form="state.form" name="name_zh" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>中文名</template>
@@ -127,7 +101,7 @@ onMounted(async () => {
         </template>
       </FormInput>
 
-      <FormInput :form="form" name="name_en" maxlength="64">
+      <FormInput :form="state.form" name="name_en" maxlength="64">
         <template #label>
           <Lang>
             <template #zh>英文名</template>
@@ -138,7 +112,7 @@ onMounted(async () => {
 
       <FormDivider />
 
-      <FormButton :disabled="form.processing">
+      <FormButton :disabled="state.form.processing">
         <Lang>
           <template #zh>保存</template>
           <template #en>Save</template>
