@@ -49,7 +49,9 @@ const state = reactive(
             {{ state.project.name }}
           </Link>
 
-          <div class="font-normal">/{{ state.path }}</div>
+          <div>/</div>
+
+          <div class="font-normal">{{ state.path }}</div>
         </div>
 
         <Link

@@ -1,12 +1,18 @@
-ProjectList -- improve description style
+# Project
 
-ProjectEdit -- placeholder
-
+ProjectEdit -- use PageLayout
 Project -- link to ProjectEdit
+
+File -- extra FileTitle
+Project -- extra ProjectTitle
 
 ProjectEdit -- be able to edit the project info
 
 ProjectEdit -- be able to delete project
+
+ProjectList -- improve description style
+
+# Author
 
 AuthorList -- handle pagination
 
