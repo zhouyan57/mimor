@@ -1,8 +1,6 @@
 ProjectList -- big button to create the first project
 Project -- big to create the first file
 
-FileCreate -- support empty `content`
-
 ProjectList -- be able to fold the description
 
 Project -- be able to edit the project info
