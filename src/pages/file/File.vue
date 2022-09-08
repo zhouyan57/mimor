@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import FileHead from './FileHead.vue'
@@ -19,10 +19,14 @@ const state = reactive(
     project: { name: route.params.name as string },
   }),
 )
+
+onMounted(async () => {
+  await state.load()
+})
 </script>
 
 <template>
-  <PageLayout :options="{ onInitialized: () => state.load() }">
+  <PageLayout>
     <FileHead :state="state" />
 
     <template #title>

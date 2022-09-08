@@ -1,6 +1,5 @@
 # Project
 
-File -- quit using `onInitialized` of `PageLayout`
 remove `onInitialized` of `PageLayout`
 
 Project -- refactor structure use PageLayout in Project instead of ProjectNormal
