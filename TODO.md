@@ -1,26 +1,22 @@
 ProjectList -- improve description style
 
-Project -- be able to edit the project info
+ProjectEdit -- placeholder
 
-Project -- be able to delete project
+Project -- link to ProjectEdit
 
-404 page for undefined author and project and file
+ProjectEdit -- be able to edit the project info
+
+ProjectEdit -- be able to delete project
 
 AuthorList -- handle pagination
 
 - seed the database to test pagination
 
-# guitar
+404 page for undefined author and project and file
 
-major minor game
+# Recall
 
-- https://www.youtube.com/watch?v=2Fjd-VJjvO8
-
-# scales
-
-phrygian major
-
-# recall
+## File recall
 
 File -- be able to split screen on desktop
 
@@ -30,23 +26,41 @@ upload file from local
 
 upload directory from load
 
-# timeline
+## Spaced repetition
 
-maybe we should call this feature orbit
+[maybe] we should just call this feature `orbit`
 
-user can add project into his timeline
+user can add project into his `timeline`
 
-# embedded
+# Community
+
+## Embedded
 
 embedded route for iframe
 
-# homepage
+# Marketing
+
+## Homepage
 
 improve homepage
 
 docs in homepage
 
-# learn
+# Cards
+
+## Guitar
+
+major minor game
+
+- https://www.youtube.com/watch?v=2Fjd-VJjvO8
+
+scales
+
+- phrygian major
+
+# Learn
+
+## CSS
 
 understand `<div>` vs `<span>`
 
