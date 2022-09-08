@@ -1,13 +1,13 @@
 # Project
 
-File -- change edit to config
 Project -- change edit to config
 
 File -- extra FileTitle
 Project -- extra ProjectTitle
 
-ProjectEdit -- be able to edit the project info
-ProjectEdit -- be able to delete project
+ProjectConfig -- be able to edit the project info
+ProjectConfig -- be able to delete project
+
 ProjectList -- improve description style
 
 # Author

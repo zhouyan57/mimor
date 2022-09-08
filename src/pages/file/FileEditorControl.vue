@@ -11,12 +11,12 @@ defineProps<{ state: State }>()
   <div class="flex w-full justify-between border-t border-stone-500 pt-2">
     <div class="flex space-x-3 text-xl">
       <Link
-        :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?edit`"
+        :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?config`"
       >
         <div class="flex items-center space-x-0.5 hover:underline">
           <Lang>
-            <template #zh>编辑</template>
-            <template #en>Edit</template>
+            <template #zh>配置</template>
+            <template #en>Config</template>
           </Lang>
         </div>
       </Link>

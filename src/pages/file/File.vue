@@ -7,7 +7,7 @@ import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import FileEditor from './FileEditor.vue'
 import FileRecall from './FileRecall.vue'
-import FileEdit from './FileEdit.vue'
+import FileConfig from './FileConfig.vue'
 import { FileState as State } from './FileState'
 import { formatParam } from '../../utils/formatParam'
 
@@ -72,7 +72,7 @@ const state = reactive(
     </template>
 
     <FileRecall v-if="$route.query.recall !== undefined" :state="state" />
-    <FileEdit v-else-if="$route.query.edit !== undefined" :state="state" />
+    <FileConfig v-else-if="$route.query.config !== undefined" :state="state" />
     <FileEditor v-else :state="state" />
   </PageLayout>
 </template>
