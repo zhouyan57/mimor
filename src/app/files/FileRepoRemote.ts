@@ -72,4 +72,18 @@ export class FileRepoRemote {
       throw new HttpError('response not ok', response)
     }
   }
+
+  async delete(username: string, projectName: string, path: string) {
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${projectName}/files/${path}`,
+      {
+        method: 'DELETE',
+        headers: app.api.headers,
+      },
+    )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+  }
 }

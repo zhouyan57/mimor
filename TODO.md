@@ -1,4 +1,4 @@
-app.files.delete(username, projectName, path)
+fix app.files.memory.delete
 
 FileEdit -- delete use `window.conform`
 

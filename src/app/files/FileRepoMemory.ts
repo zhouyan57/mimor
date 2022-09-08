@@ -52,4 +52,9 @@ export class FileRepoMemory {
     this.map.get(key)?.set(file.path, file)
     await app.projects.memory.touch(username, projectName)
   }
+
+  async delete(username: string, projectName: string, path: string) {
+    const key = this.key(username, projectName)
+    return this.map.get(key)?.delete(path)
+  }
 }
