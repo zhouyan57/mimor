@@ -5,12 +5,15 @@ import { comparePath } from '../../utils/comparePath'
 export class ProjectState {
   project?: ProjectJson
   files?: Array<FileJson>
-  username: string
-  name: string
 
-  constructor(options: { username: string; name: string }) {
-    this.username = options.username
-    this.name = options.name
+  constructor(public options: { username: string; name: string }) {}
+
+  get username(): string {
+    return this.options.username
+  }
+
+  get name(): string {
+    return this.project?.name || this.options.name
   }
 
   async load() {
