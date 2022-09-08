@@ -41,6 +41,11 @@ function submit(event: Event) {
     )
   })
 }
+
+async function remove() {
+  await state.remove()
+  router.replace(`/authors/${state.username}/projects/${state.project.name}`)
+}
 </script>
 
 <template>
@@ -78,17 +83,7 @@ function submit(event: Event) {
     </form>
 
     <div class="flex max-w-lg flex-col space-y-2 py-2 text-xl">
-      <FormButton
-        @click="
-          () => {
-            state.delete()
-            $router.replace(
-              `/authors/${state.username}/projects/${state.project.name}`,
-            )
-          }
-        "
-        class="bg-red-100 text-red-500"
-      >
+      <FormButton @click="remove" class="bg-red-100 text-red-500">
         <Lang>
           <template #zh>删除</template>
           <template #en>Delete</template>

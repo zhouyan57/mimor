@@ -1,5 +1,3 @@
-fix app.files.memory.delete
-
 FileEdit -- delete use `window.conform`
 
 ProjectList -- big button to create the first project

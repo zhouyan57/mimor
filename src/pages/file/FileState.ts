@@ -55,7 +55,7 @@ export class FileState {
     }
   }
 
-  async delete() {
+  async remove() {
     await app.safe(async () => {
       if (this.file) {
         await app.files.delete(this.username, this.project.name, this.file.path)
