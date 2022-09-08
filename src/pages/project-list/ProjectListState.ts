@@ -18,6 +18,7 @@ export class ProjectListState {
   }
 
   async load() {
+    await app.auth.initialize()
     this.projects = await app.safe(() => app.projects.all(this.username))
     this.author = await app.safe(() => app.authors.get(this.username))
   }

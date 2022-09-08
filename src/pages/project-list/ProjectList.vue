@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { reactive, watch } from 'vue'
+import { reactive, watch, onMounted } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
@@ -28,10 +28,14 @@ watch(
     })
   },
 )
+
+onMounted(async () => {
+  await state.load()
+})
 </script>
 
 <template>
-  <PageLayout :options="{ onInitialized: () => state.load() }">
+  <PageLayout>
     <ProjectListHead :state="state" />
 
     <template #title>
