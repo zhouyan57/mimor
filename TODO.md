@@ -1,11 +1,9 @@
 # Project
 
-ProjectNormal -- quit using `onInitialized` of `PageLayout`
 File -- quit using `onInitialized` of `PageLayout`
+remove `onInitialized` of `PageLayout`
 
 Project -- refactor structure use PageLayout in Project instead of ProjectNormal
-
-remove `onInitialized` of `PageLayout`
 
 ProjectConfig -- with ProjectHead and ProjectTitle
 ProjectConfig -- be able to edit the project info

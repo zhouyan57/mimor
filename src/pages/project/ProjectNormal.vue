@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -8,11 +9,15 @@ import ProjectFileList from './ProjectFileList.vue'
 import ProjectControl from './ProjectControl.vue'
 import { ProjectState as State } from './ProjectState'
 
-defineProps<{ state: State }>()
+const { state } = defineProps<{ state: State }>()
+
+onMounted(async () => {
+  await state.load()
+})
 </script>
 
 <template>
-  <PageLayout :options="{ onInitialized: () => state.load() }">
+  <PageLayout>
     <ProjectHead :state="state" />
 
     <template #title>
