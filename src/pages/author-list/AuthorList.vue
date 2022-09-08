@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import Loading from '../../components/Loading.vue'
@@ -7,10 +7,14 @@ import { AuthorListState as State } from './AuthorListState'
 import AuthorListItem from './AuthorListItem.vue'
 
 const state = reactive(new State())
+
+onMounted(async () => {
+  await state.load()
+})
 </script>
 
 <template>
-  <PageLayout :options="{ onInitialized: () => state.load() }">
+  <PageLayout>
     <template #title>
       <Lang class="font-logo">
         <template #zh>作者</template>

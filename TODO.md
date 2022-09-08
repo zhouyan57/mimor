@@ -1,6 +1,5 @@
 # Project
 
-AuthorList -- quit using `onInitialized` of `PageLayout`
 ProjectNormal -- quit using `onInitialized` of `PageLayout`
 File -- quit using `onInitialized` of `PageLayout`
 
