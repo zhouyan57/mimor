@@ -1,7 +1,5 @@
 # Project
 
-Project -- link to ProjectEdit
-
 File -- extra FileTitle
 Project -- extra ProjectTitle
 
