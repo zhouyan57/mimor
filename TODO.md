@@ -1,7 +1,8 @@
 ProjectList -- big button to create the first project
+
 Project -- big to create the first file
 
-ProjectList -- be able to fold the description
+ProjectList -- improve description style
 
 Project -- be able to edit the project info
 

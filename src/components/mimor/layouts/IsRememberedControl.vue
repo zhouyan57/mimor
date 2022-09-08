@@ -16,7 +16,10 @@ defineProps<{
       v-if="!program.revealed"
       @click="program.revealed = true"
       class="flex w-full flex-col items-start border p-3"
-      :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
+      :class="[
+        mimor.theme.bg(400),
+        mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+      ]"
     >
       <EyeIcon
         class="h-6 w-6"
@@ -34,7 +37,10 @@ defineProps<{
       <button
         @click="program.forgotten()"
         class="flex w-full flex-col items-start border p-3"
-        :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
+        :class="[
+          mimor.theme.bg(400),
+          mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+        ]"
       >
         <XMarkIcon
           class="h-6 w-6"
@@ -53,7 +59,10 @@ defineProps<{
       <button
         @click="program.remembered()"
         class="flex w-full flex-col items-start border p-3"
-        :class="[mimor.theme.bg(400), mimor.theme.border(400)]"
+        :class="[
+          mimor.theme.bg(400),
+          mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+        ]"
       >
         <CheckIcon
           class="h-6 w-6"

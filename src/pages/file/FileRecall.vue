@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <Mimor
     v-if="state.file"
-    class="h-full border"
+    class="h-full border border-stone-300"
     :options="{
       text: state.file.content,
       program: {
