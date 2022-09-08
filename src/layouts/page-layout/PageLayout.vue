@@ -12,9 +12,6 @@ import { PageLayoutState as State } from './PageLayoutState'
 const { options, auth, guest } = defineProps<{
   auth?: boolean | { username: string }
   guest?: boolean
-  options?: {
-    onInitialized?: (state: State) => Promise<void>
-  }
 }>()
 
 const router = useRouter()
@@ -26,10 +23,6 @@ onMounted(async () => {
   await app.auth.initialize()
   maybeRedirect()
   state.loading = false
-
-  if (options?.onInitialized) {
-    options.onInitialized(state)
-  }
 })
 
 function maybeRedirect() {

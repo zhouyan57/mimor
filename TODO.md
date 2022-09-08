@@ -1,7 +1,5 @@
 # Project
 
-remove `onInitialized` of `PageLayout`
-
 Project -- refactor structure use PageLayout in Project instead of ProjectNormal
 
 ProjectConfig -- with ProjectHead and ProjectTitle
