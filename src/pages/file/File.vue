@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import { PlayIcon, PencilIcon } from '@heroicons/vue/24/outline'
 import Link from '../../components/Link.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import FileTitle from './FileTitle.vue'
 import FileEditor from './FileEditor.vue'
 import FileRecall from './FileRecall.vue'
 import FileConfig from './FileConfig.vue'
@@ -30,45 +31,7 @@ const state = reactive(
     </Head>
 
     <template #title>
-      <div class="flex w-full items-center space-x-2">
-        <div
-          class="flex w-full space-x-1 overflow-x-auto overflow-y-hidden whitespace-pre font-sans text-xl"
-        >
-          <Link
-            :href="`/authors/${$route.params.username}`"
-            class="hover:underline"
-            >{{ $route.params.username }}</Link
-          >
-
-          <div>/</div>
-
-          <Link
-            :href="`/authors/${$route.params.username}/projects/${state.project.name}`"
-            class="font-bold hover:underline"
-          >
-            {{ state.project.name }}
-          </Link>
-
-          <div>/</div>
-
-          <div class="font-normal">{{ state.path }}</div>
-        </div>
-
-        <Link
-          v-if="$route.query.recall !== undefined"
-          mode="replace"
-          :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}`"
-        >
-          <PencilIcon class="h-5 w-5 stroke-1" />
-        </Link>
-        <Link
-          v-else
-          mode="replace"
-          :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?recall`"
-        >
-          <PlayIcon class="h-5 w-5 stroke-1" />
-        </Link>
-      </div>
+      <FileTitle :state="state" />
     </template>
 
     <FileRecall v-if="$route.query.recall !== undefined" :state="state" />
