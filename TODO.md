@@ -1,7 +1,5 @@
 # Project
 
-ProjectList -- description height limit
-
 ProjectConfig -- be able to edit the project info
 
 ProjectConfig -- be able to delete project

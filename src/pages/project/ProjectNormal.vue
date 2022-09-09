@@ -10,9 +10,13 @@ const { state } = defineProps<{ state: State }>()
 
 <template>
   <div class="flex h-full flex-col justify-between">
-    <div v-if="state.project?.description" class="max-h-max font-serif text-xl">
-      {{ state.project.description }}
-    </div>
+    <textarea
+      v-if="state.project?.description"
+      rows="3"
+      class="max-h-max border-y border-stone-300 bg-white font-serif text-xl disabled:bg-white"
+      disabled
+      :value="state.project.description"
+    ></textarea>
 
     <div class="h-full overflow-y-auto">
       <ProjectFileList
