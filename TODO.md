@@ -1,5 +1,20 @@
 # Project
 
+hooks/useGuard -- maybe inject `router`
+
+PageLayout should not use `auth` and `guest` -- use `hooks/useGuard` instead
+
+```
+./pages/file-create/FileCreate.vue:  <PageLayout :auth="{ username: $route.params.username as string }">
+./pages/config/Config.vue:  <PageLayout auth>
+./pages/register/Register.vue:  <PageLayout guest>
+./pages/project-create/ProjectCreate.vue:  <PageLayout :auth="{ username: $route.params.username as string }">
+./pages/login/Login.vue:  <PageLayout guest>
+```
+
+ProjectConfig -- limit to current auth user
+FileConfig -- limit to current auth user
+
 ProjectConfig -- be able to edit the project info
 
 ProjectConfig -- be able to delete project
