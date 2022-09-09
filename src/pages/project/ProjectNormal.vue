@@ -13,7 +13,7 @@ const { state } = defineProps<{ state: State }>()
     <textarea
       v-if="state.project?.description"
       rows="3"
-      class="max-h-max border-y border-stone-300 bg-white font-serif text-xl disabled:bg-white"
+      class="max-h-max border-y border-stone-900 bg-white py-2 font-serif text-xl disabled:bg-white"
       disabled
       :value="state.project.description"
     ></textarea>
