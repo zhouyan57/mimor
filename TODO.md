@@ -2,6 +2,9 @@
 
 hooks/useGuard -- maybe inject `router`
 
+- guard.guestOnly()
+- guard.userOnly()
+
 PageLayout should not use `auth` and `guest` -- use `hooks/useGuard` instead
 
 ```
