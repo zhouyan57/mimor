@@ -31,12 +31,20 @@ export class ProjectState {
     await app.safe(async () => {
       if (this.project) {
         await app.projects.put(this.username, this.project.name, project)
-
         this.project = project
       }
     })
 
     this.updating = false
+  }
+
+  async remove() {
+    await app.safe(async () => {
+      if (this.project) {
+        await app.projects.delete(this.username, this.project.name)
+        this.project = undefined
+      }
+    })
   }
 
   get sortedFiles(): Array<FileJson> | undefined {

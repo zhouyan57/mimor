@@ -1,7 +1,5 @@
 # Project
 
-ProjectConfig -- be able to delete project
-
 Project can be `public` or `private` -- `public` by default
 
 # File

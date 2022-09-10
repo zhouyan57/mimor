@@ -50,12 +50,11 @@ function submit(event: Event) {
 
 async function remove() {
   if (state.project === undefined) return
-  // const path = `${state.username} / ${state.project.name} / ${state.file.path}`
-  const path = ''
-  const message = app.lang.zh ? `删除项目：${path}` : `Delete file： ${path}`
+  const path = `${state.username} / ${state.project.name}`
+  const message = app.lang.zh ? `删除项目：${path}` : `Delete project ${path}`
   if (window.confirm(message)) {
-    // await state.remove()
-    // router.replace(`/authors/${state.username}/projects/${state.project.name}`)
+    await state.remove()
+    router.replace(`/authors/${state.username}`)
   }
 }
 </script>

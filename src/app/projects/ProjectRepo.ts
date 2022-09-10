@@ -42,6 +42,11 @@ export class ProjectRepo {
     await this.memory.put(username, name, project)
   }
 
+  async delete(username: string, name: string) {
+    await this.remote.delete(username, name)
+    await this.memory.delete(username, name)
+  }
+
   sortByDate(projects: Array<ProjectJson>): Array<ProjectJson> {
     return projects.sort((left, right) => {
       return this.date(right).getTime() - this.date(left).getTime()

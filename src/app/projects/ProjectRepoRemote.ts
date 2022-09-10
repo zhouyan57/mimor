@@ -62,4 +62,18 @@ export class ProjectRepoRemote {
 
     return ProjectSchema.validate(await response.json())
   }
+
+  async delete(username: string, name: string) {
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${name}`,
+      {
+        method: 'DELETE',
+        headers: app.api.headers,
+      },
+    )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+  }
 }

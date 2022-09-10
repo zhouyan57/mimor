@@ -41,6 +41,12 @@ export class ProjectRepoMemory {
     this.map.get(key)?.set(project.name, project)
   }
 
+  async delete(username: string, name: string) {
+    const key = username
+    this.map.set(key, this.map.get(key) || new Map())
+    this.map.get(key)?.delete(name)
+  }
+
   async touch(username: string, name: string) {
     const project = await this.get(username, name)
     if (project) {
