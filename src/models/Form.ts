@@ -1,6 +1,6 @@
 import { HttpError } from '../errors/HttpError'
 
-export type Values = Record<string, string>
+export type Values = Record<string, string | boolean>
 
 type Unprocessable<T> = {
   message: string
@@ -17,9 +17,14 @@ export class Form<T extends Values> {
 
   loadValuesFromEvent(event: Event) {
     const target: any = event.target
+
     for (const key of Object.keys(this.values)) {
       if (target.hasOwnProperty(key)) {
-        ;(this.values as any)[key] = target[key].value
+        if (target[key].type === 'checkbox') {
+          ;(this.values as any)[key] = target[key].checked
+        } else {
+          ;(this.values as any)[key] = target[key].value
+        }
       } else {
         console.log({
           who: 'Form.loadValuesFromEvent',

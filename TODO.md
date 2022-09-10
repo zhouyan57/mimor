@@ -1,9 +1,3 @@
-# Project
-
-ProjectConfig be able to edit `private` property
-
-- use checkbox
-
 # Author
 
 rename Config to AuthorConfig
