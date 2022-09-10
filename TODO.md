@@ -2,12 +2,6 @@
 
 Project can be `public` or `private` -- `public` by default
 
-# File
-
-FileCreate -- limit path to end with .mimor
-
-FileConfig -- limit path to end with .mimor
-
 # Author
 
 AuthorList -- handle pagination
