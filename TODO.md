@@ -1,3 +1,9 @@
+# Project
+
+ProjectConfig be able to edit `private` property
+
+- use checkbox
+
 # Author
 
 AuthorList -- handle pagination
@@ -9,10 +15,6 @@ Author has `description`
 Config -- can delete author
 
 Can follow other author
-
-# Project
-
-ProjectConfig be able to edit `private` property
 
 # Recall
 

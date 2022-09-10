@@ -38,7 +38,7 @@
     "vite": "^3.1.0",
     "vite-plugin-pwa": "^0.12.7",
     "vite-plugin-rewrite-all": "^1.0.0",
-    "vitest": "^0.23.1",
+    "vitest": "^0.23.2",
     "vue-tsc": "^0.40.13"
   }
 }
