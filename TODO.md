@@ -3,8 +3,6 @@
 ProjectConfig -- be able to edit the project info
 ProjectConfig -- be able to delete project
 
-ProjectConfig -- limit description length to 256
-
 Project can be `public` or `private` -- `public` by default
 
 # File

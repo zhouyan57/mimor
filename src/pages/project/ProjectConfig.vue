@@ -75,7 +75,7 @@ async function remove() {
         </template>
       </FormInput>
 
-      <FormTextarea :form="form" name="description" maxlength="1024">
+      <FormTextarea :form="form" name="description" maxlength="256">
         <template #label>
           <Lang>
             <template #zh>描述</template>
