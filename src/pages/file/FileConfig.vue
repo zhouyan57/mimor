@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { useRouter, useRoute } from 'vue-router'
-import { watch } from 'vue'
+import { watch, onBeforeMount } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
 import FormButton from '../../components/FormButton.vue'
@@ -33,11 +33,17 @@ watch(
 const router = useRouter()
 const route = useRoute()
 
+onBeforeMount(async () => {
+  await app.guard.userOnly(router, {
+    username: state.username,
+  })
+})
+
 function submit(event: Event) {
   form.submit(event, async (values) => {
     await state.update(values)
     router.replace(
-      `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}?edit`,
+      `/authors/${state.username}/projects/${state.project.name}/files/${form.values.path}?edit`,
     )
   })
 }

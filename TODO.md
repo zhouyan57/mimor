@@ -1,7 +1,5 @@
 # Project
 
-FileConfig -- limit to current auth user
-
 ProjectConfig -- be able to edit the project info
 
 ProjectConfig -- be able to delete project
