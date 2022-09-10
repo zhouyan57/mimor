@@ -17,17 +17,14 @@ const { state } = defineProps<{ state: State }>()
 
 const form = useForm({
   name: '',
-  private: false as boolean,
   description: '',
 })
 
 watch(
   () => state.project,
   () => {
-    console.log('project.private:', state.project?.private)
     if (state.project) {
       form.values.name = state.project.name
-      form.values.private = state.project.private || false
       form.values.description = state.project.description || ''
     }
   },
@@ -45,10 +42,8 @@ onBeforeMount(async () => {
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
-    console.log('values.private:', values.private)
     await state.update({
       name: values.name,
-      private: values.private,
       description: values.description,
     })
     router.replace(
@@ -82,15 +77,6 @@ async function remove() {
           </Lang>
         </template>
       </FormInput>
-
-      <FormCheckbox :form="form" name="private">
-        <template #label>
-          <Lang>
-            <template #zh>私人</template>
-            <template #en>Private</template>
-          </Lang>
-        </template>
-      </FormCheckbox>
 
       <FormTextarea :form="form" name="description" maxlength="256">
         <template #label>
