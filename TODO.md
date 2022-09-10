@@ -2,6 +2,8 @@
 
 Project can be `public` or `private` -- `public` by default
 
+ProjectList -- do not show private Project
+
 # Author
 
 AuthorList -- handle pagination
