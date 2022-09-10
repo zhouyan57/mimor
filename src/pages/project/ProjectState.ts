@@ -5,6 +5,7 @@ import { comparePath } from '../../utils/comparePath'
 export class ProjectState {
   project?: ProjectJson
   files?: Array<FileJson>
+  updating = false
 
   constructor(public options: { username: string; name: string }) {}
 
@@ -22,6 +23,20 @@ export class ProjectState {
     )
 
     this.files = await app.safe(() => app.files.all(this.username, this.name))
+  }
+
+  async update(project: ProjectJson) {
+    this.updating = true
+
+    await app.safe(async () => {
+      if (this.project) {
+        await app.projects.put(this.username, this.project.name, project)
+
+        this.project = project
+      }
+    })
+
+    this.updating = false
   }
 
   get sortedFiles(): Array<FileJson> | undefined {

@@ -45,4 +45,21 @@ export class ProjectRepoRemote {
 
     return ProjectSchema.validate(await response.json())
   }
+
+  async put(username: string, name: string, project: ProjectJson) {
+    const response = await fetch(
+      `${app.api.url}/users/${username}/projects/${name}`,
+      {
+        method: 'PUT',
+        headers: app.api.headers,
+        body: JSON.stringify(project),
+      },
+    )
+
+    if (!response.ok) {
+      throw new HttpError('response not ok', response)
+    }
+
+    return ProjectSchema.validate(await response.json())
+  }
 }

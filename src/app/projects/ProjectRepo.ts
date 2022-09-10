@@ -37,6 +37,11 @@ export class ProjectRepo {
     return project
   }
 
+  async put(username: string, name: string, project: ProjectJson) {
+    await this.remote.put(username, name, project)
+    await this.memory.put(username, name, project)
+  }
+
   sortByDate(projects: Array<ProjectJson>): Array<ProjectJson> {
     return projects.sort((left, right) => {
       return this.date(right).getTime() - this.date(left).getTime()

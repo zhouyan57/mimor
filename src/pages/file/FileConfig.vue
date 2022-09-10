@@ -43,7 +43,7 @@ function submit(event: Event) {
   form.submit(event, async (values) => {
     await state.update(values)
     router.replace(
-      `/authors/${state.username}/projects/${state.project.name}/files/${form.values.path}?edit`,
+      `/authors/${state.username}/projects/${state.project.name}/files/${form.values.path}?config`,
     )
   })
 }

@@ -41,10 +41,10 @@ onBeforeMount(async () => {
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
-    // await state.update(values)
-    // router.replace(
-    //   `/authors/${route.params.username}/projects/${route.params.name}/files/${form.values.path}?edit`,
-    // )
+    await state.update(values)
+    router.replace(
+      `/authors/${state.username}/projects/${route.params.name}?config`,
+    )
   })
 }
 
@@ -52,7 +52,7 @@ async function remove() {
   if (state.project === undefined) return
   // const path = `${state.username} / ${state.project.name} / ${state.file.path}`
   const path = ''
-  const message = app.lang.zh ? `删除文件：${path}` : `Delete file： ${path}`
+  const message = app.lang.zh ? `删除项目：${path}` : `Delete file： ${path}`
   if (window.confirm(message)) {
     // await state.remove()
     // router.replace(`/authors/${state.username}/projects/${state.project.name}`)
