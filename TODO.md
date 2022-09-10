@@ -10,10 +10,6 @@ AuthorConfig has `website`
 
 404 page for undefined author and project and file
 
-AuthorConfig -- can delete author
-
-author Can follow other authors
-
 # Recall
 
 ## File recall
