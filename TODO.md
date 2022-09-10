@@ -1,10 +1,5 @@
 # Project
 
-hooks/useGuard -- maybe inject `router`
-
-- guard.guestOnly()
-- guard.userOnly()
-
 PageLayout should not use `auth` and `guest` -- use `hooks/useGuard` instead
 
 ```
@@ -12,7 +7,6 @@ PageLayout should not use `auth` and `guest` -- use `hooks/useGuard` instead
 ./pages/config/Config.vue:  <PageLayout auth>
 ./pages/register/Register.vue:  <PageLayout guest>
 ./pages/project-create/ProjectCreate.vue:  <PageLayout :auth="{ username: $route.params.username as string }">
-./pages/login/Login.vue:  <PageLayout guest>
 ```
 
 ProjectConfig -- limit to current auth user

@@ -16,7 +16,7 @@
     "@heroicons/vue": "^2.0.10",
     "@rgrove/parse-xml": "^3.0.0",
     "@vueuse/core": "^9.2.0",
-    "@vueuse/head": "^0.7.9",
+    "@vueuse/head": "^0.7.10",
     "@xieyuheng/ty": "^0.1.17",
     "lodash": "^4.17.21",
     "register-service-worker": "^1.7.2",

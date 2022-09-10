@@ -1,5 +1,6 @@
 import { Api } from './Api'
 import { Auth } from './auth/Auth'
+import { Guard } from './guard/Guard'
 import { Lang } from './Lang'
 import { UserRepo } from './users/UserRepo'
 import { AuthorRepo } from './authors/AuthorRepo'
@@ -11,6 +12,7 @@ export class App {
   lang = new Lang()
   auth = new Auth()
   api = new Api()
+  guard = new Guard()
 
   users = new UserRepo()
   authors = new AuthorRepo()

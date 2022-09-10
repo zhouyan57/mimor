@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { reactive, onBeforeMount } from 'vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import LoginStart from './LoginStart.vue'
 import { LoginState as State } from './LoginState'
 import LoginVerifying from './LoginVerifying.vue'
 
 const state = reactive(new State())
+const router = useRouter()
+
+onBeforeMount(async () => {
+  await app.guard.guestOnly(router)
+})
 </script>
 
 <template>
