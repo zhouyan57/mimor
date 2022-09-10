@@ -1,18 +1,18 @@
-# Project
-
-ProjectConfig be able to edit `private` property
-
 # Author
 
 AuthorList -- handle pagination
 
-- [backend] seed the database to test pagination
+Author has `description`
 
 404 page for undefined author and project and file
 
 Config -- can delete author
 
 Can follow other author
+
+# Project
+
+ProjectConfig be able to edit `private` property
 
 # Recall
 
