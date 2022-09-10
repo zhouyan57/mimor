@@ -2,13 +2,13 @@
 
 Project can be `public` or `private` -- `public` by default
 
-ProjectList -- do not show private Project
+app.projects.all -- do not show private Project
 
 # Author
 
 AuthorList -- handle pagination
 
-- seed the database to test pagination
+- [backend] seed the database to test pagination
 
 404 page for undefined author and project and file
 
