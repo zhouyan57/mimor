@@ -1,16 +1,23 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import { Head } from '@vueuse/head'
-import { reactive } from 'vue'
+import { reactive, onBeforeMount } from 'vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import RegisterStart from './RegisterStart.vue'
 import { RegisterState as State } from './RegisterState'
 import RegisterVerifying from './RegisterVerifying.vue'
 
 const state = reactive(new State())
+
+const router = useRouter()
+
+onBeforeMount(async () => {
+  await app.guard.guestOnly(router)
+})
 </script>
 
 <template>
-  <PageLayout guest>
+  <PageLayout>
     <Head>
       <title v-if="$app.lang.zh">注册 | 谜墨</title>
       <title v-else>Register | Mimor</title>

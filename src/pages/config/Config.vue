@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { watch, onMounted, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { watch, onMounted, reactive, onBeforeMount } from 'vue'
 import { Head } from '@vueuse/head'
 import FormButton from '../../components/FormButton.vue'
 import FormInput from '../../components/FormInput.vue'
@@ -11,6 +12,8 @@ import { ConfigState as State } from './ConfigState'
 
 const state = reactive(new State())
 
+const router = useRouter()
+
 watch(
   () => app.lang.tag,
   () => {
@@ -18,13 +21,17 @@ watch(
   },
 )
 
+onBeforeMount(async () => {
+  await app.guard.userOnly(router)
+})
+
 onMounted(async () => {
   await state.load()
 })
 </script>
 
 <template>
-  <PageLayout auth>
+  <PageLayout>
     <Head>
       <title v-if="$app.lang.zh">配置 | 谜墨</title>
       <title v-else>Config | Mimor</title>

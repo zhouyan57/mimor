@@ -16,7 +16,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <PageLayout guest>
+  <PageLayout>
     <Head>
       <title v-if="$app.lang.zh">登录 | 谜墨</title>
       <title v-else>Login | Mimor</title>

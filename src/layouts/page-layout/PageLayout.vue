@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
-import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 import PageLoading from './PageLoading.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
@@ -9,41 +8,13 @@ import PageLayoutSidebar from './PageLayoutSidebar.vue'
 import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
-const { auth, guest } = defineProps<{
-  auth?: boolean | { username: string }
-  guest?: boolean
-}>()
-
-const router = useRouter()
-
 const state = reactive(new State())
 
 onMounted(async () => {
   state.loading = true
   await app.auth.initialize()
-  maybeRedirect()
   state.loading = false
 })
-
-function maybeRedirect() {
-  if (auth) {
-    if (!app.auth.user) {
-      router.replace('/')
-    }
-
-    if (typeof auth === 'object' && app.auth.user) {
-      if (auth.username !== app.auth.user.username) {
-        router.replace('/')
-      }
-    }
-  }
-
-  if (guest) {
-    if (app.auth.user) {
-      router.replace('/')
-    }
-  }
-}
 </script>
 
 <template>

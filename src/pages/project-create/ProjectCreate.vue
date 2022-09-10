@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive, onBeforeMount } from 'vue'
 import { Head } from '@vueuse/head'
 import { useRouter, useRoute } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
@@ -14,7 +15,14 @@ const form = useForm({
   description: '',
 })
 
+const route = useRoute()
 const router = useRouter()
+
+onBeforeMount(async () => {
+  await app.guard.userOnly(router, {
+    username: route.params.username as string,
+  })
+})
 
 function submit(event: Event) {
   form.submit(event, async (values) => {
@@ -29,7 +37,7 @@ function submit(event: Event) {
 </script>
 
 <template>
-  <PageLayout :auth="{ username: $route.params.username as string }">
+  <PageLayout>
     <Head>
       <title v-if="$app.lang.zh">新项目 | 谜墨</title>
       <title v-else>New Project | Mimor</title>
