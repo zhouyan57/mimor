@@ -6,15 +6,19 @@ ProjectConfig be able to edit `private` property
 
 # Author
 
+rename Config to AuthorConfig
+
 AuthorList -- handle pagination
 
-Author has `description`
+AuthorConfig has `description`
+
+AuthorConfig has `website`
 
 404 page for undefined author and project and file
 
-Config -- can delete author
+AuthorConfig -- can delete author
 
-Can follow other author
+author Can follow other authors
 
 # Recall
 
