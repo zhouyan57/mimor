@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onBeforeMount } from 'vue'
+import { onBeforeMount } from 'vue'
 import { Head } from '@vueuse/head'
 import { useRouter, useRoute } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
@@ -63,7 +63,7 @@ function submit(event: Event) {
         </template>
       </FormInput>
 
-      <FormTextarea :form="form" name="description" maxlength="1024">
+      <FormTextarea :form="form" name="description" maxlength="256">
         <template #label>
           <Lang>
             <template #zh>描述</template>

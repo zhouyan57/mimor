@@ -1,10 +1,7 @@
 # Project
 
 ProjectConfig -- be able to edit the project info
-
 ProjectConfig -- be able to delete project
-
-ProjectCreate -- limit description length to 256
 
 ProjectConfig -- limit description length to 256
 
