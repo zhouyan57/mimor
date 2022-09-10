@@ -1,8 +1,6 @@
 # Project
 
-Project can be `public` or `private` -- `public` by default
-
-app.projects.all -- do not show private Project
+ProjectConfig be able to edit `private` property
 
 # Author
 
