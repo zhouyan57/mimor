@@ -1,4 +1,4 @@
-import parseXml, { XmlNode, XmlElement, XmlText } from '@rgrove/parse-xml'
+import { parseXml, XmlNode, XmlElement, XmlText } from '@rgrove/parse-xml'
 import { h, XElement, XNode } from './index'
 
 interface ParsingErrorOptions {
@@ -18,7 +18,7 @@ export class ParsingError extends Error {
 
 export function parseNodes(input: string): Array<XNode> {
   try {
-    const root = parseXml(`<root>${input}</root>`)
+    const root = parseXml(`<root>${input}</root>`, {})
     return fromNodes((root.children[0] as any).children)
   } catch (error) {
     if (!(error instanceof Error)) throw error
