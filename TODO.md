@@ -1,3 +1,5 @@
+editor disable spellcheck
+
 # Author
 
 rename Config to AuthorConfig
