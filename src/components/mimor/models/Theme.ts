@@ -55,6 +55,7 @@ export const colors = [
   'blue',
   'indigo',
   'purple',
+  'stone',
 ]
 
 const chineseColorNames: Record<string, string> = {
@@ -68,4 +69,5 @@ const chineseColorNames: Record<string, string> = {
   青: 'blue',
   靛: 'indigo',
   紫: 'purple',
+  墨: 'stone',
 }
