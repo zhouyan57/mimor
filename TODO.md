@@ -1,4 +1,18 @@
+# minor
+
+setup one `minors` route
+
+remove other routes
+
+# author
+
+setup one `authors` route
+
+no project just author and a tree of files
+
 quit using current backend API
+
+# old
 
 editor disable spellcheck
 
