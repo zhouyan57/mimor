@@ -1,10 +1,10 @@
 import { createHead } from '@vueuse/head'
 import { createApp } from 'vue'
-import { app } from './app'
 import App from './App.vue'
-import './assets/styles/index.css'
-import './assets/fonts/index.css'
+import { app } from './app'
 import router from './router'
+import './styles/fonts.css'
+import './styles/index.css'
 
 const root = createApp(App)
 
