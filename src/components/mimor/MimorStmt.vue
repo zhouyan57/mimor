@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { XElement } from '@xieyuheng/x-node'
 import { onMounted } from 'vue'
-import { isElement, XElement } from '../../libs/x-node'
 import { MimorState } from './MimorState'
 import { Program } from './models/Program'
 

@@ -1,5 +1,5 @@
+import { XNode, isElement } from '@xieyuheng/x-node'
 import { Component, markRaw } from 'vue'
-import { isElement, XNode } from '../../../libs/x-node'
 import { Effect } from './Effect'
 
 type Route =

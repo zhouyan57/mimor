@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { isElement, XNode } from '../../libs/x-node'
+import { isElement, XNode } from '@xieyuheng/x-node'
 import { MimorState } from './MimorState'
-import { Program } from './models/Program'
 import MimorText from './MimorText.vue'
+import { Program } from './models/Program'
 
 defineProps<{
   mimor: MimorState

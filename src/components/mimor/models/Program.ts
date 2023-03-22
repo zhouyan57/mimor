@@ -1,4 +1,4 @@
-import { isElement, XElement, XNode } from '../../../libs/x-node'
+import { isElement, XElement, XNode } from '@xieyuheng/x-node'
 import { Router } from './Router'
 
 export interface ProgramOptions {

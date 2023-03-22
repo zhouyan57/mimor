@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XNode } from '../../libs/x-node'
+import { XNode } from '@xieyuheng/x-node'
 import MimorNode from './MimorNode.vue'
 import { MimorState } from './MimorState'
 import { Program } from './models/Program'

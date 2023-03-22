@@ -1,4 +1,4 @@
-import { XElement } from '../../../libs/x-node'
+import { XElement } from '@xieyuheng/x-node'
 import { MimorState } from '../MimorState'
 import { Program } from './Program'
 

@@ -1,4 +1,4 @@
-use `@xieyuheng/x-node`
+quit using current backend API
 
 editor disable spellcheck
 

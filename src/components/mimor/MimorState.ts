@@ -1,6 +1,6 @@
-import { parseNodes, ParsingError } from '../../libs/x-node'
-import { Theme } from './models/Theme'
+import { parseNodes, ParsingError } from '@xieyuheng/x-node'
 import { Program, ProgramOptions } from './models/Program'
+import { Theme } from './models/Theme'
 import { mountRoutes } from './mountRoutes'
 
 export interface MimorOptions {

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { matchElement, XElement, isElement } from '../../../libs/x-node'
-import MimorNode from '../MimorNode.vue'
-import MimorNodes from '../MimorNodes.vue'
+import { XElement, isElement } from '@xieyuheng/x-node'
 import { MimorState } from '../MimorState'
 import { Program } from '../models/Program'
 

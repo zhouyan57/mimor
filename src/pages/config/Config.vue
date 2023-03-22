@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { watch, onMounted, reactive, onBeforeMount } from 'vue'
 import { Head } from '@vueuse/head'
+import { onBeforeMount, onMounted, reactive, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import FormButton from '../../components/FormButton.vue'
+import FormDivider from '../../components/FormDivider.vue'
 import FormInput from '../../components/FormInput.vue'
 import FormSelect from '../../components/FormSelect.vue'
-import FormDivider from '../../components/FormDivider.vue'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { ConfigState as State } from './ConfigState'
@@ -47,8 +47,8 @@ onMounted(async () => {
     <form
       class="flex max-w-lg flex-col space-y-2 pb-2 text-xl"
       @submit.prevent="
-        (event) =>
-          state.form.submit(event, async (values) => {
+        (event: Event) =>
+          state.form.submit(event, async (values : any) => {
             if (!$app.auth.user) return
 
             await $app.configs.put($app.auth.user.username, values)
