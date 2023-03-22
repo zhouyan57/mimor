@@ -4,8 +4,8 @@
 </script>
 
 <template>
-  <span
-    @click="
+  <a
+    @click.prevent="
       () => {
         if (typeof $attrs.href === 'string') {
           if ($attrs.mode === 'replace') {
@@ -16,6 +16,7 @@
         }
       }
     "
-    ><a class="cursor-pointer"><slot /></a
-  ></span>
+    class="cursor-pointer"
+    ><slot
+  /></a>
 </template>
