@@ -1,3 +1,5 @@
+use `@xieyuheng/x-node`
+
 editor disable spellcheck
 
 # Author
