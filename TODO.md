@@ -1,6 +1,8 @@
 # minor
 
-`MinorPage` show minor
+[minor] `MinorPage` use `PageLayout`
+
+[minor] `MinorPage` show minor
 
 remove other routes
 
