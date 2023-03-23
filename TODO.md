@@ -1,6 +1,7 @@
+use `components/form`
+
 # mimor
 
-[mimor] `MimorLoaded`
 [mimor] `MimorLoading`
 
 remove other routes

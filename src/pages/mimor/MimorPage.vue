@@ -23,6 +23,9 @@ watch(
   async () => {
     state.value = await loadState(createStateOptions())
   },
+  {
+    immediate: true,
+  },
 )
 </script>
 

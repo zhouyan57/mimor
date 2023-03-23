@@ -21,7 +21,7 @@ export const routes: Array<RouteRecordRaw> = [
 
   { path: '/mimors' , redirect: "/" },
   { path: '/mimors/' ,redirect: "/" },
-  { path: '/mimors/:url(.*)*' ,component: MimorPage },
+  { path: '/mimors/:url(.*)' ,component: MimorPage },
 
   { path: '/about', component: About },
   { path: '/authors', component: AuthorList },
