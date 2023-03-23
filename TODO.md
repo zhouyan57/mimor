@@ -1,9 +1,15 @@
+[home] `State` should not be a class
+
 # minor
 
-`minorpage` show minor
+`MinorPage` show minor
 
 remove other routes
+
 remove global app
+
+`MimorState` should be type instead of class
+
 remove `errors/` -- shallow abstraction
 remove `models/Form`
 

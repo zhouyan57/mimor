@@ -19,8 +19,8 @@ import RegisterEmailSuccess from './register/RegisterEmailSuccess.vue'
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
 
-  { path: '/mimors' , redirect: "/" },  
-  { path: '/mimors/' ,redirect: "/" },    
+  { path: '/mimors' , redirect: "/" },
+  { path: '/mimors/' ,redirect: "/" },
   { path: '/mimors/:url(.*)*' ,component: MinorPage },
 
   { path: '/about', component: About },

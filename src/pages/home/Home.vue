@@ -6,7 +6,7 @@ import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { HomeState as State } from './HomeState'
+import { State } from './State'
 
 const state = reactive(new State())
 
@@ -28,13 +28,6 @@ onMounted(() => state.load())
         </Lang>
 
         <div class="flex justify-end space-x-2">
-          <Link href="/authors" class="hover:underline">
-            <Lang>
-              <template #zh>作者</template>
-              <template #en>Authors</template>
-            </Lang>
-          </Link>
-
           <Link href="/about" class="hover:underline">
             <Lang>
               <template #zh>关于</template>

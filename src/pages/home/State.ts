@@ -1,4 +1,4 @@
-export class HomeState {
+export class State {
   finished = false
   flag = true
   text = ''
