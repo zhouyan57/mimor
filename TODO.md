@@ -1,10 +1,8 @@
-[home] `stateReactive`
-
 # minor
 
-`MinorPage` show minor
+[minor] `stateReactive`
 
-`minor-entrance` -- `MinorEntrance`
+`MinorPage` show minor
 
 remove other routes
 
@@ -14,6 +12,12 @@ remove global app
 
 remove `errors/` -- shallow abstraction
 remove `models/Form`
+
+# minor-entrance
+
+`minor-entrance` -- setup route to `MinorEntrance`
+
+`MinorEntrance` enter url
 
 # author
 

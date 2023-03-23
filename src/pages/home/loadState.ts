@@ -11,7 +11,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   }
 }
 
-async function loadText() {
+async function loadText(): Promise<string> {
   const response = await fetch('/contents/sisuo.mimor')
   const text = await response.text()
   return text
