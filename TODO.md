@@ -1,7 +1,5 @@
 page-layout -- fix naming
 
-remove `errors/` -- shallow abstraction
-
 # mimor
 
 [mimor] improve `MimorLoading`
