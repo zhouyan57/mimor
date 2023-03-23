@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onBeforeMount, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import FormButton from '../../components/FormButton.vue'
-import FormDivider from '../../components/FormDivider.vue'
-import FormInput from '../../components/FormInput.vue'
-import FormTextarea from '../../components/FormTextarea.vue'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
-import { useForm } from '../../reactives/useForm'
+import { formSubmit, useForm } from '../../components/form'
+import FormButton from '../../components/form/FormButton.vue'
+import FormDivider from '../../components/form/FormDivider.vue'
+import FormInput from '../../components/form/FormInput.vue'
+import FormTextarea from '../../components/form/FormTextarea.vue'
 import { ProjectState as State } from './ProjectState'
 
 const { state } = defineProps<{ state: State }>()
@@ -38,7 +38,7 @@ onBeforeMount(async () => {
 })
 
 function submit(event: Event) {
-  form.submit(event, async (values) => {
+  formSubmit(form, event, async (values) => {
     await state.update({
       name: values.name,
       description: values.description,

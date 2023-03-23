@@ -1,5 +1,3 @@
-use `components/form`
-
 # mimor
 
 [mimor] `MimorLoading`

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { StateOptions } from './loadState'
+
 defineProps<{ options: StateOptions }>()
 </script>
 

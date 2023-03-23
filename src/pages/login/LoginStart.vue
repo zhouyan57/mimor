@@ -3,10 +3,10 @@ import {
   EllipsisHorizontalCircleIcon,
   UserCircleIcon,
 } from '@heroicons/vue/24/outline/index.js'
-import FormInput from '../../components/FormInput.vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { useForm } from '../../reactives/useForm'
+import { formSubmit, useForm } from '../../components/form'
+import FormInput from '../../components/form/FormInput.vue'
 import { LoginState as State } from './LoginState'
 
 const { state } = defineProps<{ state: State }>()
@@ -16,7 +16,7 @@ const form = useForm({
 })
 
 function submit(event: Event) {
-  form.submit(event, async (values) => {
+  formSubmit(form, event, async (values) => {
     const verifying = await app.auth.login.start(values)
     if (verifying) state.verifying = verifying
   })
@@ -78,12 +78,5 @@ function submit(event: Event) {
         </button>
       </template>
     </FormInput>
-
-    <div v-if="form.response && !form.response.ok" class="mt-1">
-      <Lang class="py-1 text-base font-bold text-orange-400">
-        <template #zh>这个邮箱不对</template>
-        <template #en>Invalid email.</template>
-      </Lang>
-    </div>
   </form>
 </template>

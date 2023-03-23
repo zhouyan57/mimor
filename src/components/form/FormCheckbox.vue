@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form } from '../models/Form'
+import { Form } from './Form'
 
 defineProps<{
   form: Form<any>
@@ -19,21 +19,9 @@ defineProps<{
         :id="name"
         :name="name"
         type="checkbox"
-        :checked="form.values[name]"
+        :checked="Boolean(form.values[name])"
         v-bind="$attrs"
       />
     </div>
-
-    <ol
-      v-if="form.unprocessable?.errors[name]"
-      class="list-inside list-disc py-1 text-base font-bold text-orange-400"
-    >
-      <li
-        v-for="(message, index) of form.unprocessable.errors[name]"
-        :key="index"
-      >
-        {{ message }}
-      </li>
-    </ol>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form } from '../models/Form'
+import { Form } from './Form'
 
 defineProps<{
   form: Form<any>
@@ -17,20 +17,8 @@ defineProps<{
       class="w-full rounded-sm border border-stone-500 p-3 disabled:bg-stone-100"
       :id="name"
       :name="name"
-      :value="form.values[name]"
+      :value="String(form.values[name])"
       v-bind="$attrs"
     ></textarea>
-
-    <ol
-      v-if="form.unprocessable?.errors[name]"
-      class="list-inside list-disc py-1 text-base font-bold text-orange-400"
-    >
-      <li
-        v-for="(message, index) of form.unprocessable.errors[name]"
-        :key="index"
-      >
-        {{ message }}
-      </li>
-    </ol>
   </div>
 </template>

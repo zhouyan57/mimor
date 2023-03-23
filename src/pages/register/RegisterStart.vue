@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import FormButton from '../../components/FormButton.vue'
-import FormDivider from '../../components/FormDivider.vue'
-import FormInput from '../../components/FormInput.vue'
+import { formSubmit, useForm } from '../../components/form'
+import FormButton from '../../components/form/FormButton.vue'
+import FormDivider from '../../components/form/FormDivider.vue'
+import FormInput from '../../components/form/FormInput.vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import { useForm } from '../../reactives/useForm'
 import { RegisterState as State } from './RegisterState'
 
 const { state } = defineProps<{ state: State }>()
@@ -16,7 +16,7 @@ const form = useForm({
 })
 
 function submit(event: Event) {
-  form.submit(event, async (values) => {
+  formSubmit(form, event, async (values) => {
     const verifying = await app.auth.register.start(values)
     if (verifying) state.verifying = verifying
   })
