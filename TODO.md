@@ -1,15 +1,12 @@
 # mimor
 
-[mimor] `MimorLoading`
-
-remove other routes
-
 remove global app
 
-`MimorState` should be type instead of class
-
 remove `errors/` -- shallow abstraction
-remove `models/Form`
+
+[mimor] `MimorLoading`
+
+`MimorState` should be type instead of class
 
 # mimor-entrance
 
