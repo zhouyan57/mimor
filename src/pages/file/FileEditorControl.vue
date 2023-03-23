@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlayIcon } from '@heroicons/vue/24/outline'
+import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import { FileState as State } from './FileState'
 
 defineProps<{ state: State }>()
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex w-full justify-between border-t border-stone-500 pt-2">
     <div class="flex space-x-3 text-xl">
-      <Link
+      <Hyperlink
         v-if="$app.auth.user?.username === $route.params.username"
         :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?config`"
       >
@@ -20,7 +20,7 @@ defineProps<{ state: State }>()
             <template #en>Config</template>
           </Lang>
         </div>
-      </Link>
+      </Hyperlink>
     </div>
 
     <div class="flex space-x-3 text-xl">
@@ -36,7 +36,7 @@ defineProps<{ state: State }>()
         </Lang>
       </button>
 
-      <Link
+      <Hyperlink
         :href="`/authors/${$route.params.username}/projects/${state.project.name}/files/${state.path}?recall`"
       >
         <div class="flex items-center space-x-0.5 hover:underline">
@@ -47,7 +47,7 @@ defineProps<{ state: State }>()
 
           <PlayIcon class="h-6 w-6 stroke-1" />
         </div>
-      </Link>
+      </Hyperlink>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/outline'
+import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State }>()
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <div class="flex w-full justify-between border-t border-stone-500 pt-2">
     <div class="flex space-x-3 text-xl">
-      <Link
+      <Hyperlink
         v-if="$app.auth.user?.username === $route.params.username"
         :href="`/authors/${$route.params.username}/projects/${state.name}?config`"
       >
@@ -20,11 +20,11 @@ defineProps<{ state: State }>()
             <template #en>Config</template>
           </Lang>
         </div>
-      </Link>
+      </Hyperlink>
     </div>
 
     <div class="flex space-x-3 text-xl">
-      <Link
+      <Hyperlink
         v-if="$app.auth.user?.username === $route.params.username"
         :href="`/authors/${$route.params.username}/projects/${state.name}/file-create`"
         class="hover:underline"
@@ -37,7 +37,7 @@ defineProps<{ state: State }>()
 
           <PlusIcon class="h-6 w-6 stroke-1" />
         </div>
-      </Link>
+      </Hyperlink>
     </div>
   </div>
 </template>

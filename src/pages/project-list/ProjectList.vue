@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import ProjectListControl from './ProjectListControl.vue'
@@ -57,12 +57,12 @@ onMounted(async () => {
           </template>
         </Lang>
 
-        <Link
+        <Hyperlink
           :href="`/authors/${state.author.username}`"
           class="overflow-x-auto whitespace-pre text-xl hover:underline"
         >
           {{ state.author.username }}
-        </Link>
+        </Hyperlink>
       </div>
 
       <Loading v-else class="text-xl">
