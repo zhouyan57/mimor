@@ -1,7 +1,5 @@
 # mimor
 
-[mimor] improve `MimorLoading`
-
 `MimorState` should be type instead of class
 
 # mimor-entrance
