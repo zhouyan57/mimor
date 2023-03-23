@@ -44,7 +44,6 @@ onMounted(() => state.load())
       <Mimor
         v-else-if="!state.finished"
         class="h-full border border-stone-300"
-        :key="state.flag.toString()"
         :options="{
           text: state.text,
           program: {
@@ -62,7 +61,7 @@ onMounted(() => state.load())
           <div class="text-4xl">The End</div>
         </div>
 
-        <button class="border p-2 text-2xl" @click="state.again()">
+        <button class="border p-2 text-2xl" @click="state.finished = false">
           Again
         </button>
       </div>

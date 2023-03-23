@@ -1,8 +1,12 @@
 [home] `State` should not be a class
 
+- with `loadState`
+
 # minor
 
 `MinorPage` show minor
+
+`minor-entrance` -- `MinorEntrance`
 
 remove other routes
 

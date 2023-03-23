@@ -1,13 +1,7 @@
 export class State {
   finished = false
-  flag = true
   text = ''
   loading = true
-
-  again() {
-    this.finished = false
-    this.flag = !this.flag
-  }
 
   async load() {
     await this.loadText()
