@@ -11,7 +11,7 @@ import PageLogo from './PageLogo.vue'
     </div>
 
     <div class="flex items-center space-x-1 md:hidden">
-      <PageLogo class="text-xl font-light" />
+      <PageLogo class="text-xl" />
       <div
         class="font-mono text-sm text-stone-500"
         title="This is an alpha release, we develop as we use it."

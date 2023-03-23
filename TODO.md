@@ -1,3 +1,5 @@
+[page-layout] `PageMobileMenu` -- use `Popover` instead of `Menu`
+
 # mimor
 
 [mimor] `onFinished` behavior for `mimors/:url` route

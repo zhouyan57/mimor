@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { useRoute } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
+
+const route = useRoute()
 </script>
 
 <template>
   <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
-      <Bars3Icon class="h-7 w-7 text-stone-500" />
+      <button
+        class="rounded-full border border-stone-300 bg-white p-3 shadow-md"
+      >
+        <Bars3Icon class="h-7 w-7 text-stone-500" />
+      </button>
     </MenuButton>
 
     <Transition
@@ -34,7 +41,9 @@ import PageLogo from './PageLogo.vue'
           <MenuItem as="div" v-slot="{ active }">
             <PageLogo
               class="font-light"
-              :class="[active && 'text-stone-600']"
+              :class="{
+                'text-stone-600': active,
+              }"
             />
           </MenuItem>
         </div>
@@ -44,10 +53,9 @@ import PageLogo from './PageLogo.vue'
             <Hyperlink
               href="/"
               class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
+              :class="{
+                'decoration-6 text-stone-600 underline': active,
+              }"
             >
               <Lang>
                 <template #zh>首页</template>
@@ -60,10 +68,9 @@ import PageLogo from './PageLogo.vue'
             <Hyperlink
               href="/about"
               class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
+              :class="{
+                'decoration-6 text-stone-600 underline': active,
+              }"
             >
               <Lang>
                 <template #zh>关于</template>
@@ -80,10 +87,9 @@ import PageLogo from './PageLogo.vue'
             <MenuItem as="div" v-slot="{ active }">
               <Hyperlink
                 href="/login"
-                :class="[
-                  active && 'decoration-6 underline',
-                  active && 'text-stone-600',
-                ]"
+                :class="{
+                  'decoration-6 text-stone-600 underline': active,
+                }"
               >
                 <Lang>
                   <template #zh>登录</template>
@@ -97,10 +103,9 @@ import PageLogo from './PageLogo.vue'
             <MenuItem as="div" v-slot="{ active }">
               <Hyperlink
                 href="/register"
-                :class="[
-                  active && 'decoration-6 underline',
-                  active && 'text-stone-600',
-                ]"
+                :class="{
+                  'decoration-6 text-stone-600 underline': active,
+                }"
               >
                 <Lang>
                   <template #zh>注册</template>
@@ -115,7 +120,9 @@ import PageLogo from './PageLogo.vue'
           <MenuItem as="div" v-slot="{ active }">
             <XMarkIcon
               class="h-10 w-10 stroke-1"
-              :class="[active && 'border-4 border-stone-500']"
+              :class="{
+                'border-4 border-stone-500': active,
+              }"
             />
           </MenuItem>
         </div>
