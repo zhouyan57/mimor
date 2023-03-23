@@ -1,4 +1,3 @@
-[home] `State` should not have `loading`
 [home] `stateReactive`
 
 # minor

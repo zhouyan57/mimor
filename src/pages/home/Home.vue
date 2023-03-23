@@ -3,7 +3,6 @@ import { Head } from '@vueuse/head'
 import { onMounted, ref } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
-import Loading from '../../components/Loading.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { State } from './State'
@@ -42,10 +41,8 @@ onMounted(async () => {
     </template>
 
     <div class="flex h-full flex-col">
-      <Loading class="text-xl" v-if="state.loading" />
-
       <Mimor
-        v-else-if="!state.finished"
+        v-if="!state.finished"
         class="h-full border border-stone-300"
         :options="{
           text: state.text,

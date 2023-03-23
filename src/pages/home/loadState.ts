@@ -8,7 +8,6 @@ export async function loadState(options: StateOptions): Promise<State> {
   return {
     finished: false,
     text,
-    loading: false,
   }
 }
 
