@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { onMounted, reactive } from 'vue'
+import { onMounted, ref } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
 import Loading from '../../components/Loading.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { State } from './State'
+import { loadState } from './loadState'
 
-const state = reactive(new State())
+const state = ref<State | undefined>(undefined)
 
-onMounted(() => state.load())
+onMounted(async () => {
+  state.value = await loadState({})
+})
 </script>
 
 <template>

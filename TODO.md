@@ -1,6 +1,5 @@
-[home] `State` should not be a class
-
-- with `loadState`
+[home] `State` should not have `loading`
+[home] `stateReactive`
 
 # minor
 
