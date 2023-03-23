@@ -5,7 +5,6 @@ import {
 } from '@heroicons/vue/24/outline/index.js'
 import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import { useForm } from '../../reactives/useForm'
 import { LoginState as State } from './LoginState'
 
@@ -40,11 +39,14 @@ function submit(event: Event) {
         <div class="text-xl">
           <Lang>
             <template #zh>
-              尚未<Link href="/register" class="underline">注册</Link>？
+              尚未<Hyperlink href="/register" class="underline">注册</Hyperlink
+              >？
             </template>
             <template #en>
               Not yet
-              <Link href="/register" class="underline">Registered</Link>?
+              <Hyperlink href="/register" class="underline"
+                >Registered</Hyperlink
+              >?
             </template>
           </Lang>
         </div>

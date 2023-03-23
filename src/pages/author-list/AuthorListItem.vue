@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import { AuthorJson } from '../../schemas/AuthorJson'
 import { AuthorListState as State } from './AuthorListState'
 
@@ -27,11 +26,11 @@ defineProps<{
       </template>
     </Lang>
 
-    <Link
+    <Hyperlink
       :href="`/authors/${author.username}`"
       class="overflow-x-auto whitespace-pre text-xl hover:underline"
     >
       {{ author.username }}
-    </Link>
+    </Hyperlink>
   </div>
 </template>

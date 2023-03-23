@@ -3,7 +3,6 @@ import FormButton from '../../components/FormButton.vue'
 import FormDivider from '../../components/FormDivider.vue'
 import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import { useForm } from '../../reactives/useForm'
 import { RegisterState as State } from './RegisterState'
 
@@ -73,11 +72,11 @@ function submit(event: Event) {
       <Lang class="text-xl">
         <template #zh>
           已注册？
-          <Link href="/login" class="underline"> 登录 </Link>
+          <Hyperlink href="/login" class="underline"> 登录 </Hyperlink>
         </template>
         <template #en>
           Already Registered?
-          <Link href="/login" class="underline"> Login </Link>
+          <Hyperlink href="/login" class="underline"> Login </Hyperlink>
           .
         </template>
       </Lang>

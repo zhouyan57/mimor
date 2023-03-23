@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { PlayIcon } from '@heroicons/vue/24/outline'
-import Link from '../../components/Link.vue'
 import type { ProjectJson } from '../../schemas/ProjectJson'
 import { formatAgo } from '../../utils/formatDate'
 import { ProjectListState as State } from './ProjectListState'
@@ -18,20 +17,20 @@ function projectFormatAgo(project: ProjectJson): string {
   >
     <div class="flex items-center justify-between">
       <div class="overflow-x-auto whitespace-pre">
-        <Link
+        <Hyperlink
           :href="`/authors/${state.username}/projects/${project.name}`"
           class="overflow-x-auto font-bold hover:underline"
         >
           {{ project.name }}
-        </Link>
+        </Hyperlink>
       </div>
 
       <div class="ml-1">
-        <Link
+        <Hyperlink
           :href="`/authors/${state.username}/projects/${project.name}?recall`"
         >
           <PlayIcon class="h-6 w-6 stroke-1" />
-        </Link>
+        </Hyperlink>
       </div>
     </div>
 

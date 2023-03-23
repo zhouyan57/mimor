@@ -2,7 +2,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
-import Link from '../../components/Link.vue'
 import PageLayoutLang from './PageLayoutLang.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import { PageLayoutState as State } from './PageLayoutState'
@@ -45,7 +44,7 @@ defineProps<{ state: State }>()
 
         <div class="flex flex-col items-start space-y-2 py-2">
           <MenuItem as="div" v-slot="{ active }">
-            <Link
+            <Hyperlink
               href="/"
               class="hover:underline"
               :class="[
@@ -57,11 +56,11 @@ defineProps<{ state: State }>()
                 <template #zh>首页</template>
                 <template #en>Home</template>
               </Lang>
-            </Link>
+            </Hyperlink>
           </MenuItem>
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
-            <Link
+            <Hyperlink
               :href="`/authors/${$app.auth.user.username}/projects`"
               class="hover:underline"
             >
@@ -74,11 +73,11 @@ defineProps<{ state: State }>()
                 <template #zh>项目</template>
                 <template #en>Projects</template>
               </Lang>
-            </Link>
+            </Hyperlink>
           </MenuItem>
 
           <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
-            <Link
+            <Hyperlink
               href="/config"
               class="hover:underline"
               :class="[
@@ -90,7 +89,7 @@ defineProps<{ state: State }>()
                 <template #zh>配置</template>
                 <template #en>Config</template>
               </Lang>
-            </Link>
+            </Hyperlink>
           </MenuItem>
 
           <PageLayoutLang :state="state" />
@@ -116,12 +115,12 @@ defineProps<{ state: State }>()
               </Lang>
 
               <MenuItem as="div">
-                <Link
+                <Hyperlink
                   :href="`/authors/${$app.auth.user.username}`"
                   class="overflow-x-auto whitespace-pre text-xl hover:underline"
                 >
                   {{ $app.auth.user.username }}
-                </Link>
+                </Hyperlink>
               </MenuItem>
             </div>
 
@@ -141,7 +140,7 @@ defineProps<{ state: State }>()
 
           <div v-if="!$app.auth.user" class="flex">
             <MenuItem as="div" v-slot="{ active }">
-              <Link
+              <Hyperlink
                 href="/login"
                 :class="[
                   active && 'decoration-6 underline',
@@ -152,13 +151,13 @@ defineProps<{ state: State }>()
                   <template #zh>登录</template>
                   <template #en>Login</template>
                 </Lang>
-              </Link>
+              </Hyperlink>
             </MenuItem>
 
             <div class="px-2 font-bold">/</div>
 
             <MenuItem as="div" v-slot="{ active }">
-              <Link
+              <Hyperlink
                 href="/register"
                 :class="[
                   active && 'decoration-6 underline',
@@ -169,7 +168,7 @@ defineProps<{ state: State }>()
                   <template #zh>注册</template>
                   <template #en>Register</template>
                 </Lang>
-              </Link>
+              </Hyperlink>
             </MenuItem>
           </div>
         </div>
