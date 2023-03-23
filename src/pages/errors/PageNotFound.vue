@@ -2,6 +2,9 @@
 import { Head } from '@vueuse/head'
 import { useRoute } from 'vue-router'
 import Lang from '../../components/Lang.vue'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
+
+const lang = useGlobalLang()
 
 const route = useRoute()
 </script>
@@ -9,7 +12,7 @@ const route = useRoute()
 <template>
   <div class="mx-auto flex h-full w-full max-w-md flex-col py-20 px-3">
     <Head>
-      <title v-if="$app.lang.zh">404 | 谜墨</title>
+      <title v-if="lang.isZh()">404 | 谜墨</title>
       <title v-else>404 | Mimor</title>
     </Head>
 

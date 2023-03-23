@@ -1,10 +1,12 @@
-# mimor
+page-layout -- remove user related stuff
 
 remove global app
 
 remove `errors/` -- shallow abstraction
 
-[mimor] `MimorLoading`
+# mimor
+
+[mimor] improve `MimorLoading`
 
 `MimorState` should be type instead of class
 

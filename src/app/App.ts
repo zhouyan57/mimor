@@ -1,5 +1,5 @@
+import { useGlobalLang } from '../reactives/useGlobalLang'
 import { Api } from './Api'
-import { Lang } from './Lang'
 import { Auth } from './auth/Auth'
 import { AuthorRepo } from './authors/AuthorRepo'
 import { ConfigRepo } from './configs/ConfigRepo'
@@ -9,7 +9,6 @@ import { ProjectRepo } from './projects/ProjectRepo'
 import { UserRepo } from './users/UserRepo'
 
 export class App {
-  lang = new Lang()
   auth = new Auth()
   api = new Api()
   guard = new Guard()
@@ -21,7 +20,8 @@ export class App {
   configs = new ConfigRepo()
 
   get name(): string {
-    return this.lang.zh ? '谜墨' : 'Mimor'
+    const lang = useGlobalLang()
+    return lang.isZh() ? '谜墨' : 'Mimor'
   }
 
   async safe<T>(f: () => Promise<T>): Promise<T | undefined> {

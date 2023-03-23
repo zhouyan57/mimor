@@ -5,8 +5,11 @@ import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 import { State } from './State'
 import { loadState } from './loadState'
+
+const lang = useGlobalLang()
 
 const state = ref<State | undefined>(undefined)
 
@@ -18,7 +21,7 @@ onMounted(async () => {
 <template>
   <PageLayout>
     <Head>
-      <title v-if="$app.lang.zh">谜墨</title>
+      <title v-if="lang.isZh()">谜墨</title>
       <title v-else>Mimor</title>
     </Head>
 

@@ -36,10 +36,6 @@ export class Auth {
         return await app.configs.get(this.user.username)
       }
     })
-
-    if (this.config?.lang) {
-      app.lang.tag = this.config.lang
-    }
   }
 
   reconfig(config: Partial<ConfigJson>) {
