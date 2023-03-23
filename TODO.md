@@ -1,7 +1,5 @@
 # minor
 
-[minor] `stateReactive`
-
 `MinorPage` show minor
 
 remove other routes
