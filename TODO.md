@@ -1,7 +1,5 @@
 # minor
 
-`MinorPage` use layout
-
 `MinorPage` show minor
 
 remove other routes

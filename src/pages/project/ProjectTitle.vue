@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PlayIcon } from '@heroicons/vue/24/outline'
+import Link from '../../components/Link.vue'
 import { ProjectState as State } from './ProjectState'
 
 defineProps<{ state: State }>()
@@ -10,9 +11,9 @@ defineProps<{ state: State }>()
     <div
       class="flex space-x-1 overflow-x-auto overflow-y-hidden whitespace-pre font-sans"
     >
-      <Hyperlink :href="`/authors/${state.username}`" class="hover:underline">
+      <Link :href="`/authors/${state.username}`" class="hover:underline">
         {{ state.username }}
-      </Hyperlink>
+      </Link>
 
       <div>/</div>
 
@@ -20,11 +21,9 @@ defineProps<{ state: State }>()
     </div>
 
     <div>
-      <Hyperlink
-        :href="`/authors/${state.username}/projects/${state.name}?recall`"
-      >
+      <Link :href="`/authors/${state.username}/projects/${state.name}?recall`">
         <PlayIcon class="h-6 w-6 stroke-1" />
-      </Hyperlink>
+      </Link>
     </div>
   </div>
 </template>

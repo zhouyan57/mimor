@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PlusIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import { FileJson } from '../../schemas/FileJson'
 import ProjectFileListCreateTheFirstFile from './ProjectFileListCreateTheFirstFile.vue'
 import ProjectFileListItem from './ProjectFileListItem.vue'
@@ -19,14 +20,14 @@ defineProps<{ state: State; files: Array<FileJson> }>()
         </Lang>
 
         <div v-if="$app.auth.user?.username === $route.params.username">
-          <Hyperlink
+          <Link
             :href="`/authors/${$route.params.username}/projects/${state.name}/file-create`"
             :title="$app.lang.zh ? '创建新文件' : 'Create a new file.'"
           >
             <PlusIcon
               class="h-5 w-5 rounded-full border border-stone-500 p-1"
             />
-          </Hyperlink>
+          </Link>
         </div>
       </div>
     </div>

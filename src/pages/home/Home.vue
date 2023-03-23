@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { onMounted, reactive, ref } from 'vue'
 import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { State } from './State'
@@ -29,12 +30,12 @@ onMounted(async () => {
         </Lang>
 
         <div class="flex justify-end space-x-2">
-          <Hyperlink href="/about" class="hover:underline">
+          <Link href="/about" class="hover:underline">
             <Lang>
               <template #zh>关于</template>
               <template #en>About</template>
             </Lang>
-          </Hyperlink>
+          </Link>
         </div>
       </div>
     </template>

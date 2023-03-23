@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import PageLayoutLang from './PageLayoutLang.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 
@@ -11,14 +12,14 @@ defineProps<{ state: State }>()
     <div
       class="flex flex-col items-start space-y-2 border-t border-stone-500 py-2 text-2xl"
     >
-      <Hyperlink href="/" class="hover:underline">
+      <Link href="/" class="hover:underline">
         <Lang>
           <template #zh>首页</template>
           <template #en>Home</template>
         </Lang>
-      </Hyperlink>
+      </Link>
 
-      <Hyperlink
+      <Link
         v-if="$app.auth.user"
         :href="`/authors/${$app.auth.user.username}/projects`"
         class="hover:underline"
@@ -27,14 +28,14 @@ defineProps<{ state: State }>()
           <template #zh>项目</template>
           <template #en>Projects</template>
         </Lang>
-      </Hyperlink>
+      </Link>
 
-      <Hyperlink v-if="$app.auth.user" href="/config" class="hover:underline">
+      <Link v-if="$app.auth.user" href="/config" class="hover:underline">
         <Lang>
           <template #zh>配置</template>
           <template #en>Config</template>
         </Lang>
-      </Hyperlink>
+      </Link>
 
       <PageLayoutLang :state="state" />
     </div>
@@ -58,12 +59,12 @@ defineProps<{ state: State }>()
             </template>
           </Lang>
 
-          <Hyperlink
+          <Link
             :href="`/authors/${$app.auth.user.username}`"
             class="overflow-x-auto whitespace-pre text-xl hover:underline"
           >
             {{ $app.auth.user.username }}
-          </Hyperlink>
+          </Link>
         </div>
 
         <button
@@ -83,21 +84,21 @@ defineProps<{ state: State }>()
       </div>
 
       <div v-if="!$app.auth.user" class="flex text-2xl">
-        <Hyperlink href="/login" class="hover:underline">
+        <Link href="/login" class="hover:underline">
           <Lang>
             <template #zh>登录</template>
             <template #en>Login</template>
           </Lang>
-        </Hyperlink>
+        </Link>
 
         <div class="px-2 font-bold">/</div>
 
-        <Hyperlink href="/register" class="hover:underline">
+        <Link href="/register" class="hover:underline">
           <Lang>
             <template #zh>注册</template>
             <template #en>Register</template>
           </Lang>
-        </Hyperlink>
+        </Link>
       </div>
     </div>
   </div>
