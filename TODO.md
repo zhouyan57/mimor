@@ -1,11 +1,29 @@
+# mimor-entrance
+
 `mimor-entrance` -- setup route to `MimorEntrance`
 `MimorEntrance` enter url
 
+# page-layout
+
+[page-layout] note about alpha testing
+
+# mimor
+
 [mimor] `onFinished` behavior for `mimors/:url` route
+
+- [maybe] default `<back-cover>` with statistics
+
 [mimor] `State` should be type instead of class
 
 [mimor] support `<cover>`
+
+- maybe `<front-cover>` and `<back-cover>`
+
 [mimor] `<question>` has `name`
+
+# docs
+
+use readonly.link
 
 # recall
 
@@ -16,6 +34,8 @@
 # embedded
 
 [embedded] route for iframe
+
+- to be used in readonly.link
 
 # home
 
