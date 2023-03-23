@@ -10,7 +10,7 @@ import PageLogo from './PageLogo.vue'
 <template>
   <Menu as="div" class="relative flex text-3xl">
     <MenuButton>
-      <Bars3Icon class="h-6 w-6 text-stone-500" />
+      <Bars3Icon class="h-7 w-7 text-stone-500" />
     </MenuButton>
 
     <Transition
@@ -52,6 +52,22 @@ import PageLogo from './PageLogo.vue'
               <Lang>
                 <template #zh>首页</template>
                 <template #en>Home</template>
+              </Lang>
+            </Hyperlink>
+          </MenuItem>
+
+          <MenuItem as="div" v-slot="{ active }">
+            <Hyperlink
+              href="/about"
+              class="hover:underline"
+              :class="[
+                active && 'decoration-6 underline',
+                active && 'text-stone-600',
+              ]"
+            >
+              <Lang>
+                <template #zh>关于</template>
+                <template #en>About</template>
               </Lang>
             </Hyperlink>
           </MenuItem>

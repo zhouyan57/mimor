@@ -1,7 +1,3 @@
-# page-layout
-
-[page-layout] note about alpha testing
-
 # mimor
 
 [mimor] `onFinished` behavior for `mimors/:url` route

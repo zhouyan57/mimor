@@ -7,9 +7,16 @@ import PageSidebar from './PageSidebar.vue'
 
 <template>
   <div class="flex h-screen">
+    <!-- desktop -->
     <div class="hidden h-full w-72 shrink-0 flex-col p-3 md:flex">
-      <div class="pb-3">
-        <PageLogo />
+      <div class="flex items-center space-x-1 pb-3">
+        <PageLogo class="text-2xl" />
+        <div
+          class="font-mono text-sm text-stone-500"
+          title="This is an alpha release, we develop as we use it."
+        >
+          alpha
+        </div>
       </div>
 
       <PageSidebar />
@@ -26,6 +33,7 @@ import PageSidebar from './PageSidebar.vue'
         <slot />
       </div>
 
+      <!-- mobile -->
       <div class="fixed bottom-20 right-4 z-30 md:hidden">
         <PageControl />
       </div>
