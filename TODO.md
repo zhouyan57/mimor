@@ -1,93 +1,31 @@
-# mimor
-
-`MimorState` should be type instead of class
-
-# mimor-entrance
-
 `mimor-entrance` -- setup route to `MimorEntrance`
-
 `MimorEntrance` enter url
+
+[mimor] `onFinished` behavior for `mimors/:url` route
+
+[mimor] `MimorState` should be type instead of class
+
+# recall
+
+> Spaced repetition
+
+[recall] user can add mimor into `timeline`
+
+# embedded
+
+[embedded] route for iframe
+
+# home
+
+[home] improve design
+[home] docs in homepage
 
 # author
 
-setup one `authors` route
+[author] setup one `authors` route
 
-no project just author and files -- not even directory for now
-
-quit using current backend API
-
-# old
-
-editor disable spellcheck
-
-# Author
-
-rename `Config` to `AuthorConfig`
-
-`AuthorList` -- handle pagination
-
-`AuthorConfig` has `description`
-
-`AuthorConfig` has `website`
-
-404 page for undefined author and project and file
+[author] no project just author and files -- not even directory for now
 
 # wiki
 
-a wiki of docs links to mimors
-
-# Recall
-
-## File recall
-
-File -- be able to split screen on desktop
-
-File -- be able to preview all cards
-
-upload file from local
-
-upload directory from load
-
-## Spaced repetition
-
-[maybe] we should just call this feature `orbit`
-
-user can add project into his `timeline`
-
-# Community
-
-## Embedded
-
-embedded route for iframe
-
-# Marketing
-
-## Homepage
-
-improve homepage
-
-docs in homepage
-
-# Cards
-
-## Guitar
-
-major minor game
-
-- https://www.youtube.com/watch?v=2Fjd-VJjvO8
-
-scales
-
-- phrygian major
-
-# Learn
-
-## CSS
-
-understand `<div>` vs `<span>`
-
-understand `overflow-y-auto`
-
-- used in child should also be used in parent
-
-  - sometimes not
+[wiki] a wiki of docs links to mimors
