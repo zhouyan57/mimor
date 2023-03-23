@@ -1,36 +1,18 @@
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue'
-import Lang from '../../components/Lang.vue'
 import PageLayoutControl from './PageLayoutControl.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
-import { PageLayoutState as State } from './PageLayoutState'
-import PageLoading from './PageLoading.vue'
-
-const state = reactive(new State())
-
-onMounted(async () => {
-  state.loading = true
-  await app.auth.initialize()
-  state.loading = false
-})
 </script>
 
 <template>
-  <PageLoading v-if="state.loading">
-    <Lang>
-      <template #zh>加载中……</template>
-      <template #en>Loading...</template>
-    </Lang>
-  </PageLoading>
-  <div v-else class="flex h-screen">
+  <div class="flex h-screen">
     <div class="hidden h-full w-72 shrink-0 flex-col p-3 md:flex">
       <div class="pb-3">
-        <PageLayoutLogo :state="state" />
+        <PageLayoutLogo />
       </div>
 
-      <PageLayoutSidebar :state="state" />
+      <PageLayoutSidebar />
     </div>
 
     <div class="flex h-full w-full flex-col space-y-2 overflow-x-auto py-3">

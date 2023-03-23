@@ -1,6 +1,4 @@
-page-layout -- remove user related stuff
-
-remove global app
+page-layout -- fix naming
 
 remove `errors/` -- shallow abstraction
 

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
-import { PageLayoutState as State } from './PageLayoutState'
+import { useGlobalLang } from '../../reactives/useGlobalLang'
 
-defineProps<{ state: State }>()
+const lang = useGlobalLang()
 </script>
 
 <template>
   <Hyperlink href="/" class="font-logo text-2xl font-bold hover:underline">
-    <div>{{ $app.name }}</div>
+    <div>{{ lang.isZh() ? '迷墨' : 'Mimor' }}</div>
   </Hyperlink>
 </template>

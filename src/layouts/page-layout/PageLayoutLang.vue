@@ -8,9 +8,6 @@ import {
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import { langTagName, useGlobalLang } from '../../reactives/useGlobalLang'
-import { PageLayoutState as State } from './PageLayoutState'
-
-defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
 </script>

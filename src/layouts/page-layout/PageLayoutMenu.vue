@@ -5,9 +5,6 @@ import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import PageLayoutLang from './PageLayoutLang.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
-import { PageLayoutState as State } from './PageLayoutState'
-
-defineProps<{ state: State }>()
 </script>
 
 <template>
@@ -60,86 +57,11 @@ defineProps<{ state: State }>()
             </Hyperlink>
           </MenuItem>
 
-          <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
-            <Hyperlink
-              :href="`/authors/${$app.auth.user.username}/projects`"
-              class="hover:underline"
-            >
-              <Lang
-                :class="[
-                  active && 'decoration-6 underline',
-                  active && 'text-stone-600',
-                ]"
-              >
-                <template #zh>项目</template>
-                <template #en>Projects</template>
-              </Lang>
-            </Hyperlink>
-          </MenuItem>
-
-          <MenuItem as="div" v-if="$app.auth.user" v-slot="{ active }">
-            <Hyperlink
-              href="/config"
-              class="hover:underline"
-              :class="[
-                active && 'decoration-6 underline',
-                active && 'text-stone-600',
-              ]"
-            >
-              <Lang>
-                <template #zh>配置</template>
-                <template #en>Config</template>
-              </Lang>
-            </Hyperlink>
-          </MenuItem>
-
           <PageLayoutLang :state="state" />
         </div>
 
         <div class="border-t border-stone-500 py-3">
-          <div
-            v-if="$app.auth.user"
-            class="flex flex-wrap items-end justify-between"
-          >
-            <div class="flex flex-col items-start">
-              <Lang class="font-logo font-bold">
-                <template #zh>
-                  <div>
-                    {{ $app.auth.config?.name_zh || $app.auth.user.name }}
-                  </div>
-                </template>
-                <template #en>
-                  <div>
-                    {{ $app.auth.config?.name_en || $app.auth.user.name }}
-                  </div>
-                </template>
-              </Lang>
-
-              <MenuItem as="div">
-                <Hyperlink
-                  :href="`/authors/${$app.auth.user.username}`"
-                  class="overflow-x-auto whitespace-pre text-xl hover:underline"
-                >
-                  {{ $app.auth.user.username }}
-                </Hyperlink>
-              </MenuItem>
-            </div>
-
-            <MenuItem as="div" v-slot="{ active }">
-              <button
-                @click="$app.auth.logout()"
-                class="text-xl text-stone-600"
-                :class="[active && 'decoration-6 underline']"
-              >
-                <Lang>
-                  <template #zh>退出</template>
-                  <template #en>Logout</template>
-                </Lang>
-              </button>
-            </MenuItem>
-          </div>
-
-          <div v-if="!$app.auth.user" class="flex">
+          <div class="flex">
             <MenuItem as="div" v-slot="{ active }">
               <Hyperlink
                 href="/login"
