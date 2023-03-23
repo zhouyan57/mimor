@@ -8,7 +8,7 @@ import File from './file/File.vue'
 import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import LoginEmailSuccess from './login/LoginEmailSuccess.vue'
-import MinorPage from './minor/MinorPage.vue'
+import MimorPage from './mimor/MimorPage.vue'
 import ProjectCreate from './project-create/ProjectCreate.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
@@ -21,7 +21,7 @@ export const routes: Array<RouteRecordRaw> = [
 
   { path: '/mimors' , redirect: "/" },
   { path: '/mimors/' ,redirect: "/" },
-  { path: '/mimors/:url(.*)*' ,component: MinorPage },
+  { path: '/mimors/:url(.*)*' ,component: MimorPage },
 
   { path: '/about', component: About },
   { path: '/authors', component: AuthorList },

@@ -1,8 +1,7 @@
-# minor
+# mimor
 
-[minor] `MinorPage` use `PageLayout`
-
-[minor] `MinorPage` show minor
+[mimor] `MimorLoaded`
+[mimor] `MimorLoading`
 
 remove other routes
 
@@ -13,11 +12,11 @@ remove global app
 remove `errors/` -- shallow abstraction
 remove `models/Form`
 
-# minor-entrance
+# mimor-entrance
 
-`minor-entrance` -- setup route to `MinorEntrance`
+`mimor-entrance` -- setup route to `MimorEntrance`
 
-`MinorEntrance` enter url
+`MimorEntrance` enter url
 
 # author
 

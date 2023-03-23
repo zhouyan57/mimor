@@ -41,8 +41,10 @@ onMounted(async () => {
     </template>
 
     <div class="flex h-full flex-col">
+      <div v-if="state === undefined">Loading...</div>
+
       <Mimor
-        v-if="!state.finished"
+        v-else-if="!state.finished"
         class="h-full border border-stone-300"
         :options="{
           text: state.text,
