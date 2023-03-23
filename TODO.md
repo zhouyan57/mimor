@@ -1,8 +1,3 @@
-# mimor-entrance
-
-`mimor-entrance` -- setup route to `MimorEntrance`
-`MimorEntrance` enter url
-
 # page-layout
 
 [page-layout] note about alpha testing
