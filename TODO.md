@@ -1,5 +1,3 @@
-PageNotFound use page-layout
-
 # mimor
 
 [mimor] improve `MimorLoading`
