@@ -1,7 +1,7 @@
-import { UserJson } from '../../jsons/UserJson'
-import { ConfigJson } from '../../jsons/ConfigJson'
-import { Register } from './Register'
+import { ConfigJson } from '../../schemas/ConfigJson'
+import { UserJson } from '../../schemas/UserJson'
 import { Login } from './Login'
+import { Register } from './Register'
 
 export class Auth {
   user?: UserJson

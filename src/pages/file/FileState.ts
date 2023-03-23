@@ -1,4 +1,4 @@
-import { FileJson } from '../../jsons/FileJson'
+import { FileJson } from '../../schemas/FileJson'
 
 export class FileState {
   file?: FileJson

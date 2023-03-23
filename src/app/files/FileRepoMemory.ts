@@ -1,5 +1,4 @@
-import { ty } from '@xieyuheng/ty'
-import { FileJson } from '../../jsons/FileJson'
+import { FileJson } from '../../schemas/FileJson'
 
 export class FileRepoMemory {
   map: Map<string, Map<string, FileJson>> = new Map()

@@ -1,4 +1,4 @@
-import { ProjectJson } from '../../jsons/ProjectJson'
+import { ProjectJson } from '../../schemas/ProjectJson'
 
 export class ProjectRepoMemory {
   map: Map<string, Map<string, ProjectJson>> = new Map()

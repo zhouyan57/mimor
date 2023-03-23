@@ -1,4 +1,4 @@
-import { AuthorJson } from '../../jsons/AuthorJson'
+import { AuthorJson } from '../../schemas/AuthorJson'
 
 export class AuthorListState {
   authors?: Array<AuthorJson>

@@ -1,5 +1,5 @@
-import { VerifyingSchema } from '../../jsons/VerifyingJson'
 import { HttpError } from '../../errors/HttpError'
+import { VerifyingSchema } from '../../schemas/VerifyingJson'
 
 export class Login {
   async start(body: { email: string }) {

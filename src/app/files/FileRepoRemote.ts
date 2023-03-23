@@ -1,7 +1,6 @@
 import { ty } from '@xieyuheng/ty'
-import { FileSchema } from '../../jsons/FileJson'
-import { FileJson } from '../../jsons/FileJson'
 import { HttpError } from '../../errors/HttpError'
+import { FileJson, FileSchema } from '../../schemas/FileJson'
 
 export class FileRepoRemote {
   async all(username: string, projectName: string) {

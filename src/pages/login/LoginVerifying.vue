@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
-import { VerifyingJson } from '../../jsons/VerifyingJson'
+import { VerifyingJson } from '../../schemas/VerifyingJson'
 import { poll } from '../../utils/poll'
 import { LoginState as State } from './LoginState'
 

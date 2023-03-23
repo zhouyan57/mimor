@@ -3,12 +3,14 @@
 setup one `minors` route
 
 remove other routes
+remove global app
+remove `models/Form`
 
 # author
 
 setup one `authors` route
 
-no project just author and a tree of files
+no project just author and files -- not even directory for now
 
 quit using current backend API
 
@@ -18,15 +20,19 @@ editor disable spellcheck
 
 # Author
 
-rename Config to AuthorConfig
+rename `Config` to `AuthorConfig`
 
-AuthorList -- handle pagination
+`AuthorList` -- handle pagination
 
-AuthorConfig has `description`
+`AuthorConfig` has `description`
 
-AuthorConfig has `website`
+`AuthorConfig` has `website`
 
 404 page for undefined author and project and file
+
+# wiki
+
+a wiki of docs links to mimors
 
 # Recall
 

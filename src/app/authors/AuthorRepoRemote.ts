@@ -1,5 +1,5 @@
-import { AuthorSchema } from '../../jsons/AuthorJson'
 import { HttpError } from '../../errors/HttpError'
+import { AuthorSchema } from '../../schemas/AuthorJson'
 
 export class AuthorRepoRemote {
   async search(options: { page: number }) {

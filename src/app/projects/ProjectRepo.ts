@@ -1,6 +1,6 @@
-import { ProjectJson } from '../../jsons/ProjectJson'
-import { ProjectRepoRemote } from './ProjectRepoRemote'
+import { ProjectJson } from '../../schemas/ProjectJson'
 import { ProjectRepoMemory } from './ProjectRepoMemory'
+import { ProjectRepoRemote } from './ProjectRepoRemote'
 
 export class ProjectRepo {
   remote = new ProjectRepoRemote()

@@ -1,6 +1,6 @@
 import { ty } from '@xieyuheng/ty'
-import { ProjectJson, ProjectSchema } from '../../jsons/ProjectJson'
 import { HttpError } from '../../errors/HttpError'
+import { ProjectJson, ProjectSchema } from '../../schemas/ProjectJson'
 
 export class ProjectRepoRemote {
   async all(username: string) {

@@ -1,5 +1,5 @@
-import { ProjectJson } from '../../jsons/ProjectJson'
-import { AuthorJson } from '../../jsons/AuthorJson'
+import { AuthorJson } from '../../schemas/AuthorJson'
+import { ProjectJson } from '../../schemas/ProjectJson'
 
 export class ProjectListState {
   projects?: Array<ProjectJson>

@@ -1,8 +1,6 @@
-import { ty } from '@xieyuheng/ty'
-import { FileSchema } from '../../jsons/FileJson'
-import { FileJson } from '../../jsons/FileJson'
-import { FileRepoRemote } from './FileRepoRemote'
+import { FileJson } from '../../schemas/FileJson'
 import { FileRepoMemory } from './FileRepoMemory'
+import { FileRepoRemote } from './FileRepoRemote'
 
 export class FileRepo {
   remote = new FileRepoRemote()

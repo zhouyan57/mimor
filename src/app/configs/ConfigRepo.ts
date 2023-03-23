@@ -1,5 +1,5 @@
+import { ConfigJson } from '../../schemas/ConfigJson'
 import { ConfigRepoRemote } from './ConfigRepoRemote'
-import { ConfigJson, ConfigSchema } from '../../jsons/ConfigJson'
 
 export class ConfigRepo {
   remote = new ConfigRepoRemote()

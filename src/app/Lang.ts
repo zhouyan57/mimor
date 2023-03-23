@@ -1,4 +1,4 @@
-import { ConfigJson } from '../jsons/ConfigJson'
+import { ConfigJson } from '../schemas/ConfigJson'
 
 function initialTag(): string {
   const local = localStorage.getItem('lang')

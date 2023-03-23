@@ -1,5 +1,5 @@
-import { ConfigJson, ConfigSchema } from '../../jsons/ConfigJson'
 import { HttpError } from '../../errors/HttpError'
+import { ConfigJson, ConfigSchema } from '../../schemas/ConfigJson'
 
 export class ConfigRepoRemote {
   async get(username: string) {

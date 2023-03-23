@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
+import { AuthorJson } from '../../schemas/AuthorJson'
 import { AuthorListState as State } from './AuthorListState'
-import { AuthorJson } from '../../jsons/AuthorJson'
 
 defineProps<{
   state: State

@@ -1,5 +1,5 @@
-import { FileJson } from '../../jsons/FileJson'
-import { ProjectJson } from '../../jsons/ProjectJson'
+import { FileJson } from '../../schemas/FileJson'
+import { ProjectJson } from '../../schemas/ProjectJson'
 import { comparePath } from '../../utils/comparePath'
 
 export class ProjectState {

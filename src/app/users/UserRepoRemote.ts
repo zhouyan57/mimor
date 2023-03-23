@@ -1,5 +1,5 @@
-import { UserSchema } from '../../jsons/UserJson'
 import { HttpError } from '../../errors/HttpError'
+import { UserSchema } from '../../schemas/UserJson'
 
 export class UserRepoRemote {
   async current() {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Link from '../../components/Link.vue'
 import { PlayIcon } from '@heroicons/vue/24/outline'
-import type { ProjectJson } from '../../jsons/ProjectJson'
-import { ProjectListState as State } from './ProjectListState'
+import Link from '../../components/Link.vue'
+import type { ProjectJson } from '../../schemas/ProjectJson'
 import { formatAgo } from '../../utils/formatDate'
+import { ProjectListState as State } from './ProjectListState'
 
 defineProps<{ state: State; project: ProjectJson }>()
 
