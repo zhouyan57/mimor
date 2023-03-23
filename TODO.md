@@ -1,5 +1,3 @@
-page-layout -- fix naming
-
 # mimor
 
 [mimor] improve `MimorLoading`

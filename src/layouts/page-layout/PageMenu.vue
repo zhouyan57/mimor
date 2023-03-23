@@ -3,8 +3,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import PageLayoutLang from './PageLayoutLang.vue'
-import PageLayoutLogo from './PageLayoutLogo.vue'
+import PageLang from './PageLang.vue'
+import PageLogo from './PageLogo.vue'
 </script>
 
 <template>
@@ -32,7 +32,7 @@ import PageLayoutLogo from './PageLayoutLogo.vue'
 
         <div class="absolute top-0 right-3">
           <MenuItem as="div" v-slot="{ active }">
-            <PageLayoutLogo
+            <PageLogo
               class="font-light"
               :class="[active && 'text-stone-600']"
               :state="state"
@@ -57,7 +57,7 @@ import PageLayoutLogo from './PageLayoutLogo.vue'
             </Hyperlink>
           </MenuItem>
 
-          <PageLayoutLang :state="state" />
+          <PageLang :state="state" />
         </div>
 
         <div class="border-t border-stone-500 py-3">

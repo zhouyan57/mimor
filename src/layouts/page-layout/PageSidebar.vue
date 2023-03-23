@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
-import PageLayoutLang from './PageLayoutLang.vue'
+import PageLang from './PageLang.vue'
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import PageLayoutLang from './PageLayoutLang.vue'
         </Lang>
       </Hyperlink>
 
-      <PageLayoutLang :state="state" />
+      <PageLang :state="state" />
     </div>
 
     <div class="border-t border-stone-500 pt-2">
