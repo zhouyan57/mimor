@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {
-  UserCircleIcon,
   EllipsisHorizontalCircleIcon,
+  UserCircleIcon,
 } from '@heroicons/vue/24/outline/index.js'
 import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../../reactives/useForm'
 import { LoginState as State } from './LoginState'
 
 const { state } = defineProps<{ state: State }>()

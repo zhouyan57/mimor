@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
-import { useRouter, useRoute } from 'vue-router'
-import { watch, onBeforeMount } from 'vue'
+import { onBeforeMount, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import FormButton from '../../components/FormButton.vue'
+import FormDivider from '../../components/FormDivider.vue'
+import FormInput from '../../components/FormInput.vue'
+import FormTextarea from '../../components/FormTextarea.vue'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
-import FormButton from '../../components/FormButton.vue'
-import FormInput from '../../components/FormInput.vue'
-import FormCheckbox from '../../components/FormCheckbox.vue'
-import FormTextarea from '../../components/FormTextarea.vue'
-import FormDivider from '../../components/FormDivider.vue'
+import { useForm } from '../../reactives/useForm'
 import { ProjectState as State } from './ProjectState'
-import { useForm } from '../../hooks/useForm'
-import { formatParam } from '../../utils/formatParam'
 
 const { state } = defineProps<{ state: State }>()
 

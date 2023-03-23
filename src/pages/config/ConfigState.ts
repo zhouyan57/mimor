@@ -1,4 +1,4 @@
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../../reactives/useForm'
 
 export class ConfigState {
   form = useForm({

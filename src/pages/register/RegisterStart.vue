@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import FormButton from '../../components/FormButton.vue'
-import FormInput from '../../components/FormInput.vue'
 import FormDivider from '../../components/FormDivider.vue'
+import FormInput from '../../components/FormInput.vue'
 import Lang from '../../components/Lang.vue'
 import Link from '../../components/Link.vue'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../../reactives/useForm'
 import { RegisterState as State } from './RegisterState'
 
 const { state } = defineProps<{ state: State }>()
