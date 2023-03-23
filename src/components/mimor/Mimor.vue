@@ -24,9 +24,9 @@ const state = reactive(new State(options))
       class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"
     >
-      <IsRemembered :mimor="state" :program="state.program">
+      <IsRemembered :state="state" :program="state.program">
         <MimorStmt
-          :mimor="state"
+          :state="state"
           :program="state.program"
           :element="state.program.current"
         />

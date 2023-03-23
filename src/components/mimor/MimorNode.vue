@@ -5,7 +5,7 @@ import { Program } from './models/Program'
 import { State } from './State'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
   node: XNode
 }>()
@@ -14,14 +14,14 @@ defineProps<{
 <template>
   <MimorText
     v-if="!isElement(node)"
-    :mimor="mimor"
+    :state="state"
     :program="program"
     :text="node"
   />
   <component
     v-else-if="program.router.findNode(node)"
     :is="program.router.findNode(node)"
-    :mimor="mimor"
+    :state="state"
     :program="program"
     :element="node"
   />

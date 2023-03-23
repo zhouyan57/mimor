@@ -4,7 +4,7 @@ import { State } from '../State'
 import { Program } from '../models/Program'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
 }>()
 </script>
@@ -12,13 +12,13 @@ defineProps<{
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div class="font-bold">
-      <Lang :class="[mimor.theme.notWhite && 'text-white']">
+      <Lang :class="[state.theme.notWhite && 'text-white']">
         <template #zh>进展：{{ program.progress }}</template>
         <template #en>Progress: {{ program.progress }}</template>
       </Lang>
     </div>
     <div class="font-logo font-light">
-      <Lang :class="[mimor.theme.notWhite && mimor.theme.text(800)]">
+      <Lang :class="[state.theme.notWhite && state.theme.text(800)]">
         <template #zh>谜墨</template>
         <template #en>Mimor</template>
       </Lang>

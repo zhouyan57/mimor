@@ -6,7 +6,7 @@ import { Program } from '../models/Program'
 import { State } from '../State'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
   element: XElement
 }>()
@@ -17,21 +17,21 @@ defineProps<{
     <span v-for="(child, index) of element.children" :key="index">
       <MimorNode
         v-if="!matchElement(child, { tags: ['blank', '空'] })"
-        :mimor="mimor"
+        :state="state"
         :program="program"
         :node="child"
       />
       <span v-else class="px-0.5">
         <MimorNodes
           v-if="program.revealed"
-          :mimor="mimor"
+          :state="state"
           :program="program"
           :nodes="child.children"
           class="font-bold"
           :class="[
-            mimor.theme.name === 'yellow'
+            state.theme.name === 'yellow'
               ? 'text-purple-500'
-              : mimor.theme.isWhite
+              : state.theme.isWhite
               ? 'text-yellow-500'
               : 'text-yellow-300',
           ]"
@@ -40,9 +40,9 @@ defineProps<{
           v-else
           class="font-bold"
           :class="[
-            mimor.theme.name === 'yellow'
+            state.theme.name === 'yellow'
               ? 'text-purple-500'
-              : mimor.theme.isWhite
+              : state.theme.isWhite
               ? 'text-yellow-500'
               : 'text-yellow-300',
           ]"

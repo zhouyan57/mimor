@@ -5,7 +5,7 @@ import { State } from '../State'
 import { Program } from '../models/Program'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
 }>()
 </script>
@@ -17,17 +17,17 @@ defineProps<{
       @click="program.revealed = true"
       class="flex w-full flex-col items-start border p-3"
       :class="[
-        mimor.theme.bg(400),
-        mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+        state.theme.bg(400),
+        state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
       ]"
     >
       <EyeIcon
         class="h-6 w-6"
         :class="[
-          mimor.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
+          state.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
         ]"
       />
-      <Lang :class="[mimor.theme.notWhite && 'text-white']">
+      <Lang :class="[state.theme.notWhite && 'text-white']">
         <template #zh>揭示</template>
         <template #en>Reveal</template>
       </Lang>
@@ -38,19 +38,19 @@ defineProps<{
         @click="program.forgotten()"
         class="flex w-full flex-col items-start border p-3"
         :class="[
-          mimor.theme.bg(400),
-          mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+          state.theme.bg(400),
+          state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
         ]"
       >
         <XMarkIcon
           class="h-6 w-6"
           :class="[
-            mimor.theme.name === 'yellow'
+            state.theme.name === 'yellow'
               ? 'text-purple-400'
               : 'text-yellow-400',
           ]"
         />
-        <Lang :class="[mimor.theme.notWhite && 'text-white']">
+        <Lang :class="[state.theme.notWhite && 'text-white']">
           <template #zh>忘了</template>
           <template #en>Forgotten</template>
         </Lang>
@@ -60,19 +60,19 @@ defineProps<{
         @click="program.remembered()"
         class="flex w-full flex-col items-start border p-3"
         :class="[
-          mimor.theme.bg(400),
-          mimor.theme.isWhite ? 'border-stone-500' : mimor.theme.border(400),
+          state.theme.bg(400),
+          state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
         ]"
       >
         <CheckIcon
           class="h-6 w-6"
           :class="[
-            mimor.theme.name === 'yellow'
+            state.theme.name === 'yellow'
               ? 'text-purple-400'
               : 'text-yellow-400',
           ]"
         />
-        <Lang :class="[mimor.theme.notWhite && 'text-white']">
+        <Lang :class="[state.theme.notWhite && 'text-white']">
           <template #zh>记得</template>
           <template #en>Remembered</template>
         </Lang>

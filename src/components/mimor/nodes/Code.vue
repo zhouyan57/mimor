@@ -4,7 +4,7 @@ import { State } from '../State'
 import { Program } from '../models/Program'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
   element: XElement
 }>()

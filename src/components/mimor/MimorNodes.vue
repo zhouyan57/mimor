@@ -5,7 +5,7 @@ import { State } from './State'
 import { Program } from './models/Program'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
   nodes: Array<XNode>
 }>()
@@ -14,6 +14,6 @@ defineProps<{
 <template>
   <span
     ><span v-for="(node, index) of nodes"
-      ><MimorNode :mimor="mimor" :program="program" :node="node" /></span
+      ><MimorNode :state="state" :program="program" :node="node" /></span
   ></span>
 </template>

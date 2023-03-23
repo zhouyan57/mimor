@@ -4,7 +4,7 @@ import { State } from './State'
 import { Program } from './models/Program'
 
 const props = defineProps<{
-  mimor: State
+  state: State
   program: Program
   text: string
 }>()

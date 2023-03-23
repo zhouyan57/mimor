@@ -5,14 +5,14 @@ import IsRememberedControl from './IsRememberedControl.vue'
 import IsRememberedHeader from './IsRememberedHeader.vue'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
 }>()
 </script>
 
 <template>
   <div class="flex h-full w-full flex-col justify-between">
-    <IsRememberedHeader :mimor="mimor" :program="program" />
+    <IsRememberedHeader :state="state" :program="program" />
 
     <Transition
       enter-active-class="transition duration-100 delay-75 ease-linear"
@@ -30,6 +30,6 @@ defineProps<{
       </div>
     </Transition>
 
-    <IsRememberedControl :mimor="mimor" :program="program" />
+    <IsRememberedControl :state="state" :program="program" />
   </div>
 </template>

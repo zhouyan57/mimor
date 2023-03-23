@@ -4,20 +4,16 @@ import { onMounted } from 'vue'
 import { State } from './State'
 import { Program } from './models/Program'
 
-const {
-  mimor,
-  program,
-  element: node,
-} = defineProps<{
-  mimor: State
+const { state, program, element } = defineProps<{
+  state: State
   program: Program
   element: XElement
 }>()
 
 onMounted(() => {
-  const effect = program.router.findEffect(node)
+  const effect = program.router.findEffect(element)
   if (!effect) return
-  effect({ mimor, program, element: node })
+  effect({ state, program, element })
   program.next()
 })
 </script>
@@ -26,7 +22,7 @@ onMounted(() => {
   <component
     v-if="program.router.findCard(element)"
     :is="program.router.findCard(element)"
-    :mimor="mimor"
+    :state="state"
     :program="program"
     :element="element"
   />

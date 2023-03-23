@@ -6,7 +6,7 @@ import { Program } from '../models/Program'
 import { State } from '../State'
 
 defineProps<{
-  mimor: State
+  state: State
   program: Program
   element: XElement
 }>()
@@ -23,7 +23,7 @@ defineProps<{
         >
           <MimorNodes
             v-show="program.revealed"
-            :mimor="mimor"
+            :state="state"
             :program="program"
             :nodes="child.children"
             class="py-3 text-3xl"
@@ -32,7 +32,7 @@ defineProps<{
       </div>
       <MimorNode
         v-else
-        :mimor="mimor"
+        :state="state"
         :program="program"
         :node="child"
         :class="[

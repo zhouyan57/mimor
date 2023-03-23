@@ -3,7 +3,7 @@ import { State } from '../State'
 import { Program } from './Program'
 
 export type EffectOptions = {
-  mimor: State
+  state: State
   program: Program
   element: XElement
 }
