@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
 import { onMounted } from 'vue'
-import { MimorState } from './MimorState'
+import { State } from './State'
 import { Program } from './models/Program'
 
 const {
@@ -9,7 +9,7 @@ const {
   program,
   element: node,
 } = defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
   element: XElement
 }>()

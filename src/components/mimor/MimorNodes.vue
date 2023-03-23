@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { XNode } from '@xieyuheng/x-node'
 import MimorNode from './MimorNode.vue'
-import { MimorState } from './MimorState'
+import { State } from './State'
 import { Program } from './models/Program'
 
 defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
   nodes: Array<XNode>
 }>()

@@ -2,8 +2,10 @@
 `MimorEntrance` enter url
 
 [mimor] `onFinished` behavior for `mimors/:url` route
+[mimor] `State` should be type instead of class
 
-[mimor] `MimorState` should be type instead of class
+[mimor] support `<cover>`
+[mimor] `<question>` has `name`
 
 # recall
 

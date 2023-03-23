@@ -10,7 +10,7 @@ TODO
 
 ## OUR LIST 回顾
 
-``` sisuo-session
+```sisuo-session
 title: Our List
 
 theme:
@@ -183,10 +183,10 @@ Our conception of the problem is likely to be rather incomplete when we start th
 our outlook is different when we have made some progress;
 it is again different when we have almost obtained the solution.
 
-- (1) understand  -- clarity
-- (2) plan        -- connections
-- (3) carry out   -- check each steps
-- (4) look back   -- to gain the most from our works
+- (1) understand -- clarity
+- (2) plan -- connections
+- (3) carry out -- check each steps
+- (4) look back -- to gain the most from our works
 
 It is important to go through all the phases,
 to advance while avoiding obvious mistakes,

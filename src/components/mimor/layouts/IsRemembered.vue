@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { MimorState } from '../MimorState'
+import { State } from '../State'
 import { Program } from '../models/Program'
 import IsRememberedControl from './IsRememberedControl.vue'
 import IsRememberedHeader from './IsRememberedHeader.vue'
 
 defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
 }>()
 </script>

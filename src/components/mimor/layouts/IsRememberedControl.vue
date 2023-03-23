@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { CheckIcon, EyeIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../../components/Lang.vue'
-import { MimorState } from '../MimorState'
+import { State } from '../State'
 import { Program } from '../models/Program'
 
 defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
 }>()
 </script>

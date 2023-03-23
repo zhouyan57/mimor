@@ -9,7 +9,7 @@ export interface MimorOptions {
   program: ProgramOptions
 }
 
-export class MimorState {
+export class State {
   theme = new Theme('white')
   program?: Program
   error?: Error

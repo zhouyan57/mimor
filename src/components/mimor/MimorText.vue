@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { MimorState } from './MimorState'
+import { State } from './State'
 import { Program } from './models/Program'
 
 const props = defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
   text: string
 }>()

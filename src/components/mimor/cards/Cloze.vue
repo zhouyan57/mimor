@@ -2,11 +2,11 @@
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import MimorNode from '../MimorNode.vue'
 import MimorNodes from '../MimorNodes.vue'
-import { MimorState } from '../MimorState'
 import { Program } from '../models/Program'
+import { State } from '../State'
 
 defineProps<{
-  mimor: MimorState
+  mimor: State
   program: Program
   element: XElement
 }>()

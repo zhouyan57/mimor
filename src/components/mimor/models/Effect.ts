@@ -1,9 +1,9 @@
 import { XElement } from '@xieyuheng/x-node'
-import { MimorState } from '../MimorState'
+import { State } from '../State'
 import { Program } from './Program'
 
 export type EffectOptions = {
-  mimor: MimorState
+  mimor: State
   program: Program
   element: XElement
 }
