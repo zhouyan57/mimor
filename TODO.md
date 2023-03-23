@@ -1,6 +1,6 @@
 # minor
 
-setup one `minors` route
+`minorpage` show minor
 
 remove other routes
 remove global app

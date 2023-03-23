@@ -8,6 +8,7 @@ import File from './file/File.vue'
 import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import LoginEmailSuccess from './login/LoginEmailSuccess.vue'
+import MinorPage from './minor/MinorPage.vue'
 import ProjectCreate from './project-create/ProjectCreate.vue'
 import ProjectList from './project-list/ProjectList.vue'
 import Project from './project/Project.vue'
@@ -17,6 +18,11 @@ import RegisterEmailSuccess from './register/RegisterEmailSuccess.vue'
 // prettier-ignore
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
+
+  { path: '/mimors' , redirect: "/" },  
+  { path: '/mimors/' ,redirect: "/" },    
+  { path: '/mimors/:url(.*)*' ,component: MinorPage },
+
   { path: '/about', component: About },
   { path: '/authors', component: AuthorList },
   { path: '/authors/:username', redirect: ({params}) => `/authors/${params.username}/projects` },
