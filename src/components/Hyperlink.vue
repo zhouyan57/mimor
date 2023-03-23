@@ -1,22 +1,27 @@
 <script setup lang="ts">
-// We can not use <RouterHyperlink> in headlessui:
-// - https://github.com/tailwindlabs/headlessui/issues/143
+// We use our custom <Hyperlink> instead of <RouterLink>,
+// so that we can add some behaviors to every links.
+
+const props = defineProps<{
+  href: string
+}>()
 </script>
 
 <template>
-  <a
-    @click.prevent="
-      () => {
-        if (typeof $attrs.href === 'string') {
-          if ($attrs.mode === 'replace') {
-            $router.replace($attrs.href)
-          } else {
-            $router.push($attrs.href)
-          }
-        }
-      }
-    "
-    class="cursor-pointer"
-    ><slot
-  /></a>
+  <RouterLink v-bind="props" :to="props.href"><slot /></RouterLink>
 </template>
+
+<!--
+
+     For example, we can not use <RouterLink> in headlessui:
+     - https://github.com/tailwindlabs/headlessui/issues/143
+
+-->
+
+<!--
+     <template>
+     <a class="cursor-pointer" @click.prevent="$router.push($attrs.href)"
+     ><slot
+     /></a>
+     </template>
+-->
