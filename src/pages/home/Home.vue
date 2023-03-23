@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { onMounted, reactive, ref } from 'vue'
-import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -26,21 +25,10 @@ onMounted(async () => {
     </Head>
 
     <template #title>
-      <div class="flex justify-between space-x-2">
-        <Lang>
-          <template #zh>首页</template>
-          <template #en>Home</template>
-        </Lang>
-
-        <div class="flex justify-end space-x-2">
-          <Hyperlink href="/about" class="hover:underline">
-            <Lang>
-              <template #zh>关于</template>
-              <template #en>About</template>
-            </Lang>
-          </Hyperlink>
-        </div>
-      </div>
+      <Lang>
+        <template #zh>首页</template>
+        <template #en>Home</template>
+      </Lang>
     </template>
 
     <div class="flex h-full flex-col">

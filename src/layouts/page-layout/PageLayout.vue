@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PageControl from './PageControl.vue'
 import PageHead from './PageHead.vue'
-import PagLogo from './PageLogo.vue'
+import PageLogo from './PageLogo.vue'
 import PageSidebar from './PageSidebar.vue'
 </script>
 
@@ -9,7 +9,7 @@ import PageSidebar from './PageSidebar.vue'
   <div class="flex h-screen">
     <div class="hidden h-full w-72 shrink-0 flex-col p-3 md:flex">
       <div class="pb-3">
-        <PagLogo />
+        <PageLogo />
       </div>
 
       <PageSidebar />
