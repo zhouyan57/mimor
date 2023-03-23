@@ -16,7 +16,7 @@ import PageSidebar from './PageSidebar.vue'
     </div>
 
     <div class="flex h-full w-full flex-col space-y-2 overflow-x-auto py-3">
-      <PageHead class="px-3" :state="state">
+      <PageHead class="px-3">
         <template #title>
           <slot name="title" />
         </template>
@@ -27,7 +27,7 @@ import PageSidebar from './PageSidebar.vue'
       </div>
 
       <div class="fixed bottom-20 right-4 z-30 md:hidden">
-        <PageControl :state="state" />
+        <PageControl />
       </div>
     </div>
   </div>

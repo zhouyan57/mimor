@@ -35,7 +35,6 @@ import PageLogo from './PageLogo.vue'
             <PageLogo
               class="font-light"
               :class="[active && 'text-stone-600']"
-              :state="state"
             />
           </MenuItem>
         </div>
@@ -57,7 +56,7 @@ import PageLogo from './PageLogo.vue'
             </Hyperlink>
           </MenuItem>
 
-          <PageLang :state="state" />
+          <PageLang />
         </div>
 
         <div class="border-t border-stone-500 py-3">

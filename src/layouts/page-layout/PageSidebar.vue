@@ -16,7 +16,7 @@ import PageLang from './PageLang.vue'
         </Lang>
       </Hyperlink>
 
-      <PageLang :state="state" />
+      <PageLang />
     </div>
 
     <div class="border-t border-stone-500 pt-2">
