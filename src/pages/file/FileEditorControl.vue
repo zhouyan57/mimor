@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Link from '../../components/Link.vue'
-import Lang from '../../components/Lang.vue'
 import { PlayIcon } from '@heroicons/vue/24/outline'
+import Lang from '../../components/Lang.vue'
+import Link from '../../components/Link.vue'
 import { FileState as State } from './FileState'
 
 defineProps<{ state: State }>()

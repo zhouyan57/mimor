@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import Loading from '../../components/Loading.vue'
-import { AuthorListState as State } from './AuthorListState'
+import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorListItem from './AuthorListItem.vue'
+import { AuthorListState as State } from './AuthorListState'
 
 const state = reactive(new State())
 

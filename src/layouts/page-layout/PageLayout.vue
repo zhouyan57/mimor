@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
 import Lang from '../../components/Lang.vue'
-import PageLoading from './PageLoading.vue'
+import PageLayoutControl from './PageLayoutControl.vue'
 import PageLayoutHeader from './PageLayoutHeader.vue'
 import PageLayoutLogo from './PageLayoutLogo.vue'
 import PageLayoutSidebar from './PageLayoutSidebar.vue'
-import PageLayoutControl from './PageLayoutControl.vue'
 import { PageLayoutState as State } from './PageLayoutState'
+import PageLoading from './PageLoading.vue'
 
 const state = reactive(new State())
 

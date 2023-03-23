@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
-import ProjectFileList from './ProjectFileList.vue'
 import ProjectControl from './ProjectControl.vue'
+import ProjectFileList from './ProjectFileList.vue'
 import { ProjectState as State } from './ProjectState'
 
 const { state } = defineProps<{ state: State }>()

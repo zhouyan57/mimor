@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import ProjectConfig from './ProjectConfig.vue'
 import ProjectHead from './ProjectHead.vue'
-import ProjectTitle from './ProjectTitle.vue'
 import ProjectNormal from './ProjectNormal.vue'
 import ProjectRecall from './ProjectRecall.vue'
-import ProjectConfig from './ProjectConfig.vue'
 import { ProjectState as State } from './ProjectState'
+import ProjectTitle from './ProjectTitle.vue'
 
 const route = useRoute()
 

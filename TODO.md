@@ -4,6 +4,7 @@ setup one `minors` route
 
 remove other routes
 remove global app
+remove `errors/` -- shallow abstraction
 remove `models/Form`
 
 # author

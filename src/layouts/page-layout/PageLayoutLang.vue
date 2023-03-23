@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { watch } from 'vue'
 import {
   Listbox,
   ListboxButton,
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/vue'
-import { CheckIcon, ArrowsUpDownIcon } from '@heroicons/vue/24/outline'
+import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
+import { watch } from 'vue'
 import Lang from '../../components/Lang.vue'
 import { PageLayoutState as State } from './PageLayoutState'
 

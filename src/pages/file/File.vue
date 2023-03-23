@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import FileHead from './FileHead.vue'
-import FileTitle from './FileTitle.vue'
-import FileEditor from './FileEditor.vue'
-import FileRecall from './FileRecall.vue'
-import FileConfig from './FileConfig.vue'
-import { FileState as State } from './FileState'
 import { formatParam } from '../../utils/formatParam'
+import FileConfig from './FileConfig.vue'
+import FileEditor from './FileEditor.vue'
+import FileHead from './FileHead.vue'
+import FileRecall from './FileRecall.vue'
+import { FileState as State } from './FileState'
+import FileTitle from './FileTitle.vue'
 
 const route = useRoute()
 

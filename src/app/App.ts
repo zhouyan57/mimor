@@ -1,12 +1,12 @@
 import { Api } from './Api'
-import { Auth } from './auth/Auth'
-import { Guard } from './guard/Guard'
 import { Lang } from './Lang'
-import { UserRepo } from './users/UserRepo'
+import { Auth } from './auth/Auth'
 import { AuthorRepo } from './authors/AuthorRepo'
-import { ProjectRepo } from './projects/ProjectRepo'
-import { FileRepo } from './files/FileRepo'
 import { ConfigRepo } from './configs/ConfigRepo'
+import { FileRepo } from './files/FileRepo'
+import { Guard } from './guard/Guard'
+import { ProjectRepo } from './projects/ProjectRepo'
+import { UserRepo } from './users/UserRepo'
 
 export class App {
   lang = new Lang()

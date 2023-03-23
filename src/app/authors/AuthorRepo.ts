@@ -1,5 +1,5 @@
-import { AuthorRepoRemote } from './AuthorRepoRemote'
 import { AuthorRepoMemory } from './AuthorRepoMemory'
+import { AuthorRepoRemote } from './AuthorRepoRemote'
 
 export class AuthorRepo {
   remote = new AuthorRepoRemote()

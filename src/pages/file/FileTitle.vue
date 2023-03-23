@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PlayIcon, PencilIcon } from '@heroicons/vue/24/outline'
+import { PencilIcon, PlayIcon } from '@heroicons/vue/24/outline'
 import Link from '../../components/Link.vue'
 import { FileState as State } from './FileState'
 

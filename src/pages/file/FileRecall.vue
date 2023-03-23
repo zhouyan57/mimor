@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
-import { FileState as State } from './FileState'
 import Mimor from '../../components/mimor/Mimor.vue'
+import { FileState as State } from './FileState'
 
 defineProps<{ state: State }>()
 </script>

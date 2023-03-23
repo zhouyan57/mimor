@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import { Head } from '@vueuse/head'
-import { reactive, onBeforeMount } from 'vue'
+import { onBeforeMount, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import RegisterStart from './RegisterStart.vue'
 import { RegisterState as State } from './RegisterState'

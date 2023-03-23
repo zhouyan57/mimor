@@ -2,8 +2,8 @@
 import { computed, onMounted } from 'vue'
 import Lang from '../../components/Lang.vue'
 import Loading from '../../components/Loading.vue'
-import { ProjectState as State } from './ProjectState'
 import Mimor from '../../components/mimor/Mimor.vue'
+import { ProjectState as State } from './ProjectState'
 
 const { state } = defineProps<{ state: State }>()
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Link from '../../components/Link.vue'
 import { PlusIcon } from '@heroicons/vue/24/outline'
+import Link from '../../components/Link.vue'
 import { ProjectListState as State } from './ProjectListState'
 
 defineProps<{ state: State }>()
