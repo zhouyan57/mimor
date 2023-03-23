@@ -18,6 +18,9 @@
 # home
 
 [home] improve design
+
+- maybe just show the wiki?
+
 [home] docs in homepage
 
 # author
