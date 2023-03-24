@@ -1,8 +1,12 @@
+ambr MimorStmt MimorProgram
+[mimor] `MimorLoaded` dispatch to `MimorError` and `MimorProgram`
+[mimor] `State` has `kind` which can be `ViewSource`
+[mimor] `MimorViewSource`
+[mimor] `RememberingHeader` -- a button to view source
+
 [page-layout] `PageMobileMenu` push route to be addressable
 
 # mimor
-
-[mimor] a button to view source
 
 [mimor] `FrontCover` -- show `children`
 [mimor] `FrontCover` -- show `statistics` of card

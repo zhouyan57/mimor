@@ -19,18 +19,15 @@ const state = stateReactive(props.state)
       />
     </Head>
 
-    <div
+    <MimorStmt
       v-if="state.program"
       class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"
-    >
-      <MimorStmt
-        :key="state.program.currentKey"
-        :state="state"
-        :program="state.program"
-        :element="state.program.current"
-      />
-    </div>
+      :key="state.program.currentKey"
+      :state="state"
+      :program="state.program"
+      :element="state.program.current"
+    />
 
     <div
       v-if="state.error instanceof ParsingError"

@@ -23,7 +23,7 @@ defineProps<{
       class="flex items-center space-x-2"
       :class="[state.theme.notWhite && state.theme.text(800)]"
     >
-      <button @click="">
+      <button @click="state.viewSource = ture">
         <CodeBracketIcon class="h-5 w-5" />
       </button>
 
