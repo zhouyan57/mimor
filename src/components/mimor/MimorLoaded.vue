@@ -11,7 +11,7 @@ const state = stateReactive(props.state)
 </script>
 
 <template>
-  <div class="h-full">
+  <div>
     <Head>
       <meta
         name="theme-color"

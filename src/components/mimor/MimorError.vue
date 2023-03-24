@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="h-full">
+  <div>
     <div
       v-if="error instanceof ParsingError"
       class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
