@@ -1,6 +1,8 @@
-# Cards
+---
+title: Ideas
+---
 
-## Guitar
+## Guitar Cards
 
 major minor game
 

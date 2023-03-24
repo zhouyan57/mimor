@@ -1,4 +1,6 @@
-# Learn
+---
+title: Learn
+---
 
 ## CSS
 

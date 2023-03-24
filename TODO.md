@@ -1,5 +1,7 @@
 # mimor
 
+notes/the-mimor-component.md
+
 [mimor] support `<front-cover>` and `<back-cover>`
 [mimor] default `<back-cover>` with statistics
 [mimor] `<question>` has `name`
