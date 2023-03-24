@@ -1,17 +1,13 @@
-[page-layout] `PageMobileMenu` -- use `Popover` instead of `Menu`
+[home] list of examples
+
+http://localhost:5173/mimors/http://localhost:5173/contents/sisuo.mimor
+http://localhost:5173/mimors/http://localhost:5173/contents/do-not-forget.mimor
 
 # mimor
 
-[mimor] `onFinished` behavior for `mimors/:url` route
-
-- [maybe] default `<back-cover>` with statistics
-
 [mimor] `State` should be type instead of class
-
-[mimor] support `<cover>`
-
-- maybe `<front-cover>` and `<back-cover>`
-
+[mimor] support `<front-cover>` and `<back-cover>`
+[mimor] default `<back-cover>` with statistics
 [mimor] `<question>` has `name`
 
 # docs

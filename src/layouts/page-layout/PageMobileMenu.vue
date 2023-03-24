@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
@@ -11,14 +11,14 @@ const route = useRoute()
 </script>
 
 <template>
-  <Menu as="div" class="relative flex text-3xl">
-    <MenuButton>
+  <Popover as="div" class="relative flex text-3xl">
+    <PopoverButton>
       <button
         class="rounded-full border border-stone-300 bg-white p-3 shadow-md"
       >
         <Bars3Icon class="h-7 w-7 text-stone-500" />
       </button>
-    </MenuButton>
+    </PopoverButton>
 
     <Transition
       enter-active-class="transition duration-100"
@@ -28,105 +28,64 @@ const route = useRoute()
       leave-from-class="transform opacity-100"
       leave-to-class="transform opacity-0 -translate-x-6"
     >
-      <MenuItems
+      <PopoverPanel
         class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white bg-white px-2 pb-20"
+        v-slot="{ close }"
       >
         <div class="absolute top-2 left-2">
-          <MenuItem as="div">
+          <button @click="close()">
             <XMarkIcon class="h-10 w-10 stroke-1" />
-          </MenuItem>
+          </button>
         </div>
 
         <div class="absolute top-0 right-3">
-          <MenuItem as="div" v-slot="{ active }">
-            <PageLogo
-              class="font-light"
-              :class="{
-                'text-stone-600': active,
-              }"
-            />
-          </MenuItem>
+          <PageLogo class="font-light" />
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <Hyperlink
-              href="/"
-              class="hover:underline"
-              :class="{
-                'decoration-6 text-stone-600 underline': active,
-              }"
-            >
-              <Lang>
-                <template #zh>首页</template>
-                <template #en>Home</template>
-              </Lang>
-            </Hyperlink>
-          </MenuItem>
+          <Hyperlink href="/" class="hover:underline" @click="close()">
+            <Lang>
+              <template #zh>首页</template>
+              <template #en>Home</template>
+            </Lang>
+          </Hyperlink>
 
-          <MenuItem as="div" v-slot="{ active }">
-            <Hyperlink
-              href="/about"
-              class="hover:underline"
-              :class="{
-                'decoration-6 text-stone-600 underline': active,
-              }"
-            >
-              <Lang>
-                <template #zh>关于</template>
-                <template #en>About</template>
-              </Lang>
-            </Hyperlink>
-          </MenuItem>
+          <Hyperlink href="/about" class="hover:underline" @click="close()">
+            <Lang>
+              <template #zh>关于</template>
+              <template #en>About</template>
+            </Lang>
+          </Hyperlink>
 
           <PageLang />
         </div>
 
         <div class="border-t border-stone-500 py-3">
           <div class="flex">
-            <MenuItem as="div" v-slot="{ active }">
-              <Hyperlink
-                href="/login"
-                :class="{
-                  'decoration-6 text-stone-600 underline': active,
-                }"
-              >
-                <Lang>
-                  <template #zh>登录</template>
-                  <template #en>Login</template>
-                </Lang>
-              </Hyperlink>
-            </MenuItem>
+            <Hyperlink href="/login" @click="close()">
+              <Lang>
+                <template #zh>登录</template>
+                <template #en>Login</template>
+              </Lang>
+            </Hyperlink>
 
             <div class="px-2 font-bold">/</div>
 
-            <MenuItem as="div" v-slot="{ active }">
-              <Hyperlink
-                href="/register"
-                :class="{
-                  'decoration-6 text-stone-600 underline': active,
-                }"
-              >
-                <Lang>
-                  <template #zh>注册</template>
-                  <template #en>Register</template>
-                </Lang>
-              </Hyperlink>
-            </MenuItem>
+            <Hyperlink href="/register" @click="close()">
+              <Lang>
+                <template #zh>注册</template>
+                <template #en>Register</template>
+              </Lang>
+            </Hyperlink>
           </div>
         </div>
 
         <div class="absolute bottom-4 right-2">
-          <MenuItem as="div" v-slot="{ active }">
-            <XMarkIcon
-              class="h-10 w-10 stroke-1"
-              :class="{
-                'border-4 border-stone-500': active,
-              }"
-            />
-          </MenuItem>
+          <button @click="close()">
+            <XMarkIcon class="h-10 w-10 stroke-1" />
+          </button>
         </div>
-      </MenuItems>
+      </PopoverPanel>
     </Transition>
-  </Menu>
+  </Popover>
 </template>
