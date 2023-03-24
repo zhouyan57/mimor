@@ -1,5 +1,3 @@
-[mimor] making program optional
-
 # mimor
 
 [mimor] a button to view source

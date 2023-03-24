@@ -2,7 +2,7 @@ import { isElement, XElement, XNode } from '@xieyuheng/x-node'
 import { Router } from './Router'
 
 export interface ProgramOptions {
-  onFinished: () => void
+  onFinished?: () => void
 }
 
 export class Program {
@@ -33,7 +33,9 @@ export class Program {
   next(): void {
     const index = this.remaining.shift()
     if (index === undefined) {
-      this.options.onFinished()
+      if (this.options.onFinished) {
+        this.options.onFinished()
+      }
     } else {
       this.pointer = index
       this.revealed = false

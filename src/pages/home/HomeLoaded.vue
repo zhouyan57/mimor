@@ -14,13 +14,7 @@ const state = reactive(props.state)
       class="h-[34rem] rounded-sm border border-stone-500"
       v-for="(url, index) of state.list"
       :key="index"
-      :options="{
-        url,
-        fullscreen: true,
-        program: {
-          onFinished: () => {},
-        },
-      }"
+      :options="{ url }"
     />
   </div>
 </template>
