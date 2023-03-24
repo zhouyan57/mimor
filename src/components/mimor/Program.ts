@@ -46,7 +46,7 @@ export class Program {
     return this.nodes.filter(isElement)
   }
 
-  get current(): XElement {
+  get currentElement(): XElement {
     return this.elements[this.pointer]
   }
 

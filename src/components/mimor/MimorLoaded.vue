@@ -36,7 +36,7 @@ const state = stateReactive(props.state)
         :key="state.program.pointer"
         :state="state"
         :program="state.program"
-        :element="state.program.current"
+        :element="state.program.currentElement"
       />
     </template>
 

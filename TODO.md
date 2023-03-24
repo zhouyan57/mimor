@@ -1,5 +1,3 @@
-[mimor] extract reactivity from `MimorProgram`
-
 [page-layout] `PageMobileMenu` push route to be addressable
 
 # mimor
