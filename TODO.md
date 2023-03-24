@@ -1,5 +1,3 @@
-[mimor] can take url as argument -- handle loading state by itself
-
 # home
 
 [home] show cards

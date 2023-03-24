@@ -12,7 +12,7 @@ const state = stateReactive(props.state)
   <Mimor
     class="h-screen w-screen"
     :options="{
-      text: state.text,
+      url: state.url,
       fullscreen: true,
       program: {
         onFinished: () => {},
