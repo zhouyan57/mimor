@@ -13,6 +13,7 @@ const state = stateReactive(props.state)
     class="h-screen w-screen"
     :options="{
       text: state.text,
+      fullscreen: true,
       program: {
         onFinished: () => {},
       },
