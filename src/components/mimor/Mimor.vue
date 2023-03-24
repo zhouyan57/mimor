@@ -2,12 +2,12 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import MimorStmt from './MimorStmt.vue'
-import type { StateOptions } from './State'
-import { State } from './State'
+import type { StateOptions } from './createState'
+import { createState } from './createState'
 import IsRemembered from './layouts/IsRemembered.vue'
 
 const { options } = defineProps<{ options: StateOptions }>()
-const state = reactive(new State(options))
+const state = reactive(createState(options))
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const state = reactive(new State(options))
     <Head>
       <meta
         name="theme-color"
-        :content="state.options.fullscreen ? state.theme.color : ''"
+        :content="state.fullscreen ? state.theme.color : ''"
       />
     </Head>
 

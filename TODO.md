@@ -1,7 +1,5 @@
 # mimor
 
-[mimor] `createState`
-
 [mimor] `stateReactive`
 
 [mimor] `State` should be type instead of class

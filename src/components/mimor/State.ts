@@ -1,33 +1,12 @@
-import { parseNodes, ParsingError } from '@xieyuheng/x-node'
-import { Program, ProgramOptions } from './Program'
-import { routerDefineRoutes } from './routerDefineRoutes'
+import { ParsingError } from '@xieyuheng/x-node'
+import { Program } from './Program'
 import { Theme } from './Theme'
 
-export interface StateOptions {
+export type State = {
   text: string
   fullscreen?: boolean
-  program: ProgramOptions
-}
-
-export class State {
-  theme = new Theme('white')
+  theme: Theme
   program?: Program
   error?: Error
   parsingError?: ParsingError
-
-  constructor(public options: StateOptions) {
-    try {
-      const nodes = parseNodes(options.text)
-      this.program = new Program(nodes, options.program)
-      routerDefineRoutes(this.program.router)
-    } catch (error) {
-      if (error instanceof ParsingError) {
-        this.parsingError = error
-      } else if (error instanceof Error) {
-        this.error = error
-      } else {
-        throw error
-      }
-    }
-  }
 }
