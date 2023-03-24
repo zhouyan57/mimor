@@ -2,7 +2,7 @@
 import { isElement, XNode } from '@xieyuheng/x-node'
 import { Program } from '../Program'
 import { State } from '../State'
-import MimorText from './MimorText.vue'
+import Text from './Text.vue'
 
 defineProps<{
   state: State
@@ -12,7 +12,7 @@ defineProps<{
 </script>
 
 <template>
-  <MimorText
+  <Text
     v-if="!isElement(node)"
     :state="state"
     :program="program"

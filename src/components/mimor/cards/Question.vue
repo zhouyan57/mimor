@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import RememberingLayout from '../layouts/RememberingLayout.vue'
-import MimorNode from '../nodes/MimorNode.vue'
-import MimorNodes from '../nodes/MimorNodes.vue'
+import Node from '../nodes/Node.vue'
+import Nodes from '../nodes/Nodes.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 
@@ -26,7 +26,7 @@ defineProps<{
             enter-from-class="transform transform-gpu opacity-0"
             enter-to-class="transform transform-gpu opacity-100"
           >
-            <MimorNodes
+            <Nodes
               v-show="program.revealed"
               :state="state"
               :program="program"
@@ -35,7 +35,7 @@ defineProps<{
             />
           </Transition>
         </div>
-        <MimorNode
+        <Node
           v-else
           :state="state"
           :program="program"

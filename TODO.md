@@ -1,4 +1,3 @@
-[mimor] rename components in `nodes/`
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
 

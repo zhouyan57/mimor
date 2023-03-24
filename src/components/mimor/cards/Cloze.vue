@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import RememberingLayout from '../layouts/RememberingLayout.vue'
-import MimorNode from '../nodes/MimorNode.vue'
-import MimorNodes from '../nodes/MimorNodes.vue'
+import Node from '../nodes/Node.vue'
+import Nodes from '../nodes/Nodes.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 
@@ -17,14 +17,14 @@ defineProps<{
   <RememberingLayout :state="state" :program="state.program">
     <div class="text-2xl">
       <span v-for="(child, index) of element.children" :key="index">
-        <MimorNode
+        <Node
           v-if="!matchElement(child, { tags: ['blank', '空'] })"
           :state="state"
           :program="program"
           :node="child"
         />
         <span v-else class="px-0.5">
-          <MimorNodes
+          <Nodes
             v-if="program.revealed"
             :state="state"
             :program="program"

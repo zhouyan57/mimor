@@ -2,7 +2,7 @@
 import { XNode } from '@xieyuheng/x-node'
 import { Program } from '../Program'
 import { State } from '../State'
-import MimorNode from './MimorNode.vue'
+import Node from './Node.vue'
 
 defineProps<{
   state: State
@@ -14,6 +14,6 @@ defineProps<{
 <template>
   <span
     ><span v-for="(node, index) of nodes" :key="index"
-      ><MimorNode :state="state" :program="program" :node="node" /></span
+      ><Node :state="state" :program="program" :node="node" /></span
   ></span>
 </template>
