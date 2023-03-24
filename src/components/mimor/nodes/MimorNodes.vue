@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { XNode } from '@xieyuheng/x-node'
+import { Program } from '../Program'
+import { State } from '../State'
 import MimorNode from './MimorNode.vue'
-import { Program } from './Program'
-import { State } from './State'
 
 defineProps<{
   state: State

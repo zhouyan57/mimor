@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import RememberingLayout from '../layouts/RememberingLayout.vue'
-import MimorNode from '../MimorNode.vue'
-import MimorNodes from '../MimorNodes.vue'
+import MimorNode from '../nodes/MimorNode.vue'
+import MimorNodes from '../nodes/MimorNodes.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Program } from './Program'
-import { State } from './State'
+import { Program } from '../Program'
+import { State } from '../State'
 
 const props = defineProps<{
   state: State
