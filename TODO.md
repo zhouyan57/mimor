@@ -1,4 +1,3 @@
-[mimor] `State` has `kind` which can be `ViewSource` and `Program`
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
 

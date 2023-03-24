@@ -18,29 +18,27 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   const theme = new Theme('white')
 
-  const viewSource = false
-
   try {
     const nodes = parseNodes(text)
     const program = new Program(nodes, options.program || {})
     routerDefineRoutes(program.router)
 
     return {
+      kind: 'Program',
       url,
       text,
       fullscreen,
       theme,
-      viewSource,
       program,
     }
   } catch (error) {
     if (error instanceof Error) {
       return {
+        kind: 'Error',
         url,
         text,
         fullscreen,
         theme,
-        viewSource,
         error,
       }
     } else {
