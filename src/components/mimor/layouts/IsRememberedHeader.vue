@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { CodeBracketIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../../components/Lang.vue'
 import { Program } from '../Program'
 import { State } from '../State'
@@ -17,8 +18,16 @@ defineProps<{
         <template #en>Progress: {{ program.progress }}</template>
       </Lang>
     </div>
-    <div class="font-logo font-light">
-      <Lang :class="[state.theme.notWhite && state.theme.text(800)]">
+
+    <div
+      class="flex items-center space-x-2"
+      :class="[state.theme.notWhite && state.theme.text(800)]"
+    >
+      <button @click="">
+        <CodeBracketIcon class="h-5 w-5" />
+      </button>
+
+      <Lang class="font-logo font-light">
         <template #zh>谜墨</template>
         <template #en>Mimor</template>
       </Lang>

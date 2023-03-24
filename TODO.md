@@ -1,19 +1,22 @@
+[page-layout] `PageMobileMenu` push route to be addressable
+
 # mimor
 
 [mimor] a button to view source
 
 [mimor] `FrontCover` -- show `children`
+[mimor] `FrontCover` -- show `statistics` of card
 [mimor] `FrontCover` -- `Start` / `开始` button
 
 [mimor] `BackCover` -- show `children`
 [mimor] `BackCover` -- `Replay` / `重复` button
-[mimor] `BackCover` -- show `statistics`
+[mimor] `BackCover` -- show `statistics` of remembering
 
 [mimor] show default `<back-cover>` on finished
 
-[mimor] support `<include>`
-
 [mimor] `Card` has `name` attribute
+
+[mimor] a button to go fullscreen
 
 # docs
 

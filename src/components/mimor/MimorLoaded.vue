@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { ParsingError } from '@xieyuheng/x-node'
 import MimorStmt from './MimorStmt.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
@@ -32,7 +33,7 @@ const state = stateReactive(props.state)
     </div>
 
     <div
-      v-if="state.parsingError"
+      v-if="state.error instanceof ParsingError"
       class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
     >
       <div class="text-xl font-bold text-orange-500">ParsingError</div>
