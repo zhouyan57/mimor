@@ -20,23 +20,26 @@ const state = stateReactive(props.state)
       />
     </Head>
 
-    <MimorViewSource
-      v-if="state.kind === 'ViewSource'"
-      class="h-full overflow-hidden"
-      :class="[state.theme.bg(300)]"
-      :key="state.program.currentKey"
-      :state="state"
-    />
+    <template v-if="state.program">
+      <MimorViewSource
+        v-if="state.kind === 'ViewSource'"
+        class="h-full"
+        :class="[state.theme.bg(300)]"
+        :key="state.program.currentKey"
+        :state="state"
+        :program="state.program"
+      />
 
-    <MimorProgram
-      v-else-if="state.program"
-      class="h-full overflow-hidden"
-      :class="[state.theme.bg(300)]"
-      :key="state.program.currentKey"
-      :state="state"
-      :program="state.program"
-      :element="state.program.current"
-    />
+      <MimorProgram
+        v-else
+        class="h-full"
+        :class="[state.theme.bg(300)]"
+        :key="state.program.currentKey"
+        :state="state"
+        :program="state.program"
+        :element="state.program.current"
+      />
+    </template>
 
     <MimorError v-if="state.error" :state="state" :error="state.error" />
   </div>

@@ -1,5 +1,3 @@
-[mimor] `MimorViewSource` -- a button to go back
-
 [mimor] extract reactivity from `MimorProgram`
 
 [page-layout] `PageMobileMenu` push route to be addressable

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import MimorHead from '../MimorHead.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 import RememberingControl from './RememberingControl.vue'
-import RememberingHeader from './RememberingHeader.vue'
 
 defineProps<{
   state: State
@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex h-full w-full flex-col justify-between">
-    <RememberingHeader :state="state" :program="program" />
+    <MimorHead :state="state" :program="program" />
 
     <Transition
       enter-active-class="transition duration-100 delay-75 ease-linear"
