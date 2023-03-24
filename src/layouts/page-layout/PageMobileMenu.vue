@@ -29,7 +29,7 @@ const route = useRoute()
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <PopoverPanel
-        class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white bg-white px-2 pb-20"
+        class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
         v-slot="{ close }"
       >
         <div class="absolute top-2 left-2">
