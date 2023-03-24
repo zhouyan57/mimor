@@ -4,7 +4,7 @@ import { Theme } from './effects/Theme'
 import { Router } from './models/Router'
 import Code from './nodes/Code.vue'
 
-export function mountRoutes(router: Router): void {
+export function routerDefineRoutes(router: Router): void {
   router.defineCard(['question', '问'], Question)
   router.defineCard(['cloze', '填空'], Cloze)
   router.defineEffect(['theme', '主题'], Theme)

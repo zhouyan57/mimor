@@ -1,7 +1,7 @@
 import { parseNodes, ParsingError } from '@xieyuheng/x-node'
 import { Program, ProgramOptions } from './models/Program'
 import { Theme } from './models/Theme'
-import { mountRoutes } from './mountRoutes'
+import { routerDefineRoutes } from './routerDefineRoutes'
 
 export interface StateOptions {
   text: string
@@ -19,7 +19,7 @@ export class State {
     try {
       const nodes = parseNodes(options.text)
       this.program = new Program(nodes, options.program)
-      mountRoutes(this.program.router)
+      routerDefineRoutes(this.program.router)
     } catch (error) {
       if (error instanceof ParsingError) {
         this.parsingError = error
