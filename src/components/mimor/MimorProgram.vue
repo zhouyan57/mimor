@@ -53,7 +53,9 @@ watch(
     :program="program"
     :element="element"
   />
+
   <div v-else-if="program.router.findEffect(element)"></div>
+
   <div v-else>
     <div class="text-xl font-bold text-red-500">Unknown statement:</div>
     <pre class="overflow-auto overscroll-contain text-red-500">{{

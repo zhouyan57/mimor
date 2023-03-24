@@ -1,5 +1,4 @@
-[mimor] `MimorViewSource`
-[mimor] `RememberingHeader` -- a button to view source
+[mimor] `MimorViewSource` -- a button to go back
 
 [mimor] extract reactivity from `MimorProgram`
 

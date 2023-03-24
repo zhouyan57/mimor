@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import MimorError from './MimorError.vue'
 import MimorProgram from './MimorProgram.vue'
+import MimorViewSource from './MimorViewSource.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
 
@@ -19,8 +20,16 @@ const state = stateReactive(props.state)
       />
     </Head>
 
+    <MimorViewSource
+      v-if="state.kind === 'ViewSource'"
+      class="h-full overflow-hidden"
+      :class="[state.theme.bg(300)]"
+      :key="state.program.currentKey"
+      :state="state"
+    />
+
     <MimorProgram
-      v-if="state.program"
+      v-else-if="state.program"
       class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"
       :key="state.program.currentKey"
