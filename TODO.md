@@ -1,6 +1,4 @@
-# home
-
-[home] show cards
+[mimor] making program optional
 
 # mimor
 

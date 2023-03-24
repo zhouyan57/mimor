@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import Hyperlink from '../../components/Hyperlink.vue'
+import Mimor from '../../components/mimor/Mimor.vue'
 import { State } from './State'
 
 const props = defineProps<{ state: State }>()
@@ -9,14 +9,18 @@ const state = reactive(props.state)
 </script>
 
 <template>
-  <div class="flex h-full flex-col text-xl">
-    <div v-for="(url, index) of state.list" :key="index">
-      <Hyperlink
-        :href="`/mimors/${url}`"
-        class="font-mono text-sm hover:underline"
-      >
-        {{ url }}
-      </Hyperlink>
-    </div>
+  <div class="flex flex-col space-y-4">
+    <Mimor
+      class="h-[34rem] rounded-sm border border-stone-500"
+      v-for="(url, index) of state.list"
+      :key="index"
+      :options="{
+        url,
+        fullscreen: true,
+        program: {
+          onFinished: () => {},
+        },
+      }"
+    />
   </div>
 </template>
