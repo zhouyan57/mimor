@@ -14,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <RememberingLayout :state="state" :program="state.program">
+  <RememberingLayout :state="state" :program="program">
     <div class="text-2xl">
       <span v-for="(child, index) of element.children" :key="index">
         <Node

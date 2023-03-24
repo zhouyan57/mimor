@@ -4,14 +4,25 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
+import Watch from '../../components/Watch.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 
 const route = useRoute()
+
+const log = console.log
 </script>
 
 <template>
-  <Popover as="div" class="relative flex text-3xl">
+  <Popover as="div" class="relative flex text-3xl" v-slot="{ open }">
+    <Watch
+      :value="open"
+      :effect="
+        (value: any) => {
+          log({ value })
+        }
+      "
+    />
     <PopoverButton>
       <button
         class="rounded-full border border-stone-300 bg-white p-3 shadow-md"
