@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
 import { onMounted } from 'vue'
+import { Program } from './Program'
 import { State } from './State'
-import { Program } from './models/Program'
 
 const { state, program, element } = defineProps<{
   state: State

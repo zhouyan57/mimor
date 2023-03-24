@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { CheckIcon, EyeIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../../components/Lang.vue'
+import { Program } from '../Program'
 import { State } from '../State'
-import { Program } from '../models/Program'
 
 defineProps<{
   state: State

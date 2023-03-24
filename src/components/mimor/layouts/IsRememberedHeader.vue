@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Lang from '../../../components/Lang.vue'
+import { Program } from '../Program'
 import { State } from '../State'
-import { Program } from '../models/Program'
 
 defineProps<{
   state: State

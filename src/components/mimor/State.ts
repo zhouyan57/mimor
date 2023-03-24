@@ -1,7 +1,7 @@
 import { parseNodes, ParsingError } from '@xieyuheng/x-node'
-import { Program, ProgramOptions } from './models/Program'
-import { Theme } from './models/Theme'
+import { Program, ProgramOptions } from './Program'
 import { routerDefineRoutes } from './routerDefineRoutes'
+import { Theme } from './Theme'
 
 export interface StateOptions {
   text: string

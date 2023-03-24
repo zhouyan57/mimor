@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { Program } from '../Program'
 import { State } from '../State'
-import { Program } from '../models/Program'
 import IsRememberedControl from './IsRememberedControl.vue'
 import IsRememberedHeader from './IsRememberedHeader.vue'
 

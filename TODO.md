@@ -1,7 +1,5 @@
 # mimor
 
-[mimor] move `models/` up a level
-
 [mimor] `createState`
 
 [mimor] `stateReactive`

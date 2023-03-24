@@ -2,7 +2,7 @@
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import MimorNode from '../MimorNode.vue'
 import MimorNodes from '../MimorNodes.vue'
-import { Program } from '../models/Program'
+import { Program } from '../Program'
 import { State } from '../State'
 
 defineProps<{

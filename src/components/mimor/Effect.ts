@@ -1,6 +1,6 @@
 import { XElement } from '@xieyuheng/x-node'
-import { State } from '../State'
 import { Program } from './Program'
+import { State } from './State'
 
 export type EffectOptions = {
   state: State

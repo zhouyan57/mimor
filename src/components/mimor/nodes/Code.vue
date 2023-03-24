@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XElement, isElement } from '@xieyuheng/x-node'
+import { Program } from '../Program'
 import { State } from '../State'
-import { Program } from '../models/Program'
 
 defineProps<{
   state: State
