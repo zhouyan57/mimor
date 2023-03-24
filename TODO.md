@@ -1,5 +1,3 @@
-[mimor] `MimorLoading` vs `MimorLoaded`
-
 [mimor] `loadState` async
 
 [mimor] can take url as argument -- handle loading state by itself

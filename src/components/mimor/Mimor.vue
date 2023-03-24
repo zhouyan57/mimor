@@ -1,51 +1,25 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
-import MimorStmt from './MimorStmt.vue'
+import { ref, watch } from 'vue'
+import MimorLoaded from './MimorLoaded.vue'
+import MimorLoading from './MimorLoading.vue'
+import { State } from './State'
 import type { StateOptions } from './loadState'
 import { loadState } from './loadState'
-import { stateReactive } from './stateReactive'
 
-const { options } = defineProps<{ options: StateOptions }>()
+const props = defineProps<{ options: StateOptions }>()
 
-const state = stateReactive(loadState(options))
+const state = ref<State | undefined>(undefined)
+
+watch(
+  () => props.options,
+  async () => {
+    state.value = await loadState(props.options)
+  },
+  { immediate: true, deep: true },
+)
 </script>
 
 <template>
-  <div class="h-full">
-    <Head>
-      <meta
-        name="theme-color"
-        :content="state.fullscreen ? state.theme.color : ''"
-      />
-    </Head>
-
-    <div
-      v-if="state.program"
-      class="h-full overflow-hidden"
-      :class="[state.theme.bg(300)]"
-    >
-      <MimorStmt
-        :key="state.program.currentKey"
-        :state="state"
-        :program="state.program"
-        :element="state.program.current"
-      />
-    </div>
-
-    <div
-      v-if="state.parsingError"
-      class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
-    >
-      <div class="text-xl font-bold text-orange-500">ParsingError</div>
-      <pre class="overflow-auto">{{ state.parsingError.message }}</pre>
-    </div>
-
-    <div
-      v-if="state.error"
-      class="rounded-sm border border-red-300 bg-red-200 py-2 px-3"
-    >
-      <div class="text-xl font-bold text-red-500">Error</div>
-      <pre class="overflow-auto">{{ state.error.message }}</pre>
-    </div>
-  </div>
+  <MimorLoaded v-if="state" :state="state" />
+  <MimorLoading v-else :options="options" />
 </template>
