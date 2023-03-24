@@ -3,7 +3,7 @@ import { Program, ProgramOptions } from './models/Program'
 import { Theme } from './models/Theme'
 import { mountRoutes } from './mountRoutes'
 
-export interface MimorOptions {
+export interface StateOptions {
   text: string
   fullscreen?: boolean
   program: ProgramOptions
@@ -15,7 +15,7 @@ export class State {
   error?: Error
   parsingError?: ParsingError
 
-  constructor(public options: MimorOptions) {
+  constructor(public options: StateOptions) {
     try {
       const nodes = parseNodes(options.text)
       this.program = new Program(nodes, options.program)

@@ -2,11 +2,11 @@
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import MimorStmt from './MimorStmt.vue'
-import type { MimorOptions } from './State'
+import type { StateOptions } from './State'
 import { State } from './State'
 import IsRemembered from './layouts/IsRemembered.vue'
 
-const { options } = defineProps<{ options: MimorOptions }>()
+const { options } = defineProps<{ options: StateOptions }>()
 const state = reactive(new State(options))
 </script>
 
