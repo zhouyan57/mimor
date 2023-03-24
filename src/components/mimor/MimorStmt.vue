@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
-import { onMounted } from 'vue'
+import { watch } from 'vue'
 import { Program } from './Program'
 import { State } from './State'
 
@@ -10,12 +10,39 @@ const { state, program, element } = defineProps<{
   element: XElement
 }>()
 
-onMounted(() => {
-  const effect = program.router.findEffect(element)
-  if (!effect) return
-  effect({ state, program, element })
-  program.next()
-})
+const who = 'MimorStmt'
+
+watch(
+  () => program.pointer,
+  () => {
+    const effect = program.router.findEffect(element)
+
+    if (effect !== undefined) {
+      console.log({
+        who,
+        pointer: program.pointer,
+        stmtKind: 'Effect',
+        tag: element.tag,
+        element,
+      })
+
+      effect({ state, program, element })
+
+      program.next()
+    } else {
+      const stmtKind = program.router.findCard(element) ? 'Card' : 'Unknown'
+
+      console.log({
+        who,
+        pointer: program.pointer,
+        stmtKind,
+        tag: element.tag,
+        element,
+      })
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>

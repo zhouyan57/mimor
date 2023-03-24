@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
+import IsRemembered from '../layouts/IsRemembered.vue'
 import MimorNode from '../MimorNode.vue'
 import MimorNodes from '../MimorNodes.vue'
 import { Program } from '../Program'
@@ -13,42 +14,44 @@ defineProps<{
 </script>
 
 <template>
-  <div class="text-2xl">
-    <span v-for="(child, index) of element.children" :key="index">
-      <MimorNode
-        v-if="!matchElement(child, { tags: ['blank', '空'] })"
-        :state="state"
-        :program="program"
-        :node="child"
-      />
-      <span v-else class="px-0.5">
-        <MimorNodes
-          v-if="program.revealed"
+  <IsRemembered :state="state" :program="state.program">
+    <div class="text-2xl">
+      <span v-for="(child, index) of element.children" :key="index">
+        <MimorNode
+          v-if="!matchElement(child, { tags: ['blank', '空'] })"
           :state="state"
           :program="program"
-          :nodes="child.children"
-          class="font-bold"
-          :class="[
-            state.theme.name === 'yellow'
-              ? 'text-purple-500'
-              : state.theme.isWhite
-              ? 'text-yellow-500'
-              : 'text-yellow-300',
-          ]"
+          :node="child"
         />
-        <span
-          v-else
-          class="font-bold"
-          :class="[
-            state.theme.name === 'yellow'
-              ? 'text-purple-500'
-              : state.theme.isWhite
-              ? 'text-yellow-500'
-              : 'text-yellow-300',
-          ]"
-          >____</span
-        >
+        <span v-else class="px-0.5">
+          <MimorNodes
+            v-if="program.revealed"
+            :state="state"
+            :program="program"
+            :nodes="child.children"
+            class="font-bold"
+            :class="[
+              state.theme.name === 'yellow'
+                ? 'text-purple-500'
+                : state.theme.isWhite
+                ? 'text-yellow-500'
+                : 'text-yellow-300',
+            ]"
+          />
+          <span
+            v-else
+            class="font-bold"
+            :class="[
+              state.theme.name === 'yellow'
+                ? 'text-purple-500'
+                : state.theme.isWhite
+                ? 'text-yellow-500'
+                : 'text-yellow-300',
+            ]"
+            >____</span
+          >
+        </span>
       </span>
-    </span>
-  </div>
+    </div>
+  </IsRemembered>
 </template>

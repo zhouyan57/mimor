@@ -1,6 +1,5 @@
 # mimor
 
-[mimor] layouts should be used in `Card`
 [mimor] support `<front-cover>` and `<back-cover>`
 [mimor] default `<back-cover>` with statistics
 [mimor] `<question>` has `name` attribute

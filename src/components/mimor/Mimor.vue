@@ -3,7 +3,6 @@ import { Head } from '@vueuse/head'
 import MimorStmt from './MimorStmt.vue'
 import type { StateOptions } from './createState'
 import { createState } from './createState'
-import IsRemembered from './layouts/IsRemembered.vue'
 import { stateReactive } from './stateReactive'
 
 const { options } = defineProps<{ options: StateOptions }>()
@@ -25,13 +24,12 @@ const state = stateReactive(createState(options))
       class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"
     >
-      <IsRemembered :state="state" :program="state.program">
-        <MimorStmt
-          :state="state"
-          :program="state.program"
-          :element="state.program.current"
-        />
-      </IsRemembered>
+      <MimorStmt
+        :key="state.program.currentKey"
+        :state="state"
+        :program="state.program"
+        :element="state.program.current"
+      />
     </div>
 
     <div
