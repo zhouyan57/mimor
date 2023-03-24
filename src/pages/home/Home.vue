@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import Lang from '../../components/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import HomeLoaded from './HomeLoaded.vue'
+import HomeLoading from './HomeLoading.vue'
 import { State } from './State'
 import { loadState } from './loadState'
 
 const state = ref<State | undefined>(undefined)
 
+function createStateOptions() {
+  return {}
+}
+
 onMounted(async () => {
-  state.value = reactive(await loadState({}))
+  state.value = await loadState(createStateOptions())
 })
 </script>
 
@@ -21,8 +27,7 @@ onMounted(async () => {
       </Lang>
     </template>
 
-    <div class="flex h-full flex-col text-xl">
-      <div>TODO</div>
-    </div>
+    <HomeLoaded v-if="state" :state="state" />
+    <HomeLoading v-else :options="createStateOptions()" />
   </PageLayout>
 </template>

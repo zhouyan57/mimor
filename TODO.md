@@ -1,6 +1,3 @@
-[home] `HomeLoaded` vs `HomeLoading`
-[home] show list of examples
-
 # mimor
 
 [mimor] `State` should be type instead of class
