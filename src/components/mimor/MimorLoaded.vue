@@ -25,7 +25,6 @@ const state = stateReactive(props.state)
         v-if="state.kind === 'ViewSource'"
         class="h-full"
         :class="[state.theme.bg(300)]"
-        :key="state.program.currentKey"
         :state="state"
         :program="state.program"
       />
@@ -34,7 +33,7 @@ const state = stateReactive(props.state)
         v-else
         class="h-full"
         :class="[state.theme.bg(300)]"
-        :key="state.program.currentKey"
+        :key="state.program.pointer"
         :state="state"
         :program="state.program"
         :element="state.program.current"

@@ -15,6 +15,7 @@ defineProps<{
     <MimorHead :state="state" :program="program" />
 
     <Transition
+      appear
       enter-active-class="transition duration-100 delay-75 ease-linear"
       enter-from-class="transform transform-gpu origin-left opacity-0 rotate-20"
       enter-to-class="transform transform-gpu origin-left opacity-100 rotate-0"
@@ -23,7 +24,7 @@ defineProps<{
       leave-to-class="transform transform-gpu origin-left opacity-0 scale-50 -rotate-20"
     >
       <div
-        :key="program.currentKey"
+        :key="program.pointer"
         class="body overflow-y-auto overscroll-contain p-3 font-serif"
       >
         <slot />

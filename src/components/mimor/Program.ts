@@ -50,10 +50,6 @@ export class Program {
     return this.elements[this.pointer]
   }
 
-  get currentKey(): string {
-    return JSON.stringify(this.current)
-  }
-
   get length(): number {
     return this.elements.length
   }
