@@ -1,5 +1,3 @@
-[home] give space
-
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
 
