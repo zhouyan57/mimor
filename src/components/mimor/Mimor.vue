@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import MimorStmt from './MimorStmt.vue'
-import type { StateOptions } from './createState'
-import { createState } from './createState'
+import type { StateOptions } from './loadState'
+import { loadState } from './loadState'
 import { stateReactive } from './stateReactive'
 
 const { options } = defineProps<{ options: StateOptions }>()
 
-const state = stateReactive(createState(options))
+const state = stateReactive(loadState(options))
 </script>
 
 <template>

@@ -5,13 +5,14 @@ import { State } from './State'
 import { Theme } from './Theme'
 
 export interface StateOptions {
+  url: string
   text: string
   fullscreen?: boolean
   program: ProgramOptions
 }
 
-export function createState(options: StateOptions): State {
-  const { text, fullscreen } = options
+export function loadState(options: StateOptions): State {
+  const { url, text, fullscreen } = options
 
   const theme = new Theme('white')
 
@@ -19,12 +20,12 @@ export function createState(options: StateOptions): State {
     const nodes = parseNodes(text)
     const program = new Program(nodes, options.program)
     routerDefineRoutes(program.router)
-    return { text, fullscreen, theme, program }
+    return { url, text, fullscreen, theme, program }
   } catch (error) {
     if (error instanceof ParsingError) {
-      return { text, fullscreen, theme, parsingError: error }
+      return { url, text, fullscreen, theme, parsingError: error }
     } else if (error instanceof Error) {
-      return { text, fullscreen, theme, error }
+      return { url, text, fullscreen, theme, error }
     } else {
       throw error
     }

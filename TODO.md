@@ -1,4 +1,16 @@
+[mimor] `MimorLoading` vs `MimorLoaded`
+
+[mimor] `loadState` async
+
+[mimor] can take url as argument -- handle loading state by itself
+
+# home
+
+[home] show cards
+
 # mimor
+
+[mimor] a button to view source
 
 [mimor] `FrontCover` -- show `children`
 [mimor] `FrontCover` -- `Start` / `开始` button
