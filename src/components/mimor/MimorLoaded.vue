@@ -37,7 +37,7 @@ const state = stateReactive(props.state)
       class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
     >
       <div class="text-xl font-bold text-orange-500">ParsingError</div>
-      <pre class="overflow-auto">{{ state.parsingError.message }}</pre>
+      <pre class="overflow-auto">{{ state.error.message }}</pre>
     </div>
 
     <div
