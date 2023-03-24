@@ -15,7 +15,10 @@ watch(
   async () => {
     state.value = await loadState(props.options)
   },
-  { immediate: true, deep: true },
+  {
+    immediate: true,
+    deep: true,
+  },
 )
 </script>
 

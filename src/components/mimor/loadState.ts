@@ -11,7 +11,7 @@ export interface StateOptions {
   program: ProgramOptions
 }
 
-export function loadState(options: StateOptions): State {
+export async function loadState(options: StateOptions): Promise<State> {
   const { url, text, fullscreen } = options
 
   const theme = new Theme('white')
