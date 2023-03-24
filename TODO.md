@@ -1,7 +1,8 @@
-[mimor] `MimorLoaded` dispatch to `MimorError` and `MimorProgram`
 [mimor] `State` has `kind` which can be `ViewSource` and `Program`
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
+
+[mimor] extract reactivity from `MimorProgram`
 
 [page-layout] `PageMobileMenu` push route to be addressable
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { ParsingError } from '@xieyuheng/x-node'
+import MimorError from './MimorError.vue'
 import MimorProgram from './MimorProgram.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
@@ -29,20 +29,6 @@ const state = stateReactive(props.state)
       :element="state.program.current"
     />
 
-    <div
-      v-if="state.error instanceof ParsingError"
-      class="rounded-sm border border-orange-300 bg-orange-200 py-2 px-3"
-    >
-      <div class="text-xl font-bold text-orange-500">ParsingError</div>
-      <pre class="overflow-auto">{{ state.error.message }}</pre>
-    </div>
-
-    <div
-      v-if="state.error"
-      class="rounded-sm border border-red-300 bg-red-200 py-2 px-3"
-    >
-      <div class="text-xl font-bold text-red-500">Error</div>
-      <pre class="overflow-auto">{{ state.error.message }}</pre>
-    </div>
+    <MimorError v-if="state.error" :state="state" :error="state.error" />
   </div>
 </template>
