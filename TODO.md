@@ -1,3 +1,5 @@
+[home] give space
+
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
 
@@ -20,6 +22,10 @@
 [mimor] `Card` has `name` attribute
 
 [mimor] a button to go fullscreen
+
+[mimor] `Theme` should NOT be a class
+[mimor] `Program` should NOT be a class
+[mimor] `Router` should NOT be a class
 
 # docs
 

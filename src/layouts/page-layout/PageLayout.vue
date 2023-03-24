@@ -6,7 +6,7 @@ import PageMobileMenu from './PageMobileMenu.vue'
 
 <template>
   <div class="flex h-screen">
-    <div class="hidden h-full w-72 shrink-0 flex-col p-3 md:flex">
+    <div class="hidden h-full w-[25rem] shrink-0 flex-col p-3 md:flex">
       <PageDesktopSidebar />
     </div>
 
