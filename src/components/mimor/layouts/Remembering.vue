@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Program } from '../Program'
 import { State } from '../State'
-import IsRememberedControl from './IsRememberedControl.vue'
-import IsRememberedHeader from './IsRememberedHeader.vue'
+import RememberingControl from './RememberingControl.vue'
+import RememberingHeader from './RememberingHeader.vue'
 
 defineProps<{
   state: State
@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex h-full w-full flex-col justify-between">
-    <IsRememberedHeader :state="state" :program="program" />
+    <RememberingHeader :state="state" :program="program" />
 
     <Transition
       enter-active-class="transition duration-100 delay-75 ease-linear"
@@ -30,6 +30,6 @@ defineProps<{
       </div>
     </Transition>
 
-    <IsRememberedControl :state="state" :program="program" />
+    <RememberingControl :state="state" :program="program" />
   </div>
 </template>

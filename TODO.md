@@ -1,7 +1,5 @@
 [page-layout] `PageMobileMenu` push route to be addressable
 
-ambr IsRemembered Remembering
-
 # mimor
 
 [mimor] a button to view source

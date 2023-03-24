@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
-import IsRemembered from '../layouts/IsRemembered.vue'
+import Remembering from '../layouts/Remembering.vue'
 import MimorNode from '../MimorNode.vue'
 import MimorNodes from '../MimorNodes.vue'
 import { Program } from '../Program'
@@ -14,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <IsRemembered :state="state" :program="state.program">
+  <Remembering :state="state" :program="state.program">
     <div>
       <div v-for="(child, index) of element.children" :key="index">
         <div
@@ -47,5 +47,5 @@ defineProps<{
         />
       </div>
     </div>
-  </IsRemembered>
+  </Remembering>
 </template>
