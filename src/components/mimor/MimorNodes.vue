@@ -13,7 +13,7 @@ defineProps<{
 
 <template>
   <span
-    ><span v-for="(node, index) of nodes"
+    ><span v-for="(node, index) of nodes" :key="index"
       ><MimorNode :state="state" :program="program" :node="node" /></span
   ></span>
 </template>

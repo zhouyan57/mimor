@@ -1,8 +1,17 @@
 # mimor
 
-[mimor] support `<front-cover>` and `<back-cover>`
-[mimor] default `<back-cover>` with statistics
-[mimor] `<question>` has `name` attribute
+[mimor] `FrontCover` -- show `children`
+[mimor] `FrontCover` -- `Start` / `开始` button
+
+[mimor] `BackCover` -- show `children`
+[mimor] `BackCover` -- `Replay` / `重复` button
+[mimor] `BackCover` -- show `statistics`
+
+[mimor] show default `<back-cover>` on finished
+
+[mimor] support `<include>`
+
+[mimor] `Card` has `name` attribute
 
 # docs
 

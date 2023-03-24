@@ -1,0 +1,1 @@
+<template>FrontCover TODO</template>
