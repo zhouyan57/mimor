@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { ParsingError } from '@xieyuheng/x-node'
-import MimorStmt from './MimorStmt.vue'
+import MimorProgram from './MimorProgram.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
 
@@ -19,7 +19,7 @@ const state = stateReactive(props.state)
       />
     </Head>
 
-    <MimorStmt
+    <MimorProgram
       v-if="state.program"
       class="h-full overflow-hidden"
       :class="[state.theme.bg(300)]"

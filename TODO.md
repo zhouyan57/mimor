@@ -1,6 +1,5 @@
-ambr MimorStmt MimorProgram
 [mimor] `MimorLoaded` dispatch to `MimorError` and `MimorProgram`
-[mimor] `State` has `kind` which can be `ViewSource`
+[mimor] `State` has `kind` which can be `ViewSource` and `Program`
 [mimor] `MimorViewSource`
 [mimor] `RememberingHeader` -- a button to view source
 

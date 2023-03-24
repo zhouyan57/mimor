@@ -10,7 +10,7 @@ const { state, program, element } = defineProps<{
   element: XElement
 }>()
 
-const who = 'MimorStmt'
+const who = 'MimorProgram'
 
 watch(
   () => program.pointer,
