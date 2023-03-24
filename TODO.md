@@ -1,7 +1,5 @@
-[home] list of examples
-
-http://localhost:5173/mimors/http://localhost:5173/contents/sisuo.mimor
-http://localhost:5173/mimors/http://localhost:5173/contents/do-not-forget.mimor
+[home] `HomeLoaded` vs `HomeLoading`
+[home] show list of examples
 
 # mimor
 
