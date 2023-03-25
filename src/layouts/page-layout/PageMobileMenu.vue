@@ -8,9 +8,6 @@ import { currentQuery } from '../../utils/browser/currentQuery'
 import { currentUrlPathname } from '../../utils/browser/currentUrlPathname'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
-import { State } from './State'
-
-const props = defineProps<{ state: State }>()
 </script>
 
 <template>
@@ -35,8 +32,7 @@ const props = defineProps<{ state: State }>()
     <Watch
       :value="() => $route.query['mobile-menu']"
       :deep="true"
-      :effect="
-      (value: any) => {
+      :effect="(value: any) => {
         if (value === undefined) {
           close()
         }
@@ -77,7 +73,7 @@ const props = defineProps<{ state: State }>()
         </div>
 
         <div class="absolute top-0 right-3">
-          <PageLogo class="font-light" :state="state" />
+          <PageLogo class="font-light" />
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
@@ -123,7 +119,7 @@ const props = defineProps<{ state: State }>()
             </Lang>
           </button>
 
-          <PageLang :state="state" />
+          <PageLang />
         </div>
 
         <div class="border-t border-stone-500 py-3">

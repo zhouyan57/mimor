@@ -3,16 +3,13 @@ import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
-import { State } from './State'
-
-defineProps<{ state: State }>()
 </script>
 
 <template>
   <div class="flex h-full flex-col justify-between pr-4">
     <div class="flex flex-col">
       <div class="flex items-center space-x-1 pb-3">
-        <PageLogo class="text-2xl" :state="state" />
+        <PageLogo class="text-2xl" />
         <div
           class="font-mono text-sm text-stone-500"
           title="This is an alpha release, we develop as we use it."
@@ -38,7 +35,7 @@ defineProps<{ state: State }>()
           </Lang>
         </Hyperlink>
 
-        <PageLang :state="state" />
+        <PageLang />
       </div>
     </div>
 
