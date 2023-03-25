@@ -1,19 +1,16 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { onUnmounted } from 'vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
+import { currentQuery } from '../../utils/browser/currentQuery'
+import { currentUrlPathname } from '../../utils/browser/currentUrlPathname'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 import { State } from './State'
 
 const props = defineProps<{ state: State }>()
-
-onUnmounted(() => {
-  props.state.isMobileMenuOpen = false
-})
 </script>
 
 <template>
@@ -21,9 +18,17 @@ onUnmounted(() => {
     <Watch
       :value="open"
       :effect="
-        (value: any) => {
-          state.isMobileMenuOpen = value
+      (value: any) => {
+        if (value) {
+          $router.push({
+            path: currentUrlPathname(),
+            query: {
+              ...currentQuery(),
+              'mobile-menu': null,
+            },
+          })
         }
+      }
       "
     />
 
@@ -31,11 +36,11 @@ onUnmounted(() => {
       :value="() => $route.query['mobile-menu']"
       :deep="true"
       :effect="
-        (value: any) => {
-          if (value === undefined) {
-            close()
-          }
+      (value: any) => {
+        if (value === undefined) {
+          close()
         }
+      }
       "
     />
 
@@ -59,7 +64,14 @@ onUnmounted(() => {
         class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
       >
         <div class="absolute top-2 left-2">
-          <button @click="close()">
+          <button
+            @click="
+              () => {
+                close()
+                $router.back()
+              }
+            "
+          >
             <XMarkIcon class="h-10 w-10 stroke-1" />
           </button>
         </div>
@@ -69,26 +81,67 @@ onUnmounted(() => {
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
-          <Hyperlink href="/" class="hover:underline" @click="close()">
+          <Hyperlink
+            href="/"
+            class="hover:underline"
+            @click="
+              () => {
+                close()
+
+                if ($route.path !== '/') {
+                  $router.replace('/')
+                } else {
+                  $router.back()
+                }
+              }
+            "
+          >
             <Lang>
               <template #zh>首页</template>
               <template #en>Home</template>
             </Lang>
           </Hyperlink>
 
-          <Hyperlink href="/about" class="hover:underline" @click="close()">
+          <button
+            href="/about"
+            class="hover:underline"
+            @click="
+              () => {
+                close()
+
+                if ($route.path !== '/about') {
+                  $router.replace('/about')
+                } else {
+                  $router.back()
+                }
+              }
+            "
+          >
             <Lang>
               <template #zh>关于</template>
               <template #en>About</template>
             </Lang>
-          </Hyperlink>
+          </button>
 
           <PageLang :state="state" />
         </div>
 
         <div class="border-t border-stone-500 py-3">
           <div class="flex">
-            <Hyperlink href="/login" @click="close()">
+            <Hyperlink
+              href="/login"
+              @click="
+                () => {
+                  close()
+
+                  if ($route.path !== '/login') {
+                    $router.replace('/login')
+                  } else {
+                    $router.back()
+                  }
+                }
+              "
+            >
               <Lang>
                 <template #zh>登录</template>
                 <template #en>Login</template>
@@ -97,7 +150,20 @@ onUnmounted(() => {
 
             <div class="px-2 font-bold">/</div>
 
-            <Hyperlink href="/register" @click="close()">
+            <Hyperlink
+              href="/register"
+              @click="
+                () => {
+                  close()
+
+                  if ($route.path !== '/register') {
+                    $router.replace('/register')
+                  } else {
+                    $router.back()
+                  }
+                }
+              "
+            >
               <Lang>
                 <template #zh>注册</template>
                 <template #en>Register</template>
@@ -107,7 +173,14 @@ onUnmounted(() => {
         </div>
 
         <div class="absolute bottom-4 right-2">
-          <button @click="close()">
+          <button
+            @click="
+              () => {
+                close()
+                $router.back()
+              }
+            "
+          >
             <XMarkIcon class="h-10 w-10 stroke-1" />
           </button>
         </div>

@@ -16,8 +16,6 @@ export function stateReactivelyUpdateRoute(state: State, router: Router) {
             'mobile-menu': null,
           },
         })
-      } else {
-        router.back()
       }
     },
   )
