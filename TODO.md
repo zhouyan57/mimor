@@ -1,5 +1,3 @@
-useLocationQuery & useLocationPathname
-
 # mimor
 
 [mimor] `FrontCover` -- show `children`
