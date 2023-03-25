@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { createState } from './createState'
+import { useRouter } from 'vue-router'
 import PageDesktopSidebar from './PageDesktopSidebar.vue'
 import PageHead from './PageHead.vue'
 import PageMobileMenu from './PageMobileMenu.vue'
+import { createState } from './createState'
 import { stateReactive } from './stateReactive'
 
-const state = stateReactive(createState({}))
+const router = useRouter()
+
+const state = stateReactive(createState(), router)
 </script>
 
 <template>

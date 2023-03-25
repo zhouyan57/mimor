@@ -1,10 +1,6 @@
 import { State } from './State'
 
-export type StateOptions = {}
-
-export function createState(options: StateOptions): State {
-  const {} = options
-
+export function createState(): State {
   return {
     isMobileMenuOpen: false,
   }

@@ -1,6 +1,8 @@
 [page-layout] `PageMobileMenu` push route to be addressable
 [page-layout] sync `isMobileMenuOpen` with route query `mobile-menu`
 
+useLocationQuery & useLocationPathname
+
 # mimor
 
 [mimor] `FrontCover` -- show `children`

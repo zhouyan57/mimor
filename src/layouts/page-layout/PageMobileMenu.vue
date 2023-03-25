@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { reactive } from 'vue'
+import { onBeforeRouteLeave, useRouter } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
@@ -8,16 +10,33 @@ import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 import { State } from './State'
 
+const router = useRouter()
+
 defineProps<{ state: State }>()
+
+const local = reactive<{
+  open?: boolean
+  close?: () => void
+}>({})
+
+onBeforeRouteLeave((to, from) => {
+  if (local.open) {
+    if (local.close) {
+      local.close()
+      return false
+    }
+  }
+})
 </script>
 
 <template>
-  <Popover as="div" class="relative flex text-3xl" v-slot="{ open }">
+  <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
     <Watch
       :value="open"
       :effect="
         (value: any) => {
-
+          local.open = value
+          local.close = close
         }
       "
     />
