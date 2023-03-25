@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { useRoute } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
-
-const route = useRoute()
-
-const log = console.log
 </script>
 
 <template>
@@ -19,7 +14,7 @@ const log = console.log
       :value="open"
       :effect="
         (value: any) => {
-          log({ value })
+          
         }
       "
     />
