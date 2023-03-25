@@ -1,21 +1,31 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import Hyperlink from '../../components/Hyperlink.vue'
+import { useRoute, useRouter } from 'vue-router'
 import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
 import { currentQuery } from '../../utils/browser/currentQuery'
 import { currentUrlPathname } from '../../utils/browser/currentUrlPathname'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
+
+const route = useRoute()
+const router = useRouter()
+
+function jump(path: string) {
+  if (route.path !== path) {
+    router.replace(path)
+  } else {
+    router.back()
+  }
+}
 </script>
 
 <template>
   <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
     <Watch
       :value="open"
-      :effect="
-      (value: any) => {
+      :effect="(value: any) => {
         if (value) {
           $router.push({
             path: currentUrlPathname(),
@@ -77,18 +87,12 @@ import PageLogo from './PageLogo.vue'
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
-          <Hyperlink
-            href="/"
+          <button
             class="hover:underline"
             @click="
               () => {
                 close()
-
-                if ($route.path !== '/') {
-                  $router.replace('/')
-                } else {
-                  $router.back()
-                }
+                jump('/')
               }
             "
           >
@@ -96,20 +100,14 @@ import PageLogo from './PageLogo.vue'
               <template #zh>首页</template>
               <template #en>Home</template>
             </Lang>
-          </Hyperlink>
+          </button>
 
           <button
-            href="/about"
             class="hover:underline"
             @click="
               () => {
                 close()
-
-                if ($route.path !== '/about') {
-                  $router.replace('/about')
-                } else {
-                  $router.back()
-                }
+                jump('/about')
               }
             "
           >
@@ -124,17 +122,11 @@ import PageLogo from './PageLogo.vue'
 
         <div class="border-t border-stone-500 py-3">
           <div class="flex">
-            <Hyperlink
-              href="/login"
+            <button
               @click="
                 () => {
                   close()
-
-                  if ($route.path !== '/login') {
-                    $router.replace('/login')
-                  } else {
-                    $router.back()
-                  }
+                  jump('/login')
                 }
               "
             >
@@ -142,21 +134,15 @@ import PageLogo from './PageLogo.vue'
                 <template #zh>登录</template>
                 <template #en>Login</template>
               </Lang>
-            </Hyperlink>
+            </button>
 
             <div class="px-2 font-bold">/</div>
 
-            <Hyperlink
-              href="/register"
+            <button
               @click="
                 () => {
                   close()
-
-                  if ($route.path !== '/register') {
-                    $router.replace('/register')
-                  } else {
-                    $router.back()
-                  }
+                  jump('/register')
                 }
               "
             >
@@ -164,7 +150,7 @@ import PageLogo from './PageLogo.vue'
                 <template #zh>注册</template>
                 <template #en>Register</template>
               </Lang>
-            </Hyperlink>
+            </button>
           </div>
         </div>
 
