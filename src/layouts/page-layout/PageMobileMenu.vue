@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { reactive } from 'vue'
-import { onBeforeRouteLeave, useRouter } from 'vue-router'
+import { onUnmounted } from 'vue'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
@@ -10,22 +9,10 @@ import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 import { State } from './State'
 
-const router = useRouter()
+const props = defineProps<{ state: State }>()
 
-defineProps<{ state: State }>()
-
-const local = reactive<{
-  open?: boolean
-  close?: () => void
-}>({})
-
-onBeforeRouteLeave((to, from) => {
-  if (local.open) {
-    if (local.close) {
-      local.close()
-      return false
-    }
-  }
+onUnmounted(() => {
+  props.state.isMobileMenuOpen = false
 })
 </script>
 
@@ -35,11 +22,23 @@ onBeforeRouteLeave((to, from) => {
       :value="open"
       :effect="
         (value: any) => {
-          local.open = value
-          local.close = close
+          state.isMobileMenuOpen = value
         }
       "
     />
+
+    <Watch
+      :value="() => $route.query['mobile-menu']"
+      :deep="true"
+      :effect="
+        (value: any) => {
+          if (value === undefined) {
+            close()
+          }
+        }
+      "
+    />
+
     <PopoverButton>
       <button
         class="rounded-full border border-stone-300 bg-white p-3 shadow-md"
@@ -58,7 +57,6 @@ onBeforeRouteLeave((to, from) => {
     >
       <PopoverPanel
         class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
-        v-slot="{ close }"
       >
         <div class="absolute top-2 left-2">
           <button @click="close()">

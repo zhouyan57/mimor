@@ -10,8 +10,10 @@ const props = defineProps<{
   deep?: boolean
 }>()
 
+const target = props.value instanceof Function ? props.value : () => props.value
+
 watch(
-  () => props.value,
+  target,
   async (value) => {
     await props.effect(value)
   },
