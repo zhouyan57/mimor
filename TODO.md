@@ -20,21 +20,19 @@
 [mimor] `Program` should NOT be a class
 [mimor] `Router` should NOT be a class
 
-# docs
-
-use readonly.link
-
-# recall
-
-> Spaced repetition
-
-[recall] user can add mimor into `timeline`
-
 # embedded
 
 [embedded] route for iframe
 
 - to be used in readonly.link
+
+# docs
+
+use readonly.link
+
+# wiki
+
+[wiki] a wiki of docs links to mimors
 
 # home
 
@@ -50,6 +48,8 @@ use readonly.link
 
 [author] no project just author and files -- not even directory for now
 
-# wiki
+# recall
 
-[wiki] a wiki of docs links to mimors
+> Spaced repetition
+
+[recall] user can add mimor into `timeline`
