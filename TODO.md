@@ -1,5 +1,3 @@
-[page-layout] `stateReactive`
-[page-layout] pass `state` to all
 [page-layout] `PageMobileMenu` push route to be addressable
 [page-layout] sync `isMobileMenuOpen` with route query `mobile-menu`
 

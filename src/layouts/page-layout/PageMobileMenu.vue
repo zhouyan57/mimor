@@ -6,6 +6,9 @@ import Lang from '../../components/Lang.vue'
 import Watch from '../../components/Watch.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
+import { State } from './State'
+
+defineProps<{ state: State }>()
 </script>
 
 <template>
@@ -14,7 +17,7 @@ import PageLogo from './PageLogo.vue'
       :value="open"
       :effect="
         (value: any) => {
-          
+
         }
       "
     />
@@ -45,7 +48,7 @@ import PageLogo from './PageLogo.vue'
         </div>
 
         <div class="absolute top-0 right-3">
-          <PageLogo class="font-light" />
+          <PageLogo class="font-light" :state="state" />
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
@@ -63,7 +66,7 @@ import PageLogo from './PageLogo.vue'
             </Lang>
           </Hyperlink>
 
-          <PageLang />
+          <PageLang :state="state" />
         </div>
 
         <div class="border-t border-stone-500 py-3">

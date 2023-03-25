@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import PageLogo from './PageLogo.vue'
+import { State } from './State'
+
+defineProps<{ state: State }>()
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import PageLogo from './PageLogo.vue'
     </div>
 
     <div class="flex items-center space-x-1 md:hidden">
-      <PageLogo class="text-xl" />
+      <PageLogo class="text-xl" :state="state" />
       <div
         class="font-mono text-sm text-stone-500"
         title="This is an alpha release, we develop as we use it."

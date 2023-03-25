@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import { createState } from './createState'
 import PageDesktopSidebar from './PageDesktopSidebar.vue'
 import PageHead from './PageHead.vue'
 import PageMobileMenu from './PageMobileMenu.vue'
+import { stateReactive } from './stateReactive'
+
+const state = stateReactive(createState({}))
 </script>
 
 <template>
   <div class="flex h-screen">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col p-3 md:flex">
-      <PageDesktopSidebar />
+      <PageDesktopSidebar :state="state" />
     </div>
 
     <div class="flex h-full w-full flex-col space-y-2 overflow-x-auto py-3">
-      <PageHead class="px-3">
+      <PageHead :state="state" class="px-3">
         <template #title>
           <slot name="title" />
         </template>
@@ -23,7 +27,7 @@ import PageMobileMenu from './PageMobileMenu.vue'
     </div>
 
     <div class="fixed bottom-20 right-4 z-30 md:hidden">
-      <PageMobileMenu />
+      <PageMobileMenu :state="state" />
     </div>
   </div>
 </template>
