@@ -3,11 +3,11 @@ import { programRemainingElements } from './programRemainingElements'
 
 export function programFormatProgress(program: Program): string {
   const total = program.elements.filter((element) =>
-    program.router.findCard(element),
+    program.router.findCardComponent(element),
   ).length
 
   const remaining = programRemainingElements(program).filter((element) =>
-    program.router.findCard(element),
+    program.router.findCardComponent(element),
   ).length
 
   const remembered = total - remaining

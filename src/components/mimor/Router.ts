@@ -37,18 +37,24 @@ export class Router {
     }
   }
 
-  findCard(element: XElement): Component | undefined {
+  findCardComponent(element: XElement): Component | undefined {
     const route = this.routes[element.tag]
-    return route?.kind === 'Card' ? route.component : undefined
+    if (route?.kind === 'Card') {
+      return route.component
+    }
   }
 
-  findNode(element: XElement): Component | undefined {
+  findNodeComponent(element: XElement): Component | undefined {
     const route = this.routes[element.tag]
-    return route?.kind === 'Node' ? route.component : undefined
+    if (route?.kind === 'Node') {
+      return route.component
+    }
   }
 
   findEffect(element: XElement): Effect | undefined {
     const route = this.routes[element.tag]
-    return route?.kind === 'Effect' ? route.effect : undefined
+    if (route?.kind === 'Effect') {
+      return route.effect
+    }
   }
 }

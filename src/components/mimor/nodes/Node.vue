@@ -19,8 +19,8 @@ defineProps<{
     :text="node"
   />
   <component
-    v-else-if="program.router.findNode(node)"
-    :is="program.router.findNode(node)"
+    v-else-if="program.router.findNodeComponent(node)"
+    :is="program.router.findNodeComponent(node)"
     :state="state"
     :program="program"
     :element="node"

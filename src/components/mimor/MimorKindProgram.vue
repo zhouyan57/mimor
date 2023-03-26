@@ -12,8 +12,8 @@ defineProps<{
 
 <template>
   <component
-    v-if="program.router.findCard(element)"
-    :is="program.router.findCard(element)"
+    v-if="program.router.findCardComponent(element)"
+    :is="program.router.findCardComponent(element)"
     :state="state"
     :program="program"
     :element="element"
