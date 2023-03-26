@@ -2,10 +2,6 @@ import { isElement, XElement, XNode } from '@xieyuheng/x-node'
 import { defaultEndingNodes } from './defaultEndingNodes'
 import { Router } from './Router'
 
-export interface ProgramOptions {
-  onFinished?: () => void
-}
-
 export class Program {
   router = new Router()
   pointer: number
@@ -13,7 +9,7 @@ export class Program {
   revealed = false
   nodes: Array<XNode>
 
-  constructor(nodes: Array<XNode>, public options: ProgramOptions) {
+  constructor(nodes: Array<XNode>) {
     this.nodes = nodes.find(
       (node) => isElement(node) && ['back-cover', '封底'].includes(node.tag),
     )
@@ -51,11 +47,7 @@ export class Program {
 
   next(): void {
     const index = this.remaining.shift()
-    if (index === undefined) {
-      if (this.options.onFinished) {
-        this.options.onFinished()
-      }
-    } else {
+    if (index !== undefined) {
       this.pointer = index
       this.revealed = false
     }

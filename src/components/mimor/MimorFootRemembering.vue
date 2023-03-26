@@ -17,7 +17,7 @@ defineProps<{
       class="flex w-full flex-col items-start border-y p-3"
       :class="[
         state.theme.bg(400),
-        state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
+        state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
       ]"
       @click="program.revealed = true"
     >
@@ -27,7 +27,7 @@ defineProps<{
           state.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
         ]"
       />
-      <Lang :class="[state.theme.notWhite && 'text-white']">
+      <Lang :class="[state.theme.isNotWhite() && 'text-white']">
         <template #zh>揭示</template>
         <template #en>Reveal</template>
       </Lang>
@@ -39,7 +39,7 @@ defineProps<{
         class="flex w-full flex-col items-start border-y border-r p-3"
         :class="[
           state.theme.bg(400),
-          state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
+          state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
         ]"
       >
         <XMarkIcon
@@ -50,7 +50,7 @@ defineProps<{
               : 'text-yellow-400',
           ]"
         />
-        <Lang :class="[state.theme.notWhite && 'text-white']">
+        <Lang :class="[state.theme.isNotWhite() && 'text-white']">
           <template #zh>忘了</template>
           <template #en>Forgotten</template>
         </Lang>
@@ -61,7 +61,7 @@ defineProps<{
         class="flex w-full flex-col items-start border-y border-l p-3"
         :class="[
           state.theme.bg(400),
-          state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
+          state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
         ]"
       >
         <CheckIcon
@@ -72,7 +72,7 @@ defineProps<{
               : 'text-yellow-400',
           ]"
         />
-        <Lang :class="[state.theme.notWhite && 'text-white']">
+        <Lang :class="[state.theme.isNotWhite() && 'text-white']">
           <template #zh>记得</template>
           <template #en>Remembered</template>
         </Lang>

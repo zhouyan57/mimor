@@ -41,7 +41,7 @@ defineProps<{
             :class="[
               state.theme.name === 'yellow'
                 ? 'text-purple-500'
-                : state.theme.isWhite
+                : state.theme.isWhite()
                 ? 'text-yellow-500'
                 : 'text-yellow-300',
             ]"
@@ -52,7 +52,7 @@ defineProps<{
             :class="[
               state.theme.name === 'yellow'
                 ? 'text-purple-500'
-                : state.theme.isWhite
+                : state.theme.isWhite()
                 ? 'text-yellow-500'
                 : 'text-yellow-300',
             ]"

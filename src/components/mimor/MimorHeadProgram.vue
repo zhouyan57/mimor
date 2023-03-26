@@ -14,7 +14,7 @@ defineProps<{
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div>
-      <Lang :class="[state.theme.notWhite && 'text-white']">
+      <Lang :class="[state.theme.isNotWhite() && 'text-white']">
         <template #zh>{{ program.progress }}</template>
         <template #en>{{ program.progress }}</template>
       </Lang>
@@ -22,7 +22,7 @@ defineProps<{
 
     <div
       class="flex items-center space-x-2"
-      :class="[state.theme.notWhite && state.theme.text(800)]"
+      :class="[state.theme.isNotWhite() && state.theme.text(800)]"
     >
       <button
         v-if="state.kind === 'Program'"

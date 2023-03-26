@@ -16,26 +16,20 @@ defineProps<{
 <template>
   <div
     class="flex h-full w-full flex-col justify-between"
-    :class="[
-      state.theme.bg(400),
-      state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
-    ]"
+    :class="[state.theme.bg(400)]"
   >
     <MimorHeadProgram :state="state" :program="program" />
 
     <div
       class="scrollbar-hide mx-3 flex flex-row-reverse overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"
-      :class="[
-        state.theme.text(100),
-        state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
-      ]"
+      :class="[state.theme.text(100)]"
     >
       {{ state.url }}
     </div>
 
     <div
       class="h-full overflow-y-auto p-3 font-sans font-bold"
-      :class="[state.theme.isWhite ? 'text-black' : state.theme.text(50)]"
+      :class="[state.theme.isWhite() ? 'text-black' : state.theme.text(50)]"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
         <div v-for="(child, index) of element.children" :key="index">

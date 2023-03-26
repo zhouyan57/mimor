@@ -1,4 +1,3 @@
-[mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class
 [mimor] `Router` should NOT be a class
 

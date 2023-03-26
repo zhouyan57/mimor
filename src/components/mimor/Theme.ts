@@ -21,12 +21,12 @@ export class Theme {
     return (tailwindColors as any)[name][300] || '#ffffff'
   }
 
-  get isWhite(): boolean {
+  isWhite(): boolean {
     return this.name === 'white'
   }
 
-  get notWhite(): boolean {
-    return !this.isWhite
+  isNotWhite(): boolean {
+    return !this.isWhite()
   }
 
   bg(level: number): string {
