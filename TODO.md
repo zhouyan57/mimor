@@ -1,14 +1,18 @@
-# mimor
-
-[mimor] `BackCover` -- show `statistics` of remembering
-[mimor] `Card` has `name` attribute
-[mimor] a button to go fullscreen
-
 # mimor refactor
 
 [mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class
 [mimor] `Router` should NOT be a class
+
+# mimor
+
+[mimor] `BackCover` -- show `time` of remembering
+
+[mimor] a button to go fullscreen
+[mimor] a button to go back
+
+[mimor] `Card` has `name` attribute
+[mimor] `BackCover` -- show repeats of each card by `name`
 
 # embedded
 

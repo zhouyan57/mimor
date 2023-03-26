@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
-    <div class="font-bold">
+    <div>
       <Lang :class="[state.theme.notWhite && 'text-white']">
         <template #zh>{{ program.progress }}</template>
         <template #en>{{ program.progress }}</template>
