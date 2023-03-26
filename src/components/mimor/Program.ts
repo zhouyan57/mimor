@@ -1,4 +1,5 @@
 import { isElement, XElement, XNode } from '@xieyuheng/x-node'
+import { rangeArray } from '../../utils/rangeArray'
 import { defaultEndingNodes } from './defaultEndingNodes'
 import { Router } from './Router'
 
@@ -16,7 +17,7 @@ export class Program {
       ? [...nodes]
       : [...nodes, ...defaultEndingNodes()]
 
-    this.remaining = [...Array(this.length).keys()]
+    this.remaining = rangeArray(0, this.length)
     const index = this.remaining.shift()
     if (index === undefined) {
       throw new Error('No cards.')
@@ -26,7 +27,7 @@ export class Program {
   }
 
   replay(): void {
-    this.remaining = [...Array(this.length).keys()]
+    this.remaining = rangeArray(0, this.length)
     const index = this.remaining.shift()
     if (index === undefined) {
       throw new Error('No cards.')
