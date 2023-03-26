@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import MimorError from './MimorError.vue'
-import MimorProgram from './MimorProgram.vue'
-import MimorViewSource from './MimorViewSource.vue'
+import MimorKindError from './MimorKindError.vue'
+import MimorKindProgram from './MimorKindProgram.vue'
+import MimorKindViewSource from './MimorKindViewSource.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
 
@@ -21,7 +21,7 @@ const state = stateReactive(props.state)
     </Head>
 
     <template v-if="state.program">
-      <MimorViewSource
+      <MimorKindViewSource
         v-if="state.kind === 'ViewSource'"
         class="h-full"
         :class="[state.theme.bg(300)]"
@@ -29,7 +29,7 @@ const state = stateReactive(props.state)
         :program="state.program"
       />
 
-      <MimorProgram
+      <MimorKindProgram
         v-else
         class="h-full"
         :class="[state.theme.bg(300)]"
@@ -40,6 +40,6 @@ const state = stateReactive(props.state)
       />
     </template>
 
-    <MimorError v-if="state.error" :state="state" :error="state.error" />
+    <MimorKindError v-if="state.error" :state="state" :error="state.error" />
   </div>
 </template>

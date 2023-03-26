@@ -1,18 +1,15 @@
-# mimor refactor
+[mimor] improve `MimorLoading`
 
 [mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class
 [mimor] `Router` should NOT be a class
 
-# mimor
+[mimor] `Router` can `defineTranslate`
 
-[mimor] `BackCover` -- show `time` of remembering
+[mimor] `Program` process `nodes` for <metadata>
 
-[mimor] a button to go fullscreen
+[mimor] <metadata> / <元数据> -- to support keywords
 [mimor] a button to go back
-
-[mimor] `Card` has `name` attribute
-[mimor] `BackCover` -- show repeats of each card by `name`
 
 # embedded
 
@@ -23,6 +20,10 @@
 # docs
 
 use readonly.link
+
+# mimor
+
+[mimor] a button to go fullscreen
 
 # wiki
 
