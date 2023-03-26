@@ -1,3 +1,9 @@
+ambr currentUrlPathname useCurrentPathname
+
+move `browser/useCurrent*` to `reactives/`
+
+[mimor] mimor logo link to homepage
+
 [mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class
 [mimor] `Router` should NOT be a class
@@ -8,6 +14,11 @@
 
 [mimor] <metadata> / <元数据> -- to support keywords
 [mimor] a button to go back
+
+# page-layout
+
+[page-layout] be more traditional fixed head
+[page-layout] head opacity
 
 # embedded
 

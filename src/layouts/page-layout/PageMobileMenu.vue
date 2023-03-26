@@ -4,8 +4,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute, useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import Watch from '../../components/utils/Watch.vue'
-import { currentQuery } from '../../utils/browser/currentQuery'
 import { currentUrlPathname } from '../../utils/browser/currentUrlPathname'
+import { useCurrentQuery } from '../../utils/browser/useCurrentQuery'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 
@@ -30,7 +30,7 @@ function jump(path: string) {
           $router.push({
             path: currentUrlPathname(),
             query: {
-              ...currentQuery(),
+              ...useCurrentQuery(),
               'mobile-menu': null,
             },
           })
