@@ -19,8 +19,8 @@ export const routes: Array<Route> = [
   { tag: 'cloze', kind: 'Card', component: Cloze },
   { tag: '填空', kind: 'Card', component: Cloze },
 
-  { tag: 'code', kind: 'Node', component: Code },
-  { tag: '代码', kind: 'Node', component: Code },
+  { tag: 'code', kind: 'Element', component: Code },
+  { tag: '代码', kind: 'Element', component: Code },
 
   { tag: 'theme', kind: 'Effect', effect: Theme },
   { tag: '主题', kind: 'Effect', effect: Theme },

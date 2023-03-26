@@ -8,7 +8,7 @@ export type RouterOptions = {
 
 export function createRouter(options: RouterOptions): Router {
   const routes = options.routes.map((route) => {
-    if (route.kind === 'Card' || route.kind === 'Node') {
+    if (route.kind === 'Card' || route.kind === 'Element') {
       return { ...route, component: markRaw(route.component) }
     }
 

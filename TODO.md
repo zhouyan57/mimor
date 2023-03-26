@@ -1,5 +1,3 @@
-[mimor] rename route kind from Node to Element
-
 [mimor] `createRouter` takes `translations`
 
 [mimor] `createProgram` use `translateElement`

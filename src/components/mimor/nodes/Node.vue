@@ -30,7 +30,7 @@ const route = isElement(props.node)
   </div>
 
   <component
-    v-else-if="route.kind === 'Node'"
+    v-else-if="route.kind === 'Element'"
     :is="route.component"
     :state="state"
     :program="program"
