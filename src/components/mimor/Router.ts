@@ -1,59 +1,54 @@
-import { XNode, isElement } from '@xieyuheng/x-node'
+import { XElement } from '@xieyuheng/x-node'
 import { Component, markRaw } from 'vue'
 import { Effect } from './Effect'
 
 type Route =
   | { kind: 'Card'; component: Component }
-  | { kind: 'Effect'; effect: Effect }
   | { kind: 'Node'; component: Component }
+  | { kind: 'Effect'; effect: Effect }
 
 export class Router {
   routes: Record<string, Route> = {}
 
-  setCard(tag: string, component: Component): void {
-    this.routes[tag] = { kind: 'Card', component: markRaw(component) }
+  defineCard(tags: Array<string>, component: Component): void {
+    for (const tag of tags) {
+      this.routes[tag] = {
+        kind: 'Card',
+        component: markRaw(component),
+      }
+    }
   }
 
-  setEffect(tag: string, effect: Effect): void {
-    this.routes[tag] = { kind: 'Effect', effect }
+  defineNode(tags: Array<string>, component: Component): void {
+    for (const tag of tags) {
+      this.routes[tag] = {
+        kind: 'Node',
+        component: markRaw(component),
+      }
+    }
   }
 
-  setNode(tag: string, component: Component): void {
-    this.routes[tag] = { kind: 'Node', component: markRaw(component) }
+  defineEffect(tags: Array<string>, effect: Effect): void {
+    for (const tag of tags) {
+      this.routes[tag] = {
+        kind: 'Effect',
+        effect,
+      }
+    }
   }
 
-  defineCard(input: string | Array<string>, component: Component): void {
-    if (typeof input === 'string') this.setCard(input, component)
-    else for (const tag of input) this.setCard(tag, component)
-  }
-
-  defineEffect(input: string | Array<string>, effect: Effect): void {
-    if (typeof input === 'string') this.setEffect(input, effect)
-    else for (const tag of input) this.setEffect(tag, effect)
-  }
-
-  defineNode(input: string | Array<string>, component: Component): void {
-    if (typeof input === 'string') this.setNode(input, component)
-    else for (const tag of input) this.setNode(tag, component)
-  }
-
-  findCard(node: XNode): Component | undefined {
-    const route = this.findRoute(node)
+  findCard(element: XElement): Component | undefined {
+    const route = this.routes[element.tag]
     return route?.kind === 'Card' ? route.component : undefined
   }
 
-  findEffect(node: XNode): Effect | undefined {
-    const route = this.findRoute(node)
-    return route?.kind === 'Effect' ? route.effect : undefined
-  }
-
-  findNode(node: XNode): Component | undefined {
-    const route = this.findRoute(node)
+  findNode(element: XElement): Component | undefined {
+    const route = this.routes[element.tag]
     return route?.kind === 'Node' ? route.component : undefined
   }
 
-  findRoute(node: XNode): Route | undefined {
-    if (!isElement(node)) return undefined
-    return this.routes[node.tag]
+  findEffect(element: XElement): Effect | undefined {
+    const route = this.routes[element.tag]
+    return route?.kind === 'Effect' ? route.effect : undefined
   }
 }
