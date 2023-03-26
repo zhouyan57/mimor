@@ -1,7 +1,3 @@
-[mimor] extract `programRemainingElements` for `programFormatProgress`
-
-[mimor] `Program` should be a type instead of a class
-
 [mimor] `Router` should be a type instead of a class
 
 [mimor] `Router` can `defineTranslate`
