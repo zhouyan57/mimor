@@ -1,9 +1,7 @@
-[mimor] extract `programForgotten`
 [mimor] extract `programRemembered`
 [mimor] extract `programNext`
 [mimor] extract `programElements`
 [mimor] extract `programCurrentElement`
-[mimor] extract `programIsFinished`
 
 [mimor] extract `programRemainingElements` for `programFormatProgress`
 

@@ -26,11 +26,6 @@ export class Program {
     this.pointer = index
   }
 
-  forgotten(): void {
-    this.remainingIndexes.push(this.pointer)
-    this.next()
-  }
-
   remembered(): void {
     this.next()
   }
@@ -49,9 +44,5 @@ export class Program {
 
   get currentElement(): XElement {
     return this.elements[this.pointer]
-  }
-
-  get finished(): boolean {
-    return this.remainingIndexes.length === 0
   }
 }
