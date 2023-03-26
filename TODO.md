@@ -1,10 +1,6 @@
-[mimor] `createRouter` handles `markRaw`
-
-[mimor] `type RouterRoutes`
-
 [mimor] `createRouter({ routes })` -- `vue-router` style API
 
-[mimor] `type RouterTranslations`
+[mimor] `Translation`
 
 [mimor] `createRouter` can take `translations`
 

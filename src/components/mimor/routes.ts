@@ -1,4 +1,3 @@
-import { markRaw } from 'vue'
 import { Route } from './Route'
 import BackCover from './cards/BackCover.vue'
 import Cloze from './cards/Cloze.vue'
@@ -8,20 +7,20 @@ import { Theme } from './effects/Theme'
 import Code from './nodes/Code.vue'
 
 export const routes: Array<Route> = [
-  { tag: 'front-cover', kind: 'Card', component: markRaw(FrontCover) },
-  { tag: '封面', kind: 'Card', component: markRaw(FrontCover) },
+  { tag: 'front-cover', kind: 'Card', component: FrontCover },
+  { tag: '封面', kind: 'Card', component: FrontCover },
 
-  { tag: 'back-cover', kind: 'Card', component: markRaw(BackCover) },
-  { tag: '封底', kind: 'Card', component: markRaw(BackCover) },
+  { tag: 'back-cover', kind: 'Card', component: BackCover },
+  { tag: '封底', kind: 'Card', component: BackCover },
 
-  { tag: 'question', kind: 'Card', component: markRaw(Question) },
-  { tag: '问', kind: 'Card', component: markRaw(Question) },
+  { tag: 'question', kind: 'Card', component: Question },
+  { tag: '问', kind: 'Card', component: Question },
 
-  { tag: 'cloze', kind: 'Card', component: markRaw(Cloze) },
-  { tag: '填空', kind: 'Card', component: markRaw(Cloze) },
+  { tag: 'cloze', kind: 'Card', component: Cloze },
+  { tag: '填空', kind: 'Card', component: Cloze },
 
-  { tag: 'code', kind: 'Node', component: markRaw(Code) },
-  { tag: '代码', kind: 'Node', component: markRaw(Code) },
+  { tag: 'code', kind: 'Node', component: Code },
+  { tag: '代码', kind: 'Node', component: Code },
 
   { tag: 'theme', kind: 'Effect', effect: Theme },
   { tag: '主题', kind: 'Effect', effect: Theme },
