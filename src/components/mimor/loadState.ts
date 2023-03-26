@@ -1,7 +1,7 @@
 import { parseNodes } from '@xieyuheng/x-node'
-import { Program } from './Program'
 import { State } from './State'
 import { Theme } from './Theme'
+import { createProgram } from './createProgram'
 import { routerDefineRoutes } from './routerDefineRoutes'
 
 export interface StateOptions {
@@ -19,7 +19,7 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   try {
     const nodes = parseNodes(text)
-    const program = new Program(nodes)
+    const program = createProgram({ nodes })
     routerDefineRoutes(program.router)
 
     return {

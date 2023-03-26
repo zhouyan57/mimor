@@ -1,4 +1,4 @@
-[mimor] `createProgram`
+[mimor] `Program` has `elements`
 
 [mimor] extract `programRemainingElements` for `programFormatProgress`
 
