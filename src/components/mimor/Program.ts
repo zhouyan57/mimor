@@ -21,6 +21,17 @@ export class Program {
     this.pointer = index
   }
 
+  replay(): void {
+    this.remaining = [...Array(this.length).keys()]
+    const index = this.remaining.shift()
+    if (index === undefined) {
+      throw new Error('No cards.')
+    }
+
+    this.pointer = index
+    this.revealed = false
+  }
+
   forgotten(): void {
     this.remaining.push(this.pointer)
     this.next()

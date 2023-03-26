@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PlayIcon } from '@heroicons/vue/24/outline'
+import { ArrowPathIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
@@ -15,9 +15,9 @@ defineProps<{
     <button
       class="flex w-full flex-col items-start p-3"
       :class="[state.theme.bg(400)]"
-      @click="program.next()"
+      @click="program.replay()"
     >
-      <PlayIcon
+      <ArrowPathIcon
         class="h-6 w-6"
         :class="[
           state.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',

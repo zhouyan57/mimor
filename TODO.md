@@ -1,12 +1,8 @@
 # mimor
 
 [mimor] show default `<back-cover>` on finished
-
-[mimor] `BackCover` -- `Replay` / `重复` button
 [mimor] `BackCover` -- show `statistics` of remembering
-
 [mimor] `Card` has `name` attribute
-
 [mimor] a button to go fullscreen
 
 # mimor refactor
