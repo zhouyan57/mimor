@@ -1,4 +1,8 @@
+[mimor] `MimorHeadPlain`
+
 [mimor] improve `MimorLoading`
+
+move Lang.vue to components/lang/
 
 [mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
-import MimorHead from '../MimorHead.vue'
+import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorTransitionCard from '../MimorTransitionCard.vue'
 import Node from '../nodes/Node.vue'
 import Nodes from '../nodes/Nodes.vue'
@@ -17,7 +17,7 @@ defineProps<{
 
 <template>
   <div class="flex h-full w-full flex-col justify-between">
-    <MimorHead :state="state" :program="program" />
+    <MimorHeadProgram :state="state" :program="program" />
 
     <MimorTransitionCard :state="state" :program="program">
       <span

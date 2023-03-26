@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
 import MimorFootReplay from '../MimorFootReplay.vue'
-import MimorHead from '../MimorHead.vue'
+import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 import Node from '../nodes/Node.vue'
@@ -21,7 +21,7 @@ defineProps<{
       state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
     ]"
   >
-    <MimorHead :state="state" :program="program" />
+    <MimorHeadProgram :state="state" :program="program" />
 
     <div
       class="scrollbar-hide mx-3 flex flex-row-reverse overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"

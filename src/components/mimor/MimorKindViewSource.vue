@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MimorHead from './MimorHead.vue'
+import MimorHeadProgram from './MimorHeadProgram.vue'
 import { Program } from './Program'
 import { State } from './State'
 
@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <div class="flex h-full flex-col">
-    <MimorHead
+    <MimorHeadProgram
       class="border-b border-black"
       :state="state"
       :program="program"
