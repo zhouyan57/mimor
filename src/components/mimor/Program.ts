@@ -6,7 +6,7 @@ import { Router } from './Router'
 export class Program {
   router = new Router()
   pointer: number
-  remaining: Array<number>
+  remainingIndexes: Array<number>
   revealed = false
   nodes: Array<XNode>
 
@@ -17,8 +17,8 @@ export class Program {
       ? [...nodes]
       : [...nodes, ...defaultEndingNodes()]
 
-    this.remaining = rangeArray(0, this.length)
-    const index = this.remaining.shift()
+    this.remainingIndexes = rangeArray(0, this.elements.length)
+    const index = this.remainingIndexes.shift()
     if (index === undefined) {
       throw new Error('No cards.')
     }
@@ -27,8 +27,8 @@ export class Program {
   }
 
   replay(): void {
-    this.remaining = rangeArray(0, this.length)
-    const index = this.remaining.shift()
+    this.remainingIndexes = rangeArray(0, this.elements.length)
+    const index = this.remainingIndexes.shift()
     if (index === undefined) {
       throw new Error('No cards.')
     }
@@ -38,7 +38,7 @@ export class Program {
   }
 
   forgotten(): void {
-    this.remaining.push(this.pointer)
+    this.remainingIndexes.push(this.pointer)
     this.next()
   }
 
@@ -47,7 +47,7 @@ export class Program {
   }
 
   next(): void {
-    const index = this.remaining.shift()
+    const index = this.remainingIndexes.shift()
     if (index !== undefined) {
       this.pointer = index
       this.revealed = false
@@ -62,12 +62,8 @@ export class Program {
     return this.elements[this.pointer]
   }
 
-  get length(): number {
-    return this.elements.length
-  }
-
   get finished(): boolean {
-    return this.remaining.length === 0
+    return this.remainingIndexes.length === 0
   }
 
   get progress(): string {
@@ -75,7 +71,7 @@ export class Program {
       .map((element) => Number(Boolean(this.router.findCard(element))))
       .reduce((sum, count) => sum + count, 0)
 
-    const remaining = this.remaining
+    const remaining = this.remainingIndexes
       .map((index) => this.elements[index])
       .map((element) => Number(Boolean(this.router.findCard(element))))
       .reduce((sum, count) => sum + count, 0)
