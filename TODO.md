@@ -1,4 +1,4 @@
-[mimor] extract `routes`
+[mimor] `createRouter` handles `markRaw`
 
 [mimor] `type RouterRoutes`
 

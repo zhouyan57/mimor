@@ -3,13 +3,14 @@ import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
 import { defaultEndingNodes } from './defaultEndingNodes'
 import { Program } from './Program'
+import { routes } from './routes'
 
 export type ProgramOptions = {
   nodes: Array<XNode>
 }
 
 export function createProgram(options: ProgramOptions): Program {
-  const router = createRouter()
+  const router = createRouter({ routes })
 
   const nodes = options.nodes.find(
     (node) => isElement(node) && ['back-cover', '封底'].includes(node.tag),
