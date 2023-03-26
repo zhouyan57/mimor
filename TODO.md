@@ -1,4 +1,3 @@
-[mimor] extract `Route`
 [mimor] extract `routes`
 
 [mimor] `type RouterRoutes`

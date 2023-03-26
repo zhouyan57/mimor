@@ -1,5 +1,6 @@
 import { markRaw } from 'vue'
-import { Route, Router } from './Router'
+import { Route } from './Route'
+import { Router } from './Router'
 import BackCover from './cards/BackCover.vue'
 import Cloze from './cards/Cloze.vue'
 import FrontCover from './cards/FrontCover.vue'

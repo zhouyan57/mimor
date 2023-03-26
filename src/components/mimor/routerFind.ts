@@ -1,5 +1,6 @@
 import { XElement } from '@xieyuheng/x-node'
-import { Route, Router } from './Router'
+import { Route } from './Route'
+import { Router } from './Router'
 
 export function routerFind(
   router: Router,
