@@ -1,14 +1,16 @@
 import { isElement, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
+import { createRouter } from './createRouter'
 import { defaultEndingNodes } from './defaultEndingNodes'
 import { Program } from './Program'
-import { Router } from './Router'
 
 export type ProgramOptions = {
   nodes: Array<XNode>
 }
 
 export function createProgram(options: ProgramOptions): Program {
+  const router = createRouter()
+
   const nodes = options.nodes.find(
     (node) => isElement(node) && ['back-cover', '封底'].includes(node.tag),
   )
@@ -27,7 +29,6 @@ export function createProgram(options: ProgramOptions): Program {
   const pointer = index
 
   const revealed = false
-  const router = new Router()
 
   return {
     nodes,

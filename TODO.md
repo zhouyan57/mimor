@@ -1,4 +1,18 @@
-[mimor] `Router` can `defineTranslate`
+[mimor] extract `routerFindCardComponent`
+[mimor] extract `routerFindNodeComponent`
+[mimor] extract `routerFindEffect`
+
+[mimor] `Router` should be type instead of class
+
+- fix `createRouter`
+
+[mimor] `type RouterRoutes`
+
+[mimor] `createRouter({ routes })` -- `vue-router` style API
+
+[mimor] `type RouterTranslations`
+
+[mimor] `createRouter` can take `translations`
 
 [mimor] `Program` process `nodes` for <metadata>
 
