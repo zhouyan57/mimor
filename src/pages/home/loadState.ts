@@ -10,9 +10,9 @@ export async function loadState(options: StateOptions): Promise<State> {
   const origin = window.location.origin
 
   const list = [
+    `${origin}/contents/sisuo.mimor`,
     `${origin}/contents/causal-reasoning.mimor`,
     `${origin}/contents/do-not-forget.mimor`,
-    `${origin}/contents/sisuo.mimor`,
     `${origin}/contents/99bottles/01-rediscovering-simplicity.mimor`,
     `${origin}/contents/99bottles/02-test-driving-shameless-green.mimor`,
     `${origin}/contents/99bottles/03-unearthing-concepts.mimor`,

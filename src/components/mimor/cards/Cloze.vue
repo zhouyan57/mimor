@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
+import MimorFootRemembering from '../MimorFootRemembering.vue'
+import MimorHead from '../MimorHead.vue'
+import MimorTransitionCard from '../MimorTransitionCard.vue'
 import Node from '../nodes/Node.vue'
 import Nodes from '../nodes/Nodes.vue'
 import { Program } from '../Program'
-import RememberingLayout from '../RememberingLayout.vue'
 import { State } from '../State'
 
 defineProps<{
@@ -14,9 +16,15 @@ defineProps<{
 </script>
 
 <template>
-  <RememberingLayout :state="state" :program="program">
-    <div class="text-2xl">
-      <span v-for="(child, index) of element.children" :key="index">
+  <div class="flex h-full w-full flex-col justify-between">
+    <MimorHead :state="state" :program="program" />
+
+    <MimorTransitionCard :state="state" :program="program">
+      <span
+        v-for="(child, index) of element.children"
+        :key="index"
+        class="text-2xl"
+      >
         <Node
           v-if="!matchElement(child, { tags: ['blank', '空'] })"
           :state="state"
@@ -52,6 +60,8 @@ defineProps<{
           >
         </span>
       </span>
-    </div>
-  </RememberingLayout>
+    </MimorTransitionCard>
+
+    <MimorFootRemembering :state="state" :program="program" />
+  </div>
 </template>

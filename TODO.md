@@ -1,7 +1,5 @@
 # mimor
 
-[mimor] inline `RememberingLayout`
-
 [mimor] `FrontCover` -- show `children`
 [mimor] `FrontCover` -- show `statistics` of card
 [mimor] `FrontCover` -- `Start` / `开始` button
