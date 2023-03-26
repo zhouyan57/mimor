@@ -21,10 +21,10 @@ defineProps<{
       state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
     ]"
   >
-    <MimorHead :state="state" :program="program" :hideProgress="true" />
+    <MimorHead :state="state" :program="program" />
 
     <div
-      class="scrollbar-hide mx-3 flex flex-row-reverse overflow-x-auto overflow-y-hidden whitespace-pre py-1 font-mono text-sm"
+      class="scrollbar-hide mx-3 flex flex-row-reverse overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"
       :class="[
         state.theme.text(100),
         state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),

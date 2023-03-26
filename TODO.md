@@ -1,12 +1,9 @@
 # mimor
 
-[mimor] `FrontCover` -- show `length`
+[mimor] show default `<back-cover>` on finished
 
-[mimor] `BackCover` -- show `children`
 [mimor] `BackCover` -- `Replay` / `重复` button
 [mimor] `BackCover` -- show `statistics` of remembering
-
-[mimor] show default `<back-cover>` on finished
 
 [mimor] `Card` has `name` attribute
 
