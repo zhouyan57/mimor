@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CodeBracketIcon, PlayIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { Program } from './Program'
 import { State } from './State'
 
@@ -39,10 +40,12 @@ defineProps<{
         <PlayIcon class="h-5 w-5" />
       </button>
 
-      <Lang class="font-logo font-light">
-        <template #zh>谜墨</template>
-        <template #en>Mimor</template>
-      </Lang>
+      <a :href="useCurrentOrigin()" target="_blank" class="hover:underline">
+        <Lang class="font-logo font-light">
+          <template #zh>谜墨</template>
+          <template #en>Mimor</template>
+        </Lang>
+      </a>
     </div>
   </div>
 </template>
