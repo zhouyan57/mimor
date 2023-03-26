@@ -1,13 +1,9 @@
 import { ElementTranslation } from './ElementTranslation'
 
 export const translations: Array<ElementTranslation> = [
-  {
-    tag: { from: '封面', to: 'front-cover' },
-  },
+  { tag: { from: '封面', to: 'front-cover' } },
 
-  {
-    tag: { from: '封底', to: 'back-cover' },
-  },
+  { tag: { from: '封底', to: 'back-cover' } },
 
   {
     tag: { from: '问', to: 'question' },
@@ -18,6 +14,8 @@ export const translations: Array<ElementTranslation> = [
     tag: { from: '填空', to: 'cloze' },
     children: [{ tag: { from: '空', to: 'blank' } }],
   },
+
+  { tag: { from: '代码', to: 'code' } },
 
   {
     tag: { from: '主题', to: 'theme' },

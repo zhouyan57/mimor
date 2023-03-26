@@ -1,3 +1,5 @@
+[mimor] remove the concept of `Effect` -- `Theme` should be a card (maybea passing card)
+
 [mimor] `createRouter` takes `translations`
 
 [mimor] `createProgram` use `translateElement`
