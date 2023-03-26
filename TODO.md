@@ -1,8 +1,8 @@
-[mimor] `ElementTranslation`
+[mimor] rename route kind from Node to Element
 
 [mimor] `createRouter` takes `translations`
 
-[mimor] `createProgram` translate element
+[mimor] `createProgram` use `translateElement`
 
 [mimor] `Program` process `nodes` for <metadata>
 
