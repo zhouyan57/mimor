@@ -1,5 +1,3 @@
-move `browser/useCurrent*` to `reactives/`
-
 reactives/useCurrentURL
 
 [mimor] mimor logo link to homepage
