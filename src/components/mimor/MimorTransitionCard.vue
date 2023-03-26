@@ -18,10 +18,7 @@ defineProps<{
     leave-from-class="transform transform-gpu origin-left opacity-100 scale-100 rotate-0"
     leave-to-class="transform transform-gpu origin-left opacity-0 scale-50 -rotate-20"
   >
-    <div
-      :key="program.pointer"
-      class="body overflow-y-auto overscroll-contain p-3 font-serif"
-    >
+    <div :key="program.pointer" class="body overflow-y-auto p-3 font-serif">
       <slot />
     </div>
   </Transition>

@@ -1,4 +1,5 @@
 import { isElement, XElement, XNode } from '@xieyuheng/x-node'
+import { defaultEndingNodes } from './defaultEndingNodes'
 import { Router } from './Router'
 
 export interface ProgramOptions {
@@ -10,8 +11,15 @@ export class Program {
   pointer: number
   remaining: Array<number>
   revealed = false
+  nodes: Array<XNode>
 
-  constructor(public nodes: Array<XNode>, public options: ProgramOptions) {
+  constructor(nodes: Array<XNode>, public options: ProgramOptions) {
+    this.nodes = nodes.find(
+      (node) => isElement(node) && ['back-cover', '封底'].includes(node.tag),
+    )
+      ? [...nodes]
+      : [...nodes, ...defaultEndingNodes()]
+
     this.remaining = [...Array(this.length).keys()]
     const index = this.remaining.shift()
     if (index === undefined) {

@@ -27,6 +27,6 @@ defineProps<{
   />
   <div v-else>
     <div class="text-xl font-bold text-red-500">Unknown node:</div>
-    <pre class="overflow-auto overscroll-contain text-red-500">{{ node }}</pre>
+    <pre class="overflow-auto text-red-500">{{ node }}</pre>
   </div>
 </template>

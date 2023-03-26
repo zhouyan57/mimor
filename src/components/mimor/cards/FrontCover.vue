@@ -34,7 +34,7 @@ defineProps<{
     </div>
 
     <div
-      class="h-full cursor-pointer overflow-y-auto overscroll-contain p-3 font-sans font-bold"
+      class="h-full cursor-pointer overflow-y-auto p-3 font-sans font-bold"
       :class="[state.theme.isWhite ? 'text-black' : state.theme.text(50)]"
       @click="program.next()"
     >
