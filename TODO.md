@@ -1,4 +1,5 @@
 [mimor] `Program` should NOT be a class
+
 [mimor] `Router` should NOT be a class
 
 [mimor] `Router` can `defineTranslate`

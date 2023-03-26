@@ -14,7 +14,7 @@ defineProps<{
   <div class="w-full pb-1.5 text-xl font-bold">
     <button
       v-if="!program.revealed"
-      class="flex w-full flex-col items-start border-y p-3"
+      class="flex w-full flex-col items-start border p-3"
       :class="[
         state.theme.bg(400),
         state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
@@ -36,7 +36,7 @@ defineProps<{
     <div v-else class="flex w-full justify-between space-x-1">
       <button
         @click="program.forgotten()"
-        class="flex w-full flex-col items-start border-y border-r p-3"
+        class="flex w-full flex-col items-start border p-3"
         :class="[
           state.theme.bg(400),
           state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
@@ -58,7 +58,7 @@ defineProps<{
 
       <button
         @click="program.remembered()"
-        class="flex w-full flex-col items-start border-y border-l p-3"
+        class="flex w-full flex-col items-start border p-3"
         :class="[
           state.theme.bg(400),
           state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
