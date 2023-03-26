@@ -4,6 +4,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
 import { programForgotten } from './programForgotten'
+import { programRemembered } from './programRemembered'
 
 defineProps<{
   state: State
@@ -58,7 +59,7 @@ defineProps<{
       </button>
 
       <button
-        @click="program.remembered()"
+        @click="programRemembered(program)"
         class="flex w-full flex-col items-start border p-3"
         :class="[
           state.theme.bg(400),

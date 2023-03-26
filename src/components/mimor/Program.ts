@@ -26,10 +26,6 @@ export class Program {
     this.pointer = index
   }
 
-  remembered(): void {
-    this.next()
-  }
-
   next(): void {
     const index = this.remainingIndexes.shift()
     if (index !== undefined) {

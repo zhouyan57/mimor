@@ -1,4 +1,3 @@
-[mimor] extract `programRemembered`
 [mimor] extract `programNext`
 [mimor] extract `programElements`
 [mimor] extract `programCurrentElement`
