@@ -1,7 +1,3 @@
-[mimor] extract `routerFindCardComponent`
-[mimor] extract `routerFindNodeComponent`
-[mimor] extract `routerFindEffect`
-
 [mimor] `Router` should be type instead of class
 
 - fix `createRouter`

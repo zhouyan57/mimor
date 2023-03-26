@@ -1,5 +1,6 @@
 import { programCurrentElement } from './programCurrentElement'
 import { programNext } from './programNext'
+import { routerFind } from './routerFind'
 import { State } from './State'
 
 export function stateMaybeApplyEffect(state: State): void {
@@ -9,10 +10,9 @@ export function stateMaybeApplyEffect(state: State): void {
   }
 
   const element = programCurrentElement(program)
-  const effect = program.router.findEffect(element)
-
-  if (effect) {
-    effect({ state, program, element })
+  const route = routerFind(program.router, element)
+  if (route?.kind === 'Effect') {
+    route.effect({ state, program, element })
     programNext(program)
   }
 }
