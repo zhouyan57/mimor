@@ -14,11 +14,10 @@ export function stateMaybeApplyEffect(state: State): void {
 
   const effect = program.router.findEffect(element)
 
-  if (effect !== undefined) {
+  if (effect) {
     console.log({
       who,
       pointer: program.pointer,
-      stmtKind: 'Effect',
       tag: element.tag,
       element,
     })
@@ -26,15 +25,5 @@ export function stateMaybeApplyEffect(state: State): void {
     effect({ state, program, element })
 
     programNext(program)
-  } else {
-    const stmtKind = program.router.findCard(element) ? 'Card' : 'Unknown'
-
-    console.log({
-      who,
-      pointer: program.pointer,
-      stmtKind,
-      tag: element.tag,
-      element,
-    })
   }
 }
