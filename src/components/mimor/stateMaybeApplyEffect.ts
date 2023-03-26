@@ -1,15 +1,14 @@
+import { programCurrentElement } from './programCurrentElement'
 import { programNext } from './programNext'
 import { State } from './State'
 
 export function stateMaybeApplyEffect(state: State): void {
-  const who = 'stateMaybeApplyEffect'
-
   const program = state.program
   if (program === undefined) {
     return
   }
 
-  const element = program.currentElement
+  const element = programCurrentElement(program)
   const effect = program.router.findEffect(element)
 
   if (effect) {

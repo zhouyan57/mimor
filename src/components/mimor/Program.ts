@@ -1,4 +1,4 @@
-import { isElement, XElement, XNode } from '@xieyuheng/x-node'
+import { isElement, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
 import { defaultEndingNodes } from './defaultEndingNodes'
 import { Router } from './Router'
@@ -17,20 +17,13 @@ export class Program {
       ? [...nodes]
       : [...nodes, ...defaultEndingNodes()]
 
-    this.remainingIndexes = rangeArray(0, this.elements.length)
+    const elements = nodes.filter(isElement)
+    this.remainingIndexes = rangeArray(0, elements.length)
     const index = this.remainingIndexes.shift()
     if (index === undefined) {
       throw new Error('No cards.')
     }
 
     this.pointer = index
-  }
-
-  get elements() {
-    return this.nodes.filter(isElement)
-  }
-
-  get currentElement(): XElement {
-    return this.elements[this.pointer]
   }
 }

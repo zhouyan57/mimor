@@ -1,12 +1,15 @@
 import { Program } from './Program'
+import { programElements } from './programElements'
 
 export function programFormatProgress(program: Program): string {
-  const total = program.elements
+  const elements = programElements(program)
+
+  const total = elements
     .map((element) => Number(Boolean(program.router.findCard(element))))
     .reduce((sum, count) => sum + count, 0)
 
   const remaining = program.remainingIndexes
-    .map((index) => program.elements[index])
+    .map((index) => elements[index])
     .map((element) => Number(Boolean(program.router.findCard(element))))
     .reduce((sum, count) => sum + count, 0)
 

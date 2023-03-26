@@ -3,6 +3,7 @@ import { PlayIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
+import { programNext } from './programNext'
 
 defineProps<{
   state: State
@@ -15,7 +16,7 @@ defineProps<{
     <button
       class="flex w-full flex-col items-start p-3"
       :class="[state.theme.bg(400)]"
-      @click="program.next()"
+      @click="programNext(program)"
     >
       <PlayIcon
         class="h-6 w-6"

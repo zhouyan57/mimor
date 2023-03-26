@@ -5,6 +5,7 @@ import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 import Node from '../nodes/Node.vue'
+import { programNext } from '../programNext'
 
 defineProps<{
   state: State
@@ -30,7 +31,7 @@ defineProps<{
     <div
       class="h-full cursor-pointer overflow-y-auto p-3 font-sans font-bold"
       :class="[state.theme.isWhite() ? 'text-black' : state.theme.text(50)]"
-      @click="program.next()"
+      @click="programNext(program)"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
         <div v-for="(child, index) of element.children" :key="index">

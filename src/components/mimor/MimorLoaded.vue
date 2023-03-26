@@ -4,6 +4,7 @@ import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
 import MimorKindViewSource from './MimorKindViewSource.vue'
 import { State } from './State'
+import { programCurrentElement } from './programCurrentElement'
 import { stateReactive } from './stateReactive'
 
 const props = defineProps<{ state: State }>()
@@ -36,7 +37,7 @@ const state = stateReactive(props.state)
         :key="state.program.pointer"
         :state="state"
         :program="state.program"
-        :element="state.program.currentElement"
+        :element="programCurrentElement(state.program)"
       />
     </template>
 
