@@ -1,5 +1,3 @@
-reactives/useCurrentURL
-
 [mimor] mimor logo link to homepage
 
 [mimor] `Theme` should NOT be a class
