@@ -2,7 +2,7 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute, useRouter } from 'vue-router'
-import Lang from '../../components/Lang.vue'
+import Lang from '../../components/lang/Lang.vue'
 import Watch from '../../components/utils/Watch.vue'
 import { currentQuery } from '../../utils/browser/currentQuery'
 import { currentUrlPathname } from '../../utils/browser/currentUrlPathname'

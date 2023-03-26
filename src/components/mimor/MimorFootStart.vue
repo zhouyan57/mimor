@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PlayIcon } from '@heroicons/vue/24/outline'
-import Lang from '../../components/Lang.vue'
+import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
-import { useGlobalLang } from '../../reactives/useGlobalLang'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 
 const lang = useGlobalLang()
 </script>

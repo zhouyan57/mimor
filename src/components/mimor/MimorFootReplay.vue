@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowPathIcon } from '@heroicons/vue/24/outline'
-import Lang from '../../components/Lang.vue'
+import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
 
