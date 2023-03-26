@@ -21,11 +21,12 @@ defineProps<{
       state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
     ]"
   >
-    <MimorHead :state="state" :program="program" />
+    <MimorHead :state="state" :program="program" :hideProgress="true" />
 
     <div
-      class="h-full overflow-y-auto overscroll-contain p-3 font-sans font-bold"
+      class="h-full cursor-pointer overflow-y-auto overscroll-contain p-3 font-sans font-bold"
       :class="[state.theme.isWhite ? 'text-black' : state.theme.text(50)]"
+      @click="program.next()"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
         <div v-for="(child, index) of element.children" :key="index">

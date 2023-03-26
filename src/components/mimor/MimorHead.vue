@@ -7,13 +7,17 @@ import { State } from './State'
 defineProps<{
   state: State
   program: Program
+  hideProgress?: boolean
 }>()
 </script>
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div class="font-bold">
-      <Lang :class="[state.theme.notWhite && 'text-white']">
+      <Lang
+        v-show="!hideProgress"
+        :class="[state.theme.notWhite && 'text-white']"
+      >
         <template #zh>进展：{{ program.progress }}</template>
         <template #en>Progress: {{ program.progress }}</template>
       </Lang>

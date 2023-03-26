@@ -13,11 +13,8 @@ defineProps<{
 <template>
   <div class="w-full pb-1.5 text-xl font-bold">
     <button
-      class="flex w-full flex-col items-start border p-3"
-      :class="[
-        state.theme.bg(400),
-        state.theme.isWhite ? 'border-stone-500' : state.theme.border(400),
-      ]"
+      class="flex w-full flex-col items-start p-3"
+      :class="[state.theme.bg(400)]"
       @click="program.next()"
     >
       <PlayIcon
