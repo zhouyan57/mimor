@@ -1,8 +1,7 @@
 # mimor
 
-[mimor] `FrontCover` -- show `children`
+[mimor] `FrontCover` -- show `url` of mimor
 [mimor] `FrontCover` -- show `statistics` of card
-[mimor] `FrontCover` -- `Start` / `开始` button
 
 [mimor] `BackCover` -- show `children`
 [mimor] `BackCover` -- `Replay` / `重复` button
