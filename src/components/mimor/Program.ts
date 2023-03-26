@@ -26,17 +26,6 @@ export class Program {
     this.pointer = index
   }
 
-  replay(): void {
-    this.remainingIndexes = rangeArray(0, this.elements.length)
-    const index = this.remainingIndexes.shift()
-    if (index === undefined) {
-      throw new Error('No cards.')
-    }
-
-    this.pointer = index
-    this.revealed = false
-  }
-
   forgotten(): void {
     this.remainingIndexes.push(this.pointer)
     this.next()

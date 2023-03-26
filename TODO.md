@@ -1,10 +1,11 @@
-[mimor] extract `programReplay`
 [mimor] extract `programForgotten`
 [mimor] extract `programRemembered`
 [mimor] extract `programNext`
 [mimor] extract `programElements`
 [mimor] extract `programCurrentElement`
 [mimor] extract `programIsFinished`
+
+[mimor] extract `programRemainingElements` for `programFormatProgress`
 
 [mimor] `Program` should be a type instead of a class
 
