@@ -1,4 +1,5 @@
-import { Router } from './Router'
+import { markRaw } from 'vue'
+import { Route, Router } from './Router'
 import BackCover from './cards/BackCover.vue'
 import Cloze from './cards/Cloze.vue'
 import FrontCover from './cards/FrontCover.vue'
@@ -7,16 +8,25 @@ import { Theme } from './effects/Theme'
 import Code from './nodes/Code.vue'
 
 export function createRouter(): Router {
-  const router = new Router()
+  const routes: Array<Route> = [
+    { tag: 'front-cover', kind: 'Card', component: markRaw(FrontCover) },
+    { tag: '封面', kind: 'Card', component: markRaw(FrontCover) },
 
-  router.defineCard(['front-cover', '封面'], FrontCover)
-  router.defineCard(['back-cover', '封底'], BackCover)
-  router.defineCard(['question', '问'], Question)
-  router.defineCard(['cloze', '填空'], Cloze)
+    { tag: 'back-cover', kind: 'Card', component: markRaw(BackCover) },
+    { tag: '封底', kind: 'Card', component: markRaw(BackCover) },
 
-  router.defineNode(['code', '代码'], Code)
+    { tag: 'question', kind: 'Card', component: markRaw(Question) },
+    { tag: '问', kind: 'Card', component: markRaw(Question) },
 
-  router.defineEffect(['theme', '主题'], Theme)
+    { tag: 'cloze', kind: 'Card', component: markRaw(Cloze) },
+    { tag: '填空', kind: 'Card', component: markRaw(Cloze) },
+
+    { tag: 'code', kind: 'Node', component: markRaw(Code) },
+    { tag: '代码', kind: 'Node', component: markRaw(Code) },
+
+    { tag: 'theme', kind: 'Effect', effect: Theme },
+    { tag: '主题', kind: 'Effect', effect: Theme },
+  ]
 
   // router.defineTranslation({
   //   tag: ['问', 'question'],
@@ -31,5 +41,5 @@ export function createRouter(): Router {
   //   },
   // })
 
-  return router
+  return { routes }
 }

@@ -1,6 +1,5 @@
-[mimor] `Router` should be type instead of class
-
-- fix `createRouter`
+[mimor] extract `Route`
+[mimor] extract `routes`
 
 [mimor] `type RouterRoutes`
 

@@ -5,6 +5,5 @@ export function routerFind(
   router: Router,
   element: XElement,
 ): Route | undefined {
-  const route = router.routes[element.tag]
-  return route
+  return router.routes.find((route) => route.tag === element.tag)
 }
