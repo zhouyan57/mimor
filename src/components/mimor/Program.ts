@@ -61,12 +61,12 @@ export class Program {
   get progress(): string {
     const total = this.elements
       .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, flag) => sum + flag, 0)
+      .reduce((sum, count) => sum + count, 0)
 
     const remaining = this.remaining
       .map((index) => this.elements[index])
       .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, flag) => sum + flag, 0)
+      .reduce((sum, count) => sum + count, 0)
 
     const remembered = total - remaining
     return `${remembered} / ${total}`

@@ -1,7 +1,6 @@
 # mimor
 
-[mimor] `FrontCover` -- show `url` of mimor
-[mimor] `FrontCover` -- show `statistics` of card
+[mimor] `FrontCover` -- show `length`
 
 [mimor] `BackCover` -- show `children`
 [mimor] `BackCover` -- `Replay` / `重复` button
