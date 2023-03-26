@@ -1,5 +1,3 @@
-[mimor] `Router` should be a type instead of a class
-
 [mimor] `Router` can `defineTranslate`
 
 [mimor] `Program` process `nodes` for <metadata>

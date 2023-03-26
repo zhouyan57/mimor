@@ -5,8 +5,8 @@ export type State = {
   kind: string
   url: string
   text: string
-  fullscreen?: boolean
   theme: Theme
+  fullscreen?: boolean
   program?: Program
   error?: Error
 }

@@ -20,14 +20,15 @@ export async function loadState(options: StateOptions): Promise<State> {
   try {
     const nodes = parseNodes(text)
     const program = createProgram({ nodes })
+
     routerDefineRoutes(program.router)
 
     return {
       kind: 'Program',
       url,
       text,
-      fullscreen,
       theme,
+      fullscreen,
       program,
     }
   } catch (error) {
@@ -36,8 +37,8 @@ export async function loadState(options: StateOptions): Promise<State> {
         kind: 'Error',
         url,
         text,
-        fullscreen,
         theme,
+        fullscreen,
         error,
       }
     } else {
