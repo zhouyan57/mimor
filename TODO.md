@@ -1,8 +1,8 @@
-[mimor] `createRouter({ routes })` -- `vue-router` style API
+[mimor] `ElementTranslation`
 
-[mimor] `Translation`
+[mimor] `createRouter` takes `translations`
 
-[mimor] `createRouter` can take `translations`
+[mimor] `createProgram` translate element
 
 [mimor] `Program` process `nodes` for <metadata>
 

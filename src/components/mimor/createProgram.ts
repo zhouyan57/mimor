@@ -1,7 +1,6 @@
-import { isElement, XNode } from '@xieyuheng/x-node'
+import { isElement, parseNodes, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
-import { defaultEndingNodes } from './defaultEndingNodes'
 import { Program } from './Program'
 import { routes } from './routes'
 
@@ -39,4 +38,8 @@ export function createProgram(options: ProgramOptions): Program {
     remainingIndexes,
     revealed,
   }
+}
+
+function defaultEndingNodes(): Array<XNode> {
+  return parseNodes(`<back-cover>The End</back-cover>`)
 }
