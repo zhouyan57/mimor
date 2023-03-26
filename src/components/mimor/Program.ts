@@ -26,14 +26,6 @@ export class Program {
     this.pointer = index
   }
 
-  next(): void {
-    const index = this.remainingIndexes.shift()
-    if (index !== undefined) {
-      this.pointer = index
-      this.revealed = false
-    }
-  }
-
   get elements() {
     return this.nodes.filter(isElement)
   }

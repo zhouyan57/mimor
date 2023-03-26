@@ -1,3 +1,4 @@
+import { programNext } from './programNext'
 import { State } from './State'
 
 export function stateMaybeApplyEffect(state: State): void {
@@ -24,7 +25,7 @@ export function stateMaybeApplyEffect(state: State): void {
 
     effect({ state, program, element })
 
-    program.next()
+    programNext(program)
   } else {
     const stmtKind = program.router.findCard(element) ? 'Card' : 'Unknown'
 
