@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { matchElement, XElement } from '@xieyuheng/x-node'
-import RememberingLayout from '../layouts/RememberingLayout.vue'
 import Node from '../nodes/Node.vue'
 import Nodes from '../nodes/Nodes.vue'
 import { Program } from '../Program'
+import RememberingLayout from '../RememberingLayout.vue'
 import { State } from '../State'
 
 defineProps<{

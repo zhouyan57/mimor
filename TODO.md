@@ -1,5 +1,7 @@
 # mimor
 
+[mimor] inline `RememberingLayout`
+
 [mimor] `FrontCover` -- show `children`
 [mimor] `FrontCover` -- show `statistics` of card
 [mimor] `FrontCover` -- `Start` / `开始` button
@@ -13,6 +15,8 @@
 [mimor] `Card` has `name` attribute
 
 [mimor] a button to go fullscreen
+
+# mimor refactor
 
 [mimor] `Theme` should NOT be a class
 [mimor] `Program` should NOT be a class
