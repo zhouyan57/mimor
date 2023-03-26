@@ -31,6 +31,7 @@ export function createProgram(options: ProgramOptions): Program {
 
   return {
     nodes,
+    elements,
     router,
     pointer,
     remainingIndexes,

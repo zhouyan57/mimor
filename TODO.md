@@ -1,5 +1,3 @@
-[mimor] `Program` has `elements`
-
 [mimor] extract `programRemainingElements` for `programFormatProgress`
 
 [mimor] `Program` should be a type instead of a class
