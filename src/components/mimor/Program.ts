@@ -65,18 +65,4 @@ export class Program {
   get finished(): boolean {
     return this.remainingIndexes.length === 0
   }
-
-  get progress(): string {
-    const total = this.elements
-      .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, count) => sum + count, 0)
-
-    const remaining = this.remainingIndexes
-      .map((index) => this.elements[index])
-      .map((element) => Number(Boolean(this.router.findCard(element))))
-      .reduce((sum, count) => sum + count, 0)
-
-    const remembered = total - remaining
-    return `${remembered} / ${total}`
-  }
 }

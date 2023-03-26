@@ -14,9 +14,6 @@ const state = stateReactive(props.state)
     :options="{
       url: state.url,
       fullscreen: true,
-      program: {
-        onFinished: () => {},
-      },
     }"
   />
 </template>

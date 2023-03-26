@@ -1,6 +1,14 @@
-[mimor] `Program` should NOT be a class
+[mimor] extract `programReplay`
+[mimor] extract `programForgotten`
+[mimor] extract `programRemembered`
+[mimor] extract `programNext`
+[mimor] extract `programElements`
+[mimor] extract `programCurrentElement`
+[mimor] extract `programIsFinished`
 
-[mimor] `Router` should NOT be a class
+[mimor] `Program` should be a type instead of a class
+
+[mimor] `Router` should be a type instead of a class
 
 [mimor] `Router` can `defineTranslate`
 

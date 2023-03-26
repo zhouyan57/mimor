@@ -4,6 +4,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { Program } from './Program'
 import { State } from './State'
+import { programFormatProgress } from './programFormatProgress'
 
 defineProps<{
   state: State
@@ -13,11 +14,8 @@ defineProps<{
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
-    <div>
-      <Lang :class="[state.theme.isNotWhite() && 'text-white']">
-        <template #zh>{{ program.progress }}</template>
-        <template #en>{{ program.progress }}</template>
-      </Lang>
+    <div :class="[state.theme.isNotWhite() && 'text-white']">
+      {{ programFormatProgress(program) }}
     </div>
 
     <div
