@@ -3,7 +3,7 @@ import BackCover from './cards/BackCover.vue'
 import Cloze from './cards/Cloze.vue'
 import FrontCover from './cards/FrontCover.vue'
 import Question from './cards/Question.vue'
-import { Theme } from './effects/Theme'
+import Theme from './cards/Theme.vue'
 import Code from './elements/Code.vue'
 
 export const routes: Array<Route> = [
@@ -19,9 +19,9 @@ export const routes: Array<Route> = [
   { tag: 'cloze', kind: 'Card', component: Cloze },
   { tag: '填空', kind: 'Card', component: Cloze },
 
+  { tag: 'theme', kind: 'Card', component: Theme },
+  { tag: '主题', kind: 'Card', component: Theme },
+
   { tag: 'code', kind: 'Element', component: Code },
   { tag: '代码', kind: 'Element', component: Code },
-
-  { tag: 'theme', kind: 'Effect', effect: Theme },
-  { tag: '主题', kind: 'Effect', effect: Theme },
 ]

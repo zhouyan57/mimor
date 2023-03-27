@@ -1,14 +1,13 @@
-[mimor] remove the concept of `Effect` -- `Theme` should be a card (a passing card)
-
-[mimor] move revealed to `Question` and `Cloze`
+[mimor] remove the concept of `Effect`
 
 [mimor] `createRouter` takes `translations`
-
 [mimor] `createProgram` use `translateElement`
 
-[mimor] `Program` process `nodes` for <metadata>
+[mimor] move `revealed` to `Question` and `Cloze`
 
 [mimor] <metadata> / <元数据> -- to support keywords
+[mimor] `Program` process `nodes` for <metadata>
+
 [mimor] a button to go back
 
 # page-layout
