@@ -3,6 +3,7 @@ import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
 import { Program } from './Program'
 import { routes } from './routes'
+import { translate } from './translate'
 import { translations } from './translations'
 
 export type ProgramOptions = {
@@ -12,11 +13,11 @@ export type ProgramOptions = {
 export function createProgram(options: ProgramOptions): Program {
   const router = createRouter({ routes, translations })
 
-  const nodes = options.nodes.find(
-    (node) => isElement(node) && ['back-cover', '封底'].includes(node.tag),
-  )
-    ? [...options.nodes]
-    : [...options.nodes, ...defaultEndingNodes()]
+  let nodes = translate(translations, options.nodes)
+
+  nodes = nodes.find((node) => isElement(node) && node.tag === 'back-cover')
+    ? [...nodes]
+    : [...nodes, ...defaultEndingNodes()]
 
   const elements = nodes.filter(isElement)
 
