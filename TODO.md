@@ -1,7 +1,3 @@
-# page-layout
-
-[page-layout] head opacity
-
 # embedded
 
 [embedded] route for iframe
