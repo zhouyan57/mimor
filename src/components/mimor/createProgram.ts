@@ -15,6 +15,8 @@ export function createProgram(options: ProgramOptions): Program {
 
   const router = createRouter({ routes })
 
+  const metadata = { keywords: [], themeColor: 'white' }
+
   const nodes = maybeAppendEndingNodes(translate(translations, options.nodes))
   const elements = nodes.filter(isElement)
 
@@ -27,6 +29,7 @@ export function createProgram(options: ProgramOptions): Program {
   const pointer = index
 
   return {
+    metadata,
     nodes,
     elements,
     router,

@@ -1,11 +1,9 @@
+[mimor] `Program` process `nodes` for <metadata>
+
 # page-layout
 
 [page-layout] be more traditional fixed head
 [page-layout] head opacity
-
-# mimor
-
-[mimor] `Program` process `nodes` for <metadata>
 
 # embedded
 

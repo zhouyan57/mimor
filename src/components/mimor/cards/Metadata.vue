@@ -12,11 +12,11 @@ const props = defineProps<{
 
 for (const [key, value] of Object.entries(props.element.attributes)) {
   if (key === 'theme-color') {
-    props.state.metadata.themeColor = value
+    props.program.metadata.themeColor = value
   }
 
   if (key === 'keywords') {
-    props.state.metadata.keywords = value.split(',')
+    props.program.metadata.keywords = value.split(',')
   }
 }
 

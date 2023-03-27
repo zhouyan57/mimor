@@ -3,9 +3,11 @@ import { State } from './State'
 
 export function stateReactivelyUpdateThemeColor(state: State): void {
   watch(
-    () => state.metadata.themeColor,
+    () => state.program?.metadata.themeColor,
     (value) => {
-      state.theme.name = value
+      if (value) {
+        state.theme.name = value
+      }
     },
   )
 }
