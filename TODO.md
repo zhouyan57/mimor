@@ -1,4 +1,6 @@
-[mimor] remove the concept of `Effect` -- `Theme` should be a card (maybea passing card)
+[mimor] remove the concept of `Effect` -- `Theme` should be a card (a passing card)
+
+[mimor] move revealed to `Question` and `Cloze`
 
 [mimor] `createRouter` takes `translations`
 

@@ -4,7 +4,7 @@ import Cloze from './cards/Cloze.vue'
 import FrontCover from './cards/FrontCover.vue'
 import Question from './cards/Question.vue'
 import { Theme } from './effects/Theme'
-import Code from './nodes/Code.vue'
+import Code from './elements/Code.vue'
 
 export const routes: Array<Route> = [
   { tag: 'front-cover', kind: 'Card', component: FrontCover },
