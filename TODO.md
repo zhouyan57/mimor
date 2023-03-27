@@ -1,21 +1,16 @@
-# embedded
+# mimor
 
-[embedded] route for iframe
-
-- [maybe] just use `/mimors`
-- to be used in readonly.link
+[mimor] a button to go fullscreen
 
 # docs
 
 use readonly.link
 
-# mimor
-
-[mimor] a button to go fullscreen
-
 # wiki
 
-[wiki] a wiki of docs links to mimors
+[wiki] a readonly.link based wiki -- of docs that link to mimors
+
+- wiki is just readonly.link + `EDIT` link
 
 # home
 
