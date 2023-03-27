@@ -1,5 +1,3 @@
-[mimor] move `revealed` to `Question` and `Cloze`
-
 [mimor] <metadata> / <元数据> -- to support keywords
 [mimor] `Program` process `nodes` for <metadata>
 

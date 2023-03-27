@@ -11,5 +11,4 @@ export function programReplay(program: Program): void {
   }
 
   program.pointer = index
-  program.revealed = false
 }

@@ -7,5 +7,4 @@ export type Program = {
   router: Router
   pointer: number
   remainingIndexes: Array<number>
-  revealed: boolean
 }

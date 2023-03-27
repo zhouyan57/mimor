@@ -2,6 +2,7 @@
 import { CheckIcon, EyeIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
+import { Remembering } from './Remembering'
 import { State } from './State'
 import { programForgotten } from './programForgotten'
 import { programRemembered } from './programRemembered'
@@ -9,19 +10,20 @@ import { programRemembered } from './programRemembered'
 defineProps<{
   state: State
   program: Program
+  remembering: Remembering
 }>()
 </script>
 
 <template>
   <div class="w-full pb-1.5 text-xl font-bold">
     <button
-      v-if="!program.revealed"
+      v-if="!remembering.revealed"
       class="flex w-full flex-col items-start border p-3"
       :class="[
         state.theme.bg(400),
         state.theme.isWhite() ? 'border-stone-500' : state.theme.border(400),
       ]"
-      @click="program.revealed = true"
+      @click="remembering.revealed = true"
     >
       <EyeIcon
         class="h-6 w-6"

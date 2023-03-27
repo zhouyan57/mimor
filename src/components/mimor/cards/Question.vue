@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
+import { reactive } from 'vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorTransitionCard from '../MimorTransitionCard.vue'
@@ -13,6 +14,8 @@ defineProps<{
   program: Program
   element: XElement
 }>()
+
+const remembering = reactive({ revealed: false })
 </script>
 
 <template>
@@ -28,7 +31,7 @@ defineProps<{
             enter-to-class="transform transform-gpu opacity-100"
           >
             <Nodes
-              v-show="program.revealed"
+              v-show="remembering.revealed"
               :state="state"
               :program="program"
               :nodes="child.children"
@@ -42,13 +45,17 @@ defineProps<{
           :program="program"
           :node="child"
           :class="[
-            program.revealed ? 'text-xl' : 'text-2xl',
-            program.revealed && 'text-stone-700',
+            remembering.revealed ? 'text-xl' : 'text-2xl',
+            remembering.revealed && 'text-stone-700',
           ]"
         />
       </div>
     </MimorTransitionCard>
 
-    <MimorFootRemembering :state="state" :program="program" />
+    <MimorFootRemembering
+      :state="state"
+      :program="program"
+      :remembering="remembering"
+    />
   </div>
 </template>

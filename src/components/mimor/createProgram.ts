@@ -28,15 +28,12 @@ export function createProgram(options: ProgramOptions): Program {
 
   const pointer = index
 
-  const revealed = false
-
   return {
     nodes,
     elements,
     router,
     pointer,
     remainingIndexes,
-    revealed,
   }
 }
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
+import { reactive } from 'vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorTransitionCard from '../MimorTransitionCard.vue'
@@ -13,6 +14,8 @@ defineProps<{
   program: Program
   element: XElement
 }>()
+
+const remembering = reactive({ revealed: false })
 </script>
 
 <template>
@@ -27,7 +30,7 @@ defineProps<{
       >
         <span v-if="child.tag === 'blank'" class="px-0.5">
           <Nodes
-            v-if="program.revealed"
+            v-if="remembering.revealed"
             :state="state"
             :program="program"
             :nodes="child.children"
@@ -58,6 +61,10 @@ defineProps<{
       </span>
     </MimorTransitionCard>
 
-    <MimorFootRemembering :state="state" :program="program" />
+    <MimorFootRemembering
+      :state="state"
+      :program="program"
+      :remembering="remembering"
+    />
   </div>
 </template>
