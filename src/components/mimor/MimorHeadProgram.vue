@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  ArrowTopRightOnSquareIcon,
   BackspaceIcon,
   CodeBracketIcon,
   PlayIcon,
@@ -10,6 +11,8 @@ import { Program } from './Program'
 import { State } from './State'
 import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
+
+const origin = useCurrentOrigin()
 
 defineProps<{
   state: State
@@ -24,7 +27,7 @@ defineProps<{
     </div>
 
     <div
-      class="flex items-center space-x-2"
+      class="flex items-center space-x-4"
       :class="[state.theme.isNotWhite() && state.theme.text(800)]"
     >
       <button title="Back." @click="programBack(program)">
@@ -47,7 +50,15 @@ defineProps<{
         <PlayIcon class="h-5 w-5" />
       </button>
 
-      <a :href="useCurrentOrigin()" target="_blank" class="hover:underline">
+      <a
+        title="Open in new tab."
+        :href="`${origin}/mimors/${state.url}`"
+        target="_blank"
+      >
+        <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
+      </a>
+
+      <a :href="useCurrentOrigin()" target="_blank">
         <Lang class="font-logo font-light">
           <template #zh>谜墨</template>
           <template #en>Mimor</template>

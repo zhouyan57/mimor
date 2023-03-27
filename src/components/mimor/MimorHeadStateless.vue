@@ -8,7 +8,7 @@ import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
     <div></div>
 
     <div class="flex items-center space-x-2">
-      <a :href="useCurrentOrigin()" target="_blank" class="hover:underline">
+      <a :href="useCurrentOrigin()" target="_blank">
         <Lang class="font-logo font-light">
           <template #zh>谜墨</template>
           <template #en>Mimor</template>

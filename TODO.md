@@ -1,6 +1,5 @@
-# mimor
-
-[mimor] a button to go fullscreen
+[mimor] `MimorHeadProgram` -- chinese title
+[mimor] `MimorHeadStateless` -- chinese title
 
 # docs
 
