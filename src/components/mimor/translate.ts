@@ -20,29 +20,31 @@ function translateElement(
   translations: Array<Translation>,
   element: XElement,
 ): XElement {
-  for (const translation of translations) {
-    if (translation.tag.from === element.tag) {
-      const tag = translation.tag.to
+  const translation = translations.find(
+    (translation) => translation.tag.from === element.tag,
+  )
 
-      const attributes = translateAttributes(
-        translation.attributes || {},
-        element.attributes,
-      )
-
-      const children = translate(
-        translations,
-        translateDirectChildren(translation.children || [], element.children),
-      )
-
-      return {
-        tag,
-        attributes,
-        children,
-      }
-    }
+  if (translation === undefined) {
+    return element
   }
 
-  return element
+  const tag = translation.tag.to
+
+  const attributes = translateAttributes(
+    translation.attributes || [],
+    element.attributes,
+  )
+
+  const children = translate(
+    translations,
+    translateDirectChildren(translation.children || [], element.children),
+  )
+
+  return {
+    tag,
+    attributes,
+    children,
+  }
 }
 
 function translateAttributes(
@@ -69,5 +71,40 @@ function translateDirectChildren(
   translations: Array<Translation>,
   children: Array<XNode>,
 ): Array<XNode> {
-  return children
+  return children.map((child) => translateDirectChild(translations, child))
+}
+
+function translateDirectChild(
+  translations: Array<Translation>,
+  child: XNode,
+): XNode {
+  if (typeof child === 'string') {
+    return child
+  }
+
+  const translation = translations.find(
+    (translation) => translation.tag.from === child.tag,
+  )
+
+  if (translation === undefined) {
+    return child
+  }
+
+  const tag = translation.tag.to
+
+  const attributes = translateAttributes(
+    translation.attributes || [],
+    child.attributes,
+  )
+
+  const children = translateDirectChildren(
+    translation.children || [],
+    child.children,
+  )
+
+  return {
+    tag,
+    attributes,
+    children,
+  }
 }
