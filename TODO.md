@@ -1,5 +1,3 @@
-[mimor] remove the concept of `Effect`
-
 [mimor] `createRouter` takes `translations`
 [mimor] `createProgram` use `translateElement`
 
