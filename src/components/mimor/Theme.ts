@@ -1,4 +1,5 @@
 import tailwindColors from 'tailwindcss/colors'
+import { translateColorName } from './translateColorName'
 
 export class Theme {
   _name: string
@@ -42,10 +43,6 @@ export class Theme {
   }
 }
 
-function translateColorName(name: string): string {
-  return chineseColorNames[name] || name
-}
-
 export const colors = [
   'white',
   'red',
@@ -57,17 +54,3 @@ export const colors = [
   'purple',
   'stone',
 ]
-
-const chineseColorNames: Record<string, string> = {
-  白: 'white',
-  红: 'red',
-  赤: 'red',
-  橙: 'orange',
-  黄: 'yellow',
-  绿: 'green',
-  蓝: 'blue',
-  青: 'blue',
-  靛: 'indigo',
-  紫: 'purple',
-  墨: 'stone',
-}

@@ -1,4 +1,4 @@
-[mimor] `translateAttributes` handle `value`
+[mimor] `translateAttributes` handle `value` -- no trans in `Theme`
 
 [mimor] move `revealed` to `Question` and `Cloze`
 
