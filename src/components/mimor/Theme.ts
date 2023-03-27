@@ -1,20 +1,7 @@
 import tailwindColors from 'tailwindcss/colors'
-import { translateColorName } from './translateColorName'
 
 export class Theme {
-  _name: string
-
-  constructor(name: string) {
-    this._name = name
-  }
-
-  get name(): string {
-    return translateColorName(this._name)
-  }
-
-  set name(name: string) {
-    this._name = name
-  }
+  constructor(public name: string) {}
 
   get color(): string {
     let name = this.name

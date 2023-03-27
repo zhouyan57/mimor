@@ -58,7 +58,9 @@ function translateAttributes(
     )
 
     if (translation !== undefined) {
-      results[translation.to] = value
+      results[translation.to] = translation.value
+        ? translation.value(value)
+        : value
     } else {
       results[key] = value
     }
