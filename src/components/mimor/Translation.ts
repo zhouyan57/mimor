@@ -1,7 +1,7 @@
-export type ElementTranslation = {
+export type Translation = {
   tag: { from: string; to: string }
   attributes?: Array<AttributeTranslation>
-  children?: Array<ElementTranslation>
+  children?: Array<Translation>
 }
 
 export type AttributeTranslation = {

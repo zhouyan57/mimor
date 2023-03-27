@@ -1,6 +1,8 @@
+[mimor] `translate` -- for `nodes`
+[mimor] `translateElement`
 [mimor] `createProgram` use `translateElement`
-
 [mimor] remove translation related code in `Card` -- since we have program level translation now
+[mimor] `translateAttributes` handle `value`
 
 [mimor] move `revealed` to `Question` and `Cloze`
 
