@@ -1,5 +1,6 @@
-[mimor] `createRouter` takes `translations`
 [mimor] `createProgram` use `translateElement`
+
+[mimor] remove translation related code in `Card` -- since we have program level translation now
 
 [mimor] move `revealed` to `Question` and `Cloze`
 
