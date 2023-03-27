@@ -16,11 +16,9 @@ export function createProgram(options: ProgramOptions): Program {
   const router = createRouter({ routes })
 
   const nodes = maybeAppendEndingNodes(translate(translations, options.nodes))
-
   const elements = nodes.filter(isElement)
 
   const remainingIndexes = rangeArray(0, elements.length)
-
   const index = remainingIndexes.shift()
   if (index === undefined) {
     throw new Error(`[${who}] no cards.`)
@@ -34,6 +32,7 @@ export function createProgram(options: ProgramOptions): Program {
     router,
     pointer,
     remainingIndexes,
+    rememberedIndexes: [],
   }
 }
 

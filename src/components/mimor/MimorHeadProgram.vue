@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { CodeBracketIcon, PlayIcon } from '@heroicons/vue/24/outline'
+import {
+  BackspaceIcon,
+  CodeBracketIcon,
+  PlayIcon,
+} from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { Program } from './Program'
 import { State } from './State'
+import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
 
 defineProps<{
@@ -22,6 +27,10 @@ defineProps<{
       class="flex items-center space-x-2"
       :class="[state.theme.isNotWhite() && state.theme.text(800)]"
     >
+      <button title="Back." @click="programBack(program)">
+        <BackspaceIcon class="h-5 w-5" />
+      </button>
+
       <button
         v-if="state.kind === 'Program'"
         @click="state.kind = 'ViewSource'"

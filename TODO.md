@@ -1,17 +1,20 @@
-[mimor] <metadata> / <元数据> -- to support keywords
-[mimor] `Program` process `nodes` for <metadata>
-
-[mimor] a button to go back
-
 # page-layout
 
 [page-layout] be more traditional fixed head
 [page-layout] head opacity
 
+# mimor
+
+[mimor] fix `programFormatProgress`
+
+[mimor] <metadata> / <元数据> -- to support keywords
+[mimor] `Program` process `nodes` for <metadata>
+
 # embedded
 
 [embedded] route for iframe
 
+- [maybe] just use `/mimors`
 - to be used in readonly.link
 
 # docs
