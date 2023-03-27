@@ -5,7 +5,7 @@ export const translations: Array<Translation> = [
   {
     tag: { from: '元数据', to: 'metadata' },
     attributes: [
-      { from: '主题色', to: 'theme-color' },
+      { from: '主题色', to: 'theme-color', value: translateColorName },
       { from: '关键词', to: 'keywords' },
     ],
   },
@@ -30,13 +30,5 @@ export const translations: Array<Translation> = [
 
   {
     tag: { from: '代码', to: 'code' },
-  },
-
-  {
-    tag: { from: '主题', to: 'theme' },
-    attributes: [
-      { from: '颜色', to: 'color', value: translateColorName },
-      { from: '色', to: 'color', value: translateColorName },
-    ],
   },
 ]

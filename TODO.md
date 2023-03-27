@@ -5,9 +5,8 @@
 
 # mimor
 
-[mimor] color should be part of `<metadata>`
-[mimor] `Program` process `nodes` for <metadata>
 [mimor] fix `programFormatProgress`
+[mimor] `Program` process `nodes` for <metadata>
 
 # embedded
 
