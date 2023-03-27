@@ -1,6 +1,3 @@
-[mimor] `MimorHeadProgram` -- chinese title
-[mimor] `MimorHeadStateless` -- chinese title
-
 # docs
 
 use readonly.link
