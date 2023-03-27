@@ -1,7 +1,3 @@
-[mimor] remove translation related code in `Card`
-
-- since we have program level translation now.
-
 [mimor] `Router` should not have `translations`
 
 [mimor] `translateAttributes` handle `value`

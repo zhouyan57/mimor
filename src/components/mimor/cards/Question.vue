@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { matchElement, XElement } from '@xieyuheng/x-node'
+import { XElement } from '@xieyuheng/x-node'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorTransitionCard from '../MimorTransitionCard.vue'
-import Node from '../nodes/Node.vue'
-import Nodes from '../nodes/Nodes.vue'
 import { Program } from '../Program'
 import { State } from '../State'
+import Node from '../nodes/Node.vue'
+import Nodes from '../nodes/Nodes.vue'
 
 defineProps<{
   state: State
@@ -21,10 +21,7 @@ defineProps<{
 
     <MimorTransitionCard :state="state" :program="program">
       <div v-for="(child, index) of element.children" :key="index">
-        <div
-          v-if="matchElement(child, { tags: ['answer', '答'] })"
-          class="py-2"
-        >
+        <div v-if="child.tag === 'answer'" class="py-2">
           <Transition
             enter-active-class="transition duration-700 ease-in-out"
             enter-from-class="transform transform-gpu opacity-0"
