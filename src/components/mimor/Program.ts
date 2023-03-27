@@ -7,5 +7,5 @@ export type Program = {
   router: Router
   pointer: number
   remainingIndexes: Array<number>
-  rememberedIndexes: Array<number>
+  passedIndexes: Array<number>
 }

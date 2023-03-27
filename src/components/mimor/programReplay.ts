@@ -4,7 +4,7 @@ import { Program } from './Program'
 export function programReplay(program: Program): void {
   const who = 'programReplay'
 
-  program.rememberedIndexes = []
+  program.passedIndexes = []
   program.remainingIndexes = rangeArray(0, program.elements.length)
 
   const index = program.remainingIndexes.shift()

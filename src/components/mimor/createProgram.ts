@@ -32,7 +32,7 @@ export function createProgram(options: ProgramOptions): Program {
     router,
     pointer,
     remainingIndexes,
-    rememberedIndexes: [],
+    passedIndexes: [],
   }
 }
 

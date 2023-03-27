@@ -5,7 +5,6 @@
 
 # mimor
 
-[mimor] fix `programFormatProgress`
 [mimor] `Program` process `nodes` for <metadata>
 
 # embedded
