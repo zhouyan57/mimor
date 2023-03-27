@@ -10,8 +10,7 @@ const props = defineProps<{
   element: XElement
 }>()
 
-const name =
-  props.element.attributes['color'] || props.element.attributes['颜色']
+const name = props.element.attributes['color']
 
 if (name) {
   props.state.theme.name = name

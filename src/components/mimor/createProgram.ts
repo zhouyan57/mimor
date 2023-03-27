@@ -11,7 +11,7 @@ export type ProgramOptions = {
 }
 
 export function createProgram(options: ProgramOptions): Program {
-  const router = createRouter({ routes, translations })
+  const router = createRouter({ routes })
 
   let nodes = translate(translations, options.nodes)
 
