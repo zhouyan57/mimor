@@ -11,13 +11,11 @@ export type ProgramOptions = {
 }
 
 export function createProgram(options: ProgramOptions): Program {
+  const who = 'createProgram'
+
   const router = createRouter({ routes })
 
-  let nodes = translate(translations, options.nodes)
-
-  nodes = nodes.find((node) => isElement(node) && node.tag === 'back-cover')
-    ? [...nodes]
-    : [...nodes, ...defaultEndingNodes()]
+  const nodes = maybeAppendEndingNodes(translate(translations, options.nodes))
 
   const elements = nodes.filter(isElement)
 
@@ -25,7 +23,7 @@ export function createProgram(options: ProgramOptions): Program {
 
   const index = remainingIndexes.shift()
   if (index === undefined) {
-    throw new Error('No cards.')
+    throw new Error(`[${who}] no cards.`)
   }
 
   const pointer = index
@@ -40,6 +38,12 @@ export function createProgram(options: ProgramOptions): Program {
     remainingIndexes,
     revealed,
   }
+}
+
+function maybeAppendEndingNodes(nodes: Array<XNode>): Array<XNode> {
+  return nodes.find((node) => isElement(node) && node.tag === 'back-cover')
+    ? [...nodes]
+    : [...nodes, ...defaultEndingNodes()]
 }
 
 function defaultEndingNodes(): Array<XNode> {
