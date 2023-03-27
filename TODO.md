@@ -5,10 +5,9 @@
 
 # mimor
 
-[mimor] fix `programFormatProgress`
-
-[mimor] <metadata> / <元数据> -- to support keywords
+[mimor] color should be part of `<metadata>`
 [mimor] `Program` process `nodes` for <metadata>
+[mimor] fix `programFormatProgress`
 
 # embedded
 

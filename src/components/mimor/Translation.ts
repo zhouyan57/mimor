@@ -7,5 +7,5 @@ export type Translation = {
 export type AttributeTranslation = {
   from: string
   to: string
-  value: (value: string) => string
+  value?: (value: string) => string
 }

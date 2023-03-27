@@ -13,31 +13,18 @@ export async function loadState(options: StateOptions): Promise<State> {
   const { url, fullscreen } = options
 
   const text = options.text || (await loadText(url))
-
   const theme = new Theme('white')
+  const metadata = { keywords: [], themeColor: 'white' }
+  const state = { url, text, theme, metadata, fullscreen }
 
   try {
     const nodes = parseNodes(text)
     const program = createProgram({ nodes })
 
-    return {
-      kind: 'Program',
-      url,
-      text,
-      theme,
-      fullscreen,
-      program,
-    }
+    return { kind: 'Program', ...state, program }
   } catch (error) {
     if (error instanceof Error) {
-      return {
-        kind: 'Error',
-        url,
-        text,
-        theme,
-        fullscreen,
-        error,
-      }
+      return { kind: 'Error', ...state, error }
     } else {
       throw error
     }

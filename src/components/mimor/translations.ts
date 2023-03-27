@@ -3,6 +3,14 @@ import { translateColorName } from './translateColorName'
 
 export const translations: Array<Translation> = [
   {
+    tag: { from: '元数据', to: 'metadata' },
+    attributes: [
+      { from: '主题色', to: 'theme-color' },
+      { from: '关键词', to: 'keywords' },
+    ],
+  },
+
+  {
     tag: { from: '封面', to: 'front-cover' },
   },
 
