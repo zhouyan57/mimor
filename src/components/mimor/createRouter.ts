@@ -9,13 +9,10 @@ export type RouterOptions = {
 }
 
 export function createRouter(options: RouterOptions): Router {
-  const routes = options.routes.map((route) => {
-    if (route.kind === 'Card' || route.kind === 'Element') {
-      return { ...route, component: markRaw(route.component) }
-    }
-
-    return route
-  })
+  const routes = options.routes.map((route) => ({
+    ...route,
+    component: markRaw(route.component),
+  }))
 
   return { routes }
 }
