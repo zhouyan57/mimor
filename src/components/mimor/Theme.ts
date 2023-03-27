@@ -5,7 +5,11 @@ export class Theme {
 
   get color(): string {
     let name = this.name
-    if (name === 'blue') name = 'sky'
+
+    if (name === 'blue') {
+      name = 'sky'
+    }
+
     return (tailwindColors as any)[name][300] || '#ffffff'
   }
 

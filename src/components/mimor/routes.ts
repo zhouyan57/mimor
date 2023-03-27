@@ -8,20 +8,9 @@ import Code from './elements/Code.vue'
 
 export const routes: Array<Route> = [
   { tag: 'front-cover', kind: 'Card', component: FrontCover },
-  { tag: '封面', kind: 'Card', component: FrontCover },
-
   { tag: 'back-cover', kind: 'Card', component: BackCover },
-  { tag: '封底', kind: 'Card', component: BackCover },
-
   { tag: 'question', kind: 'Card', component: Question },
-  { tag: '问', kind: 'Card', component: Question },
-
   { tag: 'cloze', kind: 'Card', component: Cloze },
-  { tag: '填空', kind: 'Card', component: Cloze },
-
   { tag: 'theme', kind: 'Card', component: Theme },
-  { tag: '主题', kind: 'Card', component: Theme },
-
   { tag: 'code', kind: 'Element', component: Code },
-  { tag: '代码', kind: 'Element', component: Code },
 ]
