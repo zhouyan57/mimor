@@ -1,5 +1,3 @@
-[mimor] `Program` process `nodes` for <metadata>
-
 # page-layout
 
 [page-layout] be more traditional fixed head

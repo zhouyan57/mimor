@@ -1,6 +1,7 @@
-import { isElement, parseNodes, XNode } from '@xieyuheng/x-node'
+import { isElement, parseNodes, XElement, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
+import { Metadata } from './Metadata'
 import { Program } from './Program'
 import { routes } from './routes'
 import { translate } from './translate'
@@ -14,11 +15,9 @@ export function createProgram(options: ProgramOptions): Program {
   const who = 'createProgram'
 
   const router = createRouter({ routes })
-
-  const metadata = { keywords: [], themeColor: 'white' }
-
-  const nodes = maybeAppendEndingNodes(translate(translations, options.nodes))
-  const elements = nodes.filter(isElement)
+  const nodes = translate(translations, options.nodes)
+  const metadata = createMetadata(nodes)
+  const elements = createElements(nodes)
 
   const remainingIndexes = rangeArray(0, elements.length)
   const index = remainingIndexes.shift()
@@ -30,13 +29,37 @@ export function createProgram(options: ProgramOptions): Program {
 
   return {
     metadata,
-    nodes,
     elements,
     router,
     pointer,
     remainingIndexes,
     passedIndexes: [],
   }
+}
+
+function createMetadata(nodes: Array<XNode>): Metadata {
+  const metadata: Metadata = { keywords: [], themeColor: 'white' }
+  for (const node of nodes) {
+    if (isElement(node) && node.tag === 'metadata') {
+      for (const [key, value] of Object.entries(node.attributes)) {
+        if (key === 'theme-color') {
+          metadata.themeColor = value
+        }
+
+        if (key === 'keywords') {
+          metadata.keywords = value.split(',')
+        }
+      }
+    }
+  }
+
+  return metadata
+}
+
+function createElements(nodes: Array<XNode>): Array<XElement> {
+  return maybeAppendEndingNodes(nodes)
+    .filter(isElement)
+    .filter((element) => element.tag !== 'metadata')
 }
 
 function maybeAppendEndingNodes(nodes: Array<XNode>): Array<XNode> {

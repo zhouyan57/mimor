@@ -9,5 +9,6 @@ export function stateReactivelyUpdateThemeColor(state: State): void {
         state.theme.name = value
       }
     },
+    { immediate: true },
   )
 }
