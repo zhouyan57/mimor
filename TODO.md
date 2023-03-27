@@ -1,4 +1,4 @@
-[mimor] `translateElement`
+[mimor] `translateDirectChildren`
 [mimor] `createProgram` use `translate`
 [mimor] remove translation related code in `Card` -- since we have program level translation now
 [mimor] `translateAttributes` handle `value`

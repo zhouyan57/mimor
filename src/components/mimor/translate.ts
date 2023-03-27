@@ -24,11 +24,15 @@ function translateElement(
     if (translation.tag.from === element.tag) {
       const tag = translation.tag.to
 
-      const attributes = translation.attributes
-        ? translateAttributes(translation.attributes, element.attributes)
-        : element.attributes
+      const attributes = translateAttributes(
+        translation.attributes || {},
+        element.attributes,
+      )
 
-      const children = element.children
+      const children = translate(
+        translations,
+        translateDirectChildren(translation.children || [], element.children),
+      )
 
       return {
         tag,
@@ -61,6 +65,9 @@ function translateAttributes(
   return results
 }
 
-function translateDirectChild() {
-  //
+function translateDirectChildren(
+  translations: Array<Translation>,
+  children: Array<XNode>,
+): Array<XNode> {
+  return children
 }
