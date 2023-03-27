@@ -1,7 +1,22 @@
-import { XElement } from '@xieyuheng/x-node'
+import { XElement, XNode } from '@xieyuheng/x-node'
 import { AttributeTranslation, Translation } from './Translation'
 
-export function translateElement(
+export function translate(
+  translations: Array<Translation>,
+  nodes: Array<XNode>,
+): Array<XNode> {
+  return nodes.map((node) => translateNode(translations, node))
+}
+
+function translateNode(translations: Array<Translation>, node: XNode): XNode {
+  if (typeof node === 'string') {
+    return node
+  } else {
+    return translateElement(translations, node)
+  }
+}
+
+function translateElement(
   translations: Array<Translation>,
   element: XElement,
 ): XElement {

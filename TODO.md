@@ -1,4 +1,3 @@
-[mimor] `translate` -- for `nodes`
 [mimor] `translateElement`
 [mimor] `createProgram` use `translate`
 [mimor] remove translation related code in `Card` -- since we have program level translation now
