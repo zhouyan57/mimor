@@ -7,7 +7,8 @@
 
 [docs] we need good examples
 
-Maybe how to solve it
+- [maybe] how to solve it
+- [maybe] https://andymatuschak.org/prompts/
 
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/debug.mimor
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/mo-jing.mimor
