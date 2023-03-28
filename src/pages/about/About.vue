@@ -6,7 +6,7 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 <template>
   <PageLayout>
     <template #title>
-      <Lang class="font-logo">
+      <Lang>
         <template #zh>关于</template>
         <template #en>About</template>
       </Lang>
