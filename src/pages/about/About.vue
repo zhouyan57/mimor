@@ -21,7 +21,7 @@ const lang = useGlobalLang()
       </Lang>
     </template>
 
-    <div class="flex h-full flex-col text-xl">
+    <div class="flex h-full flex-col space-y-2 text-xl">
       <Lang class="font-logo text-2xl">
         <template #zh> 把记忆变成选择 </template>
         <template #en> Making memory a choice </template>
@@ -29,7 +29,7 @@ const lang = useGlobalLang()
 
       <Lang>
         <template #zh>
-          <div class="flex max-w-xl flex-col space-y-4 py-2">
+          <div class="flex max-w-xl flex-col space-y-2">
             <h1 class="font-logo font-bold">主动回顾</h1>
             <p>
               在学习时，主动地将想要记住的点拆解为问答卡片，可以在之后作为测试来回顾。
@@ -45,7 +45,7 @@ const lang = useGlobalLang()
           </div>
         </template>
         <template #en>
-          <div class="flex max-w-xl flex-col space-y-4 py-2">
+          <div class="flex max-w-xl flex-col space-y-2">
             <h1 class="font-logo font-bold">Active recall</h1>
             <p>
               When learning, when want to remember something, actively making

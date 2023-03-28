@@ -23,7 +23,7 @@ const router = useRouter()
     </div>
 
     <div
-      class="flex h-full w-full flex-col space-y-2 overflow-x-auto overflow-y-auto p-3"
+      class="flex h-full w-full flex-col overflow-x-auto overflow-y-auto p-3"
     >
       <div class="pt-10 md:pt-12"></div>
       <slot />

@@ -28,8 +28,8 @@ async function submit(event: Event) {
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">迷墨入口</title>
-    <title v-else>Mimor Entrance</title>
+    <title v-if="lang.isZh()">迷墨链接</title>
+    <title v-else>Mimor Link</title>
   </Head>
 
   <PageLayout>
