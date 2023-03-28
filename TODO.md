@@ -1,6 +1,7 @@
 # docs
 
-[docs] author/ and author.json
+[docs] manual/en -- Cards
+[docs] manual/zh -- 卡片
 
 # home
 
