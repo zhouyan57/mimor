@@ -24,23 +24,18 @@ https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/zeromq.mimor
 [docs] manual/en/cards/front-cover.md
 [docs] manual/en/cards/back-cover.md
 
+# author
+
+[author] setup one `authors` route
+[author] no project just author and files -- not even directory
+
 # home
 
 [home] improve design
 [home] docs in homepage
 
-# author
-
-[author] setup one `authors` route
-
-[author] no project just author and files -- not even directory for now
-
 # recall
 
 > Spaced repetition
 
-[recall] user can add mimor into `timeline`
-
-# wiki
-
-[wiki] a readonly.link based wiki of mimors
+[recall] user can add mimor into `/recalls`
