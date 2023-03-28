@@ -7,6 +7,12 @@
   "src": "zh",
   "main": "intro.md",
   "sections": {
-    "default": ["intro.md"]
+    "default": ["intro.md"],
+    "卡片": [
+      "cards/question.md",
+      "cards/cloze.md",
+      "cards/front-cover.md",
+      "cards/back-cover.md"
+    ]
   }
 }

@@ -1,7 +1,14 @@
 # docs
 
-[docs] manual/en -- Cards
-[docs] manual/zh -- 卡片
+[docs] manual/zh/cards/question.md
+[docs] manual/zh/cards/cloze.md
+[docs] manual/zh/cards/front-cover.md
+[docs] manual/zh/cards/back-cover.md
+
+[docs] manual/en/cards/cloze.md
+[docs] manual/en/cards/question.md
+[docs] manual/en/cards/front-cover.md
+[docs] manual/en/cards/back-cover.md
 
 # home
 
