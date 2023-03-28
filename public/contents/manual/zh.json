@@ -8,6 +8,7 @@
   "main": "intro.md",
   "sections": {
     "default": ["intro.md"],
+    "用法": ["usages/mimorlink.md"],
     "卡片": [
       "cards/question.md",
       "cards/cloze.md",
