@@ -1,20 +1,10 @@
 # docs
 
-[docs] setup links to `/docs`
 [docs] `Docs` link to chinese and english manual -- use readonly.link
-
-# wiki
-
-[wiki] a readonly.link based wiki -- of docs that link to mimors
-
-- wiki is just readonly.link + `EDIT` link
 
 # home
 
 [home] improve design
-
-- maybe just show the wiki?
-
 [home] docs in homepage
 
 # author
@@ -28,3 +18,7 @@
 > Spaced repetition
 
 [recall] user can add mimor into `timeline`
+
+# wiki
+
+[wiki] a readonly.link based wiki of mimors

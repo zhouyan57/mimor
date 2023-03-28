@@ -13,7 +13,7 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
     </template>
 
     <div class="flex h-full flex-col text-xl">
-      <Lang class="py-2 font-logo text-2xl">
+      <Lang class="font-logo text-2xl">
         <template #zh> 把记忆变成选择 </template>
         <template #en> Making memory a choice </template>
       </Lang>

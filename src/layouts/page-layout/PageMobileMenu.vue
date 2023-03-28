@@ -107,6 +107,21 @@ function jump(path: string) {
             @click="
               () => {
                 close()
+                jump('/docs')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>文档</template>
+              <template #en>Docs</template>
+            </Lang>
+          </button>
+
+          <button
+            class="hover:underline"
+            @click="
+              () => {
+                close()
                 jump('/about')
               }
             "
