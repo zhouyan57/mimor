@@ -1,7 +1,6 @@
 # docs
 
-[docs] manual/zh
-[docs] manual/en
+[docs] author/ and author.json
 
 # home
 

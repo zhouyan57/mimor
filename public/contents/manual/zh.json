@@ -1,0 +1,12 @@
+{
+  "kind": "Manual",
+  "title": "迷墨手册",
+  "version": "0.0.1",
+  "authors": ["谢宇恒"],
+  "date": "2023",
+  "src": "zh",
+  "main": "intro.md",
+  "sections": {
+    "default": ["intro.md"]
+  }
+}

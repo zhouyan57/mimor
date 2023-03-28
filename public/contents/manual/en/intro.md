@@ -1,11 +1,19 @@
-Active recall
+---
+title: Intro
+---
 
-When learning, when want to remember something, actively making them cards, to test ourself in recall.
+- **Active recall**
 
-Spaced repetition
+  When learning, when want to remember something,
+  actively making them cards, to test ourself in recall.
 
-During recall, cards will be spaced in time, more and more sparse, to gain long-term memory.
+- **Spaced repetition**
 
-Recommending to ourself
+  During recall, cards will be spaced in time,
+  more and more sparse, to gain long-term memory.
 
-Modern web apps all have "recommender systems" to grab ones attention. We can also manage back our attention by recommending to ourself.
+- **Recommending to ourself**
+
+  When want to concentrate on something,
+  maybe we can setup a little reminder,
+  in the format of a sequence of questions and answers.

@@ -1,0 +1,12 @@
+{
+  "kind": "Manual",
+  "title": "Mimor Manual",
+  "version": "0.0.1",
+  "authors": ["Xie Yuheng"],
+  "date": "2023",
+  "src": "en",
+  "main": "intro.md",
+  "sections": {
+    "default": ["intro.md"]
+  }
+}
