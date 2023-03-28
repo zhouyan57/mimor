@@ -38,7 +38,7 @@ https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor
 
 <mimorlink href="https://mimor.app/contents/examples/sisuo.mimor" />
 
-有的读者就要问了。
+这个时候有的读者就要问了。
 
 上面这个 mimor 是如何嵌入在这个文档中的？
 
