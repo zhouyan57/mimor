@@ -11,15 +11,15 @@ const route = useRoute()
 </script>
 
 <template>
+  <Head>
+    <title v-if="lang.isZh()">404 | 谜墨</title>
+    <title v-else>404 | Mimor</title>
+  </Head>
+
   <PageLayout>
     <template #title>
       <div class="font-logo">404</div>
     </template>
-
-    <Head>
-      <title v-if="lang.isZh()">404 | 谜墨</title>
-      <title v-else>404 | Mimor</title>
-    </Head>
 
     <div class="flex flex-col space-y-2">
       <div class="text-xl font-bold">

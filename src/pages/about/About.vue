@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+
+const lang = useGlobalLang()
 </script>
 
 <template>
+  <Head>
+    <title v-if="lang.isZh()">关于 | 迷墨</title>
+    <title v-else>About | Mimor</title>
+  </Head>
+
   <PageLayout>
     <template #title>
       <Lang>

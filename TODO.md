@@ -2,6 +2,8 @@
 
 [docs] `Docs` link to chinese and english manual -- use readonly.link
 
+[about] fix about info
+
 # home
 
 [home] improve design

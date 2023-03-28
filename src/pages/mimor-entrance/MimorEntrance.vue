@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PlayIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline'
+import { Head } from '@vueuse/head'
 import { useRouter } from 'vue-router'
 import Hyperlink from '../../components/Hyperlink.vue'
 import { formSubmit, useForm } from '../../components/form'
@@ -26,15 +27,17 @@ async function submit(event: Event) {
 </script>
 
 <template>
+  <Head>
+    <title v-if="lang.isZh()">迷墨入口</title>
+    <title v-else>Mimor Entrance</title>
+  </Head>
+
   <PageLayout>
     <div class="flex h-full max-w-3xl flex-col justify-center">
       <form @submit.prevent="submit">
         <FormInput name="url" type="url" :form="form">
           <template #label>
-            <div
-              class="flex items-end justify-between"
-              title="Article | Readonly.Link Manual"
-            >
+            <div class="flex items-end justify-between" title="Docs">
               <Lang class="font-logo text-2xl font-semibold text-stone-800">
                 <template #zh> 迷墨链接 </template>
                 <template #en> Mimor Link </template>
