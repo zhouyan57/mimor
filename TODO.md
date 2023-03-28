@@ -1,6 +1,6 @@
 # docs
 
-[docs] `Docs` use `PageLayout`
+[docs] setup links to `/docs`
 [docs] `Docs` link to chinese and english manual -- use readonly.link
 
 # wiki
