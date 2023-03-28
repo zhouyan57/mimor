@@ -5,13 +5,12 @@
 > - https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
 > - https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
-[docs] manual/zh/usages/mimorlink.md
-
 [docs] manual/zh/cards/question.md
 [docs] manual/zh/cards/cloze.md
 [docs] manual/zh/cards/front-cover.md
 [docs] manual/zh/cards/back-cover.md
 
+[docs] manual/en/usages/mimorlink.md
 [docs] manual/en/cards/cloze.md
 [docs] manual/en/cards/question.md
 [docs] manual/en/cards/front-cover.md
