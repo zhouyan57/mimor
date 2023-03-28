@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import About from './about/About.vue'
+import Docs from './docs/Docs.vue'
 import PageNotFound from './errors/PageNotFound.vue'
 import Home from './home/Home.vue'
 import MimorEntrance from './mimor-entrance/MimorEntrance.vue'
@@ -14,5 +15,7 @@ export const routes: Array<RouteRecordRaw> = [
 
   { path: '/about', component: About },
 
-  { path: '/:pathParts(.*)', component: PageNotFound },
+  { path: '/docs', component: Docs },
+
+  { path: '/:path(.*)', component: PageNotFound },
 ]
