@@ -1,8 +1,9 @@
+[about] fix about info
+
 # docs
 
-[docs] `Docs` link to chinese and english manual -- use readonly.link
-
-[about] fix about info
+[docs] manual/zh
+[docs] manual/en
 
 # home
 

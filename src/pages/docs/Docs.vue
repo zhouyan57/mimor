@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -21,6 +22,48 @@ const lang = useGlobalLang()
       </Lang>
     </template>
 
-    <div class="flex h-full flex-col text-xl">TODO</div>
+    <div class="flex h-full flex-col text-xl">
+      <Lang>
+        <template #zh>
+          <a
+            href="https://readonly.link/manuals/https://mimor.app/contents/manual/en.json"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >迷墨手册（英文）<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >。
+        </template>
+        <template #en>
+          <a
+            href="https://readonly.link/manuals/https://mimor.app/contents/manual/en.json"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Mimor Manual<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >.
+        </template>
+      </Lang>
+
+      <Lang>
+        <template #zh>
+          <a
+            href="https://readonly.link/manuals/https://mimor.app/contents/manual/zh.json"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >迷墨手册<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >。
+        </template>
+        <template #en>
+          <a
+            href="https://readonly.link/manuals/https://mimor.app/contents/manual/zh.json"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Mimor Manual (Chinese)<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >.
+        </template>
+      </Lang>
+    </div>
   </PageLayout>
 </template>
