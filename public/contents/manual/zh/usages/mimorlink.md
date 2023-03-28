@@ -22,19 +22,13 @@ https://mimor.app/mimors/:link
 
 比如我们测试用的一个迷墨链接是：
 
-```
-https://mimor.app/contents/examples/sisuo.mimor
-```
+`https://mimor.app/contents/examples/sisuo.mimor`
 
 那么 [渲染的链接](https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor) 就是：
 
-```
-https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor
-```
+[`https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor`](https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor)
 
-效果应该是像下面这样。
-
-- 你可以点击 `</>` 按钮来看看 `.mimor` 文件的源代码。
+点开的效果应该是像下面这样。
 
 <mimorlink href="https://mimor.app/contents/examples/sisuo.mimor" />
 
@@ -44,3 +38,7 @@ https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor
 
 这个你就有所不知了，这个文档是用 [只读链接](https://readonly.link) 渲染的，
 你只要看 [只读链接手册](https://readonly.link/manuals/https://readonly.link/contents/manual/zh.json) 就能学会了。
+
+在上面的 mimor 中，你可以点击 `</>` 按钮来看看 `.mimor` 文件的源代码。
+
+下面我们就介绍如何在 `.mimor` 文件中编写卡片。
