@@ -1,5 +1,6 @@
 ---
-title: 迷墨连接
+title: 迷墨链接
 ---
 
+只读链接
 mimorlink.md
