@@ -153,8 +153,8 @@ const lang = useGlobalLang()
       </Lang>
 
       <Lang>
-        <template #zh> 耶！ </template>
-        <template #en> Yeah! </template>
+        <template #zh> 奋进！ </template>
+        <template #en> Endeavour! </template>
       </Lang>
     </div>
   </PageLayout>
