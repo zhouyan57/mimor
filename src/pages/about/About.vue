@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -21,49 +22,139 @@ const lang = useGlobalLang()
       </Lang>
     </template>
 
-    <div class="flex h-full flex-col space-y-2 text-xl">
-      <Lang class="font-logo text-2xl">
+    <div class="flex h-full flex-col space-y-3 font-serif text-xl">
+      <div class="flex items-baseline space-x-4">
+        <div class="font-logo text-2xl font-semibold text-stone-800">
+          <Lang>
+            <template #zh> 关于 </template>
+            <template #en> About </template>
+          </Lang>
+        </div>
+      </div>
+
+      <Lang>
+        <template #zh> 迷墨开始于一个辅助记忆工具。 </template>
+        <template #en> Mimor starts as a memory helping tool. </template>
+      </Lang>
+
+      <Lang>
+        <template #zh>
+          受到
+          <a
+            href="https://apps.ankiweb.net"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Anki<ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500"
+          /></a>
+          和
+          <a
+            href="https://withorbit.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Orbit<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500"
+          /></a>
+          的启发。
+        </template>
+        <template #en>
+          Inspired by
+          <a
+            href="https://apps.ankiweb.net"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Anki<ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500"
+          /></a>
+          and
+          <a
+            href="https://withorbit.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >Orbit<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >.
+        </template>
+      </Lang>
+
+      <Lang>
+        <template #zh>
+          项目在 2021 年由
+          <a
+            href="https://xieyuheng.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+          >
+            谢宇恒
+            <ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500" />
+          </a>
+          发起。
+        </template>
+        <template #en>
+          The project was founded by
+          <a
+            href="https://xieyuheng.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+          >
+            Xie Yuheng
+            <ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500" />
+          </a>
+          in 2021.
+        </template>
+      </Lang>
+
+      <div class="flex items-baseline space-x-4">
+        <div class="font-logo text-2xl font-semibold text-stone-800">
+          <Lang>
+            <template #zh> 开源 </template>
+            <template #en> Open source </template>
+          </Lang>
+        </div>
+      </div>
+
+      <Lang>
+        <template #zh>
+          <a
+            href="http://github.com/mimor-official/mimor"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >源代码<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500" /></a
+          >。
+        </template>
+        <template #en>
+          <a
+            href="http://github.com/mimor-official/mimor"
+            class="inline-flex items-center underline"
+            target="_blank"
+          >
+            Source code
+            <ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500" /></a
+          >.
+        </template>
+      </Lang>
+
+      <div class="flex items-baseline space-x-4">
+        <div class="font-logo text-2xl font-semibold text-stone-800">
+          <Lang>
+            <template #zh> 口号 </template>
+            <template #en> Slogan </template>
+          </Lang>
+        </div>
+      </div>
+
+      <Lang>
+        <template #zh> 我们的口号是： </template>
+        <template #en> Our slogan is: </template>
+      </Lang>
+
+      <Lang class="font-logo text-xl font-bold">
         <template #zh> 把记忆变成选择 </template>
         <template #en> Making memory a choice </template>
       </Lang>
 
       <Lang>
-        <template #zh>
-          <div class="flex max-w-xl flex-col space-y-2">
-            <h1 class="font-logo font-bold">主动回顾</h1>
-            <p>
-              在学习时，主动地将想要记住的点拆解为问答卡片，可以在之后作为测试来回顾。
-            </p>
-            <h1 class="font-logo font-bold">间隔重复</h1>
-            <p>
-              在回顾时，卡片将被分散于时间，并且间隔逐渐稀疏，以此来形成长期记忆。
-            </p>
-            <h1 class="font-logo font-bold">自我推荐</h1>
-            <p>
-              现代网络程序都有推荐系统，争相获取人们的注意力。我们也可以通过自己推荐给将来的自己，来管理自己的注意力。
-            </p>
-          </div>
-        </template>
-        <template #en>
-          <div class="flex max-w-xl flex-col space-y-2">
-            <h1 class="font-logo font-bold">Active recall</h1>
-            <p>
-              When learning, when want to remember something, actively making
-              them cards, to test ourself in recall.
-            </p>
-            <h1 class="font-logo font-bold">Spaced repetition</h1>
-            <p>
-              During recall, cards will be spaced in time, more and more sparse,
-              to gain long-term memory.
-            </p>
-            <h1 class="font-logo font-bold">Recommending to ourself</h1>
-            <p>
-              Modern web apps all have "recommender systems" to grab ones
-              attention. We can also manage back our attention by recommending
-              to ourself.
-            </p>
-          </div>
-        </template>
+        <template #zh> 耶！ </template>
+        <template #en> Yeah! </template>
       </Lang>
     </div>
   </PageLayout>

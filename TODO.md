@@ -1,5 +1,3 @@
-[about] fix about info
-
 # docs
 
 [docs] manual/zh
