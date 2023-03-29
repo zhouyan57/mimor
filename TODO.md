@@ -1,14 +1,12 @@
 # docs
 
-> Preview:
->
-> - https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
-> - https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
+https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
 
-[docs] manual/zh/cards/question.md
 [docs] manual/zh/cards/cloze.md
 [docs] manual/zh/cards/front-cover.md
 [docs] manual/zh/cards/back-cover.md
+
+https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
 [docs] manual/en/usages/mimorlink.md
 [docs] manual/en/cards/cloze.md
@@ -33,6 +31,14 @@ https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/debug.mimor
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/mo-jing.mimor
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/zeromq.mimor
 ```
+
+# register
+
+[login] setup route
+
+# login
+
+[register] setup route
 
 # author
 
