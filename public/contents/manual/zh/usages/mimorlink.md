@@ -30,11 +30,13 @@ https://mimor.app/mimors/:link
 
 点开的效果应该是像下面这样。
 
-<mimorlink href="https://mimor.app/contents/examples/sisuo.mimor" />
+<mimor src="https://mimor.app/contents/examples/sisuo.mimor" />
 
 这个时候有的读者就要问了。
 
-上面这个 mimor 是如何嵌入在这个文档中的？
+点开连接会打开另外一个网站去展示 mimor，我能理解。
+
+可是 mimor 是如何像上面这样何嵌入在这个文档中的呢？
 
 这个你就有所不知了，这个文档是用 [只读链接](https://readonly.link) 渲染的，
 你只要看 [只读链接手册](https://readonly.link/manuals/https://readonly.link/contents/manual/zh.json) 就能学会了。
