@@ -4,7 +4,9 @@ import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 
+const origin = useCurrentOrigin()
 const lang = useGlobalLang()
 </script>
 
@@ -35,7 +37,7 @@ const lang = useGlobalLang()
       <Lang>
         <template #zh>
           <a
-            href="https://readonly.link/manuals/https://mimor.app/contents/manual/en.json"
+            :href="`https://readonly.link/manuals/${origin}/contents/manual/en.json`"
             class="inline-flex items-center underline"
             target="_blank"
             >迷墨手册（英文）<ArrowTopRightOnSquareIcon
@@ -44,7 +46,7 @@ const lang = useGlobalLang()
         </template>
         <template #en>
           <a
-            href="https://readonly.link/manuals/https://mimor.app/contents/manual/en.json"
+            :href="`https://readonly.link/manuals/${origin}/contents/manual/en.json`"
             class="inline-flex items-center underline"
             target="_blank"
             >Mimor Manual<ArrowTopRightOnSquareIcon
@@ -56,7 +58,7 @@ const lang = useGlobalLang()
       <Lang>
         <template #zh>
           <a
-            href="https://readonly.link/manuals/https://mimor.app/contents/manual/zh.json"
+            :href="`https://readonly.link/manuals/${origin}/contents/manual/zh.json`"
             class="inline-flex items-center underline"
             target="_blank"
             >迷墨手册<ArrowTopRightOnSquareIcon
@@ -65,7 +67,7 @@ const lang = useGlobalLang()
         </template>
         <template #en>
           <a
-            href="https://readonly.link/manuals/https://mimor.app/contents/manual/zh.json"
+            :href="`https://readonly.link/manuals/${origin}/contents/manual/zh.json`"
             class="inline-flex items-center underline"
             target="_blank"
             >Mimor Manual (Chinese)<ArrowTopRightOnSquareIcon
