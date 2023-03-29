@@ -1,3 +1,7 @@
+fix `front-cover` and `back-cover` theme-color
+
+[mimor] fix flashing scrollbar during transition
+
 # docs
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
@@ -39,6 +43,10 @@ https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/zeromq.mimor
 # login
 
 [register] setup route
+
+# deploy
+
+quit using netlify which can be very slow in china
 
 # author
 
