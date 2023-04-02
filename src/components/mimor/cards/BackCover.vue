@@ -15,17 +15,17 @@ defineProps<{
 </script>
 
 <template>
-  <Head>
-    <meta
-      name="theme-color"
-      :content="state.fullscreen ? state.theme.colors[400] : ''"
-    />
-  </Head>
-
   <div
     class="flex h-full w-full flex-col justify-between"
     :class="[state.theme.bg(400)]"
   >
+    <Head>
+      <meta
+        name="theme-color"
+        :content="state.fullscreen ? state.theme.colors[400] : ''"
+      />
+    </Head>
+
     <MimorHeadProgram :state="state" :program="program" />
 
     <div

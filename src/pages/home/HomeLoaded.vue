@@ -11,7 +11,7 @@ const state = reactive(props.state)
 <template>
   <div class="flex flex-col space-y-4">
     <Mimor
-      class="h-[34rem] max-w-[47rem] rounded border border-stone-500"
+      class="h-[34rem] max-w-[47rem]"
       v-for="(url, index) of state.list"
       :key="index"
       :options="{ url }"

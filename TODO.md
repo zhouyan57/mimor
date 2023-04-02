@@ -1,5 +1,3 @@
-[mimor] white theme should have border -- not need to set border by the user code
-
 [mimor] `State` should not has `fullscreen` -- should be `withMetaThemeColor`
 
 [mimor] [maybe] fix flashing scrollbar during transition

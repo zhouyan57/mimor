@@ -13,7 +13,7 @@ const state = stateReactive(props.state)
 </script>
 
 <template>
-  <div>
+  <div :class="{ 'border border-black': state.theme.isWhite() }">
     <Head>
       <meta
         name="theme-color"
