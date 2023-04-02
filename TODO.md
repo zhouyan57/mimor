@@ -1,6 +1,8 @@
 fix `front-cover` and `back-cover` theme-color
 
-[mimor] fix flashing scrollbar during transition
+[mimor] white theme should have border -- not need to set border by the user code
+
+[mimor] [maybe] fix flashing scrollbar during transition
 
 # docs
 
