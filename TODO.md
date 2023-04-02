@@ -14,7 +14,20 @@ https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 [docs] manual/en/cards/front-cover.md
 [docs] manual/en/cards/back-cover.md
 
-[docs] we need good examples
+# register
+
+[login] setup route
+
+# login
+
+[register] setup route
+
+# author
+
+[author] setup one `authors` route
+[author] no project just author and files -- not even directory
+
+# examples
 
 ```
 public/contents/todo/how-to-solve-it.md
@@ -31,23 +44,6 @@ https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/debug.mimor
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/mo-jing.mimor
 https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/zeromq.mimor
 ```
-
-# register
-
-[login] setup route
-
-# login
-
-[register] setup route
-
-# deploy
-
-quit using netlify which can be very slow in china
-
-# author
-
-[author] setup one `authors` route
-[author] no project just author and files -- not even directory
 
 # home
 
