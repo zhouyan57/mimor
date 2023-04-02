@@ -15,10 +15,6 @@ export class Theme {
     return (tailwindColors as any)[name]
   }
 
-  get color(): string {
-    return this.colors[300] || '#ffffff'
-  }
-
   isWhite(): boolean {
     return this.name === 'white'
   }
