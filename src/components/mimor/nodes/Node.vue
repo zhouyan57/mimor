@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isElement, XNode } from '@xieyuheng/x-node'
+import { isElement, XNode } from '@readonlylink/x-node'
 import { Program } from '../Program'
 import { routerFind } from '../routerFind'
 import { State } from '../State'

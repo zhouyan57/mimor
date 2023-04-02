@@ -1,4 +1,4 @@
-import { isElement, parseNodes, XElement, XNode } from '@xieyuheng/x-node'
+import { isElement, parse, XElement, XNode } from '@readonlylink/x-node'
 import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
 import { Metadata } from './Metadata'
@@ -69,5 +69,5 @@ function maybeAppendEndingNodes(nodes: Array<XNode>): Array<XNode> {
 }
 
 function defaultEndingNodes(): Array<XNode> {
-  return parseNodes(`<back-cover>The End</back-cover>`)
+  return parse(`<back-cover>The End</back-cover>`)
 }

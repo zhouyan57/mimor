@@ -1,4 +1,4 @@
-import { parseNodes } from '@xieyuheng/x-node'
+import { parse } from '@readonlylink/x-node'
 import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'
@@ -18,7 +18,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   const state = { url, text, theme, metadata, fullscreen }
 
   try {
-    const nodes = parseNodes(text)
+    const nodes = parse(text)
     const program = createProgram({ nodes })
 
     return { kind: 'Program', ...state, program }

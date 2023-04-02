@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XElement, isElement } from '@xieyuheng/x-node'
+import { XElement, isElement } from '@readonlylink/x-node'
 import { Program } from '../Program'
 import { State } from '../State'
 

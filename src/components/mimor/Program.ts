@@ -1,4 +1,4 @@
-import { XElement } from '@xieyuheng/x-node'
+import { XElement } from '@readonlylink/x-node'
 import { Metadata } from './Metadata'
 import { Router } from './Router'
 
