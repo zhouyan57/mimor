@@ -1,6 +1,12 @@
-fix `front-cover` and `back-cover` theme-color
+improve spacing for mobile
+
+- mobile phone vs devtool's mobile mode
+
+- somehow viewing on mobile phone and viewing on browser devtool's mobile mode feels very different.
 
 [mimor] white theme should have border -- not need to set border by the user code
+
+[mimor] `State` should not has `fullscreen` -- should be `withMetaThemeColor`
 
 [mimor] [maybe] fix flashing scrollbar during transition
 

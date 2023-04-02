@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { XElement } from '@readonlylink/x-node'
+import { Head } from '@vueuse/head'
 import MimorFootReplay from '../MimorFootReplay.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
@@ -14,6 +15,13 @@ defineProps<{
 </script>
 
 <template>
+  <Head>
+    <meta
+      name="theme-color"
+      :content="state.fullscreen ? state.theme.colors[400] : ''"
+    />
+  </Head>
+
   <div
     class="flex h-full w-full flex-col justify-between"
     :class="[state.theme.bg(400)]"

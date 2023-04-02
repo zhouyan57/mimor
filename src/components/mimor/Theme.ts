@@ -1,16 +1,22 @@
 import tailwindColors from 'tailwindcss/colors'
 
+// See `tailwind.config.js` for used colors.
+
 export class Theme {
   constructor(public name: string) {}
 
-  get color(): string {
+  get colors(): Record<number, string> {
     let name = this.name
 
     if (name === 'blue') {
       name = 'sky'
     }
 
-    return (tailwindColors as any)[name][300] || '#ffffff'
+    return (tailwindColors as any)[name]
+  }
+
+  get color(): string {
+    return this.colors[300] || '#ffffff'
   }
 
   isWhite(): boolean {
@@ -33,15 +39,3 @@ export class Theme {
     return `text-${this.name}-${level}`
   }
 }
-
-export const colors = [
-  'white',
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'indigo',
-  'purple',
-  'stone',
-]
