@@ -13,7 +13,7 @@ const state = stateReactive(props.state)
     class="h-screen w-screen"
     :options="{
       url: state.url,
-      fullscreen: true,
+      withMetaThemeColor: true,
     }"
   />
 </template>

@@ -22,7 +22,7 @@ defineProps<{
     <Head>
       <meta
         name="theme-color"
-        :content="state.fullscreen ? state.theme.colors[400] : ''"
+        :content="state.withMetaThemeColor ? state.theme.colors[400] : ''"
       />
     </Head>
 

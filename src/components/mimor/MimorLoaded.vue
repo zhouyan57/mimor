@@ -17,7 +17,9 @@ const state = stateReactive(props.state)
     <Head>
       <meta
         name="theme-color"
-        :content="state.fullscreen ? state.theme.colors[300] : '#ffffff'"
+        :content="
+          state.withMetaThemeColor ? state.theme.colors[300] : '#ffffff'
+        "
       />
     </Head>
 

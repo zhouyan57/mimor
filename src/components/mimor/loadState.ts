@@ -6,16 +6,16 @@ import { createProgram } from './createProgram'
 export interface StateOptions {
   url: string
   text?: string
-  fullscreen?: boolean
+  withMetaThemeColor?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { url, fullscreen } = options
+  const { url, withMetaThemeColor } = options
 
   const text = options.text || (await loadText(url))
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
-  const state = { url, text, theme, metadata, fullscreen }
+  const state = { url, text, theme, metadata, withMetaThemeColor }
 
   try {
     const nodes = parse(text)

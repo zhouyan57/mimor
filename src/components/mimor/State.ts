@@ -6,7 +6,7 @@ export type State = {
   url: string
   text: string
   theme: Theme
-  fullscreen?: boolean
+  withMetaThemeColor?: boolean
   program?: Program
   error?: Error
 }

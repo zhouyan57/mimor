@@ -1,7 +1,3 @@
-[mimor] `State` should not has `fullscreen` -- should be `withMetaThemeColor`
-
-[mimor] [maybe] fix flashing scrollbar during transition
-
 # docs
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
