@@ -1,4 +1,3 @@
-quit using vue-tsc
 fix `front-cover` and `back-cover` theme-color
 
 [mimor] white theme should have border -- not need to set border by the user code
