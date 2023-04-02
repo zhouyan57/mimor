@@ -1,4 +1,4 @@
-improve spacing for mobile
+[page-layout] improve spacing for mobile
 
 - mobile phone vs devtool's mobile mode
 

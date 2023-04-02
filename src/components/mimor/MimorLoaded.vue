@@ -13,14 +13,14 @@ const state = stateReactive(props.state)
 </script>
 
 <template>
-  <Head>
-    <meta
-      name="theme-color"
-      :content="state.fullscreen ? state.theme.color : ''"
-    />
-  </Head>
-
   <div>
+    <Head>
+      <meta
+        name="theme-color"
+        :content="state.fullscreen ? state.theme.color : ''"
+      />
+    </Head>
+
     <template v-if="state.program">
       <MimorKindViewSource
         v-if="state.kind === 'ViewSource'"
