@@ -1,11 +1,8 @@
-[mimor] support keywords
-
 # docs
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
 
 [docs] manual/zh/metadata/theme-color.md
-[docs] manual/zh/metadata/keywords.md
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
@@ -17,6 +14,15 @@ https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 [docs] manual/en/cards/back-cover.md
 
 [docs] manual/en/metadata/theme-color.md
+
+# mimor
+
+[mimor] support keywords
+
+# docs
+
+[docs] manual/zh/metadata/keywords.md
+
 [docs] manual/en/metadata/keywords.md
 
 # register
