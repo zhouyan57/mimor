@@ -31,13 +31,14 @@ module.exports = {
         // "EB Garamond",
         'Linux Libertine O',
         // "Source Han Serif SC",
-        'LXGW WenKai',
+        'LXGW WenKai Lite',
         'serif',
       ],
       mono: [
         'Fira Code',
         // NOTE One Chinese character should equal to two English characters.
-        'LXGW WenKai Larger',
+        // 'LXGW WenKai Larger',
+        'LXGW WenKai Mono Lite',
         'monospace',
       ],
       logo: [
