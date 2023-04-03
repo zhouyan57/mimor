@@ -9,8 +9,8 @@ const lang = useGlobalLang()
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">注册 | 迷墨</title>
-    <title v-else>Register | Mimor</title>
+    <title v-if="lang.isZh()">登录 | 迷墨</title>
+    <title v-else>Login | Mimor</title>
   </Head>
 
   <PageLayout>
@@ -18,8 +18,8 @@ const lang = useGlobalLang()
       <div class="flex items-baseline space-x-4">
         <div class="font-logo text-2xl font-bold text-stone-800">
           <Lang>
-            <template #zh> 注册 </template>
-            <template #en> Register </template>
+            <template #zh> 登录 </template>
+            <template #en> Login </template>
           </Lang>
         </div>
       </div>

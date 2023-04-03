@@ -4,7 +4,6 @@
 
 # login
 
-[login] setup route
 [login] use fidb api
 
 # author
