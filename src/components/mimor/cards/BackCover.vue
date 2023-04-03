@@ -29,7 +29,7 @@ defineProps<{
     <MimorHeadProgram :state="state" :program="program" />
 
     <div
-      class="scrollbar-hide mx-3 flex flex-row-reverse overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"
+      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"
       :class="[state.theme.text(100)]"
     >
       {{ state.url }}
