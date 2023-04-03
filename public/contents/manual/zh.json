@@ -14,6 +14,7 @@
       "cards/cloze.md",
       "cards/front-cover.md",
       "cards/back-cover.md"
-    ]
+    ],
+    "元数据": ["metadata/theme-color.md", "metadata/keywords.md"]
   }
 }

@@ -8,11 +8,13 @@
   "main": "intro.md",
   "sections": {
     "default": ["intro.md"],
+    "Usages": ["usages/mimorlink.md"],
     "Cards": [
       "cards/question.md",
       "cards/cloze.md",
       "cards/front-cover.md",
       "cards/back-cover.md"
-    ]
+    ],
+    "Metadata": ["metadata/theme-color.md", "metadata/keywords.md"]
   }
 }

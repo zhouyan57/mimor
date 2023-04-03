@@ -1,3 +1,5 @@
+[mimor] support keywords
+
 # docs
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
