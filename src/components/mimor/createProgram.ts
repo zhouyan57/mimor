@@ -38,7 +38,12 @@ export function createProgram(options: ProgramOptions): Program {
 }
 
 function createMetadata(nodes: Array<XNode>): Metadata {
-  const metadata: Metadata = { keywords: [], themeColor: 'white' }
+  const metadata: Metadata = {
+    rawKeywords: '',
+    keywords: [],
+    themeColor: 'white',
+  }
+
   for (const node of nodes) {
     if (isElement(node) && node.tag === 'metadata') {
       for (const [key, value] of Object.entries(node.attributes)) {
@@ -47,7 +52,10 @@ function createMetadata(nodes: Array<XNode>): Metadata {
         }
 
         if (key === 'keywords') {
-          metadata.keywords = value.split(',')
+          metadata.rawKeywords = value.trim()
+          metadata.keywords = value
+            .split(',')
+            .flatMap((part) => part.split('，').map((part) => part.trim()))
         }
       }
     }

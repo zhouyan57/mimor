@@ -30,10 +30,19 @@ defineProps<{
     <MimorHeadProgram :state="state" :program="program" />
 
     <div
-      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre pb-2 font-mono text-sm"
+      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre py-1.5 font-mono text-sm"
       :class="[state.theme.text(100)]"
     >
       {{ state.url }}
+    </div>
+
+    <div
+      class="mx-3 flex space-x-3 py-1.5 font-sans text-lg font-bold"
+      :class="[state.theme.text(100)]"
+    >
+      <div v-for="(keyword, index) of program.metadata.keywords" :key="index">
+        {{ keyword }}
+      </div>
     </div>
 
     <div

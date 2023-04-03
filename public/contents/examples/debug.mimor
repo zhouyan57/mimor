@@ -1,4 +1,7 @@
-<metadata theme-color="orange" />
+<metadata
+  theme-color="orange"
+  keywords="test, debug"
+/>
 
 <question>
   What is a bug?

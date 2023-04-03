@@ -1,6 +1,4 @@
-# mimor
-
-[mimor] support keywords
+[mimor] `BackCover` show `keywords` -- extract `CoverInfo`
 
 # docs
 
