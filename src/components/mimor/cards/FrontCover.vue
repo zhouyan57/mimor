@@ -7,6 +7,7 @@ import { Program } from '../Program'
 import { State } from '../State'
 import Node from '../nodes/Node.vue'
 import { programNext } from '../programNext'
+import CoverInfo from './CoverInfo.vue'
 
 defineProps<{
   state: State
@@ -29,21 +30,7 @@ defineProps<{
 
     <MimorHeadProgram :state="state" :program="program" />
 
-    <div
-      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre py-1.5 font-mono text-sm"
-      :class="[state.theme.text(100)]"
-    >
-      {{ state.url }}
-    </div>
-
-    <div
-      class="mx-3 flex space-x-3 py-1.5 font-sans text-lg font-bold"
-      :class="[state.theme.text(100)]"
-    >
-      <div v-for="(keyword, index) of program.metadata.keywords" :key="index">
-        {{ keyword }}
-      </div>
-    </div>
+    <CoverInfo :state="state" :program="program" />
 
     <div
       class="h-full cursor-pointer overflow-y-auto p-3 font-sans font-bold"

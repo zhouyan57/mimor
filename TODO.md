@@ -1,5 +1,3 @@
-[mimor] `BackCover` show `keywords` -- extract `CoverInfo`
-
 # docs
 
 [docs] manual/zh/metadata/keywords.md
