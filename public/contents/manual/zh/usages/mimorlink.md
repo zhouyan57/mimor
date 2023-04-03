@@ -2,8 +2,6 @@
 title: 迷墨链接
 ---
 
-像 [只读链接](https://readonly.link/manuals/https://readonly.link/contents/manual/zh.json/-/kinds-of-contents/article.md) 可以将任意一个到 Markdown 文件的链接，渲染成一篇文章一样。
-
 **迷墨链接** 可以将任意一个写好了卡片内容的 `.mimor` 文件链接，渲染成一段卡片问答。
 
 ## 使用方式
