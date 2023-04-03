@@ -22,26 +22,10 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Linux Biolinum O', 'sans-serif'],
-      serif: [
-        // "EB Garamond",
-        'Linux Libertine O',
-        // "Source Han Serif SC",
-        'LXGW WenKai',
-        'serif',
-      ],
-      mono: [
-        'Fira Code',
-        // NOTE One Chinese character should equal to two English characters.
-        'LXGW WenKai Larger',
-        'monospace',
-      ],
-      logo: [
-        'Bodoni Moda',
-        // "EB Garamond",
-        // "Linux Libertine O",
-        'Source Han Serif SC',
-        'serif',
-      ],
+      serif: ['Linux Libertine O', 'LXGW WenKai', 'serif'],
+      // NOTE One Chinese character should equal to two English characters.
+      mono: ['Fira Code', 'LXGW WenKai Larger', 'monospace'],
+      logo: ['Bodoni Moda', 'Source Han Serif SC', 'serif'],
     },
   },
 }
