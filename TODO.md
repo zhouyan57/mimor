@@ -2,16 +2,20 @@
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
 
-[docs] manual/zh/cards/front-cover.md
-[docs] manual/zh/cards/back-cover.md
+[docs] manual/zh/metadata/theme-color.md
+[docs] manual/zh/metadata/keywords.md
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
 [docs] manual/en/usages/mimorlink.md
+
 [docs] manual/en/cards/cloze.md
 [docs] manual/en/cards/question.md
 [docs] manual/en/cards/front-cover.md
 [docs] manual/en/cards/back-cover.md
+
+[docs] manual/en/metadata/theme-color.md
+[docs] manual/en/metadata/keywords.md
 
 # register
 
