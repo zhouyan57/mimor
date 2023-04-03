@@ -28,6 +28,7 @@ const remembering = reactive({ revealed: false })
         :key="index"
         class="text-2xl"
       >
+        <!-- the x spacing is needed for english text -->
         <span v-if="child.tag === 'blank'" class="px-1">
           <Nodes
             v-if="remembering.revealed"
