@@ -1,9 +1,5 @@
 # docs
 
-https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
-
-[docs] manual/zh/metadata/theme-color.md
-
 https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
 [docs] manual/en/usages/mimorlink.md
