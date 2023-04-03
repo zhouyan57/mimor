@@ -1,15 +1,6 @@
 <metadata theme-color="orange" />
 
 <question>
-  When we found a bug in our program,
-  what is the most import thing to remember?
-
-  <answer>
-    Don't panic.
-  </answer>
-</question>
-
-<question>
   What is a bug?
 
   <answer>
@@ -18,6 +9,12 @@
     and the observed behavior of the program.
   </answer>
 </question>
+
+<cloze>
+  When found a bug in our program,
+  the most import thing to remember is:
+  Don't <black>panic</black>.
+</cloze>
 
 <question>
   How to debug?
