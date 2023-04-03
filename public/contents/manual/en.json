@@ -15,6 +15,6 @@
       "cards/front-cover.md",
       "cards/back-cover.md"
     ],
-    "Metadata": ["metadata/theme-color.md"]
+    "Metadata": ["metadata/theme-color.md", "metadata/keywords.md"]
   }
 }
