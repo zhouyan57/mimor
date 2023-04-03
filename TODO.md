@@ -1,7 +1,3 @@
-# docs
-
-[docs] manual/zh/metadata/keywords.md
-
 [docs] manual/en/metadata/keywords.md
 
 # register
