@@ -28,7 +28,7 @@ const remembering = reactive({ revealed: false })
         :key="index"
         class="text-2xl"
       >
-        <span v-if="child.tag === 'blank'" class="px-0.5">
+        <template v-if="child.tag === 'blank'">
           <Nodes
             v-if="remembering.revealed"
             :state="state"
@@ -40,7 +40,7 @@ const remembering = reactive({ revealed: false })
                 ? 'text-purple-500'
                 : state.theme.isWhite()
                 ? 'text-yellow-500'
-                : 'text-yellow-300',
+                : 'text-yellow-200',
             ]"
           />
           <span
@@ -51,11 +51,11 @@ const remembering = reactive({ revealed: false })
                 ? 'text-purple-500'
                 : state.theme.isWhite()
                 ? 'text-yellow-500'
-                : 'text-yellow-300',
+                : 'text-yellow-200',
             ]"
             >____</span
           >
-        </span>
+        </template>
 
         <Node v-else :state="state" :program="program" :node="child" />
       </span>

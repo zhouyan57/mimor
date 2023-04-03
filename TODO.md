@@ -2,7 +2,6 @@
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/zh.json
 
-[docs] manual/zh/cards/cloze.md
 [docs] manual/zh/cards/front-cover.md
 [docs] manual/zh/cards/back-cover.md
 

@@ -11,6 +11,9 @@ const props = defineProps<{
 
 const isInline = computed(() => !props.text.includes('\n'))
 
+// NOTE The following tirm will make
+// newline between text and element not visible.
+
 const lines = computed(() => props.text.trim().split('\n'))
 
 function isNewline(line: string): boolean {
@@ -22,7 +25,7 @@ function isNewline(line: string): boolean {
   <span v-if="isInline">{{ text }}</span>
   <span v-else>
     <span v-for="(line, index) of lines" :key="index">
-      <span v-if="isNewline(line)" class="block py-1.5"> </span>
+      <div v-if="isNewline(line)" class="py-1.5"></div>
       <span v-else>{{ line }}</span>
     </span>
   </span>
