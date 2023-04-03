@@ -83,7 +83,7 @@ function jump(path: string) {
         </div>
 
         <div class="absolute right-3 top-0">
-          <PageLogo class="font-semibold" />
+          <PageLogo class="font-bold" />
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">

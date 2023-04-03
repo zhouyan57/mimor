@@ -24,7 +24,7 @@ const lang = useGlobalLang()
 
     <div class="flex h-full flex-col space-y-3 font-serif text-xl">
       <div class="flex items-baseline space-x-4">
-        <div class="font-logo text-2xl font-semibold text-stone-800">
+        <div class="font-logo text-2xl font-bold text-stone-800">
           <Lang>
             <template #zh> 关于 </template>
             <template #en> About </template>
@@ -103,7 +103,7 @@ const lang = useGlobalLang()
       </Lang>
 
       <div class="flex items-baseline space-x-4">
-        <div class="font-logo text-2xl font-semibold text-stone-800">
+        <div class="font-logo text-2xl font-bold text-stone-800">
           <Lang>
             <template #zh> 开源 </template>
             <template #en> Open source </template>
@@ -134,7 +134,7 @@ const lang = useGlobalLang()
       </Lang>
 
       <div class="flex items-baseline space-x-4">
-        <div class="font-logo text-2xl font-semibold text-stone-800">
+        <div class="font-logo text-2xl font-bold text-stone-800">
           <Lang>
             <template #zh> 口号 </template>
             <template #en> Slogan </template>

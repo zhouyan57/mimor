@@ -38,7 +38,7 @@ async function submit(event: Event) {
         <FormInput name="url" type="url" :form="form">
           <template #label>
             <div class="flex items-end justify-between" title="Docs">
-              <Lang class="font-logo text-2xl font-semibold text-stone-800">
+              <Lang class="font-logo text-2xl font-bold text-stone-800">
                 <template #zh> 迷墨链接 </template>
                 <template #en> Mimor Link </template>
               </Lang>
