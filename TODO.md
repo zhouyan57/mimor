@@ -2,8 +2,6 @@
 
 https://readonly.link/manuals/http://localhost:5173/contents/manual/en.json
 
-[docs] manual/en/usages/embed-in-html.md
-
 [docs] manual/en/cards/front-cover.md
 [docs] manual/en/cards/back-cover.md
 [docs] manual/en/metadata/theme-color.md
