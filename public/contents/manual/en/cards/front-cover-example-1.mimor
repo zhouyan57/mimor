@@ -1,16 +1,3 @@
----
-title: <back-cover>
----
-
-At the end of a deck of cards,
-we can add a back cover card by `<back-cover>`,
-for some ending words.
-
-- If no `<back-cover>` is found, mimor will automatically add a default one.
-
-For example:
-
-```xml
 <metadata theme-color="red" />
 
 <front-cover>
@@ -46,12 +33,3 @@ For example:
     Don't panic. Be a scientist. Use logic.
   </answer>
 </question>
-
-<back-cover>
-  Happy hacking :)
-</back-cover>
-```
-
-Result:
-
-<mimor src="back-cover-example-1.mimor" />

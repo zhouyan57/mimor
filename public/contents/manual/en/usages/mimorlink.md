@@ -2,7 +2,7 @@
 title: mimorlink
 ---
 
-**mimorlink** can render a link to a `.mimor` file as a session of cards.
+**mimorlink** can render a link to a `.mimor` file as a deck of cards.
 
 ## Usage
 
