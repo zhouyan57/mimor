@@ -67,9 +67,9 @@ function jump(path: string) {
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <PopoverPanel
-        class="fixed top-0 left-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
+        class="fixed left-0 top-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
       >
-        <div class="absolute top-2 left-2">
+        <div class="absolute left-2 top-2">
           <button
             @click="
               () => {
@@ -82,8 +82,8 @@ function jump(path: string) {
           </button>
         </div>
 
-        <div class="absolute top-0 right-3">
-          <PageLogo class="font-light" />
+        <div class="absolute right-3 top-0">
+          <PageLogo class="font-semibold" />
         </div>
 
         <div class="flex flex-col items-start space-y-2 py-2">
