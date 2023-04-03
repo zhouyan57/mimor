@@ -8,7 +8,11 @@
   "main": "intro.md",
   "sections": {
     "default": ["intro.md"],
-    "Usages": ["usages/mimorlink.md"],
+    "Usages": [
+      "usages/mimorlink.md",
+      "usages/embed-in-markdown.md",
+      "usages/embed-in-html.md"
+    ],
     "Cards": [
       "cards/question.md",
       "cards/cloze.md",

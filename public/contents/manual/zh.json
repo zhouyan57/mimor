@@ -8,7 +8,11 @@
   "main": "intro.md",
   "sections": {
     "default": ["intro.md"],
-    "用法": ["usages/mimorlink.md"],
+    "用法": [
+      "usages/mimorlink.md",
+      "usages/embed-in-markdown.md",
+      "usages/embed-in-html.md"
+    ],
     "卡片": [
       "cards/question.md",
       "cards/cloze.md",
