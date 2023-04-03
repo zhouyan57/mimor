@@ -1,5 +1,3 @@
-[docs] manual/en/metadata/keywords.md
-
 # register
 
 [login] setup route
