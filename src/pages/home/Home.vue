@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import HomeLoaded from './HomeLoaded.vue'
 import HomeLoading from './HomeLoading.vue'
@@ -20,13 +19,6 @@ onMounted(async () => {
 
 <template>
   <PageLayout>
-    <template #title>
-      <Lang>
-        <template #zh>首页</template>
-        <template #en>Home</template>
-      </Lang>
-    </template>
-
     <HomeLoaded v-if="state" :state="state" />
     <HomeLoading v-else :options="createStateOptions()" />
   </PageLayout>

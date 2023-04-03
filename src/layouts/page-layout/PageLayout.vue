@@ -9,23 +9,18 @@ const router = useRouter()
 
 <template>
   <PageHead
-    class="fixed left-0 top-0 border-b border-stone-400 bg-white px-4 py-1 opacity-90 md:py-2"
+    class="fixed left-0 top-0 border-b border-black bg-white px-4 py-1 md:py-2"
   >
-    <template #title>
-      <slot name="title" />
-    </template>
   </PageHead>
 
-  <div class="flex h-screen">
+  <div class="flex h-screen pt-10 md:pt-12">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
-      <div class="pt-10 md:pt-12"></div>
       <PageDesktopSidebar />
     </div>
 
     <div
       class="flex h-full w-full flex-col overflow-x-auto overflow-y-auto p-4"
     >
-      <div class="pt-10 md:pt-12"></div>
       <slot />
     </div>
   </div>
