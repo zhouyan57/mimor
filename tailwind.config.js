@@ -21,12 +21,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: [
-        'Linux Biolinum O',
-        'LXGW New Clear Gothic',
-        'LXGW Clear Gothic',
-        'sans-serif',
-      ],
+      sans: ['Linux Biolinum O', 'sans-serif'],
       serif: [
         // "EB Garamond",
         'Linux Libertine O',
