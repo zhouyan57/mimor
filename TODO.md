@@ -1,10 +1,11 @@
 # register
 
-[login] setup route
+[register] use fidb api
 
 # login
 
-[register] setup route
+[login] setup route
+[login] use fidb api
 
 # author
 
