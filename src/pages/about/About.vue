@@ -27,7 +27,7 @@ const lang = useGlobalLang()
 
       <Lang>
         <template #zh> 迷墨开始于一个辅助记忆工具。 </template>
-        <template #en> Mimor starts as a memory helping tool. </template>
+        <template #en> Mimor started as a memory helping tool. </template>
       </Lang>
 
       <Lang>
