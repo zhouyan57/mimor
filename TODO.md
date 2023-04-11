@@ -1,3 +1,5 @@
+[mimor] extract fullscreen feature from view
+
 # register
 
 [register] use fidb api
