@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import {
   ArrowTopRightOnSquareIcon,
+  ArrowsPointingInIcon,
+  ArrowsPointingOutIcon,
   BackspaceIcon,
   CodeBracketIcon,
   PlayIcon,
 } from '@heroicons/vue/24/outline'
+import { onMounted, ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { useGlobalLang } from '../lang/useGlobalLang'
@@ -19,6 +22,64 @@ defineProps<{
   state: State
   program: Program
 }>()
+
+const who = 'MimorHeadProgram'
+
+window.addEventListener('message', (event: MessageEvent) => {
+  const data = event.data
+
+  console.log({ who, message: 'received message', data })
+
+  if (data.message === 'fullscreen-entered') {
+    isFullscreen.value = true
+  }
+
+  if (data.message === 'fullscreen-exited') {
+    isFullscreen.value = false
+  }
+
+  if (data.message === 'fullscreen-supported') {
+    fullscreenIsSupported.value = true
+  }
+})
+
+onMounted(() => {
+  window.parent.postMessage(
+    {
+      who,
+      message: 'mounted',
+    },
+    '*',
+  )
+})
+
+const isFullscreen = ref(false)
+
+const fullscreenIsSupported = ref(true)
+
+function isInIframe() {
+  return window !== window.parent
+}
+
+function enterFullscreen() {
+  window.parent.postMessage(
+    {
+      who,
+      message: 'fullscreen-enter',
+    },
+    '*',
+  )
+}
+
+function exitFullscreen() {
+  window.parent.postMessage(
+    {
+      who,
+      message: 'fullscreen-exit',
+    },
+    '*',
+  )
+}
 </script>
 
 <template>
@@ -64,6 +125,28 @@ defineProps<{
       >
         <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
       </a>
+
+      <template v-if="isInIframe() && fullscreenIsSupported">
+        <button
+          v-if="!isFullscreen"
+          :href="`${useCurrentOrigin()}/mimors/${state.url}`"
+          target="_blank"
+          :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
+          @click="enterFullscreen()"
+        >
+          <ArrowsPointingOutIcon class="mb-0.5 h-5 w-5" />
+        </button>
+
+        <button
+          v-else
+          :href="`${useCurrentOrigin()}/mimors/${state.url}`"
+          target="_blank"
+          :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
+          @click="exitFullscreen()"
+        >
+          <ArrowsPointingInIcon class="mb-0.5 h-5 w-5" />
+        </button>
+      </template>
 
       <a
         :href="useCurrentOrigin()"
