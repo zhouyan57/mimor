@@ -18,7 +18,7 @@ import { programFormatProgress } from './programFormatProgress'
 
 const lang = useGlobalLang()
 
-defineProps<{
+const props = defineProps<{
   state: State
   program: Program
 }>()
@@ -31,54 +31,42 @@ window.addEventListener('message', (event: MessageEvent) => {
   console.log({ who, message: 'received message', data })
 
   if (data.message === 'fullscreen-entered') {
-    isFullscreen.value = true
+    props.state.isFullscreen = true
   }
 
   if (data.message === 'fullscreen-exited') {
-    isFullscreen.value = false
+    props.state.isFullscreen = false
   }
 
   if (data.message === 'fullscreen-supported') {
-    fullscreenIsSupported.value = true
+    iframeSupportFullscreen.value = true
   }
 })
 
 onMounted(() => {
-  window.parent.postMessage(
-    {
-      who,
-      message: 'mounted',
-    },
-    '*',
-  )
+  window.parent.postMessage({ who, message: 'mounted' }, '*')
 })
 
-const isFullscreen = ref(false)
-
-const fullscreenIsSupported = ref(true)
+const iframeSupportFullscreen = ref(false)
 
 function isInIframe() {
   return window !== window.parent
 }
 
-function enterFullscreen() {
-  window.parent.postMessage(
-    {
-      who,
-      message: 'fullscreen-enter',
-    },
-    '*',
-  )
+function fullscreenEnter() {
+  if (isInIframe()) {
+    window.parent.postMessage({ who, message: 'fullscreen-enter' }, '*')
+  } else {
+    props.state.isFullscreen = true
+  }
 }
 
-function exitFullscreen() {
-  window.parent.postMessage(
-    {
-      who,
-      message: 'fullscreen-exit',
-    },
-    '*',
-  )
+function fullscreenExit() {
+  if (isInIframe()) {
+    window.parent.postMessage({ who, message: 'fullscreen-exit' }, '*')
+  } else {
+    props.state.isFullscreen = false
+  }
 }
 </script>
 
@@ -126,13 +114,15 @@ function exitFullscreen() {
         <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
       </a>
 
-      <template v-if="isInIframe() && fullscreenIsSupported">
+      <template
+        v-if="(isInIframe() && iframeSupportFullscreen) || !isInIframe()"
+      >
         <button
-          v-if="!isFullscreen"
+          v-if="!state.isFullscreen"
           :href="`${useCurrentOrigin()}/mimors/${state.url}`"
           target="_blank"
           :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
-          @click="enterFullscreen()"
+          @click="fullscreenEnter()"
         >
           <ArrowsPointingOutIcon class="mb-0.5 h-5 w-5" />
         </button>
@@ -142,7 +132,7 @@ function exitFullscreen() {
           :href="`${useCurrentOrigin()}/mimors/${state.url}`"
           target="_blank"
           :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
-          @click="exitFullscreen()"
+          @click="fullscreenExit()"
         >
           <ArrowsPointingInIcon class="mb-0.5 h-5 w-5" />
         </button>

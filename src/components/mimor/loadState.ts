@@ -15,7 +15,14 @@ export async function loadState(options: StateOptions): Promise<State> {
   const text = options.text || (await loadText(url))
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
-  const state = { url, text, theme, metadata, withMetaThemeColor }
+  const state = {
+    url,
+    text,
+    theme,
+    metadata,
+    withMetaThemeColor,
+    isFullscreen: false,
+  }
 
   try {
     const nodes = parse(text)

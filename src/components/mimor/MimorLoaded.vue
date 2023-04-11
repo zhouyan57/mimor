@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { ref, watch } from 'vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
 import MimorKindViewSource from './MimorKindViewSource.vue'
@@ -9,11 +10,53 @@ import { stateReactive } from './stateReactive'
 
 const props = defineProps<{ state: State }>()
 
+const rootElement = ref<HTMLElement | undefined>(undefined)
+
 const state = stateReactive(props.state)
+
+const who = 'MimorLoaded'
+
+async function fullscreenEnter() {
+  try {
+    await rootElement.value?.requestFullscreen()
+  } catch (error) {
+    console.error({ who, error })
+  }
+}
+
+async function fullscreenExit() {
+  try {
+    await document.exitFullscreen()
+  } catch (error) {
+    console.error({ who, error })
+  }
+}
+
+watch(
+  () => state.isFullscreen,
+  (value) => {
+    if (value) {
+      fullscreenEnter()
+    } else {
+      fullscreenExit()
+    }
+  },
+)
+
+document.addEventListener('fullscreenchange', () => {
+  if (document.fullscreenElement) {
+    state.isFullscreen = true
+  } else {
+    state.isFullscreen = false
+  }
+})
 </script>
 
 <template>
-  <div :class="{ 'border border-black': state.theme.isWhite() }">
+  <div
+    ref="rootElement"
+    :class="{ 'border border-black': state.theme.isWhite() }"
+  >
     <Head>
       <meta
         name="theme-color"

@@ -9,4 +9,5 @@ export type State = {
   withMetaThemeColor?: boolean
   program?: Program
   error?: Error
+  isFullscreen: boolean
 }
