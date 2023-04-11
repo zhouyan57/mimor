@@ -22,5 +22,6 @@ The `<iframe>` can be:
 <iframe
   src="https://mimor.app/mimors/https://mimor.app/contents/examples/debug.mimor"
   style="width: 36rem; height: 36rem;"
+  allowfullscreen
 ></iframe>
 ```

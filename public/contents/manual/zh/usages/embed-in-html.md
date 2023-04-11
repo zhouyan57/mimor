@@ -22,5 +22,6 @@ mimor 也可以以 `<iframe>` 的方式嵌入在 HTML 中。
 <iframe
   src="https://mimor.app/mimors/https://mimor.app/contents/examples/sisuo.mimor"
   style="width: 36rem; height: 36rem;"
+  allowfullscreen
 ></iframe>
 ```
