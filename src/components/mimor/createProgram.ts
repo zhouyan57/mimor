@@ -1,4 +1,4 @@
-import { isElement, parse, XElement, XNode } from '@readonlylink/x-node'
+import { isElement, parse, XElement, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
 import { createRouter } from './createRouter'
 import { Metadata } from './Metadata'

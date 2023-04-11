@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XNode } from '@readonlylink/x-node'
+import { XNode } from '@xieyuheng/x-node'
 import { Program } from '../Program'
 import { State } from '../State'
 import Node from './Node.vue'

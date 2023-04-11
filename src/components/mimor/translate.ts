@@ -1,4 +1,4 @@
-import { XElement, XNode } from '@readonlylink/x-node'
+import { XElement, XNode } from '@xieyuheng/x-node'
 import { AttributeTranslation, Translation } from './Translation'
 
 export function translate(

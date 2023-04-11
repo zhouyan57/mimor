@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XElement } from '@readonlylink/x-node'
+import { XElement } from '@xieyuheng/x-node'
 import { reactive } from 'vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'

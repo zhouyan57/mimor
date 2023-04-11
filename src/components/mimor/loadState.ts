@@ -1,4 +1,4 @@
-import { parse } from '@readonlylink/x-node'
+import { parse } from '@xieyuheng/x-node'
 import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { XElement } from '@readonlylink/x-node'
 import { Head } from '@vueuse/head'
+import { XElement } from '@xieyuheng/x-node'
 import MimorFootStart from '../MimorFootStart.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'

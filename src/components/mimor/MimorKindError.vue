@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ParsingError } from '@readonlylink/x-node'
+import { ParsingError } from '@xieyuheng/x-node'
 import { State } from './State'
 
 defineProps<{
