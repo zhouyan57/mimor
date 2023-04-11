@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XElement } from '@xieyuheng/x-node'
+import { XElement, isElement } from '@xieyuheng/x-node'
 import { reactive } from 'vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
@@ -29,7 +29,7 @@ const remembering = reactive({ revealed: false })
         class="text-2xl"
       >
         <!-- the x spacing is needed for english text -->
-        <span v-if="child.tag === 'blank'" class="px-1">
+        <span v-if="isElement(child) && child.tag === 'blank'" class="px-1">
           <Nodes
             v-if="remembering.revealed"
             :state="state"

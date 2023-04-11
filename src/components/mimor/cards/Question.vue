@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XElement } from '@xieyuheng/x-node'
+import { XElement, isElement } from '@xieyuheng/x-node'
 import { reactive } from 'vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
@@ -24,7 +24,7 @@ const remembering = reactive({ revealed: false })
 
     <MimorTransitionCard :state="state" :program="program">
       <div v-for="(child, index) of element.children" :key="index">
-        <div v-if="child.tag === 'answer'" class="py-2">
+        <div v-if="isElement(child) && child.tag === 'answer'" class="py-2">
           <Transition
             enter-active-class="transition duration-700 ease-in-out"
             enter-from-class="transform transform-gpu opacity-0"
