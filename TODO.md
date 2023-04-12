@@ -1,5 +1,3 @@
-add border to loading mimor
-
 fix web components width on view source
 
 # register

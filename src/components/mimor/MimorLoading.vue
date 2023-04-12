@@ -7,7 +7,7 @@ defineProps<{ options: StateOptions }>()
 </script>
 
 <template>
-  <div class="flex flex-col bg-white">
+  <div class="flex flex-col border border-black bg-white">
     <MimorHeadStateless />
 
     <div class="p-3 font-sans text-xl text-stone-900">
