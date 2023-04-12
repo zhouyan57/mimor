@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
 import { ref, watch } from 'vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
@@ -57,15 +56,6 @@ document.addEventListener('fullscreenchange', () => {
     ref="rootElement"
     :class="{ 'border border-black': state.theme.isWhite() }"
   >
-    <Head>
-      <meta
-        name="theme-color"
-        :content="
-          state.withMetaThemeColor ? state.theme.colors[300] : '#ffffff'
-        "
-      />
-    </Head>
-
     <template v-if="state.program">
       <MimorKindViewSource
         v-if="state.kind === 'ViewSource'"

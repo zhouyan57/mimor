@@ -1,6 +1,9 @@
 # vite pwa
 dev-dist
 
+# vite lib
+lib
+
 # Logs
 logs
 *.log

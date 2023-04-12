@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
 import { XElement } from '@xieyuheng/x-node'
+import { onMounted } from 'vue'
 import MimorFootReplay from '../MimorFootReplay.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
@@ -8,11 +8,17 @@ import { State } from '../State'
 import Node from '../nodes/Node.vue'
 import CoverInfo from './CoverInfo.vue'
 
-defineProps<{
+const props = defineProps<{
   state: State
   program: Program
   element: XElement
 }>()
+
+onMounted(() => {
+  if (props.state.withMetaThemeColor) {
+    props.state.themeColor = props.state.theme.colors[400]
+  }
+})
 </script>
 
 <template>
@@ -20,13 +26,6 @@ defineProps<{
     class="flex h-full w-full flex-col justify-between"
     :class="[state.theme.bg(400)]"
   >
-    <Head>
-      <meta
-        name="theme-color"
-        :content="state.withMetaThemeColor ? state.theme.colors[400] : ''"
-      />
-    </Head>
-
     <MimorHeadProgram :state="state" :program="program" />
 
     <CoverInfo :state="state" :program="program" />

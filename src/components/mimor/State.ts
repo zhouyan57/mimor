@@ -7,6 +7,7 @@ export type State = {
   text: string
   theme: Theme
   withMetaThemeColor?: boolean
+  themeColor?: string
   program?: Program
   error?: Error
   isFullscreen: boolean
