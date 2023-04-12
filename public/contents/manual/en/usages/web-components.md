@@ -13,4 +13,4 @@ For example:
 ```
 
 For complete examples,
-please see [the examples directory in mimor repo](https://github.com/mimor-official/mimor/tree/master/examples).
+please see [the `examples` directory in mimor repo](https://github.com/mimor-official/mimor/tree/master/examples).

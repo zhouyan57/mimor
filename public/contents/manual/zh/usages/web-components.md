@@ -13,4 +13,4 @@ title: Web Components
 ```
 
 更多完整的例子，
-请见 [mimor 仓库的 examples 文件夹](https://github.com/mimor-official/mimor/tree/master/examples)。
+请见 [mimor 仓库的 `examples` 文件夹](https://github.com/mimor-official/mimor/tree/master/examples)。
