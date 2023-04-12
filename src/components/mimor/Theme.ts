@@ -12,6 +12,10 @@ export class Theme {
       name = 'sky'
     }
 
+    if (name === 'yellow') {
+      name = 'amber'
+    }
+
     return (tailwindColors as any)[name]
   }
 
