@@ -32,7 +32,7 @@ onMounted(() => {
 
     <div
       class="h-full overflow-y-auto p-3 font-sans font-bold"
-      :class="[state.theme.isWhite() ? 'text-black' : state.theme.text(50)]"
+      :class="[state.theme.isWhite() ? 'text-black' : 'text-white']"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
         <div v-for="(child, index) of element.children" :key="index">

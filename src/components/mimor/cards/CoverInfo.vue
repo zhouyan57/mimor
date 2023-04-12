@@ -11,16 +11,12 @@ defineProps<{
 <template>
   <div class="flex flex-col">
     <div
-      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre pb-1 font-mono text-sm"
-      :class="[state.theme.text(100)]"
+      class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre pb-1 font-mono text-sm text-white"
     >
       {{ state.url }}
     </div>
 
-    <div
-      class="mx-3 flex space-x-3 font-sans text-lg font-bold"
-      :class="[state.theme.text(100)]"
-    >
+    <div class="mx-3 flex space-x-3 font-sans text-lg font-bold text-white">
       <div v-for="(keyword, index) of program.metadata.keywords" :key="index">
         {{ keyword }}
       </div>

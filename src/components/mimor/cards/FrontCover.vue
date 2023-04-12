@@ -33,7 +33,7 @@ onMounted(() => {
 
     <div
       class="h-full cursor-pointer overflow-y-auto p-3 font-sans font-bold"
-      :class="[state.theme.isWhite() ? 'text-black' : state.theme.text(50)]"
+      :class="[state.theme.isWhite() ? 'text-black' : 'text-white']"
       @click="programNext(program)"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
