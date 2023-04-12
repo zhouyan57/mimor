@@ -11,7 +11,8 @@
     "Usages": [
       "usages/mimorlink.md",
       "usages/embed-in-markdown.md",
-      "usages/embed-in-html.md"
+      "usages/embed-in-html.md",
+      "usages/web-components.md"
     ],
     "Cards": [
       "cards/question.md",
