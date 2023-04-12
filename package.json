@@ -4,12 +4,12 @@
   "files": [
     "lib"
   ],
-  "main": "./lib/x-mimor.umd.js",
-  "module": "./lib/x-mimor.mjs",
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.mjs",
   "exports": {
     ".": {
-      "require": "./lib/x-mimor.umd.js",
-      "import": "./lib/x-mimor.mjs"
+      "require": "./lib/index.umd.js",
+      "import": "./lib/index.mjs"
     }
   },
   "scripts": {

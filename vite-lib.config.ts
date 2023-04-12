@@ -8,8 +8,8 @@ export default defineConfig({
     outDir: 'lib',
     lib: {
       entry: './src/main.ce.ts',
-      name: 'x-mimor',
-      fileName: 'x-mimor',
+      name: 'index',
+      fileName: 'index',
     },
   },
   define: {
