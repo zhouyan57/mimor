@@ -6,13 +6,7 @@ export class Theme {
   constructor(public name: string) {}
 
   get colors(): Record<number, string> {
-    let name = this.name
-
-    if (name === 'blue') {
-      name = 'sky'
-    }
-
-    return (tailwindColors as any)[name]
+    return (tailwindColors as any)[this.name]
   }
 
   isWhite(): boolean {
