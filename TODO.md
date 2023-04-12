@@ -1,3 +1,8 @@
+[diary] a "card" can be any thing that has it's own state machine.
+
+- maybe we can do puzzles -- like raymond smullyan
+- maybe we can do survey in the form of cards -- because the state machine can collect data
+
 # register
 
 [register] use fidb api
