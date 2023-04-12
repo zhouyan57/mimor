@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex h-full flex-col">
+  <div class="flex h-full w-full flex-col">
     <MimorHeadProgram
       class="border-b border-black"
       :state="state"
