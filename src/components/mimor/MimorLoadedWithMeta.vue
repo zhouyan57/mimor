@@ -20,7 +20,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col">
     <Head>
       <meta name="theme-color" :content="state.themeColor" />
     </Head>
