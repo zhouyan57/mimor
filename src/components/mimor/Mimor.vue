@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import MimorLoadedWithMeta from './MimorLoadedWithMeta.vue'
+import MimorLoaded from './MimorLoaded.vue'
 import MimorLoading from './MimorLoading.vue'
+import MimorMeta from './MimorMeta.vue'
 import { State } from './State'
 import type { StateOptions } from './loadState'
 import { loadState } from './loadState'
@@ -23,6 +24,9 @@ watch(
 </script>
 
 <template>
-  <MimorLoadedWithMeta v-if="state" :state="state" />
-  <MimorLoading v-else :options="options" />
+  <div>
+    <MimorMeta v-if="state" :state="state" />
+    <MimorLoaded v-if="state" :state="state" />
+    <MimorLoading v-else :options="options" />
+  </div>
 </template>

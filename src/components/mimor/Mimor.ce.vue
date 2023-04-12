@@ -22,8 +22,10 @@ watch(
 </script>
 
 <template>
-  <MimorLoaded v-if="state" :state="state" />
-  <MimorLoading v-else :options="{ url }" />
+  <div>
+    <MimorLoaded v-if="state" :state="state" />
+    <MimorLoading v-else :options="{ url }" />
+  </div>
 </template>
 
 <style>

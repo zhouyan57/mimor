@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { watch } from 'vue'
-import MimorLoaded from './MimorLoaded.vue'
 import { State } from './State'
 
 const props = defineProps<{ state: State }>()
@@ -20,11 +19,7 @@ watch(
 </script>
 
 <template>
-  <div>
-    <Head>
-      <meta name="theme-color" :content="state.themeColor" />
-    </Head>
-
-    <MimorLoaded class="h-full" :state="state" />
-  </div>
+  <Head>
+    <meta name="theme-color" :content="state.themeColor" />
+  </Head>
 </template>
