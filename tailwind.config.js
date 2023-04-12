@@ -6,7 +6,6 @@ module.exports = {
     {
       pattern:
         /(text|border|bg)-(red|orange|yellow|green|blue|indigo|purple|stone)-(300|400|800)/,
-      variants: ['hover', 'focus'],
     },
   ],
   theme: {
@@ -16,9 +15,7 @@ module.exports = {
         yellow: colors.amber,
       },
       rotate: {
-        15: '15deg',
         20: '20deg',
-        30: '30deg',
       },
     },
     fontFamily: {
