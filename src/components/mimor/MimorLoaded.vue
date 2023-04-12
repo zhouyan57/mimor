@@ -41,14 +41,6 @@ watch(
     }
   },
 )
-
-document.addEventListener('fullscreenchange', () => {
-  if (document.fullscreenElement) {
-    state.isFullscreen = true
-  } else {
-    state.isFullscreen = false
-  }
-})
 </script>
 
 <template>
