@@ -1,3 +1,5 @@
+manual about using web components
+
 # register
 
 [register] use fidb api
