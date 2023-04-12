@@ -46,6 +46,7 @@ watch(
 <template>
   <div
     ref="rootElement"
+    class="flex h-full flex-col"
     :class="{ 'border border-black': state.theme.isWhite() }"
   >
     <template v-if="state.program">
