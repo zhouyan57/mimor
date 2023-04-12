@@ -38,6 +38,7 @@ https://mimor.app/mimors/https://inner.xieyuheng.com/mimors/zeromq.mimor
 
 # recall in many timelines
 
-> Spaced repetition
+> - Spaced repetition.
+> - A stream of contents, like tiktok, but the cards are collected by oneself.
 
 [recall] user can add mimor into `/timelines`
