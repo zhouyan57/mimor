@@ -59,13 +59,15 @@ defineProps<{
         <PlayIcon class="h-5 w-5" />
       </button>
 
-      <a
-        :href="`${origin}/mimors/${state.url}`"
-        target="_blank"
-        :title="lang.isZh() ? '在新的标签中打开' : 'Open in new tab'"
-      >
-        <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
-      </a>
+      <button>
+        <a
+          :href="`${origin}/mimors/${state.url}`"
+          target="_blank"
+          :title="lang.isZh() ? '在新的标签中打开' : 'Open in new tab'"
+        >
+          <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
+        </a>
+      </button>
 
       <button
         v-if="!state.isFullscreen"
