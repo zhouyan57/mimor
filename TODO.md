@@ -1,3 +1,7 @@
+should not `useCurrentOrigin` -- for web components
+
+add border to loading mimor
+
 # register
 
 [register] use fidb api
