@@ -8,7 +8,6 @@ import {
   PlayIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
-import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { Program } from './Program'
 import { State } from './State'
@@ -16,6 +15,7 @@ import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
 
 const lang = useGlobalLang()
+const origin = 'https://mimor.app'
 
 defineProps<{
   state: State
@@ -60,7 +60,7 @@ defineProps<{
       </button>
 
       <a
-        :href="`${useCurrentOrigin()}/mimors/${state.url}`"
+        :href="`${origin}/mimors/${state.url}`"
         target="_blank"
         :title="lang.isZh() ? '在新的标签中打开' : 'Open in new tab'"
       >
@@ -69,7 +69,7 @@ defineProps<{
 
       <button
         v-if="!state.isFullscreen"
-        :href="`${useCurrentOrigin()}/mimors/${state.url}`"
+        :href="`${origin}/mimors/${state.url}`"
         target="_blank"
         :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
         @click="state.isFullscreen = true"
@@ -79,7 +79,7 @@ defineProps<{
 
       <button
         v-else
-        :href="`${useCurrentOrigin()}/mimors/${state.url}`"
+        :href="`${origin}/mimors/${state.url}`"
         target="_blank"
         :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
         @click="state.isFullscreen = false"
@@ -88,7 +88,7 @@ defineProps<{
       </button>
 
       <a
-        :href="useCurrentOrigin()"
+        :href="origin"
         target="_blank"
         :title="lang.isZh() ? '打开 Mimor 主页' : 'Open Mimor homepage'"
       >

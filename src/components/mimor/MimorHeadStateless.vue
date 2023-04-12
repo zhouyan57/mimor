@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
-import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 import { useGlobalLang } from '../lang/useGlobalLang'
 
 const lang = useGlobalLang()
+const origin = 'https://mimor.app'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const lang = useGlobalLang()
 
     <div class="flex items-center space-x-2">
       <a
-        :href="useCurrentOrigin()"
+        :href="origin"
         target="_blank"
         :title="lang.isZh() ? '打开 Mimor 主页' : 'Open Mimor homepage'"
       >

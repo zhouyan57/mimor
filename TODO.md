@@ -1,5 +1,3 @@
-should not `useCurrentOrigin` -- for web components
-
 add border to loading mimor
 
 fix web components width on view source
