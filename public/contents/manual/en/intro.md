@@ -2,7 +2,9 @@
 title: Intro
 ---
 
-Inspired by [Anki](https://apps.ankiweb.net/) and [Orbit](https://withorbit.com),
+Inspired by [Anki](https://apps.ankiweb.net/)
+and [Orbit](https://withorbit.com)
+and [flomo](https://flomoapp.com),
 I want to create an memory helping App.
 
 Some features I wanted:

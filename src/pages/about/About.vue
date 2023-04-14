@@ -47,6 +47,14 @@ const lang = useGlobalLang()
             >Orbit<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500"
           /></a>
+          还有
+          <a
+            href="https://flomoapp.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >flomo<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500"
+          /></a>
           的启发。
         </template>
         <template #en>
@@ -63,6 +71,14 @@ const lang = useGlobalLang()
             class="inline-flex items-center underline"
             target="_blank"
             >Orbit<ArrowTopRightOnSquareIcon
+              class="w-4 shrink-0 text-stone-500"
+          /></a>
+          and
+          <a
+            href="https://flomoapp.com"
+            class="inline-flex items-center underline"
+            target="_blank"
+            >flomo<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
           >.
         </template>

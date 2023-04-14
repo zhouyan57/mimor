@@ -2,7 +2,9 @@
 title: 引子
 ---
 
-受到 [Anki](https://apps.ankiweb.net/) 和 [Orbit](https://withorbit.com) 的启发，
+受到 [Anki](https://apps.ankiweb.net/)
+和 [Orbit](https://withorbit.com)
+还有 [flomo](https://flomoapp.com) 的启发，
 我也想做一个辅助记忆的 App。
 
 我想要的一些属性：
