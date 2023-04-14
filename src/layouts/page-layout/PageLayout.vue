@@ -14,7 +14,7 @@ const router = useRouter()
   />
 
   <PageMobileHead
-    class="fixed left-0 top-0 block border-b border-black bg-white px-4 py-0.5 md:hidden"
+    class="fixed left-0 top-0 block border-b border-stone-300 bg-white px-4 py-0.5 md:hidden"
   />
 
   <div class="flex h-screen pt-8 md:pt-12">
