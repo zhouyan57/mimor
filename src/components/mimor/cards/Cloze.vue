@@ -39,8 +39,10 @@ const remembering = reactive({ revealed: false })
             :class="[
               state.theme.name === 'yellow'
                 ? 'text-purple-500'
-                : state.theme.isWhite()
+                : state.theme.name === 'white'
                 ? 'text-yellow-500'
+                : state.theme.name === 'stone'
+                ? 'text-yellow-600'
                 : 'text-yellow-200',
             ]"
           />
@@ -50,8 +52,10 @@ const remembering = reactive({ revealed: false })
             :class="[
               state.theme.name === 'yellow'
                 ? 'text-purple-500'
-                : state.theme.isWhite()
+                : state.theme.name === 'white'
                 ? 'text-yellow-500'
+                : state.theme.name === 'stone'
+                ? 'text-yellow-600'
                 : 'text-yellow-200',
             ]"
             >____</span
