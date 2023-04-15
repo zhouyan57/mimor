@@ -26,7 +26,7 @@ defineProps<{
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div
-      :class="[state.theme.isNotWhite() && 'text-white']"
+      :class="[state.theme.name !== 'white' && 'text-white']"
       :title="lang.isZh() ? '进度' : 'Progress'"
     >
       {{ programFormatProgress(program) }}
@@ -34,7 +34,7 @@ defineProps<{
 
     <div
       class="flex items-center space-x-4"
-      :class="[state.theme.isNotWhite() && state.theme.text(800)]"
+      :class="[state.theme.name !== 'white' && state.theme.text(800)]"
     >
       <button
         @click="programBack(program)"

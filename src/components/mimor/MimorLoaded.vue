@@ -47,7 +47,7 @@ watch(
   <div
     ref="rootElement"
     class="flex h-full flex-col"
-    :class="{ 'border border-black bg-white': state.theme.isWhite() }"
+    :class="{ 'border border-black bg-white': state.theme.name === 'white' }"
   >
     <template v-if="state.program">
       <MimorKindViewSource

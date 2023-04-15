@@ -9,14 +9,6 @@ export class Theme {
     return (tailwindColors as any)[this.name]
   }
 
-  isWhite(): boolean {
-    return this.name === 'white'
-  }
-
-  isNotWhite(): boolean {
-    return !this.isWhite()
-  }
-
   bg(level: number): string {
     return `bg-${this.name}-${level}`
   }

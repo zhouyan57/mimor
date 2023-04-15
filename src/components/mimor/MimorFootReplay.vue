@@ -24,7 +24,7 @@ defineProps<{
           state.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
         ]"
       />
-      <Lang :class="[state.theme.isNotWhite() && 'text-white']">
+      <Lang :class="[state.theme.name !== 'white' && 'text-white']">
         <template #zh>重复</template>
         <template #en>Replay</template>
       </Lang>
