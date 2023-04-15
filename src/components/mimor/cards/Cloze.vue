@@ -43,6 +43,12 @@ const remembering = reactive({ revealed: false })
                 ? 'text-yellow-500'
                 : state.theme.name === 'stone'
                 ? 'text-yellow-600'
+                : state.theme.name === 'red'
+                ? 'text-sky-500'
+                : state.theme.name === 'orange'
+                ? 'text-indigo-500'
+                : state.theme.name === 'green'
+                ? 'text-purple-500'
                 : 'text-yellow-200',
             ]"
           />
@@ -56,6 +62,12 @@ const remembering = reactive({ revealed: false })
                 ? 'text-yellow-500'
                 : state.theme.name === 'stone'
                 ? 'text-yellow-600'
+                : state.theme.name === 'red'
+                ? 'text-sky-500'
+                : state.theme.name === 'orange'
+                ? 'text-indigo-500'
+                : state.theme.name === 'green'
+                ? 'text-purple-500'
                 : 'text-yellow-200',
             ]"
             >____</span
