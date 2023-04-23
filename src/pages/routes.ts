@@ -18,6 +18,6 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/login/', component: Login },
   { path: '/mimors', component: MimorEntrance },
   { path: '/mimors/', component: MimorEntrance },
-  { path: '/mimors/:url(.*)', component: MimorPage },
+  { path: '/mimors/:src(.*)', component: MimorPage },
   { path: '/:path(.*)', component: PageNotFound },
 ]

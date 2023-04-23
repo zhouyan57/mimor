@@ -11,15 +11,15 @@ const route = useRoute()
 const state = ref<State | undefined>(undefined)
 
 function createStateOptions() {
-  const url = String(route.params.url)
+  const src = String(route.params.src)
 
   return {
-    url,
+    src,
   }
 }
 
 watch(
-  () => route.params.url,
+  () => route.params.src,
   async () => {
     state.value = await loadState(createStateOptions())
   },

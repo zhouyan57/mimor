@@ -11,9 +11,7 @@ const state = stateReactive(props.state)
 <template>
   <Mimor
     class="h-screen w-screen"
-    :options="{
-      src: state.src,
-      withMetaThemeColor: true,
-    }"
+    :src="state.src"
+    :withMetaThemeColor="true"
   />
 </template>

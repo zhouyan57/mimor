@@ -14,7 +14,7 @@ const state = reactive(props.state)
       class="h-[34rem] max-w-[47rem]"
       v-for="(src, index) of state.list"
       :key="index"
-      :options="{ src }"
+      :src="src"
     />
   </div>
 </template>

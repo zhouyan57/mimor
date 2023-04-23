@@ -1,5 +1,3 @@
-`Mimor` -- quit using options as a prop
-
 # register
 
 [register] use fidb api

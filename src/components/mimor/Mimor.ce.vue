@@ -12,11 +12,12 @@ const state = ref<State | undefined>(undefined)
 watch(
   () => props.src,
   async () => {
-    state.value = await loadState({ src: props.src })
+    state.value = await loadState({
+      src: props.src,
+    })
   },
   {
     immediate: true,
-    deep: true,
   },
 )
 </script>
