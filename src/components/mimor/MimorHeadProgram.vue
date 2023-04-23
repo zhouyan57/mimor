@@ -26,6 +26,7 @@ defineProps<{
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
     <div
+      class="whitespace-pre pr-2"
       :class="[state.theme.name !== 'white' && 'text-white']"
       :title="lang.isZh() ? '进度' : 'Progress'"
     >

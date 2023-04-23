@@ -1,3 +1,5 @@
+<x-mimor> use `src` instead of `url`
+
 # register
 
 [register] use fidb api
