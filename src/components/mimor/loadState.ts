@@ -5,14 +5,13 @@ import { createProgram } from './createProgram'
 
 export interface StateOptions {
   src: string
-  text?: string
   withMetaThemeColor?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
   const { src, withMetaThemeColor } = options
 
-  const text = options.text || (await loadText(src))
+  const text = await loadText(src)
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {
