@@ -31,6 +31,6 @@ watch(
   <div>
     <MimorMeta v-if="state" :state="state" />
     <MimorLoaded v-if="state" :state="state" />
-    <MimorLoading v-else :options="{ src, withMetaThemeColor }" />
+    <MimorLoading v-else :options="{ src }" />
   </div>
 </template>
