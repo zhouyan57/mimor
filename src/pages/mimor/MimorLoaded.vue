@@ -12,7 +12,7 @@ const state = stateReactive(props.state)
   <Mimor
     class="h-screen w-screen"
     :options="{
-      url: state.url,
+      src: state.src,
       withMetaThemeColor: true,
     }"
   />

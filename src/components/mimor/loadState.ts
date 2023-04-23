@@ -4,19 +4,19 @@ import { Theme } from './Theme'
 import { createProgram } from './createProgram'
 
 export interface StateOptions {
-  url: string
+  src: string
   text?: string
   withMetaThemeColor?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { url, withMetaThemeColor } = options
+  const { src, withMetaThemeColor } = options
 
-  const text = options.text || (await loadText(url))
+  const text = options.text || (await loadText(src))
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {
-    url,
+    src,
     text,
     theme,
     metadata,

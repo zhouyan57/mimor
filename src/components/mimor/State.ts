@@ -3,7 +3,7 @@ import { Theme } from './Theme'
 
 export type State = {
   kind: string
-  url: string
+  src: string
   text: string
   theme: Theme
   withMetaThemeColor?: boolean

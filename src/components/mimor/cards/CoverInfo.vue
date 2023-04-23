@@ -13,7 +13,7 @@ defineProps<{
     <div
       class="scrollbar-hide mx-3 flex overflow-x-auto overflow-y-hidden whitespace-pre pb-1 font-mono text-sm text-white"
     >
-      {{ state.url }}
+      {{ state.src }}
     </div>
 
     <div class="mx-3 flex space-x-3 font-sans text-lg font-bold text-white">

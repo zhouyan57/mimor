@@ -1,4 +1,4 @@
-<x-mimor> use `src` instead of `url`
+`Mimor` -- quit using options as a prop
 
 # register
 

@@ -5,14 +5,14 @@ import MimorLoading from './MimorLoading.vue'
 import { State } from './State'
 import { loadState } from './loadState'
 
-const props = defineProps<{ url: string }>()
+const props = defineProps<{ src: string }>()
 
 const state = ref<State | undefined>(undefined)
 
 watch(
-  () => props.url,
+  () => props.src,
   async () => {
-    state.value = await loadState({ url: props.url })
+    state.value = await loadState({ src: props.src })
   },
   {
     immediate: true,
@@ -24,7 +24,7 @@ watch(
 <template>
   <div>
     <MimorLoaded v-if="state" :state="state" />
-    <MimorLoading v-else :options="{ url }" />
+    <MimorLoading v-else :options="{ src }" />
   </div>
 </template>
 
