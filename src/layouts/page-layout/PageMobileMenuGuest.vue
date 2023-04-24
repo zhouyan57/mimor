@@ -25,7 +25,7 @@ function jump(path: string) {
   <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
     <PopoverButton>
       <button class="flex">
-        <Bars3Icon class="h-7 w-7 text-stone-500" />
+        <Bars3Icon class="h-7 w-7 text-stone-400" />
       </button>
     </PopoverButton>
 
