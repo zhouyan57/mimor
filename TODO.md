@@ -1,6 +1,3 @@
-reactives/useGlobalBackend.ts -- with dev backend
-reactives/useGlobalBackend.ts -- with prod backend
-
 reactives/loginByPassword.ts
 reactives/loginByToken.ts
 reactives/logout.ts
