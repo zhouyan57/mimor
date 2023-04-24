@@ -1,9 +1,4 @@
-# register
-
-[register] use fidb api
-
-# login
-
+[login] setup form
 [login] use fidb api
 
 # author

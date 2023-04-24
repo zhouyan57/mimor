@@ -22,7 +22,7 @@
     "build:lib": "vite build -c vite-lib.config.ts",
     "build": "npm run build:app && npm run build:lib",
     "check:vue": "vue-tsc --noEmit",
-    "check:watch:vue": "while true; do vue-tsc --noEmit --watch && break; done",
+    "check:vue:watch": "while true; do vue-tsc --noEmit --watch && break; done",
     "check": "tsc --noEmit",
     "check:watch": "tsc --noEmit --watch",
     "test": "vitest --run",
