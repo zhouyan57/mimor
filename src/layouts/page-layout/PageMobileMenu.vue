@@ -23,6 +23,12 @@ function jump(path: string) {
 
 <template>
   <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
+    <PopoverButton>
+      <button class="flex">
+        <Bars3Icon class="h-7 w-7 text-stone-500" />
+      </button>
+    </PopoverButton>
+
     <Watch
       :value="open"
       :effect="(value: any) => {
@@ -49,14 +55,6 @@ function jump(path: string) {
       }
       "
     />
-
-    <PopoverButton>
-      <button
-        class="rounded-full border border-stone-300 bg-white p-3 shadow-md"
-      >
-        <Bars3Icon class="h-7 w-7 text-stone-500" />
-      </button>
-    </PopoverButton>
 
     <Transition
       enter-active-class="transition duration-100"

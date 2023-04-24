@@ -2,8 +2,8 @@
 import { useRouter } from 'vue-router'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebar from './PageDesktopSidebar.vue'
+import PageMobileFoot from './PageMobileFoot.vue'
 import PageMobileHead from './PageMobileHead.vue'
-import PageMobileMenu from './PageMobileMenu.vue'
 
 const router = useRouter()
 </script>
@@ -17,7 +17,7 @@ const router = useRouter()
     class="fixed left-0 top-0 block border-b border-stone-300 bg-white px-4 py-0.5 md:hidden"
   />
 
-  <div class="flex h-screen pt-8 md:pt-12">
+  <div class="flex h-full pb-14 pt-8 md:pb-0 md:pt-12">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
       <PageDesktopSidebar />
     </div>
@@ -29,7 +29,7 @@ const router = useRouter()
     </div>
   </div>
 
-  <div class="fixed bottom-20 right-4 z-30 md:hidden">
-    <PageMobileMenu />
-  </div>
+  <PageMobileFoot
+    class="fixed bottom-0 right-0 z-30 w-full border-t border-stone-300 md:hidden"
+  />
 </template>
