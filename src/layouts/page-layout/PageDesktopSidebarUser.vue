@@ -2,6 +2,7 @@
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { User } from '../../models/User'
+import { logout } from '../../reactives/logout'
 import PageLang from './PageLang.vue'
 
 defineProps<{ user: User }>()
@@ -38,6 +39,15 @@ defineProps<{ user: User }>()
       <div class="font-bold">
         {{ user.name }}
       </div>
+
+      <div class="px-2 font-bold">/</div>
+
+      <button class="hover:underline" @click="logout()">
+        <Lang>
+          <template #zh>退出</template>
+          <template #en>Logout</template>
+        </Lang>
+      </button>
     </div>
   </div>
 </template>
