@@ -1,0 +1,35 @@
+{
+  "loginTargets": {
+    "users/{user}": {
+      "permissions": {
+        "users/{user}/**": [
+          "data:post",
+          "data:get",
+          "data:put",
+          "data:patch",
+          "data:delete",
+          "data-find:get",
+          "file:post",
+          "file:get",
+          "file:put",
+          "file:delete",
+          "file-metadata:get",
+          "directory:post",
+          "directory:get",
+          "directory:delete"
+        ],
+        "users/*/public/**": [
+          "data:get",
+          "data-find:get",
+          "file:get",
+          "file-metadata:get",
+          "directory:get"
+        ]
+      }
+    }
+  },
+  "@path": ".configs/password-register-strategy",
+  "@revision": "034cfa6959ac0b44287e755e49bc3268",
+  "@createdAt": 1681390784332,
+  "@updatedAt": 1681390784332
+}

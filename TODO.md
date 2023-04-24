@@ -1,7 +1,5 @@
-reactives/useGlobalBackend.ts
-
-- setup dev backend -- `npm run api`
-- setup example backend
+reactives/useGlobalBackend.ts -- with dev backend
+reactives/useGlobalBackend.ts -- with prod backend
 
 reactives/loginByPassword.ts
 reactives/loginByToken.ts

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "users/*/public/**": [
+      "data:get",
+      "data-find:get",
+      "file:get",
+      "file-metadata:get",
+      "directory:get"
+    ]
+  },
+  "@path": ".configs/default-token-issuer",
+  "@revision": "469570a27982fc1ec4718023ee52ac2f",
+  "@createdAt": 1681390688676,
+  "@updatedAt": 1681390688676
+}

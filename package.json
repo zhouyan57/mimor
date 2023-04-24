@@ -1,6 +1,9 @@
 {
   "name": "mimor",
   "version": "0.0.13",
+  "engines": {
+    "node": ">=18"
+  },
   "files": [
     "lib"
   ],
@@ -14,6 +17,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "api": "fidb serve database",
     "build:app": "vite build",
     "build:lib": "vite build -c vite-lib.config.ts",
     "build": "npm run build:app && npm run build:lib",
