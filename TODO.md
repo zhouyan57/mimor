@@ -1,6 +1,3 @@
-[page-layout] `PageMobileFootGuest` -- link to home
-[page-layout] `PageMobileFootUser` -- link to home
-
 # author
 
 [author] setup one `authors` route
