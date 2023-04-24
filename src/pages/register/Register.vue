@@ -17,16 +17,6 @@ const router = useRouter()
 const lang = useGlobalLang()
 const auth = useGlobalAuth()
 
-watch(
-  () => auth.user,
-  (value) => {
-    if (value !== undefined) {
-      router.replace({ path: '/' })
-    }
-  },
-  { immediate: true },
-)
-
 const form = useForm({
   username: '',
   name: '',
@@ -36,6 +26,17 @@ const form = useForm({
 const report = reactive({
   errorMessage: '',
 })
+
+
+watch(
+  () => auth.user,
+  (value) => {
+    if (value !== undefined) {
+      router.replace({ path: '/' })
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>

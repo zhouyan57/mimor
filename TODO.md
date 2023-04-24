@@ -1,5 +1,4 @@
-[login] setup form
-[login] use fidb api
+[login] setup form -- use fidb api
 
 # author
 
