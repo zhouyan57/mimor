@@ -2,7 +2,6 @@
 import { PlayIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline'
 import { Head } from '@vueuse/head'
 import { useRouter } from 'vue-router'
-import Hyperlink from '../../components/Hyperlink.vue'
 import { formSubmit, useForm } from '../../components/form'
 import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
@@ -42,9 +41,16 @@ async function submit(event: Event) {
                 <template #zh> 迷墨链接 </template>
                 <template #en> Mimor Link </template>
               </Lang>
-              <Hyperlink :href="lang.isZh() ? `/docs` : `/docs`">
+              <a
+                target="_blank"
+                :href="
+                  lang.isZh()
+                    ? `https://readonly.link/manuals/${origin}/contents/manual/zh.json/-/usages/mimorlink.md`
+                    : `https://readonly.link/manuals/${origin}/contents/manual/en.json/-/usages/mimorlink.md`
+                "
+              >
                 <QuestionMarkCircleIcon class="h-6 w-6 text-stone-800" />
-              </Hyperlink>
+              </a>
             </div>
           </template>
 
