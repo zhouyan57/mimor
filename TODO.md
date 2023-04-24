@@ -1,8 +1,3 @@
-reactives/loginByPassword.ts
-reactives/loginByToken.ts
-reactives/logout.ts
-reactives/register.ts
-
 # register
 
 [register] use fidb api
