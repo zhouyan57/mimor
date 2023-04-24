@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "users/xieyuheng/**": [
+      "data:post",
+      "data:get",
+      "data:put",
+      "data:patch",
+      "data:delete",
+      "data-find:get",
+      "file:post",
+      "file:get",
+      "file:put",
+      "file:delete",
+      "file-metadata:get",
+      "directory:post",
+      "directory:get",
+      "directory:delete"
+    ],
+    "users/*/public/**": [
+      "data:get",
+      "data-find:get",
+      "file:get",
+      "file-metadata:get",
+      "directory:get"
+    ]
+  },
+  "@path": "users/xieyuheng/.login",
+  "@revision": "53dd3022db749cd240d7b256537783f0",
+  "@createdAt": 1682336396280,
+  "@updatedAt": 1682336396280
+}
