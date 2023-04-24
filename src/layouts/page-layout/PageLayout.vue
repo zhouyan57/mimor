@@ -33,7 +33,7 @@ const auth = useGlobalAuth()
   </div>
 
   <div
-    class="fixed bottom-0 right-0 w-full border-t border-stone-300 md:hidden"
+    class="fixed bottom-0 right-0 w-full border-t border-stone-300 px-4 md:hidden"
   >
     <PageMobileFootUser v-if="auth.user" :user="auth.user" />
     <PageMobileFootGuest v-else />
