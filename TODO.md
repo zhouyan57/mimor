@@ -1,3 +1,15 @@
+reactives/useGlobalAuth.ts
+
+reactives/useGlobalBackend.ts
+
+- setup dev backend -- `npm run api`
+- setup example backend
+
+reactives/loginByPassword.ts
+reactives/loginByToken.ts
+reactives/logout.ts
+reactives/register.ts
+
 # register
 
 [register] use fidb api
