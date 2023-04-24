@@ -1,3 +1,5 @@
+use `auth.isLoadingUser`
+
 # author
 
 [author] setup one `authors` route
