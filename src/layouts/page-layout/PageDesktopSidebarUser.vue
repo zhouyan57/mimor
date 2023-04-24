@@ -1,11 +1,22 @@
 <script setup lang="ts">
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { User } from '../../models/User'
 import { logout } from '../../reactives/logout'
 import PageLang from './PageLang.vue'
 
 defineProps<{ user: User }>()
+
+const lang = useGlobalLang()
+
+function logoutAfterConfirming() {
+  const message = lang.isZh() ? '确定要退出吗？' : 'Are you sure to logout?'
+
+  if (window.confirm(message)) {
+    logout()
+  }
+}
 </script>
 
 <template>
@@ -42,7 +53,7 @@ defineProps<{ user: User }>()
 
       <div class="px-2 font-bold">/</div>
 
-      <button class="hover:underline" @click="logout()">
+      <button class="hover:underline" @click="logoutAfterConfirming()">
         <Lang>
           <template #zh>退出</template>
           <template #en>Logout</template>

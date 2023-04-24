@@ -15,6 +15,15 @@ defineProps<{ user: User }>()
 
 const route = useRoute()
 const router = useRouter()
+const lang = useGlobalLang()
+
+function logoutAfterConfirming() {
+  const message = lang.isZh() ? '确定要退出吗？' : 'Are you sure to logout?'
+
+  if (window.confirm(message)) {
+    logout()
+  }
+}
 
 function jump(path: string) {
   if (route.path !== path) {
@@ -147,7 +156,7 @@ function jump(path: string) {
               @click="
                 () => {
                   close()
-                  logout()
+                  logoutAfterConfirming()
                 }
               "
             >
