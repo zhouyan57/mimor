@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageDesktopHead from './PageDesktopHead.vue'
-import PageDesktopSidebar from './PageDesktopSidebar.vue'
+import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
+import PageDesktopSidebarUser from './PageDesktopSidebarUser.vue'
 import PageMobileFoot from './PageMobileFoot.vue'
 import PageMobileHead from './PageMobileHead.vue'
+
+const auth = useGlobalAuth()
 </script>
 
 <template>
@@ -16,7 +20,8 @@ import PageMobileHead from './PageMobileHead.vue'
 
   <div class="flex h-full pb-14 pt-8 md:pb-0 md:pt-12">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
-      <PageDesktopSidebar />
+      <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
+      <PageDesktopSidebarGuest v-else />
     </div>
 
     <div

@@ -1,4 +1,3 @@
-[page-layout] `PageDesktopSidebarUser` vs `PageDesktopSidebarGuest`
 [page-layout] `PageMobileFootUser` vs `PageMobileFootGuest`
 
 # author
