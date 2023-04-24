@@ -1,5 +1,3 @@
-reactives/useGlobalAuth.ts
-
 reactives/useGlobalBackend.ts
 
 - setup dev backend -- `npm run api`
