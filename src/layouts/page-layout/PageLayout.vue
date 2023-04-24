@@ -18,7 +18,7 @@ const auth = useGlobalAuth()
     class="fixed left-0 top-0 block border-b border-stone-300 bg-white px-4 py-0.5 md:hidden"
   />
 
-  <div class="flex h-full pb-14 pt-8 md:pb-0 md:pt-12">
+  <div class="flex h-screen pb-14 pt-8 md:pb-0 md:pt-12">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
       <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
       <PageDesktopSidebarGuest v-else />
