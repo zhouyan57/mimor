@@ -27,7 +27,6 @@ const report = reactive({
   errorMessage: '',
 })
 
-
 watch(
   () => auth.user,
   (value) => {
@@ -58,6 +57,7 @@ watch(
 
       <div class="flex flex-col">
         <form
+          class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
           @submit.prevent="
             formSubmit(form, $event, async () => {
               await register(form.values, report)
@@ -69,7 +69,6 @@ watch(
               $router.replace({ path: `/` })
             })
           "
-          class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
         >
           <FormInput
             :form="form"
