@@ -4,8 +4,6 @@ const logoText = '<m>'
 
 <template>
   <div class="flex w-full justify-center">
-    <span class="font-sans text-xl font-bold text-stone-600">{{
-      logoText
-    }}</span>
+    <span class="font-sans text-xl font-bold">{{ logoText }}</span>
   </div>
 </template>
