@@ -1,4 +1,3 @@
-[page-layout] `PageDesktopSidebarUser` -- support logout
 [page-layout] `PageMobileMenuUser` -- support logout
 
 # author
