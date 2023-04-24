@@ -1,5 +1,3 @@
-[login] setup form -- use fidb api
-
 # author
 
 [author] setup one `authors` route
