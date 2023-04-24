@@ -1,3 +1,5 @@
+logout need confirm
+
 [page-layout] `PageMobileFootGuest` -- link to home
 [page-layout] `PageMobileFootUser` -- link to home
 
