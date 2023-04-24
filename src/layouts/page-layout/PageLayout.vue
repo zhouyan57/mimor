@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebar from './PageDesktopSidebar.vue'
 import PageMobileFoot from './PageMobileFoot.vue'
 import PageMobileHead from './PageMobileHead.vue'
-
-const router = useRouter()
 </script>
 
 <template>

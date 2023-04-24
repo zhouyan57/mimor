@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
 import PageMobileMenu from './PageMobileMenu.vue'
-
-const route = useRoute()
-const router = useRouter()
 </script>
 
 <template>
