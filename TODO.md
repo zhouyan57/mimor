@@ -1,8 +1,20 @@
-use `auth.isLoadingUser`
+`PageDesktopSidebarLoading` -- use `auth.isLoadingUser`
+
+- `EllipsisHorizontalIcon`
+
+`PageMobileFootLoading` -- use `auth.isLoadingUser`
+
+`PageMobileMenuLoading` -- use `auth.isLoadingUser`
+
+- `EllipsisHorizontalIcon`
+
+`PageMobileMenu*` link to 迷墨链接
+
+`PageDesktopSidebar*` link to 迷墨链接
 
 # author
 
-[author] setup one `authors` route
+[author] setup `authors` route
 [author] no project just author and files -- not even directory
 
 # examples
