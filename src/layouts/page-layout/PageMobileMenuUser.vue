@@ -4,10 +4,14 @@ import { UserIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute, useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import Watch from '../../components/utils/Watch.vue'
+import { User } from '../../models/User'
+import { logout } from '../../reactives/logout'
 import { useCurrentPathname } from '../../reactives/useCurrentPathname'
 import { useCurrentQuery } from '../../reactives/useCurrentQuery'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
+
+defineProps<{ user: User }>()
 
 const route = useRoute()
 const router = useRouter()
@@ -135,19 +139,7 @@ function jump(path: string) {
 
         <div class="border-t border-stone-500 py-3">
           <div class="flex">
-            <button
-              @click="
-                () => {
-                  close()
-                  jump('/login')
-                }
-              "
-            >
-              <Lang>
-                <template #zh>登录</template>
-                <template #en>Login</template>
-              </Lang>
-            </button>
+            <div class="font-bold">{{ user.name }}</div>
 
             <div class="px-2 font-bold">/</div>
 
@@ -155,13 +147,13 @@ function jump(path: string) {
               @click="
                 () => {
                   close()
-                  jump('/register')
+                  logout()
                 }
               "
             >
               <Lang>
-                <template #zh>注册</template>
-                <template #en>Register</template>
+                <template #zh>退出</template>
+                <template #en>Logout</template>
               </Lang>
             </button>
           </div>

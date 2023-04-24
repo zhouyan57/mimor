@@ -1,4 +1,5 @@
-[page-layout] `PageMobileMenuUser` -- support logout
+[page-layout] `PageMobileFootGuest` -- link to home
+[page-layout] `PageMobileFootUser` -- link to home
 
 # author
 
