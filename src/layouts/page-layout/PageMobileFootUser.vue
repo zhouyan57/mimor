@@ -10,10 +10,7 @@ defineProps<{ user: User }>()
 
 <template>
   <div class="flex h-full w-full justify-between bg-white py-1 opacity-95">
-    <Hyperlink
-      href="/"
-      class="flex flex-col items-center space-y-1 text-stone-700"
-    >
+    <Hyperlink href="/" class="flex flex-col items-center space-y-1">
       <HomeIcon class="h-6 w-6" />
       <Lang class="text-xs">
         <template #zh>首页</template>
@@ -21,12 +18,9 @@ defineProps<{ user: User }>()
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuUser class="border border-stone-500 p-2" :user="user" />
+    <PageMobileMenuUser class="border border-black p-2" :user="user" />
 
-    <Hyperlink
-      href="/docs"
-      class="flex flex-col items-center space-y-1 text-stone-700"
-    >
+    <Hyperlink href="/docs" class="flex flex-col items-center space-y-1">
       <BookOpenIcon class="h-6 w-6" />
       <Lang class="text-xs">
         <template #zh>文档</template>

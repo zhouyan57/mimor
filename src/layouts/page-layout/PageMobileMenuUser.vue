@@ -39,7 +39,7 @@ function jump(path: string) {
   <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
     <PopoverButton>
       <button class="flex">
-        <UserIcon class="h-7 w-7 text-stone-700" />
+        <UserIcon class="h-7 w-7" />
       </button>
     </PopoverButton>
 
