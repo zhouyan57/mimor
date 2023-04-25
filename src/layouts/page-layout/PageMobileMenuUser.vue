@@ -6,6 +6,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Watch from '../../components/utils/Watch.vue'
 import { User } from '../../models/user/User'
+import { username } from '../../models/user/username'
 import { logout } from '../../reactives/logout'
 import { useCurrentPathname } from '../../reactives/useCurrentPathname'
 import { useCurrentQuery } from '../../reactives/useCurrentQuery'
@@ -158,6 +159,21 @@ function jump(path: string) {
           </button>
 
           <PageLang />
+
+          <button
+            class="hover:underline"
+            @click="
+              () => {
+                close()
+                jump(`/authors/${username(user)}`)
+              }
+            "
+          >
+            <Lang>
+              <template #zh>创作</template>
+              <template #en>Create</template>
+            </Lang>
+          </button>
 
           <div class="w-full border-t border-black"></div>
 
