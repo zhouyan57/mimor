@@ -1,5 +1,3 @@
-`mimors/` -- fix mobile style
-
 # author
 
 [author] setup `authors` route

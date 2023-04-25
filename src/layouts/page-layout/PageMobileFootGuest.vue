@@ -6,7 +6,7 @@ import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
 </script>
 
 <template>
-  <div class="flex w-full justify-between bg-white py-1 opacity-95">
+  <div class="flex w-full justify-between bg-white py-1">
     <Hyperlink href="/" class="flex flex-col items-center space-y-1">
       <HomeIcon class="h-6 w-6" />
       <Lang class="text-xs">
