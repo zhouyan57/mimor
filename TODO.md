@@ -1,8 +1,3 @@
-# page-layout
-
-[page-layout] `PageMobileFootGuest` -- implement active link
-[page-layout] `PageMobileFootLoading` -- implement active link
-
 # author
 
 [author] `AuthorSelf` -- create mimor -- can be public or private
