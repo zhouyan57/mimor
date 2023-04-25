@@ -1,6 +1,5 @@
 # author
 
-[author] jump back for guest
 [author] create mimor
 [author] mimor can be public or private
 [author] edit mimor

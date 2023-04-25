@@ -1,10 +1,25 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { watch } from 'vue'
+import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
+const router = useRouter()
 const lang = useGlobalLang()
+const auth = useGlobalAuth()
+
+watch(
+  () => auth.user,
+  (value) => {
+    if (value === undefined) {
+      router.replace({ path: '/' })
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
