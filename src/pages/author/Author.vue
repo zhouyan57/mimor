@@ -1,30 +1,25 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
-import Lang from '../../components/lang/Lang.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+import AuthorOther from './AuthorOther.vue'
+import AuthorSelf from './AuthorSelf.vue'
 
+const route = useRoute()
 const lang = useGlobalLang()
+const auth = useGlobalAuth()
+
+function isSelf(): boolean {
+  return route.params.username === auth.username
+}
+
+const username = computed(() => String(route.params.username))
 </script>
 
 <template>
-  <Head>
-    <title v-if="lang.isZh()">作者 | 迷墨</title>
-    <title v-else>Author | Mimor</title>
-  </Head>
-
-  <PageLayout>
-    <div class="flex h-full flex-col space-y-3 font-serif text-xl">
-      <div class="flex items-baseline space-x-4">
-        <div class="font-logo text-2xl font-bold text-stone-800">
-          <Lang>
-            <template #zh> 作者 </template>
-            <template #en> Author </template>
-          </Lang>
-        </div>
-      </div>
-
-      <div>TODO</div>
-    </div>
-  </PageLayout>
+  <div>
+    <AuthorSelf v-if="isSelf()" :username="username" />
+    <AuthorOther v-else :username="username" />
+  </div>
 </template>

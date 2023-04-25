@@ -1,9 +1,9 @@
 # author
 
-[author] create mimor
-[author] mimor can be public or private
-[author] edit mimor
-[author] list author's `mimors` and `public/mimors`
+[author] `AuthorSelf` -- create mimor -- can be public or private
+[author] `AuthorSelf` -- list author's `mimors` -- public and private
+[author] `AuthorOther` -- list author's `mimors` -- public only
+[author] `AuthorSelf` -- edit mimor
 
 # home
 
