@@ -1,3 +1,8 @@
+# page-layout
+
+[page-layout] `PageMobileFootGuest` -- implement active link
+[page-layout] `PageMobileFootLoading` -- implement active link
+
 # author
 
 [author] `AuthorSelf` -- create mimor -- can be public or private
@@ -6,13 +11,15 @@
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
+# settings
+
+[settings] add `settings/` route
+[settings] links to `settings/` from sidebar and menu
+[settings] add settings to `removeServiceWorker`
+
 # pwa
 
 [pwa] add service-worker.js -- without cache
-
-# page-layout
-
-[page-layout] `PageMobileFoot*` -- implement active link
 
 # home
 

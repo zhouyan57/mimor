@@ -23,10 +23,8 @@ function jump(path: string) {
 
 <template>
   <Popover as="div" class="relative flex text-3xl" v-slot="{ open, close }">
-    <PopoverButton>
-      <button class="flex">
-        <Bars3Icon class="h-7 w-7" />
-      </button>
+    <PopoverButton class="flex border border-black p-2">
+      <Bars3Icon class="h-7 w-7" />
     </PopoverButton>
 
     <Watch

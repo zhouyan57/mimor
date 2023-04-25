@@ -15,7 +15,7 @@ import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuGuest class="border border-black p-2" />
+    <PageMobileMenuGuest />
 
     <Hyperlink href="/docs" class="flex flex-col items-center space-y-1">
       <BookOpenIcon class="h-6 w-6" />

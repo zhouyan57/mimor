@@ -16,7 +16,11 @@ defineProps<{ user: User }>()
 
 <template>
   <div class="flex h-full w-full justify-between bg-white py-1">
-    <Hyperlink href="/" class="flex flex-col items-center space-y-1">
+    <Hyperlink
+      href="/"
+      :class="{ 'text-orange-500': $route.path === '/' }"
+      class="flex flex-col items-center space-y-1"
+    >
       <HomeIcon class="h-6 w-6" />
       <Lang class="text-xs">
         <template #zh>首页</template>
@@ -26,6 +30,9 @@ defineProps<{ user: User }>()
 
     <Hyperlink
       :href="`/authors/${username(user)}`"
+      :class="{
+        'text-orange-500': $route.path === `/authors/${username(user)}`,
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <PencilIcon class="h-6 w-6" />
@@ -35,9 +42,13 @@ defineProps<{ user: User }>()
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuUser class="border border-black p-2" :user="user" />
+    <PageMobileMenuUser :user="user" />
 
-    <Hyperlink href="/recall" class="flex flex-col items-center space-y-1">
+    <Hyperlink
+      href="/recall"
+      :class="{ 'text-orange-500': $route.path === '/recall' }"
+      class="flex flex-col items-center space-y-1"
+    >
       <LightBulbIcon class="h-6 w-6" />
       <Lang class="text-xs">
         <template #zh>回顾</template>
@@ -45,7 +56,11 @@ defineProps<{ user: User }>()
       </Lang>
     </Hyperlink>
 
-    <Hyperlink href="/docs" class="flex flex-col items-center space-y-1">
+    <Hyperlink
+      href="/docs"
+      :class="{ 'text-orange-500': $route.path === '/docs' }"
+      class="flex flex-col items-center space-y-1"
+    >
       <BookOpenIcon class="h-6 w-6" />
       <Lang class="text-xs">
         <template #zh>文档</template>

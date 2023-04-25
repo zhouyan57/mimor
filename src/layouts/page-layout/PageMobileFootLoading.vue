@@ -15,7 +15,7 @@ import PageMobileMenuLoading from './PageMobileMenuLoading.vue'
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuLoading class="border border-black p-2" />
+    <PageMobileMenuLoading />
 
     <Hyperlink href="/docs" class="flex flex-col items-center space-y-1">
       <BookOpenIcon class="h-6 w-6" />
