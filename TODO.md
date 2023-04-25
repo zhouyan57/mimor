@@ -1,6 +1,7 @@
 # author
 
-`PageMobileMenu*` -- no need to use `absolute` for `XMarkIcon` and logo
+`PageMobileMenuGuest` -- no need to use `absolute`
+`PageMobileMenuLoading` -- no need to use `absolute`
 
 `PageMobileFootUser` -- link to author -- by `Create` link
 `PageMobileMenuUser` -- link to author -- by `Create` link
