@@ -4,11 +4,13 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { User } from '../../models/User'
 import { logout } from '../../reactives/logout'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageLang from './PageLang.vue'
 
 defineProps<{ user: User }>()
 
 const lang = useGlobalLang()
+const auth = useGlobalAuth()
 
 function logoutAfterConfirming() {
   const message = lang.isZh() ? '确定要退出吗？' : 'Are you sure to logout?'
@@ -51,6 +53,13 @@ function logoutAfterConfirming() {
       </Hyperlink>
 
       <PageLang />
+
+      <Hyperlink :href="`/authors/${auth.username}`" class="hover:underline">
+        <Lang>
+          <template #zh>创作</template>
+          <template #en>Create</template>
+        </Lang>
+      </Hyperlink>
     </div>
 
     <div class="flex border-t border-stone-500 pt-2 text-2xl">

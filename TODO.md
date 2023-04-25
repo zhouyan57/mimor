@@ -1,6 +1,12 @@
 # author
 
-[author] link to author from sidebar and foot and menu
+move `User` to `models/user/`
+
+`models/user/username.ts`
+
+`PageDesktopSidebarUser` -- use `username` function
+`PageMobileFootUser` -- link to author -- by `Create` link
+`PageMobileMenuUser` -- link to author -- by `Create` link
 
 [author] create mimor
 [author] mimor can be public or private
