@@ -14,6 +14,8 @@ import PageLang from './PageLang.vue'
         </Lang>
       </Hyperlink>
 
+      <PageLang />
+
       <Hyperlink href="/docs" class="hover:underline">
         <Lang>
           <template #zh>文档</template>
@@ -34,8 +36,6 @@ import PageLang from './PageLang.vue'
           <template #en>About</template>
         </Lang>
       </Hyperlink>
-
-      <PageLang />
     </div>
 
     <div class="flex border-t border-stone-500 pt-2 text-2xl">

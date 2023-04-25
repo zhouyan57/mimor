@@ -30,6 +30,8 @@ function logoutAfterConfirming() {
         </Lang>
       </Hyperlink>
 
+      <PageLang />
+
       <Hyperlink href="/docs" class="hover:underline">
         <Lang>
           <template #zh>文档</template>
@@ -50,8 +52,6 @@ function logoutAfterConfirming() {
           <template #en>About</template>
         </Lang>
       </Hyperlink>
-
-      <PageLang />
 
       <Hyperlink :href="`/authors/${username(user)}`" class="hover:underline">
         <Lang>
