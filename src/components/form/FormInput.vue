@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { Form } from './Form'
-
 defineProps<{
-  form: Form<any>
   name: string
 }>()
 </script>
@@ -18,7 +15,6 @@ defineProps<{
         class="w-full p-3 font-bold disabled:bg-stone-100"
         :id="name"
         :name="name"
-        :value="form.values[name]"
         v-bind="$attrs"
       />
 

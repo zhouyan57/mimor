@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { Form } from './Form'
-
 defineProps<{
-  form: Form<any>
   name: string
 }>()
 </script>
@@ -19,7 +16,6 @@ defineProps<{
         :id="name"
         :name="name"
         type="checkbox"
-        :checked="Boolean(form.values[name])"
         v-bind="$attrs"
       />
     </div>

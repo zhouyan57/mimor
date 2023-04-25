@@ -69,12 +69,7 @@ watch(
           })
         "
       >
-        <FormInput
-          :form="form"
-          name="username"
-          autocomplete="username"
-          required
-        >
+        <FormInput name="username" autocomplete="username" required>
           <template #label>
             <Lang>
               <template #zh>用户名</template>
@@ -83,7 +78,7 @@ watch(
           </template>
         </FormInput>
 
-        <FormInput :form="form" name="name" autocomplete="username" required>
+        <FormInput name="name" autocomplete="username" required>
           <template #label>
             <Lang>
               <template #zh>名字</template>
@@ -93,7 +88,6 @@ watch(
         </FormInput>
 
         <FormInput
-          :form="form"
           name="password"
           type="password"
           autocomplete="new-password"
