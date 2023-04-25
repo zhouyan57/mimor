@@ -1,5 +1,3 @@
-extract `loginByTokenIfNotAlready`
-
 move login logic from `App` to `PageLayout`
 
 - remove `auth.isLoadingUser`

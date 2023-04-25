@@ -2,33 +2,11 @@
 import { Head } from '@vueuse/head'
 import { onMounted } from 'vue'
 import { useGlobalLang } from './components/lang/useGlobalLang'
-import { loginByToken } from './reactives/loginByToken'
-import { useGlobalAuth } from './reactives/useGlobalAuth'
-import { useGlobalToken } from './reactives/useGlobalToken'
+import { loginByTokenIfNotAlready } from './reactives/loginByTokenIfNotAlready'
 
 const lang = useGlobalLang()
-const auth = useGlobalAuth()
-const token = useGlobalToken()
 
-const report = {
-  errorMessage: '',
-}
-
-onMounted(async () => {
-  if (!token.name) {
-    return
-  }
-
-  if (auth.username) {
-    auth.isLoadingUser = true
-
-    try {
-      await loginByToken({ username: auth.username }, report)
-    } catch (_error) {}
-
-    auth.isLoadingUser = false
-  }
-})
+onMounted(() => loginByTokenIfNotAlready())
 </script>
 
 <template>
