@@ -1,7 +1,3 @@
-`PageMobileMenuLoading` -- use `auth.isLoadingUser`
-
-- `EllipsisHorizontalIcon`
-
 `PageMobileMenu*` link to 迷墨链接
 
 `PageDesktopSidebar*` link to 迷墨链接
