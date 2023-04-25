@@ -11,7 +11,6 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   const list = [
     `${origin}/contents/examples/sisuo.mimor`,
-    `${origin}/contents/examples/causal-reasoning.mimor`,
     `${origin}/contents/examples/debug.mimor`,
   ]
 
