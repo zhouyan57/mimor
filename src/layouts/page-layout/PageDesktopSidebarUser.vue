@@ -2,7 +2,7 @@
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import { User } from '../../models/User'
+import { User } from '../../models/user/User'
 import { logout } from '../../reactives/logout'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageLang from './PageLang.vue'

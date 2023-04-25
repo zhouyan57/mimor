@@ -2,7 +2,7 @@
 import { BookOpenIcon, HomeIcon } from '@heroicons/vue/24/outline'
 import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
-import { User } from '../../models/User'
+import { User } from '../../models/user/User'
 import PageMobileMenuUser from './PageMobileMenuUser.vue'
 
 defineProps<{ user: User }>()
