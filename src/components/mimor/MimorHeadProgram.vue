@@ -21,6 +21,10 @@ defineProps<{
   state: State
   program: Program
 }>()
+
+function fullscreenSupported() {
+  return document.fullscreenEnabled
+}
 </script>
 
 <template>
@@ -70,25 +74,27 @@ defineProps<{
         </a>
       </button>
 
-      <button
-        v-if="!state.isFullscreen"
-        :href="`${origin}/mimors/${state.src}`"
-        target="_blank"
-        :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
-        @click="state.isFullscreen = true"
-      >
-        <ArrowsPointingOutIcon class="mb-0.5 h-5 w-5" />
-      </button>
+      <template v-if="fullscreenSupported()">
+        <button
+          v-if="!state.isFullscreen"
+          :href="`${origin}/mimors/${state.src}`"
+          target="_blank"
+          :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
+          @click="state.isFullscreen = true"
+        >
+          <ArrowsPointingOutIcon class="mb-0.5 h-5 w-5" />
+        </button>
 
-      <button
-        v-else
-        :href="`${origin}/mimors/${state.src}`"
-        target="_blank"
-        :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
-        @click="state.isFullscreen = false"
-      >
-        <ArrowsPointingInIcon class="mb-0.5 h-5 w-5" />
-      </button>
+        <button
+          v-else
+          :href="`${origin}/mimors/${state.src}`"
+          target="_blank"
+          :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
+          @click="state.isFullscreen = false"
+        >
+          <ArrowsPointingInIcon class="mb-0.5 h-5 w-5" />
+        </button>
+      </template>
 
       <a
         :href="origin"
