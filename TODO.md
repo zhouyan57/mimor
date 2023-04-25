@@ -1,7 +1,3 @@
-# settings
-
-[settings] add button to `removeServiceWorker`
-
 # pwa
 
 [pwa] add service-worker.js -- without cache
