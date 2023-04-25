@@ -1,7 +1,11 @@
 # author
 
-[author] setup `authors` route
-[author] no project just author and files -- not even directory
+[author] link to author from sidebar and foot and menu
+
+[author] create mimor
+[author] mimor can be public or private
+[author] edit mimor
+[author] list author's `mimors` and `public/mimors`
 
 # home
 
