@@ -21,6 +21,13 @@ import PageLang from './PageLang.vue'
         </Lang>
       </Hyperlink>
 
+      <Hyperlink href="/mimors" class="hover:underline">
+        <Lang>
+          <template #zh>链接</template>
+          <template #en>Link</template>
+        </Lang>
+      </Hyperlink>
+
       <Hyperlink href="/about" class="hover:underline">
         <Lang>
           <template #zh>关于</template>
