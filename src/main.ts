@@ -5,6 +5,7 @@ import * as Directives from './directives'
 import router from './router'
 import './styles/fonts.css'
 import './styles/index.css'
+import { registerServiceWorker } from './utils/pwa/registerServiceWorker'
 
 const app = createApp(App)
 
@@ -18,3 +19,5 @@ app.directive('mounted', Directives.mounted)
 app.directive('on-click-outside', Directives.onClickOutside)
 
 app.mount('#app')
+
+registerServiceWorker('/service-worker.js')

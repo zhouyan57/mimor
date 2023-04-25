@@ -1,7 +1,3 @@
-# pwa
-
-[pwa] add service-worker.js -- without cache
-
 # author
 
 [author] `AuthorSelf` -- create mimor -- can be public or private
