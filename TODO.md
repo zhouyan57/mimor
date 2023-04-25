@@ -4,6 +4,7 @@
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor
+[author] `AuthorSelf` -- delete mimor
 
 # home
 
