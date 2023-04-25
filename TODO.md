@@ -1,5 +1,11 @@
-`Recall` -- fix jump back
-`Settings` -- fix jump back
+# settings
+
+[settings] links to `settings/` from sidebar and menu
+[settings] add button to `removeServiceWorker`
+
+# pwa
+
+[pwa] add service-worker.js -- without cache
 
 # author
 
@@ -8,15 +14,6 @@
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
-
-# settings
-
-[settings] links to `settings/` from sidebar and menu
-[settings] add settings to `removeServiceWorker`
-
-# pwa
-
-[pwa] add service-worker.js -- without cache
 
 # home
 

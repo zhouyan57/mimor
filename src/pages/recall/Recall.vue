@@ -1,14 +1,23 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { loginByTokenIfNotAlready } from '../../reactives/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
+const triedToLogin = ref(false)
 const router = useRouter()
 const lang = useGlobalLang()
 const auth = useGlobalAuth()
+
+onMounted(async () => {
+  await loginByTokenIfNotAlready()
+
+  triedToLogin.value = true
+})
 </script>
 
 <template>
