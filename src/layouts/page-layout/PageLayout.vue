@@ -11,15 +11,13 @@ import PageMobileFootLoading from './PageMobileFootLoading.vue'
 import PageMobileFootUser from './PageMobileFootUser.vue'
 import PageMobileHead from './PageMobileHead.vue'
 
-const isLoadingUser = ref(false)
+const isLoginTried = ref(false)
 const auth = useGlobalAuth()
 
 onMounted(async () => {
-  isLoadingUser.value = true
-
   await loginByTokenIfNotAlready()
 
-  isLoadingUser.value = false
+  isLoginTried.value = true
 })
 </script>
 
@@ -36,7 +34,7 @@ onMounted(async () => {
     <div class="flex h-screen pb-14 pt-8 md:pb-0 md:pt-12">
       <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
         <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
-        <PageDesktopSidebarLoading v-else-if="isLoadingUser" />
+        <PageDesktopSidebarLoading v-else-if="!isLoginTried" />
         <PageDesktopSidebarGuest v-else />
       </div>
 
@@ -51,7 +49,7 @@ onMounted(async () => {
       class="fixed bottom-0 right-0 w-full border-t border-stone-400 px-4 md:hidden"
     >
       <PageMobileFootUser v-if="auth.user" :user="auth.user" />
-      <PageMobileFootLoading v-else-if="isLoadingUser" />
+      <PageMobileFootLoading v-else-if="!isLoginTried" />
       <PageMobileFootGuest v-else />
     </div>
   </div>
