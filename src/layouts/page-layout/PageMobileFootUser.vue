@@ -12,7 +12,7 @@ defineProps<{ user: User }>()
   <div class="flex h-full w-full justify-between bg-white py-1 opacity-95">
     <Hyperlink
       href="/"
-      class="flex flex-col items-center space-y-1 text-stone-400"
+      class="flex flex-col items-center space-y-1 text-stone-700"
     >
       <HomeIcon class="h-6 w-6" />
       <Lang class="text-xs">
@@ -21,11 +21,11 @@ defineProps<{ user: User }>()
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuUser class="border border-stone-300 p-2" :user="user" />
+    <PageMobileMenuUser class="border border-stone-500 p-2" :user="user" />
 
     <Hyperlink
       href="/docs"
-      class="flex flex-col items-center space-y-1 text-stone-400"
+      class="flex flex-col items-center space-y-1 text-stone-700"
     >
       <BookOpenIcon class="h-6 w-6" />
       <Lang class="text-xs">

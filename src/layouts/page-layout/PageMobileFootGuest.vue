@@ -9,7 +9,7 @@ import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
   <div class="flex w-full justify-between bg-white py-1 opacity-95">
     <Hyperlink
       href="/"
-      class="flex flex-col items-center space-y-1 text-stone-400"
+      class="flex flex-col items-center space-y-1 text-stone-700"
     >
       <HomeIcon class="h-6 w-6" />
       <Lang class="text-xs">
@@ -18,11 +18,11 @@ import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuGuest class="border border-stone-300 p-2" />
+    <PageMobileMenuGuest class="border border-stone-500 p-2" />
 
     <Hyperlink
       href="/docs"
-      class="flex flex-col items-center space-y-1 text-stone-400"
+      class="flex flex-col items-center space-y-1 text-stone-700"
     >
       <BookOpenIcon class="h-6 w-6" />
       <Lang class="text-xs">
