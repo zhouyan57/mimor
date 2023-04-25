@@ -6,6 +6,14 @@
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
+# pwa
+
+[pwa] add service-worker.js -- without cache
+
+# page-layout
+
+[page-layout] `PageMobileFoot*` -- implement active link
+
 # home
 
 [home] what to show in the home page?
