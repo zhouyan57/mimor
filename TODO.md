@@ -1,7 +1,3 @@
-`PageDesktopSidebarLoading` -- use `auth.isLoadingUser`
-
-- `EllipsisHorizontalIcon`
-
 `PageMobileFootLoading` -- use `auth.isLoadingUser`
 
 `PageMobileMenuLoading` -- use `auth.isLoadingUser`

@@ -2,6 +2,7 @@
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
+import PageDesktopSidebarLoading from './PageDesktopSidebarLoading.vue'
 import PageDesktopSidebarUser from './PageDesktopSidebarUser.vue'
 import PageMobileFootGuest from './PageMobileFootGuest.vue'
 import PageMobileFootUser from './PageMobileFootUser.vue'
@@ -22,6 +23,7 @@ const auth = useGlobalAuth()
   <div class="flex h-full pb-14 pt-8 md:h-screen md:pb-0 md:pt-12">
     <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
       <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
+      <PageDesktopSidebarLoading v-else-if="auth.isLoadingUser" />
       <PageDesktopSidebarGuest v-else />
     </div>
 
