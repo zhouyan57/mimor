@@ -1,7 +1,5 @@
 # author
 
-`PageDesktopSidebarUser` -- use `username` function
-
 `PageMobileMenu*` -- no need to use `absolute` for `XMarkIcon` and logo
 
 `PageMobileFootUser` -- link to author -- by `Create` link
