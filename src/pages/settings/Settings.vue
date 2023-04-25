@@ -13,8 +13,8 @@ const auth = useGlobalAuth()
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">回顾 | 迷墨</title>
-    <title v-else>Recall | Mimor</title>
+    <title v-if="lang.isZh()">设置 | 迷墨</title>
+    <title v-else>Settings | Mimor</title>
   </Head>
 
   <PageLayout>
@@ -22,8 +22,8 @@ const auth = useGlobalAuth()
       <div class="flex items-baseline space-x-4">
         <div class="font-logo text-2xl font-bold text-stone-800">
           <Lang>
-            <template #zh> 回顾 </template>
-            <template #en> Recall </template>
+            <template #zh> 设置 </template>
+            <template #en> Settings </template>
           </Lang>
         </div>
       </div>

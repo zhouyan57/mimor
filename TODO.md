@@ -1,3 +1,12 @@
+extract `loginByTokenIfNotAlready`
+
+move login logic from `App` to `PageLayout`
+
+- remove `auth.isLoadingUser`
+
+`Recall` -- fix jump back
+`Settings` -- fix jump back
+
 # author
 
 [author] `AuthorSelf` -- create mimor -- can be public or private
@@ -8,7 +17,6 @@
 
 # settings
 
-[settings] add `settings/` route
 [settings] links to `settings/` from sidebar and menu
 [settings] add settings to `removeServiceWorker`
 

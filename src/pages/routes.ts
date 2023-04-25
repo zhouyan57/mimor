@@ -9,6 +9,7 @@ import MimorEntrance from './mimor-entrance/MimorEntrance.vue'
 import Mimor from './mimor/Mimor.vue'
 import Recall from './recall/Recall.vue'
 import Register from './register/Register.vue'
+import Settings from './settings/Settings.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
@@ -26,5 +27,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/authors/:username', component: Author },
   { path: '/recall', component: Recall },
   { path: '/recall/', component: Recall },
+  { path: '/settings', component: Settings },
+  { path: '/settings/', component: Settings },
   { path: '/:path(.*)', component: PageNotFound },
 ]
