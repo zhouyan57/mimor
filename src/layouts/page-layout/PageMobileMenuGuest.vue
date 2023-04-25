@@ -96,6 +96,8 @@ function jump(path: string) {
             </Lang>
           </button>
 
+          <PageLang />
+
           <button
             class="hover:underline"
             @click="
@@ -141,7 +143,20 @@ function jump(path: string) {
             </Lang>
           </button>
 
-          <PageLang />
+          <button
+            class="hover:underline"
+            @click="
+              () => {
+                close()
+                jump('/settings')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>设置</template>
+              <template #en>Settings</template>
+            </Lang>
+          </button>
 
           <div class="w-full border-t border-black"></div>
 
