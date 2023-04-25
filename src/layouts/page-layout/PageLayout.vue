@@ -16,7 +16,7 @@ const auth = useGlobalAuth()
   />
 
   <PageMobileHead
-    class="fixed left-0 top-0 block border-b border-stone-300 bg-white px-4 py-0.5 md:hidden"
+    class="fixed left-0 top-0 block border-b border-stone-400 bg-white px-4 py-0.5 md:hidden"
   />
 
   <div class="flex h-full pb-14 pt-8 md:h-screen md:pb-0 md:pt-12">
@@ -33,7 +33,7 @@ const auth = useGlobalAuth()
   </div>
 
   <div
-    class="fixed bottom-0 right-0 w-full border-t border-stone-300 px-4 md:hidden"
+    class="fixed bottom-0 right-0 w-full border-t border-stone-400 px-4 md:hidden"
   >
     <PageMobileFootUser v-if="auth.user" :user="auth.user" />
     <PageMobileFootGuest v-else />
