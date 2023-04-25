@@ -65,9 +65,9 @@ function jump(path: string) {
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <PopoverPanel
-        class="fixed left-0 top-0 z-40 flex h-screen w-screen flex-col justify-center space-y-2 bg-white px-2 pb-20"
+        class="fixed left-0 top-0 z-40 flex h-screen w-full flex-col justify-between bg-white p-2"
       >
-        <div class="absolute left-2 top-2">
+        <div class="flex justify-between">
           <button
             @click="
               () => {
@@ -78,13 +78,11 @@ function jump(path: string) {
           >
             <XMarkIcon class="h-10 w-10 stroke-1" />
           </button>
-        </div>
 
-        <div class="absolute right-3 top-0">
           <PageLogo class="font-bold" />
         </div>
 
-        <div class="flex flex-col items-start space-y-2 py-2">
+        <div class="flex flex-col items-start space-y-2 overflow-auto">
           <button
             class="hover:underline"
             @click="
@@ -146,43 +144,39 @@ function jump(path: string) {
           </button>
 
           <PageLang />
+
+          <div class="w-full border-t border-black"></div>
+
+          <button
+            @click="
+              () => {
+                close()
+                jump('/login')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>登录</template>
+              <template #en>Login</template>
+            </Lang>
+          </button>
+
+          <button
+            @click="
+              () => {
+                close()
+                jump('/register')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>注册</template>
+              <template #en>Register</template>
+            </Lang>
+          </button>
         </div>
 
-        <div class="border-t border-stone-500 py-3">
-          <div class="flex">
-            <button
-              @click="
-                () => {
-                  close()
-                  jump('/login')
-                }
-              "
-            >
-              <Lang>
-                <template #zh>登录</template>
-                <template #en>Login</template>
-              </Lang>
-            </button>
-
-            <div class="px-2 font-bold">/</div>
-
-            <button
-              @click="
-                () => {
-                  close()
-                  jump('/register')
-                }
-              "
-            >
-              <Lang>
-                <template #zh>注册</template>
-                <template #en>Register</template>
-              </Lang>
-            </button>
-          </div>
-        </div>
-
-        <div class="absolute bottom-4 right-2">
+        <div class="flex justify-end">
           <button
             @click="
               () => {

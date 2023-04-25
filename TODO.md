@@ -1,6 +1,5 @@
 # author
 
-`PageMobileMenuGuest` -- no need to use `absolute`
 `PageMobileMenuLoading` -- no need to use `absolute`
 
 `PageMobileFootUser` -- link to author -- by `Create` link
