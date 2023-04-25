@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BookOpenIcon, HomeIcon } from '@heroicons/vue/24/outline'
-import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
+import Hyperlink from '../../components/utils/Hyperlink.vue'
 import PageMobileMenuGuest from './PageMobileMenuGuest.vue'
 </script>
 

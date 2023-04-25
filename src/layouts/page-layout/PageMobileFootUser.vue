@@ -5,8 +5,8 @@ import {
   LightBulbIcon,
   PencilIcon,
 } from '@heroicons/vue/24/outline'
-import Hyperlink from '../../components/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
+import Hyperlink from '../../components/utils/Hyperlink.vue'
 import { User } from '../../models/user/User'
 import { username } from '../../models/user/username'
 import PageMobileMenuUser from './PageMobileMenuUser.vue'

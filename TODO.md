@@ -1,5 +1,3 @@
-move `Hyperlink` to `components/utils/`
-
 # author
 
 [author] `AuthorSelf` -- create mimor -- can be public or private
