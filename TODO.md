@@ -1,7 +1,5 @@
 # author
 
-`models/user/username.ts`
-
 `PageDesktopSidebarUser` -- use `username` function
 
 `PageMobileMenu*` -- no need to use `absolute` for `XMarkIcon` and logo
