@@ -53,6 +53,13 @@ function logoutAfterConfirming() {
         </Lang>
       </Hyperlink>
 
+      <Hyperlink href="/settings" class="hover:underline">
+        <Lang>
+          <template #zh>设置</template>
+          <template #en>Settings</template>
+        </Lang>
+      </Hyperlink>
+
       <Hyperlink :href="`/authors/${username(user)}`" class="hover:underline">
         <Lang>
           <template #zh>创作</template>

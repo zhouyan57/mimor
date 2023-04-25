@@ -36,6 +36,13 @@ import PageLang from './PageLang.vue'
           <template #en>About</template>
         </Lang>
       </Hyperlink>
+
+      <Hyperlink href="/settings" class="hover:underline">
+        <Lang>
+          <template #zh>设置</template>
+          <template #en>Settings</template>
+        </Lang>
+      </Hyperlink>
     </div>
 
     <div class="flex border-t border-stone-500 pt-2 text-2xl">

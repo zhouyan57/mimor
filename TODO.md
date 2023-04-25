@@ -1,6 +1,6 @@
 # settings
 
-[settings] links to `settings/` from sidebar and menu
+[settings] links to `settings/` from menu
 [settings] add button to `removeServiceWorker`
 
 # pwa
