@@ -120,6 +120,21 @@ function jump(path: string) {
             @click="
               () => {
                 close()
+                jump('/mimors')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>链接</template>
+              <template #en>Link</template>
+            </Lang>
+          </button>
+
+          <button
+            class="hover:underline"
+            @click="
+              () => {
+                close()
                 jump('/about')
               }
             "

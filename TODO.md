@@ -1,4 +1,4 @@
-`PageMobileMenu*` link to 迷墨链接
+`mimors/` -- fix mobile style
 
 # author
 
