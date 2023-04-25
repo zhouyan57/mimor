@@ -5,6 +5,7 @@ import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
 import PageDesktopSidebarLoading from './PageDesktopSidebarLoading.vue'
 import PageDesktopSidebarUser from './PageDesktopSidebarUser.vue'
 import PageMobileFootGuest from './PageMobileFootGuest.vue'
+import PageMobileFootLoading from './PageMobileFootLoading.vue'
 import PageMobileFootUser from './PageMobileFootUser.vue'
 import PageMobileHead from './PageMobileHead.vue'
 
@@ -38,6 +39,7 @@ const auth = useGlobalAuth()
     class="fixed bottom-0 right-0 w-full border-t border-stone-400 px-4 md:hidden"
   >
     <PageMobileFootUser v-if="auth.user" :user="auth.user" />
+    <PageMobileFootLoading v-else-if="auth.isLoadingUser" />
     <PageMobileFootGuest v-else />
   </div>
 </template>

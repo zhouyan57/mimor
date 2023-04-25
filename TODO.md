@@ -1,5 +1,3 @@
-`PageMobileFootLoading` -- use `auth.isLoadingUser`
-
 `PageMobileMenuLoading` -- use `auth.isLoadingUser`
 
 - `EllipsisHorizontalIcon`
