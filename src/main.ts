@@ -1,6 +1,7 @@
 import { createHead } from '@vueuse/head'
 import { createApp } from 'vue'
 import App from './App.vue'
+import { happyHacking } from './console/happyHacking'
 import * as Directives from './directives'
 import router from './router'
 import './styles/fonts.css'
@@ -19,5 +20,7 @@ app.directive('mounted', Directives.mounted)
 app.directive('on-click-outside', Directives.onClickOutside)
 
 app.mount('#app')
+
+happyHacking()
 
 registerServiceWorker('/service-worker.js')
