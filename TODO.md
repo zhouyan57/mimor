@@ -1,7 +1,3 @@
-move login logic from `App` to `PageLayout`
-
-- remove `auth.isLoadingUser`
-
 `Recall` -- fix jump back
 `Settings` -- fix jump back
 

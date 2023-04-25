@@ -5,12 +5,10 @@ import { User } from '../models/user/User'
 type Auth = {
   username?: string
   user?: User
-  isLoadingUser: boolean
 }
 
 const globalAuth: Auth = reactive({
   username: window.localStorage.getItem('username') || undefined,
-  isLoadingUser: false,
 })
 
 export function useGlobalAuth() {

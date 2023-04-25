@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { onMounted } from 'vue'
 import { useGlobalLang } from './components/lang/useGlobalLang'
-import { loginByTokenIfNotAlready } from './reactives/loginByTokenIfNotAlready'
 
 const lang = useGlobalLang()
-
-onMounted(() => loginByTokenIfNotAlready())
 </script>
 
 <template>

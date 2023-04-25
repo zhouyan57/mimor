@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { loginByTokenIfNotAlready } from '../../reactives/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
@@ -9,7 +11,16 @@ import PageMobileFootLoading from './PageMobileFootLoading.vue'
 import PageMobileFootUser from './PageMobileFootUser.vue'
 import PageMobileHead from './PageMobileHead.vue'
 
+const isLoadingUser = ref(false)
 const auth = useGlobalAuth()
+
+onMounted(async () => {
+  isLoadingUser.value = true
+
+  await loginByTokenIfNotAlready()
+
+  isLoadingUser.value = false
+})
 </script>
 
 <template>
@@ -25,7 +36,7 @@ const auth = useGlobalAuth()
     <div class="flex h-screen pb-14 pt-8 md:pb-0 md:pt-12">
       <div class="hidden h-full w-[25rem] shrink-0 flex-col px-4 py-3 md:flex">
         <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
-        <PageDesktopSidebarLoading v-else-if="auth.isLoadingUser" />
+        <PageDesktopSidebarLoading v-else-if="isLoadingUser" />
         <PageDesktopSidebarGuest v-else />
       </div>
 
@@ -40,7 +51,7 @@ const auth = useGlobalAuth()
       class="fixed bottom-0 right-0 w-full border-t border-stone-400 px-4 md:hidden"
     >
       <PageMobileFootUser v-if="auth.user" :user="auth.user" />
-      <PageMobileFootLoading v-else-if="auth.isLoadingUser" />
+      <PageMobileFootLoading v-else-if="isLoadingUser" />
       <PageMobileFootGuest v-else />
     </div>
   </div>
