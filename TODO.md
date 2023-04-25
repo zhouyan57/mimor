@@ -1,7 +1,5 @@
 # author
 
-`PageMobileFootUser` -- link to author -- by `Create` link
-
 [author] jump back for guest
 [author] create mimor
 [author] mimor can be public or private
