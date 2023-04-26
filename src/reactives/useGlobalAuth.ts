@@ -1,11 +1,6 @@
 import { basename } from 'path-browserify'
 import { reactive, watch } from 'vue'
-import { User } from '../models/user/User'
-
-type Auth = {
-  username?: string
-  user?: User
-}
+import { Auth } from '../models/auth/Auth'
 
 const globalAuth: Auth = reactive({
   username: window.localStorage.getItem('username') || undefined,
