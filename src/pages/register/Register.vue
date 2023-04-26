@@ -2,8 +2,6 @@
 import { Head } from '@vueuse/head'
 import { reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { loginByPassword } from '../../auth/loginByPassword'
-import { register } from '../../auth/register'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
@@ -11,6 +9,8 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Hyperlink from '../../components/utils/Hyperlink.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { loginByPassword } from '../../models/auth/loginByPassword'
+import { register } from '../../models/auth/register'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
 const router = useRouter()

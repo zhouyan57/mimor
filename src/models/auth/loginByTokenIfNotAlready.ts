@@ -1,5 +1,5 @@
-import { useGlobalAuth } from '../reactives/useGlobalAuth'
-import { useGlobalToken } from '../reactives/useGlobalToken'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { loginByToken } from './loginByToken'
 
 export async function loginByTokenIfNotAlready(): Promise<void> {

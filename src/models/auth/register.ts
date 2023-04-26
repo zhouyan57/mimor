@@ -1,5 +1,5 @@
-import { useGlobalAuth } from '../reactives/useGlobalAuth'
-import { useGlobalBackend } from '../reactives/useGlobalBackend'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 
 export async function register(
   options: {
