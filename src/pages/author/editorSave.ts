@@ -11,6 +11,8 @@ export async function editorSave(
 ): Promise<void> {
   const { url } = useGlobalBackend()
 
+  report.errorMessage = ''
+
   const auth = useGlobalAuth()
 
   if (!auth.username) {
@@ -21,11 +23,11 @@ export async function editorSave(
     return
   }
 
-  report.errorMessage = ''
+  const filename = `${editor.filename}.mimor`
 
   const endpoint = editor.isPublic
-    ? `/users/${auth.username}/public/mimors/${editor.filename}?kind=file`
-    : `/users/${auth.username}/mimors/${editor.filename}?kind=file`
+    ? `/users/${auth.username}/public/mimors/${filename}?kind=file`
+    : `/users/${auth.username}/mimors/${filename}?kind=file`
 
   const response = await fetch(new URL(endpoint, url), {
     method: 'POST',
