@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { LockClosedIcon, LockOpenIcon } from '@heroicons/vue/24/outline'
+import {
+  LockClosedIcon,
+  LockOpenIcon,
+  PaperAirplaneIcon,
+} from '@heroicons/vue/24/outline'
 import { reactive } from 'vue'
-import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { createEditor } from './Editor'
 import { editorNumberOfLines } from './editorNumberOfLines'
@@ -53,12 +56,9 @@ const report = reactive({
         <button
           @click="editorSave(editor)"
           :disabled="editor.text.length === 0"
-          class="border border-orange-300 bg-orange-400 px-2 py-1 font-sans font-bold text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
+          class="border border-orange-300 bg-orange-400 px-3 py-1 font-sans font-bold text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
         >
-          <Lang>
-            <template #zh>保存</template>
-            <template #en>SAVE</template>
-          </Lang>
+          <PaperAirplaneIcon class="h-5 w-5" />
         </button>
       </div>
     </div>
