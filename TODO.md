@@ -1,4 +1,4 @@
-min 1 rows if not editing
+`AuthorEditor` -- size transition
 
 `mimors/` view `~/` as internal resource of users
 
