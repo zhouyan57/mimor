@@ -2,10 +2,10 @@
 import { Head } from '@vueuse/head'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { loginByTokenIfNotAlready } from '../../auth/loginByTokenIfNotAlready'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { loginByTokenIfNotAlready } from '../../reactives/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
 const triedToLogin = ref(false)

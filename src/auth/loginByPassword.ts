@@ -1,6 +1,6 @@
+import { useGlobalBackend } from '../reactives/useGlobalBackend'
+import { useGlobalToken } from '../reactives/useGlobalToken'
 import { loginByToken } from './loginByToken'
-import { useGlobalBackend } from './useGlobalBackend'
-import { useGlobalToken } from './useGlobalToken'
 
 export async function loginByPassword(
   options: {

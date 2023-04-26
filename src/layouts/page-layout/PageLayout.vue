@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { loginByTokenIfNotAlready } from '../../reactives/loginByTokenIfNotAlready'
+import { loginByTokenIfNotAlready } from '../../auth/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
