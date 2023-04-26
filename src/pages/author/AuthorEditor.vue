@@ -34,7 +34,7 @@ const report = reactive({
       @blur="editor.isEditing = false"
       v-model="editor.text"
       :rows="editorNumberOfLines(editor)"
-      :placeholder="lang.isZh() ? '创作卡片⋯⋯' : 'Create cards...'"
+      :placeholder="lang.isZh() ? '创作卡片 *^-^*' : 'Create cards :)'"
     ></textarea>
 
     <div class="flex justify-between">
