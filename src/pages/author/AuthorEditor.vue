@@ -39,7 +39,7 @@ const report = reactive({
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
         required
       />
-      <span class="font-mono text-xs">.mimor</span>
+      <span class="font-mono text-xs text-stone-500">.mimor</span>
     </div>
 
     <textarea
