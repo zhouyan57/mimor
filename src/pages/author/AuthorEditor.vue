@@ -4,6 +4,7 @@ import { reactive } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { createEditor } from './Editor'
+import { editorNumberOfLines } from './editorNumberOfLines'
 import { editorSave } from './editorSave'
 
 defineProps<{ username: string }>()
@@ -15,11 +16,6 @@ const editor = reactive(createEditor())
 const report = reactive({
   errorMessage: '',
 })
-
-function numberOfLines() {
-  const lines = editor.text.split('\n')
-  return Math.max(3, Math.min(10, lines.length))
-}
 </script>
 
 <template>
@@ -34,7 +30,7 @@ function numberOfLines() {
       @focus="editor.isEditing = true"
       @blur="editor.isEditing = false"
       v-model="editor.text"
-      :rows="numberOfLines()"
+      :rows="editorNumberOfLines(editor)"
       :placeholder="lang.isZh() ? '创作卡片⋯⋯' : 'Create cards...'"
     ></textarea>
 
