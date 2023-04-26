@@ -1,6 +1,5 @@
 # author
 
-[author] `editorSave` -- call fidb api
 [author] `AuthorSelf` -- create mimor -- can be public or private
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
