@@ -9,7 +9,9 @@ import PageMobileMenuLoading from './PageMobileMenuLoading.vue'
   <div class="flex w-full justify-between bg-white py-1">
     <Hyperlink
       href="/"
-      :class="{ 'text-orange-500': $route.path === '/' }"
+      :class="{
+        'animate-jump-sm text-orange-500': $route.path === '/',
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <HomeIcon class="h-6 w-6" />
@@ -23,7 +25,9 @@ import PageMobileMenuLoading from './PageMobileMenuLoading.vue'
 
     <Hyperlink
       href="/docs"
-      :class="{ 'text-orange-500': $route.path === '/docs' }"
+      :class="{
+        'animate-jump-sm text-orange-500': $route.path === '/docs',
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <BookOpenIcon class="h-6 w-6" />

@@ -18,7 +18,9 @@ defineProps<{ user: User }>()
   <div class="flex h-full w-full justify-between bg-white py-1">
     <Hyperlink
       href="/"
-      :class="{ 'text-orange-500': $route.path === '/' }"
+      :class="{
+        'animate-jump-sm text-orange-500': $route.path === '/',
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <HomeIcon class="h-6 w-6" />
@@ -31,7 +33,8 @@ defineProps<{ user: User }>()
     <Hyperlink
       :href="`/authors/${username(user)}`"
       :class="{
-        'text-orange-500': $route.path === `/authors/${username(user)}`,
+        'animate-jump-sm text-orange-500':
+          $route.path === `/authors/${username(user)}`,
       }"
       class="flex flex-col items-center space-y-1"
     >
@@ -46,7 +49,9 @@ defineProps<{ user: User }>()
 
     <Hyperlink
       href="/recall"
-      :class="{ 'text-orange-500': $route.path === '/recall' }"
+      :class="{
+        'animate-jump-sm text-orange-500': $route.path === '/recall',
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <LightBulbIcon class="h-6 w-6" />
@@ -58,7 +63,9 @@ defineProps<{ user: User }>()
 
     <Hyperlink
       href="/docs"
-      :class="{ 'text-orange-500': $route.path === '/docs' }"
+      :class="{
+        'animate-jump-sm text-orange-500': $route.path === '/docs',
+      }"
       class="flex flex-col items-center space-y-1"
     >
       <BookOpenIcon class="h-6 w-6" />
