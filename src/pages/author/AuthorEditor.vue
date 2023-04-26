@@ -4,23 +4,20 @@ import { reactive } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { createEditor } from './Editor'
+import { editorSave } from './editorSave'
 
 defineProps<{ username: string }>()
 
 const lang = useGlobalLang()
 
-const state = reactive(createEditor())
+const editor = reactive(createEditor())
 
 const report = reactive({
   errorMessage: '',
 })
 
-function save() {
-  console.log(state.text)
-}
-
 function numberOfLines() {
-  const lines = state.text.split('\n')
+  const lines = editor.text.split('\n')
   return Math.max(3, Math.min(10, lines.length))
 }
 </script>
@@ -28,15 +25,15 @@ function numberOfLines() {
 <template>
   <div
     class="flex flex-col border border-black p-2"
-    :class="{ 'border-orange-400 ring-2 ring-orange-300': state.isEditing }"
+    :class="{ 'border-orange-400 ring-2 ring-orange-300': editor.isEditing }"
   >
     <textarea
       class="my-1.5 h-full w-full resize-none px-1.5 font-mono focus:outline-none"
       name="text"
       spellcheck="false"
-      @focus="state.isEditing = true"
-      @blur="state.isEditing = false"
-      v-model="state.text"
+      @focus="editor.isEditing = true"
+      @blur="editor.isEditing = false"
+      v-model="editor.text"
       :rows="numberOfLines()"
       :placeholder="lang.isZh() ? '创作卡片⋯⋯' : 'Create cards...'"
     ></textarea>
@@ -44,22 +41,22 @@ function numberOfLines() {
     <div class="flex justify-between">
       <div class="flex space-x-2 px-1">
         <button
-          v-if="state.isPrivate"
+          v-if="editor.isPrivate"
           class="text-stone-500"
-          @click="state.isPrivate = false"
+          @click="editor.isPrivate = false"
         >
           <LockClosedIcon class="h-5 w-5" />
         </button>
 
-        <button v-else class="text-stone-500" @click="state.isPrivate = true">
+        <button v-else class="text-stone-500" @click="editor.isPrivate = true">
           <LockOpenIcon class="h-5 w-5" />
         </button>
       </div>
 
       <div class="flex">
         <button
-          @click="save()"
-          :disabled="state.text.length === 0"
+          @click="editorSave(editor)"
+          :disabled="editor.text.length === 0"
           class="border border-orange-300 bg-orange-400 px-2 py-1 font-sans font-bold text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
         >
           <Lang>

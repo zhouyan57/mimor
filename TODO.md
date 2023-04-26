@@ -1,6 +1,5 @@
 # author
 
-[author] extract `editorSave`
 [author] extract `editorNumberOfLines`
 [author] `editorSave` -- call fidb api
 [author] `AuthorSelf` -- create mimor -- can be public or private
