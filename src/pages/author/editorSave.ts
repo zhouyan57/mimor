@@ -21,8 +21,8 @@ export async function editorSave(
 
   const file = 'TODO.mimor'
 
-  const endpoint = editor.isPrivate
-    ? `/users/${auth.username}/private/mimors/${file}?kind=file`
+  const endpoint = editor.isPublic
+    ? `/users/${auth.username}/public/mimors/${file}?kind=file`
     : `/users/${auth.username}/mimors/${file}?kind=file`
 
   const response = await fetch(new URL(endpoint, url), {

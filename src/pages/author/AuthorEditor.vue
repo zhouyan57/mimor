@@ -40,15 +40,15 @@ const report = reactive({
     <div class="flex justify-between">
       <div class="flex space-x-2">
         <button
-          v-if="editor.isPrivate"
+          v-if="editor.isPublic"
           class="text-stone-500"
-          @click="editor.isPrivate = false"
+          @click="editor.isPublic = false"
         >
-          <LockClosedIcon class="h-5 w-5" />
+          <LockOpenIcon class="h-5 w-5" />
         </button>
 
-        <button v-else class="text-stone-500" @click="editor.isPrivate = true">
-          <LockOpenIcon class="h-5 w-5" />
+        <button v-else class="text-stone-500" @click="editor.isPublic = true">
+          <LockClosedIcon class="h-5 w-5" />
         </button>
       </div>
 

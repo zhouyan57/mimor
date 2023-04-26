@@ -1,13 +1,13 @@
 export type Editor = {
   text: string
   isEditing: boolean
-  isPrivate: boolean
+  isPublic: boolean
 }
 
 export function createEditor(): Editor {
   return {
     text: '',
     isEditing: false,
-    isPrivate: true,
+    isPublic: true,
   }
 }
