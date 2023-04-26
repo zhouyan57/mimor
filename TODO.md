@@ -1,3 +1,5 @@
+min 1 rows if not editing
+
 `mimors/` view `~/` as internal resource of users
 
 - examples:
