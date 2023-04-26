@@ -27,7 +27,7 @@ const report = reactive({
     :class="{ 'border-orange-400 ring-2 ring-orange-300': editor.isEditing }"
   >
     <textarea
-      class="my-2 h-full w-full resize-none px-1 font-mono focus:outline-none"
+      class="my-1 h-full w-full resize-none px-1 font-mono focus:outline-none"
       name="text"
       spellcheck="false"
       @focus="editor.isEditing = true"

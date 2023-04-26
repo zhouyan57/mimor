@@ -8,6 +8,6 @@ export function createEditor(): Editor {
   return {
     text: '',
     isEditing: false,
-    isPrivate: false,
+    isPrivate: true,
   }
 }
