@@ -1,7 +1,5 @@
 # author
 
-[author] `editorSave` -- use `<form>` for `required`
-
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor

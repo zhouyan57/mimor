@@ -22,7 +22,8 @@ const report = reactive({
 </script>
 
 <template>
-  <div
+  <form
+    @submit.prevent="editorSave(editor, report)"
     class="flex flex-col border border-black p-2"
     :class="{ 'border-orange-400 ring-2 ring-orange-300': editor.isEditing }"
   >
@@ -34,7 +35,7 @@ const report = reactive({
         class="w-full font-mono text-base focus:outline-none"
         name="file"
         type="text"
-        :value="editor.filename"
+        v-model="editor.filename"
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
         required
       />
@@ -57,19 +58,22 @@ const report = reactive({
         <button
           v-if="editor.isPublic"
           class="text-stone-500"
-          @click="editor.isPublic = false"
+          @click.prevent="editor.isPublic = false"
         >
           <LockOpenIcon class="h-5 w-5" />
         </button>
 
-        <button v-else class="text-stone-500" @click="editor.isPublic = true">
+        <button
+          v-else
+          class="text-stone-500"
+          @click.prevent="editor.isPublic = true"
+        >
           <LockClosedIcon class="h-5 w-5" />
         </button>
       </div>
 
       <div class="flex px-1">
         <button
-          @click="editorSave(editor, report)"
           :disabled="editor.text.length === 0"
           class="border border-orange-300 bg-orange-400 px-3 py-1 text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
         >
@@ -77,5 +81,5 @@ const report = reactive({
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </template>
