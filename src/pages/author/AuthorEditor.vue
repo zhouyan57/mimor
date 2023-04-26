@@ -27,7 +27,7 @@ const report = reactive({
     :class="{ 'border-orange-400 ring-2 ring-orange-300': editor.isEditing }"
   >
     <textarea
-      class="my-1.5 h-full w-full resize-none px-1.5 font-mono focus:outline-none"
+      class="my-2 h-full w-full resize-none px-1 font-mono focus:outline-none"
       name="text"
       spellcheck="false"
       @focus="editor.isEditing = true"
@@ -38,7 +38,7 @@ const report = reactive({
     ></textarea>
 
     <div class="flex justify-between">
-      <div class="flex space-x-2 px-1">
+      <div class="flex space-x-2">
         <button
           v-if="editor.isPrivate"
           class="text-stone-500"
@@ -52,11 +52,11 @@ const report = reactive({
         </button>
       </div>
 
-      <div class="flex">
+      <div class="flex px-1">
         <button
           @click="editorSave(editor)"
           :disabled="editor.text.length === 0"
-          class="border border-orange-300 bg-orange-400 px-3 py-1 font-sans font-bold text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
+          class="border border-orange-300 bg-orange-400 px-3 py-1 text-orange-50 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
         >
           <PaperAirplaneIcon class="h-5 w-5" />
         </button>
