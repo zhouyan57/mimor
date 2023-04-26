@@ -1,5 +1,3 @@
-`AuthorEditor` -- size transition
-
 `mimors/` view `~/` as internal resource of users
 
 - examples:

@@ -44,12 +44,15 @@ const report = reactive({
 
     <textarea
       class="my-1 h-full w-full resize-none px-1 font-mono text-base focus:outline-none"
+      :class="{
+        'transition-[height] duration-200': editorNumberOfLines(editor) <= 3,
+      }"
       name="text"
       spellcheck="false"
       @focus="editor.isEditing = true"
       @blur="editor.isEditing = false"
       v-model="editor.text"
-      :rows="editorNumberOfLines(editor)"
+      :style="{ height: editorNumberOfLines(editor) * 1.5 + 'rem' }"
       :placeholder="lang.isZh() ? '创作卡片 *^-^*' : 'Create cards :)'"
     ></textarea>
 
