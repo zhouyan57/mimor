@@ -1,6 +1,7 @@
 # author
 
-[author] `AuthorSelf` -- create mimor -- can be public or private
+[author] `editorSave` -- take file name as an argument
+
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor

@@ -21,18 +21,21 @@ export async function editorSave(
 
   const file = 'TODO.mimor'
 
-  const response = await fetch(
-    new URL(`/users/${auth.username}/mimors/${file}?kind=file`, url),
-    {
-      method: 'POST',
-      headers: {
-        authorization: useGlobalToken().authorization,
-      },
-      body: editor.text,
+  const endpoint = editor.isPrivate
+    ? `/users/${auth.username}/private/mimors/${file}?kind=file`
+    : `/users/${auth.username}/mimors/${file}?kind=file`
+
+  const response = await fetch(new URL(endpoint, url), {
+    method: 'POST',
+    headers: {
+      authorization: useGlobalToken().authorization,
     },
-  )
+    body: editor.text,
+  })
 
   if (response.ok) {
+    editor.text = ''
+    editor.isEditing = false
   } else {
     report.errorMessage = response.statusText
   }
