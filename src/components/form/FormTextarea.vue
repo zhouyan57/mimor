@@ -11,7 +11,7 @@ defineProps<{
     </label>
 
     <textarea
-      class="w-full rounded-sm border border-black p-3 disabled:bg-stone-100"
+      class="w-full border border-black p-3 disabled:bg-stone-100"
       :id="name"
       :name="name"
       v-bind="$attrs"
