@@ -17,13 +17,15 @@ export async function editorSave(
     return
   }
 
+  if (!editor.filename) {
+    return
+  }
+
   report.errorMessage = ''
 
-  const file = 'TODO.mimor'
-
   const endpoint = editor.isPublic
-    ? `/users/${auth.username}/public/mimors/${file}?kind=file`
-    : `/users/${auth.username}/mimors/${file}?kind=file`
+    ? `/users/${auth.username}/public/mimors/${editor.filename}?kind=file`
+    : `/users/${auth.username}/mimors/${editor.filename}?kind=file`
 
   const response = await fetch(new URL(endpoint, url), {
     method: 'POST',

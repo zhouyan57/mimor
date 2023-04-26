@@ -26,6 +26,21 @@ const report = reactive({
     class="flex flex-col border border-black p-2"
     :class="{ 'border-orange-400 ring-2 ring-orange-300': editor.isEditing }"
   >
+    <div
+      class="mb-1 flex items-baseline border-b border-black px-1 pb-1"
+      :class="{ 'border-orange-500': editor.isEditing }"
+    >
+      <input
+        class="w-full font-mono text-base focus:outline-none"
+        name="file"
+        type="text"
+        :value="editor.filename"
+        :placeholder="lang.isZh() ? '文件名' : 'filename'"
+        required
+      />
+      <span class="font-mono text-xs">.mimor</span>
+    </div>
+
     <textarea
       class="my-1 h-full w-full resize-none px-1 font-mono text-base focus:outline-none"
       name="text"

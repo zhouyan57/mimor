@@ -1,4 +1,5 @@
 export type Editor = {
+  filename: string
   text: string
   isEditing: boolean
   isPublic: boolean
@@ -6,6 +7,7 @@ export type Editor = {
 
 export function createEditor(): Editor {
   return {
+    filename: '',
     text: '',
     isEditing: false,
     isPublic: true,
