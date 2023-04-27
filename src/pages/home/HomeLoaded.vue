@@ -9,9 +9,9 @@ const state = reactive(props.state)
 </script>
 
 <template>
-  <div class="flex flex-col space-y-3">
+  <div class="flex flex-col space-y-3 overflow-y-auto">
     <Mimor
-      class="h-[34rem] max-w-[47rem]"
+      class="h-[34rem] max-w-[47rem] shrink-0"
       v-for="(src, index) of state.list"
       :key="index"
       :src="src"

@@ -8,5 +8,5 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="text-xl font-bold">{{ state.username }}</div>
+  <div class="text-2xl font-bold">{{ state.username }}</div>
 </template>

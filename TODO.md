@@ -1,7 +1,5 @@
 # author
 
-[author] `AuthorOtherHead` -- show `user.name`
-
 [author] `loadMimorEntries*` handle HTTP errors
 [author] `loadMimorEntries*` recursive read directory
 
