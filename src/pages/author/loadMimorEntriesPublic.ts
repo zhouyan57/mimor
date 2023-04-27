@@ -23,7 +23,7 @@ export async function loadMimorEntriesPublic(
   const pathEntries = await response.json()
 
   for (const pathEntry of pathEntries) {
-    if (pathEntry.kind === 'File') {
+    if (pathEntry.kind === 'File' && pathEntry.path.endsWith('.mimor')) {
       const response = await fetch(
         new URL(`${pathEntry.path}?kind=file-metadata`, url),
         {
