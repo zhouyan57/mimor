@@ -9,6 +9,7 @@ export async function stateSave(
   },
 ): Promise<void> {
   const { url } = useGlobalBackend()
+  const token = useGlobalToken()
 
   report.errorMessage = ''
 
@@ -25,7 +26,7 @@ export async function stateSave(
   const response = await fetch(new URL(`${path}?kind=file`, url), {
     method: 'POST',
     headers: {
-      authorization: useGlobalToken().authorization,
+      authorization: token.authorization,
     },
     body: state.editor.text,
   })

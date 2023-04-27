@@ -5,5 +5,9 @@ export async function stateMakeMimorEntryPrivate(
   state: State,
   mimorEntry: MimorEntry,
 ): Promise<void> {
+  if (!mimorEntry.isPublic) {
+    return
+  }
+
   //
 }
