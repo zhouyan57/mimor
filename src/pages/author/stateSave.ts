@@ -1,10 +1,10 @@
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { Editor } from './Editor'
+import { State } from './State'
 
-export async function editorSave(
-  editor: Editor,
+export async function stateSave(
+  state: State,
   report: {
     errorMessage: string
   },
@@ -19,13 +19,13 @@ export async function editorSave(
     return
   }
 
-  if (!editor.filename) {
+  if (!state.editor.filename) {
     return
   }
 
-  const filename = `${editor.filename}.mimor`
+  const filename = `${state.editor.filename}.mimor`
 
-  const endpoint = editor.isPublic
+  const endpoint = state.editor.isPublic
     ? `/users/${auth.username}/public/mimors/${filename}?kind=file`
     : `/users/${auth.username}/mimors/${filename}?kind=file`
 
@@ -34,12 +34,12 @@ export async function editorSave(
     headers: {
       authorization: useGlobalToken().authorization,
     },
-    body: editor.text,
+    body: state.editor.text,
   })
 
   if (response.ok) {
-    editor.text = ''
-    editor.isEditing = false
+    state.editor.text = ''
+    state.editor.isEditing = false
   } else {
     report.errorMessage = response.statusText
   }

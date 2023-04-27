@@ -8,7 +8,7 @@ import { reactive } from 'vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { editorNumberOfLines } from './editorNumberOfLines'
-import { editorSave } from './editorSave'
+import { stateSave } from './stateSave'
 
 defineProps<{ state: State }>()
 
@@ -21,7 +21,7 @@ const report = reactive({
 
 <template>
   <form
-    @submit.prevent="editorSave(state.editor, report)"
+    @submit.prevent="stateSave(state, report)"
     class="flex flex-col border border-black p-2"
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,

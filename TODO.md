@@ -1,5 +1,7 @@
 # author
 
+[author] `stateSave` -- add created mimor to list
+
 [author] `AuthorSelf` -- lock button show public and private
 [author] `AuthorSelf` -- lock button can toggle public and private
 
