@@ -10,6 +10,7 @@ import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import { MimorEntry } from './MimorEntry'
 import { State } from './State'
+import { stateToggleMimorEntryVisibility } from './stateToggleMimorEntryVisibility'
 
 defineProps<{
   state: State
@@ -30,20 +31,25 @@ defineProps<{
         <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
       </div>
 
-      <button v-if="mimorEntry.isPublic" class="flex space-x-1" @click="">
-        <LockOpenIcon class="h-5 w-5" />
-        <Lang>
-          <template #zh>公开</template>
-          <template #en>Public</template>
-        </Lang>
-      </button>
+      <button
+        class="flex space-x-1"
+        @click="stateToggleMimorEntryVisibility(state, mimorEntry)"
+      >
+        <template v-if="mimorEntry.isPublic">
+          <LockOpenIcon class="h-5 w-5" />
+          <Lang>
+            <template #zh>公开</template>
+            <template #en>Public</template>
+          </Lang>
+        </template>
 
-      <button v-else class="flex space-x-1" @click="">
-        <LockClosedIcon class="h-5 w-5" />
-        <Lang>
-          <template #zh>私人</template>
-          <template #en>Private</template>
-        </Lang>
+        <template v-else>
+          <LockClosedIcon class="h-5 w-5" />
+          <Lang>
+            <template #zh>私人</template>
+            <template #en>Private</template>
+          </Lang>
+        </template>
       </button>
     </div>
 
