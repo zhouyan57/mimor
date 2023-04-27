@@ -12,6 +12,8 @@
 [settings] author avatar
 [author] `AuthorOtherHead` -- show avatar
 
+[author] [refactor] `stateMakeMimorEntry*`
+
 # mimor
 
 [mimor] `Mimor` -- `loadText` -- handle HTTP errors
