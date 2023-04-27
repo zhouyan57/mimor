@@ -1,3 +1,4 @@
+import { basename } from 'path-browserify'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 
 export async function loadUsernames(): Promise<Array<string>> {
@@ -13,7 +14,7 @@ export async function loadUsernames(): Promise<Array<string>> {
 
   for (const fileEntry of fileEntries) {
     if (fileEntry.kind === 'Directory') {
-      usernames.push(fileEntry.path)
+      usernames.push(basename(fileEntry.path))
     }
   }
 

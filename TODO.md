@@ -1,6 +1,5 @@
 # home
 
-[home] `HomeAuthors` -- list all authors
 [home] note about beta testing
 
 # author
