@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "users/cicada-lang/**": [
+      "data:post",
+      "data:get",
+      "data:put",
+      "data:patch",
+      "data:delete",
+      "data-find:get",
+      "file:post",
+      "file:get",
+      "file:put",
+      "file:delete",
+      "file-metadata:get",
+      "directory:post",
+      "directory:get",
+      "directory:delete"
+    ],
+    "users/*/public/**": [
+      "data:get",
+      "data-find:get",
+      "file:get",
+      "file-metadata:get",
+      "directory:get"
+    ]
+  },
+  "@path": "users/cicada-lang/.login",
+  "@revision": "2195379a0ac79d3937b2f4bb9a7a2d1d",
+  "@createdAt": 1682598684358,
+  "@updatedAt": 1682598684358
+}

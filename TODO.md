@@ -1,7 +1,7 @@
 # author
 
 [author] `AuthorOtherHead` -- show author info
-[author] `AuthorOther` -- list author's `mimors` -- public only
+[author] `AuthorOtherMimorEntry` -- list author's `mimors` -- public only
 
 [author] `loadMimorEntries*` handle HTTP errors
 [author] `loadMimorEntries*` recursive read directory
@@ -13,6 +13,8 @@
 [author] `AuthorOtherHead` -- show avatar
 
 [author] [refactor] `stateMakeMimorEntry*`
+
+[author] support `.md` file for notes -- beside `.mimor` file
 
 # mimor
 
