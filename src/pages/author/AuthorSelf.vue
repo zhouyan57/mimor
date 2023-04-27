@@ -21,7 +21,7 @@ const lang = useGlobalLang()
 
     <div class="flex h-full flex-col">
       <div class="flex flex-col px-3 py-3 text-xl">
-        <AuthorEditor :state="state" />
+        <AuthorEditor class="max-w-[47rem]" :state="state" />
       </div>
 
       <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
