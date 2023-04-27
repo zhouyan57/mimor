@@ -40,7 +40,7 @@ watch(
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">注册 | 迷墨</title>
+    <title v-if="lang.isZh()">注册 | 谜墨</title>
     <title v-else>Register | Mimor</title>
   </Head>
 

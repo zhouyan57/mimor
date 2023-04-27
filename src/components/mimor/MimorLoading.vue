@@ -12,7 +12,7 @@ defineProps<{ options: StateOptions }>()
 
     <div class="p-3 font-sans text-xl text-stone-900">
       <Lang>
-        <template #zh> 迷墨加载中⋯⋯ </template>
+        <template #zh> 谜墨加载中⋯⋯ </template>
         <template #en> Loading mimor... </template>
       </Lang>
 

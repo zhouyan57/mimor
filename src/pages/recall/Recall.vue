@@ -23,7 +23,7 @@ onMounted(async () => {
 <template>
   <PageLayout>
     <Head>
-      <title v-if="lang.isZh()">回顾 | 迷墨</title>
+      <title v-if="lang.isZh()">回顾 | 谜墨</title>
       <title v-else>Recall | Mimor</title>
     </Head>
 

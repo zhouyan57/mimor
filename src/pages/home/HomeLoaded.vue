@@ -20,7 +20,7 @@ const state = reactive(props.state)
       </div>
 
       <Lang>
-        <template #zh>迷墨正在 beta 测试中 :)</template>
+        <template #zh>谜墨正在 beta 测试中 :)</template>
         <template #en>Mimor is under beta testing :)</template>
       </Lang>
     </div>

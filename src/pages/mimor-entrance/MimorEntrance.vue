@@ -27,7 +27,7 @@ async function submit(event: Event) {
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">迷墨链接</title>
+    <title v-if="lang.isZh()">谜墨链接</title>
     <title v-else>Mimor Link</title>
   </Head>
 
@@ -38,7 +38,7 @@ async function submit(event: Event) {
           <template #label>
             <div class="flex items-end justify-between" title="Docs">
               <Lang class="font-logo text-2xl font-bold">
-                <template #zh> 迷墨链接 </template>
+                <template #zh> 谜墨链接 </template>
                 <template #en> Mimor Link </template>
               </Lang>
               <a

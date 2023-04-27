@@ -12,7 +12,7 @@ const lang = useGlobalLang()
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">文档 | 迷墨</title>
+    <title v-if="lang.isZh()">文档 | 谜墨</title>
     <title v-else>Docs | Mimor</title>
   </Head>
 
@@ -33,7 +33,7 @@ const lang = useGlobalLang()
             :href="`https://readonly.link/manuals/${origin}/contents/manual/en.json`"
             class="inline-flex items-center underline"
             target="_blank"
-            >迷墨手册（英文）<ArrowTopRightOnSquareIcon
+            >谜墨手册（英文）<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
           >。
         </template>
@@ -54,7 +54,7 @@ const lang = useGlobalLang()
             :href="`https://readonly.link/manuals/${origin}/contents/manual/zh.json`"
             class="inline-flex items-center underline"
             target="_blank"
-            >迷墨手册<ArrowTopRightOnSquareIcon
+            >谜墨手册<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
           >。
         </template>

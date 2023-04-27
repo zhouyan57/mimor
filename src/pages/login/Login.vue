@@ -38,7 +38,7 @@ watch(
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">登录 | 迷墨</title>
+    <title v-if="lang.isZh()">登录 | 谜墨</title>
     <title v-else>Login | Mimor</title>
   </Head>
 

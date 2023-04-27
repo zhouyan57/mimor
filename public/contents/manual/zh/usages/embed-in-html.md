@@ -12,7 +12,7 @@ mimor 也可以以 `<iframe>` 的方式嵌入在 HTML 中。
 
 其中 `:link` 是一个 `.mimor` 文件链接。
 
-比如我们测试用的一个迷墨链接是：
+比如我们测试用的一个谜墨链接是：
 
 `https://mimor.app/contents/examples/sisuo.mimor`
 

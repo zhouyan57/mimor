@@ -1,8 +1,8 @@
 ---
-title: 迷墨链接
+title: 谜墨链接
 ---
 
-**迷墨链接** 可以将任意一个写好了卡片内容的 `.mimor` 文件链接，渲染成一段卡片问答。
+**谜墨链接** 可以将任意一个写好了卡片内容的 `.mimor` 文件链接，渲染成一段卡片问答。
 
 ## 使用方式
 
@@ -18,7 +18,7 @@ https://mimor.app/mimors/:link
 
 ## 举例
 
-比如我们测试用的一个迷墨链接是：
+比如我们测试用的一个谜墨链接是：
 
 `https://mimor.app/contents/examples/sisuo.mimor`
 

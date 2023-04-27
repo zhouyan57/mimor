@@ -10,7 +10,7 @@ const lang = useGlobalLang()
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">关于 | 迷墨</title>
+    <title v-if="lang.isZh()">关于 | 谜墨</title>
     <title v-else>About | Mimor</title>
   </Head>
 
@@ -26,7 +26,7 @@ const lang = useGlobalLang()
       </div>
 
       <Lang>
-        <template #zh> 迷墨开始于一个辅助记忆工具。 </template>
+        <template #zh> 谜墨开始于一个辅助记忆工具。 </template>
         <template #en> Mimor started as a memory helping tool. </template>
       </Lang>
 

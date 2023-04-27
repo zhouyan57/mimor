@@ -8,7 +8,7 @@ defineProps<{ options: StateOptions }>()
 <template>
   <div class="bg-white px-4 py-6 font-sans text-xl text-stone-500">
     <Lang>
-      <template #zh> 迷墨加载中⋯⋯ </template>
+      <template #zh> 谜墨加载中⋯⋯ </template>
       <template #en> Loading mimor ... </template>
     </Lang>
 

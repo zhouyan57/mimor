@@ -7,6 +7,6 @@ const lang = useGlobalLang()
 
 <template>
   <Hyperlink href="/" class="whitespace-pre font-logo font-bold">
-    <div>{{ lang.isZh() ? '迷墨' : 'Mimor' }}</div>
+    <div>{{ lang.isZh() ? '谜墨' : 'Mimor' }}</div>
   </Hyperlink>
 </template>

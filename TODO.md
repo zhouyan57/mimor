@@ -1,5 +1,3 @@
-ambr 迷墨 谜墨
-
 # author
 
 [author] `AuthorSelf` -- edit mimor

@@ -16,7 +16,7 @@ const auth = useGlobalAuth()
 
 <template>
   <Head>
-    <title v-if="lang.isZh()">设置 | 迷墨</title>
+    <title v-if="lang.isZh()">设置 | 谜墨</title>
     <title v-else>Settings | Mimor</title>
   </Head>
 
