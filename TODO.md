@@ -1,8 +1,14 @@
 # author
 
-[author] `authorSelfMimorEntries` recursive read directory
-[author] `AuthorSelf` -- list author's `mimors` -- public and private
+[author] `authorMimorEntriesPublic` vs `authorMimorEntriesPrivate`
+
+[author] `AuthorSelf` -- lock button show public and private
+[author] `AuthorSelf` -- lock button can toggle public and private
+
 [author] `AuthorOther` -- list author's `mimors` -- public only
+
+[author] `authorMimorEntries*` recursive read directory
+
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
