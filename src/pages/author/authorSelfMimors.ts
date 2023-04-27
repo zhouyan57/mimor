@@ -1,10 +1,6 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-
-export type MimorEntry = {
-  isPublic: boolean
-  path: string
-}
+import { MimorEntry } from './MimorEntry'
 
 export async function authorSelfMimors(
   username: string,
