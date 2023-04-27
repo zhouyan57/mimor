@@ -20,12 +20,12 @@ export async function loadMimorEntriesPublic(
     },
   )
 
-  const fileEntries = await response.json()
+  const pathEntries = await response.json()
 
-  for (const fileEntry of fileEntries) {
+  for (const pathEntry of pathEntries) {
     mimorEntries.push({
       isPublic: true,
-      path: fileEntry.path,
+      path: pathEntry.path,
     })
   }
 
