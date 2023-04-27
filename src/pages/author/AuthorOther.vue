@@ -3,8 +3,9 @@ import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { State } from './State'
 
-defineProps<{ username: string }>()
+const props = defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
 </script>
@@ -26,7 +27,7 @@ const lang = useGlobalLang()
         </div>
       </div>
 
-      <div>TODO {{ username }}</div>
+      <div>TODO {{ state.username }}</div>
     </div>
   </PageLayout>
 </template>
