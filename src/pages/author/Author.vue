@@ -32,8 +32,6 @@ watch(
 </script>
 
 <template>
-  <div>
-    <AuthorLoaded v-if="state" :state="state" />
-    <AuthorLoading v-else :options="createOptions()" />
-  </div>
+  <AuthorLoaded v-if="state" :state="state" />
+  <AuthorLoading v-else :options="createOptions()" />
 </template>

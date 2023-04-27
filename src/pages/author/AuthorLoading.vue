@@ -8,7 +8,7 @@ defineProps<{ options: StateOptions }>()
 
 <template>
   <PageLayout>
-    <div class="bg-white font-sans text-xl text-stone-500">
+    <div class="bg-white p-3 font-sans text-xl text-stone-500">
       <Lang>
         <template #zh> 作者加载中⋯⋯ </template>
         <template #en> Loading author ... </template>

@@ -32,7 +32,7 @@ async function submit(event: Event) {
   </Head>
 
   <PageLayout>
-    <div class="flex h-full max-w-3xl flex-col justify-center">
+    <div class="flex h-full max-w-3xl flex-col justify-center p-3">
       <form @submit.prevent="submit">
         <FormInput name="url" type="url" :form="form">
           <template #label>

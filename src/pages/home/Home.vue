@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import HomeLoaded from './HomeLoaded.vue'
 import HomeLoading from './HomeLoading.vue'
 import { State } from './State'
@@ -18,8 +17,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <PageLayout>
-    <HomeLoaded v-if="state" :state="state" />
-    <HomeLoading v-else :options="createStateOptions()" />
-  </PageLayout>
+  <HomeLoaded v-if="state" :state="state" />
+  <HomeLoading v-else :options="createStateOptions()" />
 </template>

@@ -20,11 +20,11 @@ const lang = useGlobalLang()
     </Head>
 
     <div class="flex h-full flex-col">
-      <div class="flex flex-col font-serif text-xl">
+      <div class="flex flex-col px-3 py-3 text-xl">
         <AuthorEditor :state="state" />
       </div>
 
-      <div class="mt-3 flex h-full flex-col space-y-3 overflow-y-auto">
+      <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
         <AuthorSelfMimorEntry
           v-for="mimorEntry of stateFindMimorEntries(state)"
           :key="mimorEntry.path"

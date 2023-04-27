@@ -11,17 +11,17 @@ const route = useRoute()
 </script>
 
 <template>
-  <Head>
-    <title v-if="lang.isZh()">404 | 谜墨</title>
-    <title v-else>404 | Mimor</title>
-  </Head>
-
   <PageLayout>
+    <Head>
+      <title v-if="lang.isZh()">404 | 谜墨</title>
+      <title v-else>404 | Mimor</title>
+    </Head>
+
     <template #title>
       <div class="font-logo">404</div>
     </template>
 
-    <div class="flex flex-col space-y-2">
+    <div class="flex flex-col space-y-2 p-3">
       <div class="text-xl font-bold">
         <Lang>
           <template #zh>没有这个页面</template>

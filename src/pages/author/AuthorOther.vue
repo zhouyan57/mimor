@@ -20,9 +20,11 @@ const lang = useGlobalLang()
     </Head>
 
     <div class="flex h-full flex-col">
-      <AuthorOtherHead :state="state" />
+      <div class="flex flex-col px-3 py-3 text-xl">
+        <AuthorOtherHead :state="state" />
+      </div>
 
-      <div class="mt-3 flex h-full flex-col space-y-3 overflow-y-auto">
+      <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
         <AuthorOtherMimorEntry
           v-for="mimorEntry of stateFindMimorEntries(state)"
           :key="mimorEntry.path"
