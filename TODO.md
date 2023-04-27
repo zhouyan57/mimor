@@ -1,6 +1,6 @@
 # author
 
-[author] `loadMimorEntries*` -- use `loadMimorFilesRecursively`
+[author] extract `loadMimorEntries`
 
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor

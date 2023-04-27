@@ -1,49 +1,33 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { loadMimorPathsRecursively } from './loadMimorPathsRecursively'
 import { MimorEntry } from './MimorEntry'
 
 export async function loadMimorEntriesPrivate(
   username: string,
 ): Promise<Array<MimorEntry>> {
-  const { url } = useGlobalBackend()
-  const token = useGlobalToken()
+  const paths = await loadMimorPathsRecursively(`/users/${username}/mimors`)
 
-  const mimorEntries: Array<MimorEntry> = []
+  return await Promise.all(
+    paths.map(async (path) => {
+      const { url } = useGlobalBackend()
+      const token = useGlobalToken()
 
-  const response = await fetch(
-    new URL(`/users/${username}/mimors?kind=directory`, url),
-    {
-      method: 'GET',
-      headers: {
-        authorization: token.authorization,
-      },
-    },
-  )
-
-  const pathEntries = await response.json()
-
-  for (const pathEntry of pathEntries) {
-    if (pathEntry.kind === 'File' && pathEntry.path.endsWith('.mimor')) {
-      const response = await fetch(
-        new URL(`${pathEntry.path}?kind=file-metadata`, url),
-        {
-          method: 'GET',
-          headers: {
-            authorization: token.authorization,
-          },
+      const response = await fetch(new URL(`${path}?kind=file-metadata`, url), {
+        method: 'GET',
+        headers: {
+          authorization: token.authorization,
         },
-      )
+      })
 
       const fileMetadata = await response.json()
 
-      mimorEntries.push({
+      return {
         isPublic: false,
-        path: pathEntry.path,
+        path,
         createdAt: fileMetadata.createdAt,
         updatedAt: fileMetadata.updatedAt,
-      })
-    }
-  }
-
-  return mimorEntries
+      }
+    }),
+  )
 }
