@@ -1,5 +1,9 @@
 <metadata theme-color="orange" />
 
+<front-cover>
+  Debug notes
+</front-cover>
+
 <question>
   When we found a bug in our program,
   what is the most import thing to remember?
@@ -62,3 +66,7 @@
     When trying to find the cause of a bug, our program is the model.
   </answer>
 </question>
+
+<back-cover>
+  Happy hacking :)
+</back-cover>
