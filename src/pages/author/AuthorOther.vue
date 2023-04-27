@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import AuthorOtherHead from './AuthorOtherHead.vue'
 import AuthorOtherMimorEntry from './AuthorOtherMimorEntry.vue'
 import { State } from './State'
 import { stateFindMimorEntries } from './stateFindMimorEntries'
@@ -19,7 +20,7 @@ const lang = useGlobalLang()
     </Head>
 
     <div class="flex h-full flex-col">
-      <div>TODO</div>
+      <AuthorOtherHead :state="state" />
 
       <div class="mt-4 flex h-full flex-col space-y-4 overflow-y-auto">
         <AuthorOtherMimorEntry
