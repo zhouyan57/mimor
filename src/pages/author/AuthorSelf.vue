@@ -6,8 +6,8 @@ import Mimor from '../../components/mimor/Mimor.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import { MimorEntry } from './MimorEntry'
-import { authorMimorEntriesPrivate } from './authorMimorEntriesPrivate'
-import { authorMimorEntriesPublic } from './authorMimorEntriesPublic'
+import { loadMimorEntriesPrivate } from './loadMimorEntriesPrivate'
+import { loadMimorEntriesPublic } from './loadMimorEntriesPublic'
 
 const props = defineProps<{ username: string }>()
 
@@ -15,8 +15,8 @@ const lang = useGlobalLang()
 const mimorEntries = reactive<Array<MimorEntry>>([])
 
 onMounted(async () => {
-  mimorEntries.push(...(await authorMimorEntriesPrivate(props.username)))
-  mimorEntries.push(...(await authorMimorEntriesPublic(props.username)))
+  mimorEntries.push(...(await loadMimorEntriesPrivate(props.username)))
+  mimorEntries.push(...(await loadMimorEntriesPublic(props.username)))
 })
 </script>
 

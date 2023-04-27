@@ -1,7 +1,5 @@
 # author
 
-[author] rename `authorMimorEntries*` to `loadMimorEntries*`
-
 [author] `AuthorLoaded` vs `AuthorLoading`
 
 [author] `AuthorLoaded` pass `state` down
@@ -11,7 +9,7 @@
 
 [author] `AuthorOther` -- list author's `mimors` -- public only
 
-[author] `authorMimorEntries*` recursive read directory
+[author] `loadMimorEntries*` recursive read directory
 
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor

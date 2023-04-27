@@ -2,7 +2,7 @@ import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { MimorEntry } from './MimorEntry'
 
-export async function authorMimorEntriesPrivate(
+export async function loadMimorEntriesPrivate(
   username: string,
 ): Promise<Array<MimorEntry>> {
   const { url } = useGlobalBackend()

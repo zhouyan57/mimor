@@ -1,7 +1,7 @@
-import { authorMimorEntriesPrivate } from './authorMimorEntriesPrivate'
-import { authorMimorEntriesPublic } from './authorMimorEntriesPublic'
 import { createEditor } from './Editor'
 import { State } from './State'
+import { loadMimorEntriesPrivate } from './loadMimorEntriesPrivate'
+import { loadMimorEntriesPublic } from './loadMimorEntriesPublic'
 
 export type StateOptions = {
   isSelf: boolean
@@ -11,10 +11,10 @@ export type StateOptions = {
 export async function loadState(options: StateOptions): Promise<State> {
   const mimorEntries = options.isSelf
     ? [
-        ...(await authorMimorEntriesPrivate(options.username)),
-        ...(await authorMimorEntriesPublic(options.username)),
+        ...(await loadMimorEntriesPrivate(options.username)),
+        ...(await loadMimorEntriesPublic(options.username)),
       ]
-    : await authorMimorEntriesPublic(options.username)
+    : await loadMimorEntriesPublic(options.username)
 
   return {
     isSelf: options.isSelf,
