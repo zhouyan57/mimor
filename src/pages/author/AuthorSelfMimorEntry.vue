@@ -20,6 +20,16 @@ defineProps<{
 <template>
   <div>
     <div class="flex flex-col space-y-1 py-1">
+      <div class="flex space-x-1">
+        <PencilIcon class="h-5 w-5" />
+        <span>{{ formatDateTime(mimorEntry.updatedAt) }}</span>
+      </div>
+
+      <div class="flex space-x-1">
+        <PaperAirplaneIcon class="h-5 w-5" />
+        <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
+      </div>
+
       <button v-if="mimorEntry.isPublic" class="flex space-x-1" @click="">
         <LockOpenIcon class="h-5 w-5" />
         <Lang>
@@ -35,16 +45,6 @@ defineProps<{
           <template #en>Private</template>
         </Lang>
       </button>
-
-      <div class="flex space-x-1">
-        <PencilIcon class="h-5 w-5" />
-        <span>{{ formatDateTime(mimorEntry.updatedAt) }}</span>
-      </div>
-
-      <div class="flex space-x-1">
-        <PaperAirplaneIcon class="h-5 w-5" />
-        <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
-      </div>
     </div>
 
     <Mimor

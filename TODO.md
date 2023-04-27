@@ -1,5 +1,8 @@
 # author
 
+[author] `stateMakeMimorEntryPublic`
+[author] `stateMakeMimorEntryPrivate`
+
 [author] `AuthorSelfMimorEntry` -- lock button can toggle public and private
 
 [author] `AuthorOtherHead` -- show author info
