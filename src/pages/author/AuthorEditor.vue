@@ -39,7 +39,7 @@ const report = reactive({
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
         required
       />
-      <span class="font-mono text-xs text-stone-500">.mimor</span>
+      <span class="font-mono text-xs">.mimor</span>
     </div>
 
     <textarea
@@ -61,17 +61,12 @@ const report = reactive({
       <div class="flex space-x-2">
         <button
           v-if="state.editor.isPublic"
-          class="text-stone-500"
           @click.prevent="state.editor.isPublic = false"
         >
           <LockOpenIcon class="h-5 w-5" />
         </button>
 
-        <button
-          v-else
-          class="text-stone-500"
-          @click.prevent="state.editor.isPublic = true"
-        >
+        <button v-else @click.prevent="state.editor.isPublic = true">
           <LockClosedIcon class="h-5 w-5" />
         </button>
       </div>

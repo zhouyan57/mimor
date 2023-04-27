@@ -1,9 +1,10 @@
 # author
 
-[author] `AuthorSelf` -- lock button show public and private
 [author] `AuthorSelf` -- show `createdAt` & `updatedAt`
+[author] `AuthorSelf` -- order the mimor list by `updatedAt`
 [author] `AuthorSelf` -- lock button can toggle public and private
 
+[author] `AuthorOtherHead` -- show author info
 [author] `AuthorOther` -- list author's `mimors` -- public only
 
 [author] `loadMimorEntries*` recursive read directory
@@ -11,13 +12,17 @@
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
+[settings] author avatar
+[author] `AuthorOtherHead` -- show avatar
+
 # mimor
 
 [mimor] `Mimor` -- `loadText` -- handle http error
 
 # home
 
-[home] what to show in the home page?
+[home] link to example authors
+[home] note about beta testing
 
 # recall -- in many timelines
 
