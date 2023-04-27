@@ -8,7 +8,7 @@ defineProps<{ state: State }>()
 
 <template>
   <div>
-    <div class="font-logo text-2xl font-bold text-stone-800">
+    <div class="font-logo text-2xl font-bold">
       <Lang>
         <template #zh> 作者列表 </template>
         <template #en> Author List </template>

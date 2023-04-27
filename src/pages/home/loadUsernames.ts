@@ -14,7 +14,8 @@ export async function loadUsernames(): Promise<Array<string>> {
 
   for (const fileEntry of fileEntries) {
     if (fileEntry.kind === 'Directory') {
-      usernames.push(basename(fileEntry.path))
+      const username = basename(fileEntry.path)
+      usernames.push(username)
     }
   }
 

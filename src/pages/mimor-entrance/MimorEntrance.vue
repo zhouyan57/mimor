@@ -37,7 +37,7 @@ async function submit(event: Event) {
         <FormInput name="url" type="url" :form="form">
           <template #label>
             <div class="flex items-end justify-between" title="Docs">
-              <Lang class="font-logo text-2xl font-bold text-stone-800">
+              <Lang class="font-logo text-2xl font-bold">
                 <template #zh> 迷墨链接 </template>
                 <template #en> Mimor Link </template>
               </Lang>
@@ -49,7 +49,7 @@ async function submit(event: Event) {
                     : `https://readonly.link/manuals/${origin}/contents/manual/en.json/-/usages/mimorlink.md`
                 "
               >
-                <QuestionMarkCircleIcon class="h-6 w-6 text-stone-800" />
+                <QuestionMarkCircleIcon class="h-6 w-6" />
               </a>
             </div>
           </template>
