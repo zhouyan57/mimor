@@ -4,14 +4,14 @@ import { onMounted } from 'vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
-import { authorSelfMimors } from './authorSelfMimors'
+import { authorSelfMimorEntries } from './authorSelfMimors'
 
 const props = defineProps<{ username: string }>()
 
 const lang = useGlobalLang()
 
 onMounted(async () => {
-  const mimors = await authorSelfMimors(props.username)
+  const mimors = await authorSelfMimorEntries(props.username)
 })
 </script>
 

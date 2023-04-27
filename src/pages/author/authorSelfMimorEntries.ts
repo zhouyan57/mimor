@@ -2,13 +2,13 @@ import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { MimorEntry } from './MimorEntry'
 
-export async function authorSelfMimors(
+export async function authorSelfMimorEntries(
   username: string,
 ): Promise<Array<MimorEntry>> {
   const { url } = useGlobalBackend()
   const token = useGlobalToken()
 
-  const mimors: Array<MimorEntry> = []
+  const mimorEntries: Array<MimorEntry> = []
 
   {
     const response = await fetch(
@@ -21,12 +21,12 @@ export async function authorSelfMimors(
       },
     )
 
-    const entries = await response.json()
+    const fileEntries = await response.json()
 
-    for (const entry of entries) {
-      mimors.push({
+    for (const fileEntry of fileEntries) {
+      mimorEntries.push({
         isPublic: false,
-        path: entry.path,
+        path: fileEntry.path,
       })
     }
   }
@@ -42,15 +42,15 @@ export async function authorSelfMimors(
       },
     )
 
-    const entries = await response.json()
+    const fileEntries = await response.json()
 
-    for (const entry of entries) {
-      mimors.push({
+    for (const fileEntry of fileEntries) {
+      mimorEntries.push({
         isPublic: true,
-        path: entry.path,
+        path: fileEntry.path,
       })
     }
   }
 
-  return mimors
+  return mimorEntries
 }

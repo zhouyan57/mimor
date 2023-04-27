@@ -1,6 +1,6 @@
 # author
 
-[author] `authorSelfMimors` recursive read directory
+[author] `authorSelfMimorEntries` recursive read directory
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor
