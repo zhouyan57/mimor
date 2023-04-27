@@ -1,8 +1,6 @@
 # author
 
-[author] `MimorEntry` has `username` and `filename`
-
-[author] `mimorEntryPath` as a function -- remove `path`
+[author] `mimorPathFormat`
 
 [author] `stateMakeMimorEntryPublic`
 [author] `stateMakeMimorEntryPrivate`
