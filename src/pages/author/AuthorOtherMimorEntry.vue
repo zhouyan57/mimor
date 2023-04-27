@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { PaperAirplaneIcon, PencilIcon } from '@heroicons/vue/24/outline'
+import {
+  DocumentTextIcon,
+  PaperAirplaneIcon,
+  PencilIcon,
+} from '@heroicons/vue/24/outline'
 import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import { MimorEntry } from './MimorEntry'
 import { State } from './State'
+import { mimorPathParse } from './mimorPathParse'
 
 defineProps<{
   state: State
@@ -22,6 +27,11 @@ defineProps<{
       <div class="flex items-center space-x-1">
         <PaperAirplaneIcon class="h-5 w-5" />
         <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
+      </div>
+
+      <div class="flex items-center space-x-1">
+        <DocumentTextIcon class="h-5 w-5" />
+        <span>{{ mimorPathParse(mimorEntry.path).file }}</span>
       </div>
     </div>
 
