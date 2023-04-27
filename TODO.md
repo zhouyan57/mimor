@@ -1,6 +1,5 @@
 # author
 
-[author] `AuthorSelfMimorEntry` -- show `createdAt` & `updatedAt`
 [author] `AuthorSelfMimorEntry` -- order the mimor list by `updatedAt`
 [author] `AuthorSelfMimorEntry` -- lock button can toggle public and private
 
