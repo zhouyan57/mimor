@@ -1,6 +1,10 @@
 # author
 
-[author] `Author` pass `state` down
+[author] rename `authorMimorEntries*` to `loadMimorEntries*`
+
+[author] `AuthorLoaded` vs `AuthorLoading`
+
+[author] `AuthorLoaded` pass `state` down
 
 [author] `AuthorSelf` -- lock button show public and private
 [author] `AuthorSelf` -- lock button can toggle public and private
