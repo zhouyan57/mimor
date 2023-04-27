@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "users": ["directory:get"],
     "users/*/public/**": [
       "data:get",
       "data-find:get",

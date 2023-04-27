@@ -1,6 +1,5 @@
 # home
 
-[home] `loadAuthors`
 [home] `HomeAuthors` -- list all authors
 [home] note about beta testing
 

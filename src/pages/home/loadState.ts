@@ -1,3 +1,4 @@
+import { loadUsernames } from './loadUsernames'
 import { State } from './State'
 
 export type StateOptions = {
@@ -5,11 +6,9 @@ export type StateOptions = {
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const authors: Array<string> = [
-    //
-  ]
+  const usernames = await loadUsernames()
 
   return {
-    authors,
+    usernames,
   }
 }

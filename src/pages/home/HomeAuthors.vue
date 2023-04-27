@@ -6,6 +6,6 @@ defineProps<{ state: State }>()
 
 <template>
   <div class="flex flex-col space-y-3 overflow-y-auto">
-    <div>TODO</div>
+    <div v-for="username of state.usernames" class="">{{ username }}</div>
   </div>
 </template>

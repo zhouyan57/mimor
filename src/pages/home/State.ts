@@ -1,3 +1,3 @@
 export type State = {
-  authors: Array<string>
+  usernames: Array<string>
 }
