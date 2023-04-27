@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import {
-  LockClosedIcon,
-  LockOpenIcon,
-  PaperAirplaneIcon,
-  PencilIcon,
-} from '@heroicons/vue/24/outline'
-import Lang from '../../components/lang/Lang.vue'
+import { PaperAirplaneIcon, PencilIcon } from '@heroicons/vue/24/outline'
 import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import { MimorEntry } from './MimorEntry'
 import { State } from './State'
-import { stateToggleMimorEntryVisibility } from './stateToggleMimorEntryVisibility'
 
 defineProps<{
   state: State
@@ -30,27 +23,6 @@ defineProps<{
         <PaperAirplaneIcon class="h-5 w-5" />
         <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
       </div>
-
-      <button
-        class="flex items-center space-x-1"
-        @click="stateToggleMimorEntryVisibility(state, mimorEntry)"
-      >
-        <template v-if="mimorEntry.isPublic">
-          <LockOpenIcon class="h-5 w-5" />
-          <Lang>
-            <template #zh>公开</template>
-            <template #en>Public</template>
-          </Lang>
-        </template>
-
-        <template v-else>
-          <LockClosedIcon class="h-5 w-5" />
-          <Lang>
-            <template #zh>私人</template>
-            <template #en>Private</template>
-          </Lang>
-        </template>
-      </button>
     </div>
 
     <Mimor

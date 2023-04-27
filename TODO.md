@@ -1,7 +1,6 @@
 # author
 
 [author] `AuthorOtherHead` -- show author info
-[author] `AuthorOtherMimorEntry` -- list author's `mimors` -- public only
 
 [author] `loadMimorEntries*` handle HTTP errors
 [author] `loadMimorEntries*` recursive read directory

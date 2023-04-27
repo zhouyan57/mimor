@@ -1,33 +1,34 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import AuthorOtherMimorEntry from './AuthorOtherMimorEntry.vue'
 import { State } from './State'
+import { stateFindMimorEntries } from './stateFindMimorEntries'
 
-const props = defineProps<{ state: State }>()
+defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
 </script>
 
 <template>
-  <Head>
-    <title v-if="lang.isZh()">作者 | 迷墨</title>
-    <title v-else>Author | Mimor</title>
-  </Head>
-
   <PageLayout>
-    <div class="flex h-full flex-col space-y-3 font-serif text-xl">
-      <div class="flex items-baseline space-x-4">
-        <div class="font-logo text-2xl font-bold text-stone-800">
-          <Lang>
-            <template #zh> 作者 别人 </template>
-            <template #en> Author Other </template>
-          </Lang>
-        </div>
-      </div>
+    <Head>
+      <title v-if="lang.isZh()">作者 | 迷墨</title>
+      <title v-else>Author | Mimor</title>
+    </Head>
 
-      <div>TODO {{ state.username }}</div>
+    <div class="flex h-full flex-col">
+      <div>TODO</div>
+
+      <div class="mt-4 flex h-full flex-col space-y-4 overflow-y-auto">
+        <AuthorOtherMimorEntry
+          v-for="mimorEntry of stateFindMimorEntries(state)"
+          :key="mimorEntry.path"
+          :state="state"
+          :mimorEntry="mimorEntry"
+        />
+      </div>
     </div>
   </PageLayout>
 </template>
