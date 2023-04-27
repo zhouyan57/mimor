@@ -1,5 +1,7 @@
 # author
 
+[author] extract `MimorEntry`
+[author] `authorSelfMimors` recursive read directory
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor

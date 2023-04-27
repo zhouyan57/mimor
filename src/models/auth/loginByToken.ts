@@ -11,6 +11,7 @@ export async function loginByToken(
   },
 ): Promise<void> {
   const { url } = useGlobalBackend()
+  const token = useGlobalToken()
 
   report.errorMessage = ''
 
@@ -19,7 +20,7 @@ export async function loginByToken(
     {
       method: 'GET',
       headers: {
-        authorization: useGlobalToken().authorization,
+        authorization: token.authorization,
       },
     },
   )
