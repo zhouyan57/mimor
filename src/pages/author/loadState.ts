@@ -11,8 +11,8 @@ export type StateOptions = {
 export async function loadState(options: StateOptions): Promise<State> {
   const mimorEntries = options.isSelf
     ? [
-        ...(await loadMimorEntriesPrivate(options.username)),
         ...(await loadMimorEntriesPublic(options.username)),
+        ...(await loadMimorEntriesPrivate(options.username)),
       ]
     : await loadMimorEntriesPublic(options.username)
 
