@@ -1,8 +1,8 @@
 # author
 
-[author] `AuthorSelf` -- show `createdAt` & `updatedAt`
-[author] `AuthorSelf` -- order the mimor list by `updatedAt`
-[author] `AuthorSelf` -- lock button can toggle public and private
+[author] `AuthorSelfMimorEntry` -- show `createdAt` & `updatedAt`
+[author] `AuthorSelfMimorEntry` -- order the mimor list by `updatedAt`
+[author] `AuthorSelfMimorEntry` -- lock button can toggle public and private
 
 [author] `AuthorOtherHead` -- show author info
 [author] `AuthorOther` -- list author's `mimors` -- public only
