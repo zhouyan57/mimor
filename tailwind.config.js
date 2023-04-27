@@ -17,6 +17,9 @@ module.exports = {
       rotate: {
         20: '20deg',
       },
+      listStyleType: {
+        square: 'square',
+      },
     },
     fontFamily: {
       sans: ['Linux Biolinum O', 'Source Han Serif SC', 'sans-serif'],

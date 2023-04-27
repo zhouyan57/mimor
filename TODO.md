@@ -1,6 +1,4 @@
-# home
-
-[home] note about beta testing
+ambr 迷墨 谜墨
 
 # author
 

@@ -15,14 +15,17 @@ defineProps<{ state: State }>()
       </Lang>
     </div>
 
-    <div class="flex flex-col space-y-1 overflow-y-auto py-3 text-xl">
-      <Hyperlink
-        class="font-bold hover:underline"
-        v-for="username of state.usernames"
-        :key="username"
-        :href="`/authors/${username}`"
-        >{{ username }}</Hyperlink
-      >
-    </div>
+    <ul
+      class="flex list-outside list-square flex-col space-y-1 overflow-y-auto py-3 pl-4 text-xl"
+    >
+      <li v-for="username of state.usernames">
+        <Hyperlink
+          class="font-bold hover:underline"
+          :key="username"
+          :href="`/authors/${username}`"
+          >{{ username }}</Hyperlink
+        >
+      </li>
+    </ul>
   </div>
 </template>
