@@ -1,6 +1,7 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { MimorEntry } from './MimorEntry'
+import { mimorPathParse } from './mimorPathParse'
 
 export async function loadMimorEntries(
   paths: Array<string>,
@@ -19,8 +20,10 @@ export async function loadMimorEntries(
 
       const fileMetadata = await response.json()
 
+      const parsed = mimorPathParse(path)
+
       return {
-        isPublic: false,
+        isPublic: parsed.isPublic,
         path,
         createdAt: fileMetadata.createdAt,
         updatedAt: fileMetadata.updatedAt,
