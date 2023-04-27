@@ -1,20 +1,13 @@
-`Mimor` -- `loadText` -- handle `src=~/...` specially
-
-- view `~/` as internal resource of users
-
-- mapping to backend fidb server, without revealing the server url (so we can change it)
-
-- examples:
-
-  - `~/xieyuheng/public/mimors/...`
-  - `~/xieyuheng/mimors/...`
-
 # author
 
 [author] `AuthorSelf` -- list author's `mimors` -- public and private
 [author] `AuthorOther` -- list author's `mimors` -- public only
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
+
+# mimor
+
+[mimor] `Mimor` -- `loadText` -- handle http error
 
 # home
 
