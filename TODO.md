@@ -3,9 +3,6 @@
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
-[author] [refactor] `stateMakeMimorEntry*`
-[author] `loadMimorEntries*` handle HTTP errors
-
 # note
 
 [author] support `.md` file for notes -- beside `.mimor` file
@@ -18,9 +15,14 @@
 
 [author] `AuthorOtherHead` -- show avatar
 
-# mimor
+# mimor -- errors handling
 
 [mimor] `Mimor` -- `loadText` -- handle HTTP errors
+
+# author -- error handling
+
+[author] [refactor] `stateMakeMimorEntry*`
+[author] `loadMimorEntries*` handle HTTP errors
 
 # recall -- in many timelines
 
