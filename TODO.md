@@ -1,7 +1,5 @@
 # author
 
-[author] `mimorPathFormat`
-
 [author] `stateMakeMimorEntryPublic`
 [author] `stateMakeMimorEntryPrivate`
 
