@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import AuthorLoaded from './AuthorLoaded.vue'
 import AuthorLoading from './AuthorLoading.vue'
@@ -9,7 +8,6 @@ import { State } from './State'
 import { loadState } from './loadState'
 
 const route = useRoute()
-const lang = useGlobalLang()
 const auth = useGlobalAuth()
 
 const state = ref<State | undefined>(undefined)
@@ -36,6 +34,6 @@ watch(
 <template>
   <div>
     <AuthorLoaded v-if="state" :state="state" />
-    <AuthorLoading v-else />
+    <AuthorLoading v-else :options="createOptions()" />
   </div>
 </template>

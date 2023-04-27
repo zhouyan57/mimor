@@ -2,8 +2,6 @@
 
 [author] `MimorEntry` has `username` and `filename`
 
-[author] `AuthorLoading` fix style
-
 [author] `mimorEntryPath` as a function -- remove `path`
 
 [author] `stateMakeMimorEntryPublic`
