@@ -1,17 +1,24 @@
 # author
 
-[author] `loadMimorEntries*` handle HTTP errors
-[author] `loadMimorEntries*` recursive read directory
+[author] `loadMimorEntries*` -- use `loadMimorFilesRecursively`
 
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
-[settings] author avatar
-[author] `AuthorOtherHead` -- show avatar
-
 [author] [refactor] `stateMakeMimorEntry*`
+[author] `loadMimorEntries*` handle HTTP errors
+
+# note
 
 [author] support `.md` file for notes -- beside `.mimor` file
+
+# author avatar
+
+[settings] user has avatar
+[settings] be able to upload author avatar
+[settings] show author avatar
+
+[author] `AuthorOtherHead` -- show avatar
 
 # mimor
 
