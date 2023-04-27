@@ -6,7 +6,7 @@ export async function loadText(src: string): Promise<string> {
     const { url } = useGlobalBackend()
     const token = useGlobalToken()
 
-    const endpoint = `users/${src.slice('~/'.length)}`
+    const endpoint = src.slice('~/'.length)
     const response = await fetch(new URL(endpoint, url), {
       method: 'GET',
       headers: {
