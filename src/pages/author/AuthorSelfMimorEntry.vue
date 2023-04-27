@@ -46,17 +46,23 @@ defineProps<{
 
       <div class="flex items-center space-x-1">
         <PencilIcon class="h-5 w-5" />
-        <span>{{ formatDateTime(mimorEntry.updatedAt) }}</span>
+        <div class="overflow-x-auto whitespace-pre">
+          {{ formatDateTime(mimorEntry.updatedAt) }}
+        </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <PaperAirplaneIcon class="h-5 w-5" />
-        <span>{{ formatDateTime(mimorEntry.createdAt) }}</span>
+        <div class="overflow-x-auto whitespace-pre">
+          {{ formatDateTime(mimorEntry.createdAt) }}
+        </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <DocumentTextIcon class="h-5 w-5" />
-        <span>{{ mimorPathParse(mimorEntry.path).file }}</span>
+        <div class="overflow-x-auto whitespace-pre">
+          {{ mimorPathParse(mimorEntry.path).file }}
+        </div>
       </div>
     </div>
 
