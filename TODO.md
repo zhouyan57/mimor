@@ -1,7 +1,5 @@
 # author
 
-[author] extract `loadMimorEntries`
-
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 

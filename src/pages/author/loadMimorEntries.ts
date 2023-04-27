@@ -1,13 +1,10 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { loadMimorPathsRecursively } from './loadMimorPathsRecursively'
 import { MimorEntry } from './MimorEntry'
 
-export async function loadMimorEntriesPrivate(
-  username: string,
+export async function loadMimorEntries(
+  paths: Array<string>,
 ): Promise<Array<MimorEntry>> {
-  const paths = await loadMimorPathsRecursively(`/users/${username}/mimors`)
-
   return await Promise.all(
     paths.map(async (path) => {
       const { url } = useGlobalBackend()
