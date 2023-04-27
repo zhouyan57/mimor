@@ -1,5 +1,6 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { createEditor } from './Editor'
 import { State } from './State'
 
 export async function stateSave(
@@ -41,8 +42,7 @@ export async function stateSave(
       updatedAt: now,
     })
 
-    state.editor.text = ''
-    state.editor.isEditing = false
+    state.editor = createEditor()
   } else {
     report.errorMessage = response.statusText
   }
