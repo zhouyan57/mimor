@@ -108,7 +108,7 @@ watch(
         </div>
 
         <div class="flex flex-col justify-center py-3">
-          <hr class="border-t border-white" />
+          <hr class="border-t border-black" />
         </div>
 
         <FormButton :disabled="form.processing">

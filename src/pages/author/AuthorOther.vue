@@ -15,14 +15,14 @@ const lang = useGlobalLang()
 <template>
   <PageLayout>
     <Head>
-      <title v-if="lang.isZh()">作者 | 迷墨</title>
-      <title v-else>Author | Mimor</title>
+      <title v-if="lang.isZh()">{{ state.username }} | 迷墨</title>
+      <title v-else>{{ state.username }} | Mimor</title>
     </Head>
 
     <div class="flex h-full flex-col">
       <AuthorOtherHead :state="state" />
 
-      <div class="mt-4 flex h-full flex-col space-y-4 overflow-y-auto">
+      <div class="flex h-full flex-col space-y-3 overflow-y-auto">
         <AuthorOtherMimorEntry
           v-for="mimorEntry of stateFindMimorEntries(state)"
           :key="mimorEntry.path"

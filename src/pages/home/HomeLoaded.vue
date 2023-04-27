@@ -9,7 +9,7 @@ const state = reactive(props.state)
 </script>
 
 <template>
-  <div class="flex flex-col space-y-4">
+  <div class="flex flex-col space-y-3">
     <Mimor
       class="h-[34rem] max-w-[47rem]"
       v-for="(src, index) of state.list"

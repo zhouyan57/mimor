@@ -39,7 +39,7 @@ onMounted(async () => {
       </div>
 
       <div
-        class="flex h-full w-full flex-col overflow-x-auto overflow-y-auto p-4"
+        class="flex h-full w-full flex-col overflow-x-auto overflow-y-auto px-4 py-3"
       >
         <slot />
       </div>
