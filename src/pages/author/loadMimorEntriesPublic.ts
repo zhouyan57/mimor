@@ -23,10 +23,26 @@ export async function loadMimorEntriesPublic(
   const pathEntries = await response.json()
 
   for (const pathEntry of pathEntries) {
-    mimorEntries.push({
-      isPublic: true,
-      path: pathEntry.path,
-    })
+    if (pathEntry.kind === 'File') {
+      const response = await fetch(
+        new URL(`${pathEntry.path}?kind=file-metadata`, url),
+        {
+          method: 'GET',
+          headers: {
+            authorization: token.authorization,
+          },
+        },
+      )
+
+      const fileMetadata = await response.json()
+
+      mimorEntries.push({
+        isPublic: true,
+        path: pathEntry.path,
+        createdAt: fileMetadata.createdAt,
+        updatedAt: fileMetadata.updatedAt,
+      })
+    }
   }
 
   return mimorEntries

@@ -7,6 +7,7 @@
 [author] `AuthorOtherHead` -- show author info
 [author] `AuthorOther` -- list author's `mimors` -- public only
 
+[author] `loadMimorEntries*` handle HTTP errors
 [author] `loadMimorEntries*` recursive read directory
 
 [author] `AuthorSelf` -- edit mimor
@@ -17,7 +18,7 @@
 
 # mimor
 
-[mimor] `Mimor` -- `loadText` -- handle http error
+[mimor] `Mimor` -- `loadText` -- handle HTTP errors
 
 # home
 

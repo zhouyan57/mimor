@@ -31,9 +31,13 @@ export async function stateSave(
   })
 
   if (response.ok) {
+    const now = Date.now()
+
     state.mimorEntries.push({
       isPublic: state.editor.isPublic,
       path,
+      createdAt: now,
+      updatedAt: now,
     })
 
     state.editor.text = ''
