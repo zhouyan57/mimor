@@ -35,14 +35,14 @@ const lang = useGlobalLang()
           受到
           <a
             href="https://apps.ankiweb.net"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Anki<ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500"
           /></a>
           和
           <a
             href="https://withorbit.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Orbit<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500"
@@ -50,7 +50,7 @@ const lang = useGlobalLang()
           还有
           <a
             href="https://flomoapp.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >flomo<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500"
@@ -61,14 +61,14 @@ const lang = useGlobalLang()
           Inspired by
           <a
             href="https://apps.ankiweb.net"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Anki<ArrowTopRightOnSquareIcon class="w-4 shrink-0 text-stone-500"
           /></a>
           and
           <a
             href="https://withorbit.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Orbit<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500"
@@ -76,7 +76,7 @@ const lang = useGlobalLang()
           and
           <a
             href="https://flomoapp.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >flomo<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
@@ -89,7 +89,7 @@ const lang = useGlobalLang()
           项目在 2021 年由
           <a
             href="https://xieyuheng.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
           >
             谢宇恒
@@ -101,7 +101,7 @@ const lang = useGlobalLang()
           The project was founded by
           <a
             href="https://xieyuheng.com"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
           >
             Xie Yuheng
@@ -124,7 +124,7 @@ const lang = useGlobalLang()
         <template #zh>
           <a
             href="http://github.com/mimor-official/mimor"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >源代码<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
@@ -133,7 +133,7 @@ const lang = useGlobalLang()
         <template #en>
           <a
             href="http://github.com/mimor-official/mimor"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
           >
             Source code

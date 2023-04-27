@@ -31,7 +31,7 @@ const lang = useGlobalLang()
         <template #zh>
           <a
             :href="`https://readonly.link/manuals/${origin}/contents/manual/en.json`"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >谜墨手册（英文）<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
@@ -40,7 +40,7 @@ const lang = useGlobalLang()
         <template #en>
           <a
             :href="`https://readonly.link/manuals/${origin}/contents/manual/en.json`"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Mimor Manual<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
@@ -52,7 +52,7 @@ const lang = useGlobalLang()
         <template #zh>
           <a
             :href="`https://readonly.link/manuals/${origin}/contents/manual/zh.json`"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >谜墨手册<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a
@@ -61,7 +61,7 @@ const lang = useGlobalLang()
         <template #en>
           <a
             :href="`https://readonly.link/manuals/${origin}/contents/manual/zh.json`"
-            class="inline-flex items-center underline"
+            class="inline-flex items-center text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
             target="_blank"
             >Mimor Manual (Chinese)<ArrowTopRightOnSquareIcon
               class="w-4 shrink-0 text-stone-500" /></a

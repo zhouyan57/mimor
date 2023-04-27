@@ -20,7 +20,7 @@ defineProps<{ state: State }>()
     >
       <li v-for="username of state.usernames">
         <Hyperlink
-          class="font-bold hover:underline"
+          class="font-bold text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
           :key="username"
           :href="`/authors/${username}`"
           >{{ username }}</Hyperlink
