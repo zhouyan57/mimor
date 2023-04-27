@@ -1,3 +1,9 @@
+# home
+
+[home] `loadAuthors`
+[home] `HomeAuthors` -- list all authors
+[home] note about beta testing
+
 # author
 
 [author] `AuthorSelf` -- edit mimor
@@ -21,11 +27,6 @@
 # mimor
 
 [mimor] `Mimor` -- `loadText` -- handle HTTP errors
-
-# home
-
-[home] link to example authors
-[home] note about beta testing
 
 # recall -- in many timelines
 
