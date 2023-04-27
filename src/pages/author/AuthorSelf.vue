@@ -5,6 +5,7 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfMimorEntry from './AuthorSelfMimorEntry.vue'
 import { State } from './State'
+import { stateFindMimorEntries } from './stateFindMimorEntries'
 
 defineProps<{ state: State }>()
 
@@ -25,7 +26,7 @@ const lang = useGlobalLang()
 
       <div class="mt-4 flex h-full flex-col space-y-4 overflow-y-auto">
         <AuthorSelfMimorEntry
-          v-for="mimorEntry of state.mimorEntries"
+          v-for="mimorEntry of stateFindMimorEntries(state)"
           :key="mimorEntry.path"
           :state="state"
           :mimorEntry="mimorEntry"
