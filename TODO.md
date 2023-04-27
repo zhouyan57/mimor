@@ -1,13 +1,13 @@
-`mimors/` view `~/` as internal resource of users
+`Mimor` -- `loadText` -- handle `src=~/...` specially
+
+- view `~/` as internal resource of users
+
+- mapping to backend fidb server, without revealing the server url (so we can change it)
 
 - examples:
 
   - `~/xieyuheng/public/mimors/...`
   - `~/xieyuheng/mimors/...`
-
-`Mimor` -- handle `src=~/...` specially
-
-- mapping to backend fidb server, without revealing the server url (so we can change it)
 
 # author
 

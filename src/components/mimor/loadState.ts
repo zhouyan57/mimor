@@ -2,6 +2,7 @@ import { parse } from '@xieyuheng/x-node'
 import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'
+import { loadText } from './loadText'
 
 export interface StateOptions {
   src: string
@@ -35,10 +36,4 @@ export async function loadState(options: StateOptions): Promise<State> {
       throw error
     }
   }
-}
-
-async function loadText(url: string): Promise<string> {
-  const response = await fetch(url)
-  const text = await response.text()
-  return text
 }
