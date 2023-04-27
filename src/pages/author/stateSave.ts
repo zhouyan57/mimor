@@ -1,4 +1,3 @@
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { State } from './State'
@@ -13,23 +12,17 @@ export async function stateSave(
 
   report.errorMessage = ''
 
-  const auth = useGlobalAuth()
-
-  if (!auth.username) {
-    return
-  }
-
   if (!state.editor.filename) {
     return
   }
 
   const filename = `${state.editor.filename}.mimor`
 
-  const endpoint = state.editor.isPublic
-    ? `/users/${auth.username}/public/mimors/${filename}?kind=file`
-    : `/users/${auth.username}/mimors/${filename}?kind=file`
+  const path = state.editor.isPublic
+    ? `/users/${state.username}/public/mimors/${filename}`
+    : `/users/${state.username}/mimors/${filename}`
 
-  const response = await fetch(new URL(endpoint, url), {
+  const response = await fetch(new URL(`${path}?kind=file`, url), {
     method: 'POST',
     headers: {
       authorization: useGlobalToken().authorization,
@@ -38,6 +31,11 @@ export async function stateSave(
   })
 
   if (response.ok) {
+    state.mimorEntries.push({
+      isPublic: state.editor.isPublic,
+      path,
+    })
+
     state.editor.text = ''
     state.editor.isEditing = false
   } else {
