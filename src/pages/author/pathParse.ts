@@ -4,10 +4,8 @@ export function pathParse(path: string): {
   file: string
 } {
   // Examples:
-  // - users/xieyuheng/mimors/debug.mimor
-  // - users/xieyuheng/public/mimors/debug.mimor
-  // - users/xieyuheng/notes/hello.md
-  // - users/xieyuheng/public/notes/hello.md
+  // - users/xieyuheng/contents/debug.mimor
+  // - users/xieyuheng/public/contents/debug.mimor
 
   const parts = path.split('/')
   const username = parts[1]

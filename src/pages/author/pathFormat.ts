@@ -4,8 +4,8 @@ export function pathFormat(options: {
   file: string
 }): string {
   if (options.isPublic) {
-    return `users/${options.username}/public/mimors/${options.file}`
+    return `users/${options.username}/public/contents/${options.file}`
   } else {
-    return `users/${options.username}/mimors/${options.file}`
+    return `users/${options.username}/contents/${options.file}`
   }
 }

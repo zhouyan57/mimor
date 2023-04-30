@@ -12,13 +12,8 @@ export async function loadState(options: StateOptions): Promise<State> {
   const { username } = options
 
   const directories = options.isSelf
-    ? [
-        `/users/${username}/mimors`,
-        `/users/${username}/notes`,
-        `/users/${username}/public/mimors`,
-        `/users/${username}/public/notes`,
-      ]
-    : [`/users/${username}/public/mimors`, `/users/${username}/public/notes`]
+    ? [`/users/${username}/contents`, `/users/${username}/public/contents`]
+    : [`/users/${username}/public/contents`]
 
   const paths = (
     await Promise.all(directories.map(await loadPathsRecursively))
