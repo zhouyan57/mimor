@@ -6,7 +6,6 @@ export type State = {
   src: string
   text: string
   theme: Theme
-  withMetaThemeColor?: boolean
   themeColor?: string
   program?: Program
   error?: Error

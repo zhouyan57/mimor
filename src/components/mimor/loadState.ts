@@ -6,11 +6,10 @@ import { loadText } from './loadText'
 
 export interface StateOptions {
   src: string
-  withMetaThemeColor?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src, withMetaThemeColor } = options
+  const { src } = options
 
   const text = await loadText(src)
   const theme = new Theme('white')
@@ -20,7 +19,6 @@ export async function loadState(options: StateOptions): Promise<State> {
     text,
     theme,
     metadata,
-    withMetaThemeColor,
     isFullscreen: false,
   }
 

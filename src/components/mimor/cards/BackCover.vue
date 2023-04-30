@@ -15,9 +15,7 @@ const props = defineProps<{
 }>()
 
 onMounted(() => {
-  if (props.state.withMetaThemeColor) {
-    props.state.themeColor = props.state.theme.colors[400]
-  }
+  props.state.themeColor = props.state.theme.colors[400]
 })
 </script>
 
