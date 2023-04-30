@@ -2,8 +2,7 @@
 
 # author
 
-[author] fix toggle visibility button size
-[author] toggle visibility require confirm
+[author] `AuthorSelfMimorEntry` toggle visibility require confirm
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 

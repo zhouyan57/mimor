@@ -24,7 +24,7 @@ defineProps<{
   <div>
     <div class="flex flex-col space-y-1 py-1 text-base">
       <button
-        class="flex items-center space-x-1"
+        class="flex max-w-fit items-center space-x-1"
         @click="stateToggleMimorEntryVisibility(state, mimorEntry)"
       >
         <template v-if="mimorEntry.isPublic">
