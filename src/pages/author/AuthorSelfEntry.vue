@@ -10,14 +10,14 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
-import { MimorEntry } from './MimorEntry'
+import { Entry } from './Entry'
 import { State } from './State'
 import { mimorPathParse } from './mimorPathParse'
-import { stateToggleMimorEntryVisibility } from './stateToggleMimorEntryVisibility'
+import { stateToggleEntryVisibility } from './stateToggleEntryVisibility'
 
 const props = defineProps<{
   state: State
-  mimorEntry: MimorEntry
+  entry: Entry
 }>()
 
 const lang = useGlobalLang()
@@ -28,23 +28,23 @@ function toggleVisibility() {
     : toggleVisibilityMessageEn()
 
   if (window.confirm(message)) {
-    stateToggleMimorEntryVisibility(props.state, props.mimorEntry)
+    stateToggleEntryVisibility(props.state, props.entry)
   }
 }
 
 function toggleVisibilityMessageZh(): string {
-  if (props.mimorEntry.isPublic) {
-    return `确定要将公开 mimor 变成私有吗？\n${props.mimorEntry.path}`
+  if (props.entry.isPublic) {
+    return `确定要将公开 mimor 变成私有吗？\n${props.entry.path}`
   } else {
-    return `确定要将私有 mimor 变成公开吗？\n${props.mimorEntry.path}`
+    return `确定要将私有 mimor 变成公开吗？\n${props.entry.path}`
   }
 }
 
 function toggleVisibilityMessageEn(): string {
-  if (props.mimorEntry.isPublic) {
-    return `Are you sure to change this public mimor to private?\n${props.mimorEntry.path}`
+  if (props.entry.isPublic) {
+    return `Are you sure to change this public mimor to private?\n${props.entry.path}`
   } else {
-    return `Are you sure to change this private mimor to public?\n${props.mimorEntry.path}`
+    return `Are you sure to change this private mimor to public?\n${props.entry.path}`
   }
 }
 </script>
@@ -56,7 +56,7 @@ function toggleVisibilityMessageEn(): string {
         class="flex max-w-fit items-center space-x-1"
         @click="toggleVisibility()"
       >
-        <template v-if="mimorEntry.isPublic">
+        <template v-if="entry.isPublic">
           <LockOpenIcon class="h-5 w-5" />
           <Lang>
             <template #zh>公开</template>
@@ -76,29 +76,29 @@ function toggleVisibilityMessageEn(): string {
       <div class="flex items-center space-x-1">
         <PencilIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ formatDateTime(mimorEntry.updatedAt) }}
+          {{ formatDateTime(entry.updatedAt) }}
         </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <PaperAirplaneIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ formatDateTime(mimorEntry.createdAt) }}
+          {{ formatDateTime(entry.createdAt) }}
         </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <DocumentTextIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ mimorPathParse(mimorEntry.path).file }}
+          {{ mimorPathParse(entry.path).file }}
         </div>
       </div>
     </div>
 
     <Mimor
       class="h-[34rem] max-w-[47rem] shrink-0"
-      :key="mimorEntry.path"
-      :src="`~/${mimorEntry.path}`"
+      :key="entry.path"
+      :src="`~/${entry.path}`"
     />
   </div>
 </template>

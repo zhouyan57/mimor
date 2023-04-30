@@ -1,7 +1,7 @@
 import { createEditor } from './Editor'
 import { State } from './State'
-import { loadMimorEntries } from './loadMimorEntries'
-import { loadMimorPathsRecursively } from './loadMimorPathsRecursively'
+import { loadEntries } from './loadEntries'
+import { loadPathsRecursively } from './loadPathsRecursively'
 
 export type StateOptions = {
   username: string
@@ -13,26 +13,22 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   const paths = options.isSelf
     ? [
-        ...(await loadMimorPathsRecursively(`/users/${username}/mimors`)),
-        ...(await loadMimorPathsRecursively(`/users/${username}/notes`)),
-        ...(await loadMimorPathsRecursively(
-          `/users/${username}/public/mimors`,
-        )),
-        ...(await loadMimorPathsRecursively(`/users/${username}/public/notes`)),
+        ...(await loadPathsRecursively(`/users/${username}/mimors`)),
+        ...(await loadPathsRecursively(`/users/${username}/notes`)),
+        ...(await loadPathsRecursively(`/users/${username}/public/mimors`)),
+        ...(await loadPathsRecursively(`/users/${username}/public/notes`)),
       ]
     : [
-        ...(await loadMimorPathsRecursively(
-          `/users/${username}/public/mimors`,
-        )),
-        ...(await loadMimorPathsRecursively(`/users/${username}/public/notes`)),
+        ...(await loadPathsRecursively(`/users/${username}/public/mimors`)),
+        ...(await loadPathsRecursively(`/users/${username}/public/notes`)),
       ]
 
-  const mimorEntries = await loadMimorEntries(paths)
+  const entries = await loadEntries(paths)
 
   return {
     username,
     isSelf: options.isSelf,
     editor: createEditor(),
-    mimorEntries,
+    entries,
   }
 }

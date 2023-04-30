@@ -1,9 +1,9 @@
 import { Editor } from './Editor'
-import { MimorEntry } from './MimorEntry'
+import { Entry } from './Entry'
 
 export type State = {
   username: string
   isSelf: boolean
   editor: Editor
-  mimorEntries: Array<MimorEntry>
+  entries: Array<Entry>
 }

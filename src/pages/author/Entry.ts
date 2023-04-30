@@ -1,4 +1,4 @@
-export type MimorEntry = {
+export type Entry = {
   isPublic: boolean
   path: string
   createdAt: number

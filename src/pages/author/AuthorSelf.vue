@@ -3,9 +3,9 @@ import { Head } from '@vueuse/head'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
-import AuthorSelfMimorEntry from './AuthorSelfMimorEntry.vue'
+import AuthorSelfEntry from './AuthorSelfEntry.vue'
 import { State } from './State'
-import { stateFindMimorEntries } from './stateFindMimorEntries'
+import { stateFindEntries } from './stateFindEntries'
 
 defineProps<{ state: State }>()
 
@@ -25,11 +25,11 @@ const lang = useGlobalLang()
       </div>
 
       <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
-        <AuthorSelfMimorEntry
-          v-for="mimorEntry of stateFindMimorEntries(state)"
-          :key="mimorEntry.path"
+        <AuthorSelfEntry
+          v-for="entry of stateFindEntries(state)"
+          :key="entry.path"
           :state="state"
-          :mimorEntry="mimorEntry"
+          :entry="entry"
         />
       </div>
     </div>

@@ -1,33 +1,30 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { MimorEntry } from './MimorEntry'
+import { Entry } from './Entry'
 import { mimorPathFormat } from './mimorPathFormat'
 import { mimorPathParse } from './mimorPathParse'
 import { State } from './State'
 
-export async function stateMakeMimorEntryPrivate(
+export async function stateMakeEntryPrivate(
   state: State,
-  mimorEntry: MimorEntry,
+  entry: Entry,
 ): Promise<void> {
-  if (!mimorEntry.isPublic) {
+  if (!entry.isPublic) {
     return
   }
 
   const { url } = useGlobalBackend()
   const token = useGlobalToken()
 
-  const getResponse = await fetch(
-    new URL(`${mimorEntry.path}?kind=file`, url),
-    {
-      method: 'GET',
-      headers: {
-        authorization: token.authorization,
-      },
+  const getResponse = await fetch(new URL(`${entry.path}?kind=file`, url), {
+    method: 'GET',
+    headers: {
+      authorization: token.authorization,
     },
-  )
+  })
 
   const newPath = mimorPathFormat({
-    ...mimorPathParse(mimorEntry.path),
+    ...mimorPathParse(entry.path),
     isPublic: false,
   })
 
@@ -39,16 +36,13 @@ export async function stateMakeMimorEntryPrivate(
     body: await getResponse.text(),
   })
 
-  const deleteResponse = await fetch(
-    new URL(`${mimorEntry.path}?kind=file`, url),
-    {
-      method: 'DELETE',
-      headers: {
-        authorization: token.authorization,
-      },
+  const deleteResponse = await fetch(new URL(`${entry.path}?kind=file`, url), {
+    method: 'DELETE',
+    headers: {
+      authorization: token.authorization,
     },
-  )
+  })
 
-  mimorEntry.path = newPath
-  mimorEntry.isPublic = false
+  entry.path = newPath
+  entry.isPublic = false
 }

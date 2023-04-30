@@ -1,8 +1,7 @@
 # note
 
-[author] rename `MimorEntry` to `Entry`
-[author] `AuthorSelfMimorEntry` also list `notes`
-[author] `AuthorOtherMimorEntry` also list `notes`
+[author] `AuthorSelfEntry` also list `notes`
+[author] `AuthorOtherEntry` also list `notes`
 
 # author
 

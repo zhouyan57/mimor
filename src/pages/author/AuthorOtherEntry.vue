@@ -6,13 +6,13 @@ import {
 } from '@heroicons/vue/24/outline'
 import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
-import { MimorEntry } from './MimorEntry'
+import { Entry } from './Entry'
 import { State } from './State'
 import { mimorPathParse } from './mimorPathParse'
 
 defineProps<{
   state: State
-  mimorEntry: MimorEntry
+  entry: Entry
 }>()
 </script>
 
@@ -22,29 +22,29 @@ defineProps<{
       <div class="flex items-center space-x-1">
         <PencilIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ formatDateTime(mimorEntry.updatedAt) }}
+          {{ formatDateTime(entry.updatedAt) }}
         </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <PaperAirplaneIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ formatDateTime(mimorEntry.createdAt) }}
+          {{ formatDateTime(entry.createdAt) }}
         </div>
       </div>
 
       <div class="flex items-center space-x-1">
         <DocumentTextIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ mimorPathParse(mimorEntry.path).file }}
+          {{ mimorPathParse(entry.path).file }}
         </div>
       </div>
     </div>
 
     <Mimor
       class="h-[34rem] max-w-[47rem] shrink-0"
-      :key="mimorEntry.path"
-      :src="`~/${mimorEntry.path}`"
+      :key="entry.path"
+      :src="`~/${entry.path}`"
     />
   </div>
 </template>

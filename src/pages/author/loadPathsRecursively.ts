@@ -1,7 +1,7 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 
-export async function loadMimorPathsRecursively(
+export async function loadPathsRecursively(
   directory: string,
 ): Promise<Array<string>> {
   const { url } = useGlobalBackend()
@@ -22,7 +22,7 @@ export async function loadMimorPathsRecursively(
     if (pathEntry.kind === 'File' && pathEntry.path.endsWith('.mimor')) {
       paths.push(pathEntry.path)
     } else if (pathEntry.kind === 'Directory') {
-      paths.push(...(await loadMimorPathsRecursively(pathEntry.path)))
+      paths.push(...(await loadPathsRecursively(pathEntry.path)))
     }
   }
 

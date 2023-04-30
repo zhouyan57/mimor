@@ -1,11 +1,9 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { MimorEntry } from './MimorEntry'
+import { Entry } from './Entry'
 import { mimorPathParse } from './mimorPathParse'
 
-export async function loadMimorEntries(
-  paths: Array<string>,
-): Promise<Array<MimorEntry>> {
+export async function loadEntries(paths: Array<string>): Promise<Array<Entry>> {
   return await Promise.all(
     paths.map(async (path) => {
       const { url } = useGlobalBackend()
