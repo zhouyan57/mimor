@@ -50,7 +50,20 @@ function editorTargetPath(editor: Editor): string | undefined {
     return
   }
 
-  const prefix = editor.isPublic ? `/public` : ``
+  const visibilityDirectory = editor.isPublic ? `/public` : ``
+  const modeDirectory = editorModeDirectory(editor)
 
-  return `${prefix}/mimors/${editor.filename}.${editor.mode}`
+  return `${visibilityDirectory}${modeDirectory}/${editor.filename}.${editor.mode}`
+}
+
+function editorModeDirectory(editor: Editor): string {
+  switch (editor.mode) {
+    case 'mimor': {
+      return '/mimors'
+    }
+
+    case 'md': {
+      return '/nodes'
+    }
+  }
 }
