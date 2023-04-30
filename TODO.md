@@ -1,10 +1,8 @@
 # note
 
 [author] `stateSave` save `.md` files to `notes` and `public/notes`
-
-[author] `AuthorEditor` support `.md` file for notes -- beside `.mimor` file
-
-- to be used like flomo
+[author] `AuthorSelfMimorEntry` also list `notes`
+[author] `AuthorOtherMimorEntry` also list `notes`
 
 # author
 

@@ -26,6 +26,11 @@ const report = reactive({
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
     }"
+    v-on-click-outside="
+      () => {
+        state.editor.isEditing = false
+      }
+    "
   >
     <div
       class="mb-1 flex items-baseline border-b border-black px-1 pb-1"
@@ -38,7 +43,6 @@ const report = reactive({
         v-model="state.editor.filename"
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
         @focus="state.editor.isEditing = true"
-        @blur="state.editor.isEditing = false"
         required
       />
 
@@ -47,7 +51,6 @@ const report = reactive({
         name="mode"
         v-model="state.editor.mode"
         @focus="state.editor.isEditing = true"
-        @blur="state.editor.isEditing = false"
       >
         <option
           v-for="mode of state.editor.knownModes"
@@ -68,7 +71,6 @@ const report = reactive({
       name="text"
       spellcheck="false"
       @focus="state.editor.isEditing = true"
-      @blur="state.editor.isEditing = false"
       v-model="state.editor.text"
       :style="{ height: editorNumberOfLines(state.editor) * 1.5 + 'rem' }"
       :placeholder="lang.isZh() ? '创作卡片 *^-^*' : 'Create cards :)'"
