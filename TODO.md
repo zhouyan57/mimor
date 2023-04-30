@@ -1,7 +1,22 @@
 # note
 
-[author] `AuthorSelfEntry` also list `notes`
-[author] `AuthorOtherEntry` also list `notes`
+[author] use one `contents/` directory instead of `mimors/` vs `notes/`
+
+[author] fix `pathFormat` and `pathParse`
+
+[author] extract `AuthorOtherEntryHead` and `AuthorOtherEntryBody`
+[author] extract `AuthorSelfEntryHead` and `AuthorSelfEntryBody`
+
+[author] `AuthorSelfEntryBody` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
+[author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
+[author] `AuthorSelfEntryMarkdown` -- link to readonly.link
+
+[author] `AuthorOtherEntryBody` dispatch to `AuthorOtherEntryMimor` and `AuthorOtherEntryMarkdown`
+[author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
+[author] `AuthorOtherEntryMarkdown` -- link to readonly.link
+
+[author] extract `AuthorEditorToolbar`
+[author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 
 # author
 

@@ -1,4 +1,4 @@
-export function mimorPathParse(path: string): {
+export function pathParse(path: string): {
   isPublic: boolean
   username: string
   file: string
@@ -6,6 +6,8 @@ export function mimorPathParse(path: string): {
   // Examples:
   // - users/xieyuheng/mimors/debug.mimor
   // - users/xieyuheng/public/mimors/debug.mimor
+  // - users/xieyuheng/notes/hello.md
+  // - users/xieyuheng/public/notes/hello.md
 
   const parts = path.split('/')
   const username = parts[1]

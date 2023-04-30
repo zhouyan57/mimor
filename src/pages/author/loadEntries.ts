@@ -1,7 +1,7 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { Entry } from './Entry'
-import { mimorPathParse } from './mimorPathParse'
+import { pathParse } from './pathParse'
 
 export async function loadEntries(paths: Array<string>): Promise<Array<Entry>> {
   return await Promise.all(
@@ -18,7 +18,7 @@ export async function loadEntries(paths: Array<string>): Promise<Array<Entry>> {
 
       const fileMetadata = await response.json()
 
-      const parsed = mimorPathParse(path)
+      const parsed = pathParse(path)
 
       return {
         isPublic: parsed.isPublic,

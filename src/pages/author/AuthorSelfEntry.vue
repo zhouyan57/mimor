@@ -12,7 +12,7 @@ import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import { Entry } from './Entry'
 import { State } from './State'
-import { mimorPathParse } from './mimorPathParse'
+import { pathParse } from './pathParse'
 import { stateToggleEntryVisibility } from './stateToggleEntryVisibility'
 
 const props = defineProps<{
@@ -90,7 +90,7 @@ function toggleVisibilityMessageEn(): string {
       <div class="flex items-center space-x-1">
         <DocumentTextIcon class="h-5 w-5" />
         <div class="overflow-x-auto whitespace-pre">
-          {{ mimorPathParse(entry.path).file }}
+          {{ pathParse(entry.path).file }}
         </div>
       </div>
     </div>

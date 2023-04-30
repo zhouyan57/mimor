@@ -1,9 +1,9 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { Entry } from './Entry'
-import { mimorPathFormat } from './mimorPathFormat'
-import { mimorPathParse } from './mimorPathParse'
 import { State } from './State'
+import { pathFormat } from './pathFormat'
+import { pathParse } from './pathParse'
 
 export async function stateMakeEntryPublic(
   state: State,
@@ -23,8 +23,8 @@ export async function stateMakeEntryPublic(
     },
   })
 
-  const newPath = mimorPathFormat({
-    ...mimorPathParse(entry.path),
+  const newPath = pathFormat({
+    ...pathParse(entry.path),
     isPublic: true,
   })
 

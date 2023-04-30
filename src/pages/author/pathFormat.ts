@@ -1,4 +1,4 @@
-export function mimorPathFormat(options: {
+export function pathFormat(options: {
   isPublic: boolean
   username: string
   file: string
