@@ -1,4 +1,4 @@
-[mimor] each card handle it's own theme-color
+[mimor] remove `withMetaThemeColor`
 
 # author
 
