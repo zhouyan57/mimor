@@ -1,16 +1,17 @@
 # note
 
-[author] extract `AuthorOtherEntryHead` and `AuthorOtherEntryBody`
-[author] extract `AuthorSelfEntryHead` and `AuthorSelfEntryBody`
+[author] extract `AuthorOtherEntryHead` and `AuthorOtherEntryContent`
+[author] extract `AuthorSelfEntryHead` and `AuthorSelfEntryContent`
 
-[author] `AuthorSelfEntryBody` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
+[author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
 [author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorSelfEntryMarkdown` -- link to readonly.link
 
-[author] `AuthorOtherEntryBody` dispatch to `AuthorOtherEntryMimor` and `AuthorOtherEntryMarkdown`
+[author] `AuthorOtherEntryContent` dispatch to `AuthorOtherEntryMimor` and `AuthorOtherEntryMarkdown`
 [author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorOtherEntryMarkdown` -- link to readonly.link
 
+[author] extract `editorTextareaPlaceholder`
 [author] extract `AuthorEditorToolbar`
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 
