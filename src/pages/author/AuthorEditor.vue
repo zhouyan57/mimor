@@ -21,8 +21,11 @@ const report = reactive({
 
 <template>
   <form
+    tabindex="-1"
     @submit.prevent="stateSave(state, report)"
-    @focusout="state.editor.isEditing = false"
+    @click="state.editor.isEditing = true"
+    @focus.capture="state.editor.isEditing = true"
+    @blur.capture="state.editor.isEditing = false"
     class="flex flex-col border border-black p-2"
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
@@ -38,7 +41,6 @@ const report = reactive({
         type="text"
         v-model="state.editor.filename"
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
-        @focus="state.editor.isEditing = true"
         required
       />
 
@@ -46,7 +48,6 @@ const report = reactive({
         class="bg-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
         name="mode"
         v-model="state.editor.mode"
-        @focus="state.editor.isEditing = true"
       >
         <option
           v-for="mode of state.editor.knownModes"
@@ -66,7 +67,6 @@ const report = reactive({
       }"
       name="text"
       spellcheck="false"
-      @focus="state.editor.isEditing = true"
       v-model="state.editor.text"
       :style="{ height: editorNumberOfLines(state.editor) * 1.5 + 'rem' }"
       :placeholder="
