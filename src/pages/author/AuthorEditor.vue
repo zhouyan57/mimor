@@ -17,6 +17,8 @@ const lang = useGlobalLang()
 const report = reactive({
   errorMessage: '',
 })
+
+const modes = ['mimor', 'md']
 </script>
 
 <template>
@@ -41,7 +43,20 @@ const report = reactive({
         @blur="state.editor.isEditing = false"
         required
       />
-      <span class="font-mono text-xs">.mimor</span>
+
+      <select
+        class="bg-white font-mono text-xs"
+        id="mode"
+        name="mode"
+        @focus="state.editor.isEditing = true"
+        @blur="state.editor.isEditing = false"
+      >
+        <option v-for="mode in modes" :key="mode" :value="mode">
+          <span>.{{ mode }}</span>
+        </option>
+      </select>
+
+      <!-- <span class="font-mono text-xs">.mimor</span> -->
     </div>
 
     <textarea

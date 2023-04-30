@@ -1,6 +1,6 @@
 # note
 
-[author] `AuthorEditor` select `.md` vs `.mimor` mode
+[author] `State` has `mode`
 
 [author] `AuthorEditor` support `.md` file for notes -- beside `.mimor` file
 
