@@ -1,11 +1,15 @@
+# note
+
+[author] `AuthorEditor` select `.md` vs `.mimor` mode
+
+[author] `AuthorEditor` support `.md` file for notes -- beside `.mimor` file
+
+- to be used like flomo
+
 # author
 
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
-
-# note
-
-[author] support `.md` file for notes -- beside `.mimor` file
 
 # author avatar
 

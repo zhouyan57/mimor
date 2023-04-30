@@ -37,6 +37,8 @@ const report = reactive({
         type="text"
         v-model="state.editor.filename"
         :placeholder="lang.isZh() ? '文件名' : 'filename'"
+        @focus="state.editor.isEditing = true"
+        @blur="state.editor.isEditing = false"
         required
       />
       <span class="font-mono text-xs">.mimor</span>
