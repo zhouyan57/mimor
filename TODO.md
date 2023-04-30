@@ -1,6 +1,6 @@
 # note
 
-[author] `State` has `mode`
+[author] `stateSave` save `.md` files to `notes` and `public/notes`
 
 [author] `AuthorEditor` support `.md` file for notes -- beside `.mimor` file
 

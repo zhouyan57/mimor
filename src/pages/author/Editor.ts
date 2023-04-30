@@ -3,7 +3,11 @@ export type Editor = {
   text: string
   isEditing: boolean
   isPublic: boolean
+  mode: EditorMode
+  knownModes: Array<EditorMode>
 }
+
+export type EditorMode = 'mimor' | 'md'
 
 export function createEditor(): Editor {
   return {
@@ -11,5 +15,7 @@ export function createEditor(): Editor {
     text: '',
     isEditing: false,
     isPublic: true,
+    mode: 'mimor',
+    knownModes: ['mimor', 'md'],
   }
 }

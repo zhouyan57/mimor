@@ -18,7 +18,7 @@ export async function stateSave(
     return
   }
 
-  const filename = `${state.editor.filename}.mimor`
+  const filename = `${state.editor.filename}.${state.editor.mode}`
 
   const path = state.editor.isPublic
     ? `/users/${state.username}/public/mimors/${filename}`
