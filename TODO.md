@@ -1,7 +1,5 @@
 # note
 
-[author] use one `contents/` directory instead of `mimors/` vs `notes/`
-
 [author] extract `AuthorOtherEntryHead` and `AuthorOtherEntryBody`
 [author] extract `AuthorSelfEntryHead` and `AuthorSelfEntryBody`
 
