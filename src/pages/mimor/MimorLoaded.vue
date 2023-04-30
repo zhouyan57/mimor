@@ -9,5 +9,9 @@ const state = reactive(props.state)
 </script>
 
 <template>
-  <Mimor class="h-screen w-screen" :src="state.src" />
+  <Mimor
+    class="h-screen w-screen"
+    :src="state.src"
+    :withMetaThemeColor="true"
+  />
 </template>

@@ -1,3 +1,5 @@
+[mimor] remove `withMetaThemeColor`
+
 # author
 
 [author] `AuthorSelfMimorEntry` toggle visibility require confirm

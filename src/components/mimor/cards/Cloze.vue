@@ -18,7 +18,9 @@ const props = defineProps<{
 const remembering = reactive({ revealed: false })
 
 onMounted(() => {
-  props.state.themeColor = props.state.theme.colors[300]
+  if (props.state.withMetaThemeColor) {
+    props.state.themeColor = props.state.theme.colors[300]
+  }
 })
 </script>
 
