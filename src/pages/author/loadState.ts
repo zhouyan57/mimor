@@ -11,17 +11,18 @@ export type StateOptions = {
 export async function loadState(options: StateOptions): Promise<State> {
   const { username } = options
 
-  const paths = options.isSelf
+  const directories = options.isSelf
     ? [
-        ...(await loadPathsRecursively(`/users/${username}/mimors`)),
-        ...(await loadPathsRecursively(`/users/${username}/notes`)),
-        ...(await loadPathsRecursively(`/users/${username}/public/mimors`)),
-        ...(await loadPathsRecursively(`/users/${username}/public/notes`)),
+        `/users/${username}/mimors`,
+        `/users/${username}/notes`,
+        `/users/${username}/public/mimors`,
+        `/users/${username}/public/notes`,
       ]
-    : [
-        ...(await loadPathsRecursively(`/users/${username}/public/mimors`)),
-        ...(await loadPathsRecursively(`/users/${username}/public/notes`)),
-      ]
+    : [`/users/${username}/public/mimors`, `/users/${username}/public/notes`]
+
+  const paths = (
+    await Promise.all(directories.map(await loadPathsRecursively))
+  ).flatMap((paths) => paths)
 
   const entries = await loadEntries(paths)
 
