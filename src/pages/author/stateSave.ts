@@ -1,6 +1,6 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { createEditor } from './Editor'
+import { createEditor, Editor } from './Editor'
 import { State } from './State'
 
 export async function stateSave(
@@ -14,15 +14,12 @@ export async function stateSave(
 
   report.errorMessage = ''
 
-  if (!state.editor.filename) {
+  const targetPath = editorTargetPath(state.editor)
+  if (!targetPath) {
     return
   }
 
-  const filename = `${state.editor.filename}.${state.editor.mode}`
-
-  const path = state.editor.isPublic
-    ? `/users/${state.username}/public/mimors/${filename}`
-    : `/users/${state.username}/mimors/${filename}`
+  const path = `/users/${state.username}${targetPath}`
 
   const response = await fetch(new URL(`${path}?kind=file`, url), {
     method: 'POST',
@@ -45,5 +42,28 @@ export async function stateSave(
     state.editor = createEditor()
   } else {
     report.errorMessage = response.statusText
+  }
+}
+
+function editorTargetPath(editor: Editor): string | undefined {
+  if (!editor.filename.trim()) {
+    return
+  }
+
+  const visibilityDirectory = editor.isPublic ? `/public` : ``
+  const modeDirectory = editorModeDirectory(editor)
+
+  return `${visibilityDirectory}${modeDirectory}/${editor.filename}.${editor.mode}`
+}
+
+function editorModeDirectory(editor: Editor): string {
+  switch (editor.mode) {
+    case 'mimor': {
+      return '/mimors'
+    }
+
+    case 'md': {
+      return '/nodes'
+    }
   }
 }
