@@ -1,6 +1,6 @@
 # note
 
-[author] `stateSave` save `.md` files to `notes` and `public/notes`
+[author] rename `MimorEntry` to `Entry`
 [author] `AuthorSelfMimorEntry` also list `notes`
 [author] `AuthorOtherMimorEntry` also list `notes`
 
