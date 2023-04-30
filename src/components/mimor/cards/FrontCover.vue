@@ -6,7 +6,6 @@ import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 import Node from '../nodes/Node.vue'
-import { programNext } from '../programNext'
 import CoverInfo from './CoverInfo.vue'
 
 const props = defineProps<{
@@ -32,9 +31,8 @@ onMounted(() => {
     <CoverInfo :state="state" :program="program" />
 
     <div
-      class="h-full cursor-pointer overflow-y-auto p-3 font-sans font-bold"
+      class="h-full overflow-y-auto p-3 font-sans font-bold"
       :class="[state.theme.name === 'white' ? 'text-black' : 'text-white']"
-      @click="programNext(program)"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
         <div v-for="(child, index) of element.children" :key="index">
