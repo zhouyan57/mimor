@@ -43,7 +43,7 @@ const report = reactive({
       />
 
       <select
-        class="bg-white font-mono text-xs"
+        class="bg-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
         name="mode"
         v-model="state.editor.mode"
         @focus="state.editor.isEditing = true"
