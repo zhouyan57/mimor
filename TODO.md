@@ -1,8 +1,5 @@
-[mimor] remove `withMetaThemeColor`
-
 # author
 
-[author] `AuthorSelfMimorEntry` toggle visibility require confirm
 [author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 

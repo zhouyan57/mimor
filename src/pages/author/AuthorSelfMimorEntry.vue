@@ -7,6 +7,7 @@ import {
   PencilIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Mimor from '../../components/mimor/Mimor.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import { MimorEntry } from './MimorEntry'
@@ -14,10 +15,38 @@ import { State } from './State'
 import { mimorPathParse } from './mimorPathParse'
 import { stateToggleMimorEntryVisibility } from './stateToggleMimorEntryVisibility'
 
-defineProps<{
+const props = defineProps<{
   state: State
   mimorEntry: MimorEntry
 }>()
+
+const lang = useGlobalLang()
+
+function toggleVisibility() {
+  const message = lang.isZh()
+    ? toggleVisibilityMessageZh()
+    : toggleVisibilityMessageEn()
+
+  if (window.confirm(message)) {
+    stateToggleMimorEntryVisibility(props.state, props.mimorEntry)
+  }
+}
+
+function toggleVisibilityMessageZh(): string {
+  if (props.mimorEntry.isPublic) {
+    return `确定要将公开 mimor 变成私有吗？\n${props.mimorEntry.path}`
+  } else {
+    return `确定要将私有 mimor 变成公开吗？\n${props.mimorEntry.path}`
+  }
+}
+
+function toggleVisibilityMessageEn(): string {
+  if (props.mimorEntry.isPublic) {
+    return `Are you sure to change this public mimor to private?\n${props.mimorEntry.path}`
+  } else {
+    return `Are you sure to change this private mimor to public?\n${props.mimorEntry.path}`
+  }
+}
 </script>
 
 <template>
@@ -25,7 +54,7 @@ defineProps<{
     <div class="flex flex-col space-y-1 py-1 text-base">
       <button
         class="flex max-w-fit items-center space-x-1"
-        @click="stateToggleMimorEntryVisibility(state, mimorEntry)"
+        @click="toggleVisibility()"
       >
         <template v-if="mimorEntry.isPublic">
           <LockOpenIcon class="h-5 w-5" />
