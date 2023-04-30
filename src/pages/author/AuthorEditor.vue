@@ -22,15 +22,11 @@ const report = reactive({
 <template>
   <form
     @submit.prevent="stateSave(state, report)"
+    @focusout="state.editor.isEditing = false"
     class="flex flex-col border border-black p-2"
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
     }"
-    v-on-click-outside="
-      () => {
-        state.editor.isEditing = false
-      }
-    "
   >
     <div
       class="mb-1 flex items-baseline border-b border-black px-1 pb-1"
