@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import NoteHead from './NoteHead.vue'
-import NoteText from './NoteText.vue'
+import NoteTextarea from './NoteTextarea.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
 
@@ -47,6 +47,6 @@ watch(
     class="flex h-full flex-col border border-black bg-white"
   >
     <NoteHead :state="state" />
-    <NoteText class="h-full" :state="state" />
+    <NoteTextarea class="h-full" :state="state" />
   </div>
 </template>

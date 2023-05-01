@@ -5,7 +5,8 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="overflow-y-auto whitespace-pre p-3 font-mono">
-    {{ state.text }}
-  </div>
+  <textarea
+    class="overflow-y-auto whitespace-pre-line p-3 font-mono"
+    v-model="state.text"
+  ></textarea>
 </template>

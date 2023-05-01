@@ -1,10 +1,11 @@
 [mimor] `stateSrcURL`
-[note] `stateSrcURL`
 
 # note
 
+[note] `NoteTextarea` fix height
+[note] `stateSrcURL`
 [note] `NoteHead` link to readonly.link article
-[note] `NoteEditor`
+[note] `NoteTextarea` support edit
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author
