@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AuthorSelfEntryMimor from './AuthorSelfEntryMimor.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -10,5 +9,5 @@ defineProps<{
 </script>
 
 <template>
-  <AuthorSelfEntryMimor :state="state" :entry="entry" />
+  <div>TODO</div>
 </template>

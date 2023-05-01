@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Mimor from '../../components/mimor/Mimor.vue'
+import AuthorOtherEntryMarkdown from './AuthorOtherEntryMarkdown.vue'
+import AuthorOtherEntryMimor from './AuthorOtherEntryMimor.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -10,9 +11,15 @@ defineProps<{
 </script>
 
 <template>
-  <Mimor
-    class="h-[34rem] max-w-[47rem] shrink-0"
-    :key="entry.path"
-    :src="`~/${entry.path}`"
+  <AuthorOtherEntryMimor
+    v-if="entry.path.endsWith('.mimor')"
+    :state="state"
+    :entry="entry"
   />
+  <AuthorOtherEntryMarkdown
+    v-else-if="entry.path.endsWith('.md')"
+    :state="state"
+    :entry="entry"
+  />
+  <div v-else>Unknown content</div>
 </template>

@@ -1,10 +1,13 @@
 # note
 
 [author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
+
+[author] `AuthorSelfEntryUnknown`
+[author] `AuthorOtherEntryUnknown`
+
 [author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorSelfEntryMarkdown` -- link to readonly.link
 
-[author] `AuthorOtherEntryContent` dispatch to `AuthorOtherEntryMimor` and `AuthorOtherEntryMarkdown`
 [author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorOtherEntryMarkdown` -- link to readonly.link
 
