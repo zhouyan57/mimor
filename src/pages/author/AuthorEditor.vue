@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import AuthorEditorHead from './AuthorEditorHead.vue'
 import AuthorEditorToolbar from './AuthorEditorToolbar.vue'
 import { State } from './State'
@@ -9,8 +8,6 @@ import { editorTextareaPlaceholder } from './editorTextareaPlaceholder'
 import { stateSave } from './stateSave'
 
 defineProps<{ state: State }>()
-
-const lang = useGlobalLang()
 
 const report = reactive({
   errorMessage: '',
