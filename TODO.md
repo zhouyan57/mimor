@@ -1,6 +1,5 @@
 # note
 
-[note] `NoteHead` use readonly.link logo
 [note] `NoteTextarea` support edit
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 

@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import {
-  ArrowTopRightOnSquareIcon,
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
 } from '@heroicons/vue/24/outline'
+import ReadonlyIcon from '../../components/icons/ReadonlyIcon.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { contentURL } from '../../models/content/contentURL'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
-
 const lang = useGlobalLang()
 
 const origin = 'https://mimor.app'
@@ -38,7 +37,7 @@ function fullscreenSupported() {
             lang.isZh() ? '在 Readonly.Link 中打开' : 'Open in Readonly.Link'
           "
         >
-          <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
+          <ReadonlyIcon class="h-6 w-6" />
         </a>
       </button>
 
