@@ -1,8 +1,8 @@
 import { parse } from '@xieyuheng/x-node'
+import { loadContent } from '../../models/content/loadContent'
 import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'
-import { loadText } from './loadText'
 
 export interface StateOptions {
   src: string
@@ -12,7 +12,7 @@ export interface StateOptions {
 export async function loadState(options: StateOptions): Promise<State> {
   const { src, withMetaThemeColor } = options
 
-  const text = await loadText(src)
+  const text = await loadContent(src)
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {

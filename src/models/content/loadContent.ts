@@ -1,11 +1,11 @@
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { srcURL } from './srcURL'
+import { contentURL } from './contentURL'
 
-export async function loadText(src: string): Promise<string> {
+export async function loadContent(src: string): Promise<string> {
   if (src.startsWith('~/')) {
     const token = useGlobalToken()
 
-    const response = await fetch(srcURL(src), {
+    const response = await fetch(contentURL(src), {
       method: 'GET',
       headers: {
         authorization: token.authorization,
@@ -16,7 +16,7 @@ export async function loadText(src: string): Promise<string> {
     return text
   }
 
-  const response = await fetch(srcURL(src))
+  const response = await fetch(contentURL(src))
   const text = await response.text()
   return text
 }

@@ -1,6 +1,6 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 
-export function srcURL(src: string): URL {
+export function contentURL(src: string): URL {
   if (src.startsWith('~/')) {
     const { url } = useGlobalBackend()
 
