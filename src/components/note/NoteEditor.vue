@@ -14,6 +14,7 @@ defineProps<{ state: State }>()
 
   <form
     tabindex="-1"
+    @submit.prevent="state.isEditing = false"
     @click="state.isEditing = true"
     @focus.capture="state.isEditing = true"
     @blur.capture="state.isEditing = false"
@@ -31,7 +32,7 @@ defineProps<{ state: State }>()
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform translate-y-8 opacity-0"
     >
-      <NoteEditorToolbar v-if="state.isEditing" :state="state" />
+      <NoteEditorToolbar v-show="state.isEditing" :state="state" />
     </Transition>
   </form>
 </template>
