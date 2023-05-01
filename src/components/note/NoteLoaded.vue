@@ -44,6 +44,6 @@ watch(
     ref="rootElement"
     class="flex h-full flex-col border border-black bg-white"
   >
-    TODO
+    NoteLoaded TODO
   </div>
 </template>

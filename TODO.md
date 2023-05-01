@@ -6,8 +6,7 @@
 
 # author
 
-[author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext -- use `components/note`
-[author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext -- use `components/note`
+[author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext -- use `Note`
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 
 # author
