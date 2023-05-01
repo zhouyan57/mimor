@@ -17,7 +17,7 @@ defineProps<{ state: State }>()
     @click="state.isEditing = true"
     @focus.capture="state.isEditing = true"
     @blur.capture="state.isEditing = false"
-    class="flex h-full flex-col overflow-y-auto border border-black"
+    class="flex h-full flex-col overflow-y-auto"
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.isEditing,
     }"

@@ -42,8 +42,8 @@ watch(
 </script>
 
 <template>
-  <div ref="rootElement" class="flex h-full flex-col">
-    <NoteHead class="border-x border-t border-black bg-white" :state="state" />
-    <NoteEditor :state="state" />
+  <div ref="rootElement" class="flex h-full flex-col bg-white">
+    <NoteHead class="border-x border-t border-black" :state="state" />
+    <NoteEditor class="border border-black" :state="state" />
   </div>
 </template>
