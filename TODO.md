@@ -1,7 +1,5 @@
 # note
 
-[author] extract `AuthorSelfEntryContent`
-
 [author] extract `AuthorOtherEntryHead`
 [author] extract `AuthorOtherEntryContent`
 
