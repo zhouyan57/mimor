@@ -1,10 +1,11 @@
+[mimor] view source has black border
+
 # note
 
-[author] `AuthorSelfEntryMarkdown` & `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
-[author] `AuthorSelfEntryMarkdown` -- link to readonly.link
-
+[author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorOtherEntryMarkdown` -- link to readonly.link
+[author] `AuthorSelfEntryMarkdown` -- link to readonly.link -- how to link private contents?
 
 [author] extract `editorTextareaPlaceholder`
 [author] extract `AuthorEditorToolbar`
