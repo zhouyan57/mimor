@@ -1,9 +1,9 @@
 # note
 
-[note] `components/note` -- `NoteLoaded` vs `NoteLoading`
-[note] `components/note` -- `NoteEditor`
-[note] `components/note` -- `NoteHead` link to readonly.link article
-[note] `components/note` -- `NoteHead` link to readonly.link article -- url encoding for private contents
+[note] `NoteLoaded` vs `NoteLoading`
+[note] `NoteEditor`
+[note] `NoteHead` link to readonly.link article
+[note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author
 
