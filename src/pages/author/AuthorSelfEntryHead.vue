@@ -6,6 +6,7 @@ import {
   PaperAirplaneIcon,
   PencilIcon,
 } from '@heroicons/vue/24/outline'
+import { ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { formatDateTime } from '../../utils/formatDate'
@@ -21,13 +22,17 @@ const props = defineProps<{
 
 const lang = useGlobalLang()
 
-function toggleVisibility() {
+const isTogglingVisibility = ref(false)
+
+async function toggleVisibility() {
   const message = lang.isZh()
     ? toggleVisibilityMessageZh()
     : toggleVisibilityMessageEn()
 
   if (window.confirm(message)) {
-    stateToggleEntryVisibility(props.state, props.entry)
+    isTogglingVisibility.value = true
+    await stateToggleEntryVisibility(props.state, props.entry)
+    isTogglingVisibility.value = false
   }
 }
 
@@ -55,7 +60,12 @@ function toggleVisibilityMessageEn(): string {
       @click="toggleVisibility()"
     >
       <template v-if="entry.isPublic">
-        <LockOpenIcon class="h-5 w-5" />
+        <LockOpenIcon
+          class="h-5 w-5"
+          :class="{
+            'animate-shake': isTogglingVisibility,
+          }"
+        />
         <Lang>
           <template #zh>公开</template>
           <template #en>Public</template>
@@ -63,7 +73,12 @@ function toggleVisibilityMessageEn(): string {
       </template>
 
       <template v-else>
-        <LockClosedIcon class="h-5 w-5" />
+        <LockClosedIcon
+          class="h-5 w-5"
+          :class="{
+            'animate-shake': isTogglingVisibility,
+          }"
+        />
         <Lang>
           <template #zh>私人</template>
           <template #en>Private</template>
