@@ -1,8 +1,7 @@
 # note
 
-[note] `NoteTextarea`
-[note] `NoteEditor`
 [note] `NoteHead` link to readonly.link article
+[note] `NoteEditor`
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author
