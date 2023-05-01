@@ -1,6 +1,5 @@
 # note
 
-[note] `NoteLoaded` vs `NoteLoading`
 [note] `NoteEditor`
 [note] `NoteHead` link to readonly.link article
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
