@@ -16,7 +16,7 @@ defineProps<{ state: State }>()
     name="text"
     spellcheck="false"
     v-model="state.editor.text"
-    :style="{ height: editorNumberOfLines(state.editor) * 1.5 + 'rem' }"
+    :style="{ height: editorNumberOfLines(state.editor) * 1.56 + 'rem' }"
     :placeholder="editorTextareaPlaceholder(state.editor)"
   ></textarea>
 </template>
