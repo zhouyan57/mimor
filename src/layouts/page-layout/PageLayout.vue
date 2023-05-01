@@ -28,7 +28,7 @@ onMounted(async () => {
     />
 
     <PageMobileHead
-      class="fixed left-0 top-0 block border-b border-stone-400 bg-white px-3 py-0.5 md:hidden"
+      class="fixed left-0 top-0 z-10 block border-b border-stone-400 bg-white px-3 py-0.5 md:hidden"
     />
 
     <div class="flex h-screen pb-14 pt-8 md:pb-0 md:pt-12">
@@ -44,7 +44,7 @@ onMounted(async () => {
     </div>
 
     <div
-      class="fixed bottom-0 right-0 w-full border-t border-stone-400 px-3 md:hidden"
+      class="fixed bottom-0 right-0 z-10 w-full border-t border-stone-400 px-3 md:hidden"
     >
       <PageMobileFootUser v-if="auth.user" :user="auth.user" />
       <PageMobileFootLoading v-else-if="!triedToLogin" />
