@@ -1,13 +1,11 @@
-import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { srcURL } from './srcURL'
 
 export async function loadText(src: string): Promise<string> {
   if (src.startsWith('~/')) {
-    const { url } = useGlobalBackend()
     const token = useGlobalToken()
 
-    const endpoint = src.slice('~/'.length)
-    const response = await fetch(new URL(endpoint, url), {
+    const response = await fetch(srcURL(src), {
       method: 'GET',
       headers: {
         authorization: token.authorization,
@@ -18,7 +16,7 @@ export async function loadText(src: string): Promise<string> {
     return text
   }
 
-  const response = await fetch(src)
+  const response = await fetch(srcURL(src))
   const text = await response.text()
   return text
 }
