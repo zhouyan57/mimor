@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AuthorSelfEntryMarkdown from './AuthorSelfEntryMarkdown.vue'
 import AuthorSelfEntryMimor from './AuthorSelfEntryMimor.vue'
+import AuthorSelfEntryUnknown from './AuthorSelfEntryUnknown.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -16,10 +17,12 @@ defineProps<{
     :state="state"
     :entry="entry"
   />
+
   <AuthorSelfEntryMarkdown
     v-else-if="entry.path.endsWith('.md')"
     :state="state"
     :entry="entry"
   />
-  <div v-else>Unknown content</div>
+
+  <AuthorSelfEntryUnknown v-else :state="state" :entry="entry" />
 </template>

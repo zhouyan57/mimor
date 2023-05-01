@@ -16,10 +16,12 @@ defineProps<{
     :state="state"
     :entry="entry"
   />
+
   <AuthorOtherEntryMarkdown
     v-else-if="entry.path.endsWith('.md')"
     :state="state"
     :entry="entry"
   />
-  <div v-else>Unknown content</div>
+
+  <AuthorSelfEntryUnknown v-else :state="state" :entry="entry" />
 </template>

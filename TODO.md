@@ -1,9 +1,6 @@
 # note
 
-[author] `AuthorSelfEntryUnknown`
-[author] `AuthorOtherEntryUnknown`
-
-[author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
+[author] `AuthorSelfEntryMarkdown` & `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorSelfEntryMarkdown` -- link to readonly.link
 
 [author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext
