@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Mimor from '../../components/mimor/Mimor.vue'
+import AuthorOtherEntryContent from './AuthorOtherEntryContent.vue'
 import AuthorOtherEntryHead from './AuthorOtherEntryHead.vue'
 import { Entry } from './Entry'
 import { State } from './State'
@@ -13,11 +13,6 @@ defineProps<{
 <template>
   <div>
     <AuthorOtherEntryHead :state="state" :entry="entry" />
-
-    <Mimor
-      class="h-[34rem] max-w-[47rem] shrink-0"
-      :key="entry.path"
-      :src="`~/${entry.path}`"
-    />
+    <AuthorOtherEntryContent :state="state" :entry="entry" />
   </div>
 </template>

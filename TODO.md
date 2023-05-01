@@ -1,7 +1,5 @@
 # note
 
-[author] extract `AuthorOtherEntryContent`
-
 [author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
 [author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
 [author] `AuthorSelfEntryMarkdown` -- link to readonly.link
