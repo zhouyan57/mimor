@@ -1,7 +1,5 @@
 # note
 
-[author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
-
 [author] `AuthorSelfEntryUnknown`
 [author] `AuthorOtherEntryUnknown`
 
