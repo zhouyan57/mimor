@@ -1,5 +1,3 @@
-[mimor] view source has black border
-
 # note
 
 [author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
