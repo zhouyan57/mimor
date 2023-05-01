@@ -8,6 +8,7 @@ import { reactive } from 'vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { editorNumberOfLines } from './editorNumberOfLines'
+import { editorTextareaPlaceholder } from './editorTextareaPlaceholder'
 import { stateSave } from './stateSave'
 
 defineProps<{ state: State }>()
@@ -69,9 +70,7 @@ const report = reactive({
       spellcheck="false"
       v-model="state.editor.text"
       :style="{ height: editorNumberOfLines(state.editor) * 1.5 + 'rem' }"
-      :placeholder="
-        lang.isZh() ? '创作谜墨卡片 *^-^*' : 'Create mimor cards :)'
-      "
+      :placeholder="editorTextareaPlaceholder(state.editor)"
     ></textarea>
 
     <div class="flex justify-between">

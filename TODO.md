@@ -7,7 +7,6 @@
 [author] `AuthorOtherEntryMarkdown` -- link to readonly.link
 [author] `AuthorSelfEntryMarkdown` -- link to readonly.link -- how to link private contents?
 
-[author] extract `editorTextareaPlaceholder`
 [author] extract `AuthorEditorToolbar`
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 
