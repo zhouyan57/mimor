@@ -5,5 +5,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="whitespace-pre p-3 font-mono">{{ state.text }}</div>
+  <div class="overflow-y-auto whitespace-pre p-3 font-mono">
+    {{ state.text }}
+  </div>
 </template>

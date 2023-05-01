@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col">
     <AuthorSelfEntryHead :state="state" :entry="entry" />
     <AuthorSelfEntryContent :state="state" :entry="entry" />
   </div>

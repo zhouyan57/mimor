@@ -1,3 +1,6 @@
+[mimor] `stateSrcURL`
+[note] `stateSrcURL`
+
 # note
 
 [note] `NoteHead` link to readonly.link article

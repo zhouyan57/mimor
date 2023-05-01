@@ -47,6 +47,6 @@ watch(
     class="flex h-full flex-col border border-black bg-white"
   >
     <NoteHead :state="state" />
-    <NoteText :state="state" />
+    <NoteText class="h-full" :state="state" />
   </div>
 </template>

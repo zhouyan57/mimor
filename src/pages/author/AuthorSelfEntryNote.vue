@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <Note
-    class="max-h-[34rem] max-w-[47rem] shrink-0"
+    class="max-h-[34rem] max-w-[47rem]"
     :key="entry.path"
     :src="`~/${entry.path}`"
   />
