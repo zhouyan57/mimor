@@ -1,4 +1,3 @@
-[author] extract `AuthorEditorToolbar`
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 [mimor] view source has black border
 
