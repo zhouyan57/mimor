@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AuthorOtherEntryMarkdown from './AuthorOtherEntryMarkdown.vue'
 import AuthorOtherEntryMimor from './AuthorOtherEntryMimor.vue'
+import AuthorOtherEntryMarkdown from './AuthorOtherEntryNote.vue'
 import AuthorOtherEntryUnknown from './AuthorOtherEntryUnknown.vue'
 import { Entry } from './Entry'
 import { State } from './State'
