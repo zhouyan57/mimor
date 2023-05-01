@@ -2,7 +2,6 @@
 
 # note
 
-[note] `NoteTextarea` fix height
 [note] `stateSrcURL`
 [note] `NoteHead` link to readonly.link article
 [note] `NoteTextarea` support edit
