@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AuthorOtherEntryMarkdown from './AuthorOtherEntryMarkdown.vue'
 import AuthorOtherEntryMimor from './AuthorOtherEntryMimor.vue'
+import AuthorOtherEntryUnknown from './AuthorOtherEntryUnknown.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -23,5 +24,5 @@ defineProps<{
     :entry="entry"
   />
 
-  <AuthorSelfEntryUnknown v-else :state="state" :entry="entry" />
+  <AuthorOtherEntryUnknown v-else :state="state" :entry="entry" />
 </template>
