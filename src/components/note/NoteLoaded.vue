@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import NoteEditor from './NoteEditor.vue'
 import NoteHead from './NoteHead.vue'
-import NoteTextarea from './NoteTextarea.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
 
@@ -42,11 +42,8 @@ watch(
 </script>
 
 <template>
-  <div
-    ref="rootElement"
-    class="flex h-full flex-col border border-black bg-white"
-  >
-    <NoteHead :state="state" />
-    <NoteTextarea class="h-full" :state="state" />
+  <div ref="rootElement" class="flex h-full flex-col">
+    <NoteHead class="border-x border-t border-black bg-white" :state="state" />
+    <NoteEditor :state="state" />
   </div>
 </template>

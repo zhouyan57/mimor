@@ -10,11 +10,10 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   const text = await loadContent(src)
 
-  const state = {
+  return {
     src,
     text,
+    isEditing: false,
     isFullscreen: false,
   }
-
-  return state
 }

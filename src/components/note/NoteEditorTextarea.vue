@@ -7,7 +7,9 @@ defineProps<{ state: State }>()
 
 <template>
   <textarea
-    class="overflow-y-auto whitespace-pre-line p-3 font-mono"
+    name="text"
+    spellcheck="false"
+    class="my-3 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
     :style="{ height: stateNumberOfLines(state) * 1.5 + 'rem' }"
     v-model="state.text"
   ></textarea>

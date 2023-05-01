@@ -20,7 +20,7 @@ function fullscreenSupported() {
 </script>
 
 <template>
-  <div class="flex w-full justify-between border-b border-black p-3 text-xl">
+  <div class="flex w-full justify-between p-3 text-xl">
     <div>
       <Lang>
         <template #zh>笔记</template>
