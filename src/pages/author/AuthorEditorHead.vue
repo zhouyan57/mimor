@@ -9,7 +9,7 @@ const lang = useGlobalLang()
 
 <template>
   <div
-    class="mb-1 flex items-baseline border-b border-black px-3 pb-1 pt-2"
+    class="mx-3 mb-1 flex items-baseline border-b border-black pb-1 pt-2"
     :class="{ 'border-orange-500': state.editor.isEditing }"
   >
     <input

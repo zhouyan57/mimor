@@ -27,7 +27,7 @@ const report = reactive({
     @blur.capture="state.editor.isEditing = false"
     class="flex flex-col border border-black"
     :class="{
-      'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
+      'border-orange-500 ring-1 ring-orange-400': state.editor.isEditing,
     }"
   >
     <AuthorEditorHead :state="state" />
