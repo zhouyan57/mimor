@@ -1,12 +1,12 @@
 # note
 
+[note] `NoteTextarea`
 [note] `NoteEditor`
 [note] `NoteHead` link to readonly.link article
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author
 
-[author] `AuthorOtherEntryMarkdown` -- show markdown file as plaintext -- use `Note`
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarMarkdown` & `AuthorEditorToolbarMimor`
 
 # author

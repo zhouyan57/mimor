@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Note from '../../components/note/Note.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -9,5 +10,9 @@ defineProps<{
 </script>
 
 <template>
-  <div>TODO</div>
+  <Note
+    class="h-[34rem] max-w-[47rem] shrink-0"
+    :key="entry.path"
+    :src="`~/${entry.path}`"
+  />
 </template>
