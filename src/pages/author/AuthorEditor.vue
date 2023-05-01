@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
+import AuthorEditorHead from './AuthorEditorHead.vue'
 import AuthorEditorToolbar from './AuthorEditorToolbar.vue'
 import { State } from './State'
 import { editorNumberOfLines } from './editorNumberOfLines'
@@ -28,33 +29,7 @@ const report = reactive({
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
     }"
   >
-    <div
-      class="mb-1 flex items-baseline border-b border-black px-1 pb-1"
-      :class="{ 'border-orange-500': state.editor.isEditing }"
-    >
-      <input
-        class="w-full font-mono text-base focus:outline-none"
-        name="file"
-        type="text"
-        v-model="state.editor.filename"
-        :placeholder="lang.isZh() ? '文件名' : 'filename'"
-        required
-      />
-
-      <select
-        class="bg-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
-        name="mode"
-        v-model="state.editor.mode"
-      >
-        <option
-          v-for="mode of state.editor.knownModes"
-          :key="mode"
-          :value="mode"
-        >
-          <span>.{{ mode }}</span>
-        </option>
-      </select>
-    </div>
+    <AuthorEditorHead :state="state" />
 
     <textarea
       class="my-1 h-full w-full resize-none px-1 font-mono text-base focus:outline-none"
