@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import NoteHead from './NoteHead.vue'
 import NoteText from './NoteText.vue'
 import { State } from './State'
 import { stateReactive } from './stateReactive'
@@ -45,6 +46,7 @@ watch(
     ref="rootElement"
     class="flex h-full flex-col border border-black bg-white"
   >
+    <NoteHead :state="state" />
     <NoteText :state="state" />
   </div>
 </template>

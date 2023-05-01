@@ -15,6 +15,7 @@ import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
 
 const lang = useGlobalLang()
+
 const origin = 'https://mimor.app'
 
 defineProps<{
@@ -79,8 +80,6 @@ function fullscreenSupported() {
       <template v-if="fullscreenSupported()">
         <button
           v-if="!state.isFullscreen"
-          :href="`${origin}/mimors/${state.src}`"
-          target="_blank"
           :title="lang.isZh() ? '进入全屏' : 'Enter fullscreen'"
           @click="state.isFullscreen = true"
         >
@@ -89,8 +88,6 @@ function fullscreenSupported() {
 
         <button
           v-else
-          :href="`${origin}/mimors/${state.src}`"
-          target="_blank"
           :title="lang.isZh() ? '退出全屏' : 'Exit fullscreen'"
           @click="state.isFullscreen = false"
         >
