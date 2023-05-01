@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="flex justify-between">
+  <div class="flex justify-between p-2">
     <div class="flex space-x-2">
       <button
         v-if="state.editor.isPublic"

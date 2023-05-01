@@ -1,5 +1,6 @@
 # note
 
+[note] `NoteEditor` -- `submit` -- maybe use `contentSave`
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author

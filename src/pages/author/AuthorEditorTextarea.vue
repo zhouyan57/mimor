@@ -8,7 +8,7 @@ defineProps<{ state: State }>()
 
 <template>
   <textarea
-    class="my-1 h-full w-full resize-none px-1 font-mono text-base focus:outline-none"
+    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
     :class="{
       'transition-[height] duration-200':
         editorNumberOfLines(state.editor) <= 3,

@@ -25,7 +25,7 @@ const report = reactive({
     @click="state.editor.isEditing = true"
     @focus.capture="state.editor.isEditing = true"
     @blur.capture="state.editor.isEditing = false"
-    class="flex flex-col border border-black p-2"
+    class="flex flex-col border border-black"
     :class="{
       'border-orange-400 ring-2 ring-orange-300': state.editor.isEditing,
     }"
