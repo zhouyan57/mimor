@@ -1,5 +1,6 @@
 @import './tailwind.css';
 @import './scrollbar.css';
+@import './animate-jump.css';
 
 input {
   font-family: inherit;

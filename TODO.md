@@ -1,7 +1,9 @@
 # note
 
-[author] extract `AuthorOtherEntryHead` and `AuthorOtherEntryContent`
-[author] extract `AuthorSelfEntryHead` and `AuthorSelfEntryContent`
+[author] extract `AuthorSelfEntryContent`
+
+[author] extract `AuthorOtherEntryHead`
+[author] extract `AuthorOtherEntryContent`
 
 [author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
 [author] `AuthorSelfEntryMarkdown` -- show markdown file as plaintext
