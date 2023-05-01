@@ -1,6 +1,5 @@
 # note
 
-[author] extract `AuthorOtherEntryHead`
 [author] extract `AuthorOtherEntryContent`
 
 [author] `AuthorSelfEntryContent` dispatch to `AuthorSelfEntryMimor` and `AuthorSelfEntryMarkdown`
