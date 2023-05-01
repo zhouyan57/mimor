@@ -3,13 +3,18 @@
 [note] `NoteEditor` -- `submit` -- maybe use `contentSave`
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
+# mimor
+
+[mimor] `MimorEditor` -- edit mimor
+[mimor] `MimorEditor` -- `submit`
+
 # author
 
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
+[author] `AuthorEditorToolbarMimor` template for editing
 
 # author
 
-[author] `AuthorSelf` -- edit mimor
 [author] `AuthorSelf` -- delete mimor
 
 # author avatar
