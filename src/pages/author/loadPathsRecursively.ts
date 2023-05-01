@@ -19,10 +19,14 @@ export async function loadPathsRecursively(
   const pathEntries = await response.json()
 
   for (const pathEntry of pathEntries) {
-    if (pathEntry.kind === 'File' && pathEntry.path.endsWith('.mimor')) {
-      paths.push(pathEntry.path)
-    } else if (pathEntry.kind === 'Directory') {
+    if (pathEntry.kind === 'Directory') {
       paths.push(...(await loadPathsRecursively(pathEntry.path)))
+    }
+
+    if (pathEntry.kind === 'File') {
+      if (pathEntry.path.endsWith('.mimor') || pathEntry.path.endsWith('.md')) {
+        paths.push(pathEntry.path)
+      }
     }
   }
 
