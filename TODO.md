@@ -1,17 +1,13 @@
 # author avatar
 
+[settings] `SettingsUser` vs `SettingsGuest`
 [settings] user has avatar
 [settings] be able to upload author avatar
 [settings] show author avatar
 
 [author] `AuthorOtherHead` -- show avatar
 
-# author
-
-[author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
-[author] `AuthorEditorToolbarMimor` template for editing
-
-# note
+# note -- need upstream
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
@@ -23,7 +19,7 @@
 
 [recall] user can add a mimor into `/recall`
 
-# mimor -- errors handling
+# mimor -- error handling
 
 [mimor] `Mimor` -- `loadText` -- handle HTTP errors
 
@@ -31,3 +27,8 @@
 
 [author] [refactor] `stateMakeMimorEntry*`
 [author] `loadMimorEntries*` handle HTTP errors
+
+# author editor -- templating
+
+[author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
+[author] `AuthorEditorToolbarMimor` template for editing
