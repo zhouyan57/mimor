@@ -15,8 +15,6 @@ defineProps<{ state: State }>()
   <form
     tabindex="-1"
     @submit.prevent="state.isEditing = false"
-    @click="state.isEditing = true"
-    @focus.capture="state.isEditing = true"
     @blur.capture="state.isEditing = false"
     class="flex h-full flex-col overflow-y-auto"
     :class="{

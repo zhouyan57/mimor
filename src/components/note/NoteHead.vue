@@ -2,6 +2,7 @@
 import {
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
+  PencilIcon,
 } from '@heroicons/vue/24/outline'
 import ReadonlyIcon from '../../components/icons/ReadonlyIcon.vue'
 import Lang from '../../components/lang/Lang.vue'
@@ -24,6 +25,14 @@ function fullscreenSupported() {
     <div></div>
 
     <div class="flex items-center space-x-4">
+      <button
+        v-if="true"
+        :title="lang.isZh() ? '编辑' : 'Edit'"
+        @click="state.isEditing = true"
+      >
+        <PencilIcon class="h-5 w-5" />
+      </button>
+
       <button>
         <a
           :href="`https://readonly.link/articles/${contentURL(state.src)}`"

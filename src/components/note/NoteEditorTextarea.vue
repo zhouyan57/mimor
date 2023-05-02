@@ -7,9 +7,10 @@ defineProps<{ state: State }>()
 
 <template>
   <textarea
+    :disabled="!state.isEditing"
     name="text"
     spellcheck="false"
-    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
+    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none disabled:bg-white"
     :style="{
       height: state.isFullscreen
         ? undefined
