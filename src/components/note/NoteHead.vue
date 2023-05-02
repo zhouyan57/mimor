@@ -3,6 +3,7 @@ import {
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
   PencilIcon,
+  XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import ReadonlyIcon from '../../components/icons/ReadonlyIcon.vue'
 import Lang from '../../components/lang/Lang.vue'
@@ -25,13 +26,23 @@ function fullscreenSupported() {
     <div></div>
 
     <div class="flex items-center space-x-4">
-      <button
-        v-if="state.isEditable"
-        :title="lang.isZh() ? '编辑' : 'Edit'"
-        @click="state.isEditing = true"
-      >
-        <PencilIcon class="h-5 w-5" />
-      </button>
+      <template v-if="state.isEditable">
+        <button
+          v-if="!state.isEditing"
+          :title="lang.isZh() ? '编辑' : 'Edit'"
+          @click="state.isEditing = true"
+        >
+          <PencilIcon class="h-5 w-5" />
+        </button>
+
+        <button
+          v-if="state.isEditing"
+          :title="lang.isZh() ? '退出编辑' : 'Exit editor'"
+          @click="state.isEditing = false"
+        >
+          <XMarkIcon class="h-5 w-5" />
+        </button>
+      </template>
 
       <button>
         <a

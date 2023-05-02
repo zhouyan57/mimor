@@ -1,4 +1,5 @@
-[note] `NoteHead` -- support exit at the top
+[note] `NoteEditor` -- exit restore `originText`
+[mimor] `MimorEditor` -- exit restore `originText`
 [author] `AuthorSelf` -- delete mimor
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
