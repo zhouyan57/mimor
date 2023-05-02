@@ -9,7 +9,7 @@ defineProps<{ state: State }>()
   <textarea
     name="text"
     spellcheck="false"
-    class="my-3 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
+    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
     :style="{
       height: state.isFullscreen
         ? undefined

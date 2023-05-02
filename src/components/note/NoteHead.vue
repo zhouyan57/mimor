@@ -20,7 +20,7 @@ function fullscreenSupported() {
 </script>
 
 <template>
-  <div class="flex w-full justify-between p-3 text-xl">
+  <div class="flex w-full justify-between px-3 py-2 text-xl">
     <div></div>
 
     <div class="flex items-center space-x-4">
