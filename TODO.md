@@ -1,4 +1,3 @@
-[author] `stateEntryDeleteAfterConfirming`
 [author] `AuthorSelfEntryToolbar` -- use `stateEntryDeleteAfterConfirming`
 
 # author avatar

@@ -20,16 +20,16 @@ export async function entryToggleVisibilityAfterConfirming(
 
 function toggleVisibilityMessageZh(entry: Entry): string {
   if (entry.isPublic) {
-    return `确定要将公开 mimor 变成私有吗？\n${entry.path}`
+    return `确定要将 公开 内容变成 私人 吗？\n${entry.path}`
   } else {
-    return `确定要将私有 mimor 变成公开吗？\n${entry.path}`
+    return `确定要将 私人 内容变成 公开 吗？\n${entry.path}`
   }
 }
 
 function toggleVisibilityMessageEn(entry: Entry): string {
   if (entry.isPublic) {
-    return `Are you sure to change this public mimor to private?\n${entry.path}`
+    return `Are you sure to change this PUBLIC content to PRIVATE?\n${entry.path}`
   } else {
-    return `Are you sure to change this private mimor to public?\n${entry.path}`
+    return `Are you sure to change this PRIVATE content to PUBLIC?\n${entry.path}`
   }
 }
