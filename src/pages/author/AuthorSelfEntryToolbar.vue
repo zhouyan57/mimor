@@ -7,7 +7,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { Entry } from './Entry'
 import { State } from './State'
-import { stateEntryToggleVisibilityAfterConfirming } from './stateEntryToggleVisibilityAfterConfirming'
+import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
 
 defineProps<{
   state: State
@@ -19,7 +19,7 @@ defineProps<{
   <div class="flex space-x-4 text-base">
     <button
       class="flex max-w-fit space-x-1"
-      @click="stateEntryToggleVisibilityAfterConfirming(state, entry)"
+      @click="entryToggleVisibilityAfterConfirming(entry)"
     >
       <template v-if="entry.isPublic">
         <LockOpenIcon

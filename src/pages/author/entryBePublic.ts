@@ -1,14 +1,10 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { Entry } from './Entry'
-import { State } from './State'
 import { pathFormat } from './pathFormat'
 import { pathParse } from './pathParse'
 
-export async function stateMakeEntryPublic(
-  state: State,
-  entry: Entry,
-): Promise<void> {
+export async function entryBePublic(entry: Entry): Promise<void> {
   if (entry.isPublic) {
     return
   }

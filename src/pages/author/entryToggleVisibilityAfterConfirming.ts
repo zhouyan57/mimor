@@ -1,10 +1,8 @@
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Entry } from './Entry'
-import { State } from './State'
-import { stateEntryToggleVisibility } from './stateEntryToggleVisibility'
+import { entryToggleVisibility } from './entryToggleVisibility'
 
-export async function stateEntryToggleVisibilityAfterConfirming(
-  state: State,
+export async function entryToggleVisibilityAfterConfirming(
   entry: Entry,
 ): Promise<void> {
   const lang = useGlobalLang()
@@ -15,7 +13,7 @@ export async function stateEntryToggleVisibilityAfterConfirming(
 
   if (window.confirm(message)) {
     entry.isTogglingVisibility = true
-    await stateEntryToggleVisibility(state, entry)
+    await entryToggleVisibility(entry)
     entry.isTogglingVisibility = false
   }
 }
