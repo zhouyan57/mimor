@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AuthorSelfEntryContent from './AuthorSelfEntryContent.vue'
-import AuthorSelfEntryHead from './AuthorSelfEntryHead.vue'
+import AuthorSelfEntryInfo from './AuthorSelfEntryInfo.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col">
-    <AuthorSelfEntryHead :state="state" :entry="entry" />
+    <AuthorSelfEntryInfo :state="state" :entry="entry" />
     <AuthorSelfEntryContent :state="state" :entry="entry" />
   </div>
 </template>

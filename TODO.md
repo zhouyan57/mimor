@@ -1,4 +1,5 @@
-[author] `AuthorSelf` -- delete mimor
+[author] rename `AuthorOhterEntryHead` to `AuthorOtherEntryInfo`
+[author] `AuthorSelfEntryToolbar` -- delete mimor
 
 # author avatar
 
