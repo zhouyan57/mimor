@@ -1,10 +1,8 @@
 [mimor] `MimorEditorToolbar` -- `submit` -- use `contentSave`
 
-[note] `NoteHead` link to readonly.link article -- url encoding for private contents
-
-# author
-
 [author] `AuthorSelf` -- delete mimor
+
+[note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author avatar
 

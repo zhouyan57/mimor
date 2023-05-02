@@ -12,12 +12,10 @@ defineProps<{ state: State }>()
     tabindex="-1"
     @submit.prevent="stateSave(state)"
     class="flex h-full flex-col overflow-y-auto"
-    :class="{
-      'border border-orange-500': state.isEditing,
-    }"
   >
     <NoteEditorTextarea :state="state" />
 
+    1
     <Transition
       enter-active-class="transition duration-200 ease-out"
       enter-from-class="transform translate-y-8 opacity-0"

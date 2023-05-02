@@ -7,7 +7,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div class="mx-2 flex justify-between border-t border-orange-500 py-2">
+  <div class="flex justify-between border-t border-black px-2 py-2">
     <div class="flex space-x-2"></div>
 
     <div class="flex space-x-2 px-1">
