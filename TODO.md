@@ -1,8 +1,5 @@
 [note] `NoteHead` -- support exit at the top
-[mimor] `MimorHeadProgram` -- support exit at the top
-
 [author] `AuthorSelf` -- delete mimor
-
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author avatar

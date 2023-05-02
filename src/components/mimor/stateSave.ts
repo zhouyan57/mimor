@@ -5,8 +5,10 @@ import { createProgram } from './createProgram'
 
 export async function stateSave(state: State): Promise<void> {
   await contentSave(state.src, state.text)
+
   const nodes = parse(state.text)
   const program = createProgram({ nodes })
+
   state.program = program
   state.kind = 'Program'
 }

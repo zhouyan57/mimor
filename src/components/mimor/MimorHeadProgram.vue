@@ -7,6 +7,7 @@ import {
   CodeBracketIcon,
   PencilIcon,
   PlayIcon,
+  XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../lang/useGlobalLang'
@@ -54,10 +55,19 @@ function fullscreenSupported() {
 
       <template v-if="state.isEditable">
         <button
+          v-if="state.kind === 'Program'"
           :title="lang.isZh() ? '编辑' : 'Edit'"
           @click="state.kind = 'Editor'"
         >
           <PencilIcon class="h-5 w-5" />
+        </button>
+
+        <button
+          v-if="state.kind === 'Editor'"
+          @click="state.kind = 'Program'"
+          :title="lang.isZh() ? '退出编辑' : 'Exit editor'"
+        >
+          <XMarkIcon class="h-5 w-5" />
         </button>
       </template>
 
