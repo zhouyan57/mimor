@@ -19,6 +19,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   const state = {
     src,
     text,
+    originalText: text,
     theme,
     metadata,
     withMetaThemeColor,

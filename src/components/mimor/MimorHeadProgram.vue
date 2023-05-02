@@ -15,6 +15,7 @@ import { Program } from './Program'
 import { State } from './State'
 import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
+import { stateEditorExit } from './stateEditorExit'
 
 const lang = useGlobalLang()
 
@@ -64,7 +65,7 @@ function fullscreenSupported() {
 
         <button
           v-if="state.kind === 'Editor'"
-          @click="state.kind = 'Program'"
+          @click="stateEditorExit(state)"
           :title="lang.isZh() ? '退出编辑' : 'Exit editor'"
         >
           <XMarkIcon class="h-5 w-5" />

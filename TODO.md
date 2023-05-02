@@ -1,6 +1,4 @@
-[mimor] `MimorEditor` -- exit restore `originalText`
 [author] `AuthorSelf` -- delete mimor
-[note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author avatar
 
@@ -14,6 +12,10 @@
 
 [author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
 [author] `AuthorEditorToolbarMimor` template for editing
+
+# note
+
+[note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # recall -- in many timelines
 

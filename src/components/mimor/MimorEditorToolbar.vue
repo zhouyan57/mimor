@@ -2,6 +2,7 @@
 import { PaperAirplaneIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { State } from './State'
+import { stateEditorExit } from './stateEditorExit'
 
 defineProps<{ state: State }>()
 </script>
@@ -17,7 +18,7 @@ defineProps<{ state: State }>()
       <button
         class="mx-2 px-2 py-1 font-bold focus:outline-none focus:ring-2 focus:ring-orange-300"
         :class="[state.theme.name !== 'white' && state.theme.text(800)]"
-        @click.prevent="state.kind = 'Program'"
+        @click.prevent="stateEditorExit(state)"
       >
         <Lang>
           <template #zh> 退出 </template>
