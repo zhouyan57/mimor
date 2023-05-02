@@ -2,7 +2,7 @@
 import NoteEditorTextarea from './NoteEditorTextarea.vue'
 import NoteEditorToolbar from './NoteEditorToolbar.vue'
 import { State } from './State'
-import { stateSave } from './stateSave'
+import { stateEditorSave } from './stateEditorSave'
 
 defineProps<{ state: State }>()
 </script>
@@ -10,7 +10,7 @@ defineProps<{ state: State }>()
 <template>
   <form
     tabindex="-1"
-    @submit.prevent="stateSave(state)"
+    @submit.prevent="stateEditorSave(state)"
     class="flex h-full flex-col overflow-y-auto"
   >
     <NoteEditorTextarea :state="state" />

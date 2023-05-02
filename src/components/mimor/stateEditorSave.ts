@@ -3,7 +3,7 @@ import { contentSave } from '../../models/content/contentSave'
 import { State } from './State'
 import { createProgram } from './createProgram'
 
-export async function stateSave(state: State): Promise<void> {
+export async function stateEditorSave(state: State): Promise<void> {
   await contentSave(state.src, state.text)
 
   const nodes = parse(state.text)

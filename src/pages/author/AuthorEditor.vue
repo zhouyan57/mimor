@@ -4,7 +4,7 @@ import AuthorEditorHead from './AuthorEditorHead.vue'
 import AuthorEditorTextarea from './AuthorEditorTextarea.vue'
 import AuthorEditorToolbar from './AuthorEditorToolbar.vue'
 import { State } from './State'
-import { stateSave } from './stateSave'
+import { stateEditorSave } from './stateEditorSave'
 
 defineProps<{ state: State }>()
 
@@ -21,7 +21,7 @@ const report = reactive({
 
   <form
     tabindex="-1"
-    @submit.prevent="stateSave(state, report)"
+    @submit.prevent="stateEditorSave(state, report)"
     @click="state.editor.isEditing = true"
     @focus.capture="state.editor.isEditing = true"
     @blur.capture="state.editor.isEditing = false"

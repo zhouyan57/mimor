@@ -3,7 +3,7 @@ import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { createEditor, Editor } from './Editor'
 import { State } from './State'
 
-export async function stateSave(
+export async function stateEditorSave(
   state: State,
   report: {
     errorMessage: string

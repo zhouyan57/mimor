@@ -10,6 +10,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { contentURL } from '../../models/content/contentURL'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
+import { stateEditorExit } from './stateEditorExit'
 const lang = useGlobalLang()
 
 const origin = 'https://mimor.app'
@@ -38,7 +39,7 @@ function fullscreenSupported() {
         <button
           v-if="state.isEditing"
           :title="lang.isZh() ? '退出编辑' : 'Exit editor'"
-          @click="state.isEditing = false"
+          @click="stateEditorExit(state)"
         >
           <XMarkIcon class="h-5 w-5" />
         </button>

@@ -14,6 +14,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   return {
     src,
     text,
+    originalText: text,
     isEditing: false,
     isFullscreen: false,
     isEditable,
