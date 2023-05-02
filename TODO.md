@@ -1,17 +1,9 @@
-# note
-
 [note] `NoteEditor` -- `submit` -- maybe use `contentSave`
-[note] `NoteHead` link to readonly.link article -- url encoding for private contents
-
-# mimor
 
 [mimor] `MimorEditor` -- edit mimor
 [mimor] `MimorEditor` -- `submit`
 
-# author
-
-[author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
-[author] `AuthorEditorToolbarMimor` template for editing
+[note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
 # author
 
@@ -25,14 +17,10 @@
 
 [author] `AuthorOtherHead` -- show avatar
 
-# mimor -- errors handling
+# author
 
-[mimor] `Mimor` -- `loadText` -- handle HTTP errors
-
-# author -- error handling
-
-[author] [refactor] `stateMakeMimorEntry*`
-[author] `loadMimorEntries*` handle HTTP errors
+[author] `AuthorEditorToolbar` dispatch to `AuthorEditorToolbarNote` & `AuthorEditorToolbarMimor`
+[author] `AuthorEditorToolbarMimor` template for editing
 
 # recall -- in many timelines
 
@@ -41,3 +29,12 @@
 > care (tiktok does not have video backlog problem).
 
 [recall] user can add a mimor into `/recall`
+
+# mimor -- errors handling
+
+[mimor] `Mimor` -- `loadText` -- handle HTTP errors
+
+# author -- error handling
+
+[author] [refactor] `stateMakeMimorEntry*`
+[author] `loadMimorEntries*` handle HTTP errors
