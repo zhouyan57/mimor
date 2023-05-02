@@ -1,5 +1,3 @@
-[note] `NoteEditor` -- `submit` -- maybe use `contentSave`
-
 [mimor] `MimorEditor` -- edit mimor
 [mimor] `MimorEditor` -- `submit`
 

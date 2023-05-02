@@ -1,7 +1,7 @@
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { contentURL } from './contentURL'
 
-export async function loadContent(src: string): Promise<string> {
+export async function contentSave(src: string, text: string): Promise<void> {
   const headers: Record<string, string> = {}
 
   if (src.startsWith('~/')) {
@@ -9,11 +9,9 @@ export async function loadContent(src: string): Promise<string> {
     headers.authorization = token.authorization
   }
 
-  const response = await fetch(contentURL(src), {
-    method: 'GET',
+  await fetch(contentURL(src), {
+    method: 'PUT',
     headers,
+    body: text,
   })
-
-  const text = await response.text()
-  return text
 }

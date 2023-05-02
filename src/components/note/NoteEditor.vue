@@ -2,6 +2,7 @@
 import NoteEditorTextarea from './NoteEditorTextarea.vue'
 import NoteEditorToolbar from './NoteEditorToolbar.vue'
 import { State } from './State'
+import { stateSave } from './stateSave'
 
 defineProps<{ state: State }>()
 </script>
@@ -14,7 +15,7 @@ defineProps<{ state: State }>()
 
   <form
     tabindex="-1"
-    @submit.prevent="state.isEditing = false"
+    @submit.prevent="stateSave(state)"
     class="flex h-full flex-col overflow-y-auto"
     :class="{
       'border border-orange-500': state.isEditing,
