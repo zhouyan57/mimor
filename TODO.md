@@ -1,7 +1,4 @@
-[mimor] `MimorEditor` -- handle `isEditing`
-
-- show `MimorEditorToolbar` if `isEditing`
-- show orange border if `isEditing`
+[mimor] `MimorEditor` -- fix border style
 
 [mimor] `MimorEditorToolbar` -- `submit` -- use `contentSave`
 

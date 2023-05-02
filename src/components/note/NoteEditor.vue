@@ -8,11 +8,6 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <!--
-       We need to use capture on the form here,
-       because focus and blur events do not bubble up.
-  -->
-
   <form
     tabindex="-1"
     @submit.prevent="stateSave(state)"

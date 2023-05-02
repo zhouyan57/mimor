@@ -1,11 +1,37 @@
 <script setup lang="ts">
+import { PaperAirplaneIcon } from '@heroicons/vue/24/outline'
+import Lang from '../../components/lang/Lang.vue'
 import { State } from './State'
 
-defineProps<{
-  state: State
-}>()
+defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div></div>
+  <div class="mx-2 flex justify-between border-t border-orange-500 py-2">
+    <div class="flex space-x-2"></div>
+
+    <div class="flex space-x-2 px-1">
+      <button
+        class="mx-2 px-2 py-1 font-bold focus:outline-none focus:ring-2 focus:ring-orange-300"
+        @click.prevent="
+          () => {
+            state.isEditing = false
+            state.kind = 'Program'
+          }
+        "
+      >
+        <Lang>
+          <template #zh> 退出 </template>
+          <template #en> Exit </template>
+        </Lang>
+      </button>
+
+      <button
+        :disabled="state.text.length === 0"
+        class="border border-orange-300 bg-orange-400 px-3 py-1 text-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-300 disabled:border-stone-400 disabled:bg-white disabled:text-stone-400"
+      >
+        <PaperAirplaneIcon class="h-5 w-5" />
+      </button>
+    </div>
+  </div>
 </template>

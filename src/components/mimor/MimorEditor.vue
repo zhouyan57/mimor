@@ -2,6 +2,7 @@
 import MimorEditorTextarea from './MimorEditorTextarea.vue'
 import MimorEditorToolbar from './MimorEditorToolbar.vue'
 import { State } from './State'
+import { stateSave } from './stateSave'
 
 defineProps<{
   state: State
@@ -9,8 +10,15 @@ defineProps<{
 </script>
 
 <template>
-  <from class="flex h-full flex-col">
+  <from
+    tabindex="-1"
+    @submit.prevent="stateSave(state)"
+    class="flex h-full flex-col overflow-y-auto"
+    :class="{
+      'border border-orange-500': state.isEditing,
+    }"
+  >
     <MimorEditorTextarea :state="state" />
-    <MimorEditorToolbar :state="state" />
+    <MimorEditorToolbar v-show="state.isEditing" :state="state" />
   </from>
 </template>
