@@ -1,3 +1,5 @@
+[author] rename `stateMakeEntryPublic` to `stateEntryBePublic`
+[author] rename `stateMakeEntryPrivate` to `stateEntryBePrivate`
 [author] extract `stateEntryDelete`
 [author] `AuthorSelfEntryToolbar` -- use `entryDelete`
 

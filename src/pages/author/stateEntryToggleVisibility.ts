@@ -3,7 +3,7 @@ import { State } from './State'
 import { stateMakeEntryPrivate } from './stateMakeEntryPrivate'
 import { stateMakeEntryPublic } from './stateMakeEntryPublic'
 
-export async function stateToggleEntryVisibility(
+export async function stateEntryToggleVisibility(
   state: State,
   entry: Entry,
 ): Promise<void> {
