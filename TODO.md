@@ -1,5 +1,5 @@
 [mimor] `MimorEditor` -- edit mimor
-[mimor] `MimorEditor` -- `submit`
+[mimor] `MimorEditor` -- `submit` -- use `contentSave`
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 
