@@ -24,6 +24,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     withMetaThemeColor,
     isFullscreen: false,
     isEditable,
+    isEditing: false,
   }
 
   try {

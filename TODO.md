@@ -1,5 +1,11 @@
-[mimor] `MimorEditor` -- edit mimor
-[mimor] `MimorEditor` -- `submit` -- use `contentSave`
+[mimor] rename kind `ViewSource` to `Editor`
+
+[mimor] `MimorEditor` -- handle `isEditing`
+
+- show `MimorEditorToolbar` if `isEditing`
+- show orange border if `isEditing`
+
+[mimor] `MimorEditorToolbar` -- `submit` -- use `contentSave`
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
 

@@ -11,5 +11,6 @@ export type State = {
   program?: Program
   error?: Error
   isFullscreen: boolean
+  isEditing: boolean
   isEditable?: boolean
 }

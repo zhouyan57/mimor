@@ -9,8 +9,8 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex h-full flex-col">
+  <from class="flex h-full flex-col">
     <MimorEditorTextarea :state="state" />
     <MimorEditorToolbar :state="state" />
-  </div>
+  </from>
 </template>

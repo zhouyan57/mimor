@@ -5,6 +5,7 @@ import {
   ArrowsPointingOutIcon,
   BackspaceIcon,
   CodeBracketIcon,
+  PencilIcon,
   PlayIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
@@ -51,21 +52,37 @@ function fullscreenSupported() {
         <BackspaceIcon class="h-5 w-5" />
       </button>
 
-      <button
-        v-if="state.kind === 'Program'"
-        @click="state.kind = 'ViewSource'"
-        :title="lang.isZh() ? '查看源代码' : 'View source'"
-      >
-        <CodeBracketIcon class="h-5 w-5" />
-      </button>
+      <template v-if="state.isEditable">
+        <button
+          :title="lang.isZh() ? '编辑' : 'Edit'"
+          @click="
+            () => {
+              state.isEditing = true
+              state.kind = 'ViewSource'
+            }
+          "
+        >
+          <PencilIcon class="h-5 w-5" />
+        </button>
+      </template>
 
-      <button
-        v-if="state.kind === 'ViewSource'"
-        @click="state.kind = 'Program'"
-        :title="lang.isZh() ? '回到卡片程序' : 'Back to the program'"
-      >
-        <PlayIcon class="h-5 w-5" />
-      </button>
+      <template v-else>
+        <button
+          v-if="state.kind === 'Program'"
+          @click="state.kind = 'ViewSource'"
+          :title="lang.isZh() ? '查看源代码' : 'View source'"
+        >
+          <CodeBracketIcon class="h-5 w-5" />
+        </button>
+
+        <button
+          v-if="state.kind === 'ViewSource'"
+          @click="state.kind = 'Program'"
+          :title="lang.isZh() ? '回到卡片程序' : 'Back to the program'"
+        >
+          <PlayIcon class="h-5 w-5" />
+        </button>
+      </template>
 
       <button>
         <a
