@@ -17,12 +17,7 @@ defineProps<{ state: State }>()
       <button
         class="mx-2 px-2 py-1 font-bold focus:outline-none focus:ring-2 focus:ring-orange-300"
         :class="[state.theme.name !== 'white' && state.theme.text(800)]"
-        @click.prevent="
-          () => {
-            state.isEditing = false
-            state.kind = 'Program'
-          }
-        "
+        @click.prevent="state.kind = 'Program'"
       >
         <Lang>
           <template #zh> 退出 </template>

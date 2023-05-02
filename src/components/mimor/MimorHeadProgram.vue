@@ -55,12 +55,7 @@ function fullscreenSupported() {
       <template v-if="state.isEditable">
         <button
           :title="lang.isZh() ? '编辑' : 'Edit'"
-          @click="
-            () => {
-              state.isEditing = true
-              state.kind = 'Editor'
-            }
-          "
+          @click="state.kind = 'Editor'"
         >
           <PencilIcon class="h-5 w-5" />
         </button>
