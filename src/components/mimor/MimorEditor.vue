@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <from
+  <form
     tabindex="-1"
     @submit.prevent="stateSave(state)"
     class="flex h-full flex-col overflow-y-auto"
@@ -20,5 +20,5 @@ defineProps<{
   >
     <MimorEditorTextarea :state="state" />
     <MimorEditorToolbar v-show="state.isEditable" :state="state" />
-  </from>
+  </form>
 </template>
