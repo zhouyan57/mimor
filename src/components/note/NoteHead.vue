@@ -26,7 +26,7 @@ function fullscreenSupported() {
 
     <div class="flex items-center space-x-4">
       <button
-        v-if="true"
+        v-if="state.isEditable"
         :title="lang.isZh() ? '编辑' : 'Edit'"
         @click="state.isEditing = true"
       >
