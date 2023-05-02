@@ -2,7 +2,7 @@
 import { reactive } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import HomeAuthors from './HomeAuthors.vue'
+import HomeUserList from './HomeUserList.vue'
 import { State } from './State'
 
 const props = defineProps<{ state: State }>()
@@ -13,7 +13,7 @@ const state = reactive(props.state)
 <template>
   <PageLayout>
     <div class="flex flex-col overflow-y-auto p-3">
-      <HomeAuthors :state="state" />
+      <HomeUserList :state="state" />
 
       <div class="flex flex-col justify-center py-3">
         <hr class="border-t border-black" />

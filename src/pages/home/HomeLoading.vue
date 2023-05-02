@@ -10,8 +10,8 @@ defineProps<{ options: StateOptions }>()
   <PageLayout>
     <div class="p-3 font-sans text-xl text-stone-500">
       <Lang>
-        <template #zh> 加载中⋯⋯ </template>
-        <template #en> Loading ... </template>
+        <template #zh> 用户列表加载中⋯⋯ </template>
+        <template #en> Loading user list... </template>
       </Lang>
 
       <div class="overflow-x-auto whitespace-pre py-1 font-mono text-sm">
