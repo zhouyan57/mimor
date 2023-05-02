@@ -4,9 +4,7 @@ import MimorEditorToolbar from './MimorEditorToolbar.vue'
 import { State } from './State'
 import { stateSave } from './stateSave'
 
-defineProps<{
-  state: State
-}>()
+defineProps<{ state: State }>()
 </script>
 
 <template>

@@ -1,8 +1,5 @@
 [note] `NoteHead` -- support exit at the top
-
 [mimor] `MimorHeadProgram` -- support exit at the top
-
-[mimor] `MimorEditorToolbar` -- `submit` -- use `contentSave`
 
 [author] `AuthorSelf` -- delete mimor
 

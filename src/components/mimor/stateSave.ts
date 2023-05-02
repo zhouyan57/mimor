@@ -1,7 +1,12 @@
+import { parse } from '@xieyuheng/x-node'
 import { contentSave } from '../../models/content/contentSave'
 import { State } from './State'
+import { createProgram } from './createProgram'
 
 export async function stateSave(state: State): Promise<void> {
   await contentSave(state.src, state.text)
-  state.kind = 'Editor'
+  const nodes = parse(state.text)
+  const program = createProgram({ nodes })
+  state.program = program
+  state.kind = 'Program'
 }
