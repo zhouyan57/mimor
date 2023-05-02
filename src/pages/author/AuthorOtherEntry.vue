@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AuthorOtherEntryContent from './AuthorOtherEntryContent.vue'
-import AuthorOtherEntryHead from './AuthorOtherEntryHead.vue'
+import AuthorOtherEntryInfo from './AuthorOtherEntryInfo.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col">
-    <AuthorOtherEntryHead :state="state" :entry="entry" />
+    <AuthorOtherEntryInfo :state="state" :entry="entry" />
     <AuthorOtherEntryContent :state="state" :entry="entry" />
   </div>
 </template>
