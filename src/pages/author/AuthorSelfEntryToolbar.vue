@@ -8,6 +8,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { Entry } from './Entry'
 import { State } from './State'
 import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
+import { stateEntryDeleteAfterConfirming } from './stateEntryDeleteAfterConfirming'
 
 defineProps<{
   state: State
@@ -48,11 +49,14 @@ defineProps<{
       </template>
     </button>
 
-    <button class="flex max-w-fit space-x-1" @click="">
+    <button
+      class="flex max-w-fit space-x-1"
+      @click="stateEntryDeleteAfterConfirming(state, entry)"
+    >
       <TrashIcon
         class="h-5 w-5"
         :class="{
-          'animate-shake': false,
+          'animate-shake': entry.isDeleting,
         }"
       />
       <Lang>
