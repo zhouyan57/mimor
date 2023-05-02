@@ -1,5 +1,4 @@
-[author] extract `stateToggleEntryVisibilityAfterConfirming`
-[author] extract `entryDelete`
+[author] extract `stateEntryDelete`
 [author] `AuthorSelfEntryToolbar` -- use `entryDelete`
 
 # author avatar
