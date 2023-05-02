@@ -7,6 +7,7 @@ import { loadState } from './loadState'
 
 const props = defineProps<{
   src: string
+  isEditable?: boolean
 }>()
 
 const state = ref<State | undefined>(undefined)
@@ -16,6 +17,7 @@ watch(
   async () => {
     state.value = await loadState({
       src: props.src,
+      isEditable: props.isEditable,
     })
   },
   {
@@ -27,6 +29,6 @@ watch(
 <template>
   <div>
     <NoteLoaded v-if="state" :state="state" />
-    <NoteLoading v-else :options="{ src }" />
+    <NoteLoading v-else :options="{ src, isEditable }" />
   </div>
 </template>

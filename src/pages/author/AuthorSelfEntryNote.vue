@@ -14,5 +14,6 @@ defineProps<{
     class="max-h-[34rem] max-w-[47rem]"
     :key="entry.path"
     :src="`~/${entry.path}`"
+    :isEditable="true"
   />
 </template>

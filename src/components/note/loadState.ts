@@ -3,10 +3,11 @@ import { State } from './State'
 
 export interface StateOptions {
   src: string
+  isEditable?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src } = options
+  const { src, isEditable } = options
 
   const text = await loadContent(src)
 
@@ -15,5 +16,6 @@ export async function loadState(options: StateOptions): Promise<State> {
     text,
     isEditing: false,
     isFullscreen: false,
+    isEditable,
   }
 }

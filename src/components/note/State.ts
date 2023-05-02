@@ -4,4 +4,5 @@ export type State = {
   isEditing: boolean
   error?: Error
   isFullscreen: boolean
+  isEditable?: boolean
 }
