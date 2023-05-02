@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { LockClosedIcon, LockOpenIcon } from '@heroicons/vue/24/outline'
+import {
+  LockClosedIcon,
+  LockOpenIcon,
+  TrashIcon,
+} from '@heroicons/vue/24/outline'
 import { ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -46,11 +50,8 @@ function toggleVisibilityMessageEn(): string {
 </script>
 
 <template>
-  <div class="flex space-x-2 text-base">
-    <button
-      class="flex max-w-fit items-center space-x-1"
-      @click="toggleVisibility()"
-    >
+  <div class="flex space-x-4 text-base">
+    <button class="flex max-w-fit space-x-1" @click="toggleVisibility()">
       <template v-if="entry.isPublic">
         <LockOpenIcon
           class="h-5 w-5"
@@ -76,6 +77,19 @@ function toggleVisibilityMessageEn(): string {
           <template #en>Private</template>
         </Lang>
       </template>
+    </button>
+
+    <button class="flex max-w-fit space-x-1" @click="">
+      <TrashIcon
+        class="h-5 w-5"
+        :class="{
+          'animate-shake': false,
+        }"
+      />
+      <Lang>
+        <template #zh>删除</template>
+        <template #en>Delete</template>
+      </Lang>
     </button>
   </div>
 </template>

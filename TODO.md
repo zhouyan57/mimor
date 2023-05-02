@@ -1,4 +1,6 @@
-[author] `AuthorSelfEntryToolbar` -- delete mimor
+[author] extract `entryToggleVisibility`
+[author] extract `entryDelete`
+[author] `AuthorSelfEntryToolbar` -- use `entryDelete`
 
 # author avatar
 
