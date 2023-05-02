@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import MimorEditor from './MimorEditor.vue'
 import MimorHeadProgram from './MimorHeadProgram.vue'
 import { Program } from './Program'
 import { State } from './State'
@@ -17,12 +18,6 @@ defineProps<{
       :program="program"
     />
 
-    <textarea
-      class="h-full px-3 py-2.5 font-mono text-base"
-      :class="{
-        'border-x border-b border-black': state.theme.name !== 'white',
-      }"
-      v-model="state.text"
-    />
+    <MimorEditor :state="state" />
   </div>
 </template>
