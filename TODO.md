@@ -1,5 +1,3 @@
-[mimor] `MimorEditor` -- fix border style
-
 [mimor] `MimorEditorToolbar` -- `submit` -- use `contentSave`
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents

@@ -12,12 +12,7 @@ defineProps<{
 
 <template>
   <div class="flex h-full w-full flex-col">
-    <MimorHeadProgram
-      class="border-b border-black"
-      :state="state"
-      :program="program"
-    />
-
+    <MimorHeadProgram :state="state" :program="program" />
     <MimorEditor :state="state" />
   </div>
 </template>

@@ -11,7 +11,7 @@ defineProps<{
     :disabled="!state.isEditing"
     name="text"
     spellcheck="false"
-    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none disabled:bg-white"
+    class="h-full w-full resize-none px-3 py-2 font-mono text-base focus:outline-none disabled:bg-white"
     v-model="state.text"
   />
 </template>

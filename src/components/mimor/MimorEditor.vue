@@ -14,9 +14,6 @@ defineProps<{
     tabindex="-1"
     @submit.prevent="stateSave(state)"
     class="flex h-full flex-col overflow-y-auto"
-    :class="{
-      'border border-orange-500': state.isEditing,
-    }"
   >
     <MimorEditorTextarea :state="state" />
     <MimorEditorToolbar v-show="state.isEditing" :state="state" />
