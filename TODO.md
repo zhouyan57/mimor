@@ -1,5 +1,5 @@
-[author] extract `stateEntryDelete`
-[author] `AuthorSelfEntryToolbar` -- use `entryDelete`
+[author] `stateEntryDeleteAfterConfirming`
+[author] `AuthorSelfEntryToolbar` -- use `stateEntryDeleteAfterConfirming`
 
 # author avatar
 
