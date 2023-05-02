@@ -15,7 +15,6 @@ defineProps<{ state: State }>()
   >
     <NoteEditorTextarea :state="state" />
 
-    1
     <Transition
       enter-active-class="transition duration-200 ease-out"
       enter-from-class="transform translate-y-8 opacity-0"
