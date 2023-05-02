@@ -4,7 +4,6 @@ import {
   LockOpenIcon,
   TrashIcon,
 } from '@heroicons/vue/24/outline'
-import { ref } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Entry } from './Entry'
@@ -18,17 +17,15 @@ const props = defineProps<{
 
 const lang = useGlobalLang()
 
-const isTogglingVisibility = ref(false)
-
 async function toggleVisibility() {
   const message = lang.isZh()
     ? toggleVisibilityMessageZh()
     : toggleVisibilityMessageEn()
 
   if (window.confirm(message)) {
-    isTogglingVisibility.value = true
+    props.entry.isTogglingVisibility = true
     await stateToggleEntryVisibility(props.state, props.entry)
-    isTogglingVisibility.value = false
+    props.entry.isTogglingVisibility = false
   }
 }
 
@@ -56,7 +53,7 @@ function toggleVisibilityMessageEn(): string {
         <LockOpenIcon
           class="h-5 w-5"
           :class="{
-            'animate-shake': isTogglingVisibility,
+            'animate-shake': entry.isTogglingVisibility,
           }"
         />
         <Lang>
@@ -69,7 +66,7 @@ function toggleVisibilityMessageEn(): string {
         <LockClosedIcon
           class="h-5 w-5"
           :class="{
-            'animate-shake': isTogglingVisibility,
+            'animate-shake': entry.isTogglingVisibility,
           }"
         />
         <Lang>

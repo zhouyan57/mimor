@@ -1,4 +1,4 @@
-[author] extract `entryToggleVisibility`
+[author] extract `stateToggleEntryVisibilityAfterConfirming`
 [author] extract `entryDelete`
 [author] `AuthorSelfEntryToolbar` -- use `entryDelete`
 

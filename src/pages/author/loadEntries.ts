@@ -22,6 +22,7 @@ export async function loadEntries(paths: Array<string>): Promise<Array<Entry>> {
 
       return {
         isPublic: parsed.isPublic,
+        isTogglingVisibility: false,
         path,
         createdAt: fileMetadata.createdAt,
         updatedAt: fileMetadata.updatedAt,
