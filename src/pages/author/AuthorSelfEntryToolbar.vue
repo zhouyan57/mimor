@@ -20,6 +20,22 @@ defineProps<{
   <div class="flex space-x-4 text-base">
     <button
       class="flex max-w-fit space-x-1"
+      @click="stateEntryDeleteAfterConfirming(state, entry)"
+    >
+      <TrashIcon
+        class="h-5 w-5"
+        :class="{
+          'animate-shake': entry.isDeleting,
+        }"
+      />
+      <Lang>
+        <template #zh>删除</template>
+        <template #en>Delete</template>
+      </Lang>
+    </button>
+
+    <button
+      class="flex max-w-fit space-x-1"
       @click="entryToggleVisibilityAfterConfirming(entry)"
     >
       <template v-if="entry.isPublic">
@@ -47,22 +63,6 @@ defineProps<{
           <template #en>Private</template>
         </Lang>
       </template>
-    </button>
-
-    <button
-      class="flex max-w-fit space-x-1"
-      @click="stateEntryDeleteAfterConfirming(state, entry)"
-    >
-      <TrashIcon
-        class="h-5 w-5"
-        :class="{
-          'animate-shake': entry.isDeleting,
-        }"
-      />
-      <Lang>
-        <template #zh>删除</template>
-        <template #en>Delete</template>
-      </Lang>
     </button>
   </div>
 </template>

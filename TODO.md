@@ -1,5 +1,6 @@
 # author avatar
 
+[settings] `Settings` call `loginByTokenIfNotAlready` -- with `SettingsLoading`
 [settings] `SettingsUser` vs `SettingsGuest`
 [settings] `SettingsGuest` note about guest
 [settings] `SettingsUser` user has avatar
