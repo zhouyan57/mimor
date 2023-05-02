@@ -16,7 +16,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col space-y-1 py-1 text-base">
+  <div class="flex flex-col space-y-1 text-base">
     <div class="flex items-center space-x-1">
       <PencilIcon class="h-5 w-5" />
       <div class="overflow-x-auto whitespace-pre">
