@@ -1,4 +1,3 @@
-[mimor] `Mimor` -- take `isEditable`
 [note] `NoteHead` -- show edit button only for self
 [note] `NoteEditor` -- `submit` -- maybe use `contentSave`
 

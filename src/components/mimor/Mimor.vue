@@ -9,6 +9,7 @@ import { loadState } from './loadState'
 const props = defineProps<{
   src: string
   withMetaThemeColor?: boolean
+  isEditable?: boolean
 }>()
 
 const state = ref<State | undefined>(undefined)
@@ -19,6 +20,7 @@ watch(
     state.value = await loadState({
       src: props.src,
       withMetaThemeColor: props.withMetaThemeColor,
+      isEditable: props.isEditable,
     })
   },
   {
@@ -31,6 +33,6 @@ watch(
   <div>
     <MimorMeta v-if="state" :state="state" />
     <MimorLoaded v-if="state" :state="state" />
-    <MimorLoading v-else :options="{ src }" />
+    <MimorLoading v-else :options="{ src, isEditable }" />
   </div>
 </template>

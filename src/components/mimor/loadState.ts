@@ -7,10 +7,11 @@ import { createProgram } from './createProgram'
 export interface StateOptions {
   src: string
   withMetaThemeColor?: boolean
+  isEditable?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src, withMetaThemeColor } = options
+  const { src, withMetaThemeColor, isEditable } = options
 
   const text = await loadContent(src)
   const theme = new Theme('white')
@@ -22,6 +23,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     metadata,
     withMetaThemeColor,
     isFullscreen: false,
+    isEditable,
   }
 
   try {
