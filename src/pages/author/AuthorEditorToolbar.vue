@@ -13,19 +13,11 @@ defineProps<{ state: State }>()
   <div class="flex justify-between p-2">
     <div class="flex space-x-2">
       <button
-        v-if="state.editor.isPublic"
         class="px-1 focus:outline-none focus:ring-2 focus:ring-orange-300"
-        @click.prevent="state.editor.isPublic = false"
+        @click.prevent="state.editor.isPublic = !state.editor.isPublic"
       >
-        <LockOpenIcon class="h-5 w-5" />
-      </button>
-
-      <button
-        v-else
-        class="px-1 focus:outline-none focus:ring-2 focus:ring-orange-300"
-        @click.prevent="state.editor.isPublic = true"
-      >
-        <LockClosedIcon class="h-5 w-5" />
+        <LockOpenIcon v-if="state.editor.isPublic" class="h-5 w-5" />
+        <LockClosedIcon v-else class="h-5 w-5" />
       </button>
     </div>
 
