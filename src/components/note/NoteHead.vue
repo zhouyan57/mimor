@@ -21,12 +21,7 @@ function fullscreenSupported() {
 
 <template>
   <div class="flex w-full justify-between p-3 text-xl">
-    <div>
-      <Lang>
-        <template #zh>笔记</template>
-        <template #en>Note</template>
-      </Lang>
-    </div>
+    <div></div>
 
     <div class="flex items-center space-x-4">
       <button>
@@ -59,16 +54,10 @@ function fullscreenSupported() {
         </button>
       </template>
 
-      <a
-        :href="origin"
-        target="_blank"
-        :title="lang.isZh() ? '打开 Mimor 主页' : 'Open Mimor homepage'"
-      >
-        <Lang class="font-logo font-light">
-          <template #zh>谜墨</template>
-          <template #en>Mimor</template>
-        </Lang>
-      </a>
+      <Lang>
+        <template #zh>笔记</template>
+        <template #en>Note</template>
+      </Lang>
     </div>
   </div>
 </template>

@@ -1,3 +1,5 @@
+fix card style
+
 # note
 
 [note] `NoteEditor` -- `submit` -- maybe use `contentSave`
