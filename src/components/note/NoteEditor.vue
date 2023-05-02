@@ -18,8 +18,7 @@ defineProps<{ state: State }>()
     @blur.capture="state.isEditing = false"
     class="flex h-full flex-col overflow-y-auto"
     :class="{
-      'border-orange-500': state.isEditing,
-      'ring-1 ring-orange-400': state.isEditing && !state.isFullscreen,
+      'border border-orange-500': state.isEditing,
     }"
   >
     <NoteEditorTextarea :state="state" />

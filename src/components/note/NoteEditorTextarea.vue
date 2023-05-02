@@ -14,7 +14,7 @@ defineProps<{ state: State }>()
     :style="{
       height: state.isFullscreen
         ? undefined
-        : stateNumberOfLines(state) * 1.56 + 'rem',
+        : stateNumberOfLines(state) * 1.5 + 'rem',
     }"
     v-model="state.text"
   ></textarea>
