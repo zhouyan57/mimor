@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
-import MimorKindViewSource from './MimorKindViewSource.vue'
 import { State } from './State'
 import { programCurrentElement } from './programCurrentElement'
 import { stateReactive } from './stateReactive'
@@ -50,8 +50,8 @@ watch(
     :class="{ 'border border-black bg-white': state.theme.name === 'white' }"
   >
     <template v-if="state.program">
-      <MimorKindViewSource
-        v-if="state.kind === 'ViewSource'"
+      <MimorKindEditor
+        v-if="state.kind === 'Editor'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :state="state"

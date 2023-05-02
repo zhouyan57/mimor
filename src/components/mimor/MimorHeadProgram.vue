@@ -58,7 +58,7 @@ function fullscreenSupported() {
           @click="
             () => {
               state.isEditing = true
-              state.kind = 'ViewSource'
+              state.kind = 'Editor'
             }
           "
         >
@@ -69,14 +69,14 @@ function fullscreenSupported() {
       <template v-else>
         <button
           v-if="state.kind === 'Program'"
-          @click="state.kind = 'ViewSource'"
+          @click="state.kind = 'Editor'"
           :title="lang.isZh() ? '查看源代码' : 'View source'"
         >
           <CodeBracketIcon class="h-5 w-5" />
         </button>
 
         <button
-          v-if="state.kind === 'ViewSource'"
+          v-if="state.kind === 'Editor'"
           @click="state.kind = 'Program'"
           :title="lang.isZh() ? '回到卡片程序' : 'Back to the program'"
         >

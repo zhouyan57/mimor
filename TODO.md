@@ -1,5 +1,3 @@
-[mimor] rename kind `ViewSource` to `Editor`
-
 [mimor] `MimorEditor` -- handle `isEditing`
 
 - show `MimorEditorToolbar` if `isEditing`
