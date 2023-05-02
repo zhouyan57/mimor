@@ -12,7 +12,7 @@ defineProps<{ state: State }>()
 
     <div class="flex space-x-2 px-1">
       <button
-        class="px-3 py-1 font-bold text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
+        class="mx-2 px-2 py-1 font-bold focus:outline-none focus:ring-2 focus:ring-orange-300"
         @click.prevent="state.isEditing = false"
       >
         <Lang>
