@@ -3,6 +3,6 @@ import { User } from '../../models/user/User'
 export type State = {
   username?: string
   user?: User
-  avatarURL?: string
+  avatarURL?: URL
   avatarFile?: File
 }

@@ -1,7 +1,3 @@
-[settings] `stateSave` -- handle `user.name` and `avatarFile`
-
-[settings] `SettingsUserAvatar` -- show `avatarURL`
-
 [author] `AuthorOtherHead` -- show avatar
 
 # note -- need upstream

@@ -63,6 +63,7 @@ watch(
       class="flex h-[16rem] w-[16rem] items-center justify-center overflow-hidden border border-black"
     >
       <InsertElement v-if="avatarImageElement" :element="avatarImageElement" />
+      <img v-else-if="state.avatarURL" :src="state.avatarURL.href" />
       <div v-else class="p-3 text-stone-500">
         <Lang>
           <template #zh>上传图片</template>
