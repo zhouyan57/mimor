@@ -20,18 +20,18 @@ function createOptions() {
 }
 
 watch(
-  () => createOptions(),
+  () => route.params.username,
   async (value) => {
-    state.value = await loadState(value)
+    state.value = undefined
+    state.value = await loadState(createOptions())
   },
   {
     immediate: true,
-    deep: true,
   },
 )
 </script>
 
 <template>
-  <AuthorLoaded v-if="state" :state="state" />
+  <AuthorLoaded v-if="state" :state="state" :key="state.username" />
   <AuthorLoading v-else :options="createOptions()" />
 </template>
