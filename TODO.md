@@ -1,5 +1,3 @@
-[settings] `SettingsUser` -- call `stateSave`
-
 [settings] `stateSave` -- handle `user.name` and `avatarFile`
 
 [settings] `SettingsUserAvatar` -- show `avatarURL`
