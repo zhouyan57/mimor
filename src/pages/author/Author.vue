@@ -33,5 +33,9 @@ watch(
 
 <template>
   <AuthorLoaded v-if="state" :state="state" :key="state.username" />
-  <AuthorLoading v-else :options="createOptions()" :key="state.username" />
+  <AuthorLoading
+    v-else
+    :options="createOptions()"
+    :key="String(route.params.username)"
+  />
 </template>
