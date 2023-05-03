@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
-import SettingsGuest from './SettingsGuest.vue'
+import SettingsLoaded from './SettingsLoaded.vue'
 import SettingsLoading from './SettingsLoading.vue'
-import SettingsUser from './SettingsUser.vue'
+import { State } from './State'
+import { loadState } from './loadState'
 
-const auth = useGlobalAuth()
-
-const triedToLogin = ref(false)
+const state = ref<State | undefined>(undefined)
 
 onMounted(async () => {
-  await loginByTokenIfNotAlready()
-
-  triedToLogin.value = true
+  state.value = await loadState({})
 })
 </script>
 
 <template>
-  <SettingsUser v-if="auth.user" :user="auth.user" />
-  <SettingsLoading v-else-if="!triedToLogin" :options="{}" />
-  <SettingsGuest v-else />
+  <SettingsLoaded v-if="state" :state="state" />
+  <SettingsLoading v-else :options="{}" />
 </template>

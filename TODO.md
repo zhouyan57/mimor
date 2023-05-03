@@ -1,6 +1,5 @@
 # author avatar
 
-[settings] `SettingsLoaded`
 [settings] `SettingsUser` be able to upload author avatar
 
 [settings] `SettingsUser` save button can save

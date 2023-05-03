@@ -9,13 +9,16 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { User } from '../../models/user/User'
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
+import { State } from './State'
 
-defineProps<{ user: User }>()
+defineProps<{
+  state: State
+  username: string
+  user: User
+}>()
 
 const avatarInputElement = ref<HTMLInputElement | undefined>(undefined)
-const auth = useGlobalAuth()
 const lang = useGlobalLang()
 
 const form = useForm({
@@ -63,7 +66,7 @@ function avatarUpload() {
           required
           disabled
           spellcheck="false"
-          :value="auth.username"
+          :value="username"
         >
           <template #label>
             <Lang>

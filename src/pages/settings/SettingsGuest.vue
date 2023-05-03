@@ -5,6 +5,10 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
 
+import { State } from './State'
+
+defineProps<{ state: State }>()
+
 const lang = useGlobalLang()
 </script>
 
