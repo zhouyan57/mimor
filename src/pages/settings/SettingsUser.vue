@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import { useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormDivider from '../../components/form/FormDivider.vue'
@@ -10,6 +10,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { User } from '../../models/user/User'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
+import SettingsUserAvatar from './SettingsUserAvatar.vue'
 import { State } from './State'
 
 defineProps<{
@@ -18,7 +19,6 @@ defineProps<{
   user: User
 }>()
 
-const avatarInputElement = ref<HTMLInputElement | undefined>(undefined)
 const lang = useGlobalLang()
 
 const form = useForm({
@@ -30,16 +30,6 @@ const form = useForm({
 const report = reactive({
   errorMessage: '',
 })
-
-function avatarUpload() {
-  if (avatarInputElement.value) {
-    const files = avatarInputElement.value.files
-    if (files) {
-      const file = files[0]
-      console.log(file)
-    }
-  }
-}
 </script>
 
 <template>
@@ -91,33 +81,7 @@ function avatarUpload() {
           </template>
         </FormInput>
 
-        <div class="flex flex-col">
-          <label for="avatar" class="py-2 font-sans">
-            <Lang>
-              <template #zh>头像</template>
-              <template #en>Avatar</template>
-            </Lang>
-          </label>
-
-          <input
-            class="hidden"
-            id="avatar"
-            name="avatar"
-            ref="avatarInputElement"
-            autocomplete="avatar"
-            required
-            accept="image/png, image/jpeg"
-            type="file"
-            @change="avatarUpload()"
-          />
-
-          <label
-            for="avatar"
-            class="flex h-[16rem] w-[16rem] items-center border border-black"
-          >
-            <div class="p-3">TODO</div>
-          </label>
-        </div>
+        <SettingsUserAvatar :state="state" />
 
         <div v-if="report.errorMessage">
           <div class="mt-3 border-2 border-red-300 p-2 text-base">

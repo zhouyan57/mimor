@@ -1,9 +1,7 @@
 # author avatar
 
-[settings] `SettingsUser` be able to upload author avatar
-
-[settings] `SettingsUser` save button can save
-
+[settings] `SettingsUserAvatar` -- be able to upload author avatar
+[settings] `SettingsUser` -- save button can save
 [author] `AuthorOtherHead` -- show avatar
 
 # note -- need upstream
