@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
-import { useForm } from '../../components/form'
+import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormDivider from '../../components/form/FormDivider.vue'
 import FormInput from '../../components/form/FormInput.vue'
@@ -54,7 +54,11 @@ const report = reactive({
 
       <form
         class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
-        @submit.prevent="stateSave(state, report)"
+        @submit.prevent="
+          formSubmit(form, $event, async () => {
+            await stateSave(state, report)
+          })
+        "
       >
         <FormInput
           name="username"
