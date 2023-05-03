@@ -1,6 +1,5 @@
 # author avatar
 
-[settings] `SettingsUser` vs `SettingsGuest`
 [settings] `SettingsGuest` note about guest
 [settings] `SettingsUser` user has avatar
 [settings] `SettingsUser` be able to upload author avatar

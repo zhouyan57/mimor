@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+import SettingsGuest from './SettingsGuest.vue'
 import SettingsLoading from './SettingsLoading.vue'
 import SettingsUser from './SettingsUser.vue'
 
@@ -19,4 +20,5 @@ onMounted(async () => {
 <template>
   <SettingsUser v-if="auth.user" :user="auth.user" />
   <SettingsLoading v-else-if="!triedToLogin" :options="{}" />
+  <SettingsGuest v-else />
 </template>
