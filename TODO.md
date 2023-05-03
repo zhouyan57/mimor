@@ -1,3 +1,13 @@
+[page-layout] add back `PageMobileHead` -- with `noMobileHead` as an option
+
+[author] use `noMobileHead`
+
+[author] use indexeddb to cache data
+
+- `utils/idb`
+
+[author] add head for sync
+
 # note -- need upstream
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents
