@@ -27,7 +27,9 @@ onMounted(async () => {
       <title v-else>Recall | Mimor</title>
     </Head>
 
-    <div class="flex h-full flex-col space-y-3 p-3 font-serif text-xl">
+    <div
+      class="flex h-full flex-col space-y-3 overflow-y-auto p-3 font-serif text-xl"
+    >
       <div class="flex items-baseline">
         <div class="font-logo text-2xl font-bold">
           <Lang>
