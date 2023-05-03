@@ -18,6 +18,7 @@
           "directory:get",
           "directory:delete"
         ],
+        "users/*": ["data:get"],
         "users/*/public/**": [
           "data:get",
           "data-find:get",
