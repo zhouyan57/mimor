@@ -12,6 +12,7 @@ import { User } from '../../models/user/User'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
 import SettingsUserAvatar from './SettingsUserAvatar.vue'
 import { State } from './State'
+import { stateSave } from './stateSave'
 
 defineProps<{
   state: State
@@ -49,7 +50,10 @@ const report = reactive({
         </div>
       </div>
 
-      <form class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
+      <form
+        class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]"
+        @submit.prevent="stateSave(state, report)"
+      >
         <FormInput
           name="username"
           autocomplete="username"
