@@ -46,7 +46,6 @@ watch(
       name="avatar"
       ref="avatarInputElement"
       autocomplete="avatar"
-      required
       accept="image/png, image/jpeg"
       type="file"
       @change="
