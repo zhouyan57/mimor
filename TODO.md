@@ -1,9 +1,11 @@
 # author avatar
 
-[settings] `SettingsGuest` note about guest
+[settings] `SettingsUser` save button
+
 [settings] `SettingsUser` user has avatar
 [settings] `SettingsUser` be able to upload author avatar
-[settings] `SettingsUser` show author avatar
+
+[settings] `SettingsUser` show user avatar
 
 [author] `AuthorOtherHead` -- show avatar
 

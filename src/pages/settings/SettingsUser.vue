@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Scope from '../../components/utils/Scope.vue'
@@ -30,7 +31,26 @@ const lang = useGlobalLang()
         </div>
       </div>
 
-      <div class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
+      <form class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
+        <FormInput
+          name="name"
+          autocomplete="username"
+          required
+          spellcheck="false"
+          :value="user.name"
+        >
+          <template #label>
+            <Lang>
+              <template #zh>名字</template>
+              <template #en>Name</template>
+            </Lang>
+          </template>
+        </FormInput>
+
+        <div class="flex flex-col justify-center py-3">
+          <hr class="border-t border-black" />
+        </div>
+
         <Scope :scope="{ disabled: false }" v-slot="{ scope }">
           <button
             :disabled="scope.disabled"
@@ -54,7 +74,7 @@ const lang = useGlobalLang()
             </Lang>
           </button>
         </Scope>
-      </div>
+      </form>
     </div>
   </PageLayout>
 </template>
