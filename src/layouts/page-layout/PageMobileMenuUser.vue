@@ -13,7 +13,10 @@ import { useCurrentQuery } from '../../reactives/useCurrentQuery'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 
-defineProps<{ user: User }>()
+defineProps<{
+  user: User
+  avatarURL?: URL
+}>()
 
 const route = useRoute()
 const router = useRouter()
@@ -38,8 +41,13 @@ function jump(path: string) {
 
 <template>
   <Popover class="flex text-3xl" v-slot="{ open, close }">
-    <PopoverButton class="flex border border-black p-2">
-      <UserIcon class="h-7 w-7" />
+    <PopoverButton>
+      <img
+        v-if="avatarURL"
+        :src="avatarURL.href"
+        class="h-[2.5rem] w-[2.5rem]"
+      />
+      <UserIcon v-else class="h-[2.5rem] w-[2.5rem] border border-black p-2" />
     </PopoverButton>
 
     <Watch
