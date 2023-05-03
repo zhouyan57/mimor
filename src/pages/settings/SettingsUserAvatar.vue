@@ -1,21 +1,34 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
+import InsertElement from '../../components/utils/InsertElement.vue'
 import { State } from './State'
+import { stateAvatarUpload } from './stateAvatarUpload'
 
-defineProps<{ state: State }>()
+const props = defineProps<{ state: State }>()
 
 const avatarInputElement = ref<HTMLInputElement | undefined>(undefined)
+const avatarImageElement = ref<HTMLImageElement | undefined>(undefined)
 
-function avatarUpload() {
-  if (avatarInputElement.value) {
-    const files = avatarInputElement.value.files
-    if (files) {
-      const file = files[0]
-      console.log(file)
+watch(
+  () => props.state.avatarFile,
+  (value) => {
+    if (!value) {
+      return
     }
-  }
-}
+
+    const img = document.createElement('img')
+    img.src = URL.createObjectURL(value)
+    img.onload = () => {
+      URL.revokeObjectURL(img.src)
+    }
+
+    avatarImageElement.value = img
+  },
+  {
+    immediate: true,
+  },
+)
 </script>
 
 <template>
@@ -36,14 +49,26 @@ function avatarUpload() {
       required
       accept="image/png, image/jpeg"
       type="file"
-      @change="avatarUpload()"
+      @change="
+        () => {
+          if (avatarInputElement) {
+            stateAvatarUpload(state, avatarInputElement)
+          }
+        }
+      "
     />
 
     <label
       for="avatar"
-      class="flex h-[16rem] w-[16rem] items-center border border-black"
+      class="flex h-[16rem] w-[16rem] items-center overflow-auto border border-black"
     >
-      <div class="p-3">TODO</div>
+      <InsertElement v-if="avatarImageElement" :element="avatarImageElement" />
+      <div v-else class="p-3 text-stone-500">
+        <Lang>
+          <template #zh>上传头像</template>
+          <template #en>Upload avatar</template>
+        </Lang>
+      </div>
     </label>
   </div>
 </template>

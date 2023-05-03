@@ -1,7 +1,8 @@
-# author avatar
+[settings] `SettingsUserAvatar` -- show `avatarURL`
 
-[settings] `SettingsUserAvatar` -- be able to upload author avatar
-[settings] `SettingsUser` -- save button can save
+[settings] `stateSave` -- handle `user.name` and `avatarFile`
+[settings] `SettingsUser` -- call `stateSave`
+
 [author] `AuthorOtherHead` -- show avatar
 
 # note -- need upstream
