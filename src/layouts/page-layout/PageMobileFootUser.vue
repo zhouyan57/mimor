@@ -11,10 +11,7 @@ import { User } from '../../models/user/User'
 import { username } from '../../models/user/username'
 import PageMobileMenuUser from './PageMobileMenuUser.vue'
 
-defineProps<{
-  user: User
-  avatarURL?: URL
-}>()
+defineProps<{ user: User }>()
 </script>
 
 <template>
@@ -48,7 +45,7 @@ defineProps<{
       </Lang>
     </Hyperlink>
 
-    <PageMobileMenuUser :user="user" :avatarURL="avatarURL" />
+    <PageMobileMenuUser :user="user" />
 
     <Hyperlink
       href="/recall"

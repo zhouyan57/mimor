@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
-import { userAvatarURL } from '../../models/user/userAvatarURL'
-import { userHasAvatar } from '../../models/user/userHasAvatar'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import PageDesktopHead from './PageDesktopHead.vue'
 import PageDesktopSidebarGuest from './PageDesktopSidebarGuest.vue'
@@ -15,16 +13,8 @@ import PageMobileFootUser from './PageMobileFootUser.vue'
 const triedToLogin = ref(false)
 const auth = useGlobalAuth()
 
-const avatarURL = ref<URL | undefined>(undefined)
-
 onMounted(async () => {
   await loginByTokenIfNotAlready()
-
-  if (auth.user) {
-    avatarURL.value = (await userHasAvatar(auth.user))
-      ? userAvatarURL(auth.user)
-      : undefined
-  }
 
   triedToLogin.value = true
 })
@@ -51,11 +41,7 @@ onMounted(async () => {
     <div
       class="fixed bottom-0 right-0 z-10 w-full border-t border-stone-400 bg-white px-3 md:hidden"
     >
-      <PageMobileFootUser
-        v-if="triedToLogin && auth.user"
-        :user="auth.user"
-        :avatarURL="avatarURL"
-      />
+      <PageMobileFootUser v-if="auth.user" :user="auth.user" />
       <PageMobileFootLoading v-else-if="!triedToLogin" />
       <PageMobileFootGuest v-else />
     </div>
