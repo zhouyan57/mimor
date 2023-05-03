@@ -1,6 +1,9 @@
 # author avatar
 
-[settings] `SettingsUser` user has avatar
+[settings] `State` has `user` and `username`
+[settings] `State` has optional `avatarURL`
+[settings] `State` has optional `avatarFile`
+
 [settings] `SettingsUser` be able to upload author avatar
 
 [settings] `SettingsUser` save button can save
