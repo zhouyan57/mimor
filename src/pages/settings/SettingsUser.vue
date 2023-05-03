@@ -91,7 +91,7 @@ const report = reactive({
           </template>
         </FormInput>
 
-        <SettingsUserAvatar :state="state" />
+        <SettingsUserAvatar :state="state" :username="username" />
 
         <div v-if="report.errorMessage">
           <div class="mt-3 border-2 border-red-300 p-2 text-base">

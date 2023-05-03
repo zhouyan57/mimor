@@ -11,7 +11,7 @@ const lang = useGlobalLang()
   <div class="flex space-x-2">
     <div v-if="state.avatarURL">
       <img
-        class="h-[6rem] w-[6rem]"
+        class="h-[5.4rem] w-[5.4rem]"
         :alt="`Avatar of ${state.username}`"
         :src="state.avatarURL.href"
       />
