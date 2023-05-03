@@ -2,10 +2,8 @@
 import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
-import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
+import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
 
 const lang = useGlobalLang()
 </script>
@@ -28,29 +26,7 @@ const lang = useGlobalLang()
       </div>
 
       <div class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
-        <Scope :scope="{ disabled: false }" v-slot="{ scope }">
-          <button
-            :disabled="scope.disabled"
-            class="rounded-sm border border-black py-3 font-sans font-bold disabled:opacity-50"
-            :class="[!scope.disabled && `hover:bg-stone-100`]"
-            v-mounted="
-              async () => {
-                scope.disabled = !(await hasServiceWorker())
-              }
-            "
-            @click="
-              () => {
-                removeServiceWorker()
-                scope.disabled = true
-              }
-            "
-          >
-            <Lang>
-              <template #zh>清除 Service Worker</template>
-              <template #en>Remove Service Worker</template>
-            </Lang>
-          </button>
-        </Scope>
+        <SettingsRemoveServiceWorker />
       </div>
     </div>
   </PageLayout>
