@@ -33,5 +33,5 @@ watch(
 
 <template>
   <AuthorLoaded v-if="state" :state="state" :key="state.username" />
-  <AuthorLoading v-else :options="createOptions()" />
+  <AuthorLoading v-else :options="createOptions()" :key="state.username" />
 </template>
