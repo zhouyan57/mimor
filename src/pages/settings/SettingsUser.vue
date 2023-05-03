@@ -3,6 +3,7 @@ import { Head } from '@vueuse/head'
 import { reactive } from 'vue'
 import { useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
+import FormDivider from '../../components/form/FormDivider.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -82,9 +83,7 @@ const report = reactive({
           </div>
         </div>
 
-        <div class="flex flex-col justify-center py-3">
-          <hr class="border-t border-black" />
-        </div>
+        <FormDivider />
 
         <FormButton :disabled="form.processing">
           <Lang>
@@ -93,9 +92,7 @@ const report = reactive({
           </Lang>
         </FormButton>
 
-        <div class="flex flex-col justify-center py-3">
-          <hr class="border-t border-dashed border-black" />
-        </div>
+        <FormDivider />
 
         <SettingsRemoveServiceWorker />
       </form>

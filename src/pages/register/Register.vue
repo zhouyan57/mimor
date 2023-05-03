@@ -4,6 +4,7 @@ import { reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
+import FormDivider from '../../components/form/FormDivider.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -107,9 +108,7 @@ watch(
           </div>
         </div>
 
-        <div class="flex flex-col justify-center py-3">
-          <hr class="border-t border-black" />
-        </div>
+        <FormDivider />
 
         <FormButton :disabled="form.processing">
           <Lang>
