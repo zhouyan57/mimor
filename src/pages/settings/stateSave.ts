@@ -1,3 +1,4 @@
+import { userAvatarURL } from '../../models/user/userAvatarURL'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { State } from './State'
@@ -13,9 +14,8 @@ export async function stateSave(
     return
   }
 
-  if (state.avatarFile) {
-    const avatarPath = `/users/${state.username}/public/assets/avatar`
-    const avatarURL = new URL(`${avatarPath}?kind=file`, url)
+  if (state.avatarFile && state.user) {
+    const avatarURL = userAvatarURL(state.user)
     const response = await fetch(avatarURL, {
       method: 'PUT',
       headers: {
@@ -42,6 +42,8 @@ export async function stateSave(
     })
 
     if (response.ok) {
+      const user = await response.json()
+      state.user = user
     } else {
       report.errorMessage = response.statusText
       return

@@ -1,5 +1,3 @@
-[user] extract `userAvatarURL`
-
 [author] `AuthorOtherHead` -- show avatar
 
 # note -- need upstream

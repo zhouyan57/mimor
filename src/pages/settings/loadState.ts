@@ -1,6 +1,6 @@
 import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
+import { userAvatarURL } from '../../models/user/userAvatarURL'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
-import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { State } from './State'
 
@@ -9,7 +9,6 @@ export type StateOptions = {}
 export async function loadState(options: StateOptions): Promise<State> {
   const {} = options
 
-  const { url } = useGlobalBackend()
   const token = useGlobalToken()
 
   await loginByTokenIfNotAlready()
@@ -21,9 +20,8 @@ export async function loadState(options: StateOptions): Promise<State> {
     user: auth.user,
   }
 
-  if (state.username) {
-    const avatarPath = `/users/${state.username}/public/assets/avatar`
-    const avatarURL = new URL(`${avatarPath}?kind=file`, url)
+  if (state.user) {
+    const avatarURL = userAvatarURL(state.user)
     const response = await fetch(avatarURL, {
       method: 'GET',
       headers: {
