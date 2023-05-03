@@ -83,12 +83,6 @@ const report = reactive({
         </div>
 
         <div class="flex flex-col justify-center py-3">
-          <hr class="border-t border-dashed border-black" />
-        </div>
-
-        <SettingsRemoveServiceWorker />
-
-        <div class="flex flex-col justify-center py-3">
           <hr class="border-t border-black" />
         </div>
 
@@ -98,6 +92,12 @@ const report = reactive({
             <template #en>Save</template>
           </Lang>
         </FormButton>
+
+        <div class="flex flex-col justify-center py-3">
+          <hr class="border-t border-dashed border-black" />
+        </div>
+
+        <SettingsRemoveServiceWorker />
       </form>
     </div>
   </PageLayout>
