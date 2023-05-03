@@ -1,9 +1,9 @@
 # author avatar
 
-[settings] `SettingsUser` save button can save
-
 [settings] `SettingsUser` user has avatar
 [settings] `SettingsUser` be able to upload author avatar
+
+[settings] `SettingsUser` save button can save
 
 [author] `AuthorOtherHead` -- show avatar
 

@@ -53,10 +53,10 @@ function logoutAfterConfirming() {
         </Lang>
       </Hyperlink>
 
-      <Hyperlink href="/settings" class="hover:underline">
+      <Hyperlink href="/recall" class="hover:underline">
         <Lang>
-          <template #zh>设置</template>
-          <template #en>Settings</template>
+          <template #zh>回顾</template>
+          <template #en>Recall</template>
         </Lang>
       </Hyperlink>
 
@@ -64,6 +64,13 @@ function logoutAfterConfirming() {
         <Lang>
           <template #zh>创作</template>
           <template #en>Create</template>
+        </Lang>
+      </Hyperlink>
+
+      <Hyperlink href="/settings" class="hover:underline">
+        <Lang>
+          <template #zh>设置</template>
+          <template #en>Settings</template>
         </Lang>
       </Hyperlink>
     </div>

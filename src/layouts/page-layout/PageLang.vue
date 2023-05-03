@@ -20,7 +20,7 @@ const lang = useGlobalLang()
         <template #en>Lang</template>
       </Lang>
 
-      <ArrowsUpDownIcon class="h-5 w-5" />
+      <ArrowsUpDownIcon class="h-4 w-4" />
     </ListboxButton>
 
     <Transition

@@ -163,13 +163,13 @@ function jump(path: string) {
             @click="
               () => {
                 close()
-                jump('/settings')
+                jump('/recall')
               }
             "
           >
             <Lang>
-              <template #zh>设置</template>
-              <template #en>Settings</template>
+              <template #zh>回顾</template>
+              <template #en>Recall</template>
             </Lang>
           </button>
 
@@ -185,6 +185,21 @@ function jump(path: string) {
             <Lang>
               <template #zh>创作</template>
               <template #en>Create</template>
+            </Lang>
+          </button>
+
+          <button
+            class="hover:underline"
+            @click="
+              () => {
+                close()
+                jump('/settings')
+              }
+            "
+          >
+            <Lang>
+              <template #zh>设置</template>
+              <template #en>Settings</template>
             </Lang>
           </button>
 
