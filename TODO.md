@@ -1,5 +1,3 @@
-[author] `AuthorOtherHead` -- show avatar -- with fallback
-
 # note -- need upstream
 
 [note] `NoteHead` link to readonly.link article -- url encoding for private contents

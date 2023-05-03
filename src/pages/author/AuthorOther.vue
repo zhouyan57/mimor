@@ -19,19 +19,15 @@ const lang = useGlobalLang()
       <title v-else>{{ state.username }} | Mimor</title>
     </Head>
 
-    <div class="flex h-full flex-col">
-      <div class="flex flex-col px-3 py-3 text-xl">
-        <AuthorOtherHead :state="state" />
-      </div>
+    <div class="flex h-full flex-col overflow-y-auto p-3">
+      <AuthorOtherHead :state="state" />
 
-      <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
-        <AuthorOtherEntry
-          v-for="entry of stateFindEntries(state)"
-          :key="entry.path"
-          :state="state"
-          :entry="entry"
-        />
-      </div>
+      <AuthorOtherEntry
+        v-for="entry of stateFindEntries(state)"
+        :key="entry.path"
+        :state="state"
+        :entry="entry"
+      />
     </div>
   </PageLayout>
 </template>
