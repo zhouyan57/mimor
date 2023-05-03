@@ -1,15 +1,30 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { reactive } from 'vue'
+import { useForm } from '../../components/form'
+import FormButton from '../../components/form/FormButton.vue'
 import FormInput from '../../components/form/FormInput.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { User } from '../../models/user/User'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
 
 defineProps<{ user: User }>()
 
+const auth = useGlobalAuth()
 const lang = useGlobalLang()
+
+const form = useForm({
+  username: '',
+  name: '',
+  password: '',
+})
+
+const report = reactive({
+  errorMessage: '',
+})
 </script>
 
 <template>
@@ -31,8 +46,24 @@ const lang = useGlobalLang()
 
       <form class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
         <FormInput
-          name="name"
+          name="username"
           autocomplete="username"
+          required
+          disabled
+          spellcheck="false"
+          :value="auth.username"
+        >
+          <template #label>
+            <Lang>
+              <template #zh>用户名</template>
+              <template #en>Username</template>
+            </Lang>
+          </template>
+        </FormInput>
+
+        <FormInput
+          name="name"
+          autocomplete="name"
           required
           spellcheck="false"
           :value="user.name"
@@ -45,11 +76,28 @@ const lang = useGlobalLang()
           </template>
         </FormInput>
 
+        <div v-if="report.errorMessage">
+          <div class="mt-3 border-2 border-red-300 p-2 text-base">
+            {{ report.errorMessage }}
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center py-3">
+          <hr class="border-t border-dashed border-black" />
+        </div>
+
+        <SettingsRemoveServiceWorker />
+
         <div class="flex flex-col justify-center py-3">
           <hr class="border-t border-black" />
         </div>
 
-        <SettingsRemoveServiceWorker />
+        <FormButton :disabled="form.processing">
+          <Lang>
+            <template #zh>保存</template>
+            <template #en>Save</template>
+          </Lang>
+        </FormButton>
       </form>
     </div>
   </PageLayout>

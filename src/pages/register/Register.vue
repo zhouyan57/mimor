@@ -78,7 +78,7 @@ watch(
           </template>
         </FormInput>
 
-        <FormInput name="name" autocomplete="username" required>
+        <FormInput name="name" autocomplete="name" required>
           <template #label>
             <Lang>
               <template #zh>名字</template>
