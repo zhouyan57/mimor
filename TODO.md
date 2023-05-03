@@ -1,5 +1,3 @@
-`users/*` -- allow `data:get` for all
-[author] `State` has `user`
 [user] `userHasAvatar`
 [author] `AuthorOtherHead` -- show avatar -- with fallback
 

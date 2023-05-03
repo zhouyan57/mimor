@@ -2,6 +2,7 @@ import { createEditor } from './Editor'
 import { State } from './State'
 import { loadEntries } from './loadEntries'
 import { loadPathsRecursively } from './loadPathsRecursively'
+import { loadUser } from './loadUser'
 
 export type StateOptions = {
   username: string
@@ -23,6 +24,7 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   return {
     username,
+    user: await loadUser(username),
     isSelf: options.isSelf,
     editor: createEditor(),
     entries,
