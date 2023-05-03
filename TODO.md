@@ -1,4 +1,5 @@
 [user] `userHasAvatar`
+
 [author] `AuthorOtherHead` -- show avatar -- with fallback
 
 # note -- need upstream
