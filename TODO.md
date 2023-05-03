@@ -1,6 +1,7 @@
+[settings] `stateSave` -- handle `user.name` and `avatarFile`
+
 [settings] `SettingsUserAvatar` -- show `avatarURL`
 
-[settings] `stateSave` -- handle `user.name` and `avatarFile`
 [settings] `SettingsUser` -- call `stateSave`
 
 [author] `AuthorOtherHead` -- show avatar

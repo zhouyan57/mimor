@@ -60,13 +60,13 @@ watch(
 
     <label
       for="avatar"
-      class="flex h-[16rem] w-[16rem] items-center overflow-auto border border-black"
+      class="flex h-[16rem] w-[16rem] items-center justify-center overflow-hidden border border-black"
     >
       <InsertElement v-if="avatarImageElement" :element="avatarImageElement" />
       <div v-else class="p-3 text-stone-500">
         <Lang>
-          <template #zh>上传头像</template>
-          <template #en>Upload avatar</template>
+          <template #zh>上传图片</template>
+          <template #en>Upload image</template>
         </Lang>
       </div>
     </label>
