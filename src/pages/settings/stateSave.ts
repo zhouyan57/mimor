@@ -17,7 +17,7 @@ export async function stateSave(
     const avatarPath = `/users/${state.username}/public/assets/avatar`
     const avatarURL = new URL(`${avatarPath}?kind=file`, url)
     const response = await fetch(avatarURL, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         authorization: token.authorization,
       },
