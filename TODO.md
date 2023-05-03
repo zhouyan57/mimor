@@ -1,8 +1,6 @@
 # author avatar
 
-[settings] `State` has `user` and `username`
-[settings] `State` has optional `avatarURL`
-[settings] `State` has optional `avatarFile`
+[settings] `loadState`
 
 [settings] `SettingsUser` be able to upload author avatar
 

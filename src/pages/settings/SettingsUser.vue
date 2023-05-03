@@ -30,8 +30,11 @@ const report = reactive({
 
 function avatarUpload() {
   if (avatarInputElement.value) {
-    const file = avatarInputElement.value.files[0]
-    console.log(file)
+    const files = avatarInputElement.value.files
+    if (files) {
+      const file = files[0]
+      console.log(file)
+    }
   }
 }
 </script>
