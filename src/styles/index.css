@@ -2,18 +2,3 @@
 @import './scrollbar.css';
 @import './animate-jump.css';
 @import './animate-shake.css';
-
-input {
-  font-family: inherit;
-}
-
-/*
-  disable pull-to-refresh
-  - https://web.dev/learn/pwa/app-design/#pull-to-refresh
-*/
-
-@media (display-mode: standalone) {
-  body {
-    overscroll-behavior-y: contain;
-  }
-}
