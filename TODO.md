@@ -1,6 +1,11 @@
 [page-layout] add back `PageMobileHead` -- with `noMobileHead` as an option
 
+[note] & [mimor] take optional `text`
+[note] & [mimor] emit loaded `text` -- for caching
+
 [author] use `noMobileHead`
+
+[service-worker] be able to write service-worker in ts
 
 [author] use indexeddb to cache data
 
