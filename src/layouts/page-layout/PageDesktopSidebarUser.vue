@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Hyperlink from '../../components/utils/Hyperlink.vue'
@@ -10,12 +11,14 @@ import PageLang from './PageLang.vue'
 defineProps<{ user: User }>()
 
 const lang = useGlobalLang()
+const router = useRouter()
 
-function logoutAfterConfirming() {
+async function logoutAfterConfirming() {
   const message = lang.isZh() ? '确定要退出吗？' : 'Are you sure to logout?'
 
   if (window.confirm(message)) {
-    logout()
+    await logout()
+    router.replace('/')
   }
 }
 </script>

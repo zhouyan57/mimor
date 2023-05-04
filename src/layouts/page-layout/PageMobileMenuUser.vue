@@ -19,11 +19,12 @@ const route = useRoute()
 const router = useRouter()
 const lang = useGlobalLang()
 
-function logoutAfterConfirming() {
+async function logoutAfterConfirming() {
   const message = lang.isZh() ? '确定要退出吗？' : 'Are you sure to logout?'
 
   if (window.confirm(message)) {
-    logout()
+    await logout()
+    router.replace('/')
   }
 }
 
