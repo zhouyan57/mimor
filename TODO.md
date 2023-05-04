@@ -1,6 +1,3 @@
-[note] & [mimor] take optional `text`
-[note] & [mimor] emit loaded `text` -- for caching
-
 [service-worker] be able to write service-worker in ts
 
 [author] use indexeddb to cache data
@@ -8,6 +5,9 @@
 - `utils/idb`
 
 [author] add head for sync
+
+[note] & [mimor] take optional `text`
+[note] & [mimor] emit loaded `text` -- for caching
 
 # note -- need upstream
 

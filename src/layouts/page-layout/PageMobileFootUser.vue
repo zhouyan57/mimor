@@ -15,7 +15,7 @@ defineProps<{ user: User }>()
 </script>
 
 <template>
-  <div class="flex h-full w-full justify-between bg-white py-1">
+  <div class="flex w-full justify-between bg-white py-1">
     <Hyperlink
       href="/"
       :class="{

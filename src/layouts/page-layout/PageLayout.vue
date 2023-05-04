@@ -50,7 +50,7 @@ onMounted(async () => {
     </div>
 
     <div
-      class="fixed bottom-0 right-0 z-10 w-full border-t border-stone-400 bg-white px-3 md:hidden"
+      class="fixed bottom-0 right-0 z-10 w-full border-t border-black bg-white px-3 md:hidden"
     >
       <PageMobileFootUser v-if="auth.user" :user="auth.user" />
       <PageMobileFootLoading v-else-if="!triedToLogin" />
