@@ -13,7 +13,7 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <PageLayout>
+  <PageLayout :noMobileHead="true">
     <Head>
       <title v-if="lang.isZh()">{{ state.username }} | 谜墨</title>
       <title v-else>{{ state.username }} | Mimor</title>

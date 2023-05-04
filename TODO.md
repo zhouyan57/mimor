@@ -1,5 +1,3 @@
-[author] use `noMobileHead`
-
 [note] & [mimor] take optional `text`
 [note] & [mimor] emit loaded `text` -- for caching
 
