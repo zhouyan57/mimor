@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const logoText = '<m>'
+import PageLogo from './PageLogo.vue'
 </script>
 
 <template>
-  <div class="flex w-full justify-center">
-    <span class="font-sans text-xl font-bold">{{ logoText }}</span>
+  <div class="flex w-full px-3 py-2">
+    <PageLogo class="text-2xl" />
   </div>
 </template>

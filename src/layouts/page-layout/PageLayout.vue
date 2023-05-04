@@ -9,6 +9,9 @@ import PageDesktopSidebarUser from './PageDesktopSidebarUser.vue'
 import PageMobileFootGuest from './PageMobileFootGuest.vue'
 import PageMobileFootLoading from './PageMobileFootLoading.vue'
 import PageMobileFootUser from './PageMobileFootUser.vue'
+import PageMobileHead from './PageMobileHead.vue'
+
+defineProps<{ noMobileHead?: boolean }>()
 
 const triedToLogin = ref(false)
 const auth = useGlobalAuth()
@@ -22,11 +25,19 @@ onMounted(async () => {
 
 <template>
   <div>
+    <PageMobileHead
+      v-if="!noMobileHead"
+      class="fixed left-0 top-0 border-b border-black bg-white md:hidden"
+    />
+
     <PageDesktopHead
       class="fixed left-0 top-0 hidden border-b border-black bg-white px-3 py-2 md:block"
     />
 
-    <div class="flex h-screen pb-14 md:pb-0 md:pt-12">
+    <div
+      class="flex h-screen pb-14 md:pb-0 md:pt-12"
+      :class="{ 'pt-12': !noMobileHead }"
+    >
       <div class="hidden h-full w-[25rem] shrink-0 flex-col p-3 md:flex">
         <PageDesktopSidebarUser v-if="auth.user" :user="auth.user" />
         <PageDesktopSidebarLoading v-else-if="!triedToLogin" />

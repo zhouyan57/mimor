@@ -1,4 +1,3 @@
-[page-layout] add back `PageMobileHead` -- with `noMobileHead` as an option
 [author] use `noMobileHead`
 
 [note] & [mimor] take optional `text`
