@@ -1,4 +1,6 @@
-[author] `AuthorEditor` -- fix height
+[author] `AuthorEditor` -- use `contenteditable` instead of `<textarea>`
+
+[note] emit save event -- for updating `updatedAt`
 
 [service-worker] be able to write service-worker in ts
 
