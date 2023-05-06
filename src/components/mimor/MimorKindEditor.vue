@@ -13,6 +13,6 @@ defineProps<{
 <template>
   <div class="flex h-full w-full flex-col">
     <MimorHeadProgram :state="state" :program="program" />
-    <MimorEditor :state="state" />
+    <MimorEditor :state="state" @update="$emit('update')" />
   </div>
 </template>

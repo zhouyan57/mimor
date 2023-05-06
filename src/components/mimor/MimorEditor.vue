@@ -5,12 +5,19 @@ import { State } from './State'
 import { stateEditorSave } from './stateEditorSave'
 
 defineProps<{ state: State }>()
+
+const emit = defineEmits(['update'])
+
+async function submit(state: State) {
+  await stateEditorSave(state)
+  emit('update')
+}
 </script>
 
 <template>
   <form
     tabindex="-1"
-    @submit.prevent="stateEditorSave(state)"
+    @submit.prevent="submit(state)"
     class="flex h-full flex-col overflow-y-auto"
     :class="{
       [`border ${state.theme.border(300)}`]: state.theme.name !== 'white',

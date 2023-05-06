@@ -51,15 +51,16 @@ watch(
   >
     <template v-if="state.program">
       <MimorKindEditor
-        v-if="state.kind === 'Editor'"
+        v-show="state.kind === 'Editor'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :state="state"
         :program="state.program"
+        @update="$emit('update')"
       />
 
       <MimorKindProgram
-        v-else
+        v-show="state.kind === 'Program'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :key="state.program.pointer"

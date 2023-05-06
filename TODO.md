@@ -1,5 +1,3 @@
-[mimor] emit `update` event -- for updating `updatedAt`
-
 [service-worker] be able to write service-worker in ts
 
 [author] use indexeddb to cache data

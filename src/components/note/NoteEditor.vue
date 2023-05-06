@@ -5,17 +5,19 @@ import { State } from './State'
 import { stateEditorSave } from './stateEditorSave'
 
 defineProps<{ state: State }>()
+
+const emit = defineEmits(['update'])
+
+async function submit(state: State) {
+  await stateEditorSave(state)
+  emit('update')
+}
 </script>
 
 <template>
   <form
     tabindex="-1"
-    @submit.prevent="
-      () => {
-        stateEditorSave(state)
-        $emit('update')
-      }
-    "
+    @submit.prevent="submit(state)"
     class="flex h-full w-full flex-col"
   >
     <!-- The following use of `key` is for restoring text on exit. -->
