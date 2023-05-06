@@ -1,13 +1,13 @@
-[service-worker] be able to write service-worker in ts
+update fidb to use new api about moving files
 
-[author] use indexeddb to cache data
+# caching
 
-- `utils/idb`
-
-[author] add head for sync
-
+[author] `AuthorHead` -- for the sync button
 [note] & [mimor] take optional `text`
-[note] & [mimor] emit loaded `text` -- for caching
+[note] & [mimor] emit `load` -- for caching
+
+[service-worker] be able to write service-worker in ts
+[author] use indexeddb to cache data -- `utils/idb`
 
 # note -- need upstream
 
