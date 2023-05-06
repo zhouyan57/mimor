@@ -1,6 +1,4 @@
-[author] `AuthorEditor` -- use `contenteditable` instead of `<textarea>`
-
-[note] emit save event -- for updating `updatedAt`
+[note] & [mimor] emit `save` event -- for updating `updatedAt`
 
 [service-worker] be able to write service-worker in ts
 

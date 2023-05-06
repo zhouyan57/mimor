@@ -13,7 +13,8 @@ defineProps<{ state: State }>()
     @submit.prevent="stateEditorSave(state)"
     class="flex h-full w-full flex-col"
   >
-    <NoteEditorTextarea :state="state" />
+    <!-- The following use of `key` is for restoring text on exit. -->
+    <NoteEditorTextarea :state="state" :key="state.isEditing" />
 
     <Transition
       enter-active-class="transition duration-200 ease-out"
