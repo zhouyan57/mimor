@@ -10,11 +10,16 @@ defineProps<{ state: State }>()
 <template>
   <form
     tabindex="-1"
-    @submit.prevent="stateEditorSave(state)"
+    @submit.prevent="
+      () => {
+        stateEditorSave(state)
+        $emit('update')
+      }
+    "
     class="flex h-full w-full flex-col"
   >
     <!-- The following use of `key` is for restoring text on exit. -->
-    <NoteEditorTextarea :state="state" :key="state.isEditing" />
+    <NoteEditorTextarea :state="state" :key="String(state.isEditing)" />
 
     <Transition
       enter-active-class="transition duration-200 ease-out"

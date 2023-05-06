@@ -28,7 +28,7 @@ watch(
 
 <template>
   <div>
-    <NoteLoaded v-if="state" :state="state" />
+    <NoteLoaded v-if="state" :state="state" @update="$emit('update', state)" />
     <NoteLoading v-else :options="{ src, isEditable }" />
   </div>
 </template>

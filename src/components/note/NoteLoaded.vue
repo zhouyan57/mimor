@@ -44,6 +44,10 @@ watch(
 <template>
   <div ref="rootElement" class="flex h-full flex-col bg-white">
     <NoteHead class="border-x border-t border-black" :state="state" />
-    <NoteEditor class="border-x border-b border-black" :state="state" />
+    <NoteEditor
+      class="border-x border-b border-black"
+      :state="state"
+      @update="$emit('update')"
+    />
   </div>
 </template>

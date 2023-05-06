@@ -7,6 +7,10 @@ defineProps<{
   state: State
   entry: Entry
 }>()
+
+function updateEntry(entry: Entry) {
+  entry.updatedAt = Date.now()
+}
 </script>
 
 <template>
@@ -15,5 +19,6 @@ defineProps<{
     :key="entry.path"
     :src="`~/${entry.path}`"
     :isEditable="true"
+    @update="updateEntry(entry)"
   />
 </template>
