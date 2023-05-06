@@ -1,3 +1,7 @@
+[note] `NoteEditorTextarea` -- fix note height
+
+[author] `AuthorEditor` -- fix height
+
 [service-worker] be able to write service-worker in ts
 
 [author] use indexeddb to cache data

@@ -11,7 +11,7 @@ defineProps<{ state: State }>()
   <form
     tabindex="-1"
     @submit.prevent="stateEditorSave(state)"
-    class="flex h-full flex-col overflow-y-auto"
+    class="flex h-full w-full flex-col"
   >
     <NoteEditorTextarea :state="state" />
 
