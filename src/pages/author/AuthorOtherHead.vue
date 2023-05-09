@@ -13,7 +13,7 @@ const lang = useGlobalLang()
       class="h-[5.4rem] w-[5.4rem]"
       :alt="`Avatar of ${state.username}`"
       :src="state.avatarURL.href"
-      onerror="this.onerror=null; this.src='/assets/images/user-icon.svg'"
+      onerror="this.onerror=null; this.src='/contents/assets/images/user-icon.svg'"
     />
 
     <div class="flex flex-col">
