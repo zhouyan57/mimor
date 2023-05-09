@@ -9,20 +9,20 @@ export async function loadPathsRecursively(
 
   const paths: Array<string> = []
 
-  const response = await fetch(new URL(`${directory}?kind=directory`, url), {
-    method: 'GET',
-    headers: {
-      authorization: token.authorization,
+  const response = await fetch(
+    new URL(`${directory}?kind=directory&recursive`, url),
+    {
+      method: 'GET',
+      headers: {
+        authorization: token.authorization,
+      },
     },
-  })
+  )
 
   const pathEntries = await response.json()
 
   for (const pathEntry of pathEntries) {
-    if (pathEntry.kind === 'Directory') {
-      paths.push(...(await loadPathsRecursively(pathEntry.path)))
-    }
-
+    console.log(pathEntry.path)
     if (pathEntry.kind === 'File') {
       if (pathEntry.path.endsWith('.mimor') || pathEntry.path.endsWith('.md')) {
         paths.push(pathEntry.path)

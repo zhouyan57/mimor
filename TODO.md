@@ -1,4 +1,5 @@
-update fidb to use new api about moving files
+[author] merge `loadEntries` and `loadPathsRecursively`
+[author] `entryToggleVisibility` use new rename file api
 
 # caching
 
