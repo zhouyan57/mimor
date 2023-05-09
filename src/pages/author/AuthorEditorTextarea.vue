@@ -9,9 +9,7 @@ defineProps<{ state: State }>()
 const textareaElement = ref<HTMLTextAreaElement | undefined>(undefined)
 
 onMounted(() => {
-  if (textareaElement.value) {
-    autosize(textareaElement.value)
-  }
+  autosize(textareaElement.value)
 })
 </script>
 
