@@ -18,7 +18,7 @@ async function submit(state: State) {
   <form
     tabindex="-1"
     @submit.prevent="submit(state)"
-    class="flex h-full w-full flex-col"
+    class="flex h-full w-full flex-col overflow-y-auto"
   >
     <!-- The following use of `key` is for restoring text on exit. -->
     <NoteEditorTextarea :state="state" :key="String(state.isEditing)" />
@@ -31,9 +31,7 @@ async function submit(state: State) {
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform translate-y-8 opacity-0"
     >
-      <!-- We must use `v-if` instead of `v-show`,
-           for the `autosize` package to work. -->
-      <NoteEditorToolbar v-if="state.isEditing" :state="state" />
+      <NoteEditorToolbar v-show="state.isEditing" :state="state" />
     </Transition>
   </form>
 </template>
