@@ -8,7 +8,7 @@ const props = defineProps<{ state: State }>()
 const textareaElement = ref<HTMLTextAreaElement | undefined>(undefined)
 
 onMounted(() => {
-  if (textareaElement.value) {
+  if (textareaElement.value && !props.state.isFullscreen) {
     autosize(textareaElement.value)
   }
 })
