@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import autosize from 'autosize'
+import { onMounted, ref } from 'vue'
 import { State } from './State'
 
-const props = defineProps<{ state: State }>()
+defineProps<{ state: State }>()
 
-const text = ref(props.state.text)
+const textareaElement = ref<HTMLTextAreaElement | undefined>(undefined)
 
-function updateText(event: Event) {
-  const element = event.target as HTMLElement
-  if (element) {
-    props.state.text = element.innerText
+onMounted(() => {
+  if (textareaElement.value) {
+    autosize(textareaElement.value)
   }
-}
+})
 </script>
 
 <template>
-  <pre
-    :contenteditable="state.isEditing"
+  <textarea
+    ref="textareaElement"
+    :disabled="!state.isEditing"
+    name="text"
     spellcheck="false"
-    class="h-full w-full whitespace-pre-line bg-white px-3 py-2 font-mono text-base focus:outline-none"
-    @input="updateText($event)"
-    >{{ text }}</pre
-  >
+    class="h-full w-full resize-none px-3 py-2 font-mono text-base focus:outline-none disabled:bg-white"
+    rows="1"
+    v-model="state.text"
+  ></textarea>
 </template>

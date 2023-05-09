@@ -1,5 +1,3 @@
-[note] fix editor -- use <textarea> + auto resize
-
 # caching
 
 [author] `AuthorHead` -- for the sync button
