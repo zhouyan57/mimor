@@ -9,7 +9,7 @@
       }
 
       25% {
-        transform: rotate(6deg);
+        transform: rotate(8deg);
       }
 
       50% {
@@ -17,7 +17,7 @@
       }
 
       75% {
-        transform: rotate(-6deg);
+        transform: rotate(-8deg);
       }
 
       100% {
