@@ -4,7 +4,6 @@ import { userHasAvatar } from '../../models/user/userHasAvatar'
 import { createEditor } from './Editor'
 import { State } from './State'
 import { loadEntries } from './loadEntries'
-import { loadPathsRecursively } from './loadPathsRecursively'
 
 export type StateOptions = {
   username: string
@@ -23,11 +22,9 @@ export async function loadState(options: StateOptions): Promise<State> {
     ? [`/users/${username}/contents`, `/users/${username}/public/contents`]
     : [`/users/${username}/public/contents`]
 
-  const paths = (
-    await Promise.all(directories.map(await loadPathsRecursively))
-  ).flatMap((paths) => paths)
-
-  const entries = await loadEntries(paths)
+  const entries = (
+    await Promise.all(directories.map(await loadEntries))
+  ).flatMap((entries) => entries)
 
   return {
     username,
