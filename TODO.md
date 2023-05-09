@@ -1,4 +1,4 @@
-[author] `entryToggleVisibility` use new rename file api
+fix the use of `userHasAvatar` -- maybe use `file:has`
 
 # caching
 
