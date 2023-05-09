@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import autosize from 'autosize'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { State } from './State'
 
-defineProps<{ state: State }>()
+const props = defineProps<{ state: State }>()
 
 const textareaElement = ref<HTMLTextAreaElement | undefined>(undefined)
 
@@ -12,6 +12,15 @@ onMounted(() => {
     autosize(textareaElement.value)
   }
 })
+
+watch(
+  () => props.state.isEditing,
+  () => {
+    if (textareaElement.value) {
+      autosize.update(textareaElement.value)
+    }
+  },
+)
 </script>
 
 <template>
