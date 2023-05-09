@@ -5,7 +5,7 @@ import { Entry } from './Entry'
 export type State = {
   username: string
   user: User
-  avatarURL?: URL
+  avatarURL: URL
   isSelf: boolean
   editor: Editor
   entries: Array<Entry>

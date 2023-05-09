@@ -9,13 +9,12 @@ const lang = useGlobalLang()
 
 <template>
   <div class="flex space-x-2">
-    <div v-if="state.avatarURL">
-      <img
-        class="h-[5.4rem] w-[5.4rem]"
-        :alt="`Avatar of ${state.username}`"
-        :src="state.avatarURL.href"
-      />
-    </div>
+    <img
+      class="h-[5.4rem] w-[5.4rem]"
+      :alt="`Avatar of ${state.username}`"
+      :src="state.avatarURL.href"
+      onerror="this.onerror=null; this.src='/assets/images/user-icon.svg'"
+    />
 
     <div class="flex flex-col">
       <div class="text-2xl font-bold">{{ state.user.name }}</div>

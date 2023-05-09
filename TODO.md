@@ -1,5 +1,3 @@
-fix the use of `userHasAvatar` -- maybe use `file:has`
-
 # caching
 
 [author] `AuthorHead` -- for the sync button
