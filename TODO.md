@@ -1,11 +1,6 @@
-# caching
+# author -- manual file sync
 
-[author] `AuthorHead` -- for the sync button
-[note] & [mimor] take optional `text`
-[note] & [mimor] emit `load` -- for caching
-
-[service-worker] be able to write service-worker in ts
-[author] use indexeddb to cache data -- `utils/idb`
+[author] `AuthorSelfHead`
 
 # note -- need upstream
 
@@ -18,6 +13,15 @@
 > care (tiktok does not have video backlog problem).
 
 [recall] user can add a mimor into `/recall`
+
+# caching
+
+[author] `AuthorHead` -- for the sync button
+[note] & [mimor] take optional `text`
+[note] & [mimor] emit `load` -- for caching
+
+[service-worker] be able to write service-worker in ts
+[author] use indexeddb to cache data -- `utils/idb`
 
 # dustbin
 

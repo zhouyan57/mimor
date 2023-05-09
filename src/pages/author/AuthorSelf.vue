@@ -4,6 +4,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfEntry from './AuthorSelfEntry.vue'
+import AuthorSelfHead from './AuthorSelfHead.vue'
 import { State } from './State'
 import { stateFindEntries } from './stateFindEntries'
 
@@ -20,6 +21,8 @@ const lang = useGlobalLang()
     </Head>
 
     <div class="flex h-full flex-col">
+      <AuthorSelfHead :state="state" />
+
       <div class="flex flex-col px-3 py-3 text-xl">
         <AuthorEditor class="max-w-[47rem]" :state="state" />
       </div>
