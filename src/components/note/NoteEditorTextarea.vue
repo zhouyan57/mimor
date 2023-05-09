@@ -12,9 +12,22 @@ onMounted(() => {
 })
 
 watch(
+  () => props.state.isFullscreen,
+  (value) => {
+    if (value) {
+      autosize.destroy(textareaElement.value)
+    } else {
+      autosize(textareaElement.value)
+    }
+  },
+)
+
+watch(
   () => props.state.isEditing,
   () => {
-    autosize.update(textareaElement.value)
+    if (!props.state.isFullscreen) {
+      autosize.update(textareaElement.value)
+    }
   },
 )
 </script>
