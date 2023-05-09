@@ -31,7 +31,9 @@ async function submit(state: State) {
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform translate-y-8 opacity-0"
     >
-      <NoteEditorToolbar v-show="state.isEditing" :state="state" />
+      <!-- We must use `v-if` instead of `v-show`,
+           for the `autosize` package to work. -->
+      <NoteEditorToolbar v-if="state.isEditing" :state="state" />
     </Transition>
   </form>
 </template>
