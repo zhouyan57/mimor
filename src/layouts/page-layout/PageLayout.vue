@@ -35,7 +35,7 @@ onMounted(async () => {
     />
 
     <div
-      class="flex h-screen pb-14 md:pb-0 md:pt-12"
+      class="h-screen-dynamic flex pb-14 md:pb-0 md:pt-12"
       :class="{ 'pt-12': !noMobileHead }"
     >
       <div class="hidden h-full w-[25rem] shrink-0 flex-col p-3 md:flex">

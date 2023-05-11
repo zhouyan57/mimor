@@ -79,7 +79,7 @@ function jump(path: string) {
       leave-to-class="transform opacity-0 -translate-x-6"
     >
       <PopoverPanel
-        class="fixed left-0 top-0 z-40 flex h-screen w-full flex-col justify-between overflow-auto bg-white p-2"
+        class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between overflow-auto bg-white p-2"
       >
         <div class="flex justify-between">
           <button
