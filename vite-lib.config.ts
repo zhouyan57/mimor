@@ -12,8 +12,5 @@ export default defineConfig({
       fileName: 'index',
     },
   },
-  define: {
-    'process.env': process.env,
-  },
   plugins: [vue()],
 })
