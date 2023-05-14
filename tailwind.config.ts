@@ -1,6 +1,8 @@
-const colors = require('tailwindcss/colors')
+import type { Config } from 'tailwindcss'
 
-module.exports = {
+import colors from 'tailwindcss/colors'
+
+export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   safelist: [
     {
@@ -29,4 +31,4 @@ module.exports = {
       logo: ['Bodoni Moda', 'Source Han Serif SC', 'serif'],
     },
   },
-}
+} satisfies Config
