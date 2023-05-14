@@ -6,7 +6,16 @@ export class Theme {
   constructor(public name: string) {}
 
   get colors(): Record<number, string> {
-    return (tailwindColors as any)[this.name]
+    let name = this.name
+    if (name === 'blue') {
+      name = 'sky'
+    }
+
+    if (name === 'yellow') {
+      name = 'amber'
+    }
+
+    return (tailwindColors as any)[name]
   }
 
   bg(level: number): string {
