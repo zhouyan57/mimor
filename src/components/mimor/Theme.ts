@@ -1,5 +1,4 @@
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../../tailwind.config'
+import tailwindColors from 'tailwindcss/colors'
 
 // See `tailwind.config.js` for used colors.
 
@@ -7,8 +6,7 @@ export class Theme {
   constructor(public name: string) {}
 
   get colors(): Record<number, string> {
-    const config = resolveConfig(tailwindConfig)
-    return config.theme.extend.colors[this.name]
+    return (tailwindColors as any)[this.name]
   }
 
   bg(level: number): string {
