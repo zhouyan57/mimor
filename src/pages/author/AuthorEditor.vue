@@ -31,7 +31,10 @@ const report = reactive({
     }"
   >
     <AuthorEditorHead :state="state" />
-    <AuthorEditorTextarea :state="state" />
+    <AuthorEditorTextarea
+      :state="state"
+      :key="String(Boolean(state.editor.text))"
+    />
     <AuthorEditorToolbar :state="state" />
   </form>
 </template>
