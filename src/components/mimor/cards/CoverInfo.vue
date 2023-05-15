@@ -16,8 +16,12 @@ defineProps<{
       {{ state.src }}
     </div>
 
-    <div class="mx-3 flex space-x-3 font-sans text-lg font-bold text-white">
-      <div v-for="(keyword, index) of program.metadata.keywords" :key="index">
+    <div class="mx-3 flex flex-wrap font-sans text-lg font-bold text-white">
+      <div
+        v-for="(keyword, index) of program.metadata.keywords"
+        :key="index"
+        class="mr-3"
+      >
         {{ keyword }}
       </div>
     </div>

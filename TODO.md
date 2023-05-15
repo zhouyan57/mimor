@@ -1,3 +1,5 @@
+[author] resize input editor on save
+
 # author -- manual file sync
 
 [author] `AuthorSelfHead`
