@@ -1,3 +1,14 @@
+# author
+
+[author] improve loading -- sub page instead of whole page
+
+# cache
+
+[cache] for home and author
+
+- use indexeddb
+- no abstraction, shameless green first
+
 # author -- manual file sync
 
 [author] `AuthorSelfHead`
