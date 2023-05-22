@@ -1,6 +1,7 @@
 # author
 
-[author] improve loading -- sub page instead of whole page -- for more stable view
+[author] `AuthorSelfLoading` and `AuthorOhterLoading`
+[author] `AuthorSelfLoading` -- sub page instead of whole page -- for more stable view
 
 # cache
 
