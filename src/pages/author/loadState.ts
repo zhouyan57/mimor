@@ -1,5 +1,6 @@
 import { loadUser } from '../../models/user/loadUser'
 import { userAvatarURL } from '../../models/user/userAvatarURL'
+import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { createEditor } from './Editor'
 import { State } from './State'
 import { loadEntries } from './loadEntries'
@@ -20,7 +21,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     : [`/users/${username}/public/contents`]
 
   const entries = (
-    await Promise.all(directories.map(await loadEntries))
+    await promiseAllFulfilled(directories.map(await loadEntries))
   ).flatMap((entries) => entries)
 
   return {
