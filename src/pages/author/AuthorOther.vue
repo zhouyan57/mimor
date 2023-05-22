@@ -1,10 +1,35 @@
 <script setup lang="ts">
-import AuthorOhterLoaded from './AuthorOhterLoaded.vue'
+import { reactive, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
+import AuthorOtherLoaded from './AuthorOtherLoaded.vue'
+import AuthorOtherLoading from './AuthorOtherLoading.vue'
 import { State } from './State'
+import { loadState } from './loadState'
 
-defineProps<{ state: State }>()
+const route = useRoute()
+const auth = useGlobalAuth()
+
+const state = ref<State | undefined>(undefined)
+
+const options = reactive({
+  isSelf: true,
+  username: String(route.params.username),
+})
+
+watch(
+  () => route.params.username,
+  async (value) => {
+    state.value = undefined
+    state.value = await loadState(options)
+  },
+  {
+    immediate: true,
+  },
+)
 </script>
 
 <template>
-  <AuthorOhterLoaded :state="state" />
+  <AuthorOtherLoaded v-if="state" :state="state" :key="state.username" />
+  <AuthorOtherLoading v-else :options="options" :key="options.username" />
 </template>
