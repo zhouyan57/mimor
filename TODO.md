@@ -1,11 +1,6 @@
-# cache
-
-[cache] for home and author
-
-- use indexeddb
-- no abstraction, shameless green first
-
-[cache] for `Mimor`
+[home] `stateRefresh` -- use cache
+[author] `stateRefresh` -- use cache
+[mimor] `stateRefresh` -- use cache
 
 # author -- manual file sync
 
@@ -18,6 +13,12 @@
 > care (tiktok does not have video backlog problem).
 
 [recall] user can add a mimor into `/recall`
+
+# home
+
+[home] use the maze metaphor as intro
+[home] show magazine -- introduce selected users and mimors
+[home] show followed users activities
 
 # caching
 
