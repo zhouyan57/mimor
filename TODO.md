@@ -1,7 +1,3 @@
-# note -- need upstream
-
-[note] `NoteHead` link to readonly.link article -- url encoding for private contents
-
 # author
 
 [author] improve loading -- sub page instead of whole page -- for more stable view

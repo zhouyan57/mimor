@@ -38,6 +38,7 @@
     "@xieyuheng/x-node": "^0.0.7",
     "autosize": "^6.0.1",
     "fidb": "^0.1.5",
+    "js-base64": "^3.7.5",
     "lodash": "^4.17.21",
     "path-browserify": "^1.0.1",
     "qs": "^6.11.2",
