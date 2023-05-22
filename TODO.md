@@ -1,3 +1,5 @@
+use `Promise.allSettled` instead of `Promise.all`
+
 # author
 
 [author] improve loading -- sub page instead of whole page
