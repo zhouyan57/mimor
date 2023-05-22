@@ -1,7 +1,3 @@
-# author
-
-[author] `AuthorSelfLoading` -- sub page instead of whole page -- for more stable view
-
 # cache
 
 [cache] for home and author
