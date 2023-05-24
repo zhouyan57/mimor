@@ -8,5 +8,5 @@ export async function stateRefresh(state: State): Promise<void> {
   const usernames = await loadUsernames()
   const users = await promiseAllFulfilled(usernames.map(loadUser))
   state.users = users
-  await Kv.set('Home/state.users', users)
+  await Kv.set('mimor.app/Home/state.users', users)
 }

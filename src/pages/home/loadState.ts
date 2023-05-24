@@ -9,7 +9,7 @@ export type StateOptions = {
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const cachedUsers = await Kv.get('Home/state.users')
+  const cachedUsers = await Kv.get('mimor.app/Home/state.users')
   if (cachedUsers) {
     return {
       users: cachedUsers,
@@ -18,7 +18,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   } else {
     const usernames = await loadUsernames()
     const users = await promiseAllFulfilled(usernames.map(loadUser))
-    await Kv.set('Home/state.users', users)
+    await Kv.set('mimor.app/Home/state.users', users)
     return {
       users,
     }

@@ -7,7 +7,7 @@ export async function loadStateFromCacheFirst(
 ): Promise<State> {
   const { username } = options
 
-  const store = Kv.createStore('authors', 'cache')
+  const store = Kv.createStore('mimor.app/authors', 'cache')
   const cached = await Kv.get(username, store)
   if (cached) {
     return {

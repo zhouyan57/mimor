@@ -1,4 +1,3 @@
-add domain prefix to idb key -- for local testing
 [author] use `loadStateFromCacheFirst`
 [author] `stateRefresh`
 [mimor] `stateRefresh`
