@@ -13,6 +13,7 @@ export async function loadState(options: StateOptions): Promise<State> {
   if (cachedUsers) {
     return {
       users: cachedUsers,
+      isLoadedFromCache: true,
     }
   } else {
     const usernames = await loadUsernames()

@@ -9,4 +9,5 @@ export type State = {
   isSelf: boolean
   editor: Editor
   entries: Array<Entry>
+  isLoadedFromCache?: boolean
 }
