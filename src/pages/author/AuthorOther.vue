@@ -13,7 +13,7 @@ const auth = useGlobalAuth()
 const state = ref<State | undefined>(undefined)
 
 const options = reactive({
-  isSelf: true,
+  isSelf: false,
   username: String(route.params.username),
 })
 

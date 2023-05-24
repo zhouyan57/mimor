@@ -1,4 +1,6 @@
+import { User } from '../../models/user/User'
+
 export type State = {
-  usernames: Array<string>
+  users: Array<User>
   isLoadedFromCache?: boolean
 }

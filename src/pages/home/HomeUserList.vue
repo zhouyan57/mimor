@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
 import Hyperlink from '../../components/utils/Hyperlink.vue'
+import { userAvatarURL } from '../../models/user/userAvatarURL'
+import { username } from '../../models/user/username'
 import { State } from './State'
 
 defineProps<{ state: State }>()
@@ -15,17 +17,24 @@ defineProps<{ state: State }>()
       </Lang>
     </div>
 
-    <ul
-      class="flex list-outside list-square flex-col space-y-1 overflow-y-auto py-3 pl-4 text-xl"
-    >
-      <li v-for="username of state.usernames">
-        <Hyperlink
-          class="font-bold text-sky-700 decoration-sky-700 visited:text-purple-700 visited:decoration-purple-700 hover:underline"
-          :key="username"
-          :href="`/authors/${username}`"
-          >{{ username }}</Hyperlink
+    <div class="flex flex-col space-y-1 overflow-y-auto py-3 text-xl">
+      <div v-for="user of state.users" :key="user['@path']">
+        <Hyperlink :href="`/authors/${username(user)}`">
+          <div class="flex space-x-2">
+            <img
+              class="h-[4.6rem] w-[4.6rem]"
+              :alt="`Avatar of ${user.name}`"
+              :src="userAvatarURL(user).href"
+              onerror="this.onerror=null; this.src='/contents/assets/images/user-icon.svg'"
+            />
+
+            <div class="flex flex-col">
+              <div class="text-2xl font-bold">{{ user.name }}</div>
+              <div class="text-xl">{{ username(user) }}</div>
+            </div>
+          </div></Hyperlink
         >
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
