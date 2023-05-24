@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { Base64 } from 'js-base64'
 import Lang from '../../components/lang/Lang.vue'
 import Hyperlink from '../../components/utils/Hyperlink.vue'
-import { userAvatarURL } from '../../models/user/userAvatarURL'
 import { username } from '../../models/user/username'
 import { State } from './State'
 
@@ -22,10 +22,12 @@ defineProps<{ state: State }>()
         <Hyperlink :href="`/authors/${username(user)}`">
           <div class="flex space-x-2">
             <img
+              v-if="user.avatar"
               class="h-[4.6rem] w-[4.6rem]"
               :alt="`Avatar of ${user.name}`"
-              :src="userAvatarURL(user).href"
-              onerror="this.onerror=null; this.src='/contents/assets/images/user-icon.svg'"
+              :src="`data:text/markdown;base64,${Base64.fromUint8Array(
+                user.avatar,
+              )}`"
             />
 
             <div class="flex flex-col">

@@ -1,6 +1,7 @@
 import { User } from '../../models/user/User'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { loadUserAvatar } from './loadUserAvatar'
 
 export async function loadUser(username: string): Promise<User> {
   const { url } = useGlobalBackend()
@@ -13,5 +14,8 @@ export async function loadUser(username: string): Promise<User> {
     },
   })
 
-  return await response.json()
+  const user = await response.json()
+  const avatar = await loadUserAvatar(user)
+
+  return { ...user, avatar }
 }

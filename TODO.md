@@ -1,4 +1,4 @@
-cache user avatar data
+[author] user avatar use data url -- quit using default avatar
 
 # author -- manual file sync
 
