@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import AuthorSelfLoaded from './AuthorSelfLoaded.vue'
 import AuthorSelfLoading from './AuthorSelfLoading.vue'
 import { State } from './State'
-import { loadState } from './loadState'
+import { loadStateFromCacheFirst } from './loadStateFromCacheFirst'
 
 const route = useRoute()
 
@@ -19,7 +19,7 @@ watch(
   () => route.params.username,
   async (value) => {
     state.value = undefined
-    state.value = await loadState(options)
+    state.value = await loadStateFromCacheFirst(options)
   },
   {
     immediate: true,

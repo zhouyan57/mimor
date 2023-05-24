@@ -1,4 +1,3 @@
-[author] use `loadStateFromCacheFirst`
 [author] `stateRefresh`
 [mimor] `stateRefresh`
 

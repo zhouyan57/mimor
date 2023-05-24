@@ -1,5 +1,4 @@
 import { loadUser } from '../../models/user/loadUser'
-import { userAvatarURL } from '../../models/user/userAvatarURL'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { createEditor } from './Editor'
 import { State } from './State'
@@ -14,7 +13,6 @@ export async function loadState(options: StateOptions): Promise<State> {
   const { username } = options
 
   const user = await loadUser(username)
-  const avatarURL = userAvatarURL(user)
 
   const directories = options.isSelf
     ? [`/users/${username}/contents`, `/users/${username}/public/contents`]
@@ -27,7 +25,6 @@ export async function loadState(options: StateOptions): Promise<State> {
   return {
     username,
     user,
-    avatarURL,
     isSelf: options.isSelf,
     editor: createEditor(),
     entries,
