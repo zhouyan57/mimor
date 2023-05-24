@@ -1,5 +1,3 @@
-[author] user avatar use data url -- quit using default avatar
-
 # author -- manual file sync
 
 [author] `AuthorSelfHead`
