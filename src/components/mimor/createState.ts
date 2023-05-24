@@ -3,12 +3,12 @@ import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'
 
-export async function createState(options: {
+export function createState(options: {
   src: string
   withMetaThemeColor?: boolean
   isEditable?: boolean
   text: string
-}): Promise<State> {
+}): State {
   const { src, withMetaThemeColor, isEditable, text } = options
 
   const theme = new Theme('white')

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
-import { onMounted } from 'vue'
+import { watch } from 'vue'
 import MimorFootStart from '../MimorFootStart.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import { Program } from '../Program'
@@ -14,11 +14,15 @@ const props = defineProps<{
   element: XElement
 }>()
 
-onMounted(() => {
-  if (props.state.withMetaThemeColor) {
-    props.state.themeColor = props.state.theme.colors[400]
-  }
-})
+watch(
+  () => props.state.theme.name,
+  () => {
+    if (props.state.withMetaThemeColor) {
+      props.state.themeColor = props.state.theme.colors[400]
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>

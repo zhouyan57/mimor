@@ -1,4 +1,3 @@
-[mimor] `stateRefresh`
 [mimor] should not edit `isLoadedFromCache` -- show loading state
 
 [note] extract `createState`

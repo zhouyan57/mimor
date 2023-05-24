@@ -13,4 +13,5 @@ export type State = {
   error?: Error
   isFullscreen: boolean
   isEditable?: boolean
+  isLoadedFromCache?: boolean
 }
