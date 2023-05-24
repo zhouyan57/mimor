@@ -18,7 +18,7 @@ defineProps<{ state: State }>()
     </div>
 
     <div class="flex flex-col space-y-3 overflow-y-auto py-3 text-xl">
-      <div v-for="user of state.users" :key="user['@path']">
+      <div v-for="user of state.users" :key="user['@path']" class="max-w-max">
         <Hyperlink :href="`/authors/${username(user)}`">
           <div class="flex space-x-2">
             <img
