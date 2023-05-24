@@ -14,6 +14,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     }
   } else {
     const usernames = await loadUsernames()
+    await Kv.set('Home/state.usernames', usernames)
     return {
       usernames,
     }

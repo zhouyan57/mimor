@@ -1,4 +1,5 @@
-[home] `stateRefresh` -- use cache
+[home] `State` has `users` -- instead of just `usernames`
+
 [mimor] `stateRefresh` -- use cache
 [author] `stateRefresh` -- use cache
 
