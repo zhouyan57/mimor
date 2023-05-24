@@ -1,7 +1,6 @@
-[mimor] should not edit `isLoadedFromCache` -- show loading state
-
-[note] extract `createState`
 [note] `stateRefresh`
+
+[mimor] should not edit `isLoadedFromCache` -- show loading state
 [note] should not edit `isLoadedFromCache` -- show loading state
 
 cache user avatar data

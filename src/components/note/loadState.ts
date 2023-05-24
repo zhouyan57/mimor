@@ -1,5 +1,6 @@
 import { loadContent } from '../../models/content/loadContent'
 import { State } from './State'
+import { createState } from './createState'
 
 export interface StateOptions {
   src: string
@@ -7,16 +8,9 @@ export interface StateOptions {
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src, isEditable } = options
+  const { src } = options
 
   const text = await loadContent(src)
 
-  return {
-    src,
-    text,
-    originalText: text,
-    isEditing: false,
-    isFullscreen: false,
-    isEditable,
-  }
+  return createState({ ...options, text })
 }
