@@ -1,6 +1,6 @@
 [home] `stateRefresh` -- use cache
-[author] `stateRefresh` -- use cache
 [mimor] `stateRefresh` -- use cache
+[author] `stateRefresh` -- use cache
 
 # author -- manual file sync
 

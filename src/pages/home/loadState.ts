@@ -1,14 +1,21 @@
-import { loadUsernames } from './loadUsernames'
+import * as Kv from 'idb-keyval'
 import { State } from './State'
+import { loadUsernames } from './loadUsernames'
 
 export type StateOptions = {
   //
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const usernames = await loadUsernames()
-
-  return {
-    usernames,
+  const cachedUsernames = await Kv.get('Home/state.usernames')
+  if (cachedUsernames) {
+    return {
+      usernames: cachedUsernames,
+    }
+  } else {
+    const usernames = await loadUsernames()
+    return {
+      usernames,
+    }
   }
 }

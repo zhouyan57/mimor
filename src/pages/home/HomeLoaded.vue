@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import HomeUserList from './HomeUserList.vue'
 import { State } from './State'
+import { stateReactive } from './stateReactive'
 
 const props = defineProps<{ state: State }>()
 
-const state = reactive(props.state)
+const state = stateReactive(props.state)
 </script>
 
 <template>
