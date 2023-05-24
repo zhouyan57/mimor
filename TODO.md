@@ -1,5 +1,3 @@
-[mimor] should not edit `isLoadedFromCache` -- show loading state
-
 cache user avatar data
 
 # author -- manual file sync

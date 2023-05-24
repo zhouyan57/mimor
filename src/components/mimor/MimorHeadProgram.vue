@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  ArrowPathIcon,
   ArrowTopRightOnSquareIcon,
   ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
@@ -54,7 +55,17 @@ function fullscreenSupported() {
         <BackspaceIcon class="h-5 w-5" />
       </button>
 
-      <template v-if="state.isEditable">
+      <template v-if="state.isEditable && state.isLoadedFromCache">
+        <button
+          disabled
+          class="animate-spin"
+          :title="lang.isZh() ? '加载新内容中⋯⋯' : 'Loading new content...'"
+        >
+          <ArrowPathIcon class="h-5 w-5" />
+        </button>
+      </template>
+
+      <template v-if="state.isEditable && !state.isLoadedFromCache">
         <button
           v-if="state.kind === 'Program'"
           :title="lang.isZh() ? '编辑' : 'Edit'"
@@ -72,7 +83,7 @@ function fullscreenSupported() {
         </button>
       </template>
 
-      <template v-else>
+      <template v-if="!state.isEditable">
         <button
           v-if="state.kind === 'Program'"
           @click="state.kind = 'Editor'"
