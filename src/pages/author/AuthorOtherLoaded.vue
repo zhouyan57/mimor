@@ -6,10 +6,13 @@ import AuthorOtherEntry from './AuthorOtherEntry.vue'
 import AuthorOtherHead from './AuthorOtherHead.vue'
 import { State } from './State'
 import { stateFindEntries } from './stateFindEntries'
+import { stateReactive } from './stateReactive'
 
-defineProps<{ state: State }>()
+const props = defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
+
+const state = stateReactive(props.state)
 </script>
 
 <template>

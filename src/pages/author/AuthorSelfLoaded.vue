@@ -7,10 +7,12 @@ import AuthorSelfEntry from './AuthorSelfEntry.vue'
 import AuthorSelfHead from './AuthorSelfHead.vue'
 import { State } from './State'
 import { stateFindEntries } from './stateFindEntries'
-
-defineProps<{ state: State }>()
+import { stateReactive } from './stateReactive'
+const props = defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
+
+const state = stateReactive(props.state)
 </script>
 
 <template>

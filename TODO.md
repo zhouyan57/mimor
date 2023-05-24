@@ -1,4 +1,3 @@
-[author] `stateRefresh`
 [mimor] `stateRefresh`
 
 # author -- manual file sync
