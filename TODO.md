@@ -1,5 +1,4 @@
 [mimor] should not edit `isLoadedFromCache` -- show loading state
-[note] should not edit `isLoadedFromCache` -- show loading state
 
 cache user avatar data
 

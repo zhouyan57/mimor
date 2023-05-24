@@ -12,6 +12,7 @@ export function stateReactive(state: State): State {
   if (state.isLoadedFromCache) {
     asyncRun(async () => {
       await stateRefresh(state)
+      state.isLoadedFromCache = false
     })
   }
 
