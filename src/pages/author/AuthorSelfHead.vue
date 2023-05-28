@@ -16,11 +16,11 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="flex space-x-3 text-base">
+  <div class="flex space-x-3 overflow-x-auto text-base">
     <button
       :title="lang.isZh() ? `` : ``"
       @click=""
-      class="flex items-center space-x-1"
+      class="flex min-w-max items-center space-x-1"
     >
       <ArrowPathIcon class="h-5 w-5" />
 
@@ -33,7 +33,7 @@ const lang = useGlobalLang()
     <button
       :title="lang.isZh() ? `` : ``"
       @click=""
-      class="flex items-center space-x-1"
+      class="flex min-w-max items-center space-x-1"
     >
       <ArrowsUpDownIcon class="h-5 w-5" />
 
@@ -46,7 +46,7 @@ const lang = useGlobalLang()
     <button
       :title="lang.isZh() ? `` : ``"
       @click=""
-      class="flex items-center space-x-1"
+      class="flex min-w-max items-center space-x-1"
     >
       <ArrowDownTrayIcon class="h-5 w-5" />
 
@@ -59,7 +59,7 @@ const lang = useGlobalLang()
     <button
       :title="lang.isZh() ? `` : ``"
       @click=""
-      class="flex items-center space-x-1"
+      class="flex min-w-max items-center space-x-1"
     >
       <ArrowUpTrayIcon class="h-5 w-5" />
 
@@ -72,7 +72,7 @@ const lang = useGlobalLang()
     <button
       :title="lang.isZh() ? `` : ``"
       @click=""
-      class="flex items-center space-x-1"
+      class="flex min-w-max items-center space-x-1"
     >
       <PaperAirplaneIcon class="h-5 w-5" />
 
