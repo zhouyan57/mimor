@@ -1,10 +1,9 @@
 # author -- manual file sync
 
-[author] `AuthorSelfHead` -- refresh
 [author] `AuthorSelfHead` -- download
 [author] `AuthorSelfHead` -- upload
 [author] `AuthorSelfHead` -- save
-[author] `AuthorSelfHead` -- click connection info show details
+[author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
 # recall -- in many timelines
 

@@ -10,6 +10,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
+import { stateRefresh } from './stateRefresh'
 
 defineProps<{ state: State }>()
 
@@ -19,15 +20,19 @@ const lang = useGlobalLang()
 <template>
   <div class="flex space-x-3 overflow-x-auto text-base">
     <button
+      class="flex min-w-max items-center space-x-1"
+      :disabled="state.isRefreshing"
       :title="
         lang.isZh()
           ? `将云端的文件刷新到 app`
           : `Refresh files from cloud to app`
       "
-      @click=""
-      class="flex min-w-max items-center space-x-1"
+      @click="stateRefresh(state)"
     >
-      <ArrowPathIcon class="h-5 w-5" />
+      <ArrowPathIcon
+        class="h-5 w-5"
+        :class="{ 'animate-spin': state.isRefreshing }"
+      />
 
       <Lang>
         <template #zh>刷新</template>
@@ -37,8 +42,8 @@ const lang = useGlobalLang()
 
     <button
       v-if="state.isFileSystemAccessSupported && !state.connection"
-      @click="stateConnect(state)"
       class="flex min-w-max items-center space-x-1"
+      @click="stateConnect(state)"
     >
       <ArrowsUpDownIcon class="h-5 w-5" />
 
@@ -50,13 +55,13 @@ const lang = useGlobalLang()
 
     <template v-if="state.connection">
       <button
+        class="flex min-w-max items-center space-x-1"
         :title="
           lang.isZh()
             ? `将 app 中的文件下载到本地文件夹`
             : `Download files from app to local directory`
         "
         @click=""
-        class="flex min-w-max items-center space-x-1"
       >
         <ArrowDownTrayIcon class="h-5 w-5" />
 
@@ -71,13 +76,13 @@ const lang = useGlobalLang()
       </button>
 
       <button
+        class="flex min-w-max items-center space-x-1"
         :title="
           lang.isZh()
             ? `将本地文件夹中的文件上传到 app`
             : `Upload files from local directory to app`
         "
         @click=""
-        class="flex min-w-max items-center space-x-1"
       >
         <ArrowUpTrayIcon class="h-5 w-5" />
 
@@ -88,13 +93,13 @@ const lang = useGlobalLang()
       </button>
 
       <button
+        class="flex min-w-max items-center space-x-1"
         :title="
           lang.isZh()
             ? `将 app 中的文件保存到云端`
             : `Save files from app to cloud`
         "
         @click=""
-        class="flex min-w-max items-center space-x-1"
       >
         <PaperAirplaneIcon class="h-5 w-5" />
 

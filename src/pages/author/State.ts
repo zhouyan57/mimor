@@ -12,4 +12,5 @@ export type State = {
   isLoadedFromCache?: boolean
   isFileSystemAccessSupported?: boolean
   connection?: Connection
+  isRefreshing?: boolean
 }
