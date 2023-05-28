@@ -28,5 +28,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     isSelf: options.isSelf,
     editor: createEditor(),
     entries,
+    isFileSystemAccessSupported:
+      typeof window.showOpenFilePicker === 'function',
   }
 }

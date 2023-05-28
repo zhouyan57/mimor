@@ -31,6 +31,7 @@ const lang = useGlobalLang()
     </button>
 
     <button
+      v-if="state.isFileSystemAccessSupported"
       :title="lang.isZh() ? `` : ``"
       @click=""
       class="flex min-w-max items-center space-x-1"

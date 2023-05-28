@@ -9,4 +9,5 @@ export type State = {
   editor: Editor
   entries: Array<Entry>
   isLoadedFromCache?: boolean
+  isFileSystemAccessSupported?: boolean
 }
