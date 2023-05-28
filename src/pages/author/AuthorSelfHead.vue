@@ -32,7 +32,7 @@ const lang = useGlobalLang()
     </button>
 
     <button
-      v-if="state.isFileSystemAccessSupported"
+      v-if="state.isFileSystemAccessSupported && !state.connection"
       :title="lang.isZh() ? `连接本地文件夹` : `Connect to local directory`"
       @click="stateConnect(state)"
       class="flex min-w-max items-center space-x-1"
@@ -57,6 +57,10 @@ const lang = useGlobalLang()
           <template #zh>下载</template>
           <template #en>Download</template>
         </Lang>
+      </button>
+
+      <button class="flex min-w-max items-center space-x-1">
+        <div>TODO</div>
       </button>
 
       <button
