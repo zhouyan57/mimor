@@ -34,7 +34,7 @@ export async function stateEditorSave(
 
     state.entries.push({
       isPublic: state.editor.isPublic,
-      path,
+      path: targetPath,
       createdAt: now,
       updatedAt: now,
     })
