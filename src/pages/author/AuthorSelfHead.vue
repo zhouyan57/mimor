@@ -19,7 +19,11 @@ const lang = useGlobalLang()
 <template>
   <div class="flex space-x-3 overflow-x-auto text-base">
     <button
-      :title="lang.isZh() ? `` : ``"
+      :title="
+        lang.isZh()
+          ? `将云端的文件刷新到 app`
+          : `Refresh files from cloud to app`
+      "
       @click=""
       class="flex min-w-max items-center space-x-1"
     >
@@ -33,21 +37,24 @@ const lang = useGlobalLang()
 
     <button
       v-if="state.isFileSystemAccessSupported && !state.connection"
-      :title="lang.isZh() ? `连接本地文件夹` : `Connect to local directory`"
       @click="stateConnect(state)"
       class="flex min-w-max items-center space-x-1"
     >
       <ArrowsUpDownIcon class="h-5 w-5" />
 
       <Lang>
-        <template #zh>连接</template>
-        <template #en>Connect</template>
+        <template #zh>连接本地文件夹</template>
+        <template #en>Connect local directory</template>
       </Lang>
     </button>
 
     <template v-if="state.connection">
       <button
-        :title="lang.isZh() ? `` : ``"
+        :title="
+          lang.isZh()
+            ? `将 app 中的文件下载到本地文件夹`
+            : `Download files from app to local directory`
+        "
         @click=""
         class="flex min-w-max items-center space-x-1"
       >
@@ -59,15 +66,16 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <button
-        class="flex min-w-max items-center space-x-1 hover:underline"
-        @click=""
-      >
+      <button class="flex min-w-max items-center space-x-1" @click="">
         <div class="font-bold">{{ state.connection.name }}</div>
       </button>
 
       <button
-        :title="lang.isZh() ? `` : ``"
+        :title="
+          lang.isZh()
+            ? `将本地文件夹中的文件上传到 app`
+            : `Upload files from local directory to app`
+        "
         @click=""
         class="flex min-w-max items-center space-x-1"
       >
@@ -80,7 +88,11 @@ const lang = useGlobalLang()
       </button>
 
       <button
-        :title="lang.isZh() ? `` : ``"
+        :title="
+          lang.isZh()
+            ? `将 app 中的文件保存到云端`
+            : `Save files from app to cloud`
+        "
         @click=""
         class="flex min-w-max items-center space-x-1"
       >
