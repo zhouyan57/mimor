@@ -1,10 +1,11 @@
 # author -- manual file sync
 
-[author] `State` has `connection`
-[author] `AuthorSelfHead` -- show download and upload only when there is a `connection`
+[author] `AuthorSelfHead` -- connect to local directory
 [author] `AuthorSelfHead` -- show `connection` info
 [author] `AuthorSelfHead` -- refresh
-[author] `AuthorSelfHead` -- connect to local directory
+[author] `AuthorSelfHead` -- download
+[author] `AuthorSelfHead` -- upload
+[author] `AuthorSelfHead` -- save
 
 # recall -- in many timelines
 

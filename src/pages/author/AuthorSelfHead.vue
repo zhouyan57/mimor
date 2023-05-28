@@ -44,43 +44,45 @@ const lang = useGlobalLang()
       </Lang>
     </button>
 
-    <button
-      :title="lang.isZh() ? `` : ``"
-      @click=""
-      class="flex min-w-max items-center space-x-1"
-    >
-      <ArrowDownTrayIcon class="h-5 w-5" />
+    <template v-if="state.connection">
+      <button
+        :title="lang.isZh() ? `` : ``"
+        @click=""
+        class="flex min-w-max items-center space-x-1"
+      >
+        <ArrowDownTrayIcon class="h-5 w-5" />
 
-      <Lang>
-        <template #zh>下载</template>
-        <template #en>Download</template>
-      </Lang>
-    </button>
+        <Lang>
+          <template #zh>下载</template>
+          <template #en>Download</template>
+        </Lang>
+      </button>
 
-    <button
-      :title="lang.isZh() ? `` : ``"
-      @click=""
-      class="flex min-w-max items-center space-x-1"
-    >
-      <ArrowUpTrayIcon class="h-5 w-5" />
+      <button
+        :title="lang.isZh() ? `` : ``"
+        @click=""
+        class="flex min-w-max items-center space-x-1"
+      >
+        <ArrowUpTrayIcon class="h-5 w-5" />
 
-      <Lang>
-        <template #zh>上传</template>
-        <template #en>Upload</template>
-      </Lang>
-    </button>
+        <Lang>
+          <template #zh>上传</template>
+          <template #en>Upload</template>
+        </Lang>
+      </button>
 
-    <button
-      :title="lang.isZh() ? `` : ``"
-      @click=""
-      class="flex min-w-max items-center space-x-1"
-    >
-      <PaperAirplaneIcon class="h-5 w-5" />
+      <button
+        :title="lang.isZh() ? `` : ``"
+        @click=""
+        class="flex min-w-max items-center space-x-1"
+      >
+        <PaperAirplaneIcon class="h-5 w-5" />
 
-      <Lang>
-        <template #zh>保存</template>
-        <template #en>Save</template>
-      </Lang>
-    </button>
+        <Lang>
+          <template #zh>保存</template>
+          <template #en>Save</template>
+        </Lang>
+      </button>
+    </template>
   </div>
 </template>
