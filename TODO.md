@@ -1,6 +1,6 @@
 # author -- manual file sync
 
-[author] `AuthorSelfHead`
+[author] `AuthorSelfHead` -- connect to local directory
 
 # recall -- in many timelines
 
