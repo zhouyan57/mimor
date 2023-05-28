@@ -23,9 +23,11 @@ const state = stateReactive(props.state)
     </Head>
 
     <div class="flex h-full flex-col">
-      <AuthorSelfHead :state="state" />
+      <div class="flex flex-col px-3 pt-2 text-xl">
+        <AuthorSelfHead :state="state" />
+      </div>
 
-      <div class="flex flex-col px-3 py-3 text-xl">
+      <div class="flex flex-col px-3 py-2 text-xl">
         <AuthorEditor class="max-w-[47rem]" :state="state" />
       </div>
 
