@@ -17,7 +17,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex space-x-4 text-base">
+  <div class="flex space-x-3 text-base">
     <button
       class="flex max-w-fit space-x-1"
       @click="stateEntryDeleteAfterConfirming(state, entry)"

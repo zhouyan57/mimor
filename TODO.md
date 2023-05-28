@@ -1,5 +1,8 @@
 # author -- manual file sync
 
+[author] `AuthorSelfHead` -- show connect only when file system is supported
+[author] `AuthorSelfHead` -- `State` has `connection`
+[author] `AuthorSelfHead` -- refresh
 [author] `AuthorSelfHead` -- connect to local directory
 
 # recall -- in many timelines
