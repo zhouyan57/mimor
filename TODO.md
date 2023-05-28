@@ -2,6 +2,8 @@
 
 [author] `AuthorSelfHead` -- show connect only when file system is supported
 [author] `AuthorSelfHead` -- `State` has `connection`
+[author] `AuthorSelfHead` -- show download and upload only when there is a `connection`
+[author] `AuthorSelfHead` -- show `connection` info
 [author] `AuthorSelfHead` -- refresh
 [author] `AuthorSelfHead` -- connect to local directory
 
