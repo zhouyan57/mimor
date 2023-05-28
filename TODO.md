@@ -1,10 +1,10 @@
 # author -- manual file sync
 
-[author] `AuthorSelfHead` -- show `connection` info
 [author] `AuthorSelfHead` -- refresh
 [author] `AuthorSelfHead` -- download
 [author] `AuthorSelfHead` -- upload
 [author] `AuthorSelfHead` -- save
+[author] `AuthorSelfHead` -- click connection info show details
 
 # recall -- in many timelines
 

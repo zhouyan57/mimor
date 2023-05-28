@@ -59,8 +59,11 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <button class="flex min-w-max items-center space-x-1">
-        <div>TODO</div>
+      <button
+        class="flex min-w-max items-center space-x-1 hover:underline"
+        @click=""
+      >
+        <div class="font-bold">{{ state.connection.name }}</div>
       </button>
 
       <button

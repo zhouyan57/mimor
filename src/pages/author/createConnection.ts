@@ -5,5 +5,6 @@ export function createConnection(
 ): Connection {
   return {
     handle,
+    name: handle.name,
   }
 }
