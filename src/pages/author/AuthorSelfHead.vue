@@ -9,6 +9,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
+import { stateConnect } from './stateConnect'
 
 defineProps<{ state: State }>()
 
@@ -32,8 +33,8 @@ const lang = useGlobalLang()
 
     <button
       v-if="state.isFileSystemAccessSupported"
-      :title="lang.isZh() ? `` : ``"
-      @click=""
+      :title="lang.isZh() ? `连接本地文件夹` : `Connect to local directory`"
+      @click="stateConnect(state)"
       class="flex min-w-max items-center space-x-1"
     >
       <ArrowsUpDownIcon class="h-5 w-5" />
