@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import OnMounted from '../utils/OnMounted.vue'
 import NoteEditor from './NoteEditor.vue'
 import NoteHead from './NoteHead.vue'
 import { State } from './State'
@@ -43,6 +44,14 @@ watch(
 
 <template>
   <div ref="rootElement" class="flex h-full flex-col bg-white">
+    <OnMounted
+      :effect="
+        () => {
+          $emit('loaded')
+        }
+      "
+    />
+
     <NoteHead class="border-x border-t border-black" :state="state" />
     <NoteEditor
       class="border-x border-b border-black"

@@ -1,4 +1,3 @@
-[note] emit `loaded`
 [author] `connection.isDownloading`
 [mimor] take optional `text` as a prop
 [note] take optional `text` as a prop
