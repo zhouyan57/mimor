@@ -32,7 +32,12 @@ watch(
 <template>
   <div>
     <MimorMeta v-if="state" :state="state" />
-    <MimorLoaded v-if="state" :state="state" @update="$emit('update', state)" />
+    <MimorLoaded
+      v-if="state"
+      :state="state"
+      @update="$emit('update', state)"
+      @loaded="$emit('loaded', state)"
+    />
     <MimorLoading v-else :options="{ src, isEditable }" />
   </div>
 </template>

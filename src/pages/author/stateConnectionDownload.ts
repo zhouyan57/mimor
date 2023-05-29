@@ -20,14 +20,16 @@ async function stateConnectionDownloadEntry(
   connection: Connection,
   entry: Entry,
 ): Promise<void> {
-  const parsed = pathParse(entry.path)
-  console.log(parsed)
+  if (entry.text) {
+    const parsed = pathParse(entry.path)
+    console.log(parsed.file)
+    const fileHandle = await connection.handle.getFileHandle(parsed.file, {
+      create: true,
+    })
 
-  const fileHandle = await connection.handle.getFileHandle(parsed.file, {
-    create: true,
-  })
+    const writable = await fileHandle.createWritable()
 
-  const writable = await fileHandle.createWritable()
-  // await writable.write(entry.text)
-  await writable.close()
+    await writable.write(entry.text)
+    await writable.close()
+  }
 }

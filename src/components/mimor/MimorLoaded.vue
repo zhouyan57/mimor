@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import OnMounted from '../utils/OnMounted.vue'
 import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
@@ -49,6 +50,14 @@ watch(
     class="flex h-full flex-col"
     :class="{ 'border border-black bg-white': state.theme.name === 'white' }"
   >
+    <OnMounted
+      :effect="
+        () => {
+          $emit('loaded')
+        }
+      "
+    />
+
     <template v-if="state.program">
       <MimorKindEditor
         v-show="state.kind === 'Editor'"

@@ -1,6 +1,8 @@
+[mimor] take optional `text` as a prop
+
 # author -- manual file sync
 
-[author] `Entry` has optional `text`
+[author] `AuthorSelfEntryNote` -- load `Entry`'s optional `text`
 [author] `AuthorSelfHead` -- `stateConnectionDownload`
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 [author] `AuthorSelfHead` -- `stateSave`

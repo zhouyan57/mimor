@@ -3,6 +3,7 @@ export type Entry = {
   isTogglingVisibility?: boolean
   isDeleting?: boolean
   path: string
+  text?: string
   createdAt: number
   updatedAt: number
 }
