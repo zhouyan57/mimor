@@ -62,9 +62,19 @@ const lang = useGlobalLang()
             ? `将 app 中的文件下载到本地文件夹`
             : `Download files from app to local directory`
         "
+        :disabled="state.connection.isDownloading"
         @click="stateConnectionDownload(state, state.connection)"
       >
-        <ArrowDownTrayIcon class="h-5 w-5" />
+        <ArrowDownTrayIcon
+          v-if="!state.connection.isDownloading"
+          class="h-5 w-5"
+        />
+
+        <ArrowPathIcon
+          v-if="state.connection.isDownloading"
+          class="h-5 w-5"
+          :class="{ 'animate-spin': state.connection.isDownloading }"
+        />
 
         <Lang>
           <template #zh>下载</template>

@@ -9,11 +9,15 @@ export async function stateConnectionDownload(
   state: State,
   connection: Connection,
 ): Promise<void> {
+  connection.isDownloading = true
+
   await promiseAllFulfilled(
     state.entries.map((entry) =>
       stateConnectionDownloadEntry(state, connection, entry),
     ),
   )
+
+  connection.isDownloading = false
 }
 
 async function stateConnectionDownloadEntry(
