@@ -1,3 +1,5 @@
+import { stringTrimStart } from '../../utils/stringTrimStart'
+
 export function pathParse(path: string): {
   isPublic: boolean
   username: string
@@ -6,6 +8,8 @@ export function pathParse(path: string): {
   // Examples:
   // - users/xieyuheng/contents/debug.mimor
   // - users/xieyuheng/public/contents/debug.mimor
+
+  path = stringTrimStart(path, '/')
 
   const parts = path.split('/')
   const username = parts[1]
