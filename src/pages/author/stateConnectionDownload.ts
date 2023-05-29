@@ -22,13 +22,23 @@ async function stateConnectionDownloadEntry(
 ): Promise<void> {
   if (entry.text) {
     const parsed = pathParse(entry.path)
-    console.log(parsed.file)
+    const parts = entry.path.split('/')
+
+    // if (parts.length > 1) {
+    //   const directory = parts.slice(0, parts.length - 1).join('/')
+    //   const directoryHandle = await connection.handle.getDirectoryHandle(
+    //     directory,
+    //     {
+    //       create: true,
+    //     },
+    //   )
+    // }
+
     const fileHandle = await connection.handle.getFileHandle(parsed.file, {
       create: true,
     })
 
     const writable = await fileHandle.createWritable()
-
     await writable.write(entry.text)
     await writable.close()
   }

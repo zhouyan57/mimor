@@ -3,6 +3,9 @@
 # author -- manual file sync
 
 [author] `AuthorSelfEntryNote` -- load `Entry`'s optional `text`
+
+[author] `connection.isDownloading`
+
 [author] `AuthorSelfHead` -- `stateConnectionDownload`
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 [author] `AuthorSelfHead` -- `stateSave`
