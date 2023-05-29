@@ -19,7 +19,7 @@ export async function stateEditorSave(
     return
   }
 
-  const path = `/users/${state.username}${targetPath}`
+  const path = `users/${state.username}${targetPath}`
 
   const response = await fetch(new URL(`${path}?kind=file`, url), {
     method: 'POST',
@@ -34,7 +34,7 @@ export async function stateEditorSave(
 
     state.entries.push({
       isPublic: state.editor.isPublic,
-      path: targetPath,
+      path,
       createdAt: now,
       updatedAt: now,
     })
