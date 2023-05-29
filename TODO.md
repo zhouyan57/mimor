@@ -1,12 +1,7 @@
-[mimor] take optional `text` as a prop
-
-# author -- manual file sync
-
-[author] `AuthorSelfEntryNote` -- load `Entry`'s optional `text`
-
+[note] emit `loaded`
 [author] `connection.isDownloading`
-
-[author] `AuthorSelfHead` -- `stateConnectionDownload`
+[mimor] take optional `text` as a prop
+[note] take optional `text` as a prop
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 [author] `AuthorSelfHead` -- `stateSave`
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
