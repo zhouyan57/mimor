@@ -9,7 +9,7 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
   const token = useGlobalToken()
 
   const response = await fetch(
-    new URL(`${directory}?kind=directory&recursive`, url),
+    new URL(`${directory}?kind=directory&recursive&page=1&size=10000`, url),
     {
       method: 'GET',
       headers: {
