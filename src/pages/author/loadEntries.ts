@@ -21,12 +21,11 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
   const pathEntries: Array<PathEntry> = await response.json()
 
   return pathEntries
-    .filter<PathEntryFile>((pathEntry): pathEntry is PathEntryFile => {
-      return (
+    .filter<PathEntryFile>(
+      (pathEntry): pathEntry is PathEntryFile =>
         pathEntry.kind === 'File' &&
-        (pathEntry.path.endsWith('.mimor') || pathEntry.path.endsWith('.md'))
-      )
-    })
+        (pathEntry.path.endsWith('.mimor') || pathEntry.path.endsWith('.md')),
+    )
     .map((pathEntry) => ({
       isPublic: pathParse(pathEntry.path).isPublic,
       ...pathEntry,

@@ -10,6 +10,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
+import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateRefresh } from './stateRefresh'
 
 defineProps<{ state: State }>()
@@ -61,7 +62,7 @@ const lang = useGlobalLang()
             ? `将 app 中的文件下载到本地文件夹`
             : `Download files from app to local directory`
         "
-        @click=""
+        @click="stateConnectionDownload(state, state.connection)"
       >
         <ArrowDownTrayIcon class="h-5 w-5" />
 

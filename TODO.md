@@ -1,8 +1,9 @@
 # author -- manual file sync
 
-[author] `AuthorSelfHead` -- download
-[author] `AuthorSelfHead` -- upload
-[author] `AuthorSelfHead` -- save
+[author] `Entry` has optional `text`
+[author] `AuthorSelfHead` -- `stateConnectionDownload`
+[author] `AuthorSelfHead` -- `stateConnectionUpload`
+[author] `AuthorSelfHead` -- `stateSave`
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
 # recall -- in many timelines

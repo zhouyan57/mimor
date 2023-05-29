@@ -8,8 +8,6 @@ export async function stateConnect(state: State): Promise<void> {
   })
 
   await ensurePermission(directoryHandle)
-
   const connection = createConnection(directoryHandle)
-
   state.connection = connection
 }
