@@ -7,8 +7,12 @@ export async function stateEntrySave(
   state: State,
   entry: Entry,
 ): Promise<void> {
+  const who = 'stateEntrySave'
+
   const { url } = useGlobalBackend()
   const token = useGlobalToken()
+
+  console.log({ who, entry })
 
   const response = await fetch(new URL(`${entry.path}?kind=file`, url), {
     method: 'PUT',
