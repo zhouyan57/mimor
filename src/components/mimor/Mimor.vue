@@ -8,7 +8,6 @@ import { loadState } from './loadState'
 
 const props = defineProps<{
   src: string
-  text?: string
   withMetaThemeColor?: boolean
   isEditable?: boolean
 }>()
@@ -18,17 +17,14 @@ const state = ref<State | undefined>(undefined)
 watch(
   () => props.src,
   async () => {
-    state.value = await loadState(props)
+    state.value = await loadState({
+      src: props.src,
+      withMetaThemeColor: props.withMetaThemeColor,
+      isEditable: props.isEditable,
+    })
   },
   {
     immediate: true,
-  },
-)
-
-watch(
-  () => props.text,
-  async () => {
-    state.value = await loadState(props)
   },
 )
 </script>

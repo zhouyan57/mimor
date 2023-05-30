@@ -5,27 +5,23 @@ import { createState } from './createState'
 
 export interface StateOptions {
   src: string
-  text?: string
   withMetaThemeColor?: boolean
   isEditable?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  // We should not use cache and refresh, when the text is given.
-  if (options.text) {
-    return createState({ ...options, text: options.text })
-  }
+  const { src } = options
 
   const store = Kv.createStore('mimor.app/<mimor>', 'cache')
-  const cached = await Kv.get(options.src, store)
+  const cached = await Kv.get(src, store)
   if (cached) {
-    const state = createState({ ...cached, ...options })
+    const state = createState({ ...options, ...cached })
     state.isLoadedFromCache = true
     return state
   } else {
-    const text = options.text || (await loadContent(options.src))
+    const text = await loadContent(src)
     const cached = { text }
-    await Kv.set(options.src, cached, store)
+    await Kv.set(src, cached, store)
     const state = createState({ ...options, text })
     return state
   }
