@@ -11,6 +11,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
 import { stateConnectionDownload } from './stateConnectionDownload'
+import { stateConnectionUpload } from './stateConnectionUpload'
 import { stateRefresh } from './stateRefresh'
 
 defineProps<{ state: State }>()
@@ -72,8 +73,7 @@ const lang = useGlobalLang()
 
         <ArrowPathIcon
           v-if="state.connection.isDownloading"
-          class="h-5 w-5"
-          :class="{ 'animate-spin': state.connection.isDownloading }"
+          class="h-5 w-5 animate-spin"
         />
 
         <Lang>
@@ -93,9 +93,15 @@ const lang = useGlobalLang()
             ? `将本地文件夹中的文件上传到 app`
             : `Upload files from local directory to app`
         "
-        @click=""
+        :disabled="state.connection.isUploading"
+        @click="stateConnectionUpload(state, state.connection)"
       >
-        <ArrowUpTrayIcon class="h-5 w-5" />
+        <ArrowUpTrayIcon v-if="!state.connection.isUploading" class="h-5 w-5" />
+
+        <ArrowPathIcon
+          v-if="state.connection.isUploading"
+          class="h-5 w-5 animate-spin"
+        />
 
         <Lang>
           <template #zh>上传</template>

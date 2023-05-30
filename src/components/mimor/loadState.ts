@@ -11,6 +11,7 @@ export interface StateOptions {
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
+  // We should not use cache and refresh, when text is given.
   if (options.text) {
     return createState({ ...options, text: options.text })
   }
