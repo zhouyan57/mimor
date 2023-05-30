@@ -1,3 +1,5 @@
+[author] `AuthorSelfHead` -- show `latestDirectoryHandle`
+
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
 # recall -- in many timelines

@@ -14,4 +14,5 @@ export type State = {
   connection?: Connection
   isRefreshing?: boolean
   isSavingEntries?: boolean
+  latestDirectoryHandle?: FileSystemDirectoryHandle
 }
