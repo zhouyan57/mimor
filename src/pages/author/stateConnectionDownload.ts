@@ -25,8 +25,22 @@ async function stateConnectionDownloadEntry(
   connection: Connection,
   entry: Entry,
 ): Promise<void> {
+  const who = 'stateConnectionDownloadEntry'
+
   if (entry.text) {
     const parsed = pathParse(entry.path)
+    console.log({
+      who,
+      message: 'writing entry',
+      file: parsed.file,
+      entry: { ...entry },
+    })
     await fsa.write(connection.handle, parsed.file, entry.text)
+  } else {
+    console.log({
+      who,
+      message: 'empty entry',
+      entry: { ...entry },
+    })
   }
 }
