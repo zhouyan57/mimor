@@ -1,4 +1,4 @@
-import { writeFile } from '../../utils/fsa/writeFile'
+import { write } from '../../utils/fsa/write'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { Connection } from './Connection'
 import { Entry } from './Entry'
@@ -27,6 +27,6 @@ async function stateConnectionDownloadEntry(
 ): Promise<void> {
   if (entry.text) {
     const parsed = pathParse(entry.path)
-    await writeFile(connection.handle, parsed.file, entry.text)
+    await write(connection.handle, parsed.file, entry.text)
   }
 }

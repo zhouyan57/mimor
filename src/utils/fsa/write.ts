@@ -1,6 +1,6 @@
 import { mkdir } from './mkdir'
 
-export async function writeFile(
+export async function write(
   root: FileSystemDirectoryHandle,
   path: string,
   text: string,
