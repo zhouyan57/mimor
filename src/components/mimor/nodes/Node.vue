@@ -26,7 +26,7 @@ const route = isElement(props.node)
 
   <div v-else-if="route === undefined">
     <div class="text-xl font-bold text-red-500">Unknown node:</div>
-    <pre class="overflow-auto text-red-500">{{ node }}</pre>
+    <pre class="overflow-auto text-base text-red-500">{{ node }}</pre>
   </div>
 
   <component

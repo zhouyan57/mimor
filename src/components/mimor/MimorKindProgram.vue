@@ -16,7 +16,7 @@ const route = routerFind(props.program.router, props.element)
 <template>
   <div v-if="route === undefined">
     <div class="text-xl font-bold text-red-500">Unknown statement:</div>
-    <pre class="overflow-auto text-red-500">{{ element }}</pre>
+    <pre class="overflow-auto text-base text-red-500">{{ element }}</pre>
   </div>
 
   <component
