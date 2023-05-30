@@ -27,6 +27,7 @@ const window = useWindow()
           who: 'AuthorSelfEntryMimor',
           message: 'update',
           entry,
+          state,
         })
       }
     "
@@ -37,6 +38,7 @@ const window = useWindow()
           who: 'AuthorSelfEntryMimor',
           message: 'loaded',
           entry,
+          state,
         })
       }
     "
