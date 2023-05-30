@@ -1,5 +1,4 @@
 `utils/fsa/read`
-`utils/fsa/list`
 
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 
