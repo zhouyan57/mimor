@@ -5,7 +5,10 @@ import MimorLoading from './MimorLoading.vue'
 import { State } from './State'
 import { loadState } from './loadState'
 
-const props = defineProps<{ src: string }>()
+const props = defineProps<{
+  src: string
+  text?: string
+}>()
 
 const state = ref<State | undefined>(undefined)
 
@@ -14,10 +17,21 @@ watch(
   async () => {
     state.value = await loadState({
       src: props.src,
+      text: props.text,
     })
   },
   {
     immediate: true,
+  },
+)
+
+watch(
+  () => props.text,
+  async () => {
+    state.value = await loadState({
+      src: props.src,
+      text: props.text,
+    })
   },
 )
 </script>
