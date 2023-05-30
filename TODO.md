@@ -1,4 +1,6 @@
-[note] take optional `text` as a prop
+[mimor] pass props instead of options
+
+[note] pass props instead of options
 
 [author] `AuthorSelfHead` -- `stateSave`
 

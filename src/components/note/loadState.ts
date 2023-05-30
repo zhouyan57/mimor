@@ -5,22 +5,25 @@ import { createState } from './createState'
 
 export interface StateOptions {
   src: string
+  text?: string
   isEditable?: boolean
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src } = options
+  if (options.text) {
+    return createState({ ...options, text: options.text })
+  }
 
   const store = Kv.createStore('mimor.app/<note>', 'cache')
-  const cached = await Kv.get(src, store)
+  const cached = await Kv.get(options.src, store)
   if (cached) {
     const state = createState({ ...options, ...cached })
     state.isLoadedFromCache = true
     return state
   } else {
-    const text = await loadContent(src)
+    const text = await loadContent(options.src)
     const cached = { text }
-    await Kv.set(src, cached, store)
+    await Kv.set(options.src, cached, store)
     const state = createState({ ...options, text })
     return state
   }

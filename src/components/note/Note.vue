@@ -7,6 +7,7 @@ import { loadState } from './loadState'
 
 const props = defineProps<{
   src: string
+  text?: string
   isEditable?: boolean
 }>()
 
@@ -17,11 +18,23 @@ watch(
   async () => {
     state.value = await loadState({
       src: props.src,
+      text: props.text,
       isEditable: props.isEditable,
     })
   },
   {
     immediate: true,
+  },
+)
+
+watch(
+  () => props.text,
+  async () => {
+    state.value = await loadState({
+      src: props.src,
+      text: props.text,
+      isEditable: props.isEditable,
+    })
   },
 )
 </script>
