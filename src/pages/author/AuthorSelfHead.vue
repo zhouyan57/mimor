@@ -5,11 +5,13 @@ import {
   ArrowUpTrayIcon,
   ArrowsUpDownIcon,
   PaperAirplaneIcon,
+  ReceiptRefundIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
+import { stateConnectDirectoryHandle } from './stateConnectLatestDirectoryHandle'
 import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateConnectionUpload } from './stateConnectionUpload'
 import { stateRefresh } from './stateRefresh'
@@ -54,6 +56,21 @@ const lang = useGlobalLang()
         <template #zh>连接本地文件夹</template>
         <template #en>Connect local directory</template>
       </Lang>
+    </button>
+
+    <button
+      v-if="state.latestDirectoryHandle && !state.connection"
+      class="flex min-w-max items-center space-x-1"
+      @click="stateConnectDirectoryHandle(state, state.latestDirectoryHandle)"
+    >
+      <ReceiptRefundIcon class="h-5 w-5" />
+
+      <Lang>
+        <template #zh>重新连接：</template>
+        <template #en>Reconnect to: </template>
+      </Lang>
+
+      <div class="font-bold">{{ state.latestDirectoryHandle.name }}</div>
     </button>
 
     <template v-if="state.connection">
