@@ -1,4 +1,3 @@
-add `utils/fsa/index.ts`
 `utils/fsa/read`
 `utils/fsa/list`
 
