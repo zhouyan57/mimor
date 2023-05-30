@@ -1,5 +1,4 @@
-`utils/fsa/open`
-`utils/fsa/read` -- use `open` instead of `mkdir`
+`utils/fsa/read` -- use `openDirectory` instead of `mkdir`
 
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 
