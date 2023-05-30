@@ -1,5 +1,3 @@
-`utils/fsa/read` -- use `openDirectory` instead of `mkdir`
-
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 
 [note] take optional `text` as a prop

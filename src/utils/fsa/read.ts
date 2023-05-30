@@ -1,4 +1,4 @@
-import { mkdir } from './mkdir'
+import { openDirectory } from './openDirectory'
 
 export async function read(
   root: FileSystemDirectoryHandle,
@@ -11,7 +11,7 @@ export async function read(
   const file = parts[parts.length - 1]
 
   if (directory) {
-    parent = await mkdir(root, directory)
+    parent = await openDirectory(root, directory)
   }
 
   const fileHandle = await parent.getFileHandle(file)
