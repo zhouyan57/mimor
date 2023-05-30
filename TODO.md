@@ -1,4 +1,4 @@
-[author] `AuthorSelfHead` -- `stateSave`
+[author] `AuthorSelfHead` -- `stateSaveAllEntries`
 
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
