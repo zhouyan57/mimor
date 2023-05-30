@@ -41,7 +41,7 @@ watch(
             enter-to-class="transform transform-gpu opacity-100"
           >
             <Nodes
-              v-show="remembering.revealed"
+              v-if="remembering.revealed"
               :state="state"
               :program="program"
               :nodes="child.children"

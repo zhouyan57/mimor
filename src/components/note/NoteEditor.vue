@@ -34,7 +34,7 @@ async function submit(state: State) {
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform translate-y-8 opacity-0"
     >
-      <NoteEditorToolbar v-show="state.isEditing" :state="state" />
+      <NoteEditorToolbar v-if="state.isEditing" :state="state" />
     </Transition>
   </form>
 </template>

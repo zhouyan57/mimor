@@ -60,7 +60,7 @@ watch(
 
     <template v-if="state.program">
       <MimorKindEditor
-        v-show="state.kind === 'Editor'"
+        v-if="state.kind === 'Editor'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :state="state"
@@ -69,7 +69,7 @@ watch(
       />
 
       <MimorKindProgram
-        v-show="state.kind === 'Program'"
+        v-if="state.kind === 'Program'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :key="state.program.pointer"

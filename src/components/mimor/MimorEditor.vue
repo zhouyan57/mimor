@@ -24,6 +24,6 @@ async function submit(state: State) {
     }"
   >
     <MimorEditorTextarea :state="state" />
-    <MimorEditorToolbar v-show="state.isEditable" :state="state" />
+    <MimorEditorToolbar v-if="state.isEditable" :state="state" />
   </form>
 </template>
