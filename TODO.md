@@ -1,3 +1,9 @@
+[author] `stateConnectionSave` we should only save that are modified
+
+[author] after upload, move modified to the top
+
+[author] after upload, each modified has a save button
+
 `components/popover` -- or another name
 
 - learn from alpinejs
@@ -13,6 +19,8 @@ quit using headlessui
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
 - use our own UI components
+
+[author] `AuthorSelfHead` -- connection upload -- support override mode
 
 # recall -- in many timelines
 
