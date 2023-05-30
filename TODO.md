@@ -1,8 +1,9 @@
-[mimor] take optional `text` as a prop
-[note] take optional `text` as a prop
+[note] take optional `text` as a prop -- and watch `text` for change
 [author] `AuthorSelfHead` -- `stateConnectionUpload`
 [author] `AuthorSelfHead` -- `stateSave`
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
+
+should not delete token when the error is timeout
 
 # recall -- in many timelines
 
