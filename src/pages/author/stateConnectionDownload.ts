@@ -33,14 +33,14 @@ async function stateConnectionDownloadEntry(
       who,
       message: 'writing entry',
       file: parsed.file,
-      entry: { ...entry },
+      entry,
     })
     await fsa.write(connection.handle, parsed.file, entry.text)
   } else {
     console.log({
       who,
       message: 'empty entry',
-      entry: { ...entry },
+      entry,
     })
   }
 }
