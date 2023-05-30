@@ -15,17 +15,10 @@ const props = defineProps<{
 
 const state = ref<State | undefined>(undefined)
 
-// We should not passing props as options.
-
 watch(
   () => props.src,
   async () => {
-    state.value = await loadState({
-      src: props.src,
-      text: props.text,
-      withMetaThemeColor: props.withMetaThemeColor,
-      isEditable: props.isEditable,
-    })
+    state.value = await loadState(props)
   },
   {
     immediate: true,
@@ -35,12 +28,7 @@ watch(
 watch(
   () => props.text,
   async () => {
-    state.value = await loadState({
-      src: props.src,
-      text: props.text,
-      withMetaThemeColor: props.withMetaThemeColor,
-      isEditable: props.isEditable,
-    })
+    state.value = await loadState(props)
   },
 )
 </script>
