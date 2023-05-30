@@ -9,7 +9,7 @@ export async function contentSave(src: string, text: string): Promise<void> {
     headers.authorization = token.authorization
   }
 
-  await fetch(contentURL(src), {
+  await fetch(new URL('?kind=file', contentURL(src)), {
     method: 'PUT',
     headers,
     body: text,
