@@ -1,6 +1,7 @@
 [note] take optional `text` as a prop
 
 [author] `AuthorSelfHead` -- `stateSave`
+
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
 
 # recall -- in many timelines

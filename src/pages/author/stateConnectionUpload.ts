@@ -2,6 +2,7 @@ import * as fsa from '../../utils/fsa'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { Connection } from './Connection'
 import { State } from './State'
+import { pathFormat } from './pathFormat'
 
 export async function stateConnectionUpload(
   state: State,
@@ -28,7 +29,11 @@ export async function stateConnectionUpload(
     } else {
       state.entries.push({
         isPublic: true,
-        path,
+        path: pathFormat({
+          isPublic: true,
+          username: state.username,
+          file: path,
+        }),
         text,
         createdAt: Date.now(),
         updatedAt: Date.now(),
