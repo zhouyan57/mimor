@@ -11,19 +11,21 @@ export interface StateOptions {
 }
 
 export async function loadState(options: StateOptions): Promise<State> {
-  const { src } = options
+  // We should not use cache and refresh, when the text is given.
+  if (options.text) {
+    return createState({ ...options, text: options.text })
+  }
 
   const store = Kv.createStore('mimor.app/<mimor>', 'cache')
-  const cached = await Kv.get(src, store)
+  const cached = await Kv.get(options.src, store)
   if (cached) {
-    const state = createState({ ...options, ...cached })
+    const state = createState({ ...cached, ...options })
     state.isLoadedFromCache = true
-    if (options.text) state.text = options.text
     return state
   } else {
-    const text = options.text || (await loadContent(src))
+    const text = options.text || (await loadContent(options.src))
     const cached = { text }
-    await Kv.set(src, cached, store)
+    await Kv.set(options.src, cached, store)
     const state = createState({ ...options, text })
     return state
   }
