@@ -1,4 +1,18 @@
+`components/popover` -- or another name
+
+- learn from alpinejs
+
+- replace `patterns-of-web-user-interface`
+
+  - maybe do a project called `x-ui`
+
+`components/listbox` -- or another name
+
+quit using headlessui
+
 [author] `AuthorSelfHead` -- hover the connection info to show details and help graph
+
+- use our own UI components
 
 # recall -- in many timelines
 
