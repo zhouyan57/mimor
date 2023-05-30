@@ -13,6 +13,7 @@ import { stateConnect } from './stateConnect'
 import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateConnectionUpload } from './stateConnectionUpload'
 import { stateRefresh } from './stateRefresh'
+import { stateSaveEntries } from './stateSaveEntries'
 
 defineProps<{ state: State }>()
 
@@ -116,9 +117,14 @@ const lang = useGlobalLang()
             ? `将 app 中的文件保存到云端`
             : `Save files from app to cloud`
         "
-        @click=""
+        @click="stateSaveEntries(state)"
       >
-        <PaperAirplaneIcon class="h-5 w-5" />
+        <PaperAirplaneIcon v-if="!state.isSavingEntries" class="h-5 w-5" />
+
+        <ArrowPathIcon
+          v-if="state.isSavingEntries"
+          class="h-5 w-5 animate-spin"
+        />
 
         <Lang>
           <template #zh>保存</template>
