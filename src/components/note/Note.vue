@@ -16,11 +16,7 @@ const state = ref<State | undefined>(undefined)
 watch(
   () => props.src,
   async () => {
-    state.value = await loadState({
-      src: props.src,
-      text: props.text,
-      isEditable: props.isEditable,
-    })
+    state.value = await loadState(props)
   },
   {
     immediate: true,
@@ -30,11 +26,7 @@ watch(
 watch(
   () => props.text,
   async () => {
-    state.value = await loadState({
-      src: props.src,
-      text: props.text,
-      isEditable: props.isEditable,
-    })
+    state.value = await loadState(props)
   },
 )
 </script>
