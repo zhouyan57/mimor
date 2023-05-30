@@ -28,6 +28,8 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
     )
     .map((pathEntry) => ({
       isPublic: pathParse(pathEntry.path).isPublic,
-      ...pathEntry,
+      path: pathEntry.path,
+      createdAt: pathEntry.createdAt,
+      updatedAt: pathEntry.updatedAt,
     }))
 }
