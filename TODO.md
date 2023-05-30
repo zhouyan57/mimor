@@ -1,5 +1,3 @@
-[author] `AuthorSelfHead` -- `stateConnectionUpload`
-
 [note] take optional `text` as a prop
 
 [author] `AuthorSelfHead` -- `stateSave`

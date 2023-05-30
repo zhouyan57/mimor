@@ -2,23 +2,25 @@ import { arrayFromAsyncIterable } from '../arrayFromAsyncIterable'
 import { promiseAllFulfilled } from '../promiseAllFulfilled'
 
 export async function list(
-  handle: FileSystemDirectoryHandle | FileSystemFileHandle,
+  handle: FileSystemDirectoryHandle,
 ): Promise<Array<string>> {
-  switch (handle.kind) {
-    case 'file': {
-      return []
-    }
+  const handles = await arrayFromAsyncIterable(handle.values())
 
-    case 'directory': {
-      const handles = await arrayFromAsyncIterable(handle.values())
+  const lists = await promiseAllFulfilled(
+    handles.map(async (handle) => {
+      switch (handle.kind) {
+        case 'file': {
+          return [handle.name]
+        }
 
-      const lists = await promiseAllFulfilled(
-        handles.map(async (handle) =>
-          (await list(handle)).map((path) => [handle.name, path].join('/')),
-        ),
-      )
+        case 'directory': {
+          return (await list(handle)).map((path) =>
+            [handle.name, path].join('/'),
+          )
+        }
+      }
+    }),
+  )
 
-      return lists.flatMap((list) => list)
-    }
-  }
+  return lists.flatMap((list) => list)
 }

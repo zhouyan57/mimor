@@ -15,6 +15,5 @@ export async function read(
   }
 
   const fileHandle = await parent.getFileHandle(file)
-
   return fileHandle.getFile()
 }
