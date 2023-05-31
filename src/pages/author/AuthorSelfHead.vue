@@ -128,16 +128,14 @@ const lang = useGlobalLang()
       </button>
 
       <button
+        v-if="state.entries.some((entry) => entry.isModified)"
         class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将 app 中的文件保存到云端`
             : `Save files from app to cloud`
         "
-        :disabled="
-          state.isSavingEntries ||
-          state.entries.every((entry) => !entry.isModified)
-        "
+        :disabled="state.isSavingEntries"
         @click="stateSaveEntries(state)"
       >
         <PaperAirplaneIcon v-if="!state.isSavingEntries" class="h-5 w-5" />
