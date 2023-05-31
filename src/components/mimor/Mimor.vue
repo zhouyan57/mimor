@@ -39,6 +39,7 @@ watch(
     <MimorLoaded
       v-if="state"
       :state="state"
+      :key="state.text"
       @update="$emit('update', state)"
       @loaded="$emit('loaded', state)"
     />

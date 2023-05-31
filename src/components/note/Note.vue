@@ -13,6 +13,8 @@ const props = defineProps<{
 
 const state = ref<State | undefined>(undefined)
 
+const who = 'Note'
+
 watch(
   () => props.src,
   async () => {
@@ -36,6 +38,7 @@ watch(
     <NoteLoaded
       v-if="state"
       :state="state"
+      :key="state.text"
       @update="$emit('update', state)"
       @loaded="$emit('loaded', state)"
     />
