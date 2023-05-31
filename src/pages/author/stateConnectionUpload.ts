@@ -8,6 +8,8 @@ export async function stateConnectionUpload(
   state: State,
   connection: Connection,
 ): Promise<void> {
+  const who = 'stateConnectionUpload'
+
   connection.isUploading = true
 
   const filePaths = (await fsa.list(connection.handle)).filter(
@@ -35,14 +37,17 @@ export async function stateConnectionUpload(
     if (found) {
       found.text = fileEntry.text
       found.updatedAt = fileEntry.updatedAt
+      console.log({ who, message: 'found old entry', found })
     } else {
-      state.entries.push({
+      const entry = {
         isPublic: true,
         path: fileEntry.path,
         text: fileEntry.text,
         createdAt: fileEntry.updatedAt,
         updatedAt: fileEntry.updatedAt,
-      })
+      }
+      state.entries.push(entry)
+      console.log({ who, message: 'create new entry', entry })
     }
   }
 
