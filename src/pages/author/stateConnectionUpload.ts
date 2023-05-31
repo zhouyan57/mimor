@@ -23,16 +23,18 @@ export async function stateConnectionUpload(
 function stateSaveFileEntry(state: State, fileEntry: FileEntry): void {
   const found = state.entries.find((entry) => entry.path === fileEntry.path)
   if (found) {
-    found.text = fileEntry.text
-    found.updatedAt = fileEntry.updatedAt
+    if (found.text !== fileEntry.text) {
+      found.text = fileEntry.text
+      found.updatedAt = fileEntry.updatedAt
+    }
   } else {
-    const entry = {
+    state.entries.push({
       isPublic: true,
+      isModified: true,
       path: fileEntry.path,
       text: fileEntry.text,
       createdAt: fileEntry.updatedAt,
       updatedAt: fileEntry.updatedAt,
-    }
-    state.entries.push(entry)
+    })
   }
 }

@@ -1,5 +1,3 @@
-[author] `stateConnectionSave` we should only save that are modified
-
 [author] after upload, move modified to the top
 
 [author] after upload, each modified has a save button

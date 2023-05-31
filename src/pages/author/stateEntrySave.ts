@@ -9,16 +9,20 @@ export async function stateEntrySave(
 ): Promise<void> {
   const who = 'stateEntrySave'
 
-  const { url } = useGlobalBackend()
-  const token = useGlobalToken()
+  if (entry.isModified) {
+    const { url } = useGlobalBackend()
+    const token = useGlobalToken()
 
-  console.log({ who, entry })
+    console.log({ who, entry })
 
-  const response = await fetch(new URL(`${entry.path}?kind=file`, url), {
-    method: 'PUT',
-    headers: {
-      authorization: token.authorization,
-    },
-    body: entry.text,
-  })
+    const response = await fetch(new URL(`${entry.path}?kind=file`, url), {
+      method: 'PUT',
+      headers: {
+        authorization: token.authorization,
+      },
+      body: entry.text,
+    })
+
+    entry.isModified = false
+  }
 }
