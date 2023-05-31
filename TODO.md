@@ -1,5 +1,3 @@
-[author] after upload, move modified to the top
-
 [author] after upload, each modified has a save button
 
 `components/popover` -- or another name

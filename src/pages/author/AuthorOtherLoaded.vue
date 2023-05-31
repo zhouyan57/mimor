@@ -26,8 +26,8 @@ const state = stateReactive(props.state)
       <AuthorOtherHead :state="state" />
 
       <AuthorOtherEntry
-        v-for="entry of stateFindEntries(state)"
-        :key="entry.path"
+        v-for="(entry, index) of stateFindEntries(state)"
+        :key="index"
         :state="state"
         :entry="entry"
       />
