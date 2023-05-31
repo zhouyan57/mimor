@@ -9,18 +9,13 @@ export function stateFileEntrySave(state: State, fileEntry: FileEntry): void {
     if (found.text !== fileEntry.text) {
       found.text = fileEntry.text
       found.updatedAt = fileEntry.updatedAt
+      found.isModified = true
 
       console.log({
         who,
         message: 'update existing entry by fileEntry',
         entry: found,
         fileEntry,
-      })
-    } else {
-      console.log({
-        who,
-        message: 'the text of existing entry is not modified',
-        entry: found,
       })
     }
   } else {
