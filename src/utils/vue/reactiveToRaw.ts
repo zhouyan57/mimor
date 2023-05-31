@@ -8,15 +8,25 @@ export function reactiveToRaw<T extends Record<string, any>>(sourceObj: T): T {
     if (Array.isArray(input)) {
       return input.map((item) => objectIterator(item))
     }
+
     if (isRef(input) || isReactive(input) || isProxy(input)) {
       return objectIterator(toRaw(input))
     }
+
+    if (
+      input instanceof FileSystemFileHandle ||
+      input instanceof FileSystemDirectoryHandle
+    ) {
+      return input
+    }
+
     if (input && typeof input === 'object') {
       return Object.keys(input).reduce((acc, key) => {
         acc[key as keyof typeof acc] = objectIterator(input[key])
         return acc
       }, {} as T)
     }
+
     return input
   }
 
