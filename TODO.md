@@ -1,3 +1,7 @@
+# components
+
+[maybe] quit using headlessui
+
 `components/popover` -- or another name
 
 - learn from alpinejs
@@ -8,13 +12,18 @@
 
 `components/listbox` -- or another name
 
-quit using headlessui
+# author -- sync with local directory
 
-[author] `AuthorSelfHead` -- hover the connection info to show details and help graph
+[author] `AuthorSelfHead` -- hover the connection info to show `AuthorConnectionInfo`
 
 - use our own UI components
 
-[author] `AuthorSelfHead` -- connection upload -- support override mode
+[author] `AuthorConnectionInfo` -- support disconnect
+
+[author] `AuthorConnectionInfo` -- show details
+[author] `AuthorConnectionInfo` -- show help graph
+
+[author] `AuthorConnectionInfo` -- support auto update -- watch local file system for change by polling
 
 # recall -- in many timelines
 
