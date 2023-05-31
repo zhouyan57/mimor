@@ -33,8 +33,8 @@ const state = stateReactive(props.state)
 
       <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
         <AuthorSelfEntry
-          v-for="entry of stateFindEntries(state)"
-          :key="entry.path"
+          v-for="(entry, index) of stateFindEntries(state)"
+          :key="index"
           :state="state"
           :entry="entry"
         />
