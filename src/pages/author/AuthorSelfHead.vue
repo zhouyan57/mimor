@@ -25,13 +25,13 @@ const lang = useGlobalLang()
 <template>
   <div class="flex space-x-3 overflow-x-auto text-base">
     <button
-      class="flex min-w-max items-center space-x-1"
-      :disabled="state.isRefreshing"
+      class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
       :title="
         lang.isZh()
           ? `将云端的文件刷新到 app`
           : `Refresh files from cloud to app`
       "
+      :disabled="state.isRefreshing"
       @click="stateRefresh(state)"
     >
       <ArrowPathIcon
@@ -47,7 +47,7 @@ const lang = useGlobalLang()
 
     <button
       v-if="state.isFileSystemAccessSupported && !state.connection"
-      class="flex min-w-max items-center space-x-1"
+      class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
       @click="stateConnect(state)"
     >
       <ArrowsUpDownIcon class="h-5 w-5" />
@@ -60,7 +60,7 @@ const lang = useGlobalLang()
 
     <button
       v-if="state.latestDirectoryHandle && !state.connection"
-      class="flex min-w-max items-center space-x-1"
+      class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
       @click="stateConnectDirectoryHandle(state, state.latestDirectoryHandle)"
     >
       <ReceiptRefundIcon class="h-5 w-5" />
@@ -75,7 +75,7 @@ const lang = useGlobalLang()
 
     <template v-if="state.connection">
       <button
-        class="flex min-w-max items-center space-x-1"
+        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将 app 中的文件下载到本地文件夹`
@@ -105,7 +105,7 @@ const lang = useGlobalLang()
       </button>
 
       <button
-        class="flex min-w-max items-center space-x-1"
+        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将本地文件夹中的文件上传到 app`
@@ -128,11 +128,15 @@ const lang = useGlobalLang()
       </button>
 
       <button
-        class="flex min-w-max items-center space-x-1"
+        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将 app 中的文件保存到云端`
             : `Save files from app to cloud`
+        "
+        :disabled="
+          state.isSavingEntries ||
+          state.entries.every((entry) => !entry.isModified)
         "
         @click="stateSaveEntries(state)"
       >

@@ -1,5 +1,3 @@
-[author] show save button only when there are modified entries
-
 [author] after upload, move modified to the top
 
 [author] after upload, each modified has a save button
