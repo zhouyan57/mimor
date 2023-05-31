@@ -1,5 +1,3 @@
-[author] refactor `stateConnectionUpload`
-
 [author] `stateConnectionSave` we should only save that are modified
 
 [author] after upload, move modified to the top
