@@ -1,5 +1,3 @@
-[author] after upload, each modified has a save button
-
 `components/popover` -- or another name
 
 - learn from alpinejs

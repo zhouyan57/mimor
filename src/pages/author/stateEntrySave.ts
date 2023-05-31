@@ -10,6 +10,8 @@ export async function stateEntrySave(
   const who = 'stateEntrySave'
 
   if (entry.isModified) {
+    entry.isSaving = true
+
     const { url } = useGlobalBackend()
     const token = useGlobalToken()
 
@@ -24,5 +26,6 @@ export async function stateEntrySave(
     })
 
     entry.isModified = false
+    entry.isSaving = false
   }
 }
