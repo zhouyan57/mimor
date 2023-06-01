@@ -1,4 +1,5 @@
 import * as Kv from 'idb-keyval'
+import { reactive } from 'vue'
 import { reactiveToRaw } from '../../utils/vue/reactiveToRaw'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
@@ -13,6 +14,7 @@ export async function loadStateFromCacheFirst(
   if (cached) {
     return {
       ...cached,
+      entries: cached.entries.map(reactive),
       isLoadedFromCache: true,
     }
   } else {
