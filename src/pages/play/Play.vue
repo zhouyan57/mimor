@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
 import Scope from '../../components/utils/Scope.vue'
+import Watch from '../../components/utils/Watch.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useWindow } from '../../reactives/useWindow'
 
@@ -8,7 +10,7 @@ const window = useWindow()
 
 <template>
   <PageLayout>
-    <div class="flex flex-col overflow-y-auto p-3">
+    <div class="flex flex-col p-3">
       <Scope
         :scope="{ dialog: window.document.getElementById('dialog') }"
         v-slot="{ scope }"
@@ -17,7 +19,7 @@ const window = useWindow()
           class="max-w-fit border border-black p-3 text-xl"
           @click="scope.dialog.showModal()"
         >
-          Open dialog
+          Click to open dialog
         </button>
 
         <dialog id="dialog" class="border border-black text-xl">
@@ -27,6 +29,39 @@ const window = useWindow()
             <button class="max-w-fit border border-black px-2 py-1">OK</button>
           </form>
         </dialog>
+      </Scope>
+
+      <hr class="my-3 max-w-xl border-t border-black" />
+
+      <Scope
+        :scope="{
+          popover: window.document.getElementById('popover'),
+          open: false,
+        }"
+        v-slot="{ scope }"
+      >
+        <button
+          class="relative max-w-fit border border-black p-3 text-xl"
+          @click="scope.open = !scope.open"
+        >
+          Click to toggle popover
+
+
+          <dialog
+            id="popover"
+            :open="scope.open"
+            class="absolute left-0 top-0 w-[30rem] border border-black text-xl"
+            @click.stop=""
+          >
+            <form method="dialog" class="flex max-w-fit flex-col space-y-3">
+              <div>Hello from popover implemented by HTML dialog.</div>
+
+              <button class="max-w-fit border border-black px-2 py-1">
+                OK
+              </button>
+            </form>
+          </dialog>
+        </button>
       </Scope>
     </div>
   </PageLayout>

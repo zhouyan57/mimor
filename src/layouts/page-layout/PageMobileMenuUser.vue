@@ -45,7 +45,7 @@ function jump(path: string) {
 
     <Watch
       :value="open"
-      :effect="(value: any) => {
+      :action="(value: any) => {
         if (value) {
           $router.push({
             path: useCurrentPathname(),
@@ -62,7 +62,7 @@ function jump(path: string) {
     <Watch
       :value="() => $route.query['mobile-menu']"
       :deep="true"
-      :effect="(value: any) => {
+      :action="(value: any) => {
         if (value === undefined) {
           close()
         }
