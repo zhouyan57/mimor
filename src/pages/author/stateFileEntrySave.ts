@@ -12,8 +12,6 @@ export function stateFileEntrySave(state: State, fileEntry: FileEntry): void {
         message: 'update existing entry by fileEntry',
         entry: found,
         fileEntry,
-        isEqual: found.text !== fileEntry.text,
-        values: [found.text, fileEntry.text],
       })
 
       found.text = fileEntry.text
