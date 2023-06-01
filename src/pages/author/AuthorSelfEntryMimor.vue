@@ -3,7 +3,6 @@ import Mimor from '../../components/mimor/Mimor.vue'
 import { useWindow } from '../../reactives/useWindow'
 import { Entry } from './Entry'
 import { State } from './State'
-import { stateEntryUpdate } from './stateEntryUpdate'
 
 defineProps<{
   state: State
@@ -21,24 +20,17 @@ const window = useWindow()
     :isEditable="true"
     :text="entry.text"
     @update="
-      ({ text }) =>
-        // We can not just side effect on current prop entry,
-        // it is not the same reference.
-        stateEntryUpdate(state, {
-          path: entry.path,
-          updatedAt: Date.now(),
-          text,
-        })
+      ({ text }) => {
+        entry.updatedAt = Date.now()
+        entry.text = text
+      }
     "
     @loaded="
       ({ text }) => {
-        stateEntryUpdate(state, {
-          path: entry.path,
-          text,
-        })
+        entry.text = text
 
         window.console.log({
-          who: 'AuthorSelfEntryMimor',
+          who: 'AuthorSelfEntryNote',
           message: 'loaded',
           entry,
           state,
