@@ -39,7 +39,6 @@ const window = useWindow()
         window.console.log({
           who: 'AuthorSelfEntryNote',
           message: 'loaded',
-          text,
           entry,
           state,
         })
