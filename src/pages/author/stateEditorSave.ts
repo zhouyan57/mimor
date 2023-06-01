@@ -1,4 +1,3 @@
-import { reactive } from 'vue'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { createEditor, Editor } from './Editor'
@@ -33,14 +32,12 @@ export async function stateEditorSave(
   if (response.ok) {
     const now = Date.now()
 
-    state.entries.push(
-      reactive({
-        isPublic: state.editor.isPublic,
-        path,
-        createdAt: now,
-        updatedAt: now,
-      }),
-    )
+    state.entries.push({
+      isPublic: state.editor.isPublic,
+      path,
+      createdAt: now,
+      updatedAt: now,
+    })
 
     state.editor = createEditor()
   } else {

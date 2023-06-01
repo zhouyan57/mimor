@@ -1,4 +1,5 @@
-[author] remove the use of `reactive` on `entry` and `state`
+[author] rename `stateCacheSave` to `stateCacheSet`
+[author] `stateCacheGet`
 
 # components
 
