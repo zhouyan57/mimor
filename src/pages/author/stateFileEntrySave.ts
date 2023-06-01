@@ -7,16 +7,16 @@ export function stateFileEntrySave(state: State, fileEntry: FileEntry): void {
   const found = state.entries.find((entry) => entry.path === fileEntry.path)
   if (found) {
     if (found.text !== fileEntry.text) {
-      found.text = fileEntry.text
-      found.updatedAt = fileEntry.updatedAt
-      found.isModified = true
-
       console.log({
         who,
         message: 'update existing entry by fileEntry',
         entry: found,
         fileEntry,
       })
+
+      found.text = fileEntry.text
+      found.updatedAt = fileEntry.updatedAt
+      found.isModified = true
     }
   } else {
     const entry = {

@@ -25,6 +25,8 @@
 
 [author] `AuthorConnectionInfo` -- support auto update -- watch local file system for change by polling
 
+[author] `AuthorConnectionInfo` -- [maybe] show record of sync activities
+
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards
