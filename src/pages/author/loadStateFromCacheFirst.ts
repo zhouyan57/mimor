@@ -1,7 +1,7 @@
-import * as Kv from 'idb-keyval'
 import { reactive } from 'vue'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
+import { stateCacheGet } from './stateCacheGet'
 import { stateCacheSet } from './stateCacheSet'
 
 export async function loadStateFromCacheFirst(
@@ -9,8 +9,8 @@ export async function loadStateFromCacheFirst(
 ): Promise<State> {
   const { username } = options
 
-  const store = Kv.createStore('mimor.app/authors', 'cache')
-  const cached = await Kv.get(username, store)
+  const cached = await stateCacheGet(username)
+
   if (cached) {
     return {
       ...cached,

@@ -1,5 +1,3 @@
-[author] `stateCacheGet`
-
 # components
 
 [maybe] quit using headlessui
