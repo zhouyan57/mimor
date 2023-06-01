@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
 import Scope from '../../components/utils/Scope.vue'
-import Watch from '../../components/utils/Watch.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useWindow } from '../../reactives/useWindow'
 
@@ -46,20 +44,22 @@ const window = useWindow()
         >
           Click to toggle popover
 
-
           <dialog
             id="popover"
             :open="scope.open"
-            class="absolute left-0 top-0 w-[30rem] border border-black text-xl"
+            class="absolute left-3 top-3 w-[30rem] border border-black text-xl"
             @click.stop=""
           >
-            <form method="dialog" class="flex max-w-fit flex-col space-y-3">
+            <div class="flex max-w-fit flex-col space-y-3">
               <div>Hello from popover implemented by HTML dialog.</div>
 
-              <button class="max-w-fit border border-black px-2 py-1">
+              <button
+                @click="scope.open = false"
+                class="max-w-fit border border-black px-2 py-1"
+              >
                 OK
               </button>
-            </form>
+            </div>
           </dialog>
         </button>
       </Scope>
