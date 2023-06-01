@@ -1,7 +1,7 @@
 import { State } from './State'
 import { createConnection } from './createConnection'
 import { ensurePermission } from './ensurePermission'
-import { stateCacheSave } from './stateCacheSave'
+import { stateCacheSet } from './stateCacheSet'
 
 export async function stateConnectDirectoryHandle(
   state: State,
@@ -14,5 +14,5 @@ export async function stateConnectDirectoryHandle(
   state.latestDirectoryHandle = directoryHandle
   const connection = createConnection(directoryHandle)
   state.connection = connection
-  await stateCacheSave(state)
+  await stateCacheSet(state)
 }

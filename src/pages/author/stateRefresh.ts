@@ -1,6 +1,6 @@
 import { State } from './State'
 import { loadState } from './loadState'
-import { stateCacheSave } from './stateCacheSave'
+import { stateCacheSet } from './stateCacheSet'
 
 export async function stateRefresh(state: State): Promise<void> {
   state.isRefreshing = true
@@ -21,7 +21,7 @@ export async function stateRefresh(state: State): Promise<void> {
     }
   }
 
-  await stateCacheSave(state)
+  await stateCacheSet(state)
 
   state.isRefreshing = false
 }

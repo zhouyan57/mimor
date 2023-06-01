@@ -2,7 +2,7 @@ import * as Kv from 'idb-keyval'
 import { reactive } from 'vue'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
-import { stateCacheSave } from './stateCacheSave'
+import { stateCacheSet } from './stateCacheSet'
 
 export async function loadStateFromCacheFirst(
   options: StateOptions,
@@ -19,7 +19,7 @@ export async function loadStateFromCacheFirst(
     }
   } else {
     const state = await loadState(options)
-    await stateCacheSave(state)
+    await stateCacheSet(state)
     return state
   }
 }

@@ -1,4 +1,3 @@
-[author] rename `stateCacheSave` to `stateCacheSet`
 [author] `stateCacheGet`
 
 # components
