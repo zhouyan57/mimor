@@ -12,12 +12,7 @@ export async function stateRefresh(state: State): Promise<void> {
 
   for (const newEntry of newState.entries) {
     const found = state.entries.find((entry) => entry.path === newEntry.path)
-    if (found) {
-      if (found.text !== newEntry.text) {
-        found.text = newEntry.text
-        found.updatedAt = newEntry.updatedAt
-      }
-    } else {
+    if (!found) {
       state.entries.push(newEntry)
     }
   }
