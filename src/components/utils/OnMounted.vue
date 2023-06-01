@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 type MaybePromise<T> = Promise<T> | T
 
 const props = defineProps<{
-  effect: () => MaybePromise<void>
+  action: () => MaybePromise<any>
 }>()
 
+const state = reactive({
+  returnValue: undefined,
+})
+
 onMounted(async () => {
-  await props.effect()
+  state.returnValue = await props.action()
 })
 </script>
 
-<template></template>
+<template>
+  <slot :returnValue="state.returnValue" />
+</template>

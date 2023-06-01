@@ -7,12 +7,14 @@ import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import MimorEntrance from './mimor-entrance/MimorEntrance.vue'
 import Mimor from './mimor/Mimor.vue'
+import Play from './play/Play.vue'
 import Recall from './recall/Recall.vue'
 import Register from './register/Register.vue'
 import Settings from './settings/Settings.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
+  { path: '/play', component: Play },
   { path: '/about', component: About },
   { path: '/docs', component: Docs },
   { path: '/register', component: Register },

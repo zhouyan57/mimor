@@ -45,7 +45,7 @@ watch(
 <template>
   <div ref="rootElement" class="flex h-full flex-col bg-white">
     <OnMounted
-      :effect="
+      :action="
         () => {
           $emit('loaded')
         }

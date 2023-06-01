@@ -51,7 +51,7 @@ watch(
     :class="{ 'border border-black bg-white': state.theme.name === 'white' }"
   >
     <OnMounted
-      :effect="
+      :action="
         () => {
           $emit('loaded')
         }
