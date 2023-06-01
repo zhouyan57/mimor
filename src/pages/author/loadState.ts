@@ -1,3 +1,4 @@
+import { reactive } from 'vue'
 import { loadUser } from '../../models/user/loadUser'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { createEditor } from './Editor'
@@ -20,7 +21,9 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   const entries = (
     await promiseAllFulfilled(directories.map(await loadEntries))
-  ).flatMap((entries) => entries)
+  )
+    .flatMap((entries) => entries)
+    .map((entry) => reactive(entry))
 
   return {
     username,

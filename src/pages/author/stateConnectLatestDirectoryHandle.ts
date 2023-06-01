@@ -1,4 +1,5 @@
 import * as Kv from 'idb-keyval'
+import { reactiveToRaw } from '../../utils/vue/reactiveToRaw'
 import { State } from './State'
 import { createConnection } from './createConnection'
 import { ensurePermission } from './ensurePermission'
@@ -19,10 +20,10 @@ export async function stateConnectDirectoryHandle(
   const cached = await Kv.get(state.username, store)
   await Kv.set(
     state.username,
-    {
+    reactiveToRaw({
       ...cached,
       latestDirectoryHandle: directoryHandle,
-    },
+    }),
     store,
   )
 }

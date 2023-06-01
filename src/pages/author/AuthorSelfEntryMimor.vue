@@ -30,7 +30,7 @@ const window = useWindow()
         entry.text = text
 
         window.console.log({
-          who: 'AuthorSelfEntryNote',
+          who: 'AuthorSelfEntryMimor',
           message: 'loaded',
           entry,
           state,

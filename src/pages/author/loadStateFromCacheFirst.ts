@@ -1,4 +1,5 @@
 import * as Kv from 'idb-keyval'
+import { reactiveToRaw } from '../../utils/vue/reactiveToRaw'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
 
@@ -16,7 +17,7 @@ export async function loadStateFromCacheFirst(
     }
   } else {
     const state = await loadState(options)
-    await Kv.set(username, state, store)
+    await Kv.set(username, reactiveToRaw(state), store)
     return state
   }
 }
