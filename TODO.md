@@ -1,3 +1,8 @@
+[mimor] take `text` from `options` -- no need emit
+[note] take `text` from `options` -- no need emit
+
+[author] remove the use of `reactive` on `entry` and `state`
+
 # components
 
 [maybe] quit using headlessui

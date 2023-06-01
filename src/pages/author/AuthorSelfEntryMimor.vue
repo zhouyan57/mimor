@@ -23,6 +23,13 @@ const window = useWindow()
       ({ text }) => {
         entry.updatedAt = Date.now()
         entry.text = text
+
+        window.console.log({
+          who: 'AuthorSelfEntryMimor',
+          message: 'update',
+          entry,
+          state,
+        })
       }
     "
     @loaded="

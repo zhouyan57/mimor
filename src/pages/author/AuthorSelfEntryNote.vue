@@ -23,6 +23,13 @@ const window = useWindow()
       ({ text }) => {
         entry.updatedAt = Date.now()
         entry.text = text
+
+        window.console.log({
+          who: 'AuthorSelfEntryNote',
+          message: 'update',
+          entry,
+          state,
+        })
       }
     "
     @loaded="
@@ -32,6 +39,7 @@ const window = useWindow()
         window.console.log({
           who: 'AuthorSelfEntryNote',
           message: 'loaded',
+          text,
           entry,
           state,
         })

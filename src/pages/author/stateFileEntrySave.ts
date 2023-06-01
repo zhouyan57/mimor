@@ -14,6 +14,7 @@ export function stateFileEntrySave(state: State, fileEntry: FileEntry): void {
         entry: found,
         fileEntry,
         differentTexts: [found.text, fileEntry.text],
+        state,
       })
 
       found.text = fileEntry.text
