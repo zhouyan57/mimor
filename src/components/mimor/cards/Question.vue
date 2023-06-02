@@ -36,9 +36,9 @@ watch(
       <div v-for="(child, index) of element.children" :key="index">
         <div v-if="isElement(child) && child.tag === 'answer'" class="py-2">
           <Transition
-            enter-active-class="transition duration-700 ease-in-out"
-            enter-from-class="transform transform-gpu opacity-0"
-            enter-to-class="transform transform-gpu opacity-100"
+            enterActiveClass="transition duration-700 ease-in-out"
+            enterFromClass="transform transform-gpu opacity-0"
+            enterToClass="transform transform-gpu opacity-100"
           >
             <Nodes
               v-if="remembering.revealed"

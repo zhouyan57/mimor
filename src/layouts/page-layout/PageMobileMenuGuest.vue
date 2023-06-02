@@ -55,12 +55,12 @@ function jump(path: string) {
     />
 
     <Transition
-      enter-active-class="transition duration-100"
-      enter-from-class="transform opacity-0 translate-x-6 -rotate-45"
-      enter-to-class="transform opacity-100 rotate-0"
-      leave-active-class="transition duration-100"
-      leave-from-class="transform opacity-100"
-      leave-to-class="transform opacity-0 -translate-x-6"
+      enterActiveClass="transition duration-100"
+      enterFromClass="transform opacity-0 translate-x-6 -rotate-45"
+      enterToClass="transform opacity-100 rotate-0"
+      leaveActiveClass="transition duration-100"
+      leaveFromClass="transform opacity-100"
+      leaveToClass="transform opacity-0 -translate-x-6"
     >
       <PopoverPanel
         class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between bg-white p-2"

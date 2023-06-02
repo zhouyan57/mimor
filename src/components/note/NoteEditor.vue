@@ -27,12 +27,12 @@ async function submit(state: State) {
     />
 
     <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="transform translate-y-8 opacity-0"
-      enter-to-class="transform translate-y-0 opacity-100"
-      leave-active-class="transition duration-150 ease-out"
-      leave-from-class="transform translate-y-0 opacity-100"
-      leave-to-class="transform translate-y-8 opacity-0"
+      enterActiveClass="transition duration-200 ease-out"
+      enterFromClass="transform translate-y-8 opacity-0"
+      enterToClass="transform translate-y-0 opacity-100"
+      leaveActiveClass="transition duration-150 ease-out"
+      leaveFromClass="transform translate-y-0 opacity-100"
+      leaveToClass="transform translate-y-8 opacity-0"
     >
       <NoteEditorToolbar v-if="state.isEditing" :state="state" />
     </Transition>
