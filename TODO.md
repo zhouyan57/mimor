@@ -1,16 +1,6 @@
 # components
 
-[maybe] quit using headlessui
-
-`components/popover` -- or another name
-
-- learn from alpinejs
-
-- replace `patterns-of-web-user-interface`
-
-  - maybe do a project called `x-ui`
-
-`components/listbox` -- or another name
+use x-ui instead of headlessui
 
 # author -- sync with local directory
 
