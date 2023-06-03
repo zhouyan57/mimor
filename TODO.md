@@ -1,10 +1,11 @@
 # components
 
-`components/dropdown/Dropdown`
+[component] `Dropdown` -- handle click outside
+[component] `Dropdown` -- handle tab
 
-- replace headlessui `Listbox` with `Dropdown`
+replace headlessui `Listbox` by `Dropdown`
 
-  layouts/page-layout/PageLang.vue
+layouts/page-layout/PageLang.vue
 
 `components/modal/Modal`
 
