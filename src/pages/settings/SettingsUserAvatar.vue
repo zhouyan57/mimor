@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import Lang from '../../components/lang/Lang.vue'
-import InsertElement from '../../components/utils/InsertElement.vue'
+import Render from '../../components/utils/Render.vue'
 import { State } from './State'
 import { stateAvatarUpload } from './stateAvatarUpload'
 
@@ -64,7 +64,7 @@ watch(
       for="avatar"
       class="flex h-[16rem] w-[16rem] items-center justify-center overflow-hidden border border-black"
     >
-      <InsertElement v-if="avatarImageElement" :element="avatarImageElement" />
+      <Render v-if="avatarImageElement" :element="avatarImageElement" />
       <img
         v-else-if="state.avatarURL"
         :alt="`Avatar of ${username}`"
