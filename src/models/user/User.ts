@@ -5,6 +5,7 @@ export type User = {
   '@revision': string
   name: string
   avatar?: Uint8Array
+  avatarBase64?: string
 }
 
 export const UserSchema: Schema<User> = ty.object({
@@ -14,4 +15,5 @@ export const UserSchema: Schema<User> = ty.object({
   avatar: ty.optional(
     ty.guard((data): data is Uint8Array => data instanceof Uint8Array),
   ),
+  avatarBase64: ty.optional(ty.string()),
 })
