@@ -1,7 +1,5 @@
 # components
 
-[component] `Dropdown` -- focus back on escape
-
 replace headlessui `Listbox` by `Dropdown`
 
 layouts/page-layout/PageLang.vue
