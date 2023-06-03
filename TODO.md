@@ -1,6 +1,8 @@
 # components
 
-replace headlessui `Listbox` by `Dropdown`
+[component] `List` -- handle keydown up and down
+
+replace headlessui `Listbox` by `Dropdown` and `List`
 
 layouts/page-layout/PageLang.vue
 

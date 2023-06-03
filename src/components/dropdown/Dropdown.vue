@@ -40,11 +40,11 @@ onMounted(() => {
     "
   >
     <button ref="toggleElement" @click="state.open = !state.open">
-      <slot name="dropdown-toggle" :state="state" />
+      <slot name="toggle" :dropdown="state" />
     </button>
 
     <div v-show="state.open" ref="panelElement">
-      <slot name="dropdown-panel" :state="state" />
+      <slot name="panel" :dropdown="state" />
     </div>
   </div>
 </template>
