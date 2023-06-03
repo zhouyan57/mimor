@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div @keydown.escape.prevent.stop="state.open = false">
     <button ref="toggleElement" @click="state.open = !state.open">
       <slot name="dropdown-toggle" :state="state" />
     </button>

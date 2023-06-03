@@ -1,7 +1,6 @@
 # components
 
-[component] `Dropdown` -- handle click outside
-[component] `Dropdown` -- handle tab
+[component] `Dropdown` -- focus back on escape
 
 replace headlessui `Listbox` by `Dropdown`
 
