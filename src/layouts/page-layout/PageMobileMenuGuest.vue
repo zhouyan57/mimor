@@ -28,7 +28,7 @@ function jump(path: string) {
     </PopoverButton>
 
     <Watch
-      :value="open"
+      :value="() => open"
       :action="(value: any) => {
         if (value) {
           $router.push({

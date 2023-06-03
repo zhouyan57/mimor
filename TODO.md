@@ -8,6 +8,10 @@ layouts/page-layout/PageMobileMenuGuest.vue
 layouts/page-layout/PageMobileMenuLoading.vue
 layouts/page-layout/PageMobileMenuUser.vue
 
+remove headlessui
+
+- remove comment from `Hyperlink`
+
 # author -- sync with local directory
 
 [author] `AuthorSelfHead` -- hover the connection info to show `AuthorConnectionInfo`
