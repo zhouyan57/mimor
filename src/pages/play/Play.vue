@@ -39,14 +39,17 @@ const window = useWindow()
           </div>
         </template>
 
-        <template #dropdown-panel>
+        <template #dropdown-panel="{ state }">
           <div
             class="absolute top-[4rem] w-[30rem] border border-black bg-white p-3 text-xl"
           >
             <div class="flex max-w-fit flex-col space-y-3">
               <div>Hello from popover.</div>
 
-              <button @click="" class="max-w-fit border border-black px-2 py-1">
+              <button
+                @click="state.open = false"
+                class="max-w-fit border border-black px-2 py-1"
+              >
                 OK
               </button>
             </div>

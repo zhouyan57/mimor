@@ -32,11 +32,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <button
-      ref="toggleElement"
-      class="flex max-w-fit"
-      @click="state.open = !state.open"
-    >
+    <button ref="toggleElement" @click="state.open = !state.open">
       <slot name="dropdown-toggle" :state="state" />
     </button>
 
