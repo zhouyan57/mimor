@@ -1,6 +1,18 @@
 # components
 
-use x-ui instead of headlessui
+`components/dropdown/Dropdown`
+
+- replace headlessui `Listbox` with `Dropdown`
+
+  layouts/page-layout/PageLang.vue
+
+`components/modal/Modal`
+
+- replace headlessui `Popover` with `Modal`
+
+  layouts/page-layout/PageMobileMenuGuest.vue
+  layouts/page-layout/PageMobileMenuLoading.vue
+  layouts/page-layout/PageMobileMenuUser.vue
 
 # author -- sync with local directory
 
