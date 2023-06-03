@@ -32,33 +32,27 @@ const window = useWindow()
 
       <hr class="my-3 max-w-xl border-t border-black" />
 
-      <Scope :scope="{ open: false }" v-slot="{ scope }">
-        <Dropdown :open="scope.open">
-          <button
-            class="max-w-fit border border-black p-3 text-xl"
-            @click="scope.open = !scope.open"
-          >
+      <Dropdown class="relative">
+        <template #dropdown-toggle>
+          <div class="max-w-fit border border-black p-3 text-xl">
             Click to toggle popover
-          </button>
+          </div>
+        </template>
 
-          <template #panel>
-            <div
-              class="my-3 w-[30rem] border border-black bg-white p-3 text-xl"
-            >
-              <div class="flex max-w-fit flex-col space-y-3">
-                <div>Hello from popover.</div>
+        <template #dropdown-panel>
+          <div
+            class="absolute top-[4rem] w-[30rem] border border-black bg-white p-3 text-xl"
+          >
+            <div class="flex max-w-fit flex-col space-y-3">
+              <div>Hello from popover.</div>
 
-                <button
-                  @click="scope.open = false"
-                  class="max-w-fit border border-black px-2 py-1"
-                >
-                  OK
-                </button>
-              </div>
+              <button @click="" class="max-w-fit border border-black px-2 py-1">
+                OK
+              </button>
             </div>
-          </template>
-        </Dropdown>
-      </Scope>
+          </div>
+        </template>
+      </Dropdown>
     </div>
   </PageLayout>
 </template>
