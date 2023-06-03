@@ -1,6 +1,6 @@
-# components
+[author] fix head overflow-y
 
-[component] `List` -- handle keydown up and down
+# components
 
 replace headlessui `Listbox` by `Dropdown` and `List`
 

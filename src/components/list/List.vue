@@ -1,22 +1,37 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { emulateTab } from 'emulate-tab'
+import { ref } from 'vue'
 
 const props = defineProps<{
   entries: Array<any>
 }>()
 
-onMounted(() => {
-  document.addEventListener('click', (event) => {})
-})
+const cursor = ref<number>(0)
 </script>
 
 <template>
-  <div>
-    <slot
+  <ul
+    @keydown.up="
+      () => {
+        if (cursor > 0) {
+          emulateTab.backwards()
+        }
+      }
+    "
+    @keydown.down="
+      () => {
+        if (cursor < entries.length - 1) {
+          emulateTab()
+        }
+      }
+    "
+  >
+    <li
       v-for="(entry, index) of entries"
+      @focus.capture="cursor = index"
       :key="index"
-      name="entry"
-      :entry="entry"
-    />
-  </div>
+    >
+      <slot name="entry" :entry="entry" />
+    </li>
+  </ul>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 
 type State = {
   open: boolean
@@ -11,6 +11,15 @@ const state: State = reactive({
 
 const toggleElement = ref<HTMLButtonElement | undefined>()
 const panelElement = ref<HTMLDivElement | undefined>()
+
+watch(
+  () => state.open,
+  (value) => {
+    if (!value) {
+      toggleElement.value?.focus()
+    }
+  },
+)
 
 onMounted(() => {
   document.addEventListener('click', (event) => {

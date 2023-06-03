@@ -86,7 +86,7 @@ const window = useWindow()
               >
                 <template #entry="{ entry }">
                   <button
-                    class="flex p-3"
+                    class="flex w-full p-3"
                     @click="
                       () => {
                         scope.tag = entry.tag
