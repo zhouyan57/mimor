@@ -1,8 +1,16 @@
 # components
 
-`components/modal/Modal`
+docs about `Dropdown`
 
-replace headlessui `Popover` with `Modal`
+- close on click outside and escape
+
+docs about `List`
+
+`Dropdown` -- use default slot instead of named slot (name="panel")
+
+`Dropdown -- let user control `v-show`-- for`Transition`
+
+replace headlessui `Popover` with `Dropdown`
 
 layouts/page-layout/PageMobileMenuGuest.vue
 layouts/page-layout/PageMobileMenuLoading.vue

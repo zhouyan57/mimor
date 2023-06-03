@@ -22,27 +22,37 @@ const lang = useGlobalLang()
     </template>
 
     <template #panel="{ dropdown }">
-      <List
-        class="absolute left-0 top-9 min-w-max border bg-white"
-        :entries="
-          lang.knownTags.map((tag) => ({ tag, name: langTagName(tag) }))
-        "
+      <Transition
+        enterActiveClass="transition duration-100 ease-out"
+        enterFromClass="transform scale-95 opacity-0"
+        enterToClass="transform scale-100 opacity-100"
+        leaveActiveClass="transition duration-75 ease-out"
+        leaveFromClass="transform scale-100 opacity-100"
+        leaveToClass="transform scale-95 opacity-0"
       >
-        <template #entry="{ entry }">
-          <button
-            class="flex w-full min-w-max items-center px-2 py-1"
-            @click="
-              () => {
-                lang.tag = entry.tag
-                dropdown.open = false
-              }
-            "
-          >
-            <span>{{ entry.name }}</span>
-            <CheckIcon v-if="lang.tag === entry.tag" class="ml-2 h-5 w-5" />
-          </button>
-        </template>
-      </List>
+        <List
+          v-show="dropdown.open"
+          class="absolute left-0 top-9 min-w-max border bg-white"
+          :entries="
+            lang.knownTags.map((tag) => ({ tag, name: langTagName(tag) }))
+          "
+        >
+          <template #entry="{ entry }">
+            <button
+              class="flex w-full min-w-max items-center px-2 py-1"
+              @click="
+                () => {
+                  lang.tag = entry.tag
+                  dropdown.open = false
+                }
+              "
+            >
+              <span>{{ entry.name }}</span>
+              <CheckIcon v-if="lang.tag === entry.tag" class="ml-2 h-5 w-5" />
+            </button>
+          </template>
+        </List>
+      </Transition>
     </template>
   </Dropdown>
 </template>

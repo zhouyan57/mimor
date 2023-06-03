@@ -48,18 +48,28 @@ const window = useWindow()
           </template>
 
           <template #panel="{ dropdown }">
-            <div
-              class="absolute top-[4rem] z-10 flex flex-col space-y-3 border border-black bg-white p-3 text-xl"
+            <Transition
+              enterActiveClass="transition duration-100 ease-out"
+              enterFromClass="transform scale-95 opacity-0"
+              enterToClass="transform scale-100 opacity-100"
+              leaveActiveClass="transition duration-100 ease-out"
+              leaveFromClass="transform scale-100 opacity-100"
+              leaveToClass="transform scale-95 opacity-0"
             >
-              <div>Hello from Dropdown</div>
-
-              <button
-                @click="dropdown.open = false"
-                class="max-w-fit border border-black px-2 py-1"
+              <div
+                v-show="dropdown.open"
+                class="absolute top-[4rem] z-10 flex flex-col space-y-3 border border-black bg-white p-3 text-xl"
               >
-                OK
-              </button>
-            </div>
+                <div>Hello from Dropdown</div>
+
+                <button
+                  @click="dropdown.open = false"
+                  class="max-w-fit border border-black px-2 py-1"
+                >
+                  OK
+                </button>
+              </div>
+            </Transition>
           </template>
         </Dropdown>
       </div>
