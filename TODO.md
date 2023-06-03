@@ -1,5 +1,3 @@
-[author] fix head overflow-y
-
 # components
 
 replace headlessui `Listbox` by `Dropdown` and `List`

@@ -26,7 +26,7 @@ const lang = useGlobalLang()
   <div
     class="flex max-w-[47rem] justify-between space-x-3 overflow-x-auto text-base"
   >
-    <div class="flex space-x-3 overflow-x-auto text-base">
+    <div class="flex space-x-3 overflow-x-auto overflow-y-hidden text-base">
       <button
         class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
