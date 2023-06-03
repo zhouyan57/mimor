@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import OnMounted from '../utils/OnMounted.vue'
+import Init from '../utils/Init.vue'
 import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
@@ -50,7 +50,7 @@ watch(
     class="flex h-full flex-col"
     :class="{ 'border border-black bg-white': state.theme.name === 'white' }"
   >
-    <OnMounted
+    <Init
       :action="
         () => {
           $emit('loaded')

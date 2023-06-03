@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
-import OnMounted from '../../components/utils/OnMounted.vue'
+import Init from '../../components/utils/Init.vue'
 import Scope from '../../components/utils/Scope.vue'
 import { hasServiceWorker } from '../../utils/pwa/hasServiceWorker'
 import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
@@ -8,7 +8,7 @@ import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
 
 <template>
   <Scope :scope="{ disabled: false }" v-slot="{ scope }">
-    <OnMounted
+    <Init
       :action="
         async () => {
           scope.disabled = !(await hasServiceWorker())
