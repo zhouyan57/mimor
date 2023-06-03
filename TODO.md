@@ -1,16 +1,12 @@
 # components
 
-replace headlessui `Listbox` by `Dropdown` and `List`
-
-layouts/page-layout/PageLang.vue
-
 `components/modal/Modal`
 
-- replace headlessui `Popover` with `Modal`
+replace headlessui `Popover` with `Modal`
 
-  layouts/page-layout/PageMobileMenuGuest.vue
-  layouts/page-layout/PageMobileMenuLoading.vue
-  layouts/page-layout/PageMobileMenuUser.vue
+layouts/page-layout/PageMobileMenuGuest.vue
+layouts/page-layout/PageMobileMenuLoading.vue
+layouts/page-layout/PageMobileMenuUser.vue
 
 # author -- sync with local directory
 
