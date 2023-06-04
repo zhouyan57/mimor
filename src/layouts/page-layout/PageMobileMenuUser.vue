@@ -1,21 +1,18 @@
 <script setup lang="ts">
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Popup from '../../components/utils/Popup.vue'
-import Watch from '../../components/utils/Watch.vue'
+import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
 import { logout } from '../../models/auth/logout'
 import { User } from '../../models/user/User'
 import { username } from '../../models/user/username'
-import { useCurrentPathname } from '../../reactives/useCurrentPathname'
-import { useCurrentQuery } from '../../reactives/useCurrentQuery'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 
 defineProps<{ user: User }>()
 
-const route = useRoute()
 const router = useRouter()
 const lang = useGlobalLang()
 
@@ -25,14 +22,6 @@ async function logoutAfterConfirming() {
   if (window.confirm(message)) {
     await logout()
     router.replace('/')
-  }
-}
-
-function jump(path: string) {
-  if (route.path !== path) {
-    router.replace(path)
-  } else {
-    router.back()
   }
 }
 </script>
@@ -58,33 +47,7 @@ function jump(path: string) {
           v-show="popup.open"
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between overflow-auto bg-white p-2"
         >
-          <Watch
-            :target="() => popup.open"
-            :action="
-              (value) => {
-                if (value) {
-                  $router.push({
-                    path: useCurrentPathname(),
-                    query: {
-                      ...useCurrentQuery(),
-                      'mobile-menu': null,
-                    },
-                  })
-                }
-              }
-            "
-          />
-
-          <Watch
-            :target="() => $route.query['mobile-menu']"
-            :deep="true"
-            :immediate="true"
-            :action="
-              (value) => {
-                popup.open = value !== undefined
-              }
-            "
-          />
+          <PopupSyncQuery :popup="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
             <button
@@ -107,7 +70,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/')
+                  $router.replace('/')
                 }
               "
             >
@@ -124,7 +87,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/docs')
+                  $router.replace('/docs')
                 }
               "
             >
@@ -139,7 +102,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/mimors')
+                  $router.replace('/mimors')
                 }
               "
             >
@@ -154,7 +117,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/about')
+                  $router.replace('/about')
                 }
               "
             >
@@ -169,7 +132,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/recall')
+                  $router.replace('/recall')
                 }
               "
             >
@@ -184,7 +147,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump(`/authors/${username(user)}`)
+                  $router.replace(`/authors/${username(user)}`)
                 }
               "
             >
@@ -199,7 +162,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/settings')
+                  $router.replace('/settings')
                 }
               "
             >

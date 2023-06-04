@@ -1,24 +1,10 @@
 <script setup lang="ts">
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { useRoute, useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import Popup from '../../components/utils/Popup.vue'
-import Watch from '../../components/utils/Watch.vue'
-import { useCurrentPathname } from '../../reactives/useCurrentPathname'
-import { useCurrentQuery } from '../../reactives/useCurrentQuery'
+import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
-
-const route = useRoute()
-const router = useRouter()
-
-function jump(path: string) {
-  if (route.path !== path) {
-    router.replace(path)
-  } else {
-    router.back()
-  }
-}
 </script>
 
 <template>
@@ -42,33 +28,7 @@ function jump(path: string) {
           v-show="popup.open"
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between bg-white p-2"
         >
-          <Watch
-            :target="() => popup.open"
-            :action="
-              (value) => {
-                if (value) {
-                  $router.push({
-                    path: useCurrentPathname(),
-                    query: {
-                      ...useCurrentQuery(),
-                      'mobile-menu': null,
-                    },
-                  })
-                }
-              }
-            "
-          />
-
-          <Watch
-            :target="() => $route.query['mobile-menu']"
-            :deep="true"
-            :immediate="true"
-            :action="
-              (value) => {
-                popup.open = value !== undefined
-              }
-            "
-          />
+          <PopupSyncQuery :popup="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
             <button
@@ -91,7 +51,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/')
+                  $router.replace('/')
                 }
               "
             >
@@ -108,7 +68,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/docs')
+                  $router.replace('/docs')
                 }
               "
             >
@@ -123,7 +83,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/mimors')
+                  $router.replace('/mimors')
                 }
               "
             >
@@ -138,7 +98,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/about')
+                  $router.replace('/about')
                 }
               "
             >
@@ -153,7 +113,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/settings')
+                  $router.replace('/settings')
                 }
               "
             >
@@ -169,7 +129,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/login')
+                  $router.replace('/login')
                 }
               "
             >
@@ -183,7 +143,7 @@ function jump(path: string) {
               @click="
                 () => {
                   popup.open = false
-                  jump('/register')
+                  $router.replace('/register')
                 }
               "
             >
