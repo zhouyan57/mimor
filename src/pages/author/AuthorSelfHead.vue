@@ -4,6 +4,7 @@ import {
   ArrowPathIcon,
   ArrowUpTrayIcon,
   ArrowsUpDownIcon,
+  FolderOpenIcon,
   PaperAirplaneIcon,
   ReceiptRefundIcon,
 } from '@heroicons/vue/24/outline'
@@ -110,14 +111,16 @@ const lang = useGlobalLang()
           </Lang>
         </button>
 
-        <Popup class="relative">
+        <Popup class="relative flex items-center">
           <template #toggle="{ popup }">
             <div
-              class="font-bold"
+              class="flex min-w-max items-center space-x-1"
               @mouseover="popup.open = true"
               @mouseleave="popup.open = false"
             >
-              {{ state.connection.name }}
+              <FolderOpenIcon class="h-5 w-5" />
+
+              <div class="font-bold">{{ state.connection.name }}</div>
             </div>
           </template>
 
