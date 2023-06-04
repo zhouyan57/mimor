@@ -8,7 +8,7 @@ import PageLogo from './PageLogo.vue'
 </script>
 
 <template>
-  <Popup class="relative flex text-3xl">
+  <Popup>
     <template #toggle>
       <div class="flex border border-black p-2">
         <Bars3Icon class="h-7 w-7" />
@@ -26,7 +26,7 @@ import PageLogo from './PageLogo.vue'
       >
         <div
           v-show="popup.open"
-          class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between bg-white p-2"
+          class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between bg-white p-2 text-3xl"
         >
           <PopupSyncQuery :popup="popup" name="mobile-menu" />
 
