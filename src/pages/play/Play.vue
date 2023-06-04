@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import List from '../../components/list/List.vue'
-import Popup from '../../components/popup/Popup.vue'
+import List from '../../components/utils/List.vue'
+import Popup from '../../components/utils/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useWindow } from '../../reactives/useWindow'

@@ -2,8 +2,8 @@
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { langTagName, useGlobalLang } from '../../components/lang/useGlobalLang'
-import List from '../../components/list/List.vue'
-import Popup from '../../components/popup/Popup.vue'
+import List from '../../components/utils/List.vue'
+import Popup from '../../components/utils/Popup.vue'
 
 const lang = useGlobalLang()
 </script>
