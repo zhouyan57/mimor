@@ -59,7 +59,7 @@ function jump(path: string) {
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between overflow-auto bg-white p-2"
         >
           <Watch
-            :value="() => popup.open"
+            :target="() => popup.open"
             :action="
               (value) => {
                 if (value) {
@@ -76,7 +76,7 @@ function jump(path: string) {
           />
 
           <Watch
-            :value="() => $route.query['mobile-menu']"
+            :target="() => $route.query['mobile-menu']"
             :deep="true"
             :immediate="true"
             :action="
