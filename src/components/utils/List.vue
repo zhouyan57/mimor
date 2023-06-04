@@ -2,7 +2,13 @@
 import { emulateTab } from 'emulate-tab'
 import { ref } from 'vue'
 
-const props = defineProps<{
+/*
+
+   List of entries where up and down keys emulate tab.
+
+*/
+
+defineProps<{
   entries: Array<any>
 }>()
 

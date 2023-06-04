@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref, watch } from 'vue'
 
+/*
+
+   Always show the toggle, toggle to show the rest.
+
+   - Close on click outside.
+   - Close on escape.
+
+*/
+
 type State = {
   open: boolean
 }

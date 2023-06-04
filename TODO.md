@@ -1,11 +1,5 @@
 # components
 
-docs about `Popup`
-
-- close on click outside and escape
-
-docs about `List`
-
 `Popup` -- use default slot instead of named slot (name="panel")
 
 `Popup -- let user control `v-show`-- for`Transition`
