@@ -1,3 +1,5 @@
+`MimorHeadProgram` fix button over hyperlink
+
 # author -- sync with local directory
 
 [author] `AuthorConnectionInfo` -- show list of files

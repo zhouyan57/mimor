@@ -4,8 +4,8 @@ import PageLogo from './PageLogo.vue'
 
 <template>
   <div class="flex w-full">
-    <button>
+    <div class="flex">
       <PageLogo class="text-2xl" />
-    </button>
+    </div>
   </div>
 </template>
