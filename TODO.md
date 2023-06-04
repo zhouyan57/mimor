@@ -1,8 +1,6 @@
 # components
 
-`Popup` -- use default slot instead of named slot (name="panel")
-
-`Popup -- let user control `v-show`-- for`Transition`
+`Popup` -- let user control `v-show`-- for `Transition`
 
 replace headlessui `Popover` with `Popup`
 

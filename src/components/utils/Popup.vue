@@ -3,7 +3,7 @@ import { onMounted, reactive, ref, watch } from 'vue'
 
 /*
 
-   Always show the toggle, toggle to show the rest.
+   Always show the toggle, toggle to show the panel.
 
    - Close on click outside.
    - Close on escape.
