@@ -1,24 +1,12 @@
 # author -- sync with local directory
 
-[author] `AuthorConnectionInfo` -- show list of files
-[author] `AuthorConnectionInfo` -- show number of files
-[author] `AuthorConnectionInfo` -- show help graph
-
-```
-    cloud
-    /   \
-refresh save
-    \   /
-     app
-    /   \
-download upload
-    \    /
-   directory
-```
-
-[author] `AuthorConnectionInfo` -- disconnect button
-[author] `AuthorConnectionInfo` -- auto update button -- watch local file system for change by polling
-[author] `AuthorConnectionInfo` -- [maybe] show record of sync activities
+[author] rename `AuthorConnectionInfo` to `AuthorConnection`
+[author] extract `AuthorConnectionIllustration`
+[author] `AuthorConnection` -- show list of files
+[author] `AuthorConnection` -- show number of files
+[author] `AuthorConnection` -- disconnect button
+[author] `AuthorConnection` -- auto update button -- watch local file system for change by polling
+[author] `AuthorConnection` -- [maybe] show record of sync activities
 
 # recall -- in many timelines
 
