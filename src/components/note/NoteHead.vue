@@ -57,17 +57,16 @@ function fullscreenSupported() {
         </button>
       </template>
 
-      <button v-if="state.isEditable">
-        <a
-          :href="`https://readonly.link/articles/${contentURL(state.src)}`"
-          target="_blank"
-          :title="
-            lang.isZh() ? '在 Readonly.Link 中打开' : 'Open in Readonly.Link'
-          "
-        >
-          <ReadonlyIcon class="h-6 w-6" />
-        </a>
-      </button>
+      <a
+        v-if="state.isEditable"
+        :href="`https://readonly.link/articles/${contentURL(state.src)}`"
+        target="_blank"
+        :title="
+          lang.isZh() ? '在 Readonly.Link 中打开' : 'Open in Readonly.Link'
+        "
+      >
+        <ReadonlyIcon class="h-6 w-6" />
+      </a>
 
       <button v-else>
         <a

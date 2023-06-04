@@ -101,15 +101,13 @@ function fullscreenSupported() {
         </button>
       </template>
 
-      <button>
-        <a
-          :href="`${origin}/mimors/${state.src}`"
-          target="_blank"
-          :title="lang.isZh() ? '在新的标签中打开' : 'Open in new tab'"
-        >
-          <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
-        </a>
-      </button>
+      <a
+        :href="`${origin}/mimors/${state.src}`"
+        target="_blank"
+        :title="lang.isZh() ? '在新的标签中打开' : 'Open in new tab'"
+      >
+        <ArrowTopRightOnSquareIcon class="mb-0.5 h-5 w-5" />
+      </a>
 
       <template v-if="fullscreenSupported()">
         <button
