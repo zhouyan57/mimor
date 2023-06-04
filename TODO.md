@@ -1,16 +1,23 @@
 # author -- sync with local directory
 
-[author] `AuthorSelfHead` -- hover the connection info to show `AuthorConnectionInfo`
-
-- use our own UI components
-
-[author] `AuthorConnectionInfo` -- support disconnect
-
-[author] `AuthorConnectionInfo` -- show details
+[author] `AuthorConnectionInfo` -- show list of files
+[author] `AuthorConnectionInfo` -- show number of files
 [author] `AuthorConnectionInfo` -- show help graph
 
-[author] `AuthorConnectionInfo` -- support auto update -- watch local file system for change by polling
+```
+    cloud
+    /   \
+refresh save
+    \   /
+     app
+    /   \
+download upload
+    \    /
+   directory
+```
 
+[author] `AuthorConnectionInfo` -- disconnect button
+[author] `AuthorConnectionInfo` -- auto update button -- watch local file system for change by polling
 [author] `AuthorConnectionInfo` -- [maybe] show record of sync activities
 
 # recall -- in many timelines

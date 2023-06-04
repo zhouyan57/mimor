@@ -9,6 +9,8 @@ import {
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
+import Popup from '../../components/utils/Popup.vue'
+import AuthorConnectionInfo from './AuthorConnectionInfo.vue'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
 import { stateConnectDirectoryHandle } from './stateConnectLatestDirectoryHandle'
@@ -23,10 +25,8 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div
-    class="flex max-w-[47rem] justify-between space-x-3 overflow-x-auto text-base"
-  >
-    <div class="flex space-x-3 overflow-x-auto overflow-y-hidden text-base">
+  <div class="flex max-w-[47rem] justify-between space-x-3 text-base">
+    <div class="flex space-x-3 text-base">
       <button
         class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
         :title="
@@ -110,9 +110,27 @@ const lang = useGlobalLang()
           </Lang>
         </button>
 
-        <button class="flex min-w-max items-center space-x-1" @click="">
-          <div class="font-bold">{{ state.connection.name }}</div>
-        </button>
+        <Popup class="relative">
+          <template #toggle="{ popup }">
+            <div
+              class="font-bold"
+              @mouseover="popup.open = true"
+              @mouseleave="popup.open = false"
+            >
+              {{ state.connection.name }}
+            </div>
+          </template>
+
+          <template #panel="{ popup }">
+            <AuthorConnectionInfo
+              class="absolute left-0 top-[1.5rem] z-20"
+              @mouseover="popup.open = true"
+              @mouseleave="popup.open = false"
+              v-show="popup.open"
+              :state="state"
+            />
+          </template>
+        </Popup>
 
         <button
           class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
