@@ -1,9 +1,3 @@
-# components
-
-remove headlessui
-
-- remove comment from `Hyperlink`
-
 # author -- sync with local directory
 
 [author] `AuthorSelfHead` -- hover the connection info to show `AuthorConnectionInfo`
