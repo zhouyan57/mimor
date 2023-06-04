@@ -1,11 +1,5 @@
 # components
 
-replace headlessui `Popover` with `Popup`
-
-layouts/page-layout/PageMobileMenuGuest.vue
-layouts/page-layout/PageMobileMenuLoading.vue
-layouts/page-layout/PageMobileMenuUser.vue
-
 remove headlessui
 
 - remove comment from `Hyperlink`
