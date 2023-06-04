@@ -61,7 +61,7 @@ onMounted(() => {
       <slot name="toggle" :popup="state" />
     </button>
 
-    <div v-show="state.open" ref="panelElement">
+    <div ref="panelElement">
       <slot name="panel" :popup="state" />
     </div>
   </div>

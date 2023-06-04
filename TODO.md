@@ -1,7 +1,5 @@
 # components
 
-`Popup` -- let user control `v-show`-- for `Transition`
-
 replace headlessui `Popover` with `Popup`
 
 layouts/page-layout/PageMobileMenuGuest.vue

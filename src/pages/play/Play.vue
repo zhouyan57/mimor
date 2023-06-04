@@ -49,10 +49,10 @@ const window = useWindow()
 
           <template #panel="{ popup }">
             <Transition
-              enterActiveClass="transition duration-100 ease-out"
+              enterActiveClass="transition duration-300 ease-out"
               enterFromClass="transform scale-95 opacity-0"
               enterToClass="transform scale-100 opacity-100"
-              leaveActiveClass="transition duration-100 ease-out"
+              leaveActiveClass="transition duration-300 ease-out"
               leaveFromClass="transform scale-100 opacity-100"
               leaveToClass="transform scale-95 opacity-0"
             >
@@ -88,6 +88,7 @@ const window = useWindow()
 
             <template #panel="{ popup }">
               <List
+                v-show="popup.open"
                 class="absolute top-[4rem] z-10 flex flex-col border border-black bg-white text-xl"
                 :entries="[
                   { tag: 'zh', text: '中文' },
