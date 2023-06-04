@@ -10,7 +10,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Popup from '../../components/utils/Popup.vue'
-import AuthorConnectionInfo from './AuthorConnectionInfo.vue'
+import AuthorConnection from './AuthorConnection.vue'
 import { State } from './State'
 import { stateConnect } from './stateConnect'
 import { stateConnectDirectoryHandle } from './stateConnectLatestDirectoryHandle'
@@ -122,7 +122,7 @@ const lang = useGlobalLang()
           </template>
 
           <template #panel="{ popup }">
-            <AuthorConnectionInfo
+            <AuthorConnection
               class="absolute left-0 top-[1.5rem] z-20"
               @mouseover="popup.open = true"
               @mouseleave="popup.open = false"

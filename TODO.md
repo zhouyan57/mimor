@@ -1,6 +1,5 @@
 # author -- sync with local directory
 
-[author] rename `AuthorConnectionInfo` to `AuthorConnection`
 [author] extract `AuthorConnectionIllustration`
 [author] `AuthorConnection` -- show list of files
 [author] `AuthorConnection` -- show number of files
