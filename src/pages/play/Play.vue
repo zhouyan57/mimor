@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Dropdown from '../../components/dropdown/Dropdown.vue'
 import List from '../../components/list/List.vue'
+import Popup from '../../components/popup/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useWindow } from '../../reactives/useWindow'
@@ -38,16 +38,16 @@ const window = useWindow()
       </div>
 
       <div class="flex flex-col space-y-3">
-        <div class="text-2xl font-bold">Dropdown</div>
+        <div class="text-2xl font-bold">Popup</div>
 
-        <Dropdown class="relative">
+        <Popup class="relative">
           <template #toggle>
             <div class="max-w-fit border border-black p-3 text-xl">
-              Click to toggle Dropdown
+              Click to toggle Popup
             </div>
           </template>
 
-          <template #panel="{ dropdown }">
+          <template #panel="{ popup }">
             <Transition
               enterActiveClass="transition duration-100 ease-out"
               enterFromClass="transform scale-95 opacity-0"
@@ -57,13 +57,13 @@ const window = useWindow()
               leaveToClass="transform scale-95 opacity-0"
             >
               <div
-                v-show="dropdown.open"
+                v-show="popup.open"
                 class="absolute top-[4rem] z-10 flex flex-col space-y-3 border border-black bg-white p-3 text-xl"
               >
-                <div>Hello from Dropdown</div>
+                <div>Hello from Popup</div>
 
                 <button
-                  @click="dropdown.open = false"
+                  @click="popup.open = false"
                   class="max-w-fit border border-black px-2 py-1"
                 >
                   OK
@@ -71,14 +71,14 @@ const window = useWindow()
               </div>
             </Transition>
           </template>
-        </Dropdown>
+        </Popup>
       </div>
 
       <div class="flex flex-col space-y-3">
-        <div class="text-2xl font-bold">Dropdown of List</div>
+        <div class="text-2xl font-bold">Popup of List</div>
 
         <Scope :scope="{ tag: 'en' }" v-slot="{ scope }">
-          <Dropdown class="relative">
+          <Popup class="relative">
             <template #toggle>
               <div class="max-w-fit border border-black p-3 text-xl">
                 <span v-if="scope.tag === 'en'">Lang</span>
@@ -86,7 +86,7 @@ const window = useWindow()
               </div>
             </template>
 
-            <template #panel="{ dropdown }">
+            <template #panel="{ popup }">
               <List
                 class="absolute top-[4rem] z-10 flex flex-col border border-black bg-white text-xl"
                 :entries="[
@@ -100,7 +100,7 @@ const window = useWindow()
                     @click="
                       () => {
                         scope.tag = entry.tag
-                        dropdown.open = false
+                        popup.open = false
                       }
                     "
                   >
@@ -109,7 +109,7 @@ const window = useWindow()
                 </template>
               </List>
             </template>
-          </Dropdown>
+          </Popup>
         </Scope>
       </div>
     </div>

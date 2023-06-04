@@ -1,16 +1,16 @@
 # components
 
-docs about `Dropdown`
+docs about `Popup`
 
 - close on click outside and escape
 
 docs about `List`
 
-`Dropdown` -- use default slot instead of named slot (name="panel")
+`Popup` -- use default slot instead of named slot (name="panel")
 
-`Dropdown -- let user control `v-show`-- for`Transition`
+`Popup -- let user control `v-show`-- for`Transition`
 
-replace headlessui `Popover` with `Dropdown`
+replace headlessui `Popover` with `Popup`
 
 layouts/page-layout/PageMobileMenuGuest.vue
 layouts/page-layout/PageMobileMenuLoading.vue

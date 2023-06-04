@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
-import Dropdown from '../../components/dropdown/Dropdown.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { langTagName, useGlobalLang } from '../../components/lang/useGlobalLang'
 import List from '../../components/list/List.vue'
+import Popup from '../../components/popup/Popup.vue'
 
 const lang = useGlobalLang()
 </script>
 
 <template>
-  <Dropdown class="relative flex">
+  <Popup class="relative flex">
     <template #toggle>
       <div class="flex items-center">
         <Lang>
@@ -21,7 +21,7 @@ const lang = useGlobalLang()
       </div>
     </template>
 
-    <template #panel="{ dropdown }">
+    <template #panel="{ popup }">
       <Transition
         enterActiveClass="transition duration-100 ease-out"
         enterFromClass="transform scale-95 opacity-0"
@@ -31,7 +31,7 @@ const lang = useGlobalLang()
         leaveToClass="transform scale-95 opacity-0"
       >
         <List
-          v-show="dropdown.open"
+          v-show="popup.open"
           class="absolute left-0 top-9 min-w-max border bg-white"
           :entries="
             lang.knownTags.map((tag) => ({ tag, name: langTagName(tag) }))
@@ -43,7 +43,7 @@ const lang = useGlobalLang()
               @click="
                 () => {
                   lang.tag = entry.tag
-                  dropdown.open = false
+                  popup.open = false
                 }
               "
             >
@@ -54,5 +54,5 @@ const lang = useGlobalLang()
         </List>
       </Transition>
     </template>
-  </Dropdown>
+  </Popup>
 </template>

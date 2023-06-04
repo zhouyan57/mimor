@@ -49,11 +49,11 @@ onMounted(() => {
     "
   >
     <button ref="toggleElement" @click="state.open = !state.open">
-      <slot name="toggle" :dropdown="state" />
+      <slot name="toggle" :popup="state" />
     </button>
 
     <div v-show="state.open" ref="panelElement">
-      <slot name="panel" :dropdown="state" />
+      <slot name="panel" :popup="state" />
     </div>
   </div>
 </template>
