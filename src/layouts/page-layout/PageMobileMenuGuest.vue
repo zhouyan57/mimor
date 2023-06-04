@@ -44,17 +44,18 @@ function jump(path: string) {
         >
           <Watch
             :target="() => popup.open"
-            :action="(value: any) => {
-              if (value) {
-                $router.push({
-                  path: useCurrentPathname(),
-                  query: {
-                    ...useCurrentQuery(),
-                    'mobile-menu': null,
-                  },
-                })
+            :action="
+              (value) => {
+                if (value) {
+                  $router.push({
+                    path: useCurrentPathname(),
+                    query: {
+                      ...useCurrentQuery(),
+                      'mobile-menu': null,
+                    },
+                  })
+                }
               }
-            }
             "
           />
 
