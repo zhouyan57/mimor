@@ -11,13 +11,13 @@ defineProps<{ state: State }>()
       <template #zh>
         <pre>
   「云端」
-   /   \
+   /   ↖
 刷新   保存
-   \   /
+   ↘   /
    「App」
-   /   \
+   /   ↖
 下载   上传
-   \   /
+   ↘   /
 「本地文件夹」
 </pre
         >
@@ -25,13 +25,13 @@ defineProps<{ state: State }>()
       <template #en>
         <pre>
     [Cloud]
-     /   \
+     /   ↖
  Refresh Save
-     \   /
+     ↘   /
      [App]
-     /   \
+     /   ↖
 Download Upload
-     \   /
+     ↘   /
   [Directory]
 </pre
         >
