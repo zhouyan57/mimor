@@ -3,7 +3,7 @@ import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { Entry } from './Entry'
 import { State } from './State'
 
-export async function stateEntrySave(
+export async function stateEntrySaveUploadedText(
   state: State,
   entry: Entry,
 ): Promise<void> {

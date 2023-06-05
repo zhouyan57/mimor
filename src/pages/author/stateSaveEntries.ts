@@ -1,12 +1,12 @@
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { State } from './State'
-import { stateEntrySave } from './stateEntrySave'
+import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
 
 export async function stateSaveEntries(state: State): Promise<void> {
   state.isSavingEntries = true
 
   await promiseAllFulfilled(
-    state.entries.map((entry) => stateEntrySave(state, entry)),
+    state.entries.map((entry) => stateEntrySaveUploadedText(state, entry)),
   )
 
   state.isSavingEntries = false
