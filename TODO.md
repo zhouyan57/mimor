@@ -1,5 +1,7 @@
 # author -- sync with local directory
 
+[author] refactor code about double data loading -- content component load vs upload
+
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button
