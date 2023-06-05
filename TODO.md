@@ -1,6 +1,6 @@
 # author -- sync with local directory
 
-[author] `Entry` should have `uploadedText` instead of `isModified`
+[author] rename `stateEntrySave` to `stateEntrySaveUploadedText`
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button
