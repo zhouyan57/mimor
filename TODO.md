@@ -1,6 +1,6 @@
 # author -- sync with local directory
 
-[author] `AuthorConnection` -- show list of files
+[author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button
 [author] `AuthorConnection` -- auto update button -- watch local file system for change by polling

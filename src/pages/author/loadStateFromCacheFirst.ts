@@ -1,4 +1,3 @@
-import { reactive } from 'vue'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
 import { stateCacheGet } from './stateCacheGet'
@@ -14,7 +13,6 @@ export async function loadStateFromCacheFirst(
   if (cached) {
     return {
       ...cached,
-      entries: cached.entries.map(reactive),
       isLoadedFromCache: true,
     }
   } else {
