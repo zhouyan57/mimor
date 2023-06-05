@@ -18,7 +18,7 @@ const window = useWindow()
     :key="entry.path"
     :src="`~/${entry.path}`"
     :isEditable="true"
-    :text="entry.uploadedText || entry.text"
+    :text="entry.uploadedText"
     @update="
       ({ text }) => {
         entry.updatedAt = Date.now()
@@ -32,13 +32,13 @@ const window = useWindow()
         })
       }
     "
-    @loaded="
-      ({ text }) => {
+    @loadedText="
+      (text) => {
         entry.text = text
 
         window.console.log({
           who: 'AuthorSelfEntryNote',
-          message: 'loaded',
+          message: 'loadedText',
           entry,
           state,
         })

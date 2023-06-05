@@ -1,6 +1,5 @@
 # author -- sync with local directory
 
-[author] rename `stateEntrySave` to `stateEntrySaveUploadedText`
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button

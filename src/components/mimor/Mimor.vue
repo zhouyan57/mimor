@@ -41,7 +41,7 @@ watch(
       :state="state"
       :key="state.text"
       @update="$emit('update', state)"
-      @loaded="$emit('loaded', state)"
+      @loaded="$emit('loadedText', state.text)"
     />
     <MimorLoading v-else :options="{ src, isEditable }" />
   </div>

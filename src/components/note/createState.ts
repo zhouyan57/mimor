@@ -8,6 +8,7 @@ export function createState(options: {
   const { src, text, isEditable } = options
 
   return {
+    options,
     src,
     text,
     originalText: text,

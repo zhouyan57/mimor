@@ -1,7 +1,9 @@
 import { Program } from './Program'
 import { Theme } from './Theme'
+import { StateOptions } from './loadState'
 
 export type State = {
+  options: StateOptions
   kind: string
   src: string
   text: string

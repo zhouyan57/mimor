@@ -14,6 +14,7 @@ export function createState(options: {
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {
+    options,
     src,
     text,
     originalText: text,
