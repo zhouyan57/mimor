@@ -12,7 +12,8 @@
 > are collected by oneself. Solving the card backlog problem by do not
 > care (tiktok does not have video backlog problem).
 
-[recall] user can add a mimor into `/recall`
+[recall] show users own mimors with special label
+[recall] user can add other mimor into `/recall`
 
 # home
 
