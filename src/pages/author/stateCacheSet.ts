@@ -9,7 +9,8 @@ export async function stateCacheSet(state: State): Promise<void> {
     const newEntry = { ...entry }
     // Delete `text` to let the content components load and cache `text`.
     delete newEntry.text
-    delete newEntry.uploadedText
+    // Delete `isModified`, because it should be set only after upload.
+    delete newEntry.isModified
     return newEntry
   })
 

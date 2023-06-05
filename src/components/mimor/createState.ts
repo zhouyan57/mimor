@@ -2,21 +2,18 @@ import { parse } from '@xieyuheng/x-node'
 import { State } from './State'
 import { Theme } from './Theme'
 import { createProgram } from './createProgram'
-import { StateOptions } from './loadState'
 
-export function createState(input: {
-  options: StateOptions
+export function createState(options: {
   src: string
   withMetaThemeColor?: boolean
   isEditable?: boolean
   text: string
 }): State {
-  const { options, src, withMetaThemeColor, isEditable, text } = input
+  const { src, withMetaThemeColor, isEditable, text } = options
 
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {
-    options,
     src,
     text,
     originalText: text,

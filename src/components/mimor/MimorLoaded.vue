@@ -53,9 +53,7 @@ watch(
     <Init
       :action="
         () => {
-          if (state.options.text === undefined) {
-            $emit('loadedText')
-          }
+          $emit('loaded')
         }
       "
     />

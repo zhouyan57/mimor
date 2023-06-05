@@ -13,7 +13,6 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Popup from '../../components/utils/Popup.vue'
 import AuthorConnection from './AuthorConnection.vue'
 import { State } from './State'
-import { entryIsModified } from './entryIsModified'
 import { stateConnect } from './stateConnect'
 import { stateConnectDirectoryHandle } from './stateConnectLatestDirectoryHandle'
 import { stateConnectionDownload } from './stateConnectionDownload'
@@ -163,7 +162,7 @@ const lang = useGlobalLang()
         </button>
 
         <button
-          v-if="state.entries.some((entry) => entryIsModified(entry))"
+          v-if="state.entries.some((entry) => entry.isModified)"
           class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
           :title="
             lang.isZh()

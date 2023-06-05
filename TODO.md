@@ -1,12 +1,5 @@
 # author -- sync with local directory
 
-[author] refactor code about double data loading -- content component load vs upload
-
-- must support upload before initial refresh
-
-  currently if `uploadedText` is passed to mimor component,
-  the component will rerender -- the refresh of the component will be droped.
-
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button

@@ -1,7 +1,4 @@
-import { StateOptions } from './loadState'
-
 export type State = {
-  options: StateOptions
   src: string
   text: string
   originalText: string
