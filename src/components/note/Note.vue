@@ -40,7 +40,7 @@ watch(
       :state="state"
       :key="state.text"
       @update="$emit('update', state)"
-      @loaded="$emit('loadedText', state.text)"
+      @loadedText="$emit('loadedText', state.text)"
     />
     <NoteLoading v-else :options="{ src, isEditable }" />
   </div>

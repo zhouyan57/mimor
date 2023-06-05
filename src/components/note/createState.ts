@@ -1,11 +1,13 @@
 import { State } from './State'
+import { StateOptions } from './loadState'
 
-export function createState(options: {
+export function createState(input: {
+  options: StateOptions
   src: string
   text: string
   isEditable?: boolean
 }): State {
-  const { src, text, isEditable } = options
+  const { options, src, text, isEditable } = input
 
   return {
     options,

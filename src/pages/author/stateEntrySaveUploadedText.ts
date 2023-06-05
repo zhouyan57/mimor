@@ -24,5 +24,6 @@ export async function stateEntrySaveUploadedText(
     body: entry.uploadedText,
   })
 
+  entry.text = entry.uploadedText
   entry.isSaving = false
 }
