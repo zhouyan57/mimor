@@ -7,6 +7,8 @@
   currently if `uploadedText` is passed to mimor component,
   the component will rerender -- the refresh of the component will be droped.
 
+- maybe we should always load entry text in [author] instead of content component
+
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files
 [author] `AuthorConnection` -- disconnect button
