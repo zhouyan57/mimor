@@ -170,13 +170,16 @@ const lang = useGlobalLang()
               ? `将 app 中的文件保存到云端`
               : `Save files from app to cloud`
           "
-          :disabled="state.isSavingEntries"
+          :disabled="state.isSavingUploadedTexts"
           @click="stateSaveAllUploadedTexts(state)"
         >
-          <PaperAirplaneIcon v-if="!state.isSavingEntries" class="h-5 w-5" />
+          <PaperAirplaneIcon
+            v-if="!state.isSavingUploadedTexts"
+            class="h-5 w-5"
+          />
 
           <ArrowPathIcon
-            v-if="state.isSavingEntries"
+            v-if="state.isSavingUploadedTexts"
             class="h-5 w-5 animate-spin"
           />
 
