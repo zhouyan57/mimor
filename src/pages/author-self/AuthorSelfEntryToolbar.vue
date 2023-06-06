@@ -87,8 +87,8 @@ defineProps<{
       />
 
       <Lang>
-        <template #zh>保存</template>
-        <template #en>Save</template>
+        <template #zh>保存所上传的</template>
+        <template #en>Save Uploaded</template>
       </Lang>
     </button>
   </div>
