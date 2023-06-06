@@ -1,7 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionActivity` -- improve `*` for `updatedFiles` `+` for `createdFiles`
-
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
 

@@ -17,9 +17,6 @@ export async function stateConnectDirectoryHandle(
   state.connection.activities.unshift({
     name: 'Connect',
     time: Date.now(),
-    report: {
-      directory: directoryHandle.name,
-    },
   })
 
   await stateCacheSet(state)

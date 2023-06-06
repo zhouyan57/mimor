@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex max-h-[25rem] flex-col space-y-1 overflow-auto">
+  <div class="flex max-h-[25rem] flex-col space-y-2 overflow-auto">
     <div class="flex items-baseline justify-between">
       <Lang class="font-sans text-xl font-bold">
         <template #zh> 本地文件列表 </template>
