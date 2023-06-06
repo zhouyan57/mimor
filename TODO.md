@@ -1,7 +1,5 @@
 # author-self -- sync with local directory
 
-ambr entryIsModified entryIsModifiedByUpload
-
 [author-self] `AuthorConnection` -- show list of files in directory
 [author-self] `AuthorConnection` -- show number of files
 [author-self] `AuthorConnection` -- disconnect button
