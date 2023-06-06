@@ -2,8 +2,8 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
-import AuthorOther from './AuthorOther.vue'
-import AuthorSelf from './AuthorSelf.vue'
+import AuthorOther from '../author-other/AuthorOther.vue'
+import AuthorSelf from '../author-self/AuthorSelf.vue'
 
 const route = useRoute()
 const auth = useGlobalAuth()

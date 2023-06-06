@@ -1,3 +1,6 @@
+`author-self/` remove `AuthorOther`
+`author-other/` remove `AuthorSelf`
+
 # author -- sync with local directory
 
 [author] we should always load entry text in [author] instead of content component
