@@ -19,7 +19,7 @@ import { stateConnectDirectoryHandle } from './stateConnectLatestDirectoryHandle
 import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateConnectionUpload } from './stateConnectionUpload'
 import { stateRefresh } from './stateRefresh'
-import { stateSaveEntries } from './stateSaveEntries'
+import { stateSaveAllUploadedTexts } from './stateSaveAllUploadedTexts'
 
 defineProps<{ state: State }>()
 
@@ -171,7 +171,7 @@ const lang = useGlobalLang()
               : `Save files from app to cloud`
           "
           :disabled="state.isSavingEntries"
-          @click="stateSaveEntries(state)"
+          @click="stateSaveAllUploadedTexts(state)"
         >
           <PaperAirplaneIcon v-if="!state.isSavingEntries" class="h-5 w-5" />
 
