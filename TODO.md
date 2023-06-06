@@ -1,6 +1,6 @@
 # author-self -- sync with local directory
 
-[author-self] `loadEntries` -- `Entry` has `uploadedText` -- instead of `isModified`
+[author-self] fix `updatedAt`
 
 [author-self] `AuthorConnection` -- show list of files in directory
 [author-self] `AuthorConnection` -- show number of files

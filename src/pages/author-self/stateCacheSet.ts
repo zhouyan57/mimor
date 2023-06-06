@@ -7,8 +7,7 @@ export async function stateCacheSet(state: State): Promise<void> {
 
   const entries = state.entries.map((entry) => {
     const newEntry = { ...entry }
-    // Delete `isModified`, because it should be set only after upload.
-    delete newEntry.isModified
+    delete newEntry.uploadedText
     return newEntry
   })
 

@@ -11,7 +11,7 @@ import { State } from './State'
 import { entryIsModified } from './entryIsModified'
 import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
 import { stateEntryDeleteAfterConfirming } from './stateEntryDeleteAfterConfirming'
-import { stateEntrySave } from './stateEntrySave'
+import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
 
 defineProps<{
   state: State
@@ -77,7 +77,7 @@ defineProps<{
       v-if="entryIsModified(entry)"
       class="flex max-w-fit space-x-1 disabled:text-stone-500"
       :disabled="entry.isSaving"
-      @click="stateEntrySave(state, entry)"
+      @click="stateEntrySaveUploadedText(state, entry)"
     >
       <PaperAirplaneIcon
         class="h-5 w-5"

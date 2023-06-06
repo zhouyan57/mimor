@@ -15,7 +15,7 @@ defineProps<{
     :key="`${entry.path}+${entry.updatedAt}`"
     :src="`~/${entry.path}`"
     :isEditable="true"
-    :text="entry.text"
+    :text="entry.uploadedText || entry.text"
     @update="
       ({ text }) => {
         entry.updatedAt = Date.now()
