@@ -9,7 +9,8 @@ export async function stateEntrySaveUploadedText(
 ): Promise<void> {
   const who = 'stateEntrySaveUploadedText'
 
-  if (entry.uploadedText === undefined) {
+  // Should only save modified.
+  if (entry.uploadedText === undefined || entry.uploadedText === entry.text) {
     return
   }
 
