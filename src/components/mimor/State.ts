@@ -6,6 +6,7 @@ export type State = {
   src: string
   text: string
   originalText: string
+  isTextGiven?: boolean
   theme: Theme
   withMetaThemeColor?: boolean
   themeColor?: string

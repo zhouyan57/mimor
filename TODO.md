@@ -1,13 +1,8 @@
 # author -- sync with local directory
 
-[author] refactor code about double data loading -- content component load vs upload
+[note] use `isTextGiven` -- emit `loaded` only when text is not given
 
-- must support upload before initial refresh
-
-  currently if `uploadedText` is passed to mimor component,
-  the component will rerender -- the refresh of the component will be droped.
-
-- maybe we should always load entry text in [author] instead of content component
+[author] we should always load entry text in [author] instead of content component
 
 [author] `AuthorConnection` -- show list of files in directory
 [author] `AuthorConnection` -- show number of files

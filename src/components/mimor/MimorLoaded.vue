@@ -53,7 +53,9 @@ watch(
     <Init
       :action="
         () => {
-          $emit('loaded')
+          if (!state.isTextGiven) {
+            $emit('loaded')
+          }
         }
       "
     />
