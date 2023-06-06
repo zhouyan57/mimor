@@ -6,5 +6,6 @@ export function createConnection(
   return {
     handle,
     name: handle.name,
+    fileEntries: [],
   }
 }

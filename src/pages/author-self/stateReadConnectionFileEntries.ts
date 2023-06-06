@@ -1,26 +1,20 @@
 import * as fsa from '../../utils/fsa'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
-import { Connection } from './Connection'
+import { ConnectionFileEntry } from './Connection'
 import { State } from './State'
 import { pathFormat } from './pathFormat'
 
-export type FileEntry = {
-  path: string
-  updatedAt: number
-  text: string
-}
-
-export async function stateConnectionReadFileEntries(
+export async function stateReadConnectionFileEntries(
   state: State,
-  connection: Connection,
-): Promise<Array<FileEntry>> {
-  const filePaths = (await fsa.list(connection.handle)).filter(
+  handle: FileSystemDirectoryHandle,
+): Promise<Array<ConnectionFileEntry>> {
+  const filePaths = (await fsa.list(handle)).filter(
     (file) => file.endsWith('.md') || file.endsWith('.mimor'),
   )
 
   return await promiseAllFulfilled(
     filePaths.map(async (filePath) => {
-      const file = await fsa.read(connection.handle, filePath)
+      const file = await fsa.read(handle, filePath)
       const text = await file.text()
       return {
         path: pathFormat({
