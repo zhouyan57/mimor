@@ -1,12 +1,12 @@
 # author-self -- sync with local directory
 
+[author-self] `AuthorConnectionDataFlow` -- buttons clickable
+
 [author-self] `AuthorConnectionDataFlow` -- auto update button
 
 [author-self] `AuthorConnectionDataFlow` -- `stateConnectionToggleAutoUpdate`
 
 - watch local file system for change by polling
-
-[author-self] `AuthorConnectionDataFlow` -- buttons clickable
 
 # recall -- in many timelines
 
