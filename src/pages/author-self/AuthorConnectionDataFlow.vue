@@ -16,7 +16,7 @@ defineProps<{
       <template #en> Data Flow illustration </template>
     </Lang>
 
-    <Lang class="text-lg">
+    <Lang class="px-5 text-lg">
       <template #zh>
         <pre>
   「云端」
