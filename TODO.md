@@ -1,6 +1,8 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionDataFlow` -- buttons clickable
+[author-self] `AuthorConnectionDataFlow` -- download clickable
+[author-self] `AuthorConnectionDataFlow` -- upload clickable
+[author-self] `AuthorConnectionDataFlow` -- save clickable
 
 [author-self] `AuthorConnectionDataFlow` -- auto update button
 
