@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <Mimor
-    class="h-[34rem] max-w-[47rem] shrink-0"
+    class="h-[32rem] max-w-[47rem] shrink-0"
     :key="`${entry.path}+${entry.updatedAt}`"
     :src="`~/${entry.path}`"
     :isEditable="true"
