@@ -12,5 +12,6 @@ export async function loadConnection(
     handle,
     name: handle.name,
     fileEntries,
+    activities: [],
   }
 }
