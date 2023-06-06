@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ScissorsIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Connection } from './Connection'
 import { State } from './State'
+import { stateDisconnect } from './stateDisconnect'
 
 defineProps<{
   state: State
@@ -25,11 +27,10 @@ defineProps<{
    ↘   /
    「App」
    /   ↖
-下载   上传
+下载   上传  <button class="inline-flex border border-black py-1 px-1.5"><ScissorsIcon class="w-6 h-6 rotate-180" @click="stateDisconnect(state)" /> 断开连接</button>
    ↘   /
 「本地文件夹」
-</pre
-        >
+</pre>
       </template>
       <template #en>
         <pre>
@@ -39,11 +40,10 @@ defineProps<{
      ↘   /
      [App]
      /   ↖
-Download Upload
+Download Upload  <button class="inline-flex border border-black py-1 px-1.5" @click="stateDisconnect(state)"><ScissorsIcon class="w-6 h-6 rotate-180" /> Disconnect</button>
      ↘   /
   [Directory]
-</pre
-        >
+</pre>
       </template>
     </Lang>
   </div>
