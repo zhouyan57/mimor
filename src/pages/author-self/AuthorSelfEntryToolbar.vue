@@ -6,10 +6,12 @@ import {
   TrashIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import { asyncRun } from '../../utils/asyncRun'
 import { Entry } from './Entry'
 import { State } from './State'
 import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
+import { stateCacheSet } from './stateCacheSet'
 import { stateEntryDeleteAfterConfirming } from './stateEntryDeleteAfterConfirming'
 import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
 
@@ -77,7 +79,12 @@ defineProps<{
       v-if="entryIsModifiedByUpload(entry)"
       class="flex max-w-fit space-x-1 disabled:text-stone-500"
       :disabled="entry.isSaving"
-      @click="stateEntrySaveUploadedText(state, entry)"
+      @click="
+        asyncRun(async () => {
+          await stateEntrySaveUploadedText(state, entry)
+          await stateCacheSet(state)
+        })
+      "
     >
       <PaperAirplaneIcon
         class="h-5 w-5"
