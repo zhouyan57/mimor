@@ -12,7 +12,15 @@ export async function stateConnectDirectoryHandle(
   }
 
   state.latestDirectoryHandle = directoryHandle
-  const connection = await loadConnection(state, directoryHandle)
-  state.connection = connection
+
+  state.connection = await loadConnection(state, directoryHandle)
+  state.connection.activities.unshift({
+    name: 'Connect',
+    time: Date.now(),
+    report: {
+      directory: directoryHandle.name,
+    },
+  })
+
   await stateCacheSet(state)
 }

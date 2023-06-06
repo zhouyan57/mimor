@@ -1,9 +1,9 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionActivities` -- show record of activities
-
-- download
-- upload
+[author-self] `readConnectionFileEntries` should not take `username`
+[author-self] `AuthorConnectionActivities` -- download -- `updatedFiles` and `createdFiles`
+[author-self] `AuthorConnectionActivities` -- extract `AuthorConnectionActivity`
+[author-self] `AuthorConnectionActivity` -- improve `*` for `updatedFiles` `+` for `createdFiles`
 
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling

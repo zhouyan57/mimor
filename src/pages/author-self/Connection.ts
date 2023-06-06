@@ -7,6 +7,7 @@ export type ConnectionFileEntry = {
 export type ConnectionActivity = {
   name: string
   time: number
+  report?: any
 }
 
 export type Connection = {
