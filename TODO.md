@@ -1,7 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] extract `entryIsModified`
-
 [author-self] `loadEntries` -- `Entry` has `uploadedText` -- instead of `isModified`
 
 [author-self] `AuthorConnection` -- show list of files in directory

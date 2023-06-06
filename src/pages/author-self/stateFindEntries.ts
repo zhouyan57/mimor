@@ -1,13 +1,14 @@
 import { Entry } from './Entry'
 import { State } from './State'
+import { entryIsModified } from './entryIsModified'
 
 export function stateFindEntries(state: State): Array<Entry> {
   return state.entries.sort((x, y) => {
-    if (y.isModified && !x.isModified) {
+    if (entryIsModified(y) && !entryIsModified(x)) {
       return 1
     }
 
-    if (!y.isModified && x.isModified) {
+    if (!entryIsModified(y) && entryIsModified(x)) {
       return -1
     }
 
