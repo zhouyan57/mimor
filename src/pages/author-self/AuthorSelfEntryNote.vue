@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Note from '../../components/note/Note.vue'
+import { useWindow } from '../../reactives/useWindow'
 import { Entry } from './Entry'
 import { State } from './State'
 
@@ -7,6 +8,8 @@ defineProps<{
   state: State
   entry: Entry
 }>()
+
+const window = useWindow()
 </script>
 
 <template>
