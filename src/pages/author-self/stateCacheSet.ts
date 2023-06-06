@@ -14,6 +14,7 @@ export async function stateCacheSet(state: State): Promise<void> {
   const cache = reactiveToRaw({ ...state, entries })
 
   delete cache.connection
+  delete cache.isRefreshing
   delete cache.isSavingUploadedTexts
 
   await Kv.set(state.username, cache, store)
