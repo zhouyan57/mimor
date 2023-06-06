@@ -1,6 +1,10 @@
 # author-self -- sync with local directory
 
-[author-self] we should always load entry text in [author] instead of content component
+[author-self] `State` -- remove `isSelf`
+
+[author-self] extract `entryIsModified`
+
+[author-self] `loadEntries` -- `Entry` has `uploadedText` -- instead of `isModified`
 
 [author-self] `AuthorConnection` -- show list of files in directory
 [author-self] `AuthorConnection` -- show number of files
@@ -10,7 +14,7 @@
 
 # author-other
 
-[author-other] we should always load entry text in [author] instead of content component
+[author-other] `Entry` has `text` -- instead of load `text` by content component
 
 # recall -- in many timelines
 

@@ -5,7 +5,7 @@ export type Entry = {
   isModified?: boolean
   isSaving?: boolean
   path: string
-  text?: string
+  text: string
   createdAt: number
   updatedAt: number
 }
