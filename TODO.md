@@ -1,7 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `ConnectionFileEntry` should use pure path -- instead of `pathFormat`
-
 [author-self] `AuthorConnectionDirectory` -- show number of files
 
 [author-self] `AuthorConnection` -- disconnect button
