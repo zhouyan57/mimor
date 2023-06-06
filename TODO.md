@@ -1,7 +1,5 @@
 # author -- sync with local directory
 
-[note] use `isTextGiven` -- emit `loaded` only when text is not given
-
 [author] we should always load entry text in [author] instead of content component
 
 [author] `AuthorConnection` -- show list of files in directory

@@ -11,7 +11,11 @@ export interface StateOptions {
 
 export async function loadState(options: StateOptions): Promise<State> {
   if (options.text !== undefined) {
-    return createState({ ...options, text: options.text })
+    return createState({
+      ...options,
+      text: options.text,
+      isTextGiven: true,
+    })
   }
 
   const store = Kv.createStore('mimor.app/<note>', 'cache')
