@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AuthorConnectionDirectory from './AuthorConnectionDirectory.vue'
-import AuthorConnectionIllustration from './AuthorConnectionIllustration.vue'
+import AuthorConnectionDataFlow from './AuthorConnectionDataFlow.vue'
+import AuthorConnectionFileList from './AuthorConnectionFileList.vue'
 import { Connection } from './Connection'
 import { State } from './State'
 
@@ -11,8 +11,14 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col space-y-3 border border-black bg-white p-3">
-    <AuthorConnectionIllustration :state="state" :connection="connection" />
-    <AuthorConnectionDirectory :state="state" :connection="connection" />
+  <div class="flex space-x-8 border border-black bg-white p-4">
+    <!-- <div class="flex flex-col space-y-8">
+         TODO
+         </div> -->
+
+    <div class="flex flex-col space-y-8">
+      <AuthorConnectionDataFlow :state="state" :connection="connection" />
+      <AuthorConnectionFileList :state="state" :connection="connection" />
+    </div>
   </div>
 </template>

@@ -10,13 +10,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="text-lg">
+  <div class="flex flex-col space-y-2">
     <Lang class="font-sans text-xl font-bold">
       <template #zh> 数据流 </template>
-      <template #en> Data flow </template>
+      <template #en> Data Flow </template>
     </Lang>
 
-    <Lang class="mt-2">
+    <Lang class="text-lg">
       <template #zh>
         <pre>
   「云端」
