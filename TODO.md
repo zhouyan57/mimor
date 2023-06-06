@@ -1,15 +1,14 @@
 `author-self/` remove `AuthorOther`
-`author-other/` remove `AuthorSelf`
 
-# author -- sync with local directory
+# author-self -- sync with local directory
 
-[author] we should always load entry text in [author] instead of content component
+[author-self] we should always load entry text in [author] instead of content component
 
-[author] `AuthorConnection` -- show list of files in directory
-[author] `AuthorConnection` -- show number of files
-[author] `AuthorConnection` -- disconnect button
-[author] `AuthorConnection` -- auto update button -- watch local file system for change by polling
-[author] `AuthorConnection` -- [maybe] show record of sync activities
+[author-self] `AuthorConnection` -- show list of files in directory
+[author-self] `AuthorConnection` -- show number of files
+[author-self] `AuthorConnection` -- disconnect button
+[author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
+[author-self] `AuthorConnection` -- [maybe] show record of sync activities
 
 # recall -- in many timelines
 

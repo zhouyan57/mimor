@@ -8,7 +8,6 @@ export async function stateRefresh(state: State): Promise<void> {
   const newState = await loadState(state)
 
   state.user = newState.user
-  state.isSelf = newState.isSelf
 
   for (const newEntry of newState.entries) {
     const found = state.entries.find((entry) => entry.path === newEntry.path)
