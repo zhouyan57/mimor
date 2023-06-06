@@ -15,7 +15,7 @@ const window = useWindow()
 <template>
   <Note
     class="flex h-full max-w-[47rem] flex-col"
-    :key="entry.path"
+    :key="`${entry.path}+${entry.updatedAt}`"
     :src="`~/${entry.path}`"
     :isEditable="true"
     :text="entry.text"
