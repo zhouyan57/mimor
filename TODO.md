@@ -1,6 +1,11 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionDataFlow` -- download clickable
+[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowRefresh`
+[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowDownload`
+[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowDisconnect`
+[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowUpload`
+[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowSave`
+
 [author-self] `AuthorConnectionDataFlow` -- upload clickable
 [author-self] `AuthorConnectionDataFlow` -- save clickable
 

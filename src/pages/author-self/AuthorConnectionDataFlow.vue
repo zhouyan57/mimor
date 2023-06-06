@@ -9,6 +9,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { Connection } from './Connection'
 import { State } from './State'
+import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateDisconnect } from './stateDisconnect'
 import { stateRefresh } from './stateRefresh'
 
@@ -34,7 +35,7 @@ defineProps<{
         ↘   /
         「App」
         /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5"  @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> 断开连接</button>
-<button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowDownTrayIcon class="w-5 h-5" /> 下载</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
+<button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="connection.isDownloading" @click="stateConnectionDownload(state, connection)"><ArrowDownTrayIcon v-if="!connection.isDownloading" class="h-5 w-5" /><ArrowPathIcon v-if="connection.isDownloading" class="h-5 w-5 animate-spin" /> 下载</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
         ↘   /
      「本地文件夹」
 </pre>
@@ -47,7 +48,7 @@ defineProps<{
             ↘   /
             [App]
             /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5" @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> Disconnect</button>
-<button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowDownTrayIcon class="w-5 h-5" /> Download</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
+<button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="connection.isDownloading" @click="stateConnectionDownload(state, connection)"><ArrowDownTrayIcon v-if="!connection.isDownloading" class="h-5 w-5" /><ArrowPathIcon v-if="connection.isDownloading" class="h-5 w-5 animate-spin" /> Download</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
             ↘   /
          [Directory]
 </pre>

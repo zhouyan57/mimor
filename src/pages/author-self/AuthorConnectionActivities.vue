@@ -20,7 +20,7 @@ defineProps<{
     </div>
 
     <ul
-      class="flex flex-col space-y-2 overflow-y-auto overflow-x-hidden pr-1 text-lg"
+      class="flex flex-col space-y-2 overflow-y-auto overflow-x-hidden pr-2 text-lg"
     >
       <AuthorConnectionActivity
         v-for="(activity, index) of connection.activities"
