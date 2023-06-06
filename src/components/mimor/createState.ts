@@ -8,14 +8,16 @@ export function createState(options: {
   withMetaThemeColor?: boolean
   isEditable?: boolean
   text: string
+  isTextGiven?: boolean
 }): State {
-  const { src, withMetaThemeColor, isEditable, text } = options
+  const { src, withMetaThemeColor, isEditable, text, isTextGiven } = options
 
   const theme = new Theme('white')
   const metadata = { keywords: [], themeColor: 'white' }
   const state = {
     src,
     text,
+    isTextGiven,
     originalText: text,
     theme,
     metadata,
