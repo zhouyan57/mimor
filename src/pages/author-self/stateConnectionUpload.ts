@@ -10,10 +10,7 @@ export async function stateConnectionUpload(
 ): Promise<void> {
   connection.isUploading = true
 
-  connection.fileEntries = await readConnectionFileEntries(
-    state.username,
-    connection.handle,
-  )
+  connection.fileEntries = await readConnectionFileEntries(connection.handle)
 
   const report = { updatedFiles: [], createdFiles: [] }
 

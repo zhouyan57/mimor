@@ -6,7 +6,7 @@ export async function loadConnection(
   state: State,
   handle: FileSystemDirectoryHandle,
 ): Promise<Connection> {
-  const fileEntries = await readConnectionFileEntries(state.username, handle)
+  const fileEntries = await readConnectionFileEntries(handle)
 
   return {
     handle,

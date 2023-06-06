@@ -1,6 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `readConnectionFileEntries` should not take `username`
 [author-self] `AuthorConnectionActivities` -- download -- `updatedFiles` and `createdFiles`
 [author-self] `AuthorConnectionActivities` -- extract `AuthorConnectionActivity`
 [author-self] `AuthorConnectionActivity` -- improve `*` for `updatedFiles` `+` for `createdFiles`

@@ -3,7 +3,6 @@ import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { ConnectionFileEntry } from './Connection'
 
 export async function readConnectionFileEntries(
-  username: string,
   handle: FileSystemDirectoryHandle,
 ): Promise<Array<ConnectionFileEntry>> {
   const paths = (await fsa.list(handle)).filter(
