@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
+import { Connection } from './Connection'
 import { State } from './State'
 
-defineProps<{ state: State }>()
+defineProps<{
+  state: State
+  connection: Connection
+}>()
 </script>
 
 <template>
-  <div>
-    <Lang>
+  <div class="text-lg">
+    <Lang class="font-sans text-xl font-bold">
+      <template #zh> 数据流 </template>
+      <template #en> Data flow </template>
+    </Lang>
+
+    <Lang class="mt-2">
       <template #zh>
         <pre>
   「云端」

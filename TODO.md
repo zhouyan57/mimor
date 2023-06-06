@@ -1,7 +1,9 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnection` -- show list of files in directory
-[author-self] `AuthorConnection` -- show number of files
+[author-self] `ConnectionFileEntry` should use pure path -- instead of `pathFormat`
+
+[author-self] `AuthorConnectionDirectory` -- show number of files
+
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
 [author-self] `AuthorConnection` -- [maybe] show record of sync activities

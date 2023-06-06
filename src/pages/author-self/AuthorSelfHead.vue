@@ -132,6 +132,7 @@ const lang = useGlobalLang()
               @mouseleave="popup.open = false"
               v-show="popup.open"
               :state="state"
+              :connection="state.connection"
             />
           </template>
         </Popup>
