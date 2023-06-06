@@ -27,7 +27,7 @@ defineProps<{
    ↘   /
    「App」
    /   ↖
-下载   上传  <button class="inline-flex border border-black py-1 px-1.5"><ScissorsIcon class="w-6 h-6 rotate-180" @click="stateDisconnect(state)" /> 断开连接</button>
+下载   上传  <button class="inline-flex border border-black py-1 px-1.5"  @click="stateDisconnect(state)"><ScissorsIcon class="w-6 h-6 rotate-180" /> 断开连接</button>
    ↘   /
 「本地文件夹」
 </pre>
