@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
-import { formatDateTime } from '../../utils/formatDate'
+import AuthorConnectionActivity from './AuthorConnectionActivity.vue'
 import { Connection } from './Connection'
 import { State } from './State'
 
@@ -22,22 +22,13 @@ defineProps<{
     <ul
       class="flex flex-col space-y-2 overflow-y-auto overflow-x-hidden pr-2 text-lg"
     >
-      <li
+      <AuthorConnectionActivity
         v-for="(activity, index) of connection.activities"
         :key="index"
-        class="min-w-[15rem]"
-      >
-        <div class="flex items-baseline justify-between">
-          <div class="whitespace-pre font-bold">{{ activity.name }}</div>
-          <div class="whitespace-pre text-base">
-            {{ formatDateTime(activity.time) }}
-          </div>
-        </div>
-
-        <div v-if="activity.report" class="whitespace-pre">
-          {{ activity.report }}
-        </div>
-      </li>
+        :state="state"
+        :connection="connection"
+        :activity="activity"
+      />
     </ul>
   </div>
 </template>

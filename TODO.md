@@ -1,6 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionActivities` -- extract `AuthorConnectionActivity`
 [author-self] `AuthorConnectionActivity` -- improve `*` for `updatedFiles` `+` for `createdFiles`
 
 [author-self] `AuthorConnection` -- disconnect button
