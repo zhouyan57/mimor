@@ -1,9 +1,7 @@
 # author-self -- sync with local directory
 
 [author-self] `Connection` as `activities: Array<ConnectionActivity>`
-
 [author-self] `AuthorConnectionActivities` -- show record of activities
-
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
 

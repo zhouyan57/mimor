@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col space-y-1">
+  <div class="flex max-h-[25rem] flex-col space-y-1 overflow-auto">
     <div class="flex items-baseline justify-between">
       <Lang class="font-sans text-xl font-bold">
         <template #zh> 本地文件列表 </template>
@@ -32,7 +32,7 @@ defineProps<{
       </Lang>
     </div>
 
-    <ul class="flex flex-col text-lg">
+    <ul class="flex flex-col overflow-y-auto overflow-x-hidden text-lg">
       <li
         v-for="fileEntry of connection.fileEntries"
         :key="fileEntry.path"
