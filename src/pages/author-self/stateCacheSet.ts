@@ -6,9 +6,9 @@ export async function stateCacheSet(state: State): Promise<void> {
   const store = Kv.createStore('mimor.app/author-self', 'cache')
 
   const entries = state.entries.map((entry) => {
-    const newEntry = { ...entry }
-    delete newEntry.uploadedText
-    return newEntry
+    entry = { ...entry }
+    delete entry.uploadedText
+    return entry
   })
 
   const cache = reactiveToRaw({ ...state, entries })

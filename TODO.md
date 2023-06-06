@@ -5,10 +5,6 @@
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
 
-# author-other
-
-[author-other] `Entry` has `text` -- instead of load `text` by content component
-
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards

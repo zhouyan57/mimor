@@ -20,7 +20,10 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
 
   const pathEntries: Array<PathEntry> = await response.json()
 
-  return pathEntries
+  // No need to load `text` for entry here,
+  // let content components load `text`.
+
+  const entries = pathEntries
     .filter<PathEntryFile>(
       (pathEntry): pathEntry is PathEntryFile =>
         pathEntry.kind === 'File' &&
@@ -32,4 +35,6 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
       createdAt: pathEntry.createdAt,
       updatedAt: pathEntry.updatedAt,
     }))
+
+  return entries
 }
