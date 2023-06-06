@@ -1,5 +1,3 @@
-`author-self/` remove `AuthorOther`
-
 # author-self -- sync with local directory
 
 [author-self] we should always load entry text in [author] instead of content component
@@ -9,6 +7,10 @@
 [author-self] `AuthorConnection` -- disconnect button
 [author-self] `AuthorConnection` -- auto update button -- watch local file system for change by polling
 [author-self] `AuthorConnection` -- [maybe] show record of sync activities
+
+# author-other
+
+[author-other] we should always load entry text in [author] instead of content component
 
 # recall -- in many timelines
 

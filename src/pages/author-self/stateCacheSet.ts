@@ -3,7 +3,7 @@ import { reactiveToRaw } from '../../utils/vue/reactiveToRaw'
 import { State } from './State'
 
 export async function stateCacheSet(state: State): Promise<void> {
-  const store = Kv.createStore('mimor.app/authors', 'cache')
+  const store = Kv.createStore('mimor.app/author-self', 'cache')
 
   const entries = state.entries.map((entry) => {
     const newEntry = { ...entry }
