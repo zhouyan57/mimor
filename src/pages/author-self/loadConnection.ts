@@ -1,12 +1,12 @@
 import { Connection } from './Connection'
 import { State } from './State'
-import { stateReadConnectionFileEntries } from './stateReadConnectionFileEntries'
+import { readConnectionFileEntries } from './readConnectionFileEntries'
 
 export async function loadConnection(
   state: State,
   handle: FileSystemDirectoryHandle,
 ): Promise<Connection> {
-  const fileEntries = await stateReadConnectionFileEntries(state, handle)
+  const fileEntries = await readConnectionFileEntries(state.username, handle)
 
   return {
     handle,

@@ -1,11 +1,10 @@
 import * as fsa from '../../utils/fsa'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { ConnectionFileEntry } from './Connection'
-import { State } from './State'
 import { pathFormat } from './pathFormat'
 
-export async function stateReadConnectionFileEntries(
-  state: State,
+export async function readConnectionFileEntries(
+  username: string,
   handle: FileSystemDirectoryHandle,
 ): Promise<Array<ConnectionFileEntry>> {
   const filePaths = (await fsa.list(handle)).filter(
@@ -19,7 +18,7 @@ export async function stateReadConnectionFileEntries(
       return {
         path: pathFormat({
           isPublic: true,
-          username: state.username,
+          username,
           file: filePath,
         }),
         updatedAt: file.lastModified,

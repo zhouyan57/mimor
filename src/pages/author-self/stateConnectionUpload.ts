@@ -1,6 +1,7 @@
 import { Connection, ConnectionFileEntry } from './Connection'
+import { Entry } from './Entry'
 import { State } from './State'
-import { stateReadConnectionFileEntries } from './stateReadConnectionFileEntries'
+import { readConnectionFileEntries } from './readConnectionFileEntries'
 
 export async function stateConnectionUpload(
   state: State,
@@ -8,31 +9,31 @@ export async function stateConnectionUpload(
 ): Promise<void> {
   connection.isUploading = true
 
-  const fileEntries = await stateReadConnectionFileEntries(
-    state,
+  const fileEntries = await readConnectionFileEntries(
+    state.username,
     connection.handle,
   )
 
   for (const fileEntry of fileEntries) {
-    stateConnectionFileEntrySave(state, fileEntry)
+    saveConnectionFileEntry(state.entries, fileEntry)
   }
 
   connection.isUploading = false
 }
 
-function stateConnectionFileEntrySave(
-  state: State,
+function saveConnectionFileEntry(
+  entries: Array<Entry>,
   fileEntry: ConnectionFileEntry,
 ): void {
-  const found = state.entries.find((entry) => entry.path === fileEntry.path)
+  const found = entries.find((entry) => entry.path === fileEntry.path)
   if (found) {
-    found.uploadedText = fileEntry.text
-
     if (found.text !== fileEntry.text) {
       found.updatedAt = fileEntry.updatedAt
     }
+
+    found.uploadedText = fileEntry.text
   } else {
-    state.entries.push({
+    entries.push({
       isPublic: true,
       path: fileEntry.path,
       text: fileEntry.text,
