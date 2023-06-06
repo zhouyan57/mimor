@@ -13,8 +13,8 @@ defineProps<{
   <div class="flex flex-col space-y-1">
     <div class="flex items-baseline justify-between">
       <Lang class="font-sans text-xl font-bold">
-        <template #zh> 文件列表 </template>
-        <template #en> File List </template>
+        <template #zh> 本地文件列表 </template>
+        <template #en> Local File List </template>
       </Lang>
 
       <Lang class="font-sans">

@@ -12,8 +12,8 @@ defineProps<{
 <template>
   <div class="flex flex-col space-y-2">
     <Lang class="font-sans text-xl font-bold">
-      <template #zh> 数据流 </template>
-      <template #en> Data Flow </template>
+      <template #zh> 数据流示意图 </template>
+      <template #en> Data Flow illustration </template>
     </Lang>
 
     <Lang class="text-lg">

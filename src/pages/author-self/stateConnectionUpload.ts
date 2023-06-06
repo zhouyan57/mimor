@@ -10,12 +10,12 @@ export async function stateConnectionUpload(
 ): Promise<void> {
   connection.isUploading = true
 
-  const fileEntries = await readConnectionFileEntries(
+  connection.fileEntries = await readConnectionFileEntries(
     state.username,
     connection.handle,
   )
 
-  for (const fileEntry of fileEntries) {
+  for (const fileEntry of connection.fileEntries) {
     saveConnectionFileEntry(state, fileEntry)
   }
 

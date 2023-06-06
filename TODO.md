@@ -1,6 +1,5 @@
 # author-self -- sync with local directory
 
-AuthorConnectionIllustration
 [author-self] `Connection` as `activities: Array<ConnectionActivity>`
 
 [author-self] `AuthorConnectionActivities` -- show record of activities
