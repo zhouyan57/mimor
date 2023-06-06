@@ -11,7 +11,6 @@ const route = useRoute()
 const state = ref<State | undefined>(undefined)
 
 const options = reactive({
-  isSelf: true,
   username: String(route.params.username),
 })
 

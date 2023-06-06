@@ -1,7 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `State` -- remove `isSelf`
-
 [author-self] extract `entryIsModified`
 
 [author-self] `loadEntries` -- `Entry` has `uploadedText` -- instead of `isModified`
