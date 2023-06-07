@@ -4,8 +4,8 @@ import {
   ArrowPathIcon,
   ArrowUpTrayIcon,
   ArrowsUpDownIcon,
+  CloudArrowUpIcon,
   FolderOpenIcon,
-  PaperAirplaneIcon,
   ReceiptRefundIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
@@ -174,7 +174,7 @@ const lang = useGlobalLang()
           :disabled="state.isSavingUploadedTexts"
           @click="stateSaveAllUploadedTexts(state)"
         >
-          <PaperAirplaneIcon
+          <CloudArrowUpIcon
             v-if="!state.isSavingUploadedTexts"
             class="h-5 w-5"
           />

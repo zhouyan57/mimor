@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {
+  CloudArrowUpIcon,
   LockClosedIcon,
   LockOpenIcon,
-  PaperAirplaneIcon,
   TrashIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
@@ -86,7 +86,7 @@ defineProps<{
         })
       "
     >
-      <PaperAirplaneIcon
+      <CloudArrowUpIcon
         class="h-5 w-5"
         :class="{
           'animate-shake': entry.isSaving,

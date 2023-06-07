@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowPathIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Connection } from './Connection'
 import { State } from './State'
@@ -21,7 +21,7 @@ defineProps<{
     "
     @click.prevent.stop="stateSaveAllUploadedTexts(state)"
   >
-    <PaperAirplaneIcon v-if="!state.isSavingUploadedTexts" class="h-5 w-5" />
+    <CloudArrowUpIcon v-if="!state.isSavingUploadedTexts" class="h-5 w-5" />
 
     <ArrowPathIcon
       v-if="state.isSavingUploadedTexts"

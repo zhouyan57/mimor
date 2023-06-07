@@ -1,6 +1,10 @@
 # author-self -- sync with local directory
 
+[author-self] use `CloudArrowDownIcon`
+
 [author-self] `AuthorConnectionDataFlow` -- auto update button
+
+- arrow-up-on-square-stack
 
 [author-self] `AuthorConnectionDataFlow` -- `stateConnectionToggleAutoUpdate`
 
