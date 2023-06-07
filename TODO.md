@@ -1,10 +1,16 @@
+# search
+
+[search] by keywords
+[search] by directory
+[search] by substring
+
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards
 > are collected by oneself. Solving the card backlog problem by do not
 > care (tiktok does not have video backlog problem).
 
-[recall] show users own mimors with special label
+[recall] show users own mimors (with special label to distinguish others' mimors)
 [recall] user can add other mimor into `/recall`
 
 # home

@@ -25,13 +25,13 @@ const lang = useGlobalLang()
     :disabled="connection.isDownloading"
     @click.prevent.stop="stateConnectionDownload(state, connection)"
   >
-    <ArrowDownTrayIcon
-      v-if="!connection.isDownloading"
-      class="h-5 w-5"
-    /><ArrowPathIcon
+    <ArrowDownTrayIcon v-if="!connection.isDownloading" class="h-5 w-5" />
+
+    <ArrowPathIcon
       v-if="connection.isDownloading"
       class="h-5 w-5 animate-spin"
     />
+
     <Lang>
       <template #zh>下载</template>
       <template #en>Download</template>

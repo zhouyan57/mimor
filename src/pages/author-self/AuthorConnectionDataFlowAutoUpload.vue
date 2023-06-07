@@ -26,6 +26,7 @@ const lang = useGlobalLang()
     @click.prevent.stop="stateConnectionToggleAutoUpdate(state, connection)"
   >
     <ArrowUpOnSquareStackIcon class="h-5 w-5" />
+
     <Lang>
       <template #zh>自动上传</template>
       <template #en>Auto Upload</template>

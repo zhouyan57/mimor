@@ -33,6 +33,7 @@ const confirmMessage = lang.isZh()
     "
   >
     <ScissorsIcon class="h-5 w-5 rotate-180" />
+
     <Lang>
       <template #zh>断开连接</template>
       <template #en>Disconnect</template>
