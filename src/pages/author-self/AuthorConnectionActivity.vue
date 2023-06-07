@@ -23,15 +23,29 @@ defineProps<{
         <template #en>Connect</template>
       </Lang>
 
-      <Lang v-if="activity.name === 'Upload'" class="whitespace-pre">
+      <Lang v-else-if="activity.name === 'Upload'" class="whitespace-pre">
         <template #zh>上传</template>
         <template #en>Upload</template>
       </Lang>
 
-      <Lang v-if="activity.name === 'Download'" class="whitespace-pre">
+      <Lang v-else-if="activity.name === 'Download'" class="whitespace-pre">
         <template #zh>下载</template>
         <template #en>Download</template>
       </Lang>
+
+      <Lang v-else-if="activity.name === 'Save'" class="whitespace-pre">
+        <template #zh>保存</template>
+        <template #en>Save</template>
+      </Lang>
+
+      <Lang v-else-if="activity.name === 'Refresh'" class="whitespace-pre">
+        <template #zh>刷新</template>
+        <template #en>Refresh</template>
+      </Lang>
+
+      <div v-else class="whitespace-pre">
+        {{ activity.name }}
+      </div>
     </div>
 
     <div v-if="activity.report">
