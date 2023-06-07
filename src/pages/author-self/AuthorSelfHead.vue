@@ -4,6 +4,7 @@ import {
   ArrowPathIcon,
   ArrowUpTrayIcon,
   ArrowsUpDownIcon,
+  CloudArrowDownIcon,
   CloudArrowUpIcon,
   FolderOpenIcon,
   ReceiptRefundIcon,
@@ -39,10 +40,9 @@ const lang = useGlobalLang()
         :disabled="state.isRefreshing"
         @click="stateRefresh(state)"
       >
-        <ArrowPathIcon
-          class="h-5 w-5"
-          :class="{ 'animate-spin': state.isRefreshing }"
-        />
+        <CloudArrowDownIcon v-if="!state.isRefreshing" class="h-5 w-5" />
+
+        <ArrowPathIcon v-if="state.isRefreshing" class="h-5 w-5 animate-spin" />
 
         <Lang>
           <template #zh>刷新</template>

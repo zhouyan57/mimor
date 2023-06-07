@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowPathIcon } from '@heroicons/vue/24/outline'
+import { ArrowPathIcon, CloudArrowDownIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Connection } from './Connection'
 import { State } from './State'
@@ -13,14 +13,14 @@ defineProps<{
 
 <template>
   <button
-    class="inline-flex items-center border border-black px-1.5 py-1 disabled:text-stone-500"
+    class="inline-flex items-center space-x-1 border border-black px-1.5 py-1 disabled:text-stone-500"
     :disabled="state.isRefreshing"
     @click.prevent.stop="stateRefresh(state)"
   >
-    <ArrowPathIcon
-      class="h-5 w-5"
-      :class="{ 'animate-spin': state.isRefreshing }"
-    />
+    <CloudArrowDownIcon v-if="!state.isRefreshing" class="h-5 w-5" />
+
+    <ArrowPathIcon v-if="state.isRefreshing" class="h-5 w-5 animate-spin" />
+
     <Lang>
       <template #zh>刷新</template>
       <template #en>Refresh</template>

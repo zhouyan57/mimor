@@ -29,7 +29,7 @@ defineProps<{
  <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
         ↘   /
         「App」
-        /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
+        /   ↖  <AuthorConnectionDataFlowDisconnect class="my-1" :state="state" :connection="connection" />
  <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
         ↘   /
      「本地文件夹」
@@ -42,7 +42,7 @@ defineProps<{
   <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
             ↘   /
             [App]
-            /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
+            /   ↖  <AuthorConnectionDataFlowDisconnect class="my-1" :state="state" :connection="connection" />
  <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
             ↘   /
          [Directory]

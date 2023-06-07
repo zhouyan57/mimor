@@ -14,7 +14,7 @@ defineProps<{
 
 <template>
   <button
-    class="inline-flex items-center border border-black px-1.5 py-1 disabled:text-stone-500"
+    class="inline-flex items-center space-x-1 border border-black px-1.5 py-1 disabled:text-stone-500"
     :disabled="
       state.isSavingUploadedTexts ||
       !state.entries.some((entry) => entryIsModifiedByUpload(entry))

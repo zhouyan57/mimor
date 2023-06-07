@@ -13,7 +13,7 @@ defineProps<{
 
 <template>
   <button
-    class="my-1 inline-flex items-center border border-black px-1.5 py-1"
+    class="inline-flex items-center space-x-1 border border-black px-1.5 py-1 disabled:text-stone-500"
     @click.prevent.stop="stateDisconnect(state)"
   >
     <ScissorsIcon class="h-5 w-5 rotate-180" />
