@@ -1,6 +1,5 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowDisconnect`
 [author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowUpload`
 [author-self] `AuthorConnectionDataFlow` -- extract `AuthorConnectionDataFlowSave`
 

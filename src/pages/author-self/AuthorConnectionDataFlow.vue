@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import {
-  ArrowUpTrayIcon,
-  PaperAirplaneIcon,
-  ScissorsIcon,
-} from '@heroicons/vue/24/outline'
+import { ArrowUpTrayIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import AuthorConnectionDataFlowDisconnect from './AuthorConnectionDataFlowDisconnect.vue'
 import AuthorConnectionDataFlowDownload from './AuthorConnectionDataFlowDownload.vue'
 import AuthorConnectionDataFlowRefresh from './AuthorConnectionDataFlowRefresh.vue'
 import { Connection } from './Connection'
 import { State } from './State'
-import { stateDisconnect } from './stateDisconnect'
 
 defineProps<{
   state: State
@@ -32,7 +28,7 @@ defineProps<{
 <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> 保存</button>
         ↘   /
         「App」
-        /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5"  @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> 断开连接</button>
+        /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
         ↘   /
      「本地文件夹」
@@ -45,7 +41,7 @@ defineProps<{
 <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> Save</button>
             ↘   /
             [App]
-            /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5" @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> Disconnect</button>
+            /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
             ↘   /
          [Directory]
