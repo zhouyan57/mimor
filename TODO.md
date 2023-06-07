@@ -1,5 +1,7 @@
 # author-self -- sync with local directory
 
+[author-self] `AuthorConnectionActivity` -- also record Refresh and Save
+
 [author-self] `AuthorConnectionDataFlow` -- auto update button
 
 [author-self] `AuthorConnectionDataFlow` -- `stateConnectionToggleAutoUpdate`

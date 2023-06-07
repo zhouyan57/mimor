@@ -15,7 +15,7 @@ defineProps<{
   <button
     class="inline-flex items-center border border-black px-1.5 py-1 disabled:text-stone-500"
     :disabled="state.isRefreshing"
-    @click="stateRefresh(state)"
+    @click.prevent.stop="stateRefresh(state)"
   >
     <ArrowPathIcon
       class="h-5 w-5"

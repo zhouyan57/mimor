@@ -14,7 +14,7 @@ defineProps<{
 <template>
   <button
     class="my-1 inline-flex items-center border border-black px-1.5 py-1"
-    @click="stateDisconnect(state)"
+    @click.prevent.stop="stateDisconnect(state)"
   >
     <ScissorsIcon class="h-5 w-5 rotate-180" />
     <Lang>

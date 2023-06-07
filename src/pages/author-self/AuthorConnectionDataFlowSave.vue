@@ -19,7 +19,7 @@ defineProps<{
       state.isSavingUploadedTexts ||
       !state.entries.some((entry) => entryIsModifiedByUpload(entry))
     "
-    @click="stateSaveAllUploadedTexts(state)"
+    @click.prevent.stop="stateSaveAllUploadedTexts(state)"
   >
     <PaperAirplaneIcon v-if="!state.isSavingUploadedTexts" class="h-5 w-5" />
 

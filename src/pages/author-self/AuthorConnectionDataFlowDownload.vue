@@ -15,7 +15,7 @@ defineProps<{
   <button
     class="inline-flex items-center border border-black px-1.5 py-1 disabled:text-stone-500"
     :disabled="connection.isDownloading"
-    @click="stateConnectionDownload(state, connection)"
+    @click.prevent.stop="stateConnectionDownload(state, connection)"
   >
     <ArrowDownTrayIcon
       v-if="!connection.isDownloading"
