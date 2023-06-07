@@ -1,9 +1,3 @@
-# author-self -- sync with local directory
-
-[author-self] `statePeriodicallyConnectionUpload`
-
-- watch local file system for change by polling
-
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards

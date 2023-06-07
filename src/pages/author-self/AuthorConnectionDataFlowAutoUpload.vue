@@ -13,7 +13,12 @@ defineProps<{
 
 <template>
   <button
-    class="inline-flex items-center space-x-1 border border-black px-1.5 py-1 disabled:text-stone-500"
+    class="inline-flex items-center space-x-1 px-1.5 py-1 disabled:text-stone-500"
+    :class="{
+      'border border-orange-500 text-orange-500':
+        connection.isAutoUploadEnabled,
+      'border border-dashed border-black': !connection.isAutoUploadEnabled,
+    }"
     @click.prevent.stop="stateConnectionToggleAutoUpdate(state, connection)"
   >
     <ArrowUpOnSquareStackIcon class="h-5 w-5" />
