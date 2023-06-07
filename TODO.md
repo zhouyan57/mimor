@@ -1,6 +1,6 @@
 # author-self -- sync with local directory
 
-[author-self] `stateConnectionToggleAutoUpdate`
+[author-self] `statePeriodicallyConnectionUpload`
 
 - watch local file system for change by polling
 

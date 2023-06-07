@@ -20,6 +20,7 @@ export type Connection = {
   name: string
   isDownloading?: boolean
   isUploading?: boolean
+  isAutoUploadEnabled?: boolean
   fileEntries: Array<ConnectionFileEntry>
   activities: Array<ConnectionActivity>
 }
