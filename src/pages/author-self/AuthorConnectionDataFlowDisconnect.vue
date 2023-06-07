@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ScissorsIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Connection } from './Connection'
 import { State } from './State'
 import { stateDisconnect } from './stateDisconnect'
@@ -9,6 +10,8 @@ defineProps<{
   state: State
   connection: Connection
 }>()
+
+const lang = useGlobalLang()
 </script>
 
 <template>
