@@ -2,6 +2,7 @@
 import { ScissorsIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
+import { useWindow } from '../../reactives/useWindow'
 import { Connection } from './Connection'
 import { State } from './State'
 import { stateDisconnect } from './stateDisconnect'
@@ -12,12 +13,24 @@ defineProps<{
 }>()
 
 const lang = useGlobalLang()
+const window = useWindow()
+
+const confirmMessage = lang.isZh()
+  ? '确认要断开连接吗？'
+  : 'Are you sure to disconnect?'
 </script>
 
 <template>
   <button
     class="inline-flex items-center space-x-1 border border-black px-1.5 py-1 disabled:text-stone-500"
-    @click.prevent.stop="stateDisconnect(state)"
+    :title="
+      lang.isZh()
+        ? `断开 app 与本地文件夹之间的连接`
+        : `Disconnect app from local directory`
+    "
+    @click.prevent.stop="
+      window.confirm(confirmMessage) && stateDisconnect(state)
+    "
   >
     <ScissorsIcon class="h-5 w-5 rotate-180" />
     <Lang>

@@ -1,5 +1,3 @@
-[author-self] `AuthorConnectionDataFlowDisconnect` add confirm
-
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards
