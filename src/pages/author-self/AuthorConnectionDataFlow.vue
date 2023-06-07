@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ArrowUpTrayIcon, PaperAirplaneIcon } from '@heroicons/vue/24/outline'
+import { PaperAirplaneIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import AuthorConnectionDataFlowDisconnect from './AuthorConnectionDataFlowDisconnect.vue'
 import AuthorConnectionDataFlowDownload from './AuthorConnectionDataFlowDownload.vue'
 import AuthorConnectionDataFlowRefresh from './AuthorConnectionDataFlowRefresh.vue'
+import AuthorConnectionDataFlowUpload from './AuthorConnectionDataFlowUpload.vue'
 import { Connection } from './Connection'
 import { State } from './State'
 
@@ -29,7 +30,7 @@ defineProps<{
         ↘   /
         「App」
         /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
-<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
+<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
         ↘   /
      「本地文件夹」
 </pre>
@@ -42,7 +43,7 @@ defineProps<{
             ↘   /
             [App]
             /   ↖  <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
-<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
+<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
             ↘   /
          [Directory]
 </pre>
