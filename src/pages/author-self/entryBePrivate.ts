@@ -1,8 +1,8 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { pathFormat } from '../author/pathFormat'
+import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
-import { pathFormat } from './pathFormat'
-import { pathParse } from './pathParse'
 
 export async function entryBePrivate(entry: Entry): Promise<void> {
   if (!entry.isPublic) {

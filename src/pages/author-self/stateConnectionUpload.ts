@@ -1,7 +1,7 @@
+import { pathFormat } from '../author/pathFormat'
+import { pathParse } from '../author/pathParse'
 import { Connection, ConnectionFileEntry } from './Connection'
 import { State } from './State'
-import { pathFormat } from './pathFormat'
-import { pathParse } from './pathParse'
 import { readConnectionFileEntries } from './readConnectionFileEntries'
 
 export async function stateConnectionUpload(

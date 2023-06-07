@@ -5,9 +5,9 @@ import {
   PencilIcon,
 } from '@heroicons/vue/24/outline'
 import { formatDateTime } from '../../utils/formatDate'
+import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
 import { State } from './State'
-import { pathParse } from './pathParse'
 
 defineProps<{
   state: State

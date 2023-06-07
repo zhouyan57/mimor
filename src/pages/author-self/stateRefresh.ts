@@ -1,7 +1,7 @@
+import { pathParse } from '../author/pathParse'
 import { ConnectionActivityReport } from './Connection'
 import { State } from './State'
 import { loadState } from './loadState'
-import { pathParse } from './pathParse'
 import { stateCacheSet } from './stateCacheSet'
 
 export async function stateRefresh(state: State): Promise<void> {

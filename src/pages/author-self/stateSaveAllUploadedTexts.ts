@@ -1,7 +1,7 @@
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
+import { pathParse } from '../author/pathParse'
 import { ConnectionActivityReport } from './Connection'
 import { State } from './State'
-import { pathParse } from './pathParse'
 import { stateCacheSet } from './stateCacheSet'
 import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
 

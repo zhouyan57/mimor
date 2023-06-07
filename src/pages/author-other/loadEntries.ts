@@ -1,8 +1,8 @@
 import { PathEntry, PathEntryFile } from 'fidb/lib/path-entry'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
-import { pathParse } from './pathParse'
 
 export async function loadEntries(directory: string): Promise<Array<Entry>> {
   const { url } = useGlobalBackend()

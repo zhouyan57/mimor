@@ -1,9 +1,9 @@
 import * as fsa from '../../utils/fsa'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
+import { pathParse } from '../author/pathParse'
 import { Connection } from './Connection'
 import { Entry } from './Entry'
 import { State } from './State'
-import { pathParse } from './pathParse'
 import { readConnectionFileEntries } from './readConnectionFileEntries'
 
 export async function stateConnectionDownload(

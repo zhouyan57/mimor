@@ -3,8 +3,8 @@ import { loadContent } from '../../models/content/loadContent'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
+import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
-import { pathParse } from './pathParse'
 
 export async function loadEntries(directory: string): Promise<Array<Entry>> {
   const { url } = useGlobalBackend()
