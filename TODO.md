@@ -1,8 +1,12 @@
 # search
 
-[search] by keywords
-[search] by directory
-[search] by substring
+components/search/Search.vue
+
+components/search/SearchResults.vue
+
+[search] by `keywords`
+[search] by `directories`
+[search] by `text` substring
 
 # recall -- in many timelines
 
