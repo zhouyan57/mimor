@@ -34,6 +34,10 @@ export async function writeEntry(
   entry: Entry,
   report: { updatedFiles: Array<string>; createdFiles: Array<string> },
 ): Promise<void> {
+  if (entry.text === undefined) {
+    return
+  }
+
   const parsed = pathParse(entry.path)
   const fileEntry = connection.fileEntries.find(
     (fileEntry) => fileEntry.path === parsed.file,

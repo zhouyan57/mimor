@@ -52,7 +52,6 @@ function saveConnectionFileEntry(
         username: state.username,
         file: fileEntry.path,
       }),
-      text: fileEntry.text,
       uploadedText: fileEntry.text,
       createdAt: fileEntry.updatedAt,
       updatedAt: fileEntry.updatedAt,

@@ -4,7 +4,7 @@ export type Entry = {
   isDeleting?: boolean
   isSaving?: boolean
   path: string
-  text: string
+  text?: string
   uploadedText?: string
   createdAt: number
   updatedAt: number
