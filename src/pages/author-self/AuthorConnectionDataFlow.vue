@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import {
-  ArrowDownTrayIcon,
-  ArrowPathIcon,
   ArrowUpTrayIcon,
   PaperAirplaneIcon,
   ScissorsIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import AuthorConnectionDataFlowDownload from './AuthorConnectionDataFlowDownload.vue'
 import AuthorConnectionDataFlowRefresh from './AuthorConnectionDataFlowRefresh.vue'
 import { Connection } from './Connection'
 import { State } from './State'
-import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateDisconnect } from './stateDisconnect'
 
 defineProps<{
@@ -35,7 +33,7 @@ defineProps<{
         ↘   /
         「App」
         /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5"  @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> 断开连接</button>
-<button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="connection.isDownloading" @click="stateConnectionDownload(state, connection)"><ArrowDownTrayIcon v-if="!connection.isDownloading" class="h-5 w-5" /><ArrowPathIcon v-if="connection.isDownloading" class="h-5 w-5 animate-spin" /> 下载</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
+<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> 上传</button>
         ↘   /
      「本地文件夹」
 </pre>
@@ -48,7 +46,7 @@ defineProps<{
             ↘   /
             [App]
             /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5" @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> Disconnect</button>
-<button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="connection.isDownloading" @click="stateConnectionDownload(state, connection)"><ArrowDownTrayIcon v-if="!connection.isDownloading" class="h-5 w-5" /><ArrowPathIcon v-if="connection.isDownloading" class="h-5 w-5 animate-spin" /> Download</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
+<AuthorConnectionDataFlowDownload :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><ArrowUpTrayIcon class="w-5 h-5" /> Upload</button>
             ↘   /
          [Directory]
 </pre>
