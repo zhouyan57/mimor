@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ArrowPathIcon } from '@heroicons/vue/24/outline'
+import Lang from '../../components/lang/Lang.vue'
 import { Connection } from './Connection'
 import { State } from './State'
 import { stateRefresh } from './stateRefresh'
@@ -20,6 +21,9 @@ defineProps<{
       class="h-5 w-5"
       :class="{ 'animate-spin': state.isRefreshing }"
     />
-    刷新
+    <Lang>
+      <template #zh>刷新</template>
+      <template #en>Refresh</template>
+    </Lang>
   </button>
 </template>

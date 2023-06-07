@@ -7,11 +7,11 @@ import {
   ScissorsIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
+import AuthorConnectionDataFlowRefresh from './AuthorConnectionDataFlowRefresh.vue'
 import { Connection } from './Connection'
 import { State } from './State'
 import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateDisconnect } from './stateDisconnect'
-import { stateRefresh } from './stateRefresh'
 
 defineProps<{
   state: State
@@ -31,7 +31,7 @@ defineProps<{
         <pre>
        「云端」
         /   ↖
-<button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="state.isRefreshing" @click="stateRefresh(state)"><ArrowPathIcon class="w-5 h-5" :class="{ 'animate-spin': state.isRefreshing }" /> 刷新</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> 保存</button>
+<AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> 保存</button>
         ↘   /
         「App」
         /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5"  @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> 断开连接</button>
@@ -44,7 +44,7 @@ defineProps<{
         <pre>
            [Cloud]
             /   ↖
- <button class="inline-flex items-center border border-black py-1 px-1.5 disabled:text-stone-500" :disabled="state.isRefreshing" @click="stateRefresh(state)"><ArrowPathIcon class="w-5 h-5" :class="{ 'animate-spin': state.isRefreshing }" /> Refresh</button>    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> Save</button>
+<AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />    <button class="inline-flex items-center border border-black py-1 px-1.5"><PaperAirplaneIcon class="w-5 h-5" /> Save</button>
             ↘   /
             [App]
             /   ↖  <button class="inline-flex items-center border border-black my-1 py-1 px-1.5" @click="stateDisconnect(state)"><ScissorsIcon class="w-5 h-5 rotate-180" /> Disconnect</button>
