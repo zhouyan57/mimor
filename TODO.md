@@ -1,10 +1,6 @@
 # author-self -- sync with local directory
 
-[author-self] `AuthorConnectionDataFlow` -- auto update button
-
-- arrow-up-on-square-stack
-
-[author-self] `AuthorConnectionDataFlow` -- `stateConnectionToggleAutoUpdate`
+[author-self] `stateConnectionToggleAutoUpdate`
 
 - watch local file system for change by polling
 

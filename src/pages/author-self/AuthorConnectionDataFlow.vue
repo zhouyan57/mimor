@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
+import AuthorConnectionDataFlowAutoUpload from './AuthorConnectionDataFlowAutoUpload.vue'
 import AuthorConnectionDataFlowDisconnect from './AuthorConnectionDataFlowDisconnect.vue'
 import AuthorConnectionDataFlowDownload from './AuthorConnectionDataFlowDownload.vue'
 import AuthorConnectionDataFlowRefresh from './AuthorConnectionDataFlowRefresh.vue'
@@ -29,9 +30,9 @@ defineProps<{
 <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />     <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
         ↘   /
         「App」
-        /   ↖  <AuthorConnectionDataFlowDisconnect class="my-1" :state="state" :connection="connection" />
+        /   ↖          <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />     <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
-        ↘   /
+        ↘   /          <AuthorConnectionDataFlowAutoUpload :state="state" :connection="connection" />
      「本地文件夹」
 </pre>
       </template>
@@ -42,9 +43,9 @@ defineProps<{
  <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />     <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
             ↘   /
             [App]
-            /   ↖  <AuthorConnectionDataFlowDisconnect class="my-1" :state="state" :connection="connection" />
+            /   ↖           <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />     <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
-            ↘   /
+            ↘   /           <AuthorConnectionDataFlowAutoUpload :state="state" :connection="connection" />
          [Directory]
 </pre>
       </template>
