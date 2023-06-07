@@ -13,7 +13,7 @@ defineProps<{
 
 <template>
   <button
-    class="inline-flex items-center border border-black px-1.5 py-1"
+    class="inline-flex items-center border border-black px-1.5 py-1 disabled:text-stone-500"
     :disabled="connection.isUploading"
     @click="stateConnectionUpload(state, connection)"
   >
