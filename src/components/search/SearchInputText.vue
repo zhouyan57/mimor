@@ -11,7 +11,9 @@ const lang = useGlobalLang()
 <template>
   <div
     class="mx-3 mb-1 flex items-center space-x-1 border-b border-black pb-1 pt-2"
-    :class="{ 'border-orange-500': state.isFocused }"
+    :class="{
+      'border-orange-500': state.isFocused,
+    }"
   >
     <input
       class="w-full font-mono text-base focus:outline-none"
@@ -25,7 +27,9 @@ const lang = useGlobalLang()
     <label for="searchText">
       <MagnifyingGlassIcon
         class="h-5 w-5"
-        :class="{ 'text-orange-500': state.text }"
+        :class="{
+          'text-orange-500': state.text,
+        }"
       />
     </label>
   </div>
