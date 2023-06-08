@@ -2,7 +2,9 @@ import { SearchResult, SearchTarget } from './State'
 
 export function targetMatchText(
   target: SearchTarget,
-  text: string,
+  input: string,
 ): SearchResult | undefined {
+  const lines = target.text.split('\n')
+
   return undefined
 }
