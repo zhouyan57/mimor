@@ -1,4 +1,7 @@
 import { parse } from '@xieyuheng/x-node'
+import { createMetadata } from '../../components/mimor/createMetadata'
+import { translate } from '../../components/mimor/translate'
+import { translations } from '../../components/mimor/translations'
 import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
 
@@ -30,9 +33,9 @@ function entryKeywordsFromMimor(entry: Entry): Array<string> {
 
   try {
     const nodes = parse(entry.text)
-    // const metadata = createMetadata(nodes)
-
-    return []
+    const translatedNodes = translate(translations, nodes)
+    const metadata = createMetadata(translatedNodes)
+    return metadata.keywords
   } catch (_error) {
     return []
   }

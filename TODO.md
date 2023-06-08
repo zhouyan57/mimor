@@ -1,7 +1,5 @@
 # search
 
-[author-self] `entryKeywordsFromMimor` -- use `createMetadata`
-
 [author-self] `entryKeywordsFromMarkdown`
 
 # author-other
