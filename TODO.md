@@ -1,6 +1,5 @@
 # search
 
-[search] extract `stateFilterByText`
 [search] extract `stateFilterByKeywords`
 
 [author-self] `entryKeywords` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
