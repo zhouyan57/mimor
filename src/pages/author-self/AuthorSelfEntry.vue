@@ -19,7 +19,7 @@ defineProps<{
       <AuthorSelfEntryToolbar :state="state" :entry="entry" />
 
       <SearchResult
-        v-if="state.searchState.results[entry.path]"
+        v-if="state.isSearching && state.searchState.results[entry.path]"
         :state="state.searchState"
         :result="state.searchState.results[entry.path]"
       />
