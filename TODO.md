@@ -1,8 +1,7 @@
 # search
 
-[search] `SearchResult` -- show spans
 [search] search text debounce
-[author-self] prepare `keywords` of `targets` for search
+[author-self] prepare `keywords` of `targets` for search -- parse `.md` and `.mimor` file
 [search] `SearchInput` keywords filter
 [author-self] directory prefix as keywords
 

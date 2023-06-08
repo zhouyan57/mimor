@@ -32,7 +32,14 @@ defineProps<{
         )
       }}</span>
 
-      <span class="overflow-x-auto whitespace-pre">{{ matchedLine.line }}</span>
+      <span class="overflow-x-auto whitespace-pre"
+        ><span
+          v-for="(part, index) of matchedLine.parts"
+          :key="index"
+          :class="{ 'text-orange-500 underline': part.kind === 'Matched' }"
+          >{{ part.text }}</span
+        ></span
+      >
     </div>
   </div>
 </template>

@@ -3,9 +3,14 @@ export type SearchTarget = {
   text: string
 }
 
+export type MatchedLinePart =
+  | { kind: 'Matched'; text: string }
+  | { kind: 'NotMatched'; text: string }
+
 export type MatchedLine = {
   index: number
   line: string
+  parts: Array<MatchedLinePart>
 }
 
 export type SearchResult = {

@@ -1,4 +1,9 @@
-import { MatchedLine, SearchResult, SearchTarget } from './State'
+import {
+  MatchedLine,
+  MatchedLinePart,
+  SearchResult,
+  SearchTarget,
+} from './State'
 
 export function targetMatchText(
   target: SearchTarget,
@@ -8,9 +13,19 @@ export function targetMatchText(
 
   const lines = target.text.split('\n')
   for (const [index, line] of lines.entries()) {
-    const matched = line.match(input)
+    const matched = line.includes(input)
     if (matched) {
-      matchedLines.push({ index, line })
+      const parts: Array<MatchedLinePart> = []
+      const notMatchedTexts = line.split(input)
+      for (const [index, text] of notMatchedTexts.entries()) {
+        parts.push({ kind: 'NotMatched', text })
+
+        if (index !== notMatchedTexts.length - 1) {
+          parts.push({ kind: 'Matched', text: input })
+        }
+      }
+
+      matchedLines.push({ index, line, parts })
     }
   }
 
