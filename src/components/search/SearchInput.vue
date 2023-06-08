@@ -19,17 +19,17 @@ stateWatch(props.state)
 
   <div
     tabindex="-1"
-    @click="state.isSearching = true"
-    @focus.capture="state.isSearching = true"
-    @blur.capture="state.isSearching = false"
+    @click="state.isFocused = true"
+    @focus.capture="state.isFocused = true"
+    @blur.capture="state.isFocused = false"
     class="flex flex-col border border-black"
     :class="{
-      'border-orange-500 ring-1 ring-orange-400': state.isSearching,
+      'border-orange-500 ring-1 ring-orange-400': state.isFocused,
     }"
   >
     <div
       class="mx-3 mb-2 mt-1 flex items-center space-x-3 border-b border-black"
-      :class="{ 'border-orange-500': state.isSearching }"
+      :class="{ 'border-orange-500': state.isFocused }"
     >
       <input
         class="w-full py-px font-serif focus:outline-none"

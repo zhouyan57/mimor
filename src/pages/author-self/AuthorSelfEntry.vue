@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SearchResult from '../../components/search/SearchResult.vue'
 import AuthorSelfEntryContent from './AuthorSelfEntryContent.vue'
 import AuthorSelfEntryInfo from './AuthorSelfEntryInfo.vue'
 import AuthorSelfEntryToolbar from './AuthorSelfEntryToolbar.vue'
@@ -17,6 +18,12 @@ defineProps<{
       <AuthorSelfEntryInfo :state="state" :entry="entry" />
       <AuthorSelfEntryToolbar :state="state" :entry="entry" />
     </div>
+
+    <SearchResult
+      v-if="state.searchState.results[entry.path]"
+      :state="state.searchState"
+      :result="state.searchState.results[entry.path]"
+    />
 
     <AuthorSelfEntryContent :state="state" :entry="entry" />
   </div>

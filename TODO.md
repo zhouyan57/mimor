@@ -1,6 +1,5 @@
 # search
 
-[author-self] show `SearchResult`
 [search] `SearchResult`
 [search] search text debounce
 [search] `targetMatchText` -- maybe support spans here
