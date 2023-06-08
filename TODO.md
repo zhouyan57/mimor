@@ -1,6 +1,8 @@
 # search
 
-[search] `stateSearch`
+[search] `targetMatchText`
+
+[search] search text debounce
 
 [author-self] prepare `keywords` of `targets` for search
 [search] `SearchInput` keywords filter
