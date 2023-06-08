@@ -1,6 +1,5 @@
 # search
 
-[search] extract `SearchInputKeywords`
 [search] `SearchInputKeywords` show `knownKeywords`
 [search] `state` has `keywords`
 [search] `SearchInputKeywords` add `knownKeywords` to `keywords`

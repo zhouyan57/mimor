@@ -1,7 +1,7 @@
 export type Editor = {
   filename: string
   text: string
-  isEditing: boolean
+  isFocused: boolean
   isPublic: boolean
   mode: EditorMode
   knownModes: Array<EditorMode>
@@ -13,7 +13,7 @@ export function createEditor(): Editor {
   return {
     filename: '',
     text: '',
-    isEditing: false,
+    isFocused: false,
     isPublic: true,
     mode: 'mimor',
     knownModes: ['mimor', 'md'],

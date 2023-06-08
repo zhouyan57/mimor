@@ -10,7 +10,7 @@ const lang = useGlobalLang()
 <template>
   <div
     class="mx-3 mb-1 flex items-baseline border-b border-black pb-1 pt-2"
-    :class="{ 'border-orange-500': state.editor.isEditing }"
+    :class="{ 'border-orange-500': state.editor.isFocused }"
   >
     <input
       class="w-full font-mono text-base focus:outline-none"

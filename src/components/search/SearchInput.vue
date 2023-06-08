@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SearchInputKeywords from './SearchInputKeywords.vue'
 import SearchInputText from './SearchInputText.vue'
 import { State } from './State'
 import { stateWatch } from './stateWatch'
@@ -25,5 +26,6 @@ stateWatch(props.state)
     }"
   >
     <SearchInputText :state="state" />
+    <SearchInputKeywords :state="state" />
   </div>
 </template>

@@ -10,11 +10,11 @@ const lang = useGlobalLang()
 
 <template>
   <div
-    class="mx-3 mb-2 mt-1 flex items-center space-x-3 border-b border-black"
+    class="mx-3 mb-1 flex items-center space-x-1 border-b border-black pb-1 pt-2"
     :class="{ 'border-orange-500': state.isFocused }"
   >
     <input
-      class="w-full py-px font-serif focus:outline-none"
+      class="w-full font-mono text-base focus:outline-none"
       id="searchText"
       name="searchText"
       type="text"

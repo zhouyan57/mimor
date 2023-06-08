@@ -22,12 +22,12 @@ const report = reactive({
   <form
     tabindex="-1"
     @submit.prevent="stateEditorSave(state, report)"
-    @click="state.editor.isEditing = true"
-    @focus.capture="state.editor.isEditing = true"
-    @blur.capture="state.editor.isEditing = false"
+    @click="state.editor.isFocused = true"
+    @focus.capture="state.editor.isFocused = true"
+    @blur.capture="state.editor.isFocused = false"
     class="flex flex-col border border-black"
     :class="{
-      'border-orange-500 ring-1 ring-orange-400': state.editor.isEditing,
+      'border-orange-500 ring-1 ring-orange-400': state.editor.isFocused,
     }"
   >
     <AuthorEditorHead :state="state" />
