@@ -1,7 +1,5 @@
 # search
 
-[author-self] `entryKeywords` -- directory prefix as keywords
-
 [search] `stateKnownKeywords`
 [search] `SearchInput` show `knownKeywords`
 [search] `state` has `keywords`
