@@ -9,7 +9,7 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="mx-3 flex flex-wrap items-center">
-    <div>SearchInputKeywords</div>
+  <div class="mx-3 flex items-center">
+    <div>SearchInputStatistic</div>
   </div>
 </template>
