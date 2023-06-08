@@ -5,11 +5,7 @@ export function stateSearch(state: State): void {
   state.results = {}
 
   if (!state.text) {
-    for (const key of Object.keys(state.targets)) {
-      state.results[key] = {}
-    }
-
-    return
+    return stateShowAllTarget(state)
   }
 
   for (const [key, target] of Object.entries(state.targets)) {
@@ -17,5 +13,11 @@ export function stateSearch(state: State): void {
     if (result) {
       state.results[key] = result
     }
+  }
+}
+
+function stateShowAllTarget(state: State): void {
+  for (const key of Object.keys(state.targets)) {
+    state.results[key] = {}
   }
 }

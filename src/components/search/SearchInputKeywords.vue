@@ -10,7 +10,7 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="mx-3 flex flex-wrap py-1">
+  <div class="mx-3 flex flex-wrap py-2">
     <div
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
