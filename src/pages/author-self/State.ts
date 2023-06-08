@@ -1,3 +1,4 @@
+import { State as SearchState } from '../../components/search/State'
 import { User } from '../../models/user/User'
 import { Connection } from './Connection'
 import { Editor } from './Editor'
@@ -8,6 +9,8 @@ export type State = {
   user: User
   editor: Editor
   entries: Array<Entry>
+  searchState: SearchState
+  isSearching?: boolean
   isLoadedFromCache?: boolean
   isFileSystemAccessSupported?: boolean
   connection?: Connection

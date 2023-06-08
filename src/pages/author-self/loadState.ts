@@ -1,3 +1,4 @@
+import { createState as createSearchState } from '../../components/search/createState'
 import { loadUser } from '../../models/user/loadUser'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { createEditor } from './Editor'
@@ -26,6 +27,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     username,
     user,
     editor: createEditor(),
+    searchState: createSearchState(),
     entries,
     isFileSystemAccessSupported:
       typeof window.showOpenFilePicker === 'function',

@@ -1,6 +1,6 @@
 # search
 
-[author-self] `State` has `isSearching` -- show `SearchInput`
+[author-self] `AuthorSelfHead` -- show `SearchInput`
 
 [search] `SearchInput` keywords filter
 [search] `SearchInput` text input
