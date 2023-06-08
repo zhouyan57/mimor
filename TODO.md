@@ -1,9 +1,11 @@
 # search
 
-[author-self] prepare `targets` for search
 [search] `SearchInput` text input
+[search] search by text
+
 [author-self] prepare `keywords` of `targets` for search
 [search] `SearchInput` keywords filter
+
 [search] `SearchResult`
 [author-self] directory prefix as keywords
 
