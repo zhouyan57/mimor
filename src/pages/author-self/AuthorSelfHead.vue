@@ -231,7 +231,7 @@ const lang = useGlobalLang()
             }}</span></template
           >
           <template #en
-            >Count:
+            >Total:
             <span class="font-bold">{{ state.entries.length }}</span></template
           >
         </Lang>
