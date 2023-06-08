@@ -23,15 +23,16 @@ defineProps<{
       :key="index"
       class="flex space-x-2 font-mono text-sm"
     >
-      <div class="text-orange-500">
-        {{
-          `${leftPadLineNumber(result.matchedLines, index + 1)}${
-            matchedLine.index + 1
-          }`
-        }}
-      </div>
+      <span class="whitespace-pre text-orange-500">{{
+        leftPadLineNumber(
+          Math.max(
+            ...result.matchedLines.map((matchedLine) => matchedLine.index + 1),
+          ),
+          matchedLine.index + 1,
+        )
+      }}</span>
 
-      <div class="overflow-x-auto whitespace-pre">{{ matchedLine.line }}</div>
+      <span class="overflow-x-auto whitespace-pre">{{ matchedLine.line }}</span>
     </div>
   </div>
 </template>

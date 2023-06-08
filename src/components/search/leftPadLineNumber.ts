@@ -1,8 +1,4 @@
-import { MatchedLine } from './State'
-
-export function leftPadLineNumber(
-  matchedLines: Array<MatchedLine>,
-  n: number,
-): string {
-  return ''
+export function leftPadLineNumber(max: number, n: number): string {
+  const length = max.toString().length
+  return n.toString().padStart(length, ' ')
 }

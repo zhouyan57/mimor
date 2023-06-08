@@ -1,6 +1,5 @@
 # search
 
-[search] `leftPadLineNumber(lines, n)`
 [search] `SearchResult` -- show spans
 [search] search text debounce
 [author-self] prepare `keywords` of `targets` for search
