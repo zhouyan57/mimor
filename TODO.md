@@ -1,7 +1,6 @@
 # search
 
 [search] `SearchInputStatistic` show number of results
-[search] `SearchInputKeywords` add `knownKeywords` to `keywords`
 
 [author-self] `entryKeywords` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
 [author-self] `entryKeywords` prepare `keywords` -- parse `.md` file

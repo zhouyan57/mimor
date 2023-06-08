@@ -14,7 +14,16 @@ const lang = useGlobalLang()
     <div
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
-      class="mr-3 border border-dashed border-black px-1 font-sans text-lg font-bold"
+      class="mr-3 px-1 font-sans text-lg font-bold"
+      :class="{
+        'border border-dashed border-black': !state.keywords.has(keyword),
+        'border border-orange-500 text-orange-500': state.keywords.has(keyword),
+      }"
+      @click="
+        state.keywords.has(keyword)
+          ? state.keywords.delete(keyword)
+          : state.keywords.add(keyword)
+      "
     >
       {{ keyword }}
     </div>
