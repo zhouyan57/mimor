@@ -1,11 +1,8 @@
 # search
 
-[search] `SearchResult` -- add padding to `matchedLine.index`
-
+[search] `leftPadLineNumber(lines, n)`
 [search] `SearchResult` -- show spans
-
 [search] search text debounce
-
 [author-self] prepare `keywords` of `targets` for search
 [search] `SearchInput` keywords filter
 [author-self] directory prefix as keywords

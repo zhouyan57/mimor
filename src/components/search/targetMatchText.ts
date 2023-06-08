@@ -1,13 +1,10 @@
-import { SearchResult, SearchTarget } from './State'
+import { MatchedLine, SearchResult, SearchTarget } from './State'
 
 export function targetMatchText(
   target: SearchTarget,
   input: string,
 ): SearchResult | undefined {
-  const matchedLines: Array<{
-    index: number
-    line: string
-  }> = []
+  const matchedLines: Array<MatchedLine> = []
 
   const lines = target.text.split('\n')
   for (const [index, line] of lines.entries()) {

@@ -3,11 +3,13 @@ export type SearchTarget = {
   text: string
 }
 
+export type MatchedLine = {
+  index: number
+  line: string
+}
+
 export type SearchResult = {
-  matchedLines: Array<{
-    index: number
-    line: string
-  }>
+  matchedLines: Array<MatchedLine>
 }
 
 export type State = {

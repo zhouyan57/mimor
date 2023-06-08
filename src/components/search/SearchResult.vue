@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
 import { SearchResult, State } from './State'
+import { leftPadLineNumber } from './leftPadLineNumber'
 
 defineProps<{
   state: State
@@ -20,9 +21,15 @@ defineProps<{
     <div
       v-for="(matchedLine, index) of result.matchedLines"
       :key="index"
-      class="flex space-x-1 font-mono text-sm"
+      class="flex space-x-2 font-mono text-sm"
     >
-      <div class="text-orange-500">{{ matchedLine.index + 1 }}</div>
+      <div class="text-orange-500">
+        {{
+          `${leftPadLineNumber(result.matchedLines, index + 1)}${
+            matchedLine.index + 1
+          }`
+        }}
+      </div>
 
       <div class="overflow-x-auto whitespace-pre">{{ matchedLine.line }}</div>
     </div>
