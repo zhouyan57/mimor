@@ -1,5 +1,3 @@
-[author-other] `AuthorOtherHead` be like to `AuthorSelfHead` -- for search
-
 # search
 
 [search] `State` has `targets: Record<string, SearchEntry>` and `results: Record<string, SearchEntry>`
