@@ -24,16 +24,14 @@ function entryKeywordsFromPath(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMimor(entry: Entry): Array<string> {
-  if (!entry.text) {
-    return []
-  }
+  const text = entry.uploadedText || entry.text || ''
 
   if (!entry.path.endsWith('.mimor')) {
     return []
   }
 
   try {
-    const nodes = parse(entry.text)
+    const nodes = parse(text)
     const translatedNodes = translate(translations, nodes)
     const metadata = createMetadata(translatedNodes)
     return metadata.keywords
@@ -43,15 +41,13 @@ function entryKeywordsFromMimor(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMarkdown(entry: Entry): Array<string> {
-  if (!entry.text) {
-    return []
-  }
+  const text = entry.uploadedText || entry.text || ''
 
   if (!entry.path.endsWith('.md')) {
     return []
   }
 
-  const result = frontMatter(entry.text)
+  const result = frontMatter(text)
   const attributes = result.attributes as any
 
   const keywords = []

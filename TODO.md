@@ -1,5 +1,3 @@
-[author-self] `entryKeywords` use `uploadedText` first
-
 # author-other -- search
 
 [author-other] `entryReactive` -- setup watcher `entryUpdateSearchTargets`
