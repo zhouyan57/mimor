@@ -6,7 +6,7 @@ defineProps<{ state: State }>()
 </script>
 
 <template>
-  <div>
+  <div class="border border-black px-3 py-2">
     <div>SearchInput</div>
 
     <MagnifyingGlassIcon class="h-5 w-5" />

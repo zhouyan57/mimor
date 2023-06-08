@@ -1,15 +1,11 @@
 # search
 
-[author-self] `AuthorSelfLoaded` -- `SearchInput` add transition
-
-[search] `SearchInput` keywords filter
+[author-self] prepare `targets` for search
 [search] `SearchInput` text input
-
+[author-self] prepare `keywords` of `targets` for search
+[search] `SearchInput` keywords filter
 [search] `SearchResult`
-
-[search] by `keywords`
-[search] by `directories`
-[search] by `text` substring
+[author-self] directory prefix as keywords
 
 # recall -- in many timelines
 

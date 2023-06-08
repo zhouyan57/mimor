@@ -30,10 +30,10 @@ const lang = useGlobalLang()
 </script>
 
 <template>
-  <div class="flex max-w-[47rem] justify-between space-x-3 text-base">
-    <div class="flex space-x-3 text-base">
+  <div class="flex max-w-[47rem] flex-wrap justify-between text-base">
+    <div class="flex flex-wrap pr-3 text-base">
       <button
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将云端的文件刷新到 app`
@@ -54,7 +54,7 @@ const lang = useGlobalLang()
 
       <button
         v-if="state.isFileSystemAccessSupported && !state.connection"
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         @click="stateConnect(state)"
       >
         <ArrowsUpDownIcon class="h-5 w-5" />
@@ -67,7 +67,7 @@ const lang = useGlobalLang()
 
       <button
         v-if="state.latestDirectoryHandle && !state.connection"
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         @click="stateConnectDirectoryHandle(state, state.latestDirectoryHandle)"
       >
         <ReceiptRefundIcon class="h-5 w-5" />
@@ -89,7 +89,7 @@ const lang = useGlobalLang()
 
       <template v-if="state.connection">
         <button
-          class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+          class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
           :title="
             lang.isZh()
               ? `将 app 中的文件下载到本地文件夹`
@@ -114,7 +114,7 @@ const lang = useGlobalLang()
           </Lang>
         </button>
 
-        <Popup class="relative flex items-center">
+        <Popup class="relative flex items-center pr-3">
           <template #toggle="{ popup }">
             <div
               class="flex min-w-max items-center space-x-1"
@@ -140,7 +140,7 @@ const lang = useGlobalLang()
         </Popup>
 
         <button
-          class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+          class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
           :title="
             lang.isZh()
               ? `将本地文件夹中的文件上传到 app`
@@ -167,7 +167,7 @@ const lang = useGlobalLang()
 
         <button
           v-if="state.entries.some((entry) => entryIsModifiedByUpload(entry))"
-          class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+          class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
           :title="
             lang.isZh()
               ? `将 app 中的文件保存到云端`
@@ -194,10 +194,10 @@ const lang = useGlobalLang()
       </template>
     </div>
 
-    <div class="flex space-x-3 overflow-x-auto text-base">
+    <div class="flex flex-wrap overflow-x-auto text-base">
       <button
         v-if="!state.isSearching"
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="lang.isZh() ? `开始搜索` : `Start searching`"
         @click="state.isSearching = true"
       >
@@ -211,7 +211,7 @@ const lang = useGlobalLang()
 
       <button
         v-if="state.isSearching"
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="lang.isZh() ? `退出搜索` : `Exit searching`"
         @click="state.isSearching = false"
       >

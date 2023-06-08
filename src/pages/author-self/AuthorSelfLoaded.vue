@@ -29,14 +29,23 @@ const state = stateReactive(props.state)
         <AuthorSelfHead :state="state" />
       </div>
 
-      <div class="flex flex-col px-3 py-2 text-xl">
-        <SearchInput
-          v-if="state.isSearching"
-          class="max-w-[47rem]"
-          :state="state.searchState"
-        />
+      <div class="flex w-full px-3 py-2 text-xl">
+        <Transition
+          enterActiveClass="transition duration-100 ease-linear"
+          enterFromClass="transform translate-x-4 opacity-0"
+          enterToClass="transform translate-x-0 opacity-100"
+          leaveActiveClass="transition duration-100 ease-linear"
+          leaveFromClass="transform translate-x-0 opacity-100"
+          leaveToClass="transform -translate-x-4 opacity-0"
+        >
+          <SearchInput
+            v-if="state.isSearching"
+            class="w-full max-w-[47rem]"
+            :state="state.searchState"
+          />
 
-        <AuthorEditor v-else class="max-w-[47rem]" :state="state" />
+          <AuthorEditor v-else class="w-full max-w-[47rem]" :state="state" />
+        </Transition>
       </div>
 
       <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
