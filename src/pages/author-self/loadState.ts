@@ -1,9 +1,9 @@
-import { SearchTarget } from '../../components/search/State'
 import { createState as createSearchState } from '../../components/search/createState'
 import { loadUser } from '../../models/user/loadUser'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { createEditor } from './Editor'
 import { State } from './State'
+import { entryReactive } from './entryReactive'
 import { loadEntries } from './loadEntries'
 
 export type StateOptions = {
@@ -20,29 +20,19 @@ export async function loadState(options: StateOptions): Promise<State> {
     `/users/${username}/public/contents`,
   ]
 
-  const entries = (
-    await promiseAllFulfilled(directories.map(await loadEntries))
-  ).flatMap((entries) => entries)
-
-  const targets: Record<string, SearchTarget> = Object.fromEntries(
-    entries.map((entry) => {
-      return [
-        entry.path,
-        {
-          keywords: [],
-          text: entry.text || '',
-        },
-      ]
-    }),
-  )
-
-  return {
+  const state: State = {
     username,
     user,
     editor: createEditor(),
-    searchState: createSearchState({ targets }),
-    entries,
+    searchState: createSearchState({ targets: {} }),
+    entries: [],
     isFileSystemAccessSupported:
       typeof window.showOpenFilePicker === 'function',
   }
+
+  state.entries = (await promiseAllFulfilled(directories.map(loadEntries)))
+    .flatMap((entries) => entries)
+    .map((entry) => entryReactive(entry, state.searchState.targets))
+
+  return state
 }

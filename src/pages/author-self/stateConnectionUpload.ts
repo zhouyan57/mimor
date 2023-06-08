@@ -2,6 +2,7 @@ import { pathFormat } from '../author/pathFormat'
 import { pathParse } from '../author/pathParse'
 import { Connection, ConnectionFileEntry } from './Connection'
 import { State } from './State'
+import { entryReactive } from './entryReactive'
 import { readConnectionFileEntries } from './readConnectionFileEntries'
 
 export async function stateConnectionUpload(
@@ -45,16 +46,21 @@ function saveConnectionFileEntry(
     found.uploadedText = fileEntry.text
   } else {
     report.createdFiles.push(fileEntry.path)
-    state.entries.push({
-      isPublic: true,
-      path: pathFormat({
-        isPublic: true,
-        username: state.username,
-        file: fileEntry.path,
-      }),
-      uploadedText: fileEntry.text,
-      createdAt: fileEntry.updatedAt,
-      updatedAt: fileEntry.updatedAt,
-    })
+    state.entries.push(
+      entryReactive(
+        {
+          isPublic: true,
+          path: pathFormat({
+            isPublic: true,
+            username: state.username,
+            file: fileEntry.path,
+          }),
+          uploadedText: fileEntry.text,
+          createdAt: fileEntry.updatedAt,
+          updatedAt: fileEntry.updatedAt,
+        },
+        state.searchState.targets,
+      ),
+    )
   }
 }

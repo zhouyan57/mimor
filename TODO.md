@@ -1,9 +1,15 @@
 # search
 
-[author-self] prepare `keywords` of `targets` for search -- parse `.md` and `.mimor` file
+[author-self] `entryUpdateSearchTargets` prepare `keywords` -- parse `.md` and `.mimor` file
+
 [search] `SearchInput` keywords filter
 
 [author-self] directory prefix as keywords
+
+[author-other] support search
+
+[author-other] `entryReactive` -- setup watcher `entryUpdateSearchTargets`
+[author-other] `entryUpdateSearchTargets`
 
 # recall -- in many timelines
 

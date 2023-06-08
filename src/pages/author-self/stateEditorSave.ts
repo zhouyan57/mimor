@@ -1,7 +1,8 @@
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
-import { createEditor, Editor } from './Editor'
+import { Editor, createEditor } from './Editor'
 import { State } from './State'
+import { entryReactive } from './entryReactive'
 
 export async function stateEditorSave(
   state: State,
@@ -32,13 +33,18 @@ export async function stateEditorSave(
   if (response.ok) {
     const now = Date.now()
 
-    state.entries.push({
-      isPublic: state.editor.isPublic,
-      path,
-      text: state.editor.text,
-      createdAt: now,
-      updatedAt: now,
-    })
+    state.entries.push(
+      entryReactive(
+        {
+          isPublic: state.editor.isPublic,
+          path,
+          text: state.editor.text,
+          createdAt: now,
+          updatedAt: now,
+        },
+        state.searchState.targets,
+      ),
+    )
 
     state.editor = createEditor()
   } else {
