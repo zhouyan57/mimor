@@ -1,12 +1,24 @@
+[author-other] rename `AuthorOtherHead` to `AuthorOtherInfo`
+[author-other] `AuthorOtherHead` be like to `AuthorSelfHead` -- for search
+
 # search
 
-components/search/Search.vue
+[search] `State` has `targets: Record<string, SearchEntry>` and `results: Record<string, SearchEntry>`
 
-components/search/SearchResults.vue
+[search] `SearchInput`
+
+- with both keywords filter and text input
+- use `MagnifyingGlassIcon`
+
+[search] `SearchResult`
 
 [search] by `keywords`
 [search] by `directories`
 [search] by `text` substring
+
+# author search
+
+[author-self] `State` has `isSearching` -- show `SearchInput`
 
 # recall -- in many timelines
 
