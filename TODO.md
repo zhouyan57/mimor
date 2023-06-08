@@ -1,7 +1,5 @@
 # search
 
-[search] `State` has `targets: Record<string, SearchEntry>` and `results: Record<string, SearchEntry>`
-
 [search] `SearchInput`
 
 - with both keywords filter and text input
