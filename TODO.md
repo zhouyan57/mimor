@@ -1,11 +1,13 @@
 # search
 
-[author-self] `entryUpdateSearchTargets` prepare `keywords` -- directory prefix as keywords
+[author-self] `entryKeywords` -- directory prefix as keywords
 
-[search] `SearchInput` keywords filter
+[search] `stateKnownKeywords`
+[search] `SearchInput` show `knownKeywords`
+[search] `state` has `keywords`
 
-[author-self] `entryUpdateSearchTargets` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
-[author-self] `entryUpdateSearchTargets` prepare `keywords` -- parse `.md` file
+[author-self] `entryKeywords` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
+[author-self] `entryKeywords` prepare `keywords` -- parse `.md` file
 
 [author-other] support search
 
