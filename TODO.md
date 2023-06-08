@@ -1,6 +1,6 @@
 # search
 
-[author-self] `AuthorSelfHead` -- show `SearchInput`
+[author-self] `AuthorSelfLoaded` -- `SearchInput` add transition
 
 [search] `SearchInput` keywords filter
 [search] `SearchInput` text input

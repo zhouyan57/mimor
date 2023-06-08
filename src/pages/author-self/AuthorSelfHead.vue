@@ -7,7 +7,9 @@ import {
   CloudArrowDownIcon,
   CloudArrowUpIcon,
   FolderOpenIcon,
+  MagnifyingGlassIcon,
   ReceiptRefundIcon,
+  XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
@@ -193,6 +195,34 @@ const lang = useGlobalLang()
     </div>
 
     <div class="flex space-x-3 overflow-x-auto text-base">
+      <button
+        v-if="!state.isSearching"
+        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        :title="lang.isZh() ? `开始搜索` : `Start searching`"
+        @click="state.isSearching = true"
+      >
+        <MagnifyingGlassIcon class="h-5 w-5" />
+
+        <Lang>
+          <template #zh>搜索</template>
+          <template #en>Search</template>
+        </Lang>
+      </button>
+
+      <button
+        v-if="state.isSearching"
+        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        :title="lang.isZh() ? `退出搜索` : `Exit searching`"
+        @click="state.isSearching = false"
+      >
+        <XMarkIcon class="h-5 w-5" />
+
+        <Lang>
+          <template #zh>搜索</template>
+          <template #en>Search</template>
+        </Lang>
+      </button>
+
       <div class="flex min-w-max items-center space-x-1">
         <Lang>
           <template #zh
