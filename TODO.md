@@ -1,19 +1,15 @@
 # search
 
-[search] `SearchInput`
+[author-self] `State` has `isSearching` -- show `SearchInput`
 
-- with both keywords filter and text input
-- use `MagnifyingGlassIcon`
+[search] `SearchInput` keywords filter
+[search] `SearchInput` text input
 
 [search] `SearchResult`
 
 [search] by `keywords`
 [search] by `directories`
 [search] by `text` substring
-
-# author search
-
-[author-self] `State` has `isSearching` -- show `SearchInput`
 
 # recall -- in many timelines
 
