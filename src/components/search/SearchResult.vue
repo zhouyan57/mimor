@@ -21,7 +21,7 @@ defineProps<{
     <div
       v-for="(matchedLine, index) of result.matchedLines"
       :key="index"
-      class="flex space-x-2 font-mono text-sm"
+      class="flex space-x-2 py-0.5 font-mono text-sm"
     >
       <span class="whitespace-pre text-orange-500">{{
         leftPadLineNumber(
@@ -32,7 +32,7 @@ defineProps<{
         )
       }}</span>
 
-      <span class="overflow-x-auto whitespace-pre"
+      <span class="overflow-x-auto hyphens-auto whitespace-pre-line"
         ><span
           v-for="(part, index) of matchedLine.parts"
           :key="index"
