@@ -9,4 +9,10 @@ export function stateWatch(state: State): void {
     debounce(() => stateSearch(state), 300),
     { immediate: true },
   )
+
+  watch(
+    () => state.keywords,
+    debounce(() => stateSearch(state), 300),
+    { immediate: true, deep: true },
+  )
 }
