@@ -15,7 +15,7 @@ const report = reactive({
 
 <template>
   <!--
-       We need to use capture on the form here,
+       We need to use capture here,
        because focus and blur events do not bubble up.
   -->
 

@@ -1,6 +1,5 @@
 # search
 
-[search] `SearchInput` text input
 [search] search by text
 
 [author-self] prepare `keywords` of `targets` for search

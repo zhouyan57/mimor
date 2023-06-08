@@ -6,6 +6,7 @@ export function createState(options: {
   const { targets } = options
 
   return {
+    text: '',
     targets,
     results: {},
   }

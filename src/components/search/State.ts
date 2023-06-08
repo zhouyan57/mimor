@@ -8,6 +8,8 @@ export type SearchResult = {
 }
 
 export type State = {
+  text: string
+  isSearching?: boolean
   targets: Record<string, SearchTarget>
   results: Record<string, SearchResult>
 }
