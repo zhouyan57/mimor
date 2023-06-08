@@ -1,4 +1,5 @@
 import { parse } from '@xieyuheng/x-node'
+import frontMatter from 'front-matter'
 import { createMetadata } from '../../components/mimor/createMetadata'
 import { translate } from '../../components/mimor/translate'
 import { translations } from '../../components/mimor/translations'
@@ -23,11 +24,11 @@ function entryKeywordsFromPath(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMimor(entry: Entry): Array<string> {
-  if (!entry.path.endsWith('mimor')) {
+  if (!entry.text) {
     return []
   }
 
-  if (!entry.text) {
+  if (!entry.path.endsWith('.mimor')) {
     return []
   }
 
@@ -42,5 +43,25 @@ function entryKeywordsFromMimor(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMarkdown(entry: Entry): Array<string> {
-  return []
+  if (!entry.text) {
+    return []
+  }
+
+  if (!entry.path.endsWith('.md')) {
+    return []
+  }
+
+  const result = frontMatter(entry.text)
+  const attributes = result.attributes as any
+
+  const keywords = []
+  if (attributes.keywords instanceof Array) {
+    for (const keyword of attributes.keywords) {
+      if (typeof keyword === 'string') {
+        keywords.push(keyword)
+      }
+    }
+  }
+
+  return keywords
 }

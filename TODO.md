@@ -1,10 +1,6 @@
-# search
+[author-self] `entryKeywords` use `uploadedText` first
 
-[author-self] `entryKeywordsFromMarkdown`
-
-# author-other
-
-[author-other] support search
+# author-other -- search
 
 [author-other] `entryReactive` -- setup watcher `entryUpdateSearchTargets`
 [author-other] `entryUpdateSearchTargets`
