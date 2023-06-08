@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { State } from './State'
+import { SearchResult, State } from './State'
 
-defineProps<{ state: State }>()
+defineProps<{
+  state: State
+  result: SearchResult
+}>()
 </script>
 
 <template>
-  <div>SearchResult</div>
+  <div>
+    <div>SearchResult</div>
+    <div>{{ result }}</div>
+  </div>
 </template>
