@@ -1,11 +1,18 @@
 # search
 
-[search] `stateKnownKeywords`
-[search] `SearchInput` show `knownKeywords`
+[search] extract `SearchInputKeywords`
+[search] `SearchInputKeywords` show `knownKeywords`
 [search] `state` has `keywords`
+[search] `SearchInputKeywords` add `knownKeywords` to `keywords`
+
+[search] extract `SearchInputStatistic`
+
+[search] `SearchInputStatistic` show number of results
 
 [author-self] `entryKeywords` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
 [author-self] `entryKeywords` prepare `keywords` -- parse `.md` file
+
+# author-other
 
 [author-other] support search
 
