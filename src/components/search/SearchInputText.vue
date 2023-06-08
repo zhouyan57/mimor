@@ -23,7 +23,10 @@ const lang = useGlobalLang()
     />
 
     <label for="searchText">
-      <MagnifyingGlassIcon class="h-5 w-5" />
+      <MagnifyingGlassIcon
+        class="h-5 w-5"
+        :class="{ 'text-orange-500': state.text }"
+      />
     </label>
   </div>
 </template>
