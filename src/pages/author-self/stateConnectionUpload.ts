@@ -59,7 +59,7 @@ function saveConnectionFileEntry(
           createdAt: fileEntry.updatedAt,
           updatedAt: fileEntry.updatedAt,
         },
-        state.searchState.targets,
+        state,
       ),
     )
   }

@@ -1,18 +1,15 @@
 import { reactive, watch } from 'vue'
-import { SearchTarget } from '../../components/search/State'
 import { Entry } from './Entry'
+import { State } from './State'
 import { entryUpdateSearchTargets } from './entryUpdateSearchTargets'
 
-export function entryReactive(
-  entry: Entry,
-  targets: Record<string, SearchTarget>,
-): Entry {
+export function entryReactive(entry: Entry, state: State): Entry {
   entry = reactive(entry)
 
   watch(
-    () => entry.text,
-    () => entryUpdateSearchTargets(entry, targets),
-    { immediate: true },
+    () => entry,
+    () => entryUpdateSearchTargets(entry, state.searchState.targets),
+    { immediate: true, deep: true },
   )
 
   return entry

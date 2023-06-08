@@ -42,7 +42,7 @@ export async function stateEditorSave(
           createdAt: now,
           updatedAt: now,
         },
-        state.searchState.targets,
+        state,
       ),
     )
 

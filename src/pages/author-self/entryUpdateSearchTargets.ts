@@ -8,6 +8,6 @@ export function entryUpdateSearchTargets(
 ): void {
   targets[entry.path] = {
     keywords: entryKeywords(entry),
-    text: entry.text || '',
+    text: entry.uploadedText || entry.text || '',
   }
 }

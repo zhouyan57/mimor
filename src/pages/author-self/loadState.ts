@@ -32,7 +32,7 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   state.entries = (await promiseAllFulfilled(directories.map(loadEntries)))
     .flatMap((entries) => entries)
-    .map((entry) => entryReactive(entry, state.searchState.targets))
+    .map((entry) => entryReactive(entry, state))
 
   return state
 }
