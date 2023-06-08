@@ -1,6 +1,6 @@
 # search
 
-[search] filter by keywords
+[search] filter by `keywords`
 
 [author-self] `entryKeywords` prepare `keywords` -- parse `.mimor` file -- `createMetadata`
 [author-self] `entryKeywords` prepare `keywords` -- parse `.md` file

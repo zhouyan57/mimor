@@ -14,7 +14,7 @@ export type MatchedLine = {
 }
 
 export type SearchResult = {
-  matchedLines: Array<MatchedLine>
+  matchedLines?: Array<MatchedLine>
 }
 
 export type State = {

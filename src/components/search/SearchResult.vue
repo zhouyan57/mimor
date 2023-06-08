@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div v-if="result.matchedLines" class="flex flex-col">
     <div>
       <Lang class="text-lg text-orange-500">
         <template #zh>匹配的行：</template>

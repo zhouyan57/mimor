@@ -5,6 +5,10 @@ export function stateSearch(state: State): void {
   state.results = {}
 
   if (!state.text) {
+    for (const key of Object.keys(state.targets)) {
+      state.results[key] = {}
+    }
+
     return
   }
 
