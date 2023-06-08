@@ -1,6 +1,6 @@
 # search
 
-[search] search by text
+[search] `stateSearch`
 
 [author-self] prepare `keywords` of `targets` for search
 [search] `SearchInput` keywords filter

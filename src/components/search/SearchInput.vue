@@ -2,10 +2,13 @@
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
+import { stateWatch } from './stateWatch'
 
-defineProps<{ state: State }>()
+const props = defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
+
+stateWatch(props.state)
 </script>
 
 <template>
