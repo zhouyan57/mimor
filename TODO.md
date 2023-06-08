@@ -1,13 +1,16 @@
 # search
 
-[search] `targetMatchText`
+[search] `SearchResult`
+
+[author-self] show `SearchResult`
 
 [search] search text debounce
+
+[search] `targetMatchText` -- maybe support spans here
 
 [author-self] prepare `keywords` of `targets` for search
 [search] `SearchInput` keywords filter
 
-[search] `SearchResult`
 [author-self] directory prefix as keywords
 
 # recall -- in many timelines

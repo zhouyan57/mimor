@@ -4,7 +4,10 @@ export type SearchTarget = {
 }
 
 export type SearchResult = {
-  lines: Array<{ index: number; line: string }>
+  matchedLines: Array<{
+    index: number
+    line: string
+  }>
 }
 
 export type State = {

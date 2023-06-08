@@ -44,5 +44,7 @@ stateWatch(props.state)
         <MagnifyingGlassIcon class="h-5 w-5" />
       </label>
     </div>
+
+    {{ state.results }}
   </div>
 </template>
