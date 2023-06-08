@@ -4,6 +4,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorOtherEntry from './AuthorOtherEntry.vue'
 import AuthorOtherHead from './AuthorOtherHead.vue'
+import AuthorOtherInfo from './AuthorOtherInfo.vue'
 import { State } from './State'
 import { stateFindEntries } from './stateFindEntries'
 import { stateReactive } from './stateReactive'
@@ -24,6 +25,7 @@ const state = stateReactive(props.state)
 
     <div class="flex h-full flex-col overflow-y-auto p-3">
       <AuthorOtherHead :state="state" />
+      <AuthorOtherInfo :state="state" />
 
       <AuthorOtherEntry
         v-for="(entry, index) of stateFindEntries(state)"

@@ -1,4 +1,3 @@
-[author-other] rename `AuthorOtherHead` to `AuthorOtherInfo`
 [author-other] `AuthorOtherHead` be like to `AuthorSelfHead` -- for search
 
 # search
