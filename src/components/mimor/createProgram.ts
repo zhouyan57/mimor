@@ -1,7 +1,7 @@
 import { isElement, parse, XElement, XNode } from '@xieyuheng/x-node'
 import { rangeArray } from '../../utils/rangeArray'
+import { createMetadata } from './createMetadata'
 import { createRouter } from './createRouter'
-import { Metadata } from './Metadata'
 import { Program } from './Program'
 import { routes } from './routes'
 import { translate } from './translate'
@@ -35,33 +35,6 @@ export function createProgram(options: ProgramOptions): Program {
     remainingIndexes,
     passedIndexes: [],
   }
-}
-
-function createMetadata(nodes: Array<XNode>): Metadata {
-  const metadata: Metadata = {
-    rawKeywords: '',
-    keywords: [],
-    themeColor: 'white',
-  }
-
-  for (const node of nodes) {
-    if (isElement(node) && node.tag === 'metadata') {
-      for (const [key, value] of Object.entries(node.attributes)) {
-        if (key === 'theme-color') {
-          metadata.themeColor = value
-        }
-
-        if (key === 'keywords') {
-          metadata.rawKeywords = value.trim()
-          metadata.keywords = value
-            .split(',')
-            .flatMap((part) => part.split('，').map((part) => part.trim()))
-        }
-      }
-    }
-  }
-
-  return metadata
 }
 
 function createElements(nodes: Array<XNode>): Array<XElement> {
