@@ -20,6 +20,8 @@ onMounted(() => {
   }
 })
 
+// https://stackoverflow.com/questions/5680013/how-to-be-notified-once-a-web-font-has-loaded
+
 document.fonts.addEventListener('loadingdone', (event) => {
   console.log('document.fonts', 'loadingdone')
 
