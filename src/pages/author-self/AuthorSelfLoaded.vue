@@ -46,7 +46,7 @@ const state = stateReactive(props.state)
 
       <div
         v-show="state.isSearching"
-        class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3"
+        class="flex h-full flex-col space-y-3 px-3 pb-3"
       >
         <div v-for="(entry, index) of stateEntriesFiltered(state)" :key="index">
           <AuthorSelfEntry :state="state" :entry="entry" />
@@ -55,7 +55,7 @@ const state = stateReactive(props.state)
 
       <div
         v-show="!state.isSearching"
-        class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3"
+        class="flex h-full flex-col space-y-3 px-3 pb-3"
       >
         <div v-for="(entry, index) of stateEntriesSorted(state)" :key="index">
           <AuthorSelfEntry :state="state" :entry="entry" />
