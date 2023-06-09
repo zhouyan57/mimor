@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import autosize from 'autosize'
 import { onMounted, ref } from 'vue'
+import { onVisible } from '../../utils/browser/onVisible'
 import { State } from './State'
 
 const props = defineProps<{ state: State }>()
@@ -10,6 +11,12 @@ const textareaElement = ref<HTMLTextAreaElement | undefined>(undefined)
 onMounted(() => {
   if (textareaElement.value && !props.state.isFullscreen) {
     autosize(textareaElement.value)
+
+    onVisible(textareaElement.value, (element) => {
+      if (!props.state.isFullscreen) {
+        autosize.update(element)
+      }
+    })
   }
 })
 </script>
