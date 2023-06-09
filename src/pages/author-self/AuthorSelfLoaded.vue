@@ -7,8 +7,9 @@ import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfEntry from './AuthorSelfEntry.vue'
 import AuthorSelfHead from './AuthorSelfHead.vue'
 import { State } from './State'
+import { stateEntriesFiltered } from './stateEntriesFiltered'
+import { stateEntriesSorted } from './stateEntriesSorted'
 import { stateReactive } from './stateReactive'
-import { stateResultEntries } from './stateResultEntries'
 
 const props = defineProps<{ state: State }>()
 
@@ -43,8 +44,20 @@ const state = stateReactive(props.state)
         />
       </div>
 
-      <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">
-        <div v-for="(entry, index) of stateResultEntries(state)" :key="index">
+      <div
+        v-show="state.isSearching"
+        class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3"
+      >
+        <div v-for="(entry, index) of stateEntriesFiltered(state)" :key="index">
+          <AuthorSelfEntry :state="state" :entry="entry" />
+        </div>
+      </div>
+
+      <div
+        v-show="!state.isSearching"
+        class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3"
+      >
+        <div v-for="(entry, index) of stateEntriesSorted(state)" :key="index">
           <AuthorSelfEntry :state="state" :entry="entry" />
         </div>
       </div>

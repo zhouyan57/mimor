@@ -1,4 +1,6 @@
-[author-self] `stateResultEntries` -- should not depend on `isSearching`, it will make toggle slow
+[author-self] extract `sortEntries`
+
+[note] fix `autosize` on `isSearching` change
 
 fix chinese file name -- maybe need url decode
 
