@@ -19,7 +19,7 @@ export type SearchResult = {
 
 export type State = {
   text: string
-  keywords: Set<string>
+  keywords: Record<string, boolean>
   isFocused?: boolean
   targets: Record<string, SearchTarget>
   results: Record<string, SearchResult>

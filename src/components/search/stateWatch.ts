@@ -7,7 +7,6 @@ export function stateWatch(state: State): void {
   watch(
     () => state.text,
     debounce(() => stateSearch(state), 300),
-    () => stateSearch(state),
     { immediate: true },
   )
 

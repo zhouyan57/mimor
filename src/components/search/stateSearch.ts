@@ -33,7 +33,7 @@ function stateFilterByKeywords(state: State): void {
     const target = state.targets[key]
     if (
       target &&
-      !Array.from(state.keywords).every((keyword) =>
+      !Object.keys(state.keywords).every((keyword) =>
         target.keywords.includes(keyword),
       )
     ) {

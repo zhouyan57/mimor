@@ -16,13 +16,13 @@ const lang = useGlobalLang()
       :key="keyword"
       class="my-1 mr-3 px-1 font-sans text-lg font-bold"
       :class="{
-        'border border-dashed border-black': !state.keywords.has(keyword),
-        'border border-orange-500 text-orange-500': state.keywords.has(keyword),
+        'border border-dashed border-black': !state.keywords[keyword],
+        'border border-orange-500 text-orange-500': state.keywords[keyword],
       }"
       @click="
-        state.keywords.has(keyword)
-          ? state.keywords.delete(keyword)
-          : state.keywords.add(keyword)
+        state.keywords[keyword]
+          ? delete state.keywords[keyword]
+          : (state.keywords[keyword] = true)
       "
     >
       {{ keyword }}
