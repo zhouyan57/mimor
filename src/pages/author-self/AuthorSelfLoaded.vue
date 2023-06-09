@@ -31,12 +31,16 @@ const state = stateReactive(props.state)
 
       <div class="flex w-full px-3 py-2 text-xl">
         <SearchInput
-          v-if="state.isSearching"
+          v-show="state.isSearching"
           class="w-full max-w-[47rem]"
           :state="state.searchState"
         />
 
-        <AuthorEditor v-else class="w-full max-w-[47rem]" :state="state" />
+        <AuthorEditor
+          v-show="!state.isSearching"
+          class="w-full max-w-[47rem]"
+          :state="state"
+        />
       </div>
 
       <div class="flex h-full flex-col space-y-3 overflow-y-auto px-3 pb-3">

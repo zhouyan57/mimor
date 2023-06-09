@@ -15,7 +15,7 @@ export async function stateRefresh(state: State): Promise<void> {
   const newState = await loadState(state)
 
   state.user = newState.user
-  state.searchState = newState.searchState
+  // state.searchState = newState.searchState
 
   for (const newEntry of newState.entries) {
     const found = state.entries.find((entry) => entry.path === newEntry.path)

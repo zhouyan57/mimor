@@ -8,7 +8,7 @@ export function entryReactive(entry: Entry, state: State): Entry {
 
   watch(
     () => entry,
-    () => entryUpdateSearchTargets(entry, state.searchState.targets),
+    () => entryUpdateSearchTargets(entry, state),
     { immediate: true, deep: true },
   )
 
