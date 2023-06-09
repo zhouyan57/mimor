@@ -1,3 +1,5 @@
+[author-self] `stateResultEntries` -- should not depend on `isSearching`, it will make toggle slow
+
 fix chinese file name -- maybe need url decode
 
 why inet/interaction-nets.mimor is not in `结果：41` but in `总计：42`
