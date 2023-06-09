@@ -23,7 +23,7 @@ const state = stateReactive(props.state)
       <title v-else>{{ state.username }} | Mimor</title>
     </Head>
 
-    <div class="flex h-full flex-col overflow-y-auto px-3 py-2">
+    <div class="flex h-full flex-col space-y-1 overflow-y-auto px-3 py-2">
       <AuthorOtherHead :state="state" />
       <AuthorOtherInfo :state="state" />
 
