@@ -1,5 +1,3 @@
-[author-self] extract `sortEntries`
-
 [note] fix `autosize` on `isSearching` change
 
 fix chinese file name -- maybe need url decode
