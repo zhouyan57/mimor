@@ -19,6 +19,22 @@ onMounted(() => {
     })
   }
 })
+
+document.fonts.addEventListener('loadingdone', (event) => {
+  console.log('document.fonts', 'loadingdone')
+
+  if (textareaElement.value && !props.state.isFullscreen) {
+    autosize(textareaElement.value)
+  }
+})
+
+document.fonts.ready.then(() => {
+  console.log('document.fonts.ready')
+
+  if (textareaElement.value && !props.state.isFullscreen) {
+    autosize(textareaElement.value)
+  }
+})
 </script>
 
 <template>
