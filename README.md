@@ -15,6 +15,21 @@ npm run check   # Type check
 npm run format  # Format the code
 ```
 
+We use [FiDB](https://github.com/fidb-official/fidb) for our backend API.
+
+To start the HTTP API server using the example [`database`](database),
+run:
+
+- The example username are `xieyuheng` and `cicada-lang`, and the example passwords are all `123456`.
+
+```sh
+npm run api     # Start the backend server
+```
+
+Note that, to work with the frontend dev server,
+the backend API port should be `5108`
+(the default port of FiDB).
+
 ## Contributions
 
 To make a contribution, fork this project and create a pull request.
