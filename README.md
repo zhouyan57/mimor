@@ -17,19 +17,18 @@ npm run format  # Format the code
 
 We use [FiDB](https://github.com/fidb-official/fidb) for our backend API.
 
-To start the HTTP API server using the example [`database`](database),
-run:
-
-- The example username are `xieyuheng` and `cicada-lang`.
-- The example passwords are all `123456`.
+To start the HTTP API server using the example [`database`](database), run:
 
 ```sh
 npm run api     # Start the backend server
 ```
 
-Note that, to work with the frontend dev server,
-the backend API port should be `5108`
-(the default port of FiDB).
+Notes:
+
+- To run the backend server, the [Node.js](https://nodejs.org) version should be `>= 20.1`.
+- To work with the frontend dev server, the backend API port should be `5108` (the default port of FiDB).
+- The example username are `xieyuheng` and `cicada-lang`.
+- The example passwords are all `123456`.
 
 ## Contributions
 
