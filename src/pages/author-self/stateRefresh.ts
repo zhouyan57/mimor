@@ -8,14 +8,22 @@ import { stateCacheSet } from './stateCacheSet'
 export async function stateRefresh(state: State): Promise<void> {
   state.isRefreshing = true
 
+  const newState = await loadState(state)
+
+  state.user = newState.user
+  stateSaveNewEntries(state, newState)
+  stateMarkMissingEntries(state, newState)
+
+  await stateCacheSet(state)
+
+  state.isRefreshing = false
+}
+
+function stateSaveNewEntries(state: State, newState: State): void {
   const report: ConnectionActivityReport = {
     updatedFiles: [],
     createdFiles: [],
   }
-
-  const newState = await loadState(state)
-
-  state.user = newState.user
 
   for (const newEntry of newState.entries) {
     const found = state.entries.find((entry) => entry.path === newEntry.path)
@@ -41,7 +49,9 @@ export async function stateRefresh(state: State): Promise<void> {
       report,
     })
   }
+}
 
+function stateMarkMissingEntries(state: State, newState: State): void {
   for (const entry of state.entries) {
     const found = newState.entries.find(
       (newEntry) => entry.path === newEntry.path,
@@ -51,8 +61,4 @@ export async function stateRefresh(state: State): Promise<void> {
       entry.text = undefined
     }
   }
-
-  await stateCacheSet(state)
-
-  state.isRefreshing = false
 }

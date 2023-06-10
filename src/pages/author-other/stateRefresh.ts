@@ -8,13 +8,7 @@ export async function stateRefresh(state: State): Promise<void> {
   const newState = await loadState(state)
 
   state.user = newState.user
-
-  for (const newEntry of newState.entries) {
-    const found = state.entries.find((entry) => entry.path === newEntry.path)
-    if (!found) {
-      state.entries.push(newEntry)
-    }
-  }
+  state.entries = newState.entries
 
   await stateCacheSet(state)
 

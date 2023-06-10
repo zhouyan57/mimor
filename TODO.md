@@ -1,5 +1,3 @@
-fix chinese file name -- maybe need url decode
-
 # author-other -- search
 
 [author-other] `entryReactive` -- setup watcher `entryUpdateSearchTargets`
