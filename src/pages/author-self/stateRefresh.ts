@@ -42,6 +42,16 @@ export async function stateRefresh(state: State): Promise<void> {
     })
   }
 
+  for (const entry of state.entries) {
+    const found = newState.entries.find(
+      (newEntry) => entry.path === newEntry.path,
+    )
+    if (!found) {
+      entry.uploadedText = entry.text
+      entry.text = undefined
+    }
+  }
+
   await stateCacheSet(state)
 
   state.isRefreshing = false
