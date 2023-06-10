@@ -1,6 +1,7 @@
 import { pathParse } from '../author/pathParse'
 import { ConnectionActivityReport } from './Connection'
 import { State } from './State'
+import { entryReactive } from './entryReactive'
 import { loadState } from './loadState'
 import { stateCacheSet } from './stateCacheSet'
 
@@ -15,7 +16,6 @@ export async function stateRefresh(state: State): Promise<void> {
   const newState = await loadState(state)
 
   state.user = newState.user
-  // state.searchState = newState.searchState
 
   for (const newEntry of newState.entries) {
     const found = state.entries.find((entry) => entry.path === newEntry.path)
@@ -30,7 +30,7 @@ export async function stateRefresh(state: State): Promise<void> {
     } else {
       report.createdFiles.unshift(pathParse(newEntry.path).file)
 
-      state.entries.push(newEntry)
+      state.entries.push(entryReactive(newEntry, state))
     }
   }
 
