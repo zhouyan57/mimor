@@ -20,7 +20,8 @@ We use [FiDB](https://github.com/fidb-official/fidb) for our backend API.
 To start the HTTP API server using the example [`database`](database),
 run:
 
-- The example username are `xieyuheng` and `cicada-lang`, and the example passwords are all `123456`.
+- The example username are `xieyuheng` and `cicada-lang`.
+- The example passwords are all `123456`.
 
 ```sh
 npm run api     # Start the backend server
