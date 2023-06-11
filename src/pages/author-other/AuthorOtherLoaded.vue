@@ -26,16 +26,13 @@ const state = stateReactive(props.state)
     </Head>
 
     <div class="flex h-full flex-col">
-      <div class="flex flex-col px-3 pt-2 text-xl">
+      <div class="flex flex-col space-y-2 px-3 pt-2 text-xl">
         <AuthorOtherHead :state="state" />
+        <AuthorOtherInfo :state="state" />
       </div>
 
       <div v-show="state.isSearching" class="flex w-full px-3 py-2 text-xl">
         <SearchInput class="w-full max-w-[47rem]" :state="state.searchState" />
-      </div>
-
-      <div class="flex flex-col px-3 pt-2 text-xl">
-        <AuthorOtherInfo :state="state" />
       </div>
 
       <div v-show="state.isSearching" class="flex flex-col space-y-3 px-3 pb-2">
