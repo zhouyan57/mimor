@@ -34,7 +34,7 @@ const state = stateReactive(props.state)
         <SearchInput class="w-full max-w-[47rem]" :state="state.searchState" />
       </div>
 
-      <div class="flex flex-col px-3 text-xl">
+      <div class="flex flex-col px-3 pt-2 text-xl">
         <AuthorOtherInfo :state="state" />
       </div>
 

@@ -1,7 +1,3 @@
-# author-other -- search
-
-[author-other] `AuthorOtherEntry` -- show `SearchResult`
-
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards
