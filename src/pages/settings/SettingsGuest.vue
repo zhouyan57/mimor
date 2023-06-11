@@ -3,6 +3,7 @@ import { Head } from '@vueuse/head'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import SettingsClearCache from './SettingsClearCache.vue'
 import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
 
 import { State } from './State'
@@ -33,6 +34,8 @@ const lang = useGlobalLang()
 
       <div class="flex w-auto flex-col space-y-2 text-xl md:w-[24rem]">
         <SettingsRemoveServiceWorker />
+
+        <SettingsClearCache />
       </div>
     </div>
   </PageLayout>

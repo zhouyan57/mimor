@@ -1,4 +1,4 @@
-[settings] support clear cache
+[settings] `SettingsClearCache` -- support clear cache
 
 # recall -- in many timelines
 
