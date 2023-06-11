@@ -1,4 +1,3 @@
-[author-sefl] add author info
 [settings] support clear cache
 
 # recall -- in many timelines

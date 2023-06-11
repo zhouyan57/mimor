@@ -6,6 +6,7 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfEntry from './AuthorSelfEntry.vue'
 import AuthorSelfHead from './AuthorSelfHead.vue'
+import AuthorSelfInfo from './AuthorSelfInfo.vue'
 import { State } from './State'
 import { stateEntriesFiltered } from './stateEntriesFiltered'
 import { stateEntriesSorted } from './stateEntriesSorted'
@@ -26,8 +27,9 @@ const state = stateReactive(props.state)
     </Head>
 
     <div class="flex h-full flex-col">
-      <div class="flex flex-col px-3 pt-2 text-xl">
+      <div class="flex flex-col space-y-2 px-3 py-2 text-xl">
         <AuthorSelfHead :state="state" />
+        <AuthorSelfInfo :state="state" />
       </div>
 
       <div class="flex w-full px-3 py-2 text-xl">
