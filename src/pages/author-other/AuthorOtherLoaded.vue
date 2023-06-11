@@ -6,8 +6,8 @@ import AuthorOtherEntry from './AuthorOtherEntry.vue'
 import AuthorOtherHead from './AuthorOtherHead.vue'
 import AuthorOtherInfo from './AuthorOtherInfo.vue'
 import { State } from './State'
+import { stateEntriesSorted } from './stateEntriesSorted'
 import { stateReactive } from './stateReactive'
-import { stateResultEntries } from './stateResultEntries'
 
 const props = defineProps<{ state: State }>()
 
@@ -27,7 +27,7 @@ const state = stateReactive(props.state)
       <AuthorOtherHead :state="state" />
       <AuthorOtherInfo :state="state" />
 
-      <div v-for="(entry, index) of stateResultEntries(state)" :key="index">
+      <div v-for="(entry, index) of stateEntriesSorted(state)" :key="index">
         <AuthorOtherEntry :state="state" :entry="entry" />
       </div>
     </div>
