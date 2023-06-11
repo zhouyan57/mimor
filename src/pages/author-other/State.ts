@@ -6,6 +6,7 @@ export type State = {
   username: string
   user: User
   entries: Array<Entry>
+  isSearching?: boolean
   searchState: SearchState
   isLoadedFromCache?: boolean
   isRefreshing?: boolean

@@ -1,6 +1,5 @@
 # author-other -- search
 
-[author-other] `AuthorOtherLoaded` -- show `SearchInput`
 [author-other] `AuthorOtherEntry` -- show `SearchResult`
 
 # recall -- in many timelines
