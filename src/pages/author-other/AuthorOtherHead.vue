@@ -39,7 +39,7 @@ const lang = useGlobalLang()
       </button>
     </div>
 
-    <div class="flex space-x-3 overflow-x-auto text-base">
+    <div class="flex flex-wrap overflow-x-auto text-base">
       <button
         v-if="!state.isSearching"
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
