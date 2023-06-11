@@ -32,7 +32,7 @@ const state = stateReactive(props.state)
         <AuthorSelfInfo :state="state" />
       </div>
 
-      <div class="flex w-full px-3 py-2 text-xl">
+      <div class="flex w-full px-3 py-1 text-xl">
         <SearchInput
           v-show="state.isSearching"
           class="w-full max-w-[47rem]"
