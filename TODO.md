@@ -1,6 +1,5 @@
 # author-other -- search
 
-[author-other] call `entryReactive` in `stateReactive` and `stateRefresh`
 [author-other] `AuthorOtherLoaded` -- show `SearchInput`
 [author-other] `AuthorOtherEntry` -- show `SearchResult`
 
