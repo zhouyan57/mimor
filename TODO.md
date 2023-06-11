@@ -1,5 +1,3 @@
-[settings] `SettingsClearCache` -- support clear cache
-
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards

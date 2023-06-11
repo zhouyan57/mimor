@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import { deleteDB } from 'idb'
 import Lang from '../../components/lang/Lang.vue'
 import Scope from '../../components/utils/Scope.vue'
+import { knownIDBDatabases } from './knownIDBDatabases'
+
+async function clearCache() {
+  for (const name of knownIDBDatabases()) {
+    await deleteDB(name)
+  }
+}
 </script>
 
 <template>
@@ -9,12 +17,7 @@ import Scope from '../../components/utils/Scope.vue'
       :disabled="scope.disabled"
       class="rounded-sm border border-black py-3 font-sans font-bold disabled:opacity-50"
       :class="[!scope.disabled && `hover:bg-stone-100`]"
-      @click="
-        () => {
-          //
-          scope.disabled = true
-        }
-      "
+      @click="clearCache().then(() => (scope.disabled = true))"
     >
       <Lang>
         <template #zh>清除缓存</template>

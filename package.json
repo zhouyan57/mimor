@@ -39,6 +39,7 @@
     "emulate-tab": "^1.2.1",
     "fidb": "^0.1.5",
     "front-matter": "^4.0.2",
+    "idb": "^7.1.1",
     "idb-keyval": "^6.2.1",
     "js-base64": "^3.7.5",
     "lodash": "^4.17.21",
