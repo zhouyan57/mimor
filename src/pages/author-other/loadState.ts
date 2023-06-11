@@ -1,3 +1,4 @@
+import { createState as createSearchState } from '../../components/search/createState'
 import { loadUser } from '../../models/user/loadUser'
 import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { State } from './State'
@@ -22,5 +23,6 @@ export async function loadState(options: StateOptions): Promise<State> {
     username,
     user,
     entries,
+    searchState: createSearchState({ targets: {} }),
   }
 }

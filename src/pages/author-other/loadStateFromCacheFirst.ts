@@ -1,3 +1,4 @@
+import { createState as createSearchState } from '../../components/search/createState'
 import { State } from './State'
 import { StateOptions, loadState } from './loadState'
 import { stateCacheGet } from './stateCacheGet'
@@ -13,6 +14,7 @@ export async function loadStateFromCacheFirst(
   if (cached) {
     return {
       ...cached,
+      searchState: createSearchState({ targets: {} }),
       isLoadedFromCache: true,
     }
   } else {
