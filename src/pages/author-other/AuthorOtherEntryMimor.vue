@@ -14,5 +14,6 @@ defineProps<{
     class="h-[32rem] max-w-[47rem] shrink-0"
     :key="entry.path"
     :src="`~/${entry.path}`"
+    :text="entry.text"
   />
 </template>

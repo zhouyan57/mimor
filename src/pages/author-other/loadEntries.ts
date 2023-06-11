@@ -1,6 +1,8 @@
 import { PathEntry, PathEntryFile } from 'fidb/lib/path-entry'
+import { loadContent } from '../../models/content/loadContent'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
+import { promiseAllFulfilled } from '../../utils/promiseAllFulfilled'
 import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
 
@@ -20,21 +22,19 @@ export async function loadEntries(directory: string): Promise<Array<Entry>> {
 
   const pathEntries: Array<PathEntry> = await response.json()
 
-  // No need to load `text` for entry here,
-  // let content components load `text`.
-
-  const entries = pathEntries
+  const promises = pathEntries
     .filter<PathEntryFile>(
       (pathEntry): pathEntry is PathEntryFile =>
         pathEntry.kind === 'File' &&
         (pathEntry.path.endsWith('.mimor') || pathEntry.path.endsWith('.md')),
     )
-    .map((pathEntry) => ({
+    .map(async (pathEntry) => ({
       isPublic: pathParse(pathEntry.path).isPublic,
       path: pathEntry.path,
+      text: await loadContent(`~/${pathEntry.path}`),
       createdAt: pathEntry.createdAt,
       updatedAt: pathEntry.updatedAt,
     }))
 
-  return entries
+  return await promiseAllFulfilled(promises)
 }

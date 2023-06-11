@@ -14,5 +14,6 @@ defineProps<{
     class="flex h-full max-w-[47rem] flex-col"
     :key="entry.path"
     :src="`~/${entry.path}`"
+    :text="entry.text"
   />
 </template>
