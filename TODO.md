@@ -1,6 +1,5 @@
 # author-other -- search
 
-[author-other] `entryCompare`
 [author-other] no `stateResultEntries` but `stateEntriesFiltered` and `stateEntriesSorted`
 [author-other] `entryReactive` -- setup watcher for `entryUpdateSearchTargets`
 [author-other] `AuthorOtherLoaded` -- show `SearchInput`
