@@ -1,4 +1,3 @@
-remove \ and / replace -- for it is not solving the windows problem
 [author-other] `loadStateReactive`
 [home] `loadStateReactive`
 [settings] `loadStateReactive`
