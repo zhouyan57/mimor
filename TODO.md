@@ -1,5 +1,6 @@
 [author-other] `loadReactiveState`
 [home] `loadReactiveState`
+[settings] `loadReactiveState`
 
 # recall -- spaced repetition, a stream of contents
 

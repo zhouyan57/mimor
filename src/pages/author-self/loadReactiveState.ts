@@ -1,6 +1,6 @@
 import { State } from './State'
+import { loadCachedState } from './loadCachedState'
 import { StateOptions } from './loadState'
-import { loadStateFromCacheFirst } from './loadStateFromCacheFirst'
 import { stateReactive } from './stateReactive'
 
 let state: State | undefined = undefined
@@ -10,7 +10,7 @@ export async function loadReactiveState(options: StateOptions): Promise<State> {
     return state
   }
 
-  state = await loadStateFromCacheFirst(options)
+  state = await loadCachedState(options)
   state = stateReactive(state)
   return state
 }
