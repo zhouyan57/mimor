@@ -17,7 +17,17 @@ const state = reactive({
   isBottomVisible: false,
 })
 
-const shownEntries = reactive(props.entries.slice(0, props.chunkSize))
+const shownEntries: Array<any> = reactive([])
+
+watch(
+  () => props.entries,
+  () => {
+    while (shownEntries.pop()) {}
+
+    shownEntries.push(...props.entries.slice(0, props.chunkSize))
+  },
+  { immediate: true },
+)
 
 watch(
   () => state.isBottomVisible,
@@ -25,12 +35,12 @@ watch(
     if (!value) return
     if (shownEntries.length === props.entries.length) return
 
-    const newEntries = props.entries.slice(
-      shownEntries.length,
-      shownEntries.length + props.chunkSize,
+    shownEntries.push(
+      ...props.entries.slice(
+        shownEntries.length,
+        shownEntries.length + props.chunkSize,
+      ),
     )
-
-    shownEntries.push(...newEntries)
   },
 )
 </script>
