@@ -25,28 +25,28 @@ defineProps<{
     <Lang class="px-5">
       <template #zh>
         <pre>
-       「云端」
+         云端
         /   ↖
 <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />     <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
         ↘   /
-        「App」
+         App
         /   ↖          <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />     <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
         ↘   /          <AuthorConnectionDataFlowAutoUpload :state="state" :connection="connection" />
-     「本地文件夹」
+       本地文件夹
 </pre>
       </template>
       <template #en>
         <pre>
-           [Cloud]
+            Cloud
             /   ↖
  <AuthorConnectionDataFlowRefresh :state="state" :connection="connection" />     <AuthorConnectionDataFlowSave :state="state" :connection="connection" />
             ↘   /
-            [App]
+             App
             /   ↖           <AuthorConnectionDataFlowDisconnect :state="state" :connection="connection" />
 <AuthorConnectionDataFlowDownload :state="state" :connection="connection" />     <AuthorConnectionDataFlowUpload :state="state" :connection="connection" />
             ↘   /           <AuthorConnectionDataFlowAutoUpload :state="state" :connection="connection" />
-         [Directory]
+          Directory
 </pre>
       </template>
     </Lang>
