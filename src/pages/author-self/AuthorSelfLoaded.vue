@@ -44,22 +44,27 @@ const lang = useGlobalLang()
         />
       </div>
 
-      <div v-show="state.isSearching" class="flex flex-col space-y-3 px-3 pb-2">
-        <div v-for="(entry, index) of stateEntriesFiltered(state)" :key="index">
+      <ListLazyScroll
+        v-show="state.isSearching"
+        class="flex flex-col space-y-3 px-3 pb-2"
+        :entries="stateEntriesFiltered(state)"
+        :chunkSize="3"
+      >
+        <template #entry="{ entry }">
           <AuthorSelfEntry :state="state" :entry="entry" />
-        </div>
-      </div>
+        </template>
+      </ListLazyScroll>
 
-      <div
+      <ListLazyScroll
         v-show="!state.isSearching"
         class="flex flex-col space-y-3 px-3 pb-2"
+        :entries="stateEntriesSorted(state)"
+        :chunkSize="3"
       >
-        <ListLazyScroll :entries="stateEntriesSorted(state)">
-          <template #entry="{ entry }">
-            <AuthorSelfEntry :state="state" :entry="entry" />
-          </template>
-        </ListLazyScroll>
-      </div>
+        <template #entry="{ entry }">
+          <AuthorSelfEntry :state="state" :entry="entry" />
+        </template>
+      </ListLazyScroll>
     </div>
   </PageLayout>
 </template>

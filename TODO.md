@@ -1,4 +1,4 @@
-`ListLazyScrollBottom` use `onVisible`
+[author-other] use `ListLazyScroll`
 
 # recall -- spaced repetition, a stream of contents
 

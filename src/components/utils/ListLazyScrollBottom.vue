@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
+import { onNotVisible } from '../../utils/browser/onNotVisible'
+import { onVisible } from '../../utils/browser/onVisible'
 
 const props = defineProps<{
   state: {
@@ -7,9 +9,21 @@ const props = defineProps<{
   }
 }>()
 
-onMounted(() => {})
+const element = ref<HTMLElement | undefined>(undefined)
+
+onMounted(() => {
+  if (element.value) {
+    onVisible(element.value, () => {
+      props.state.isBottomVisible = true
+    })
+
+    onNotVisible(element.value, () => {
+      props.state.isBottomVisible = false
+    })
+  }
+})
 </script>
 
 <template>
-  <div class="py-px"></div>
+  <div ref="element" class="py-px"></div>
 </template>
