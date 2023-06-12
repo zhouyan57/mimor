@@ -3,12 +3,12 @@ import { onMounted, ref } from 'vue'
 import SettingsLoaded from './SettingsLoaded.vue'
 import SettingsLoading from './SettingsLoading.vue'
 import { State } from './State'
-import { loadState } from './loadState'
+import { loadStateReactive } from './loadStateReactive'
 
 const state = ref<State | undefined>(undefined)
 
 onMounted(async () => {
-  state.value = await loadState({})
+  state.value = await loadStateReactive({})
 })
 </script>
 

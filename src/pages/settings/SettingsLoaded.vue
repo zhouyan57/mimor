@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import SettingsGuest from './SettingsGuest.vue'
 import SettingsUser from './SettingsUser.vue'
 import { State } from './State'
 
-const props = defineProps<{ state: State }>()
-
-const state = reactive(props.state)
+defineProps<{ state: State }>()
 </script>
 
 <template>
