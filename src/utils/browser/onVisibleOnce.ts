@@ -1,6 +1,6 @@
 // https://stackoverflow.com/a/66394121
 
-export function onVisible(
+export function onVisibleOnce(
   element: HTMLElement,
   callback: (element: HTMLElement) => void,
 ) {
@@ -8,6 +8,7 @@ export function onVisible(
     entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) {
         callback(element)
+        observer.disconnect()
       }
     })
   })
