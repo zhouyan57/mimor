@@ -9,13 +9,10 @@ import AuthorOtherInfo from './AuthorOtherInfo.vue'
 import { State } from './State'
 import { stateEntriesFiltered } from './stateEntriesFiltered'
 import { stateEntriesSorted } from './stateEntriesSorted'
-import { stateReactive } from './stateReactive'
 
-const props = defineProps<{ state: State }>()
+defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
-
-const state = stateReactive(props.state)
 </script>
 
 <template>

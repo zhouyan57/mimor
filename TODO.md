@@ -1,6 +1,9 @@
-[author-other] `loadStateReactive`
 [home] `loadStateReactive`
 [settings] `loadStateReactive`
+
+[mimor] take parsed things
+[author-self] cache parsed things -- to make mimor rendering faster
+[author-other] cache parsed things -- to make mimor rendering faster
 
 # recall -- spaced repetition, a stream of contents
 
