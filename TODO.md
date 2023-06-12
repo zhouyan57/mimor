@@ -1,6 +1,5 @@
-[mimor] take parsed things
-[author-self] cache parsed things -- to make mimor rendering faster
-[author-other] cache parsed things -- to make mimor rendering faster
+`onVisible` vs `onVisibleOnce`
+`ListLazyScrollBottom` use `onVisible`
 
 # recall -- spaced repetition, a stream of contents
 

@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import SearchInput from '../../components/search/SearchInput.vue'
+import ListLazyScroll from '../../components/utils/ListLazyScroll.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfEntry from './AuthorSelfEntry.vue'
@@ -53,9 +54,11 @@ const lang = useGlobalLang()
         v-show="!state.isSearching"
         class="flex flex-col space-y-3 px-3 pb-2"
       >
-        <div v-for="(entry, index) of stateEntriesSorted(state)" :key="index">
-          <AuthorSelfEntry :state="state" :entry="entry" />
-        </div>
+        <ListLazyScroll :entries="stateEntriesSorted(state)">
+          <template #entry="{ entry }">
+            <AuthorSelfEntry :state="state" :entry="entry" />
+          </template>
+        </ListLazyScroll>
       </div>
     </div>
   </PageLayout>
