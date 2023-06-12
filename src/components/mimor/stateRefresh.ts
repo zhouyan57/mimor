@@ -10,12 +10,22 @@ export async function stateRefresh(state: State): Promise<void> {
   // We need `stateReactive` to make nested objects reactive.
   const newState = stateReactive(createState({ ...state, text }))
 
-  const oldPointer = state.program?.pointer
+  const oldProgram = state.program
 
   Object.assign(state, newState)
 
-  if (state.program && oldPointer) {
-    state.program.pointer = oldPointer
+  if (state.program && oldProgram) {
+    const newLength = state.program.elements.length
+
+    state.program.pointer = Math.min(oldProgram.pointer, newLength - 1)
+
+    state.program.remainingIndexes = oldProgram.remainingIndexes.filter(
+      (index) => index < newLength,
+    )
+
+    state.program.passedIndexes = oldProgram.passedIndexes.filter(
+      (index) => index < newLength,
+    )
   }
 
   const cached = { text }
