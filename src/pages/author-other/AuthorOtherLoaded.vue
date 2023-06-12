@@ -2,6 +2,7 @@
 import { Head } from '@vueuse/head'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import SearchInput from '../../components/search/SearchInput.vue'
+import ListLazyScroll from '../../components/utils/ListLazyScroll.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorOtherEntry from './AuthorOtherEntry.vue'
 import AuthorOtherHead from './AuthorOtherHead.vue'
@@ -36,20 +37,27 @@ const lang = useGlobalLang()
         />
       </div>
 
-      <div v-show="state.isSearching" class="flex flex-col space-y-3 px-3 pb-2">
-        <div v-for="(entry, index) of stateEntriesFiltered(state)" :key="index">
+      <ListLazyScroll
+        v-show="state.isSearching"
+        class="flex flex-col space-y-3 px-3 pb-2"
+        :entries="stateEntriesFiltered(state)"
+        :chunkSize="3"
+      >
+        <template #entry="{ entry }">
           <AuthorOtherEntry :state="state" :entry="entry" />
-        </div>
-      </div>
+        </template>
+      </ListLazyScroll>
 
-      <div
+      <ListLazyScroll
         v-show="!state.isSearching"
         class="flex flex-col space-y-3 px-3 pb-2"
+        :entries="stateEntriesSorted(state)"
+        :chunkSize="3"
       >
-        <div v-for="(entry, index) of stateEntriesSorted(state)" :key="index">
+        <template #entry="{ entry }">
           <AuthorOtherEntry :state="state" :entry="entry" />
-        </div>
-      </div>
+        </template>
+      </ListLazyScroll>
     </div>
   </PageLayout>
 </template>

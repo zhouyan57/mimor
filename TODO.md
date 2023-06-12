@@ -1,4 +1,4 @@
-[author-other] use `ListLazyScroll`
+refactor `ListLazyScroll`
 
 # recall -- spaced repetition, a stream of contents
 
