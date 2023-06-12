@@ -5,15 +5,13 @@ export async function write(
   path: string,
   text: string,
 ): Promise<void> {
-  let parent = root
+  path = path.replace(/\\/g, '/')
 
   const parts = path.split('/')
   const directory = parts.slice(0, parts.length - 1).join('/')
   const file = parts[parts.length - 1]
 
-  if (directory) {
-    parent = await mkdir(root, directory)
-  }
+  const parent = directory ? await mkdir(root, directory) : root
 
   const fileHandle = await parent.getFileHandle(file, {
     create: true,

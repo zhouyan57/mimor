@@ -9,6 +9,7 @@ export function pathParse(path: string): {
   // - users/xieyuheng/contents/debug.mimor
   // - users/xieyuheng/public/contents/debug.mimor
 
+  path = path.replace(/\\/g, '/')
   path = stringTrimStart(path, '/')
 
   const parts = path.split('/')
