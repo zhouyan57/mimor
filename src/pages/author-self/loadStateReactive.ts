@@ -3,14 +3,23 @@ import { StateOptions } from './loadState'
 import { loadStateCached } from './loadStateCached'
 import { stateReactive } from './stateReactive'
 
-let state: State | undefined = undefined
+let cache:
+  | {
+      state: State
+      username: string
+    }
+  | undefined = undefined
 
 export async function loadStateReactive(options: StateOptions): Promise<State> {
-  if (state) {
-    return state
+  const { username } = options
+
+  if (cache && cache.username === username) {
+    return cache.state
   }
 
-  state = await loadStateCached(options)
-  state = stateReactive(state)
+  const state = stateReactive(await loadStateCached(options))
+
+  cache = { state, username }
+
   return state
 }
