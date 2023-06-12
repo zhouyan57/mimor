@@ -1,4 +1,8 @@
-refactor `ListLazyScroll`
+inline `ListLazyScrollBottom`
+
+`ListLazyScroll` take `#bottom`
+
+rename `List` to `ListFocusKeyboardUpAndDown`
 
 # recall -- spaced repetition, a stream of contents
 
