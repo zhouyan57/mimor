@@ -45,7 +45,7 @@ document.fonts.ready.then(() => {
     :disabled="!state.isEditing"
     name="text"
     spellcheck="false"
-    class="h-full w-full resize-none px-3 py-2 font-mono text-base focus:outline-none disabled:bg-white"
+    class="font-mono h-full w-full resize-none px-3 py-2 text-base focus:outline-none disabled:bg-white"
     rows="1"
     v-model="state.text"
   ></textarea>

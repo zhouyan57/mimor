@@ -28,7 +28,7 @@ onMounted(async () => {
     </Head>
 
     <div
-      class="flex h-full flex-col space-y-3 overflow-y-auto p-3 font-serif text-xl"
+      class="font-serif flex h-full flex-col space-y-3 overflow-y-auto p-3 text-xl"
     >
       <div class="flex items-baseline">
         <div class="font-logo text-2xl font-bold">

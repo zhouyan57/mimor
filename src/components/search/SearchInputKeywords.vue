@@ -14,7 +14,7 @@ const lang = useGlobalLang()
     <div
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
-      class="my-1 mr-3 px-1 font-sans text-lg font-bold"
+      class="font-sans my-1 mr-3 px-1 text-lg font-bold"
       :class="{
         'border border-dashed border-black': !state.keywords[keyword],
         'border border-orange-500 text-orange-500': state.keywords[keyword],

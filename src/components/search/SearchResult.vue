@@ -21,7 +21,7 @@ defineProps<{
     <div
       v-for="(matchedLine, index) of result.matchedLines"
       :key="index"
-      class="flex space-x-2 py-0.5 font-mono text-sm"
+      class="font-mono flex space-x-2 py-0.5 text-sm"
     >
       <span class="whitespace-pre text-orange-500">{{
         leftPadLineNumber(

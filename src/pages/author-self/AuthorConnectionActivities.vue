@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <div class="flex max-h-[45rem] flex-col space-y-2 overflow-auto">
     <div class="flex items-baseline justify-between">
-      <Lang class="whitespace-pre font-sans text-xl font-bold">
+      <Lang class="font-sans whitespace-pre text-xl font-bold">
         <template #zh>活动记录</template>
         <template #en>Activities</template>
       </Lang>

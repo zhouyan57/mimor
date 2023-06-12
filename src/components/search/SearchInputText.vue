@@ -16,7 +16,7 @@ const lang = useGlobalLang()
     }"
   >
     <input
-      class="w-full font-mono text-base focus:outline-none"
+      class="font-mono w-full text-base focus:outline-none"
       id="searchText"
       name="searchText"
       type="text"

@@ -36,7 +36,7 @@ watch(
 
 <template>
   <div class="flex flex-col">
-    <label for="avatar" class="py-2 font-sans">
+    <label for="avatar" class="font-sans py-2">
       <Lang>
         <template #zh>头像</template>
         <template #en>Avatar</template>

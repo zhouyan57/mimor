@@ -10,13 +10,13 @@ defineProps<{ options: StateOptions }>()
   <div class="flex h-full flex-col border border-black bg-white">
     <MimorHeadStateless />
 
-    <div class="p-3 font-sans text-xl text-stone-900">
+    <div class="font-sans p-3 text-xl text-stone-900">
       <Lang>
         <template #zh> 谜墨加载中⋯⋯ </template>
         <template #en> Loading mimor... </template>
       </Lang>
 
-      <div class="overflow-x-auto whitespace-pre py-1 font-mono text-sm">
+      <div class="font-mono overflow-x-auto whitespace-pre py-1 text-sm">
         {{ options }}
       </div>
     </div>

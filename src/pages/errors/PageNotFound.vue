@@ -29,7 +29,7 @@ const route = useRoute()
         </Lang>
       </div>
 
-      <div class="overflow-x-auto font-mono text-sm">{{ route.fullPath }}</div>
+      <div class="font-mono overflow-x-auto text-sm">{{ route.fullPath }}</div>
     </div>
   </PageLayout>
 </template>

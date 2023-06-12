@@ -15,7 +15,7 @@ async function clearCache() {
   <Scope :scope="{ disabled: false }" v-slot="{ scope }">
     <button
       :disabled="scope.disabled"
-      class="rounded-sm border border-black py-3 font-sans font-bold disabled:opacity-50"
+      class="font-sans rounded-sm border border-black py-3 font-bold disabled:opacity-50"
       :class="[!scope.disabled && `hover:bg-stone-100`]"
       @click="clearCache().then(() => (scope.disabled = true))"
     >

@@ -13,7 +13,7 @@ const lang = useGlobalLang()
     :class="{ 'border-orange-500': state.editor.isFocused }"
   >
     <input
-      class="w-full font-mono text-base focus:outline-none"
+      class="font-mono w-full text-base focus:outline-none"
       name="file"
       type="text"
       v-model="state.editor.filename"
@@ -22,7 +22,7 @@ const lang = useGlobalLang()
     />
 
     <select
-      class="bg-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+      class="font-mono bg-white text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
       name="mode"
       v-model="state.editor.mode"
     >

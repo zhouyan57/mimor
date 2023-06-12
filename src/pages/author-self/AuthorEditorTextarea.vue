@@ -18,7 +18,7 @@ onMounted(() => {
 <template>
   <textarea
     ref="textareaElement"
-    class="my-2 h-full w-full resize-none px-3 font-mono text-base focus:outline-none"
+    class="font-mono my-2 h-full w-full resize-none px-3 text-base focus:outline-none"
     name="text"
     spellcheck="false"
     rows="1"

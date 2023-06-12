@@ -35,7 +35,7 @@ watch(
     <CoverInfo :state="state" :program="program" />
 
     <div
-      class="h-full overflow-y-auto p-3 font-sans font-bold"
+      class="font-sans h-full overflow-y-auto p-3 font-bold"
       :class="[state.theme.name === 'white' ? 'text-black' : 'text-white']"
     >
       <div class="flex h-full flex-col justify-center text-2xl">
