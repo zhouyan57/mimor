@@ -4,8 +4,6 @@ export async function read(
   root: FileSystemDirectoryHandle,
   path: string,
 ): Promise<File> {
-  path = path.replace(/\\/g, '/')
-
   const parts = path.split('/')
   const directory = parts.slice(0, parts.length - 1).join('/')
   const file = parts[parts.length - 1]

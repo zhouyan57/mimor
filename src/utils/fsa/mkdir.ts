@@ -2,8 +2,6 @@ export async function mkdir(
   root: FileSystemDirectoryHandle,
   path: string,
 ): Promise<FileSystemDirectoryHandle> {
-  path = path.replace(/\\/g, '/')
-
   const parts = path.split('/')
   return await mkdirPartByPart(root, parts)
 }

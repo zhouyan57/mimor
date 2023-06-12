@@ -2,8 +2,6 @@ export async function openDirectory(
   root: FileSystemDirectoryHandle,
   path: string,
 ): Promise<FileSystemDirectoryHandle> {
-  path = path.replace(/\\/g, '/')
-
   const parts = path.split('/')
   return await openDirectoryPartByPart(root, parts)
 }
