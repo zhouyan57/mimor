@@ -1,3 +1,5 @@
+[author-self] `loadStateFromGlobalFirst`
+
 # recall -- in many timelines
 
 > Spaced repetition. A stream of contents, like tiktok, but the cards

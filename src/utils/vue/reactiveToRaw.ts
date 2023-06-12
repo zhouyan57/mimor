@@ -13,8 +13,17 @@ export function reactiveToRaw<T extends Record<string, any>>(sourceObj: T): T {
       return objectIterator(toRaw(input))
     }
 
+    // API might be not supported.
+
     if (
-      input instanceof FileSystemFileHandle ||
+      typeof FileSystemFileHandle !== 'undefined' &&
+      input instanceof FileSystemFileHandle
+    ) {
+      return input
+    }
+
+    if (
+      typeof FileSystemDirectoryHandle !== 'undefined' &&
       input instanceof FileSystemDirectoryHandle
     ) {
       return input
