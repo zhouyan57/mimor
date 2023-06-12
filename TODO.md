@@ -1,5 +1,3 @@
-`onNotVisible`
-
 `ListLazyScrollBottom` use `onVisible`
 
 # recall -- spaced repetition, a stream of contents
