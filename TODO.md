@@ -1,6 +1,8 @@
-[author-other] `loadReactiveState`
-[home] `loadReactiveState`
-[settings] `loadReactiveState`
+ambr loadCachedState loadStateCached
+
+[author-other] `loadStateReactive`
+[home] `loadStateReactive`
+[settings] `loadStateReactive`
 
 # recall -- spaced repetition, a stream of contents
 

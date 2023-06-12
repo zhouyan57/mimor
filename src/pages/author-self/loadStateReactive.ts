@@ -5,7 +5,7 @@ import { stateReactive } from './stateReactive'
 
 let state: State | undefined = undefined
 
-export async function loadReactiveState(options: StateOptions): Promise<State> {
+export async function loadStateReactive(options: StateOptions): Promise<State> {
   if (state) {
     return state
   }
