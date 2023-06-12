@@ -23,16 +23,12 @@ onMounted(() => {
 // https://stackoverflow.com/questions/5680013/how-to-be-notified-once-a-web-font-has-loaded
 
 document.fonts.addEventListener('loadingdone', (event) => {
-  console.log('document.fonts', 'loadingdone')
-
   if (textareaElement.value && !props.state.isFullscreen) {
     autosize(textareaElement.value)
   }
 })
 
 document.fonts.ready.then(() => {
-  console.log('document.fonts.ready')
-
   if (textareaElement.value && !props.state.isFullscreen) {
     autosize(textareaElement.value)
   }
