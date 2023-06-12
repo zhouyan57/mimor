@@ -1,4 +1,3 @@
-[home] `loadStateReactive`
 [settings] `loadStateReactive`
 
 [mimor] take parsed things

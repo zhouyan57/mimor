@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import HomeLoaded from './HomeLoaded.vue'
 import HomeLoading from './HomeLoading.vue'
 import { State } from './State'
-import { loadState } from './loadState'
+import { loadStateReactive } from './loadStateReactive'
 
 const state = ref<State | undefined>(undefined)
 
@@ -12,7 +12,7 @@ function createStateOptions() {
 }
 
 onMounted(async () => {
-  state.value = await loadState(createStateOptions())
+  state.value = await loadStateReactive(createStateOptions())
 })
 </script>
 
