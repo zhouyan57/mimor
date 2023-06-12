@@ -1,4 +1,5 @@
-[author-self] `loadStateFromGlobalFirst`
+[author-other] `loadReactiveState`
+[home] `loadReactiveState`
 
 # recall -- spaced repetition, a stream of contents
 
@@ -14,7 +15,7 @@
 
 # dustbin
 
-deleting a file will put it into `dustbin/`, with deleted time as prefix.
+[author-self] deleting a file will put it into `dustbin/`, with deleted time as prefix.
 
 # mimor -- error handling
 
