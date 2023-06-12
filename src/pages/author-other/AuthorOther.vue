@@ -5,7 +5,7 @@ import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import AuthorOtherLoaded from './AuthorOtherLoaded.vue'
 import AuthorOtherLoading from './AuthorOtherLoading.vue'
 import { State } from './State'
-import { loadCachedState } from './loadCachedState'
+import { loadStateCached } from './loadStateCached'
 
 const route = useRoute()
 const auth = useGlobalAuth()
@@ -20,7 +20,7 @@ watch(
   () => route.params.username,
   async (value) => {
     state.value = undefined
-    state.value = await loadCachedState(options)
+    state.value = await loadStateCached(options)
   },
   {
     immediate: true,

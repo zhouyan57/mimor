@@ -1,5 +1,3 @@
-ambr loadCachedState loadStateCached
-
 [author-other] `loadStateReactive`
 [home] `loadStateReactive`
 [settings] `loadStateReactive`

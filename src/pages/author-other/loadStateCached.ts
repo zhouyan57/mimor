@@ -4,7 +4,7 @@ import { StateOptions, loadState } from './loadState'
 import { stateCacheGet } from './stateCacheGet'
 import { stateCacheSet } from './stateCacheSet'
 
-export async function loadCachedState(options: StateOptions): Promise<State> {
+export async function loadStateCached(options: StateOptions): Promise<State> {
   const { username } = options
 
   const cached = await stateCacheGet(username)
