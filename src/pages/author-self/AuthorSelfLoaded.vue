@@ -45,9 +45,9 @@ const lang = useGlobalLang()
       </div>
 
       <ListLazyScroll
-        v-show="state.isSearching"
+        v-show="!state.isSearching"
         class="flex flex-col space-y-3 px-3 pb-2"
-        :entries="stateEntriesFiltered(state)"
+        :entries="stateEntriesSorted(state)"
         :chunkSize="3"
       >
         <template #entry="{ entry }">
@@ -56,9 +56,9 @@ const lang = useGlobalLang()
       </ListLazyScroll>
 
       <ListLazyScroll
-        v-show="!state.isSearching"
+        v-show="state.isSearching"
         class="flex flex-col space-y-3 px-3 pb-2"
-        :entries="stateEntriesSorted(state)"
+        :entries="stateEntriesFiltered(state)"
         :chunkSize="3"
       >
         <template #entry="{ entry }">

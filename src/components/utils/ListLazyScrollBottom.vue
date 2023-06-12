@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { isVisible } from '../../utils/browser/isVisible'
 import { onNotVisible } from '../../utils/browser/onNotVisible'
 import { onVisible } from '../../utils/browser/onVisible'
 
@@ -13,6 +14,10 @@ const element = ref<HTMLElement | undefined>(undefined)
 
 onMounted(() => {
   if (element.value) {
+    if (isVisible(element.value)) {
+      props.state.isBottomVisible = true
+    }
+
     onVisible(element.value, () => {
       props.state.isBottomVisible = true
     })
