@@ -12,7 +12,7 @@ defineProps<{
   <div class="flex items-baseline justify-between">
     <span class="whitespace-pre pr-3">{{ pathParse(entry.path).file }}</span>
 
-    <Lang>
+    <Lang class="whitespace-pre">
       <template #zh>
         <div class="flex space-x-2 text-sm">
           <span>{{ entry.text.split('\n').length }} 行</span>
