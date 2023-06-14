@@ -9,8 +9,8 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { User } from '../../models/user/User'
-import SettingsClearCache from './SettingsClearCache.vue'
-import SettingsRemoveServiceWorker from './SettingsRemoveServiceWorker.vue'
+import SettingsActionClearCache from './SettingsActionClearCache.vue'
+import SettingsActionRemoveServiceWorker from './SettingsActionRemoveServiceWorker.vue'
 import SettingsUserAvatar from './SettingsUserAvatar.vue'
 import { State } from './State'
 import { stateSave } from './stateSave'
@@ -111,9 +111,8 @@ const report = reactive({
 
         <FormDivider />
 
-        <SettingsRemoveServiceWorker />
-
-        <SettingsClearCache />
+        <SettingsActionRemoveServiceWorker />
+        <SettingsActionClearCache />
       </form>
     </div>
   </PageLayout>
