@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// import { } from '@heroicons/vue/24/outline'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
+import { stateKeywordFurtherResultsLength } from './stateKeywordFurtherResultsLength'
 import { stateKnownKeywords } from './stateKnownKeywords'
 
 defineProps<{ state: State }>()
@@ -11,10 +11,11 @@ const lang = useGlobalLang()
 
 <template>
   <div class="mx-3 flex flex-wrap py-2">
-    <div
+    <button
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
-      class="font-sans my-1 mr-3 px-1 text-lg font-bold"
+      :disabled="stateKeywordFurtherResultsLength(state, keyword) === 0"
+      class="my-1 mr-3 px-1 disabled:border-stone-400 disabled:text-stone-400"
       :class="{
         'border border-dashed border-black': !state.keywords[keyword],
         'border border-orange-500 text-orange-500': state.keywords[keyword],
@@ -25,7 +26,15 @@ const lang = useGlobalLang()
           : (state.keywords[keyword] = true)
       "
     >
-      {{ keyword }}
-    </div>
+      <span class="font-sans text-lg font-bold">{{ keyword }}</span>
+      <span
+        class="font-sans pl-1 text-lg text-stone-500"
+        v-if="
+          !state.keywords[keyword] &&
+          stateKeywordFurtherResultsLength(state, keyword) !== 0
+        "
+        >({{ stateKeywordFurtherResultsLength(state, keyword) }})</span
+      >
+    </button>
   </div>
 </template>
