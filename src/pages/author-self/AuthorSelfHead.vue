@@ -7,6 +7,7 @@ import {
   CloudArrowDownIcon,
   CloudArrowUpIcon,
   FolderOpenIcon,
+  ListBulletIcon,
   MagnifyingGlassIcon,
   ReceiptRefundIcon,
   XMarkIcon,
@@ -14,6 +15,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Popup from '../../components/utils/Popup.vue'
+import AuthorContents from '../author/AuthorContents.vue'
 import AuthorConnection from './AuthorConnection.vue'
 import { State } from './State'
 import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
@@ -191,7 +193,7 @@ const lang = useGlobalLang()
       </template>
     </div>
 
-    <div class="flex flex-wrap overflow-x-auto text-base">
+    <div class="flex flex-wrap text-base">
       <button
         v-if="!state.isSearching"
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
@@ -220,19 +222,37 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <div class="flex min-w-max items-center space-x-1">
-        <Lang>
-          <template #zh
-            >总计：<span class="font-bold">{{
-              state.entries.length
-            }}</span></template
+      <Popup class="relative flex items-center pr-3">
+        <template #toggle="{ popup }">
+          <div
+            class="flex min-w-max items-center space-x-1"
+            @mouseover="popup.open = true"
+            @mouseleave="popup.open = false"
           >
-          <template #en
-            >Total:
-            <span class="font-bold">{{ state.entries.length }}</span></template
-          >
-        </Lang>
-      </div>
+            <ListBulletIcon class="h-5 w-5" />
+
+            <Lang>
+              <template #zh>
+                <span>目录：</span>
+                <span class="font-bold">{{ state.entries.length }}</span>
+              </template>
+              <template #en>
+                <span>Contents: </span>
+                <span class="font-bold">{{ state.entries.length }}</span>
+              </template>
+            </Lang>
+          </div>
+        </template>
+
+        <template #panel="{ popup }">
+          <AuthorContents
+            class="absolute right-3 top-[1.5rem] z-20"
+            @mouseover="popup.open = true"
+            @mouseleave="popup.open = false"
+            v-show="popup.open"
+          />
+        </template>
+      </Popup>
     </div>
   </div>
 </template>
