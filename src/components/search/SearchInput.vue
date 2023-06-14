@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SearchInputKeywords from './SearchInputKeywords.vue'
-import SearchInputStatistic from './SearchInputStatistic.vue'
+import SearchInputStatistics from './SearchInputStatistics.vue'
 import SearchInputText from './SearchInputText.vue'
 import { State } from './State'
 import { stateWatch } from './stateWatch'
@@ -28,6 +28,6 @@ stateWatch(props.state)
   >
     <SearchInputText :state="state" />
     <SearchInputKeywords :state="state" />
-    <SearchInputStatistic :state="state" />
+    <SearchInputStatistics :state="state" />
   </div>
 </template>
