@@ -71,7 +71,7 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <Popup class="relative flex items-center pr-3">
+      <Popup class="relative flex items-center">
         <template #toggle="{ popup }">
           <div
             class="flex min-w-max items-center space-x-1"
@@ -95,7 +95,7 @@ const lang = useGlobalLang()
 
         <template #panel="{ popup }">
           <AuthorContents
-            class="absolute right-3 top-[1.5rem] z-20"
+            class="absolute right-0 top-[1.5rem] z-20"
             @mouseover="popup.open = true"
             @mouseleave="popup.open = false"
             v-show="popup.open"
