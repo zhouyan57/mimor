@@ -17,4 +17,5 @@ export type State = {
   lastRefreshedAt?: number
   isSavingNewTexts?: boolean
   latestDirectoryHandle?: FileSystemDirectoryHandle
+  eagerLoadAll?: boolean
 }

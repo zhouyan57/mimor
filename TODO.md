@@ -1,5 +1,3 @@
-[author-self] & [author-other] on jump, load entry from lazy list
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`

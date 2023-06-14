@@ -43,6 +43,7 @@ const lang = useGlobalLang()
         class="flex flex-col space-y-3 px-3 pb-2"
         :entries="stateEntriesSorted(state)"
         :chunkSize="3"
+        :eagerLoadAll="state.eagerLoadAll"
       >
         <template #entry="{ entry }">
           <AuthorSelfEntry :state="state" :entry="entry" />
@@ -63,6 +64,7 @@ const lang = useGlobalLang()
         class="flex flex-col space-y-3 px-3 pb-2"
         :entries="stateEntriesFiltered(state)"
         :chunkSize="3"
+        :eagerLoadAll="state.eagerLoadAll"
       >
         <template #entry="{ entry }">
           <AuthorSelfEntry :state="state" :entry="entry" />

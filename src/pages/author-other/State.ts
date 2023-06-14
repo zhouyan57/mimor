@@ -10,4 +10,5 @@ export type State = {
   searchState: SearchState
   isRefreshing?: boolean
   lastRefreshedAt?: number
+  eagerLoadAll?: boolean
 }

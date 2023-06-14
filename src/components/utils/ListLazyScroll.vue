@@ -12,21 +12,12 @@ import { onVisible } from '../../utils/browser/onVisible'
 const props = defineProps<{
   entries: Array<any>
   chunkSize: number
+  eagerLoadAll?: boolean
 }>()
 
 const bottomElement = ref<HTMLElement | undefined>(undefined)
 
 const shownEntries: Array<any> = reactive([])
-
-watch(
-  () => props.entries,
-  () => {
-    while (shownEntries.pop()) {}
-
-    shownEntries.push(...props.entries.slice(0, props.chunkSize))
-  },
-  { immediate: true },
-)
 
 function showMoreEntries() {
   shownEntries.push(
@@ -36,6 +27,33 @@ function showMoreEntries() {
     ),
   )
 }
+
+watch(
+  () => props.entries,
+  () => {
+    if (props.eagerLoadAll) {
+      while (shownEntries.length < props.entries.length) {
+        showMoreEntries()
+      }
+    } else {
+      while (shownEntries.pop()) {}
+
+      shownEntries.push(...props.entries.slice(0, props.chunkSize))
+    }
+  },
+  { immediate: true },
+)
+
+watch(
+  () => props.eagerLoadAll,
+  (value) => {
+    if (value) {
+      while (shownEntries.length < props.entries.length) {
+        showMoreEntries()
+      }
+    }
+  },
+)
 
 onMounted(() => {
   if (bottomElement.value) {

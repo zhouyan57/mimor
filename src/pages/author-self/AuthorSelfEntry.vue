@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { nextTick, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import SearchResult from '../../components/search/SearchResult.vue'
 import { slug } from '../../utils/slug'
-import { wait } from '../../utils/wait'
 import { pathParse } from '../author/pathParse'
 import AuthorSelfEntryContent from './AuthorSelfEntryContent.vue'
 import AuthorSelfEntryInfo from './AuthorSelfEntryInfo.vue'
@@ -26,8 +25,6 @@ watch(
     const id = route.hash && route.hash.slice(1)
     if (id === slug(pathParse(props.entry.path).file)) {
       if (containerElement.value) {
-        await nextTick()
-        await wait(100)
         containerElement.value.scrollIntoView()
       }
     }

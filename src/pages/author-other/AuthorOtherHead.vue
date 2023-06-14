@@ -98,7 +98,13 @@ const lang = useGlobalLang()
             class="absolute right-0 top-[1.5rem] z-20"
             @mouseover="popup.open = true"
             @mouseleave="popup.open = false"
-            @jump="popup.open = false"
+            @jump="
+              () => {
+                popup.open = false
+                state.isSearching = false
+                state.eagerLoadAll = true
+              }
+            "
             v-show="popup.open"
             :lastRefreshedAt="state.lastRefreshedAt"
             :entries="state.entries"

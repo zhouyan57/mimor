@@ -13,6 +13,7 @@ export async function stateCacheGet(
   delete cache.isSearching
   delete cache.isRefreshing
   delete cache.isSavingNewTexts
+  delete cache.eagerLoadAll
 
   return cache
 }

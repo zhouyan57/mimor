@@ -11,6 +11,7 @@ export async function stateCacheGet(
 
   delete cache.isSearching
   delete cache.isRefreshing
+  delete cache.eagerLoadAll
 
   return cache
 }
