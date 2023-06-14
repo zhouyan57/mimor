@@ -1,4 +1,7 @@
+[search] `stateSearch` should not do side effect -- to be reused with ad hoc keywords
+
 [search] disable a keyword when it will make no results
+[search] preview a keyword's number of results
 
 [author-self] & [author-other] add a statistics button to head
 
@@ -7,8 +10,8 @@
 
 # recall -- spaced repetition, a stream of contents
 
-[recall] show users own mimors (with special label to distinguish others' mimors)
 [recall] user can add other mimor into `/recall`
+[recall] an action to add all user's own mimors (with special label to distinguish others' mimors)
 [recall] support search
 
 recall 页面假设了用户只对得分最高的几个 mimor 感兴趣，所以即便在顶部加上了日历图等统计信息，也不需要使用 fixed layout，和 search 页面类似就行。
