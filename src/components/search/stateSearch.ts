@@ -9,7 +9,11 @@ export function stateSearch(state: State): void {
     stateShowAllTarget(state)
   }
 
-  state.results = stateFilterResultsByKeywords(state, state.results)
+  state.results = stateFilterResultsByKeywords(
+    state,
+    state.results,
+    state.keywords,
+  )
 }
 
 function stateFilterByText(state: State): void {
