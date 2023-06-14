@@ -52,7 +52,7 @@ const lang = useGlobalLang()
           <div
             class="py-px"
             :class="{
-              'animate-pulse border-t-2 border-orange-500': !isFinished,
+              'animate-pulse border-t border-orange-500': !isFinished,
             }"
           ></div>
         </template>
@@ -72,7 +72,7 @@ const lang = useGlobalLang()
           <div
             class="py-px"
             :class="{
-              'animate-pulse border-t-2 border-orange-500': !isFinished,
+              'animate-pulse border-t border-orange-500': !isFinished,
             }"
           ></div>
         </template>
