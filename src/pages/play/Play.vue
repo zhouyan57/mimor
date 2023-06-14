@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TransitionPop from '../../components/transitions/TransitionPop.vue'
 import ListFocusKeyboardUpAndDown from '../../components/utils/ListFocusKeyboardUpAndDown.vue'
 import Popup from '../../components/utils/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
@@ -48,14 +49,7 @@ const window = useWindow()
           </template>
 
           <template #panel="{ popup }">
-            <Transition
-              enterActiveClass="transition duration-300 ease-out"
-              enterFromClass="transform scale-95 opacity-0"
-              enterToClass="transform scale-100 opacity-100"
-              leaveActiveClass="transition duration-300 ease-out"
-              leaveFromClass="transform scale-100 opacity-100"
-              leaveToClass="transform scale-95 opacity-0"
-            >
+            <TransitionPop>
               <div
                 v-show="popup.open"
                 class="absolute top-[4rem] z-10 flex flex-col space-y-3 border border-black bg-white p-3 text-xl"
@@ -69,7 +63,7 @@ const window = useWindow()
                   OK
                 </button>
               </div>
-            </Transition>
+            </TransitionPop>
           </template>
         </Popup>
       </div>
@@ -87,28 +81,30 @@ const window = useWindow()
             </template>
 
             <template #panel="{ popup }">
-              <ListFocusKeyboardUpAndDown
-                v-show="popup.open"
-                class="absolute top-[4rem] z-10 flex flex-col border border-black bg-white text-xl"
-                :entries="[
-                  { tag: 'zh', text: '中文' },
-                  { tag: 'en', text: 'English' },
-                ]"
-              >
-                <template #entry="{ entry }">
-                  <button
-                    class="flex w-full p-3"
-                    @click="
-                      () => {
-                        scope.tag = entry.tag
-                        popup.open = false
-                      }
-                    "
-                  >
-                    {{ entry.text }}
-                  </button>
-                </template>
-              </ListFocusKeyboardUpAndDown>
+              <TransitionPop>
+                <ListFocusKeyboardUpAndDown
+                  v-show="popup.open"
+                  class="absolute top-[4rem] z-10 flex flex-col border border-black bg-white text-xl"
+                  :entries="[
+                    { tag: 'zh', text: '中文' },
+                    { tag: 'en', text: 'English' },
+                  ]"
+                >
+                  <template #entry="{ entry }">
+                    <button
+                      class="flex w-full p-3"
+                      @click="
+                        () => {
+                          scope.tag = entry.tag
+                          popup.open = false
+                        }
+                      "
+                    >
+                      {{ entry.text }}
+                    </button>
+                  </template>
+                </ListFocusKeyboardUpAndDown>
+              </TransitionPop>
             </template>
           </Popup>
         </Scope>
