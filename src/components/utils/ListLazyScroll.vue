@@ -16,10 +16,6 @@ const props = defineProps<{
 
 const bottomElement = ref<HTMLElement | undefined>(undefined)
 
-const state = reactive({
-  isBottomVisible: false,
-})
-
 const shownEntries: Array<any> = reactive([])
 
 watch(
@@ -56,7 +52,9 @@ onMounted(() => {
     </li>
 
     <li ref="bottomElement">
-      <div class="py-px"></div>
+      <slot name="bottom" :isFinished="entries.length === shownEntries.length">
+        <div class="py-px"></div>
+      </slot>
     </li>
   </ul>
 </template>

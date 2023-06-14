@@ -1,5 +1,3 @@
-`ListLazyScroll` take `#bottom`
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] show users own mimors (with special label to distinguish others' mimors)

@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <Note
-    class="flex h-full max-w-[47rem] flex-col"
+    class="flex h-full flex-col"
     :key="`${entry.path}+${entry.updatedAt}`"
     :src="`~/${entry.path}`"
     :isEditable="true"

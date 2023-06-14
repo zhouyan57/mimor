@@ -23,18 +23,14 @@ const lang = useGlobalLang()
       <title v-else>{{ state.username }} | Mimor</title>
     </Head>
 
-    <div class="flex h-full flex-col">
+    <div class="flex h-full max-w-[47rem] flex-col">
       <div class="flex flex-col space-y-2 px-3 py-2 text-xl">
         <AuthorOtherHead :state="state" />
         <AuthorOtherInfo :state="state" />
       </div>
 
       <div v-show="state.isSearching" class="flex w-full px-3 py-1 text-xl">
-        <SearchInput
-          v-show="state.isSearching"
-          class="w-full max-w-[47rem]"
-          :state="state.searchState"
-        />
+        <SearchInput class="w-full" :state="state.searchState" />
       </div>
 
       <ListLazyScroll
@@ -46,6 +42,15 @@ const lang = useGlobalLang()
         <template #entry="{ entry }">
           <AuthorOtherEntry :state="state" :entry="entry" />
         </template>
+
+        <template #bottom="{ isFinished }">
+          <div
+            class="py-px"
+            :class="{
+              'animate-pulse border-t-2 border-orange-500': !isFinished,
+            }"
+          ></div>
+        </template>
       </ListLazyScroll>
 
       <ListLazyScroll
@@ -56,6 +61,15 @@ const lang = useGlobalLang()
       >
         <template #entry="{ entry }">
           <AuthorOtherEntry :state="state" :entry="entry" />
+        </template>
+
+        <template #bottom="{ isFinished }">
+          <div
+            class="py-px"
+            :class="{
+              'animate-pulse border-t-2 border-orange-500': !isFinished,
+            }"
+          ></div>
         </template>
       </ListLazyScroll>
     </div>
