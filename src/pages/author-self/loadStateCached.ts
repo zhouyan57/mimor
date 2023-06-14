@@ -13,7 +13,6 @@ export async function loadStateCached(options: StateOptions): Promise<State> {
     return {
       ...cached,
       searchState: createSearchState({ targets: {} }),
-      isLoadedFromCache: true,
     }
   } else {
     const state = await loadState(options)

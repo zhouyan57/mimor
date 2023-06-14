@@ -11,7 +11,6 @@ export type State = {
   entries: Array<Entry>
   searchState: SearchState
   isSearching?: boolean
-  isLoadedFromCache?: boolean
   isFileSystemAccessSupported?: boolean
   connection?: Connection
   isRefreshing?: boolean
