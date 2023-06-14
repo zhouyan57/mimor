@@ -1,9 +1,9 @@
-[author-self] & [author-other] add a statistics button to head
+[author-self] & [author-other] hover `Contents` button to popup `AuthorContents`
 
-- to show last refresh time
-- show list of contents
-- contents with byte count and line count
-- contents can jump to the content
+[author] `AuthorContents` -- show last refresh time
+[author] `AuthorContents` -- show list of contents
+[author] `AuthorContentEntry` -- contents with byte count and line count
+[author] `AuthorContentEntry` -- contents can jump to the content
 
 # recall -- spaced repetition, a stream of contents
 
