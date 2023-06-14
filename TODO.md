@@ -1,5 +1,4 @@
 [search] disable a keyword when it will make no more results
-[search] extract `stateResultsLength`
 [search] preview a keyword's number of results
 
 [author-self] & [author-other] add a statistics button to head
