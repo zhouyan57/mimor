@@ -253,6 +253,7 @@ const lang = useGlobalLang()
             class="absolute right-0 top-[1.5rem] z-20"
             @mouseover="popup.open = true"
             @mouseleave="popup.open = false"
+            @jump="popup.open = false"
             v-show="popup.open"
             :lastRefreshedAt="state.lastRefreshedAt"
             :entries="

@@ -13,6 +13,7 @@ defineProps<{
   <a
     :href="`#${slug(pathParse(entry.path).file)}`"
     class="flex items-baseline justify-between hover:underline"
+    @click="$emit('jump', slug(pathParse(entry.path).file))"
   >
     <span class="whitespace-pre pr-3">{{ pathParse(entry.path).file }}</span>
 

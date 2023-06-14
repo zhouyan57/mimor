@@ -1,4 +1,4 @@
-[author-self] & [author-other] watch route and jump to hash (path slug)
+[author-self] & [author-other] on jump, load entry from lazy list
 
 # recall -- spaced repetition, a stream of contents
 

@@ -5,8 +5,6 @@ type Backend = {
 }
 
 function initialBackendURL() {
-  console.log(import.meta.env)
-
   if (import.meta.env.VITE_BACKEND_URL) {
     return import.meta.env.VITE_BACKEND_URL
   }

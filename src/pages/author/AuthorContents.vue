@@ -40,7 +40,7 @@ defineProps<{
         :key="index"
         class="ml-5 list-square"
       >
-        <AuthorContentEntry :entry="entry" />
+        <AuthorContentEntry :entry="entry" @jump="(id) => $emit('jump', id)" />
       </li>
     </ul>
   </div>
