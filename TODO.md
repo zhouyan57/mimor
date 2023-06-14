@@ -6,7 +6,9 @@
 [author-self] & [author-other] add a statistics button to head
 
 - to show last refresh time
-- show list of contents, with byte count, and jump to the content
+- show list of contents
+- contents with byte count and line count
+- contents can jump to the content
 
 # recall -- spaced repetition, a stream of contents
 
