@@ -100,6 +100,7 @@ const lang = useGlobalLang()
             @mouseleave="popup.open = false"
             v-show="popup.open"
             :lastRefreshedAt="state.lastRefreshedAt"
+            :entries="state.entries"
           />
         </template>
       </Popup>
