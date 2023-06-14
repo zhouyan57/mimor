@@ -1,4 +1,3 @@
-[author] `AuthorContentEntry` -- contents with byte count and line count
 [author] `AuthorContentEntry` -- contents can jump to the content
 
 # recall -- spaced repetition, a stream of contents

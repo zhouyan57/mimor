@@ -16,8 +16,8 @@ defineProps<{
   >
     <div class="flex w-full items-baseline justify-between space-x-3">
       <Lang class="font-sans whitespace-pre text-xl font-bold">
-        <template #zh>目录</template>
-        <template #en>Contents</template>
+        <template #zh>文件列表</template>
+        <template #en>File List</template>
       </Lang>
 
       <div class="whitespace-pre">
@@ -34,10 +34,14 @@ defineProps<{
       </div>
     </div>
 
-    <AuthorContentEntry
-      v-for="(entry, index) of entries"
-      :key="index"
-      :entry="entry"
-    />
+    <ul class="flex flex-col overflow-y-auto overflow-x-hidden text-lg">
+      <li
+        v-for="(entry, index) of entries"
+        :key="index"
+        class="ml-5 list-square"
+      >
+        <AuthorContentEntry :entry="entry" />
+      </li>
+    </ul>
   </div>
 </template>
