@@ -15,14 +15,14 @@ defineProps<{
     <Lang class="whitespace-pre">
       <template #zh>
         <div class="flex space-x-2 text-sm">
-          <span>{{ entry.text.split('\n').length }} 行</span>
           <span>{{ entry.text.length }} 字节</span>
+          <span>{{ entry.text.split('\n').length }} 行</span>
         </div>
       </template>
       <template #en>
         <div class="flex space-x-2 text-sm">
-          <span>{{ entry.text.split('\n').length }} lines</span>
           <span>{{ entry.text.length }} bytes</span>
+          <span>{{ entry.text.split('\n').length }} lines</span>
         </div>
       </template>
     </Lang>
