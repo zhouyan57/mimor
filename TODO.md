@@ -1,5 +1,3 @@
-[search] preview a keyword's number of results (when it can make MORE results)
-
 [author-self] & [author-other] add a statistics button to head
 
 - to show last refresh time

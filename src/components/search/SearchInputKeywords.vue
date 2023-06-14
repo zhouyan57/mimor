@@ -15,6 +15,7 @@ const lang = useGlobalLang()
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
       :disabled="
+        !state.keywords[keyword] &&
         Object.keys(stateKeywordFurtherResults(state, keyword)).length === 0
       "
       class="my-1 mr-3 px-1 disabled:border-stone-400 disabled:text-stone-400"
