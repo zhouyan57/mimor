@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { XElement, isElement } from '@xieyuheng/x-node'
 import { reactive, watch } from 'vue'
+import TransitionReveal from '../../transitions/TransitionReveal.vue'
 import MimorFootRemembering from '../MimorFootRemembering.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorTransitionCard from '../MimorTransitionCard.vue'
@@ -35,11 +36,7 @@ watch(
     <MimorTransitionCard :state="state" :program="program">
       <div v-for="(child, index) of element.children" :key="index">
         <div v-if="isElement(child) && child.tag === 'answer'" class="py-2">
-          <Transition
-            enterActiveClass="transition duration-700 ease-in-out"
-            enterFromClass="transform transform-gpu opacity-0"
-            enterToClass="transform transform-gpu opacity-100"
-          >
+          <TransitionReveal>
             <Nodes
               v-if="remembering.revealed"
               :state="state"
@@ -47,7 +44,7 @@ watch(
               :nodes="child.children"
               class="py-3 text-3xl"
             />
-          </Transition>
+          </TransitionReveal>
         </div>
         <Node
           v-else
