@@ -11,6 +11,7 @@ export async function stateRefresh(state: State): Promise<void> {
   const newState = await loadState(state)
 
   state.user = newState.user
+  state.lastRefreshedAt = Date.now()
   stateSaveNewEntries(state, newState)
   stateMarkMissingEntries(state, newState)
 

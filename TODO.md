@@ -1,4 +1,3 @@
-[author] `AuthorContents` -- show last refresh time
 [author] `AuthorContents` -- show list of contents
 [author] `AuthorContentEntry` -- contents with byte count and line count
 [author] `AuthorContentEntry` -- contents can jump to the content

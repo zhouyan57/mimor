@@ -26,6 +26,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     editor: createEditor(),
     searchState: createSearchState({ targets: {} }),
     entries: [],
+    lastRefreshedAt: Date.now(),
     isFileSystemAccessSupported:
       typeof window.showOpenFilePicker === 'function',
   }

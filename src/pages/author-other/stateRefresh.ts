@@ -10,6 +10,7 @@ export async function stateRefresh(state: State): Promise<void> {
 
   state.user = newState.user
   state.entries = newState.entries.map((entry) => entryReactive(entry, state))
+  state.lastRefreshedAt = Date.now()
 
   await stateCacheSet(state)
 

@@ -9,4 +9,5 @@ export type State = {
   isSearching?: boolean
   searchState: SearchState
   isRefreshing?: boolean
+  lastRefreshedAt?: number
 }

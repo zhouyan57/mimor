@@ -14,7 +14,7 @@ defineProps<{
 <template>
   <li class="min-w-[15rem]">
     <div class="flex items-baseline justify-between">
-      <div class="whitespace-pre">
+      <div class="whitespace-pre pr-3">
         {{ formatDateTime(activity.time) }}
       </div>
 

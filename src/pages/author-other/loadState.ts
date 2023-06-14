@@ -24,5 +24,6 @@ export async function loadState(options: StateOptions): Promise<State> {
     user,
     entries,
     searchState: createSearchState({ targets: {} }),
+    lastRefreshedAt: Date.now(),
   }
 }
