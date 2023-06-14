@@ -2,7 +2,7 @@
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { langTagName, useGlobalLang } from '../../components/lang/useGlobalLang'
-import List from '../../components/utils/List.vue'
+import ListFocusKeyboardUpAndDown from '../../components/utils/ListFocusKeyboardUpAndDown.vue'
 import Popup from '../../components/utils/Popup.vue'
 
 const lang = useGlobalLang()
@@ -30,7 +30,7 @@ const lang = useGlobalLang()
         leaveFromClass="transform scale-100 opacity-100"
         leaveToClass="transform scale-95 opacity-0"
       >
-        <List
+        <ListFocusKeyboardUpAndDown
           v-show="popup.open"
           class="absolute left-0 top-9 min-w-max border bg-white"
           :entries="
@@ -51,7 +51,7 @@ const lang = useGlobalLang()
               <CheckIcon v-if="lang.tag === entry.tag" class="ml-2 h-5 w-5" />
             </button>
           </template>
-        </List>
+        </ListFocusKeyboardUpAndDown>
       </Transition>
     </template>
   </Popup>

@@ -5,7 +5,7 @@ import { onVisible } from '../../utils/browser/onVisible'
 
 /*
 
-   List of entries lazy load when scroll to the bottom.
+   List of entries, load more when scroll to the bottom.
 
 */
 

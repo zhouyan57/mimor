@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import List from '../../components/utils/List.vue'
+import ListFocusKeyboardUpAndDown from '../../components/utils/ListFocusKeyboardUpAndDown.vue'
 import Popup from '../../components/utils/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -87,7 +87,7 @@ const window = useWindow()
             </template>
 
             <template #panel="{ popup }">
-              <List
+              <ListFocusKeyboardUpAndDown
                 v-show="popup.open"
                 class="absolute top-[4rem] z-10 flex flex-col border border-black bg-white text-xl"
                 :entries="[
@@ -108,7 +108,7 @@ const window = useWindow()
                     {{ entry.text }}
                   </button>
                 </template>
-              </List>
+              </ListFocusKeyboardUpAndDown>
             </template>
           </Popup>
         </Scope>
