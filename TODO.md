@@ -1,4 +1,4 @@
-[author-self] rename `uploadedText` to `newText`
+[author-self] `*Uploaded*` to `*New*`
 
 [search] disable a keyword when it will make no results
 

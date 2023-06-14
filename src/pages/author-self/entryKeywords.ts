@@ -24,7 +24,7 @@ function entryKeywordsFromPath(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMimor(entry: Entry): Array<string> {
-  const text = entry.uploadedText || entry.text || ''
+  const text = entry.newText || entry.text || ''
 
   if (!entry.path.endsWith('.mimor')) {
     return []
@@ -41,7 +41,7 @@ function entryKeywordsFromMimor(entry: Entry): Array<string> {
 }
 
 function entryKeywordsFromMarkdown(entry: Entry): Array<string> {
-  const text = entry.uploadedText || entry.text || ''
+  const text = entry.newText || entry.text || ''
 
   if (!entry.path.endsWith('.md')) {
     return []

@@ -7,7 +7,7 @@ export async function stateCacheSet(state: State): Promise<void> {
 
   const entries = state.entries.map((entry) => {
     entry = { ...entry }
-    delete entry.uploadedText
+    delete entry.newText
     return entry
   })
 

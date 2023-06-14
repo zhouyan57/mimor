@@ -57,7 +57,7 @@ function stateMarkMissingEntries(state: State, newState: State): void {
       (newEntry) => entry.path === newEntry.path,
     )
     if (!found) {
-      entry.uploadedText = entry.text
+      entry.newText = entry.text
       entry.text = undefined
     }
   }

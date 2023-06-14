@@ -17,14 +17,14 @@ export async function stateSaveAllUploadedTexts(state: State): Promise<void> {
     state.entries.map(async (entry) => {
       const file = pathParse(entry.path).file
 
-      if (entry.text === undefined && entry.uploadedText !== undefined) {
+      if (entry.text === undefined && entry.newText !== undefined) {
         report.createdFiles.push(file)
       }
 
       if (
         entry.text !== undefined &&
-        entry.uploadedText !== undefined &&
-        entry.uploadedText !== entry.text
+        entry.newText !== undefined &&
+        entry.newText !== entry.text
       ) {
         report.updatedFiles.push(file)
       }

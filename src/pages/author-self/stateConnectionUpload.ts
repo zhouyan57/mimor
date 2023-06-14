@@ -43,7 +43,7 @@ function saveConnectionFileEntry(
       report.updatedFiles.push(fileEntry.path)
     }
 
-    found.uploadedText = fileEntry.text
+    found.newText = fileEntry.text
   } else {
     report.createdFiles.push(fileEntry.path)
     state.entries.push(
@@ -55,7 +55,7 @@ function saveConnectionFileEntry(
             username: state.username,
             file: fileEntry.path,
           }),
-          uploadedText: fileEntry.text,
+          newText: fileEntry.text,
           createdAt: fileEntry.updatedAt,
           updatedAt: fileEntry.updatedAt,
         },

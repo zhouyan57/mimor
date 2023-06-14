@@ -10,7 +10,7 @@ export async function stateEntrySaveUploadedText(
   const who = 'stateEntrySaveUploadedText'
 
   // Should only save modified.
-  if (entry.uploadedText === undefined || entry.uploadedText === entry.text) {
+  if (entry.newText === undefined || entry.newText === entry.text) {
     return
   }
 
@@ -26,9 +26,9 @@ export async function stateEntrySaveUploadedText(
     headers: {
       authorization: token.authorization,
     },
-    body: entry.uploadedText,
+    body: entry.newText,
   })
 
-  entry.text = entry.uploadedText
+  entry.text = entry.newText
   entry.isSaving = false
 }
