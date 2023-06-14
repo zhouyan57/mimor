@@ -4,10 +4,22 @@ type Backend = {
   url: string
 }
 
+function initialBackendURL() {
+  console.log(import.meta.env)
+
+  if (import.meta.env.VITE_BACKEND_URL) {
+    return import.meta.env.VITE_BACKEND_URL
+  }
+
+  if (import.meta.env.DEV) {
+    return 'http://localhost:5108'
+  } else {
+    return 'https://api.mimor.app:5108'
+  }
+}
+
 const globalBackend: Backend = reactive({
-  url: import.meta.env.DEV
-    ? 'http://localhost:5108'
-    : 'https://api.mimor.app:5108',
+  url: initialBackendURL(),
 })
 
 export function useGlobalBackend() {

@@ -17,6 +17,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:with-prod-backend": "VITE_BACKEND_URL='https://api.mimor.app:5108' npm run dev",
     "api": "fidb serve database",
     "build:app": "vite build",
     "build:lib": "vite build -c vite-lib.config.ts",

@@ -30,6 +30,13 @@ Notes:
 - The example username are `xieyuheng` and `cicada-lang`.
 - The example passwords are all `123456`.
 
+If you do not want to start local backend using `npm run api`,
+you can use the production backend during development:
+
+```sh
+npm run dev:with-prod-backend  # Start the dev server with the production backend
+```
+
 ## Contributions
 
 To make a contribution, fork this project and create a pull request.
