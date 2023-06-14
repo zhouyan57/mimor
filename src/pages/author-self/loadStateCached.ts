@@ -7,11 +7,11 @@ import { stateCacheSet } from './stateCacheSet'
 export async function loadStateCached(options: StateOptions): Promise<State> {
   const { username } = options
 
-  const cached = await stateCacheGet(username)
+  const cache = await stateCacheGet(username)
 
-  if (cached) {
+  if (cache) {
     return {
-      ...cached,
+      ...cache,
       searchState: createSearchState({ targets: {} }),
     }
   } else {
