@@ -20,7 +20,7 @@ import { removeServiceWorker } from '../../utils/pwa/removeServiceWorker'
       :disabled="scope.disabled"
       class="font-sans rounded-sm border border-black py-3 font-bold disabled:opacity-50"
       :class="[!scope.disabled && `hover:bg-stone-100`]"
-      @click="
+      @click.preview.stop="
         () => {
           removeServiceWorker()
           scope.disabled = true
