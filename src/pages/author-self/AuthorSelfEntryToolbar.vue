@@ -22,9 +22,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex space-x-3 text-base">
+  <div class="flex flex-wrap text-base">
     <button
-      class="flex max-w-fit space-x-1 disabled:text-stone-500"
+      class="flex max-w-fit space-x-1 whitespace-pre pr-3 disabled:text-stone-500"
       :disabled="entry.isDeleting"
       @click="stateEntryDeleteAfterConfirming(state, entry)"
     >
@@ -42,7 +42,7 @@ defineProps<{
     </button>
 
     <button
-      class="flex max-w-fit space-x-1 disabled:text-stone-500"
+      class="flex max-w-fit space-x-1 whitespace-pre pr-3 disabled:text-stone-500"
       :disabled="entry.isTogglingVisibility"
       @click="entryToggleVisibilityAfterConfirming(entry)"
     >
@@ -77,7 +77,7 @@ defineProps<{
 
     <button
       v-if="entryIsModifiedByUpload(entry)"
-      class="flex max-w-fit space-x-1 disabled:text-stone-500"
+      class="flex max-w-fit space-x-1 whitespace-pre pr-3 disabled:text-stone-500"
       :disabled="entry.isSaving"
       @click="
         asyncRun(async () => {
@@ -94,8 +94,8 @@ defineProps<{
       />
 
       <Lang>
-        <template #zh>保存所上传的</template>
-        <template #en>Save Uploaded</template>
+        <template #zh>保存新内容</template>
+        <template #en>Save New Content</template>
       </Lang>
     </button>
   </div>

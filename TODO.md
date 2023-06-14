@@ -1,4 +1,4 @@
-[author-self] change "save uploaded" to "save new content"
+[author-self] rename `uploadedText` to `newText`
 
 [search] disable a keyword when it will make no results
 
