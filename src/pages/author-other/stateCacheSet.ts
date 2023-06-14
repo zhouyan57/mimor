@@ -8,6 +8,7 @@ export async function stateCacheSet(state: State): Promise<void> {
   const cache = reactiveToRaw({ ...state })
 
   delete cache.isSearching
+  delete cache.isRefreshing
 
   await Kv.set(state.username, cache, store)
 }
