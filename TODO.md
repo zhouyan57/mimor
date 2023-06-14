@@ -1,4 +1,4 @@
-[author] `AuthorContentEntry` -- contents can jump to the content
+[author-self] & [author-other] watch route and jump to hash (path slug)
 
 # recall -- spaced repetition, a stream of contents
 
