@@ -2,6 +2,7 @@
 import { ArrowsUpDownIcon, CheckIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { langTagName, useGlobalLang } from '../../components/lang/useGlobalLang'
+import TransitionPop from '../../components/transitions/TransitionPop.vue'
 import ListFocusKeyboardUpAndDown from '../../components/utils/ListFocusKeyboardUpAndDown.vue'
 import Popup from '../../components/utils/Popup.vue'
 
@@ -22,14 +23,7 @@ const lang = useGlobalLang()
     </template>
 
     <template #panel="{ popup }">
-      <Transition
-        enterActiveClass="transition duration-100 ease-out"
-        enterFromClass="transform scale-95 opacity-0"
-        enterToClass="transform scale-100 opacity-100"
-        leaveActiveClass="transition duration-75 ease-out"
-        leaveFromClass="transform scale-100 opacity-100"
-        leaveToClass="transform scale-95 opacity-0"
-      >
+      <TransitionPop>
         <ListFocusKeyboardUpAndDown
           v-show="popup.open"
           class="absolute left-0 top-9 min-w-max border bg-white"
@@ -52,7 +46,7 @@ const lang = useGlobalLang()
             </button>
           </template>
         </ListFocusKeyboardUpAndDown>
-      </Transition>
+      </TransitionPop>
     </template>
   </Popup>
 </template>
