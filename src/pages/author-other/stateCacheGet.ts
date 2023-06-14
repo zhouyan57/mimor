@@ -7,6 +7,8 @@ export async function stateCacheGet(
   const store = Kv.createStore('mimor.app/author-other', 'cache')
   const cache = await Kv.get(username, store)
 
+  if (!cache) return undefined
+
   delete cache.isSearching
   delete cache.isRefreshing
 
