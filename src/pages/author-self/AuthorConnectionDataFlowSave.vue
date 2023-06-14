@@ -5,7 +5,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Connection } from './Connection'
 import { State } from './State'
 import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
-import { stateSaveAllUploadedTexts } from './stateSaveAllUploadedTexts'
+import { stateSaveAllNewTexts } from './stateSaveAllNewTexts'
 
 defineProps<{
   state: State
@@ -22,17 +22,14 @@ const lang = useGlobalLang()
       lang.isZh() ? `将 app 中的文件保存到云端` : `Save files from app to cloud`
     "
     :disabled="
-      state.isSavingUploadedTexts ||
+      state.isSavingNewTexts ||
       !state.entries.some((entry) => entryIsModifiedByUpload(entry))
     "
-    @click.prevent.stop="stateSaveAllUploadedTexts(state)"
+    @click.prevent.stop="stateSaveAllNewTexts(state)"
   >
-    <CloudArrowUpIcon v-if="!state.isSavingUploadedTexts" class="h-5 w-5" />
+    <CloudArrowUpIcon v-if="!state.isSavingNewTexts" class="h-5 w-5" />
 
-    <ArrowPathIcon
-      v-if="state.isSavingUploadedTexts"
-      class="h-5 w-5 animate-spin"
-    />
+    <ArrowPathIcon v-if="state.isSavingNewTexts" class="h-5 w-5 animate-spin" />
 
     <Lang>
       <template #zh>保存</template>

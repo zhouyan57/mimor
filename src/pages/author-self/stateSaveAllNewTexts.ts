@@ -3,10 +3,10 @@ import { pathParse } from '../author/pathParse'
 import { ConnectionActivityReport } from './Connection'
 import { State } from './State'
 import { stateCacheSet } from './stateCacheSet'
-import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
+import { stateEntrySaveNewText } from './stateEntrySaveNewText'
 
-export async function stateSaveAllUploadedTexts(state: State): Promise<void> {
-  state.isSavingUploadedTexts = true
+export async function stateSaveAllNewTexts(state: State): Promise<void> {
+  state.isSavingNewTexts = true
 
   const report: ConnectionActivityReport = {
     updatedFiles: [],
@@ -29,7 +29,7 @@ export async function stateSaveAllUploadedTexts(state: State): Promise<void> {
         report.updatedFiles.push(file)
       }
 
-      return await stateEntrySaveUploadedText(state, entry)
+      return await stateEntrySaveNewText(state, entry)
     }),
   )
 
@@ -41,9 +41,9 @@ export async function stateSaveAllUploadedTexts(state: State): Promise<void> {
     })
   }
 
-  state.isSavingUploadedTexts = false
+  state.isSavingNewTexts = false
 
-  // Should not save `isSavingUploadedTexts = true` to cache.
+  // Should not save `isSavingNewTexts = true` to cache.
 
   await stateCacheSet(state)
 }

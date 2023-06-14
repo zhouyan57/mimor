@@ -3,11 +3,11 @@ import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { Entry } from './Entry'
 import { State } from './State'
 
-export async function stateEntrySaveUploadedText(
+export async function stateEntrySaveNewText(
   state: State,
   entry: Entry,
 ): Promise<void> {
-  const who = 'stateEntrySaveUploadedText'
+  const who = 'stateEntrySaveNewText'
 
   // Should only save modified.
   if (entry.newText === undefined || entry.newText === entry.text) {

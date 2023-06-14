@@ -13,7 +13,7 @@ import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
 import { stateCacheSet } from './stateCacheSet'
 import { stateEntryDeleteAfterConfirming } from './stateEntryDeleteAfterConfirming'
-import { stateEntrySaveUploadedText } from './stateEntrySaveUploadedText'
+import { stateEntrySaveNewText } from './stateEntrySaveNewText'
 
 defineProps<{
   state: State
@@ -81,7 +81,7 @@ defineProps<{
       :disabled="entry.isSaving"
       @click="
         asyncRun(async () => {
-          await stateEntrySaveUploadedText(state, entry)
+          await stateEntrySaveNewText(state, entry)
           await stateCacheSet(state)
         })
       "

@@ -16,7 +16,7 @@ export async function stateCacheSet(state: State): Promise<void> {
   delete cache.connection
   delete cache.isSearching
   delete cache.isRefreshing
-  delete cache.isSavingUploadedTexts
+  delete cache.isSavingNewTexts
 
   await Kv.set(state.username, cache, store)
 }

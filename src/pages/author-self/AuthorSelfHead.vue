@@ -22,7 +22,7 @@ import { stateConnectDirectoryHandle } from './stateConnectDirectoryHandle'
 import { stateConnectionDownload } from './stateConnectionDownload'
 import { stateConnectionUpload } from './stateConnectionUpload'
 import { stateRefresh } from './stateRefresh'
-import { stateSaveAllUploadedTexts } from './stateSaveAllUploadedTexts'
+import { stateSaveAllNewTexts } from './stateSaveAllNewTexts'
 
 defineProps<{ state: State }>()
 
@@ -173,16 +173,13 @@ const lang = useGlobalLang()
               ? `将 app 中的文件保存到云端`
               : `Save files from app to cloud`
           "
-          :disabled="state.isSavingUploadedTexts"
-          @click="stateSaveAllUploadedTexts(state)"
+          :disabled="state.isSavingNewTexts"
+          @click="stateSaveAllNewTexts(state)"
         >
-          <CloudArrowUpIcon
-            v-if="!state.isSavingUploadedTexts"
-            class="h-5 w-5"
-          />
+          <CloudArrowUpIcon v-if="!state.isSavingNewTexts" class="h-5 w-5" />
 
           <ArrowPathIcon
-            v-if="state.isSavingUploadedTexts"
+            v-if="state.isSavingNewTexts"
             class="h-5 w-5 animate-spin"
           />
 

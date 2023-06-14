@@ -10,7 +10,7 @@ export async function stateCacheGet(
   delete cache.connection
   delete cache.isSearching
   delete cache.isRefreshing
-  delete cache.isSavingUploadedTexts
+  delete cache.isSavingNewTexts
 
   return cache
 }

@@ -14,6 +14,6 @@ export type State = {
   isFileSystemAccessSupported?: boolean
   connection?: Connection
   isRefreshing?: boolean
-  isSavingUploadedTexts?: boolean
+  isSavingNewTexts?: boolean
   latestDirectoryHandle?: FileSystemDirectoryHandle
 }

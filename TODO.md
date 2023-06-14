@@ -1,5 +1,3 @@
-[author-self] `*Uploaded*` to `*New*`
-
 [search] disable a keyword when it will make no results
 
 [author-self] & [author-other] add a statistics button to head
