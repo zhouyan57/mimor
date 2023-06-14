@@ -3,6 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
+import TranslationRotateInSlideOut from '../../components/transitions/TranslationRotateInSlideOut.vue'
 import Popup from '../../components/utils/Popup.vue'
 import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
 import { logout } from '../../models/auth/logout'
@@ -35,14 +36,7 @@ async function logoutAfterConfirming() {
     </template>
 
     <template #panel="{ popup }">
-      <Transition
-        enterActiveClass="transition duration-100"
-        enterFromClass="transform opacity-0 translate-x-6 -rotate-45"
-        enterToClass="transform opacity-100 rotate-0"
-        leaveActiveClass="transition duration-100"
-        leaveFromClass="transform opacity-100"
-        leaveToClass="transform opacity-0 -translate-x-6"
-      >
+      <TranslationRotateInSlideOut>
         <div
           v-show="popup.open"
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between overflow-auto bg-white p-2 text-3xl"
@@ -204,7 +198,7 @@ async function logoutAfterConfirming() {
             </button>
           </div>
         </div>
-      </Transition>
+      </TranslationRotateInSlideOut>
     </template>
   </Popup>
 </template>
