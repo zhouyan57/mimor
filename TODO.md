@@ -1,4 +1,5 @@
-[author-self] & [author-other] fix `Contents` button on mobile
+[author-self] & [author-other] `Contents` should use `Dialog` instead of `Popup`
+[author-self] `AuthorConnection` should use `Dialog` instead of `Popup`
 
 # recall -- spaced repetition, a stream of contents
 
