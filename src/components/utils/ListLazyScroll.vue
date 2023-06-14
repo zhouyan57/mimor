@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { reactive, watch } from 'vue'
-import ListLazyScrollBottom from './ListLazyScrollBottom.vue'
+import { onMounted, reactive, ref, watch } from 'vue'
+import { isVisible } from '../../utils/browser/isVisible'
+import { onVisible } from '../../utils/browser/onVisible'
 
 /*
 
@@ -12,6 +13,8 @@ const props = defineProps<{
   entries: Array<any>
   chunkSize: number
 }>()
+
+const bottomElement = ref<HTMLElement | undefined>(undefined)
 
 const state = reactive({
   isBottomVisible: false,
@@ -29,21 +32,21 @@ watch(
   { immediate: true },
 )
 
-watch(
-  () => state.isBottomVisible,
-  (value) => {
-    if (!value) return
-    if (shownEntries.length === props.entries.length) return
+function showMoreEntries() {
+  shownEntries.push(
+    ...props.entries.slice(
+      shownEntries.length,
+      shownEntries.length + props.chunkSize,
+    ),
+  )
+}
 
-    shownEntries.push(
-      ...props.entries.slice(
-        shownEntries.length,
-        shownEntries.length + props.chunkSize,
-      ),
-    )
-  },
-  { immediate: true },
-)
+onMounted(() => {
+  if (bottomElement.value) {
+    if (isVisible(bottomElement.value)) showMoreEntries()
+    onVisible(bottomElement.value, () => showMoreEntries())
+  }
+})
 </script>
 
 <template>
@@ -52,8 +55,8 @@ watch(
       <slot name="entry" :entry="entry" />
     </li>
 
-    <li>
-      <ListLazyScrollBottom :state="state" />
+    <li ref="bottomElement">
+      <div class="py-px"></div>
     </li>
   </ul>
 </template>

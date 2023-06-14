@@ -1,5 +1,3 @@
-inline `ListLazyScrollBottom`
-
 `ListLazyScroll` take `#bottom`
 
 rename `List` to `ListFocusKeyboardUpAndDown`
