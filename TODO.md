@@ -1,5 +1,3 @@
-[search] `stateSearch` should not do side effect -- to be reused with ad hoc keywords
-
 [search] disable a keyword when it will make no results
 [search] preview a keyword's number of results
 

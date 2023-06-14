@@ -1,4 +1,5 @@
 import { State } from './State'
+import { stateFilterResultsByKeywords } from './stateFilterResultsByKeywords'
 import { targetMatchText } from './targetMatchText'
 
 export function stateSearch(state: State): void {
@@ -8,7 +9,7 @@ export function stateSearch(state: State): void {
     stateShowAllTarget(state)
   }
 
-  stateFilterByKeywords(state)
+  state.results = stateFilterResultsByKeywords(state, state.results)
 }
 
 function stateFilterByText(state: State): void {
@@ -25,19 +26,5 @@ function stateFilterByText(state: State): void {
 function stateShowAllTarget(state: State): void {
   for (const key of Object.keys(state.targets)) {
     state.results[key] = {}
-  }
-}
-
-function stateFilterByKeywords(state: State): void {
-  for (const [key, result] of Object.entries(state.results)) {
-    const target = state.targets[key]
-    if (
-      target &&
-      !Object.keys(state.keywords).every((keyword) =>
-        target.keywords.includes(keyword),
-      )
-    ) {
-      delete state.results[key]
-    }
   }
 }
