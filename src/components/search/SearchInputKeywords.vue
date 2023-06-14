@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
-import { stateKeywordFurtherResultsLength } from './stateKeywordFurtherResultsLength'
+import { stateKeywordFurtherResults } from './stateKeywordFurtherResults'
 import { stateKnownKeywords } from './stateKnownKeywords'
 
 defineProps<{ state: State }>()
@@ -14,7 +14,9 @@ const lang = useGlobalLang()
     <button
       v-for="keyword of stateKnownKeywords(state)"
       :key="keyword"
-      :disabled="stateKeywordFurtherResultsLength(state, keyword) === 0"
+      :disabled="
+        Object.keys(stateKeywordFurtherResults(state, keyword)).length === 0
+      "
       class="my-1 mr-3 px-1 disabled:border-stone-400 disabled:text-stone-400"
       :class="{
         'border border-dashed border-black': !state.keywords[keyword],
@@ -31,9 +33,11 @@ const lang = useGlobalLang()
         class="font-sans pl-1 text-lg text-stone-500"
         v-if="
           !state.keywords[keyword] &&
-          stateKeywordFurtherResultsLength(state, keyword) !== 0
+          Object.keys(stateKeywordFurtherResults(state, keyword)).length !== 0
         "
-        >({{ stateKeywordFurtherResultsLength(state, keyword) }})</span
+        >({{
+          Object.keys(stateKeywordFurtherResults(state, keyword)).length
+        }})</span
       >
     </button>
   </div>

@@ -2,7 +2,6 @@
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
-import { stateResultsLength } from './stateResultsLength'
 
 defineProps<{ state: State }>()
 
@@ -16,13 +15,13 @@ const lang = useGlobalLang()
       <Lang>
         <template #zh
           >结果：<span class="font-bold">{{
-            stateResultsLength(state)
+            Object.keys(state.results).length
           }}</span></template
         >
         <template #en
           >Results:
           <span class="font-bold">{{
-            stateResultsLength(state)
+            Object.keys(state.results).length
           }}</span></template
         >
       </Lang>
