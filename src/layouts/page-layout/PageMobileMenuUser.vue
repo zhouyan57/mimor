@@ -29,7 +29,7 @@ async function logoutAfterConfirming() {
 
 <template>
   <Popup>
-    <template #toggle>
+    <template #button>
       <div class="flex border border-black p-2">
         <Bars3Icon class="h-7 w-7" />
       </div>

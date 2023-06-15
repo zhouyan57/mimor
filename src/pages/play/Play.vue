@@ -42,7 +42,7 @@ const window = useWindow()
         <div class="text-2xl font-bold">Popup</div>
 
         <Popup class="relative">
-          <template #toggle>
+          <template #button>
             <div class="max-w-fit border border-black p-3 text-xl">
               Click to toggle Popup
             </div>
@@ -73,7 +73,7 @@ const window = useWindow()
 
         <Scope :scope="{ tag: 'en' }" v-slot="{ scope }">
           <Popup class="relative">
-            <template #toggle>
+            <template #button>
               <div class="max-w-fit border border-black p-3 text-xl">
                 <span v-if="scope.tag === 'en'">Lang</span>
                 <span v-if="scope.tag === 'zh'">语言</span>

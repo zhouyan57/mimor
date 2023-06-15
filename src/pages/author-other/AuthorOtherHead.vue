@@ -72,7 +72,7 @@ const lang = useGlobalLang()
       </button>
 
       <Popup class="relative flex items-center">
-        <template #toggle="{ popup }">
+        <template #button="{ popup }">
           <div
             class="flex min-w-max items-center space-x-1"
             @mouseover="popup.open = true"
