@@ -1,5 +1,3 @@
-[home] note about 'first time loading is slow'
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`
