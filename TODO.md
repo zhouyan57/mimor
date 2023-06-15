@@ -1,6 +1,3 @@
-[author-self] `AuthorConnection` use `XMarkIcon` to close
-[author-self] `AuthorConnection` should be like `Modal` on mobile
-
 [author-self] note about 'first time loading is slow'
 [author-other] note about 'first time loading is slow'
 [home] note about 'first time loading is slow'
@@ -39,3 +36,8 @@ recall 页面假设了用户只对得分最高的几个 mimor 感兴趣，所以
 
 [author] [refactor] `stateMakeMimorEntry*`
 [author] `loadMimorEntries*` handle HTTP errors
+
+# refactor
+
+[author-self] [refactor] `AuthorConnection` should be like modal
+[author-self] & [author-other] table of contents shoul be like modal
