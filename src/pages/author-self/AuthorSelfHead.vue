@@ -267,7 +267,7 @@ const lang = useGlobalLang()
           />
 
           <div
-            class="fixed inset-0 z-20 m-3 block h-min max-h-[80%] overflow-y-auto border border-black bg-white md:hidden"
+            class="fixed inset-0 z-20 mx-2 mb-[4rem] mt-2 block overflow-y-auto border border-black bg-white md:hidden"
             v-show="popup.open"
           >
             <PopupSyncQuery :popup="popup" name="author-contents" />
