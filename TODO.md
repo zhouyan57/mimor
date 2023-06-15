@@ -1,3 +1,9 @@
+`components/utils/Modal` -- learn from alpinejs components
+
+[author-self] `AuthorConnection` should be like modal
+
+[author-self] & [author-other] table of contents shoul be like modal
+
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`
@@ -32,8 +38,3 @@ recall 页面假设了用户只对得分最高的几个 mimor 感兴趣，所以
 
 [author] [refactor] `stateMakeMimorEntry*`
 [author] `loadMimorEntries*` handle HTTP errors
-
-# refactor
-
-[author-self] [refactor] `AuthorConnection` should be like modal
-[author-self] & [author-other] table of contents shoul be like modal
