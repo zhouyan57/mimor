@@ -1,5 +1,3 @@
-[author-self] & [author-other] `Contents` use `XMarkIcon` to close
-
 [author-self] `AuthorConnection` use `XMarkIcon` to close
 [author-self] `AuthorConnection` should be like `Modal` on mobile
 

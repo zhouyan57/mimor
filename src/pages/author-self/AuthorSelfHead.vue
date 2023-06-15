@@ -15,6 +15,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Popup from '../../components/utils/Popup.vue'
+import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
 import AuthorContents from '../author/AuthorContents.vue'
 import AuthorConnection from './AuthorConnection.vue'
 import { State } from './State'
@@ -248,6 +249,7 @@ const lang = useGlobalLang()
           <AuthorContents
             class="absolute right-0 top-[1.5rem] z-20 hidden border border-black md:block"
             v-show="popup.open"
+            @close="popup.open = false"
             @jump="
               () => {
                 popup.open = false
@@ -268,12 +270,21 @@ const lang = useGlobalLang()
             class="fixed inset-0 z-20 m-3 block h-min max-h-[80%] overflow-y-auto border border-black bg-white md:hidden"
             v-show="popup.open"
           >
+            <PopupSyncQuery :popup="popup" name="author-contents" />
+
             <AuthorContents
+              @close="
+                () => {
+                  popup.open = false
+                  $router.back()
+                }
+              "
               @jump="
                 () => {
                   popup.open = false
                   state.isSearching = false
                   state.eagerLoadAll = true
+                  $router.back()
                 }
               "
               :lastRefreshedAt="state.lastRefreshedAt"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { formatDateTime } from '../../utils/formatDate'
 import AuthorContentEntry from './AuthorContentEntry.vue'
@@ -11,9 +12,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex max-w-[47rem] flex-col space-y-2 overflow-auto bg-white p-3">
+  <div class="flex max-w-[47rem] flex-col overflow-auto bg-white p-3">
+    <button class="block flex max-w-fit md:hidden" @click="$emit('close')">
+      <XMarkIcon class="h-6 w-6" />
+    </button>
+
     <div
-      class="flex w-full flex-col space-y-1 md:flex-row md:items-baseline md:justify-between md:space-x-3"
+      class="flex w-full flex-col space-y-1 pb-1 md:flex-row md:items-baseline md:justify-between md:space-x-3"
     >
       <Lang class="font-sans whitespace-pre text-xl font-bold">
         <template #zh>文件列表</template>
