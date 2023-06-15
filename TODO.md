@@ -1,4 +1,3 @@
-[author-self] note about 'first time loading is slow'
 [author-other] note about 'first time loading is slow'
 [home] note about 'first time loading is slow'
 

@@ -10,8 +10,15 @@ defineProps<{ options: StateOptions }>()
   <PageLayout>
     <div class="font-sans bg-white p-3 text-xl text-stone-500">
       <Lang>
-        <template #zh> 作者加载中⋯⋯ </template>
-        <template #en> Loading author ... </template>
+        <template #zh>
+          <div>作者加载中⋯⋯</div>
+          <div>第一次加载速度较慢，下次加载会快很多。</div>
+        </template>
+        <template #en>
+          <div>Loading author ...</div>
+          <div>The first time loading is relatively slow.</div>
+          <div>The next loading will be much faster.</div>
+        </template>
       </Lang>
 
       <div class="font-mono overflow-x-auto whitespace-pre py-1 text-sm">
