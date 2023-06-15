@@ -1,5 +1,3 @@
-[author-self] `AuthorConnection` remove hover logic
-
 [author-self] & [author-other] `Contents` should be like `Modal`
 [author-self] `AuthorConnection` should be like `Modal`
 

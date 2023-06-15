@@ -117,12 +117,8 @@ const lang = useGlobalLang()
         </button>
 
         <Popup class="relative flex items-center pr-3">
-          <template #button="{ popup }">
-            <div
-              class="flex min-w-max items-center space-x-1"
-              @mouseover="popup.open = true"
-              @mouseleave="popup.open = false"
-            >
+          <template #button>
+            <div class="flex min-w-max items-center space-x-1">
               <FolderOpenIcon class="h-5 w-5" />
 
               <div class="font-bold">{{ state.connection.name }}</div>
@@ -136,8 +132,6 @@ const lang = useGlobalLang()
                 '-left-[7rem]': lang.isZh(),
                 '-left-[12rem]': !lang.isZh(),
               }"
-              @mouseover="popup.open = true"
-              @mouseleave="popup.open = false"
               v-show="popup.open"
               :state="state"
               :connection="state.connection"
