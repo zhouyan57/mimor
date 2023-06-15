@@ -1,4 +1,3 @@
-[author-other] note about 'first time loading is slow'
 [home] note about 'first time loading is slow'
 
 # recall -- spaced repetition, a stream of contents
