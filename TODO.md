@@ -1,5 +1,7 @@
-[author-self] & [author-other] `Contents` should use `Dialog` instead of `Popup`
-[author-self] `AuthorConnection` should use `Dialog` instead of `Popup`
+[author-self] `AuthorConnection` remove hover logic
+
+[author-self] & [author-other] `Contents` should be like `Modal`
+[author-self] `AuthorConnection` should be like `Modal`
 
 [author-self] note about 'first time loading is slow'
 [author-other] note about 'first time loading is slow'

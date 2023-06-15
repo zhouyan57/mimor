@@ -13,32 +13,6 @@ const window = useWindow()
   <PageLayout>
     <div class="flex flex-col space-y-3 p-3">
       <div class="flex flex-col space-y-3">
-        <div class="text-2xl font-bold">Modal</div>
-
-        <Scope
-          :scope="{ dialog: window.document.getElementById('dialog') }"
-          v-slot="{ scope }"
-        >
-          <button
-            class="max-w-fit border border-black p-3 text-xl"
-            @click="scope.dialog.showModal()"
-          >
-            Click to open dialog
-          </button>
-
-          <dialog id="dialog" class="border border-black text-xl">
-            <form method="dialog" class="flex flex-col space-y-3">
-              <div>Hello from HTML dialog.</div>
-
-              <button class="max-w-fit border border-black px-2 py-1">
-                OK
-              </button>
-            </form>
-          </dialog>
-        </Scope>
-      </div>
-
-      <div class="flex flex-col space-y-3">
         <div class="text-2xl font-bold">Popup</div>
 
         <Popup class="relative">

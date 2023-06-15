@@ -227,12 +227,8 @@ const lang = useGlobalLang()
       </button>
 
       <Popup class="relative flex items-center">
-        <template #button="{ popup }">
-          <div
-            class="flex min-w-max items-center space-x-1"
-            @mouseover="popup.open = true"
-            @mouseleave="popup.open = false"
-          >
+        <template #button>
+          <div class="flex min-w-max items-center space-x-1">
             <ListBulletIcon class="h-5 w-5" />
 
             <Lang>
@@ -251,8 +247,6 @@ const lang = useGlobalLang()
         <template #panel="{ popup }">
           <AuthorContents
             class="absolute right-0 top-[1.5rem] z-20"
-            @mouseover="popup.open = true"
-            @mouseleave="popup.open = false"
             v-show="popup.open"
             @jump="
               () => {

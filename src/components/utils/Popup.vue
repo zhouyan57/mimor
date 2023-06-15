@@ -49,14 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    @keydown.escape.prevent.stop="
-      () => {
-        state.open = false
-        buttonElement?.focus()
-      }
-    "
-  >
+  <div @keydown.escape.prevent.stop="state.open = false">
     <button ref="buttonElement" @click="state.open = !state.open">
       <slot name="button" :popup="state" />
     </button>

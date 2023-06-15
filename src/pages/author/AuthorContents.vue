@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div
-    class="flex min-w-[30rem] max-w-[47rem] flex-col space-y-2 overflow-auto border border-black bg-white p-3"
+    class="flex max-w-[47rem] flex-col space-y-2 overflow-auto border border-black bg-white p-3"
   >
     <div class="flex w-full items-baseline justify-between space-x-3">
       <Lang class="font-sans whitespace-pre text-xl font-bold">
