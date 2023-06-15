@@ -12,10 +12,12 @@ defineProps<{
 <template>
   <a
     :href="`#${slug(pathParse(entry.path).file)}`"
-    class="flex items-baseline justify-between hover:underline"
+    class="flex flex-col hover:underline md:flex-row md:items-baseline md:justify-between"
     @click="$emit('jump', slug(pathParse(entry.path).file))"
   >
-    <span class="whitespace-pre pr-3">{{ pathParse(entry.path).file }}</span>
+    <span class="overflow-auto pr-3 md:whitespace-pre">{{
+      pathParse(entry.path).file
+    }}</span>
 
     <Lang class="whitespace-pre">
       <template #zh>

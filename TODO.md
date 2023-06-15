@@ -1,5 +1,7 @@
-[author-self] & [author-other] `Contents` should be like `Modal`
-[author-self] `AuthorConnection` should be like `Modal`
+[author-self] & [author-other] `Contents` use `XMarkIcon` to close
+
+[author-self] `AuthorConnection` use `XMarkIcon` to close
+[author-self] `AuthorConnection` should be like `Modal` on mobile
 
 [author-self] note about 'first time loading is slow'
 [author-other] note about 'first time loading is slow'

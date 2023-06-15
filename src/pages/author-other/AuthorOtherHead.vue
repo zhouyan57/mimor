@@ -94,7 +94,8 @@ const lang = useGlobalLang()
 
         <template #panel="{ popup }">
           <AuthorContents
-            class="absolute right-0 top-[1.5rem] z-20"
+            class="absolute right-0 top-[1.5rem] z-20 hidden border border-black md:block"
+            v-show="popup.open"
             @jump="
               () => {
                 popup.open = false
@@ -102,10 +103,26 @@ const lang = useGlobalLang()
                 state.eagerLoadAll = true
               }
             "
-            v-show="popup.open"
             :lastRefreshedAt="state.lastRefreshedAt"
             :entries="state.entries"
           />
+
+          <div
+            class="fixed inset-0 z-20 m-3 block h-min max-h-[80%] overflow-y-auto border border-black bg-white md:hidden"
+            v-show="popup.open"
+          >
+            <AuthorContents
+              @jump="
+                () => {
+                  popup.open = false
+                  state.isSearching = false
+                  state.eagerLoadAll = true
+                }
+              "
+              :lastRefreshedAt="state.lastRefreshedAt"
+              :entries="state.entries"
+            />
+          </div>
         </template>
       </Popup>
     </div>
