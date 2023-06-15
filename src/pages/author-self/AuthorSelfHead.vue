@@ -118,7 +118,10 @@ const lang = useGlobalLang()
 
         <Popup class="relative flex items-center pr-3">
           <template #button>
-            <div class="flex min-w-max items-center space-x-1">
+            <div
+              :title="lang.isZh() ? `显示连接详情` : `Show connection details`"
+              class="flex min-w-max items-center space-x-1"
+            >
               <FolderOpenIcon class="h-5 w-5" />
 
               <div class="font-bold">{{ state.connection.name }}</div>
@@ -222,7 +225,10 @@ const lang = useGlobalLang()
 
       <Popup class="relative flex items-center">
         <template #button>
-          <div class="flex min-w-max items-center space-x-1">
+          <div
+            class="flex min-w-max items-center space-x-1"
+            :title="lang.isZh() ? `显示目录` : `Show table of contents`"
+          >
             <ListBulletIcon class="h-5 w-5" />
 
             <Lang>

@@ -73,7 +73,10 @@ const lang = useGlobalLang()
 
       <Popup class="relative flex items-center">
         <template #button>
-          <div class="flex min-w-max items-center space-x-1">
+          <div
+            class="flex min-w-max items-center space-x-1"
+            :title="lang.isZh() ? `显示目录` : `Show table of contents`"
+          >
             <ListBulletIcon class="h-5 w-5" />
 
             <Lang>
