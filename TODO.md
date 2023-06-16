@@ -1,4 +1,3 @@
-`components/utils/Modal` -- accessibility
 `components/utils/Modal` -- focus control
 
 [author-self] `AuthorConnection` should be like modal

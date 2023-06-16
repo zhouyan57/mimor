@@ -27,7 +27,9 @@ const panelElement = ref<HTMLDivElement | undefined>()
 
   <div
     v-show="state.open"
-    class="fixed inset-0 z-30"
+    class="fixed inset-0 z-50"
+    role="dialog"
+    aria-modal="true"
     @keydown.escape.prevent.stop="state.open = false"
   >
     <div class="fixed inset-0 bg-black bg-opacity-50"></div>
