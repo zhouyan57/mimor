@@ -5,7 +5,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import TransitionRotateInSlideOut from '../../components/transitions/TransitionRotateInSlideOut.vue'
 import Popup from '../../components/utils/Popup.vue'
-import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
+import RouteSyncWithQuery from '../../components/utils/RouteSyncWithQuery.vue'
 import { logout } from '../../models/auth/logout'
 import { User } from '../../models/user/User'
 import { username } from '../../models/user/username'
@@ -41,7 +41,7 @@ async function logoutAfterConfirming() {
           v-show="popup.open"
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between overflow-auto bg-white p-2 text-3xl"
         >
-          <PopupSyncQuery :popup="popup" name="mobile-menu" />
+          <RouteSyncWithQuery :state="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
             <button

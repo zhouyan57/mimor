@@ -1,4 +1,4 @@
-[author-self] & [author-other] `PopupSyncQuery` should be general
+[author-self] & [author-other] use `RouteSyncWithQuery`
 
 # recall -- spaced repetition, a stream of contents
 

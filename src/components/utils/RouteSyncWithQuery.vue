@@ -6,13 +6,13 @@ import { useCurrentQuery } from '../../reactives/useCurrentQuery'
 
 defineProps<{
   name: string
-  popup: { open: boolean }
+  state: { open: boolean }
 }>()
 </script>
 
 <template>
   <Watch
-    :target="() => popup.open"
+    :target="() => state.open"
     :action="
       (value) => {
         if (value) {
@@ -34,7 +34,7 @@ defineProps<{
     :immediate="true"
     :action="
       (value) => {
-        popup.open = value !== undefined
+        state.open = value !== undefined
       }
     "
   />

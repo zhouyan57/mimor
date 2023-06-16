@@ -3,7 +3,7 @@ import { EllipsisHorizontalIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import TransitionRotateInSlideOut from '../../components/transitions/TransitionRotateInSlideOut.vue'
 import Popup from '../../components/utils/Popup.vue'
-import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
+import RouteSyncWithQuery from '../../components/utils/RouteSyncWithQuery.vue'
 import PageLang from './PageLang.vue'
 import PageLogo from './PageLogo.vue'
 </script>
@@ -22,7 +22,7 @@ import PageLogo from './PageLogo.vue'
           v-show="popup.open"
           class="h-screen-dynamic fixed left-0 top-0 z-40 flex w-full flex-col justify-between bg-white p-2 text-3xl"
         >
-          <PopupSyncQuery :popup="popup" name="mobile-menu" />
+          <RouteSyncWithQuery :state="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
             <button
