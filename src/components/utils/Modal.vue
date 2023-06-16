@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { createFocusTrap, FocusTrap } from 'focus-trap'
+import { nextTick, onMounted, reactive, ref, watch } from 'vue'
 
 /*
 
@@ -9,7 +10,6 @@ import { reactive, ref } from 'vue'
 
    - Close on escape.
 
-     - Only works when an element inside the `Modal` is focused.
 */
 
 const state = reactive({
@@ -18,29 +18,55 @@ const state = reactive({
 
 const buttonElement = ref<HTMLButtonElement | undefined>()
 const panelElement = ref<HTMLDivElement | undefined>()
+const focusTrap = ref<FocusTrap | undefined>()
+
+onMounted(() => {
+  if (panelElement.value) {
+    focusTrap.value = createFocusTrap(panelElement.value, {
+      onActivate: () => {
+        console.log('focusTrap activate')
+      },
+      onDeactivate: () => {
+        console.log('focusTrap deactivate')
+      },
+    })
+  }
+})
+
+watch(
+  () => state.open,
+  async (value) => {
+    if (value && focusTrap.value) {
+      await nextTick()
+      focusTrap.value.activate()
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
-  <button ref="buttonElement" type="button" @click="state.open = true">
-    <slot name="button"></slot>
-  </button>
-
-  <div
-    v-show="state.open"
-    class="fixed inset-0 z-50"
-    role="dialog"
-    aria-modal="true"
-    @keydown.escape.prevent.stop="state.open = false"
-  >
-    <div class="fixed inset-0 bg-black bg-opacity-50"></div>
+  <div @keydown.escape.prevent.stop="state.open = false">
+    <button ref="buttonElement" type="button" @click="state.open = true">
+      <slot name="button"></slot>
+    </button>
 
     <div
-      ref="panelElement"
-      class="relative flex min-h-screen items-center justify-center"
-      @click="state.open = false"
+      v-show="state.open"
+      class="fixed inset-0 z-50"
+      role="dialog"
+      aria-modal="true"
     >
-      <div @click.stop>
-        <slot name="panel"></slot>
+      <div class="fixed inset-0 bg-black bg-opacity-50"></div>
+
+      <div
+        ref="panelElement"
+        class="relative flex min-h-screen items-center justify-center"
+        @click="state.open = false"
+      >
+        <div @click.stop>
+          <slot name="panel"></slot>
+        </div>
       </div>
     </div>
   </div>

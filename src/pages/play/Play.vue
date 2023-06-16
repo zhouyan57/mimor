@@ -5,9 +5,6 @@ import Modal from '../../components/utils/Modal.vue'
 import Popup from '../../components/utils/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { useWindow } from '../../reactives/useWindow'
-
-const window = useWindow()
 </script>
 
 <template>

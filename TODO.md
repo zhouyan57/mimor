@@ -1,5 +1,3 @@
-`components/utils/Modal` -- focus control
-
 [author-self] `AuthorConnection` should be like modal
 
 [author-self] & [author-other] table of contents shoul be like modal
