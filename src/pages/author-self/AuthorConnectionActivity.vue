@@ -48,7 +48,7 @@ defineProps<{
       </div>
     </div>
 
-    <div v-if="activity.report">
+    <div v-if="activity.report" class="flex flex-col">
       <span
         class="whitespace-pre"
         v-for="(file, index) of activity.report.createdFiles"

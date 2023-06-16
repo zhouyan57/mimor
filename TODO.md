@@ -1,5 +1,3 @@
-[author-self] `AuthorConnection` fix file change/add list style
-
 [author-self] & [author-other] table of contents shoul be like modal
 
 # recall -- spaced repetition, a stream of contents
