@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, ref, watch } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 import SearchResult from '../../components/search/SearchResult.vue'
 import { wait } from '../../utils/wait'
 import AuthorOtherEntryContent from './AuthorOtherEntryContent.vue'
@@ -14,10 +14,20 @@ const props = defineProps<{
 
 const containerElement = ref<HTMLElement | undefined>(undefined)
 
+onMounted(async () => {
+  if (props.state.focusedPath === props.entry.path) {
+    if (containerElement.value) {
+      await nextTick()
+      await wait(200)
+      containerElement.value.scrollIntoView()
+    }
+  }
+})
+
 watch(
   () => props.state.focusedPath,
-  async (value) => {
-    if (value === props.entry.path) {
+  async () => {
+    if (props.state.focusedPath === props.entry.path) {
       if (containerElement.value) {
         await nextTick()
         await wait(200)
@@ -25,7 +35,6 @@ watch(
       }
     }
   },
-  { immediate: true },
 )
 </script>
 
