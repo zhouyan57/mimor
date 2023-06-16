@@ -8,8 +8,7 @@ import {
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import Popup from '../../components/utils/Popup.vue'
-import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
+import Modal from '../../components/utils/Modal.vue'
 import AuthorContents from '../author/AuthorContents.vue'
 import { State } from './State'
 import { stateRefresh } from './stateRefresh'
@@ -72,7 +71,7 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <Popup class="relative flex items-center">
+      <Modal class="relative flex items-center">
         <template #button>
           <div
             class="flex min-w-max items-center space-x-1"
@@ -93,14 +92,13 @@ const lang = useGlobalLang()
           </div>
         </template>
 
-        <template #panel="{ popup }">
+        <template #panel="{ modal }">
           <AuthorContents
-            class="absolute right-0 top-[1.5rem] z-20 hidden border border-black md:block"
-            v-show="popup.open"
-            @close="popup.open = false"
+            class="m-4 border border-black bg-white"
+            @close="modal.open = false"
             @jump="
               () => {
-                popup.open = false
+                modal.open = false
                 state.isSearching = false
                 state.eagerLoadAll = true
               }
@@ -108,34 +106,8 @@ const lang = useGlobalLang()
             :lastRefreshedAt="state.lastRefreshedAt"
             :entries="state.entries"
           />
-
-          <div
-            class="fixed inset-0 z-20 mx-2 mb-[4rem] mt-2 block overflow-y-auto border border-black bg-white md:hidden"
-            v-show="popup.open"
-          >
-            <PopupSyncQuery :popup="popup" name="author-contents" />
-
-            <AuthorContents
-              @close="
-                () => {
-                  popup.open = false
-                  $router.back()
-                }
-              "
-              @jump="
-                () => {
-                  popup.open = false
-                  state.isSearching = false
-                  state.eagerLoadAll = true
-                  $router.back()
-                }
-              "
-              :lastRefreshedAt="state.lastRefreshedAt"
-              :entries="state.entries"
-            />
-          </div>
         </template>
-      </Popup>
+      </Modal>
     </div>
   </div>
 </template>

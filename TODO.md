@@ -1,4 +1,4 @@
-[author-self] & [author-other] table of contents shoul be like modal
+[author-self] & [author-other] `PopupSyncQuery` should be general
 
 # recall -- spaced repetition, a stream of contents
 

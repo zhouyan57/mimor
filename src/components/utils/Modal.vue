@@ -51,13 +51,13 @@ watch(
 <template>
   <div @keydown.escape.prevent.stop="state.open = false">
     <button ref="buttonElement" type="button" @click="state.open = true">
-      <slot name="button"></slot>
+      <slot name="button" :modal="state"></slot>
     </button>
 
     <div
       v-show="state.open"
       ref="modalElement"
-      class="fixed inset-0 z-50"
+      class="h-screen-dynamic fixed inset-0 z-50"
       role="dialog"
       aria-modal="true"
     >
@@ -66,11 +66,14 @@ watch(
       <div
         ref="panelElement"
         tabindex="0"
-        class="relative flex min-h-screen items-center justify-center"
+        class="h-screen-dynamic relative flex flex-col items-center justify-center overflow-y-auto"
         @click="state.open = false"
       >
-        <div @click.stop>
-          <slot name="panel"></slot>
+        <div
+          @click.stop
+          class="flex h-full flex-col items-center justify-center overflow-y-auto"
+        >
+          <slot name="panel" :modal="state"></slot>
         </div>
       </div>
     </div>

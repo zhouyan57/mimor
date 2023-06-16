@@ -43,7 +43,7 @@ defineProps<{
       </div>
     </div>
 
-    <ul class="flex flex-col overflow-y-auto pr-0.5 text-lg md:max-h-[45rem]">
+    <ul class="flex flex-col pr-0.5 text-lg md:max-h-[45rem]">
       <li
         v-for="(entry, index) of entries"
         :key="index"
