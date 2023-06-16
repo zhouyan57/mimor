@@ -10,6 +10,9 @@ import { nextTick, onMounted, reactive, ref, watch } from 'vue'
 
    - Close on escape.
 
+   - After opened, trap focus inside the `Modal`,
+     and the initial focus is the `panelElement`.
+
 */
 
 const state = reactive({
@@ -18,20 +21,27 @@ const state = reactive({
 
 const buttonElement = ref<HTMLButtonElement | undefined>()
 const panelElement = ref<HTMLDivElement | undefined>()
+const modalElement = ref<HTMLDivElement | undefined>()
+
 const focusTrap = ref<FocusTrap | undefined>()
 
 onMounted(() => {
-  if (panelElement.value) {
-    focusTrap.value = createFocusTrap(panelElement.value)
+  if (modalElement.value) {
+    focusTrap.value = createFocusTrap(modalElement.value)
   }
 })
 
 watch(
   () => state.open,
   async (value) => {
-    if (value && focusTrap.value) {
+    if (!focusTrap.value) return
+
+    if (value) {
       await nextTick()
       focusTrap.value.activate()
+    } else {
+      await nextTick()
+      focusTrap.value.deactivate()
     }
   },
   { immediate: true },
@@ -46,6 +56,7 @@ watch(
 
     <div
       v-show="state.open"
+      ref="modalElement"
       class="fixed inset-0 z-50"
       role="dialog"
       aria-modal="true"
@@ -54,6 +65,7 @@ watch(
 
       <div
         ref="panelElement"
+        tabindex="0"
         class="relative flex min-h-screen items-center justify-center"
         @click="state.open = false"
       >
