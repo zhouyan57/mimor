@@ -71,7 +71,7 @@ watch(
       >
         <div
           @click.stop
-          class="flex h-full flex-col items-center justify-center overflow-y-auto"
+          class="flex h-fit flex-col items-center justify-center overflow-y-auto"
         >
           <slot name="panel" :modal="state"></slot>
         </div>

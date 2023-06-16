@@ -116,7 +116,7 @@ const lang = useGlobalLang()
           </Lang>
         </button>
 
-        <Modal class="relative flex items-center pr-3">
+        <Modal class="flex items-center pr-3">
           <template #button>
             <div
               :title="lang.isZh() ? `显示连接详情` : `Show connection details`"
@@ -214,7 +214,7 @@ const lang = useGlobalLang()
         </Lang>
       </button>
 
-      <Modal class="relative flex items-center">
+      <Modal class="flex items-center">
         <template #button>
           <div
             class="flex min-w-max items-center space-x-1"
@@ -237,7 +237,7 @@ const lang = useGlobalLang()
 
         <template #panel="{ modal }">
           <AuthorContents
-            class="m-4 border border-black bg-white"
+            class="m-3 border border-black bg-white"
             @close="modal.open = false"
             @jump="
               () => {
