@@ -12,7 +12,8 @@ defineProps<{ options: StateOptions }>()
       <Lang>
         <template #zh>
           <div>作者加载中⋯⋯</div>
-          <div>第一次加载速度较慢，下次加载会快很多。</div>
+          <div>第一次加载速度较慢，</div>
+          <div>下次加载会快很多。</div>
         </template>
         <template #en>
           <div>Loading author ...</div>
