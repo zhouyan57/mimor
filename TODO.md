@@ -1,8 +1,6 @@
-[author-self] `AuthorConnection` should be like modal
+[author-self] `AuthorConnection` fix file change/add list style
 
 [author-self] & [author-other] table of contents shoul be like modal
-
-[author-self] `AuthorConnection` fix file change/add list style
 
 # recall -- spaced repetition, a stream of contents
 

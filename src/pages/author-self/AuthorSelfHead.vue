@@ -14,6 +14,7 @@ import {
 } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
+import Modal from '../../components/utils/Modal.vue'
 import Popup from '../../components/utils/Popup.vue'
 import PopupSyncQuery from '../../components/utils/PopupSyncQuery.vue'
 import AuthorContents from '../author/AuthorContents.vue'
@@ -117,7 +118,7 @@ const lang = useGlobalLang()
           </Lang>
         </button>
 
-        <Popup class="relative flex items-center pr-3">
+        <Modal class="relative flex items-center pr-3">
           <template #button>
             <div
               :title="lang.isZh() ? `显示连接详情` : `Show connection details`"
@@ -129,19 +130,10 @@ const lang = useGlobalLang()
             </div>
           </template>
 
-          <template #panel="{ popup }">
-            <AuthorConnection
-              class="absolute top-[1.5rem] z-20"
-              :class="{
-                '-left-[7rem]': lang.isZh(),
-                '-left-[12rem]': !lang.isZh(),
-              }"
-              v-show="popup.open"
-              :state="state"
-              :connection="state.connection"
-            />
+          <template #panel>
+            <AuthorConnection :state="state" :connection="state.connection" />
           </template>
-        </Popup>
+        </Modal>
 
         <button
           class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
