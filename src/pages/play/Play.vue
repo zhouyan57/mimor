@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TransitionPop from '../../components/transitions/TransitionPop.vue'
 import ListFocusKeyboardUpAndDown from '../../components/utils/ListFocusKeyboardUpAndDown.vue'
+import Modal from '../../components/utils/Modal.vue'
 import Popup from '../../components/utils/Popup.vue'
 import Scope from '../../components/utils/Scope.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
@@ -82,6 +83,42 @@ const window = useWindow()
             </template>
           </Popup>
         </Scope>
+      </div>
+
+      <div class="flex flex-col space-y-3">
+        <div class="text-2xl font-bold">Modal</div>
+
+        <Modal>
+          <template #button>
+            <div class="w-fit border border-black bg-white p-3 text-xl">
+              Open Modal
+            </div>
+          </template>
+
+          <template #panel>
+            <div
+              class="m-3 overflow-y-auto border border-black bg-white p-6 md:p-10"
+            >
+              <h2 class="text-3xl font-bold">
+                Launch nuclear ballistic missile
+              </h2>
+
+              <p class="mt-2 text-stone-600">
+                Are you sure you want to do this?
+              </p>
+
+              <div class="mt-8 flex space-x-2">
+                <button type="button" class="border border-black p-3">
+                  Confirm
+                </button>
+
+                <button type="button" class="border border-black p-3">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </template>
+        </Modal>
       </div>
     </div>
   </PageLayout>

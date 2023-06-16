@@ -3,18 +3,15 @@ import { onMounted, reactive, ref, watch } from 'vue'
 
 /*
 
-   Always show the button, toggle to show the panel.
+   Always show the button, click the button to toggle the panel.
 
    - Close on click outside.
+
    - Close on escape.
 
 */
 
-type State = {
-  open: boolean
-}
-
-const state: State = reactive({
+const state = reactive({
   open: false,
 })
 
