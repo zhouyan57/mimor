@@ -9,6 +9,7 @@ import {
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Modal from '../../components/utils/Modal.vue'
+import RouteSyncWithQuery from '../../components/utils/RouteSyncWithQuery.vue'
 import AuthorContents from '../author/AuthorContents.vue'
 import { State } from './State'
 import { stateRefresh } from './stateRefresh'
@@ -93,6 +94,8 @@ const lang = useGlobalLang()
         </template>
 
         <template #panel="{ modal }">
+          <RouteSyncWithQuery :state="modal" name="author-contents" />
+
           <AuthorContents
             class="m-3 border border-black bg-white"
             @close="modal.open = false"

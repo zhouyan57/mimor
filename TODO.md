@@ -1,5 +1,3 @@
-[author-self] & [author-other] use `RouteSyncWithQuery`
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`
