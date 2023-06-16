@@ -11,4 +11,5 @@ export type State = {
   isRefreshing?: boolean
   lastRefreshedAt?: number
   eagerLoadAll?: boolean
+  focusedPath?: string
 }

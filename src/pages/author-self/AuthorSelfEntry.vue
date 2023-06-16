@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import SearchResult from '../../components/search/SearchResult.vue'
-import { slug } from '../../utils/slug'
-import { pathParse } from '../author/pathParse'
+import { wait } from '../../utils/wait'
 import AuthorSelfEntryContent from './AuthorSelfEntryContent.vue'
 import AuthorSelfEntryInfo from './AuthorSelfEntryInfo.vue'
 import AuthorSelfEntryToolbar from './AuthorSelfEntryToolbar.vue'
@@ -20,11 +19,12 @@ const route = useRoute()
 const containerElement = ref<HTMLElement | undefined>(undefined)
 
 watch(
-  () => route.hash,
-  async () => {
-    const id = route.hash && route.hash.slice(1)
-    if (id === slug(pathParse(props.entry.path).file)) {
+  () => props.state.focusedPath,
+  async (value) => {
+    if (value === props.entry.path) {
       if (containerElement.value) {
+        await nextTick()
+        await wait(350)
         containerElement.value.scrollIntoView()
       }
     }

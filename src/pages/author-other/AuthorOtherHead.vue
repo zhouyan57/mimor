@@ -10,6 +10,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import Modal from '../../components/utils/Modal.vue'
 import RouteSyncWithQuery from '../../components/utils/RouteSyncWithQuery.vue'
+import { useWindow } from '../../reactives/useWindow'
 import AuthorContents from '../author/AuthorContents.vue'
 import { State } from './State'
 import { stateRefresh } from './stateRefresh'
@@ -17,6 +18,7 @@ import { stateRefresh } from './stateRefresh'
 defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
+const window = useWindow()
 </script>
 
 <template>
@@ -105,11 +107,12 @@ const lang = useGlobalLang()
               }
             "
             @jump="
-              () => {
+              (path) => {
                 modal.open = false
-                state.isSearching = false
-                state.eagerLoadAll = true
                 $router.back()
+                state.isSearching = false
+                state.focusedPath = path
+                state.eagerLoadAll = true
               }
             "
             :lastRefreshedAt="state.lastRefreshedAt"

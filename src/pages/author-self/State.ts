@@ -18,4 +18,5 @@ export type State = {
   isSavingNewTexts?: boolean
   latestDirectoryHandle?: FileSystemDirectoryHandle
   eagerLoadAll?: boolean
+  focusedPath?: string
 }

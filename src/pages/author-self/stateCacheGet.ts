@@ -14,6 +14,7 @@ export async function stateCacheGet(
   delete cache.isRefreshing
   delete cache.isSavingNewTexts
   delete cache.eagerLoadAll
+  delete cache.focusedPath
 
   return cache
 }

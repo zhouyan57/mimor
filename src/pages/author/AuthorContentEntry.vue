@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
-import { slug } from '../../utils/slug'
 import { Entry } from './Entry'
 import { pathParse } from './pathParse'
 
@@ -10,12 +9,11 @@ defineProps<{
 </script>
 
 <template>
-  <a
-    :href="`#${slug(pathParse(entry.path).file)}`"
+  <button
     class="flex flex-col hover:underline md:flex-row md:items-baseline md:justify-between"
-    @click="$emit('jump', slug(pathParse(entry.path).file))"
+    @click="$emit('jump', entry.path)"
   >
-    <span class="overflow-auto pr-3 md:whitespace-pre">{{
+    <span class="overflow-auto text-start md:whitespace-pre md:pr-3">{{
       pathParse(entry.path).file
     }}</span>
 
@@ -33,5 +31,5 @@ defineProps<{
         </div>
       </template>
     </Lang>
-  </a>
+  </button>
 </template>

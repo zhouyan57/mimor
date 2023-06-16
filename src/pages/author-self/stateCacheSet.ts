@@ -18,6 +18,7 @@ export async function stateCacheSet(state: State): Promise<void> {
   delete cache.isRefreshing
   delete cache.isSavingNewTexts
   delete cache.eagerLoadAll
+  delete cache.focusedPath
 
   await Kv.set(state.username, cache, store)
 }

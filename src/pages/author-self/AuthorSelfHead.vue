@@ -248,11 +248,12 @@ const lang = useGlobalLang()
               }
             "
             @jump="
-              () => {
+              (path) => {
                 modal.open = false
+                $router.back()
                 state.isSearching = false
                 state.eagerLoadAll = true
-                $router.back()
+                state.focusedPath = path
               }
             "
             :lastRefreshedAt="state.lastRefreshedAt"

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { nextTick, ref, watch } from 'vue'
 import SearchResult from '../../components/search/SearchResult.vue'
-import { slug } from '../../utils/slug'
-import { pathParse } from '../author/pathParse'
+import { wait } from '../../utils/wait'
 import AuthorOtherEntryContent from './AuthorOtherEntryContent.vue'
 import AuthorOtherEntryInfo from './AuthorOtherEntryInfo.vue'
 import { Entry } from './Entry'
@@ -14,16 +12,15 @@ const props = defineProps<{
   entry: Entry
 }>()
 
-const route = useRoute()
-
 const containerElement = ref<HTMLElement | undefined>(undefined)
 
 watch(
-  () => route.hash,
-  async () => {
-    const id = route.hash && route.hash.slice(1)
-    if (id === slug(pathParse(props.entry.path).file)) {
+  () => props.state.focusedPath,
+  async (value) => {
+    if (value === props.entry.path) {
       if (containerElement.value) {
+        await nextTick()
+        await wait(200)
         containerElement.value.scrollIntoView()
       }
     }
