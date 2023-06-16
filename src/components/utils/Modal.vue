@@ -22,14 +22,7 @@ const focusTrap = ref<FocusTrap | undefined>()
 
 onMounted(() => {
   if (panelElement.value) {
-    focusTrap.value = createFocusTrap(panelElement.value, {
-      onActivate: () => {
-        console.log('focusTrap activate')
-      },
-      onDeactivate: () => {
-        console.log('focusTrap deactivate')
-      },
-    })
+    focusTrap.value = createFocusTrap(panelElement.value)
   }
 })
 
