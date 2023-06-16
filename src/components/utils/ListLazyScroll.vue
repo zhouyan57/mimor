@@ -32,6 +32,11 @@ watch(
   () => props.entries,
   () => {
     if (props.eagerLoadAll) {
+      console.log({
+        who: 'ListLazyScroll',
+        message: 'eagerLoadAll on props.entries change',
+      })
+
       while (shownEntries.length < props.entries.length) {
         showMoreEntries()
       }
@@ -48,6 +53,11 @@ watch(
   () => props.eagerLoadAll,
   (value) => {
     if (value) {
+      console.log({
+        who: 'ListLazyScroll',
+        message: 'eagerLoadAll on props.eagerLoadAll change',
+      })
+
       while (shownEntries.length < props.entries.length) {
         showMoreEntries()
       }

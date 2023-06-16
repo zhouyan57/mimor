@@ -17,6 +17,12 @@ const containerElement = ref<HTMLElement | undefined>(undefined)
 
 onMounted(async () => {
   if (props.state.focusedPath === props.entry.path) {
+    console.log({
+      who: 'AuthorSelfEntry',
+      message: 'scrollIntoView onMounted',
+      element: containerElement.value,
+    })
+
     if (containerElement.value) {
       await nextTick()
       await wait(200)
@@ -29,6 +35,12 @@ watch(
   () => props.state.focusedPath,
   async () => {
     if (props.state.focusedPath === props.entry.path) {
+      console.log({
+        who: 'AuthorSelfEntry',
+        message: 'scrollIntoView on props.state.focusedPath change',
+        element: containerElement.value,
+      })
+
       if (containerElement.value) {
         await nextTick()
         await wait(200)
