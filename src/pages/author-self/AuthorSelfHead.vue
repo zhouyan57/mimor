@@ -241,12 +241,18 @@ const lang = useGlobalLang()
 
           <AuthorContents
             class="m-3 border border-black bg-white"
-            @close="modal.open = false"
+            @close="
+              () => {
+                modal.open = false
+                $router.back()
+              }
+            "
             @jump="
               () => {
                 modal.open = false
                 state.isSearching = false
                 state.eagerLoadAll = true
+                $router.back()
               }
             "
             :lastRefreshedAt="state.lastRefreshedAt"
