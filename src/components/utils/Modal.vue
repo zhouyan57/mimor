@@ -28,24 +28,23 @@ const state = reactive({
 
     <div
       v-show="state.open"
-      class="h-screen-dynamic fixed inset-0 z-50"
+      class="fixed inset-0 z-50"
       role="dialog"
       aria-modal="true"
     >
       <div class="fixed inset-0 bg-black bg-opacity-50"></div>
 
-      <TrapFocus :open="state.open">
+      <TrapFocus
+        :open="state.open"
+        tabindex="0"
+        class="fixed inset-0 flex flex-col items-center justify-center overflow-auto"
+        @click="state.open = false"
+      >
         <div
-          tabindex="0"
-          class="h-screen-dynamic relative flex flex-col items-center justify-center overflow-y-auto"
-          @click="state.open = false"
+          @click.stop
+          class="flex flex-col items-center justify-center overflow-y-auto"
         >
-          <div
-            @click.stop
-            class="flex h-fit flex-col items-center justify-center overflow-y-auto"
-          >
-            <slot name="panel" :modal="state"></slot>
-          </div>
+          <slot name="panel" :modal="state"></slot>
         </div>
       </TrapFocus>
     </div>
