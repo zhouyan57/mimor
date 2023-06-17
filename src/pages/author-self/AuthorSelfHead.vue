@@ -241,6 +241,13 @@ const lang = useGlobalLang()
 
           <AuthorContents
             class="m-3 border border-black bg-white"
+            :lastRefreshedAt="state.lastRefreshedAt"
+            :entries="
+              state.entries.map((entry) => ({
+                ...entry,
+                text: entry.newText || entry.text || '',
+              }))
+            "
             @close="
               () => {
                 modal.open = false
@@ -255,13 +262,6 @@ const lang = useGlobalLang()
                 state.eagerLoadAll = true
                 state.focusedPath = path
               }
-            "
-            :lastRefreshedAt="state.lastRefreshedAt"
-            :entries="
-              state.entries.map((entry) => ({
-                ...entry,
-                text: entry.newText || entry.text || '',
-              }))
             "
           />
         </template>

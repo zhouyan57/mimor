@@ -100,6 +100,8 @@ const window = useWindow()
 
           <AuthorContents
             class="m-3 border border-black bg-white"
+            :lastRefreshedAt="state.lastRefreshedAt"
+            :entries="state.entries"
             @close="
               () => {
                 modal.open = false
@@ -115,8 +117,6 @@ const window = useWindow()
                 state.eagerLoadAll = true
               }
             "
-            :lastRefreshedAt="state.lastRefreshedAt"
-            :entries="state.entries"
           />
         </template>
       </Modal>
