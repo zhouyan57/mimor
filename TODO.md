@@ -1,4 +1,4 @@
-[author-self] & [author-other] fix contents jump -- should not use `wait`
+`components/utils/Modal` -- try to fix layout in wechat
 
 # recall -- spaced repetition, a stream of contents
 
@@ -34,3 +34,9 @@ recall 页面假设了用户只对得分最高的几个 mimor 感兴趣，所以
 
 [author] [refactor] `stateMakeMimorEntry*`
 [author] `loadMimorEntries*` handle HTTP errors
+
+# bug
+
+[author-self] & [author-other] fix contents jump -- `scrollIntoView` should not use `wait`
+
+- `AuthorSelfEntry` and `AuthorOtherEntry`

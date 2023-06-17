@@ -15,40 +15,19 @@ const props = defineProps<{
 
 const containerElement = ref<HTMLElement | undefined>(undefined)
 
-onMounted(async () => {
+async function maybeFocus(): Promise<void> {
   if (props.state.focusedPath === props.entry.path) {
-    console.log({
-      who: 'AuthorSelfEntry',
-      message: 'scrollIntoView onMounted',
-      element: containerElement.value,
-    })
-
     if (containerElement.value) {
       await nextTick()
       await wait(200)
       containerElement.value.scrollIntoView()
     }
   }
-})
+}
 
-watch(
-  () => props.state.focusedPath,
-  async () => {
-    if (props.state.focusedPath === props.entry.path) {
-      console.log({
-        who: 'AuthorSelfEntry',
-        message: 'scrollIntoView on props.state.focusedPath change',
-        element: containerElement.value,
-      })
+onMounted(maybeFocus)
 
-      if (containerElement.value) {
-        await nextTick()
-        await wait(200)
-        containerElement.value.scrollIntoView()
-      }
-    }
-  },
-)
+watch(() => props.state.focusedPath, maybeFocus)
 </script>
 
 <template>
