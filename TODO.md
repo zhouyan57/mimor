@@ -3,10 +3,8 @@
 [recall] user can add other mimor into `/recall`
 [recall] an action to add all user's own mimors (with special label to distinguish others' mimors)
 [recall] support search
-
-recall 页面假设了用户只对得分最高的几个 mimor 感兴趣，所以即便在顶部加上了日历图等统计信息，也不需要使用 fixed layout，和 search 页面类似就行。
-
-搜索 state 也应该被 cache，因为对于 recall 来说 targets 可能很多。
+[recall] calendar graph -- simple layout (no fixed)
+[recall] `searchState` should also be cached -- because the targets might be too many
 
 # home
 
