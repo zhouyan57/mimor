@@ -4,7 +4,6 @@
 [recall] an action to add all user's own mimors (with special label to distinguish others' mimors)
 [recall] support search
 [recall] calendar graph -- simple layout (no fixed)
-[recall] `searchState` should also be cached -- because the targets might be too many
 
 # home
 
