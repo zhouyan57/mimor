@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
 import { LocationQueryRaw } from 'vue-router'
 import Watch from '../../components/utils/Watch.vue'
 import { useCurrentPathname } from '../../reactives/useCurrentPathname'
@@ -8,6 +9,10 @@ defineProps<{
   name: string
   state: { open: boolean }
 }>()
+
+const local = reactive({
+  isAfterCloseByRouteChange: false,
+})
 </script>
 
 <template>
@@ -23,7 +28,14 @@ defineProps<{
               [name]: null,
             } as LocationQueryRaw,
           })
+        } else {
+          if (!local.isAfterCloseByRouteChange) {
+            $router.back()
+          }
         }
+
+        // Reset the flag.
+        local.isAfterCloseByRouteChange = false
       }
     "
   />
@@ -35,6 +47,10 @@ defineProps<{
     :action="
       (value) => {
         state.open = value !== undefined
+
+        if (!state.open) {
+          local.isAfterCloseByRouteChange = true
+        }
       }
     "
   />

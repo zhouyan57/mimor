@@ -1,7 +1,5 @@
 [author-self] & [author-other] fix contents jump -- should not use `wait`
 
-`RouteSyncWithQuery` -- call `$router.back()` on close -- what are the edge cases?
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`

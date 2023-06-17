@@ -248,16 +248,10 @@ const lang = useGlobalLang()
                 text: entry.newText || entry.text || '',
               }))
             "
-            @close="
-              () => {
-                modal.open = false
-                $router.back()
-              }
-            "
+            @close="modal.open = false"
             @jump="
               (path) => {
                 modal.open = false
-                $router.back()
                 state.isSearching = false
                 state.eagerLoadAll = true
                 state.focusedPath = path

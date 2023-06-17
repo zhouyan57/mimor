@@ -25,14 +25,7 @@ import PageLogo from './PageLogo.vue'
           <RouteSyncWithQuery :state="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.back()
-                }
-              "
-            >
+            <button @click="popup.open = false">
               <XMarkIcon class="h-10 w-10 stroke-1" />
             </button>
 
@@ -40,15 +33,7 @@ import PageLogo from './PageLogo.vue'
           </div>
 
           <div class="flex flex-col items-start space-y-2 overflow-auto">
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/')">
               <Lang>
                 <template #zh>首页</template>
                 <template #en>Home</template>
@@ -57,45 +42,21 @@ import PageLogo from './PageLogo.vue'
 
             <PageLang />
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/docs')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/docs')">
               <Lang>
                 <template #zh>文档</template>
                 <template #en>Docs</template>
               </Lang>
             </button>
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/mimors')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/mimors')">
               <Lang>
                 <template #zh>链接</template>
                 <template #en>Link</template>
               </Lang>
             </button>
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/about')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/about')">
               <Lang>
                 <template #zh>关于</template>
                 <template #en>About</template>
@@ -104,12 +65,7 @@ import PageLogo from './PageLogo.vue'
 
             <button
               class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/settings')
-                }
-              "
+              @click="$router.replace('/settings')"
             >
               <Lang>
                 <template #zh>设置</template>
@@ -119,28 +75,14 @@ import PageLogo from './PageLogo.vue'
 
             <div class="w-full border-t border-black"></div>
 
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/login')
-                }
-              "
-            >
+            <button @click="$router.replace('/login')">
               <Lang>
                 <template #zh>登录</template>
                 <template #en>Login</template>
               </Lang>
             </button>
 
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/register')
-                }
-              "
-            >
+            <button @click="$router.replace('/register')">
               <Lang>
                 <template #zh>注册</template>
                 <template #en>Register</template>
@@ -149,14 +91,7 @@ import PageLogo from './PageLogo.vue'
           </div>
 
           <div class="flex justify-end">
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.back()
-                }
-              "
-            >
+            <button @click="popup.open = false">
               <XMarkIcon class="h-10 w-10 stroke-1" />
             </button>
           </div>

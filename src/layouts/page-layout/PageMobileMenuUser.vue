@@ -44,14 +44,7 @@ async function logoutAfterConfirming() {
           <RouteSyncWithQuery :state="popup" name="mobile-menu" />
 
           <div class="flex justify-between">
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.back()
-                }
-              "
-            >
+            <button @click="popup.open = false">
               <XMarkIcon class="h-10 w-10 stroke-1" />
             </button>
 
@@ -59,15 +52,7 @@ async function logoutAfterConfirming() {
           </div>
 
           <div class="flex flex-col items-start space-y-2 overflow-auto">
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/')">
               <Lang>
                 <template #zh>首页</template>
                 <template #en>Home</template>
@@ -76,60 +61,28 @@ async function logoutAfterConfirming() {
 
             <PageLang />
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/docs')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/docs')">
               <Lang>
                 <template #zh>文档</template>
                 <template #en>Docs</template>
               </Lang>
             </button>
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/mimors')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/mimors')">
               <Lang>
                 <template #zh>链接</template>
                 <template #en>Link</template>
               </Lang>
             </button>
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/about')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/about')">
               <Lang>
                 <template #zh>关于</template>
                 <template #en>About</template>
               </Lang>
             </button>
 
-            <button
-              class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/recall')
-                }
-              "
-            >
+            <button class="hover:underline" @click="$router.replace('/recall')">
               <Lang>
                 <template #zh>回顾</template>
                 <template #en>Recall</template>
@@ -138,12 +91,7 @@ async function logoutAfterConfirming() {
 
             <button
               class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace(`/authors/${username(user)}`)
-                }
-              "
+              @click="$router.replace(`/authors/${username(user)}`)"
             >
               <Lang>
                 <template #zh>创作</template>
@@ -153,12 +101,7 @@ async function logoutAfterConfirming() {
 
             <button
               class="hover:underline"
-              @click="
-                () => {
-                  popup.open = false
-                  $router.replace('/settings')
-                }
-              "
+              @click="$router.replace('/settings')"
             >
               <Lang>
                 <template #zh>设置</template>
@@ -170,14 +113,7 @@ async function logoutAfterConfirming() {
 
             <div class="whitespace-pre font-bold">{{ user.name }}</div>
 
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  logoutAfterConfirming()
-                }
-              "
-            >
+            <button @click="logoutAfterConfirming()">
               <Lang class="whitespace-pre">
                 <template #zh>退出</template>
                 <template #en>Logout</template>
@@ -186,14 +122,7 @@ async function logoutAfterConfirming() {
           </div>
 
           <div class="flex justify-end">
-            <button
-              @click="
-                () => {
-                  popup.open = false
-                  $router.back()
-                }
-              "
-            >
+            <button @click="popup.open = false">
               <XMarkIcon class="h-10 w-10 stroke-1" />
             </button>
           </div>

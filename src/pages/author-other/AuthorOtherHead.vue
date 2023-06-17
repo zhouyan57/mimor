@@ -102,16 +102,10 @@ const window = useWindow()
             class="m-3 border border-black bg-white"
             :lastRefreshedAt="state.lastRefreshedAt"
             :entries="state.entries"
-            @close="
-              () => {
-                modal.open = false
-                $router.back()
-              }
-            "
+            @close="modal.open = false"
             @jump="
               (path) => {
                 modal.open = false
-                $router.back()
                 state.isSearching = false
                 state.focusedPath = path
                 state.eagerLoadAll = true
