@@ -1,5 +1,3 @@
-`components/utils/Modal` -- try to fix layout in wechat
-
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`
