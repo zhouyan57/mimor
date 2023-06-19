@@ -23,7 +23,7 @@ export class Theme {
   }
 
   ring(level: number): string {
-    return `ring-${this.name}-${level}`
+    return this.name === 'white' ? `ring-black` : `ring-${this.name}-${level}`
   }
 
   border(level: number): string {

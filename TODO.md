@@ -1,12 +1,10 @@
 # recall
 
-`<back-cover>` user can add other mimor into `/recall` -- by jumping to recall callback route
+[recall] `/recall-add-mimor/${src}` -- a callback route for adding mimor to recall
 
-`<back-cover>` know about already added to `/recall`
+- convert url to SHA256 as key, save `{ src }`
 
-[recall] `/recall-add?src=...` -- a callback route for adding mimor to recall
-
-- convert url to hex as key, save `{ src }`
+  - note that file name length limit is 255 bytes
 
 [recall] show recalled mimors
 [recall] show recalled mimors as a stream of contents -- pagination
@@ -15,6 +13,8 @@
 [recall] [maybe] an action to add all user's own mimors (with special label to distinguish others' mimors)
 [recall] support search
 [recall] [maybe] can add new keywords to a mimor -- to recall different type of things
+
+[recall] `<back-cover>` know about already added to `/recall`
 
 # later
 

@@ -17,15 +17,15 @@ import { State } from './State'
 import { programBack } from './programBack'
 import { programFormatProgress } from './programFormatProgress'
 import { stateEditorExit } from './stateEditorExit'
-
-const lang = useGlobalLang()
-
-const origin = 'https://mimor.app'
+import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 
 defineProps<{
   state: State
   program: Program
 }>()
+
+const lang = useGlobalLang()
+const origin = useCurrentOrigin()
 
 function fullscreenSupported() {
   return document.fullscreenEnabled

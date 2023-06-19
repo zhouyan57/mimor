@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../lang/useGlobalLang'
+import { useCurrentOrigin } from '../../reactives/useCurrentOrigin'
 
 const lang = useGlobalLang()
-const origin = 'https://mimor.app'
+const origin = useCurrentOrigin()
 </script>
 
 <template>

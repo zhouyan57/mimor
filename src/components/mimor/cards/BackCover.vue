@@ -3,6 +3,7 @@ import { XElement } from '@xieyuheng/x-node'
 import { watch } from 'vue'
 import MimorFootReplay from '../MimorFootReplay.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
+import MimorFootRecallAddMimor from '../MimorFootRecallAddMimor.vue'
 import { Program } from '../Program'
 import { State } from '../State'
 import Node from '../nodes/Node.vue'
@@ -47,6 +48,13 @@ watch(
 
     <div class="flex w-full justify-between space-x-1 pb-1.5">
       <MimorFootReplay
+        class="hover:ring-1"
+        :class="[state.theme.ring(300)]"
+        :state="state"
+        :program="program"
+      />
+
+      <MimorFootRecallAddMimor
         class="hover:ring-1"
         :class="[state.theme.ring(300)]"
         :state="state"

@@ -13,11 +13,10 @@ import { contentURL } from '../../models/content/contentURL'
 import { useGlobalLang } from '../lang/useGlobalLang'
 import { State } from './State'
 import { stateEditorExit } from './stateEditorExit'
-const lang = useGlobalLang()
-
-const origin = 'https://mimor.app'
 
 defineProps<{ state: State }>()
+
+const lang = useGlobalLang()
 
 function fullscreenSupported() {
   return document.fullscreenEnabled
