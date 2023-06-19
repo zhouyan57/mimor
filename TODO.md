@@ -1,3 +1,5 @@
+show that are not from refreshed
+
 # recall -- spaced repetition, a stream of contents
 
 [recall] user can add other mimor into `/recall`
