@@ -8,6 +8,7 @@ import Login from './login/Login.vue'
 import MimorEntrance from './mimor-entrance/MimorEntrance.vue'
 import Mimor from './mimor/Mimor.vue'
 import Play from './play/Play.vue'
+import RecallAddMimor from './recall-add-mimor/RecallAddMimor.vue'
 import Recall from './recall/Recall.vue'
 import Register from './register/Register.vue'
 import Settings from './settings/Settings.vue'
@@ -29,6 +30,7 @@ export const routes: Array<RouteRecordRaw> = [
   { path: '/authors/:username', component: Author },
   { path: '/recall', component: Recall },
   { path: '/recall/', component: Recall },
+  { path: '/recall-add-mimor/:src(.*)', component: RecallAddMimor },
   { path: '/settings', component: Settings },
   { path: '/settings/', component: Settings },
   { path: '/:path(.*)', component: PageNotFound },

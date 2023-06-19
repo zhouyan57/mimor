@@ -1,10 +1,10 @@
 # recall
 
-[recall] `/recall-add-mimor/${src}` -- a callback route for adding mimor to recall
+[recall] `RecallAddMimor` -- use `PageLayout`
+[recall] `RecallAddMimor` -- `State`
+[recall] `RecallAddMimor` -- convert url to SHA256 as key, save `{ src }`
 
-- convert url to SHA256 as key, save `{ src }`
-
-  - note that file name length limit is 255 bytes
+- note that file name length limit is 255 bytes
 
 [recall] show recalled mimors
 [recall] show recalled mimors as a stream of contents -- pagination
