@@ -41,12 +41,7 @@ defineProps<{
       <button
         @click="programForgotten(program)"
         class="flex w-full flex-col items-start border-y border-r p-3"
-        :class="[
-          state.theme.bg(400),
-          state.theme.name === 'white'
-            ? 'border-black'
-            : state.theme.border(400),
-        ]"
+        :class="[state.theme.bg(400), state.theme.border(400)]"
       >
         <XMarkIcon
           class="h-6 w-6"
@@ -65,12 +60,7 @@ defineProps<{
       <button
         @click="programRemembered(program)"
         class="flex w-full flex-col items-start border-y border-l p-3"
-        :class="[
-          state.theme.bg(400),
-          state.theme.name === 'white'
-            ? 'border-black'
-            : state.theme.border(400),
-        ]"
+        :class="[state.theme.bg(400), state.theme.border(400)]"
       >
         <CheckIcon
           class="h-6 w-6"

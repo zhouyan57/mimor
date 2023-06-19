@@ -44,10 +44,7 @@ function fullscreenSupported() {
       {{ programFormatProgress(program) }}
     </div>
 
-    <div
-      class="flex items-center space-x-4"
-      :class="[state.theme.name !== 'white' && state.theme.text(800)]"
-    >
+    <div class="flex items-center space-x-4" :class="[state.theme.text(800)]">
       <button
         @click="programBack(program)"
         :title="lang.isZh() ? '后退一张卡片' : 'Back a card'"

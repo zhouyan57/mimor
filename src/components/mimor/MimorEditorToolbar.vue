@@ -17,7 +17,7 @@ defineProps<{ state: State }>()
     <div class="flex space-x-2 px-1">
       <button
         class="mx-2 px-2 py-1 font-bold focus:outline-none focus:ring-2 focus:ring-orange-300"
-        :class="[state.theme.name !== 'white' && state.theme.text(800)]"
+        :class="[state.theme.text(800)]"
         @click.prevent="stateEditorExit(state)"
       >
         <Lang>

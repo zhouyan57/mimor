@@ -23,14 +23,16 @@ export class Theme {
   }
 
   ring(level: number): string {
-    return this.name === 'white' ? `ring-black` : `ring-${this.name}-${level}`
+    return this.name === 'white' ? 'ring-black' : `ring-${this.name}-${level}`
   }
 
   border(level: number): string {
-    return `border-${this.name}-${level}`
+    return this.name === 'white'
+      ? 'border-black'
+      : `border-${this.name}-${level}`
   }
 
   text(level: number): string {
-    return `text-${this.name}-${level}`
+    return this.name === 'white' ? 'text-black' : `text-${this.name}-${level}`
   }
 }
