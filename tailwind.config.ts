@@ -6,7 +6,7 @@ export default {
   safelist: [
     {
       pattern:
-        /(text|border|bg)-(red|orange|yellow|green|blue|indigo|purple|stone)-(300|400|800)/,
+        /(text|border|ring|bg)-(red|orange|yellow|green|blue|indigo|purple|stone)-(300|400|800)/,
     },
   ],
   theme: {

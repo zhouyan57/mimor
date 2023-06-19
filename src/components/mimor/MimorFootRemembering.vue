@@ -15,7 +15,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="w-full pb-1.5 text-xl font-bold">
+  <div class="w-full text-xl font-bold">
     <button
       v-if="!remembering.revealed"
       class="flex w-full flex-col items-start border-y p-3"

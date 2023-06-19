@@ -45,6 +45,13 @@ watch(
       </div>
     </div>
 
-    <MimorFootReplay :state="state" :program="program" />
+    <div class="flex w-full justify-between space-x-1 pb-1.5">
+      <MimorFootReplay
+        class="hover:ring-1"
+        :class="[state.theme.ring(300)]"
+        :state="state"
+        :program="program"
+      />
+    </div>
   </div>
 </template>

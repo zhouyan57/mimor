@@ -12,7 +12,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="w-full pb-1.5 text-xl font-bold">
+  <div class="w-full text-xl font-bold">
     <button
       class="flex w-full flex-col items-start p-3"
       :class="[state.theme.bg(400)]"

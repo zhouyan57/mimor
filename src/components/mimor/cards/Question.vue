@@ -59,10 +59,12 @@ watch(
       </div>
     </MimorTransitionCard>
 
-    <MimorFootRemembering
-      :state="state"
-      :program="program"
-      :remembering="remembering"
-    />
+    <div class="flex w-full pb-1.5">
+      <MimorFootRemembering
+        :state="state"
+        :program="program"
+        :remembering="remembering"
+      />
+    </div>
   </div>
 </template>

@@ -22,6 +22,10 @@ export class Theme {
     return `bg-${this.name}-${level}`
   }
 
+  ring(level: number): string {
+    return `ring-${this.name}-${level}`
+  }
+
   border(level: number): string {
     return `border-${this.name}-${level}`
   }

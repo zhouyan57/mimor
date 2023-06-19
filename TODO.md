@@ -1,11 +1,24 @@
-show that are not from refreshed
+# recall
 
-# recall -- spaced repetition, a stream of contents
+`<back-cover>` user can add other mimor into `/recall` -- by jumping to recall callback route
 
-[recall] user can add other mimor into `/recall`
-[recall] an action to add all user's own mimors (with special label to distinguish others' mimors)
-[recall] support search
+`<back-cover>` know about already added to `/recall`
+
+[recall] `/recall-add?src=...` -- a callback route for adding mimor to recall
+
+- convert url to hex as key, save `{ src }`
+
+[recall] show recalled mimors
+[recall] show recalled mimors as a stream of contents -- pagination
+[recall] spaced repetition -- rank the mimors based on user's history activities
 [recall] calendar graph -- simple layout (no fixed)
+[recall] [maybe] an action to add all user's own mimors (with special label to distinguish others' mimors)
+[recall] support search
+[recall] [maybe] can add new keywords to a mimor -- to recall different type of things
+
+# later
+
+show that are not from refreshed
 
 # home
 
