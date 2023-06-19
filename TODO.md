@@ -1,6 +1,5 @@
 # recall
 
-[recall] `RecallAddMimor` -- use `PageLayout`
 [recall] `RecallAddMimor` -- `State`
 [recall] `RecallAddMimor` -- convert url to SHA256 as key, save `{ src }`
 
