@@ -1,8 +1,6 @@
 # recall
 
-[recall] `RecallAddMimor` -- `State`
-[recall] `RecallAddMimor` -- `loadState`
-[recall] `RecallAddMimor` -- convert url to SHA256 as key, save `{ src }`
+[recall] `loadState` -- convert url to SHA256 as key, save `{ src }`
 
 - note that file name length limit is 255 bytes
 

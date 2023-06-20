@@ -1,30 +1,31 @@
 <script setup lang="ts">
-import Lang from '../../components/lang/Lang.vue'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
-import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import { Head } from '@vueuse/head'
+import { useRoute } from 'vue-router'
+import RecallAddMimorLoaded from './RecallAddMimorLoaded.vue'
+import RecallAddMimorLoading from './RecallAddMimorLoading.vue'
+import { State } from './State'
+import { loadState } from './loadState'
+import { reactive, ref, watch } from 'vue'
 
-const lang = useGlobalLang()
+const route = useRoute()
+
+const state = ref<State | undefined>(undefined)
+
+const options = reactive({
+  src: String(route.params.src),
+})
+
+watch(
+  () => route.params.src,
+  async () => {
+    state.value = await loadState(options)
+  },
+  {
+    immediate: true,
+  },
+)
 </script>
 
 <template>
-  <Head>
-    <title v-if="lang.isZh()">加入回顾 | 谜墨</title>
-    <title v-else>Add to Recall | Mimor</title>
-  </Head>
-
-  <PageLayout>
-    <div
-      class="font-serif flex h-full flex-col space-y-3 overflow-y-auto p-3 text-xl"
-    >
-      <div class="flex items-baseline">
-        <div class="font-logo text-2xl font-bold">
-          <Lang>
-            <template #zh> 加入回顾 </template>
-            <template #en> Add to Recall </template>
-          </Lang>
-        </div>
-      </div>
-    </div>
-  </PageLayout>
+  <RecallAddMimorLoaded v-if="state" :state="state" />
+  <RecallAddMimorLoading v-else :options="options" />
 </template>
