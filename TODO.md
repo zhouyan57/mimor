@@ -2,8 +2,6 @@
 
 [recall] `RecallLoaded` vs `RecallLoading`
 
-[recall] `State` and `loadState`
-
 [recall] `RecallLoaded` -- layout -- with `RecallEntry`
 
 [recall] `RecallEntry` -- show recalled mimor
@@ -22,7 +20,7 @@
 
 [recall] publish new for npm package -- for "add to recall"
 
-[recall] `RecallAddMimorLoaded` -- if already added, jump to `/recall` and the mimor
+[recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
 
 [recall] show recalled mimors as a stream of contents -- pagination
 
