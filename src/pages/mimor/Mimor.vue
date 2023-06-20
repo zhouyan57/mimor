@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import MimorLoaded from './MimorLoaded.vue'
 import MimorLoading from './MimorLoading.vue'
@@ -10,18 +10,14 @@ const route = useRoute()
 
 const state = ref<State | undefined>(undefined)
 
-function createStateOptions() {
-  const src = String(route.params.src)
-
-  return {
-    src,
-  }
-}
+const options = reactive({
+  src: String(route.params.src),
+})
 
 watch(
   () => route.params.src,
   async () => {
-    state.value = await loadState(createStateOptions())
+    state.value = await loadState(options)
   },
   {
     immediate: true,
@@ -31,5 +27,5 @@ watch(
 
 <template>
   <MimorLoaded v-if="state" :state="state" />
-  <MimorLoading v-else :options="createStateOptions()" />
+  <MimorLoading v-else :options="options" />
 </template>

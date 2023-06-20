@@ -1,3 +1,5 @@
+[home] inline `createStateOptions`
+
 # recall
 
 [recall] `RecallAddMimor` -- `State`
