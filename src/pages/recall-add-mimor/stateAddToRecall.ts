@@ -1,3 +1,4 @@
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { useGlobalBackend } from '../../reactives/useGlobalBackend'
 import { useGlobalToken } from '../../reactives/useGlobalToken'
 import { State } from './State'
@@ -6,7 +7,8 @@ export async function stateAddToRecall(
   state: State,
   report: { errorMessage: string },
 ): Promise<void> {
-  if (!state.username) {
+  const auth = useGlobalAuth()
+  if (!auth.username) {
     return
   }
 
@@ -16,7 +18,7 @@ export async function stateAddToRecall(
   report.errorMessage = ''
 
   const response = await fetch(
-    new URL(`/users/${state.username}/recall/${state.hash}?kind=data`, url),
+    new URL(`/users/${auth.username}/recall/${state.hash}?kind=data`, url),
     {
       method: 'POST',
       headers: {

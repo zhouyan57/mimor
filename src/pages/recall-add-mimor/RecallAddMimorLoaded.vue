@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import Hyperlink from '../../components/utils/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { formSubmit, useForm } from '../../components/form'
@@ -23,6 +24,7 @@ const report = reactive({
 })
 
 const lang = useGlobalLang()
+const auth = useGlobalAuth()
 </script>
 
 <template>
@@ -76,14 +78,14 @@ const lang = useGlobalLang()
 
         <FormDivider />
 
-        <FormButton :disabled="form.processing || !state.username">
+        <FormButton :disabled="form.processing || !auth.username">
           <Lang>
             <template #zh> 加入 </template>
             <template #en> Add </template>
           </Lang>
         </FormButton>
 
-        <div v-if="!state.username" class="flex justify-end">
+        <div v-if="!auth.username" class="flex justify-end">
           <div class="text-xl">
             <Lang>
               <template #zh>

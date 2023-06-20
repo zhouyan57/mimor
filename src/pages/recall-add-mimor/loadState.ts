@@ -1,4 +1,3 @@
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 import { hashSHA256Hex } from '../../utils/hashSHA256Hex'
 import { State } from './State'
 
@@ -13,11 +12,8 @@ export async function loadState(options: StateOptions): Promise<State> {
   // so we need to use hash here.
   const hash = await hashSHA256Hex(src)
 
-  const auth = useGlobalAuth()
-
   return {
     src,
     hash,
-    username: auth.username,
   }
 }
