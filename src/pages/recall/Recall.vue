@@ -1,42 +1,27 @@
 <script setup lang="ts">
-import { Head } from '@vueuse/head'
-import { onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import Lang from '../../components/lang/Lang.vue'
-import { useGlobalLang } from '../../components/lang/useGlobalLang'
-import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import { useRoute } from 'vue-router'
+import RecallLoaded from './RecallLoaded.vue'
+import RecallLoading from './RecallLoading.vue'
+import { State } from './State'
+import { loadState } from './loadState'
+import { reactive, onMounted, ref, watch } from 'vue'
 import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
-import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
-const router = useRouter()
-const lang = useGlobalLang()
-const auth = useGlobalAuth()
+const route = useRoute()
+
+const state = ref<State | undefined>(undefined)
+
+const options = reactive({
+  //
+})
 
 onMounted(async () => {
   await loginByTokenIfNotAlready()
+  state.value = await loadState(options)
 })
 </script>
 
 <template>
-  <PageLayout>
-    <Head>
-      <title v-if="lang.isZh()">回顾 | 谜墨</title>
-      <title v-else>Recall | Mimor</title>
-    </Head>
-
-    <div
-      class="font-serif flex h-full flex-col space-y-3 overflow-y-auto p-3 text-xl"
-    >
-      <div class="flex items-baseline">
-        <div class="font-logo text-2xl font-bold">
-          <Lang>
-            <template #zh> 回顾 </template>
-            <template #en> Recall </template>
-          </Lang>
-        </div>
-      </div>
-
-      <div>TODO</div>
-    </div>
-  </PageLayout>
+  <RecallLoaded v-if="state" :state="state" />
+  <RecallLoading v-else :options="options" />
 </template>
