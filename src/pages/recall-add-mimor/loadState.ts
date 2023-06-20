@@ -10,10 +10,10 @@ export async function loadState(options: StateOptions): Promise<State> {
 
   // In most file systems, path length is limited to 255 bytes,
   // so we need to use hash here.
-  const srcHash = await hashSHA256Hex(src)
+  const hash = await hashSHA256Hex(src)
 
   return {
     src,
-    srcHash,
+    hash,
   }
 }
