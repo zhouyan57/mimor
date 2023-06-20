@@ -143,30 +143,6 @@ const lang = useGlobalLang()
           >.
         </template>
       </Lang>
-
-      <div class="flex items-baseline">
-        <div class="font-logo text-2xl font-bold">
-          <Lang>
-            <template #zh> 口号 </template>
-            <template #en> Slogan </template>
-          </Lang>
-        </div>
-      </div>
-
-      <Lang>
-        <template #zh> 我们的口号是： </template>
-        <template #en> Our slogan is: </template>
-      </Lang>
-
-      <Lang class="font-logo text-xl font-bold">
-        <template #zh> 把记忆变成选择 </template>
-        <template #en> Making memory a choice </template>
-      </Lang>
-
-      <Lang>
-        <template #zh> 奋进！ </template>
-        <template #en> Endeavour! </template>
-      </Lang>
     </div>
   </PageLayout>
 </template>
