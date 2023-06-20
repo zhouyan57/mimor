@@ -15,6 +15,8 @@
 
 [recall] `<back-cover>` know about already added to `/recall`
 
+[recall] publish new for npm package -- for "add to recall"
+
 # later
 
 show that are not from refreshed
