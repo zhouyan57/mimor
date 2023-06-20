@@ -2,7 +2,11 @@
 
 [recall] `loadState` -- load all `entries`
 
-[recall] `RecallLoaded` -- layout -- with `RecallEntry` and `RecallCalendar`
+[recall] `RecallLoaded` -- layout
+
+- `RecallHead`
+- `RecallCalendar`
+- `RecallEntry`
 
 [recall] `RecallEntry` -- show recalled mimor
 
