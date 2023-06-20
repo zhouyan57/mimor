@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Hyperlink from '../../components/utils/Hyperlink.vue'
 import Lang from '../../components/lang/Lang.vue'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
@@ -65,14 +66,37 @@ const lang = useGlobalLang()
           </div>
         </FormBox>
 
+        <div v-if="report.errorMessage">
+          <div class="mt-3 border-2 border-red-300 p-2 text-base">
+            {{ report.errorMessage }}
+          </div>
+        </div>
+
         <FormDivider />
 
-        <FormButton :disabled="form.processing">
+        <FormButton :disabled="form.processing || !state.username">
           <Lang>
             <template #zh> 加入 </template>
             <template #en> Add </template>
           </Lang>
         </FormButton>
+
+        <div v-if="!state.username" class="flex justify-end">
+          <div class="text-xl">
+            <Lang>
+              <template #zh>
+                需要
+                <Hyperlink href="/login" class="underline">登录</Hyperlink>
+                才能加入回顾
+              </template>
+              <template #en>
+                Need to
+                <Hyperlink href="/login" class="underline">log in</Hyperlink>
+                to add to recall.
+              </template>
+            </Lang>
+          </div>
+        </div>
       </form>
     </div>
   </PageLayout>

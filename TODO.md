@@ -1,7 +1,5 @@
 # recall
 
-[recall] `RecallAddMimorLoaded` -- warn about 'not logged in'
-
 [recall] `RecallAddMimorLoaded` -- call `addToRecall`
 
 [recall] show recalled mimors

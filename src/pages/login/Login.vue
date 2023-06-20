@@ -110,14 +110,13 @@ watch(
             <Lang>
               <template #zh>
                 尚未
-                <Hyperlink href="/register" class="underline"> 注册 </Hyperlink
-                >？
+                <Hyperlink href="/register" class="underline">注册</Hyperlink>？
               </template>
               <template #en>
                 Not yet
-                <Hyperlink href="/register" class="underline">
-                  registered
-                </Hyperlink>
+                <Hyperlink href="/register" class="underline"
+                  >registered</Hyperlink
+                >
                 ?
               </template>
             </Lang>
