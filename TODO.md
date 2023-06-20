@@ -1,10 +1,16 @@
 # recall
 
-[recall] show recalled mimors
+[recall] `RecallLoaded` vs `RecallLoading`
 
-[recall] calendar graph -- simple layout (no fixed)
+[recall] `State` and `loadState`
 
-[recall] support search
+[recall] `RecallLoaded` -- layout -- with `RecallEntry`
+
+[recall] `RecallEntry` -- show recalled mimor
+
+[recall] `RecallCalendar` -- simple layout (no fixed)
+
+[recall] `RecallHead` -- support search
 
 [recall] spaced repetition -- rank the mimors based on user's history activities
 
