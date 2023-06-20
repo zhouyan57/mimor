@@ -3,7 +3,7 @@ import Lang from '../../components/lang/Lang.vue'
 import { formSubmit, useForm } from '../../components/form'
 import FormButton from '../../components/form/FormButton.vue'
 import FormDivider from '../../components/form/FormDivider.vue'
-import FormTextarea from '../../components/form/FormTextarea.vue'
+import FormBox from '../../components/form/FormBox.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Head } from '@vueuse/head'
@@ -52,21 +52,18 @@ const lang = useGlobalLang()
           })
         "
       >
-        <FormTextarea
-          name="src"
-          autocomplete="src"
-          required
-          disabled
-          :value="state.src"
-          class=""
-        >
+        <FormBox name="src">
           <template #label>
             <Lang>
               <template #zh>来源</template>
               <template #en>Source</template>
             </Lang>
           </template>
-        </FormTextarea>
+
+          <div class="break-words">
+            {{ state.src }}
+          </div>
+        </FormBox>
 
         <FormDivider />
 

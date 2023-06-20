@@ -1,7 +1,5 @@
 # recall
 
-`forms/FormBox`
-
 [recall] `RecallAddMimorLoaded` -- call `addToRecall`
 [recall] `RecallAddMimorLoaded` -- warn about 'not logged in'
 
