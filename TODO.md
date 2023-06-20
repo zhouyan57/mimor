@@ -1,7 +1,5 @@
 # recall
 
-[recall] `RecallAddMimorLoaded` -- call `addToRecall`
-
 [recall] show recalled mimors
 
 [recall] calendar graph -- simple layout (no fixed)

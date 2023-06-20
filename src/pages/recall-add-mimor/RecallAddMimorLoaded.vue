@@ -10,6 +10,7 @@ import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Head } from '@vueuse/head'
 import { State } from './State'
 import { reactive } from 'vue'
+import { stateAddToRecall } from './stateAddToRecall'
 
 const props = defineProps<{ state: State }>()
 
@@ -48,8 +49,9 @@ const lang = useGlobalLang()
         @submit.prevent="
           formSubmit(form, $event, async () => {
             if (report.errorMessage) return
+            await stateAddToRecall(state, report)
 
-            $router.replace({ path: `/` })
+            $router.replace({ path: `/recall` })
           })
         "
       >
