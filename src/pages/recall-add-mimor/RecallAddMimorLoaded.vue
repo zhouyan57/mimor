@@ -3,6 +3,9 @@ import Lang from '../../components/lang/Lang.vue'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Head } from '@vueuse/head'
+import { State } from './State'
+
+defineProps<{ state: State }>()
 
 const lang = useGlobalLang()
 </script>
@@ -24,6 +27,10 @@ const lang = useGlobalLang()
             <template #en> Add to Recall </template>
           </Lang>
         </div>
+      </div>
+
+      <div class="whitespace-pre">
+        {{ state }}
       </div>
     </div>
   </PageLayout>
