@@ -8,15 +8,12 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import { loginByTokenIfNotAlready } from '../../models/auth/loginByTokenIfNotAlready'
 import { useGlobalAuth } from '../../reactives/useGlobalAuth'
 
-const triedToLogin = ref(false)
 const router = useRouter()
 const lang = useGlobalLang()
 const auth = useGlobalAuth()
 
 onMounted(async () => {
   await loginByTokenIfNotAlready()
-
-  triedToLogin.value = true
 })
 </script>
 
