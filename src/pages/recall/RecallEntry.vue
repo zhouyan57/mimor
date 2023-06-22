@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Mimor from '../../components/mimor/Mimor.vue'
+import RecallEntryMimor from './RecallEntryMimor.vue'
 import { State } from './State'
 import { Entry } from './Entry'
 
@@ -10,12 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <div>
-    <Mimor
-      class="h-[32rem] shrink-0"
-      :key="entry.src"
-      :src="entry.src"
-      :text="entry.text"
-    />
+  <div class="flex flex-col">
+    <RecallEntryMimor :state="state" :entry="entry" />
   </div>
 </template>

@@ -1,7 +1,5 @@
 # recall
 
-[recall] extract `RecallEntryMimor`
-
 [recall] extract `RecallEntryInfo`
 
 [recall] `RecallCalendar` -- simple layout (no fixed)
