@@ -1,6 +1,8 @@
 [mimor] & [note] use `mimor.app/contents`
 
-[author-self] & [author-other] after refreshed show deleted entries
+[author-self] & [author-other] be able to jump back to top
+
+[author-self] & [author-other] after refreshed show entries that are not from refreshed
 
 # bug
 
@@ -29,12 +31,6 @@ search is not effective on wechat.
 [recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
 
 [recall] show recalled mimors as a stream of contents -- pagination
-
-# later
-
-show that are not from refreshed
-
-be able to jump back to top
 
 # home
 

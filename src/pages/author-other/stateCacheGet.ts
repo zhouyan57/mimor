@@ -14,5 +14,16 @@ export async function stateCacheGet(
   delete cache.eagerLoadAll
   delete cache.focusedPath
 
+  const contents = Kv.createStore('mimor.app/contents', 'cache')
+  for (const entry of cache.entries) {
+    const src = `~/${entry.path}`
+    const cache = await Kv.get(src, contents)
+    if (cache && typeof cache.text === 'string') {
+      entry.text = cache.text
+    }
+  }
+
+  await Kv.set(username, cache, store)
+
   return cache
 }
