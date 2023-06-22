@@ -1,6 +1,6 @@
 # recall
 
-[recall] `RecallHead` -- support contents
+[recall] `RecallHead` -- support `countents`
 
 [recall] `RecallCalendar` -- simple layout (no fixed)
 

@@ -28,12 +28,15 @@ export async function loadEntries(): Promise<Array<Entry>> {
     },
   )
 
-  const entries: Array<Entry> = await response.json()
+  const entries: Array<Record<string, any>> = await response.json()
 
   const promises = entries.map(async (entry) => ({
     path: entry.src.slice('~/'.length),
     src: entry.src,
     text: await loadContent(entry.src),
+    createdAt: entry['@createdAt'],
+    updatedAt: entry['@updatedAt'],
+    reversion: entry['@reversion'],
   }))
 
   return await promiseAllFulfilled(promises)
