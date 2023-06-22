@@ -1,8 +1,8 @@
-[author-self] & [author-other] after refreshed show entries that are not from refreshed
+[author-self] after refreshed show entries that are not from refreshed
 
 # bug
 
-search is not effective on wechat.
+search is not effective on wechat browser
 
 # recall
 
