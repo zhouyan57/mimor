@@ -20,7 +20,6 @@ import RouteSyncWithQuery from '../../components/utils/RouteSyncWithQuery.vue'
 import AuthorContents from '../author/AuthorContents.vue'
 import AuthorConnection from './AuthorConnection.vue'
 import { State } from './State'
-import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 import { stateConnect } from './stateConnect'
 import { stateConnectDirectoryHandle } from './stateConnectDirectoryHandle'
 import { stateConnectionDownload } from './stateConnectionDownload'
@@ -162,7 +161,7 @@ const lang = useGlobalLang()
         </button>
 
         <button
-          v-if="state.entries.some((entry) => entryIsModifiedByUpload(entry))"
+          v-if="state.entries.some((entry) => entry.isModifiedByUpload)"
           class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
           :title="
             lang.isZh()

@@ -1,3 +1,5 @@
+[author-self] `AuthorSelfInfo` show `isModifiedByUpload`
+
 [author-self] after refreshed show entries that are not from refreshed
 
 [author-self] after delete, delete entry from cache

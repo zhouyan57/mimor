@@ -8,4 +8,5 @@ export type Entry = {
   newText?: string
   createdAt: number
   updatedAt: number
+  isModifiedByUpload?: boolean
 }

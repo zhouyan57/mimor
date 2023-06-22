@@ -9,7 +9,6 @@ import Lang from '../../components/lang/Lang.vue'
 import { asyncRun } from '../../utils/asyncRun'
 import { Entry } from './Entry'
 import { State } from './State'
-import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 import { entryToggleVisibilityAfterConfirming } from './entryToggleVisibilityAfterConfirming'
 import { stateCacheSet } from './stateCacheSet'
 import { stateEntryDeleteAfterConfirming } from './stateEntryDeleteAfterConfirming'
@@ -76,7 +75,7 @@ defineProps<{
     </button>
 
     <button
-      v-if="entryIsModifiedByUpload(entry)"
+      v-if="entry.isModifiedByUpload"
       class="flex max-w-fit space-x-1 whitespace-pre pr-3 disabled:text-stone-500"
       :disabled="entry.isSaving"
       @click="

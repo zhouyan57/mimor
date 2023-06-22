@@ -1,12 +1,11 @@
 import { Entry } from './Entry'
-import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 
 export function entryCompare(x: Entry, y: Entry): number {
-  if (entryIsModifiedByUpload(y) && !entryIsModifiedByUpload(x)) {
+  if (y.isModifiedByUpload && !x.isModifiedByUpload) {
     return 1
   }
 
-  if (!entryIsModifiedByUpload(y) && entryIsModifiedByUpload(x)) {
+  if (!y.isModifiedByUpload && x.isModifiedByUpload) {
     return -1
   }
 

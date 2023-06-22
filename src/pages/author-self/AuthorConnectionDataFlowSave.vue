@@ -4,7 +4,6 @@ import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import { Connection } from './Connection'
 import { State } from './State'
-import { entryIsModifiedByUpload } from './entryIsModifiedByUpload'
 import { stateSaveAllNewTexts } from './stateSaveAllNewTexts'
 
 defineProps<{
@@ -23,7 +22,7 @@ const lang = useGlobalLang()
     "
     :disabled="
       state.isSavingNewTexts ||
-      !state.entries.some((entry) => entryIsModifiedByUpload(entry))
+      !state.entries.some((entry) => entry.isModifiedByUpload)
     "
     @click.prevent.stop="stateSaveAllNewTexts(state)"
   >

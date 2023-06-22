@@ -41,6 +41,7 @@ function saveConnectionFileEntry(
     if (found.text !== fileEntry.text) {
       found.updatedAt = fileEntry.updatedAt
       report.updatedFiles.push(fileEntry.path)
+      found.isModifiedByUpload = true
     }
 
     found.newText = fileEntry.text
@@ -50,6 +51,7 @@ function saveConnectionFileEntry(
       entryReactive(
         {
           isPublic: true,
+          isModifiedByUpload: true,
           path: pathFormat({
             isPublic: true,
             username: state.username,
