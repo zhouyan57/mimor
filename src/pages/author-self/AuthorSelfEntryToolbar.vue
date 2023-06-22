@@ -93,8 +93,8 @@ defineProps<{
       />
 
       <Lang>
-        <template #zh>保存新内容</template>
-        <template #en>Save New Content</template>
+        <template #zh>保存</template>
+        <template #en>Save</template>
       </Lang>
     </button>
   </div>
