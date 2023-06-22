@@ -19,4 +19,5 @@ export type State = {
   latestDirectoryHandle?: FileSystemDirectoryHandle
   eagerLoadAll?: boolean
   focusedPath?: string
+  scrollToTopTick?: number
 }

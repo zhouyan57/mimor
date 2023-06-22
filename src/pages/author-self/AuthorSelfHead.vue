@@ -191,7 +191,12 @@ const lang = useGlobalLang()
         v-if="!state.isSearching"
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="lang.isZh() ? `开始搜索` : `Start searching`"
-        @click="state.isSearching = true"
+        @click="
+          () => {
+            state.isSearching = true
+            state.scrollToTopTick = 1
+          }
+        "
       >
         <MagnifyingGlassIcon class="h-5 w-5" />
 
@@ -205,7 +210,12 @@ const lang = useGlobalLang()
         v-if="state.isSearching"
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="lang.isZh() ? `退出搜索` : `Exit searching`"
-        @click="state.isSearching = false"
+        @click="
+          () => {
+            state.isSearching = false
+            state.scrollToTopTick = 0
+          }
+        "
       >
         <XMarkIcon class="h-5 w-5" />
 

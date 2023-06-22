@@ -7,6 +7,7 @@ import PageLayout from '../../layouts/page-layout/PageLayout.vue'
 import AuthorEditor from './AuthorEditor.vue'
 import AuthorSelfEntry from './AuthorSelfEntry.vue'
 import AuthorSelfHead from './AuthorSelfHead.vue'
+import AuthorSelfTop from './AuthorSelfTop.vue'
 import AuthorSelfInfo from './AuthorSelfInfo.vue'
 import { State } from './State'
 import { stateEntriesFiltered } from './stateEntriesFiltered'
@@ -25,6 +26,8 @@ const lang = useGlobalLang()
     </Head>
 
     <div class="flex h-full max-w-[47rem] flex-col overflow-auto">
+      <AuthorSelfTop :state="state" />
+
       <div
         class="sticky top-0 flex flex-col bg-white px-3 py-2 md:border-t md:border-black"
       >

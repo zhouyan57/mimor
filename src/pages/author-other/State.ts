@@ -12,4 +12,5 @@ export type State = {
   lastRefreshedAt?: number
   eagerLoadAll?: boolean
   focusedPath?: string
+  scrollToTopTick?: number
 }
