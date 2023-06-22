@@ -1,7 +1,5 @@
 # recall
 
-[recall] `RecallHead` -- support `countents`
-
 [recall] `RecallCalendar` -- simple layout (no fixed)
 
 [recall] `RecallHead` -- support search

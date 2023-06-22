@@ -120,7 +120,7 @@ const window = useWindow()
         </template>
 
         <template #panel="{ modal }">
-          <RouteSyncWithQuery :state="modal" name="author-contents" />
+          <RouteSyncWithQuery :state="modal" name="countents" />
 
           <AuthorContents
             class="m-3 border border-black bg-white"
