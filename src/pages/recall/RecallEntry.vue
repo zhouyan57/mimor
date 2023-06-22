@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col space-y-1 py-2">
     <RecallEntryInfo :state="state" :entry="entry" />
     <RecallEntryMimor :state="state" :entry="entry" />
   </div>

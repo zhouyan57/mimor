@@ -31,6 +31,7 @@ export async function loadEntries(): Promise<Array<Entry>> {
   const entries: Array<Entry> = await response.json()
 
   const promises = entries.map(async (entry) => ({
+    path: entry.src.slice('~/'.length),
     src: entry.src,
     text: await loadContent(entry.src),
   }))

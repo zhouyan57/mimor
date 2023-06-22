@@ -1,7 +1,5 @@
 # recall
 
-[recall] `RecallEntryInfo` -- show path
-
 [recall] `RecallHead` -- support contents
 
 [recall] `RecallCalendar` -- simple layout (no fixed)

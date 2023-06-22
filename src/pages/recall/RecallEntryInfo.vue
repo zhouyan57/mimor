@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import { State } from './State'
+import Lang from '../../components/lang/Lang.vue'
+import {
+  DocumentTextIcon,
+  PaperAirplaneIcon,
+  PencilIcon,
+  ExclamationCircleIcon,
+} from '@heroicons/vue/24/outline'
+import { formatDateTime } from '../../utils/formatDate'
+import { pathParse } from '../author/pathParse'
 import { Entry } from './Entry'
+import { State } from './State'
 
 defineProps<{
   state: State
@@ -9,5 +18,13 @@ defineProps<{
 </script>
 
 <template>
-  <div>RecallEntryInfo</div>
+  <div class="flex flex-col space-y-1 text-base">
+    <div class="flex items-center space-x-1">
+      <DocumentTextIcon class="h-5 w-5" />
+
+      <div class="overflow-x-auto whitespace-pre">
+        {{ entry.path }}
+      </div>
+    </div>
+  </div>
 </template>

@@ -39,7 +39,7 @@ defineProps<{
       <DocumentTextIcon class="h-5 w-5" />
 
       <div class="overflow-x-auto whitespace-pre">
-        {{ pathParse(entry.path).file }}
+        {{ entry.path }}
       </div>
     </div>
 
