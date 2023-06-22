@@ -8,6 +8,6 @@ export async function stateRefresh(state: State): Promise<void> {
   const text = await loadContent(state.src)
   const newState = createState({ ...state, text })
   Object.assign(state, newState)
-  const cached = { text }
-  await Kv.set(state.src, cached, store)
+  const cache = { text }
+  await Kv.set(state.src, cache, store)
 }

@@ -36,9 +36,9 @@ const window = useWindow()
 
         asyncRun(async () => {
           const store = Kv.createStore('mimor.app/contents', 'cache')
-          const cached = { text }
+          const cache = { text }
           const src = `~/${entry.path}`
-          await Kv.set(src, cached, store)
+          await Kv.set(src, cache, store)
         })
       }
     "

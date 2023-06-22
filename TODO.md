@@ -1,5 +1,3 @@
-[author-self] `stateCacheGet` text from `mimor.app/contents` cache
-
 [mimor] & [note] use `mimor.app/contents`
 
 [author-self] & [author-other] after refreshed show deleted entries

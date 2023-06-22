@@ -26,6 +26,6 @@ export async function stateRefresh(state: State): Promise<void> {
     )
   }
 
-  const cached = { text }
-  await Kv.set(state.src, cached, store)
+  const cache = { text }
+  await Kv.set(state.src, cache, store)
 }
