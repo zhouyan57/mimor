@@ -22,10 +22,10 @@ const window = useWindow()
 </script>
 
 <template>
-  <div class="flex max-w-[47rem] justify-between space-x-3 text-base">
-    <div class="flex space-x-3 text-base">
+  <div class="flex max-w-[47rem] flex-wrap justify-between text-base">
+    <div class="flex flex-wrap pr-3 text-base">
       <button
-        class="flex min-w-max items-center space-x-1 disabled:text-stone-500"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="
           lang.isZh()
             ? `将云端的文件刷新到 app`
