@@ -4,6 +4,7 @@ import Init from '../utils/Init.vue'
 import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
+import TheEnd from './cards/TheEnd.vue'
 import { State } from './State'
 import { programCurrentElement } from './programCurrentElement'
 import { stateReactive } from './stateReactive'
@@ -70,8 +71,16 @@ watch(
         @update="$emit('update')"
       />
 
+      <TheEnd
+        v-else-if="state.program.remainingIndexes.length === 0"
+        class="h-full"
+        :class="[state.theme.bg(300)]"
+        :state="state"
+        :program="state.program"
+      />
+
       <MimorKindProgram
-        v-if="state.kind === 'Program'"
+        v-else-if="state.kind === 'Program'"
         class="h-full"
         :class="[state.theme.bg(300)]"
         :key="state.program.pointer"

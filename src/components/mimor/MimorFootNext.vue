@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { PlayIcon } from '@heroicons/vue/24/outline'
+import { ArrowPathIcon } from '@heroicons/vue/24/outline'
 import Lang from '../../components/lang/Lang.vue'
 import { Program } from './Program'
 import { State } from './State'
-import { programRemembered } from './programRemembered'
+import { programNext } from './programNext'
 
 defineProps<{
   state: State
@@ -16,17 +16,17 @@ defineProps<{
     <button
       class="flex w-full flex-col items-start p-3"
       :class="[state.theme.bg(400)]"
-      @click="programRemembered(program)"
+      @click="programNext(program)"
     >
-      <PlayIcon
+      <ArrowPathIcon
         class="h-6 w-6"
         :class="[
           state.theme.name === 'yellow' ? 'text-purple-400' : 'text-yellow-400',
         ]"
       />
       <Lang :class="[state.theme.name !== 'white' && 'text-white']">
-        <template #zh>开始</template>
-        <template #en>Start</template>
+        <template #zh>继续</template>
+        <template #en>Next</template>
       </Lang>
     </button>
   </div>

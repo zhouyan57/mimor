@@ -1,10 +1,14 @@
+[mimor] extract `programPointer`
+
+[mimor] remove `<back-cover>`
+
+[mimor] fix docs about `<back-cover>`
+
 # bug
 
-`<back-cover>` should not be the end -- for forget
+[author-self] saving mimor and note should update cache.
 
 search is not effective on wechat.
-
-saving mimor and note should update cache.
 
 # recall
 

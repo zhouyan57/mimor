@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XElement } from '@xieyuheng/x-node'
 import { watch } from 'vue'
-import MimorFootNext from '../MimorFootNext.vue'
+import MimorFootReplay from '../MimorFootReplay.vue'
 import MimorHeadProgram from '../MimorHeadProgram.vue'
 import MimorFootRecallAddMimor from '../MimorFootRecallAddMimor.vue'
 import { Program } from '../Program'
@@ -12,7 +12,6 @@ import CoverInfo from './CoverInfo.vue'
 const props = defineProps<{
   state: State
   program: Program
-  element: XElement
 }>()
 
 watch(
@@ -36,18 +35,20 @@ watch(
     <CoverInfo :state="state" :program="program" />
 
     <div
-      class="font-sans h-full overflow-y-auto p-3 font-bold"
-      :class="[state.theme.name === 'white' ? 'text-black' : 'text-white']"
+      class="font-sans flex h-full flex-col justify-center overflow-y-auto p-3 font-bold text-white"
     >
-      <div class="flex h-full flex-col justify-center text-2xl">
-        <div v-for="(child, index) of element.children" :key="index">
-          <Node :state="state" :program="program" :node="child" />
-        </div>
-      </div>
+      <div class="text-2xl">The End</div>
     </div>
 
     <div class="flex w-full justify-between space-x-1 pb-1.5">
-      <MimorFootNext
+      <MimorFootReplay
+        class="hover:ring-1"
+        :class="[state.theme.ring(300)]"
+        :state="state"
+        :program="program"
+      />
+
+      <MimorFootRecallAddMimor
         class="hover:ring-1"
         :class="[state.theme.ring(300)]"
         :state="state"
