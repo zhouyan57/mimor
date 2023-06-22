@@ -36,6 +36,7 @@ function stateUpdateEntries(state: State, newState: State): void {
       found.text = newEntry.text
       found.createdAt = newEntry.createdAt
       found.updatedAt = newEntry.updatedAt
+      found.isNotInTheCloud = false
     } else {
       report.createdFiles.unshift(pathParse(newEntry.path).file)
 

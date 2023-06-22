@@ -1,5 +1,3 @@
-[author-self] after delete, delete entry from cache
-
 # recall
 
 [recall] `loadEntries`
