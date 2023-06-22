@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
 import { onMounted, ref } from 'vue'
+import RecallEntry from './RecallEntry.vue'
 import ListLazyScroll from '../../components/utils/ListLazyScroll.vue'
 import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'

@@ -1,8 +1,8 @@
 # recall
 
-[recall] `loadEntries`
+[recall] extract `RecallEntryMimor`
 
-[recall] `RecallEntry` -- show recalled mimor
+[recall] extract `RecallEntryInfo`
 
 [recall] `RecallCalendar` -- simple layout (no fixed)
 
