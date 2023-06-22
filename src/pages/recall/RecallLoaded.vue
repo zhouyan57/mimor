@@ -7,6 +7,7 @@ import { useRouter } from 'vue-router'
 import Lang from '../../components/lang/Lang.vue'
 import { useGlobalLang } from '../../components/lang/useGlobalLang'
 import PageLayout from '../../layouts/page-layout/PageLayout.vue'
+import RecallTop from './RecallTop.vue'
 import RecallHead from './RecallHead.vue'
 import RecallCalendar from './RecallCalendar.vue'
 import { State } from './State'
@@ -24,8 +25,12 @@ const lang = useGlobalLang()
       <title v-else>Recall | Mimor</title>
     </Head>
 
-    <div class="flex h-full max-w-[47rem] flex-col">
-      <div class="flex flex-col space-y-2 px-3 py-2 text-xl">
+    <div class="flex h-full max-w-[47rem] flex-col overflow-auto">
+      <RecallTop :state="state" />
+
+      <div
+        class="sticky top-0 flex flex-col bg-white px-3 py-2 md:border-t md:border-black"
+      >
         <RecallHead :state="state" />
       </div>
 
