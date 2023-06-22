@@ -26,29 +26,31 @@ const state = reactive({
       <slot name="button" :modal="state"></slot>
     </button>
 
-    <div
-      v-show="state.open"
-      class="fixed bottom-0 left-0 right-0 top-0 z-50"
-      role="dialog"
-      aria-modal="true"
-    >
+    <Teleport to="body">
       <div
-        class="fixed bottom-0 left-0 right-0 top-0 bg-black bg-opacity-50"
-      ></div>
-
-      <TrapFocus
-        :open="state.open"
-        tabindex="0"
-        class="fixed bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center overflow-auto"
-        @click="state.open = false"
+        v-show="state.open"
+        class="fixed bottom-0 left-0 right-0 top-0 z-50"
+        role="dialog"
+        aria-modal="true"
       >
         <div
-          @click.stop
-          class="flex flex-col items-center justify-center overflow-y-auto"
+          class="fixed bottom-0 left-0 right-0 top-0 bg-black bg-opacity-50"
+        ></div>
+
+        <TrapFocus
+          :open="state.open"
+          tabindex="0"
+          class="fixed bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center overflow-auto"
+          @click="state.open = false"
         >
-          <slot name="panel" :modal="state"></slot>
-        </div>
-      </TrapFocus>
-    </div>
+          <div
+            @click.stop
+            class="flex flex-col items-center justify-center overflow-y-auto"
+          >
+            <slot name="panel" :modal="state"></slot>
+          </div>
+        </TrapFocus>
+      </div>
+    </Teleport>
   </div>
 </template>
