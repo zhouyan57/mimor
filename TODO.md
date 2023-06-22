@@ -1,7 +1,3 @@
-[mimor] remove `<back-cover>`
-
-[mimor] fix docs about `<back-cover>`
-
 # bug
 
 [author-self] saving mimor and note should update cache.

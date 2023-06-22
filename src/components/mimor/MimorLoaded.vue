@@ -5,7 +5,6 @@ import Scope from '../utils/Scope.vue'
 import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
-import TheEnd from './cards/TheEnd.vue'
 import { State } from './State'
 import { programCurrentElement } from './programCurrentElement'
 import { stateReactive } from './stateReactive'
@@ -65,7 +64,11 @@ watch(
 
     <template v-if="state.program">
       <Scope
-        :scope="{ element: programCurrentElement(state.program) }"
+        :scope="{
+          element:
+            programCurrentElement(state.program) ||
+            state.program.backCoverElement,
+        }"
         v-slot="{ scope }"
       >
         <MimorKindEditor
@@ -75,14 +78,6 @@ watch(
           :state="state"
           :program="state.program"
           @update="$emit('update')"
-        />
-
-        <TheEnd
-          v-else-if="scope.element === undefined"
-          class="h-full"
-          :class="[state.theme.bg(300)]"
-          :state="state"
-          :program="state.program"
         />
 
         <MimorKindProgram

@@ -5,6 +5,7 @@ import { Router } from './Router'
 export type Program = {
   metadata: Metadata
   elements: Array<XElement>
+  backCoverElement: XElement
   router: Router
   remainingIndexes: Array<number>
   rememberedIndexes: Array<number>
