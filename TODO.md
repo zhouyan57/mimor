@@ -1,7 +1,15 @@
+[recall] & [author-self] & [author-other] entry info show `src` instead of `path`
+
 # recall
 
-[recall] `RecallCalendar` -- simple layout (no fixed)
+[recall] record user activities -- `Mimor` need to emit events
+[recall] be able to delete entry
+[recall] pass prop to `Mimor` to change the back cover card
 [recall] spaced repetition -- rank the mimors based on user's history activities
+[recall] `RecallCalendar` -- based on number of cards recalled in a day
+[recall] `RecallCalendarDay` -- click to popup modal of list of recall info
+[recall] `createCalendar` -- from `entries`
+[recall] support cache
 [recall] [maybe] an action to add all user's own mimors (with special label to distinguish others' mimors)
 [recall] [maybe] can add additional keywords to a saved mimor -- to recall different type of things
 [recall] `<back-cover>` know about already added to `/recall`
@@ -9,7 +17,6 @@
 [recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
 [recall] `RecallHead` -- support search
 [recall] show recalled mimors as a stream of contents -- pagination
-[recall] support cache
 
 # register
 
