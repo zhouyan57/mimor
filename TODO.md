@@ -1,6 +1,10 @@
-# bug
+[author-self] `stateCacheGet` text from `mimor.app/contents` cache
 
-[author-self] saving mimor and note should update cache.
+[mimor] & [note] use `mimor.app/contents`
+
+[author-self] & [author-other] after refreshed show deleted entries
+
+# bug
 
 search is not effective on wechat.
 
