@@ -1,23 +1,14 @@
 # recall
 
 [recall] `RecallCalendar` -- simple layout (no fixed)
-
-[recall] `RecallHead` -- support search
-
 [recall] spaced repetition -- rank the mimors based on user's history activities
-
 [recall] [maybe] an action to add all user's own mimors (with special label to distinguish others' mimors)
-
 [recall] [maybe] can add additional keywords to a saved mimor -- to recall different type of things
-
 [recall] `<back-cover>` know about already added to `/recall`
-
 [recall] publish new for npm package -- for "add to recall"
-
 [recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
-
+[recall] `RecallHead` -- support search
 [recall] show recalled mimors as a stream of contents -- pagination
-
 [recall] support cache
 
 # register
