@@ -2,10 +2,6 @@
 
 [author-self] after delete, delete entry from cache
 
-# bug
-
-search is not effective on wechat browser
-
 # recall
 
 [recall] `loadEntries`
