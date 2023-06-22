@@ -34,7 +34,7 @@ const lang = useGlobalLang()
 
 <template>
   <div class="flex max-w-[47rem] flex-wrap justify-between text-base">
-    <div class="flex flex-wrap pr-3 text-base">
+    <div class="flex flex-wrap text-base">
       <button
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
         :title="
