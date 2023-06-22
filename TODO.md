@@ -1,4 +1,5 @@
-[author-self] & [author-other] be able to jump back to top
+[author-self] & [author-other] jump back to top -- on toggle search
+[author-self] & [author-other] a button to jump back to top (only when scrolled)
 
 [author-self] & [author-other] after refreshed show entries that are not from refreshed
 
@@ -29,6 +30,10 @@ search is not effective on wechat.
 [recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
 
 [recall] show recalled mimors as a stream of contents -- pagination
+
+# register
+
+[register] repeat password
 
 # home
 

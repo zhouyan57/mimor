@@ -24,9 +24,14 @@ const lang = useGlobalLang()
       <title v-else>{{ state.username }} | Mimor</title>
     </Head>
 
-    <div class="flex h-full max-w-[47rem] flex-col">
-      <div class="flex flex-col space-y-2 px-3 py-2 text-xl">
+    <div class="flex h-full max-w-[47rem] flex-col overflow-auto">
+      <div
+        class="sticky top-0 flex flex-col bg-white px-3 py-2 md:border-t md:border-black"
+      >
         <AuthorSelfHead :state="state" />
+      </div>
+
+      <div class="flex flex-col px-3 pb-2">
         <AuthorSelfInfo :state="state" />
       </div>
 
