@@ -2,6 +2,10 @@
 
 [recall] extract `RecallEntryInfo`
 
+[recall] `RecallEntryInfo` -- show path
+
+[recall] `RecallHead` -- support contents
+
 [recall] `RecallCalendar` -- simple layout (no fixed)
 
 [recall] `RecallHead` -- support search
@@ -19,6 +23,8 @@
 [recall] `RecallAddMimorLoaded` -- if already added, show button to jump to `/recall` and the mimor
 
 [recall] show recalled mimors as a stream of contents -- pagination
+
+[recall] support cache
 
 # register
 
