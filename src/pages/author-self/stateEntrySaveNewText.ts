@@ -31,5 +31,5 @@ export async function stateEntrySaveNewText(
 
   entry.text = entry.newText
   entry.isSaving = false
-  entry.isModifiedByUpload = false
+  entry.isModifiedByUploading = false
 }

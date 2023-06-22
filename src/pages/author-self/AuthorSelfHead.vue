@@ -161,7 +161,7 @@ const lang = useGlobalLang()
         </button>
 
         <button
-          v-if="state.entries.some((entry) => entry.isModifiedByUpload)"
+          v-if="state.entries.some((entry) => entry.isModifiedByUploading)"
           class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
           :title="
             lang.isZh()

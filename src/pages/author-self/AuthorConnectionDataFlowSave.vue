@@ -22,7 +22,7 @@ const lang = useGlobalLang()
     "
     :disabled="
       state.isSavingNewTexts ||
-      !state.entries.some((entry) => entry.isModifiedByUpload)
+      !state.entries.some((entry) => entry.isModifiedByUploading)
     "
     @click.prevent.stop="stateSaveAllNewTexts(state)"
   >
