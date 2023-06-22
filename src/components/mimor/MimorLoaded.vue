@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import Init from '../utils/Init.vue'
+import Scope from '../utils/Scope.vue'
 import MimorKindEditor from './MimorKindEditor.vue'
 import MimorKindError from './MimorKindError.vue'
 import MimorKindProgram from './MimorKindProgram.vue'
@@ -8,6 +9,7 @@ import TheEnd from './cards/TheEnd.vue'
 import { State } from './State'
 import { programCurrentElement } from './programCurrentElement'
 import { stateReactive } from './stateReactive'
+import { programPointer } from './programPointer'
 
 const props = defineProps<{ state: State }>()
 
@@ -62,32 +64,37 @@ watch(
     />
 
     <template v-if="state.program">
-      <MimorKindEditor
-        v-if="state.kind === 'Editor'"
-        class="h-full"
-        :class="[state.theme.bg(300)]"
-        :state="state"
-        :program="state.program"
-        @update="$emit('update')"
-      />
+      <Scope
+        :scope="{ element: programCurrentElement(state.program) }"
+        v-slot="{ scope }"
+      >
+        <MimorKindEditor
+          v-if="state.kind === 'Editor'"
+          class="h-full"
+          :class="[state.theme.bg(300)]"
+          :state="state"
+          :program="state.program"
+          @update="$emit('update')"
+        />
 
-      <TheEnd
-        v-else-if="state.program.remainingIndexes.length === 0"
-        class="h-full"
-        :class="[state.theme.bg(300)]"
-        :state="state"
-        :program="state.program"
-      />
+        <TheEnd
+          v-else-if="scope.element === undefined"
+          class="h-full"
+          :class="[state.theme.bg(300)]"
+          :state="state"
+          :program="state.program"
+        />
 
-      <MimorKindProgram
-        v-else-if="state.kind === 'Program'"
-        class="h-full"
-        :class="[state.theme.bg(300)]"
-        :key="state.program.pointer"
-        :state="state"
-        :program="state.program"
-        :element="programCurrentElement(state.program)"
-      />
+        <MimorKindProgram
+          v-else-if="state.kind === 'Program'"
+          class="h-full"
+          :class="[state.theme.bg(300)]"
+          :key="programPointer(state.program)"
+          :state="state"
+          :program="state.program"
+          :element="scope.element"
+        />
+      </Scope>
     </template>
 
     <MimorKindError v-if="state.error" :state="state" :error="state.error" />

@@ -6,7 +6,6 @@ export type Program = {
   metadata: Metadata
   elements: Array<XElement>
   router: Router
-  pointer: number
   remainingIndexes: Array<number>
   rememberedIndexes: Array<number>
 }

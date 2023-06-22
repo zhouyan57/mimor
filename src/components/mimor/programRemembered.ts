@@ -1,8 +1,10 @@
 import { Program } from './Program'
-import { programNext } from './programNext'
 
 export function programRemembered(program: Program): void {
-  program.rememberedIndexes.push(program.pointer)
-  programNext(program)
-  console.log(program)
+  const pointer = program.remainingIndexes.shift()
+  if (pointer === undefined) {
+    return
+  }
+
+  program.rememberedIndexes.push(pointer)
 }

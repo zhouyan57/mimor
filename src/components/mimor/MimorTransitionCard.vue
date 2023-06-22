@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Program } from './Program'
 import { State } from './State'
+import { programPointer } from './programPointer'
 
 defineProps<{
   state: State
@@ -18,7 +19,10 @@ defineProps<{
     leaveFromClass="transform transform-gpu origin-left opacity-100 scale-100 rotate-0"
     leaveToClass="transform transform-gpu origin-left opacity-0 scale-50 -rotate-20"
   >
-    <div :key="program.pointer" class="body font-serif overflow-y-auto p-3">
+    <div
+      :key="programPointer(program)"
+      class="body font-serif overflow-y-auto p-3"
+    >
       <slot />
     </div>
   </Transition>

@@ -1,5 +1,3 @@
-[mimor] extract `programPointer`
-
 [mimor] remove `<back-cover>`
 
 [mimor] fix docs about `<back-cover>`

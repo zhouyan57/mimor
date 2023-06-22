@@ -17,8 +17,6 @@ export async function stateRefresh(state: State): Promise<void> {
   if (state.program && oldProgram) {
     const newLength = state.program.elements.length
 
-    state.program.pointer = Math.min(oldProgram.pointer, newLength - 1)
-
     state.program.remainingIndexes = oldProgram.remainingIndexes.filter(
       (index) => index < newLength,
     )
