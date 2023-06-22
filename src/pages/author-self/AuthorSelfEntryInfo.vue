@@ -63,9 +63,7 @@ defineProps<{
 
       <Lang class="overflow-x-auto whitespace-pre">
         <template #zh>刷新后发现这个内容不在云端。</template>
-        <template #en
-          >After refreshing, I find this content is not in the cloud.</template
-        >
+        <template #en>Not in the cloud after refreshing.</template>
       </Lang>
     </div>
   </div>
