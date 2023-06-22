@@ -75,7 +75,7 @@ defineProps<{
     </button>
 
     <button
-      v-if="entry.isModifiedByUploading"
+      v-if="entry.isModifiedByUploading || entry.isNotInTheCloud"
       class="flex max-w-fit space-x-1 whitespace-pre pr-3 disabled:text-stone-500"
       :disabled="entry.isSaving"
       @click="

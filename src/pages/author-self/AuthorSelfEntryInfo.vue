@@ -54,5 +54,19 @@ defineProps<{
         <template #en>Modified by uploading or newly uploaded.</template>
       </Lang>
     </div>
+
+    <div
+      v-if="entry.isNotInTheCloud"
+      class="flex items-center space-x-1 text-orange-500"
+    >
+      <ExclamationCircleIcon class="h-5 w-5" />
+
+      <Lang class="overflow-x-auto whitespace-pre">
+        <template #zh>刷新后发现这个内容不在云端。</template>
+        <template #en
+          >After refreshing, I find this content is not in the cloud.</template
+        >
+      </Lang>
+    </div>
   </div>
 </template>

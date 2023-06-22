@@ -12,15 +12,15 @@ export async function stateRefresh(state: State): Promise<void> {
 
   state.user = newState.user
   state.lastRefreshedAt = Date.now()
-  stateSaveNewEntries(state, newState)
-  stateMarkMissingEntries(state, newState)
+  stateUpdateEntries(state, newState)
+  stateMarkNotInTheCloudEntries(state, newState)
 
   await stateCacheSet(state)
 
   state.isRefreshing = false
 }
 
-function stateSaveNewEntries(state: State, newState: State): void {
+function stateUpdateEntries(state: State, newState: State): void {
   const report: ConnectionActivityReport = {
     updatedFiles: [],
     createdFiles: [],
@@ -52,14 +52,14 @@ function stateSaveNewEntries(state: State, newState: State): void {
   }
 }
 
-function stateMarkMissingEntries(state: State, newState: State): void {
+function stateMarkNotInTheCloudEntries(state: State, newState: State): void {
   for (const entry of state.entries) {
     const found = newState.entries.find(
       (newEntry) => entry.path === newEntry.path,
     )
+
     if (!found) {
-      entry.newText = entry.text
-      entry.text = undefined
+      entry.isNotInTheCloud = true
     }
   }
 }
