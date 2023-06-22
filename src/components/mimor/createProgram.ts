@@ -33,7 +33,7 @@ export function createProgram(options: ProgramOptions): Program {
     router,
     pointer,
     remainingIndexes,
-    passedIndexes: [],
+    rememberedIndexes: [],
   }
 }
 

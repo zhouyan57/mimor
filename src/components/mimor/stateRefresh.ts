@@ -23,7 +23,7 @@ export async function stateRefresh(state: State): Promise<void> {
       (index) => index < newLength,
     )
 
-    state.program.passedIndexes = oldProgram.passedIndexes.filter(
+    state.program.rememberedIndexes = oldProgram.rememberedIndexes.filter(
       (index) => index < newLength,
     )
   }

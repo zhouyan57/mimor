@@ -1,3 +1,11 @@
+# bug
+
+`<back-cover>` should not be the end -- for forget
+
+search is not effective on wechat.
+
+saving mimor and note should update cache.
+
 # recall
 
 [recall] `loadEntries`
@@ -25,6 +33,8 @@
 # later
 
 show that are not from refreshed
+
+be able to jump back to top
 
 # home
 
