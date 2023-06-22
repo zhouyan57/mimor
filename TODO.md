@@ -1,7 +1,5 @@
 # recall
 
-[recall] extract `RecallEntryInfo`
-
 [recall] `RecallEntryInfo` -- show path
 
 [recall] `RecallHead` -- support contents
