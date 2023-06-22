@@ -17,7 +17,7 @@ defineProps<{
       pathParse(entry.path).file
     }}</span>
 
-    <Lang class="whitespace-pre">
+    <Lang class="flex whitespace-pre">
       <template #zh>
         <div class="flex space-x-2 text-sm">
           <span>{{ entry.text.length }} 字节</span>
