@@ -13,4 +13,5 @@ export type State = {
   eagerLoadAll?: boolean
   focusedPath?: string
   scrollToTopTick?: number
+  isAtTheTop?: boolean
 }

@@ -1,5 +1,3 @@
-[author-self] & [author-other] a button to jump back to top (only when scrolled)
-
 [author-self] & [author-other] after refreshed show entries that are not from refreshed
 
 # bug

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  ArrowUturnUpIcon,
   ArrowDownTrayIcon,
   ArrowPathIcon,
   ArrowUpTrayIcon,
@@ -187,6 +188,19 @@ const lang = useGlobalLang()
     </div>
 
     <div class="flex flex-wrap text-base">
+      <button
+        v-if="!state.isAtTheTop"
+        class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
+        :title="lang.isZh() ? `回到顶部` : `Back to top`"
+        @click="
+          state.scrollToTopTick = state.scrollToTopTick
+            ? state.scrollToTopTick + 10
+            : 10
+        "
+      >
+        <ArrowUturnUpIcon class="h-5 w-5" />
+      </button>
+
       <button
         v-if="!state.isSearching"
         class="flex min-w-max items-center space-x-1 pr-3 disabled:text-stone-500"
