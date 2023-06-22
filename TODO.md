@@ -1,5 +1,3 @@
-[mimor] & [note] use `mimor.app/contents`
-
 [author-self] & [author-other] be able to jump back to top
 
 [author-self] & [author-other] after refreshed show entries that are not from refreshed

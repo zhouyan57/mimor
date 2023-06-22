@@ -5,7 +5,7 @@ import { createState } from './createState'
 import { stateReactive } from './stateReactive'
 
 export async function stateRefresh(state: State): Promise<void> {
-  const store = Kv.createStore('mimor.app/<mimor>', 'cache')
+  const store = Kv.createStore('mimor.app/contents', 'cache')
   const text = await loadContent(state.src)
   // We need `stateReactive` to make nested objects reactive.
   const newState = stateReactive(createState({ ...state, text }))

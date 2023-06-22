@@ -4,7 +4,7 @@ import { State } from './State'
 import { createState } from './createState'
 
 export async function stateRefresh(state: State): Promise<void> {
-  const store = Kv.createStore('mimor.app/<note>', 'cache')
+  const store = Kv.createStore('mimor.app/contents', 'cache')
   const text = await loadContent(state.src)
   const newState = createState({ ...state, text })
   Object.assign(state, newState)

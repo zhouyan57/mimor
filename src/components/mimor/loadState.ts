@@ -19,7 +19,7 @@ export async function loadState(options: StateOptions): Promise<State> {
     })
   }
 
-  const store = Kv.createStore('mimor.app/<mimor>', 'cache')
+  const store = Kv.createStore('mimor.app/contents', 'cache')
   const cache = await Kv.get(options.src, store)
   if (cache) {
     const state = createState({
